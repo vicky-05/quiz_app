@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Indian History & Freedom Struggle — 250 MCQ Exam Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select, .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Modern Indian History — Netaji, Tagore, Bharathi, VOC, Rajaji & British Era</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Automated exam pacing: <strong>30 seconds per question</strong> allocated according to selected number of questions.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–250)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="250">All Questions (250 Questions)</option>
+            <option value="10">10 Questions</option>
+            <option value="25">25 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 250)</label>
+          <input type="number" id="custom-count-input" min="1" max="250" value="25" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">125 min 0 sec (30s / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#9678;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">General Studies</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#128196;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Indian National Movement</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 250</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">125:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "Choose the correct matches:\n1. All India Forward Bloc — Nagpur\n2. Gadar Party — Sohan Singh Bhakna\n3. Swaraj Party — Motilal Nehru\n4. Forward Bloc — Subash Chandra Bose", options: ["A) (1) and (4) are correct", "B) (2) and (3) are correct", "C) (1), (2) and (3)", "D) (2), (3) and (4)"], ans: 0 },
+      { id: 2, q: "Who was an active associate of Deshbandhu Chittaranjan Das and served as Principal of the National College?", options: ["A) Subash Chandra Bose", "B) Jawaharlal Nehru", "C) B.C. Pal", "D) Lala Lajpat Rai"], ans: 0 },
+      { id: 3, q: "Who renamed the Andaman and Nicobar Islands as Shaheed and Swaraj Islands respectively?", options: ["A) Mahatma Gandhi", "B) Subash Chandra Bose", "C) Rash Behari Bose", "D) V.D. Savarkar"], ans: 1 },
+      { id: 4, q: "Subash Chandra Bose converted the ______ into Socialist Party.", options: ["A) Forward Bloc", "B) Samyavadi Sangha", "C) Naujawan Bharat Sabha", "D) Swarajya Party"], ans: 1 },
+      { id: 5, q: "Who said that Indians would have to follow the Maharashtrian way and copy the example of Shivaji to regain freedom?", options: ["A) Bal Gangadhar Tilak", "B) Subash Chandra Bose", "C) Lala Lajpat Rai", "D) Bipin Chandra Pal"], ans: 1 },
+      { id: 6, q: "Who secured fourth place in the Indian Civil Service examination in 1920 but resigned before completing probation?", options: ["A) Surendranath Banerjee", "B) Satyendranath Tagore", "C) Subash Chandra Bose", "D) Aurobindo Ghose"], ans: 2 },
+      { id: 7, q: "Who was the commander of the Rani of Jhansi Regiment of the Indian National Army?", options: ["A) Captain Lakshmi Sahgal", "B) Sarojini Naidu", "C) Aruna Asaf Ali", "D) Usha Mehta"], ans: 0 },
+      { id: 8, q: "Who accompanied Subash Chandra Bose during his secret journey in a German U-boat and reached south of Madagascar?", options: ["A) Rash Behari Bose", "B) Abid Hussain", "C) Mohan Singh", "D) Shah Nawaz Khan"], ans: 1 },
+      { id: 9, q: "The Indian Independence League in 1928 was founded by whom?", options: ["A) Subash Chandra Bose along with Jawaharlal Nehru and Srinivasan Iyengar", "B) Rash Behari Bose alone", "C) Lala Har Dayal", "D) C.R. Das and Motilal Nehru"], ans: 0 },
+      { id: 10, q: "Which of the following are correctly matched?\n(i) Bhagat Singh – Reorganization of HSRA\n(ii) Subash Chandra Bose – “Give me blood, I will give you freedom”\n(iii) Sisir Kumar – Founder of INA\n(iv) Sucheta Kripalani – Advisor to Non-Cooperation Movement", options: ["A) (i) and (ii) are correct", "B) (ii) and (iii) are correct", "C) (iii) and (iv) are correct", "D) All are correct"], ans: 0 },
+      { id: 11, q: "Match the following parties with their founders:\nSwatantra Party, Gadar Party, Swaraj Party, Forward Bloc", options: ["A) 3, 1, 2, 4 respectively", "B) 1, 2, 3, 4 respectively", "C) 4, 3, 2, 1 respectively", "D) 2, 4, 1, 3 respectively"], ans: 0 },
+      { id: 12, q: "Whose name was recommended by the Chief Justice of India for the One-Man Commission to inquire into Netaji's disappearance?", options: ["A) Justice Mukherjee", "B) G.D. Khosla", "C) Shahnawaz Khan", "D) Justice Sarkaria"], ans: 1 },
+      { id: 13, q: "The title “Netaji” was given to Subash Chandra Bose by Indians living in which country?", options: ["A) Japan", "B) Singapore", "C) Germany", "D) Burma"], ans: 2 },
+      { id: 14, q: "Which national leader resigned from the civil service to join the freedom struggle?", options: ["A) Subash Chandra Bose", "B) Dadabhai Naoroji", "C) Jawaharlal Nehru", "D) C. Rajagopalachari"], ans: 0 },
+      { id: 15, q: "Who delivered the statement about heroes sacrificing their blood and establishing traditions for the future soldiers of free India on 18 March 1944?", options: ["A) Mohan Singh", "B) Subash Chandra Bose", "C) Rash Behari Bose", "D) Bhagat Singh"], ans: 1 },
+      { id: 16, q: "British arrested Subash Chandra Bose on 24 October 1924 and sent him to which jail?", options: ["A) Alipore Jail", "B) Cellular Jail", "C) Mandalay Jail", "D) Yerwada Jail"], ans: 2 },
+      { id: 17, q: "Whom did Subash Chandra Bose defeat to become Congress President in the 1939 election?", options: ["A) Pattabhi Sitaramayya", "B) Maulana Abul Kalam Azad", "C) Rajendra Prasad", "D) J.B. Kripalani"], ans: 0 },
+      { id: 18, q: "In which two years was Subash Chandra Bose elected President of the Indian National Congress?", options: ["A) 1937 and 1938", "B) 1938 and 1939", "C) 1939 and 1940", "D) 1936 and 1937"], ans: 1 },
+      { id: 19, q: "Which statement is correct regarding Subash Chandra Bose?\n1. Joined freedom struggle under C.R. Das\n2. Demonstrated against Prince of Wales' visit in 1921\n3. Boycotted Simon Commission in 1927\n4. Served as Secretary and President of Bengal Congress", options: ["A) 1 and 2 only", "B) 2 and 3 only", "C) 1, 2, 3 and 4 are correct", "D) 1, 2 and 4 only"], ans: 2 },
+      { id: 20, q: "While studying in school, Subash Chandra Bose was influenced by the teachings of whom?", options: ["A) Ramakrishna Paramahamsa", "B) Swami Vivekananda", "C) Sri Aurobindo", "D) Raja Ram Mohan Roy"], ans: 1 },
+      { id: 21, q: "After Japan surrendered to the Allies in World War II, Subash Chandra Bose went to which place?", options: ["A) Tokyo", "B) Bangkok", "C) Singapore", "D) Rangoon"], ans: 2 },
+      { id: 22, q: "Who helped Rabindranath Tagore refine the English translation of Gitanjali?", options: ["A) Ezra Pound", "B) W.B. Yeats", "C) T.S. Eliot", "D) C.F. Andrews"], ans: 1 },
+      { id: 23, q: "Who started a mass Raksha Bandhan festival during the Partition of Bengal?", options: ["A) Surendranath Banerjee", "B) Rabindranath Tagore", "C) Aurobindo Ghose", "D) Bipin Chandra Pal"], ans: 1 },
+      { id: 24, q: "Rabindranath Tagore's early writings were published in family magazines called what?", options: ["A) Bangadarshan", "B) Bharati", "C) Tatwabodhini", "D) Sanjivani"], ans: 1 },
+      { id: 25, q: "Rabindranath Tagore composed the National Anthem for India and which other country?", options: ["A) Sri Lanka", "B) Nepal", "C) Myanmar", "D) Bhutan"], ans: 0 },
+      { id: 26, q: "Rabindranath Tagore renounced his knighthood immediately after which incident?", options: ["A) Chauri Chaura incident", "B) Jallianwala Bagh Massacre", "C) Rowlatt Act passing", "D) Partition of Bengal"], ans: 1 },
+      { id: 27, q: "On Tagore's suggestion, the date of the Partition of Bengal was celebrated as what?", options: ["A) Mourning Day", "B) Raksha Bandhan Day", "C) Swadeshi Day", "D) National Unity Day"], ans: 1 },
+      { id: 28, q: "Who added a new dimension to Bengali literature through his unique political genius?", options: ["A) Bankim Chandra Chattopadhyay", "B) Rabindranath Tagore", "C) Michael Madhusudan Dutt", "D) Sarat Chandra Chattopadhyay"], ans: 1 },
+      { id: 29, q: "Who wrote “Amar Sonar Bangla”, the National Anthem of Bangladesh?", options: ["A) Kazi Nazrul Islam", "B) Rabindranath Tagore", "C) Jibanananda Das", "D) Sukanta Bhattacharya"], ans: 1 },
+      { id: 30, q: "Rabindranath Tagore was awarded the Nobel Prize for Literature in which year?", options: ["A) 1911", "B) 1913", "C) 1915", "D) 1919"], ans: 1 },
+      { id: 31, q: "Rabindranath Tagore renounced his knighthood in protest against what?", options: ["A) Rowlatt Act", "B) Jallianwala Bagh Massacre", "C) Simon Commission", "D) Public Safety Bill"], ans: 1 },
+      { id: 32, q: "Who said, “Better bullock carts and freedom than a train de luxe with subjection”?", options: ["A) Sarojini Naidu", "B) Annie Besant", "C) Madam Blavatsky", "D) Sister Nivedita"], ans: 1 },
+      { id: 33, q: "What does “Theosophy” mean in the context of Dr. Annie Besant's Theosophical Society?", options: ["A) Divine wisdom", "B) Religious truth", "C) Spiritual discipline", "D) Cosmic harmony"], ans: 0 },
+      { id: 34, q: "Which of the following are true regarding the impact of Annie Besant's efforts?\n(i) She founded the Central Hindu College at Benares.\n(ii) Her paper New India spread theosophical ideas.", options: ["A) (i) only", "B) (ii) only", "C) Both (i) and (ii)", "D) Neither"], ans: 2 },
+      { id: 35, q: "Choose the correctly matched pairs:\n1. Narayan – Chittaranjan Das\n2. Unhappy India – Annie Besant\n3. Commonweal – Lala Lajpat Rai\n4. Abhyudaya – Madan Mohan Malaviya", options: ["A) 1 and 2", "B) 2 and 4 are correct", "C) 1 and 3", "D) 3 and 4"], ans: 1 },
+      { id: 36, q: "Who said, “Better bullock carts and freedom than a train de luxe with subjection”?", options: ["A) Bal Gangadhar Tilak", "B) Annie Besant", "C) Mahatma Gandhi", "D) B.C. Pal"], ans: 1 },
+      { id: 37, q: "Name the newspaper of the Women's Indian Association.", options: ["A) Stri Dharma", "B) Roshni", "C) Mahila Bandhav", "D) Arya Mahila"], ans: 0 },
+      { id: 38, q: "“India wants only Purna Swaraj and not higher powers and more employments” — Who gave this quote?", options: ["A) Jawaharlal Nehru", "B) Annie Besant", "C) Subash Chandra Bose", "D) Bal Gangadhar Tilak"], ans: 1 },
+      { id: 39, q: "Who represented Theosophy at the Parliament of Religions in Chicago in 1893?", options: ["A) Swami Vivekananda", "B) Annie Besant", "C) Colonel Olcott", "D) Madam Blavatsky"], ans: 1 },
+      { id: 40, q: "In 1917, Annie Besant became President of the Indian National Congress. She presided over which session?", options: ["A) Bombay Session", "B) Calcutta Session", "C) Madras Session", "D) Lucknow Session"], ans: 1 },
+      { id: 41, q: "Which pairs are correctly matched?\n(i) New India and Commonweal – Annie Besant\n(ii) Kesari and Maratha – Bal Gangadhar Tilak\n(iii) Indian Opinion – Gopal Hari Deshmukh\n(iv) Indu Prakash – Mahatma Gandhi", options: ["A) (i) and (ii)", "B) (ii) and (iii)", "C) (i) and (iv)", "D) All of the above"], ans: 0 },
+      { id: 42, q: "Who spread Theosophical ideas through newspapers called New India and Commonweal?", options: ["A) Margaret Cousins", "B) Annie Besant", "C) Sarojini Naidu", "D) Sister Nivedita"], ans: 1 },
+      { id: 43, q: "Who was associated with the statement “Better bullock carts and freedom than a train de luxe with subjection”?", options: ["A) Annie Besant", "B) G.K. Gokhale", "C) Dadabhai Naoroji", "D) Dinshaw Wacha"], ans: 0 },
+      { id: 44, q: "What was Annie Besant's major contribution to the Home Rule movement?", options: ["A) Armed revolution", "B) Promotion of Home Rule through her political activities and newspapers", "C) Organizing peasant militias", "D) Drafting the Government of India Act"], ans: 1 },
+      { id: 45, q: "Which organization did Annie Besant join that promoted Theosophical ideas?", options: ["A) Arya Samaj", "B) Theosophical Society", "C) Brahmo Samaj", "D) Ramakrishna Mission"], ans: 1 },
+      { id: 46, q: "Which newspaper was associated with Annie Besant's political activities?", options: ["A) The Hindu", "B) New India", "C) Swadesamitran", "D) Young India"], ans: 1 },
+      { id: 47, q: "Which educational institution was founded by Annie Besant at Benares?", options: ["A) Banaras Hindu University", "B) Central Hindu College", "C) Kashi Vidyapeeth", "D) Anglo-Vedic College"], ans: 1 },
+      { id: 48, q: "Which movement was strongly associated with Annie Besant's demand for self-government?", options: ["A) Khilafat Movement", "B) Home Rule Movement", "C) Swadeshi Movement", "D) Civil Disobedience"], ans: 1 },
+      { id: 49, q: "In which year did Annie Besant become President of the Indian National Congress?", options: ["A) 1916", "B) 1917", "C) 1918", "D) 1920"], ans: 1 },
+      { id: 50, q: "Which Congress session did Annie Besant preside over as Congress President?", options: ["A) Calcutta Session, 1917", "B) Lucknow Session, 1916", "C) Bombay Session, 1918", "D) Delhi Session, 1918"], ans: 0 },
+      { id: 51, q: "Which of the following are correctly matched?\n1. Narayan — Chittaranjan Das\n2. Unhappy India — Annie Besant\n3. Commonweal — Lala Lajpat Rai\n4. Abhyudaya — Madan Mohan Malaviya", options: ["A) 1 and 4 are correct", "B) 2 and 3 are correct", "C) 1 and 2 are correct", "D) 3 and 4 are correct"], ans: 0 },
+      { id: 52, q: "“Better bullock carts and freedom than a train de luxe with subjection.” Who said this?", options: ["A) Annie Besant", "B) Bal Gangadhar Tilak", "C) Lala Lajpat Rai", "D) B.C. Pal"], ans: 0 },
+      { id: 53, q: "Name the newspaper of the Women’s Indian Association.", options: ["A) Stri Dharma", "B) Mahila Darpan", "C) Kanya", "D) Swarajya"], ans: 0 },
+      { id: 54, q: "“India wants only Purna Swaraj and not higher powers and more employments.” Who gave this quote?", options: ["A) Mahatma Gandhi", "B) Annie Besant", "C) Jawaharlal Nehru", "D) Subash Chandra Bose"], ans: 1 },
+      { id: 55, q: "Who represented Theosophy at the Parliament of Religions in Chicago in 1893?", options: ["A) Annie Besant", "B) Swami Vivekananda", "C) Colonel Olcott", "D) H.P. Blavatsky"], ans: 0 },
+      { id: 56, q: "In 1917, Annie Besant became President of the Indian National Congress. She presided over which session?", options: ["A) Calcutta Session", "B) Bombay Session", "C) Madras Session", "D) Lahore Session"], ans: 0 },
+      { id: 57, q: "Which of the following are correctly paired?\n(i) New India and Commonweal — Annie Besant\n(ii) Kesari and Maratha — Bal Gangadhar Tilak\n(iii) Indian Opinion — Gopal Hari Deshmukh\n(iv) Indu Prakash — Mahatma Gandhi", options: ["A) (i) and (ii) only", "B) (ii) and (iii) only", "C) (i) and (iv) only", "D) All are correct"], ans: 0 },
+      { id: 58, q: "Who spread Theosophical ideas through her newspapers New India and Commonweal?", options: ["A) Annie Besant", "B) Sarojini Naidu", "C) Sister Nivedita", "D) Margaret Noble"], ans: 0 },
+      { id: 59, q: "Annie Besant, with the support of Arundale and Wadia, formed the Home Rule League at Madras in which year?", options: ["A) 1914", "B) 1915", "C) 1916", "D) 1917"], ans: 2 },
+      { id: 60, q: "Who said, “Better bullock carts and freedom than a train de luxe with subjection”?", options: ["A) Annie Besant", "B) Subramania Bharathi", "C) V.O.C.", "D) Rajaji"], ans: 0 },
+      { id: 61, q: "The Home Rule Movement in South India was started by whom?", options: ["A) Bal Gangadhar Tilak", "B) Annie Besant", "C) G. Subramania Iyer", "D) C. Rajagopalachari"], ans: 1 },
+      { id: 62, q: "“Common Weal” Weekly was started by whom?", options: ["A) Annie Besant", "B) B.G. Tilak", "C) Motilal Nehru", "D) G.K. Gokhale"], ans: 0 },
+      { id: 63, q: "Who was the founder of the Central Hindu College at Banaras?", options: ["A) Madan Mohan Malaviya", "B) Annie Besant", "C) Ishwar Chandra Vidyasagar", "D) Swami Dayanand"], ans: 1 },
+      { id: 64, q: "In which monthly magazine did Subramania Bharathi work as the Editor?", options: ["A) Swadesamitran", "B) Chakravartini", "C) India", "D) Vijaya"], ans: 1 },
+      { id: 65, q: "Which of the following is not Bharathiar’s poem?", options: ["A) Kuyil Pattu", "B) Panchali Sabatham", "C) Puratchi Kavi", "D) Kannan Pattu"], ans: 2 },
+      { id: 66, q: "Match the following authors and works:\nV.O. Chidambaram — Alagammai Asiriya Virutham | Bharathi — Bala Bharat | Namakkal Kavignar Ramalingam — Swadeshi Navigation Company | Kavimani Desiga Vinayagam — Sangoli", options: ["A) 1, 2, 3, 4", "B) 3, 4, 2, 1", "C) 2, 1, 4, 3", "D) 4, 3, 1, 2"], ans: 1 },
+      { id: 67, q: "Who gave Subramaniya Bharathiar the title “Bharathi” and at what age?", options: ["A) King of Ettayapuram, at the age of 11", "B) King of Thanjavur, at the age of 15", "C) V.O.C., at the age of 20", "D) Periyar, at the age of 25"], ans: 0 },
+      { id: 68, q: "Which journal was not associated with Subramaniya Bharathi?", options: ["A) India", "B) Vijaya", "C) Bala Bharata", "D) New India"], ans: 3 },
+      { id: 69, q: "Choose the correct statements regarding Bharathiar:\n1. Edited Tamil weekly India\n2. Participated in Surat Congress of 1907\n3. Edited Chakravartini and Swadesamitran\n4. G. Subramania Iyer published The Hindu", options: ["A) 1 and 2 only", "B) 2, 3 and 4 only", "C) 1, 3 and 4 only", "D) All are correct"], ans: 1 },
+      { id: 70, q: "Chakravartini paper was mainly devoted to the elevation of Indian women by whom?", options: ["A) Bharathiyar", "B) V.O.C.", "C) Thiru. V.Ka", "D) Rajaji"], ans: 0 },
+      { id: 71, q: "Who said, “Melt the iron and make steel, forge machines”?", options: ["A) Subramania Bharathi", "B) V.O. Chidambaranar", "C) Subramania Siva", "D) Tiruppur Kumaran"], ans: 0 },
+      { id: 72, q: "Pick out the wrong pair regarding Subramaniya Bharathiyar:", options: ["A) Subramaniya Bharathiyar — December 11, 1881", "B) Birthplace — Ettayapuram", "C) Mentor — Sister Nivedita", "D) Tamil daily — Swadesamitran"], ans: 0 },
+      { id: 73, q: "Which magazine was run by Bharathiar?", options: ["A) India", "B) The Hindu", "C) Dinamani", "D) Desabakthan"], ans: 0 },
+      { id: 74, q: "Bharathi was displaced to which area due to English intimidation?", options: ["A) Pondicherry", "B) Colombo", "C) Rangoon", "D) Karaikal"], ans: 0 },
+      { id: 75, q: "Which statement(s) is/are true about Bharathiar?\n(i) Pioneer of modern Tamil poetry and one of the greatest Tamil literary figures\n(ii) Forerunner of a forceful kind of drama combining classical and contemporary elements", options: ["A) (i) only", "B) (ii) only", "C) Both (i) and (ii)", "D) Neither"], ans: 0 },
+      { id: 76, q: "Which Tamil writer is acclaimed as “Kaadu Kamazhum, Karpoora Sorko, Karpanai Ootraam Kadhayin Puthaiyal”?", options: ["A) Bharathiyar", "B) Bharathidasan", "C) Kannadasan", "D) Kavimani"], ans: 0 },
+      { id: 77, q: "Fill in the blank: “Seena misiram yavanaragam — innum / Desam palavum pugazhveesi — kalai / Gnanam padaithozhil Vanibamum — miga / Nandru Valartha ______”", options: ["A) Tamil Nadu", "B) Bharatha Nadu", "C) Thamizh Mozhi", "D) Madurai Nagar"], ans: 0 },
+      { id: 78, q: "“Senthamizh Thenee… Kuvikkum Kavidhai Kuyil…” — Who are the two poets associated with these lines?", options: ["A) Bharathiyar and Bharathidasan", "B) Kavimani and Namakkal Kavignar", "C) Bharathiyar and V.O.C.", "D) Bharathidasan and Kannadasan"], ans: 0 },
+      { id: 79, q: "Who is the Gnanaguru of Bharathiar?", options: ["A) Sister Nivedita", "B) Sri Aurobindo", "C) Swami Vivekananda", "D) Bal Gangadhar Tilak"], ans: 0 },
+      { id: 80, q: "Name the first Tamil newspaper which published political cartoons during colonial rule.", options: ["A) Swadesamitran", "B) The India", "C) Vijaya", "D) Chakravartini"], ans: 1 },
+      { id: 81, q: "Who first introduced cartoon pictures in a Tamil magazine?", options: ["A) G. Subramania Iyer", "B) C. Subrahmanya Bharathi", "C) V.O. Chidambaranar", "D) Subramania Siva"], ans: 1 },
+      { id: 82, q: "Which statements regarding Bharathiar are correct?\n1. Participated in Indian National Conference at Kasi in 1905\n2. Started Balabharata Sabha in Chennai in 1906\n3. Participated in Surat Congress in 1907 along with V.O.C.\n4. Composed “Vangame Valiyave”", options: ["A) 1 and 2 only", "B) 2 and 3 only", "C) 1, 2, 3 and 4 are correct", "D) 1, 3 and 4 only"], ans: 2 },
+      { id: 83, q: "In 1912, who translated Bhagavad Gita into Tamil?", options: ["A) Rajaji", "B) Bharathiyar", "C) V.O. Chidambaranar", "D) Subramania Siva"], ans: 1 },
+      { id: 84, q: "Match the following publications:\n(a) Swadeshamitran | (b) Gita | (c) Bala Bharat | (d) The India", options: ["A) 1, 2, 3, 4", "B) 4, 3, 1, 2", "C) 2, 4, 1, 3", "D) 3, 1, 4, 2"], ans: 1 },
+      { id: 85, q: "Which of the following statements are true about V.O.C.?\n(i) Founded Chennai Vivasaya-Kaitholil Sangam Ltd.\n(ii) Resigned from the post of President of Congress\n(iii) Was the leader of Chennai Jana Sangam", options: ["A) (i) and (ii)", "B) (ii) and (iii)", "C) (i) and (iii) only", "D) All are true"], ans: 2 },
+      { id: 86, q: "The Swadeshi Steam Navigation Company started with a capital amount of:", options: ["A) Rs. 5 lakh", "B) Rs. 10 lakh", "C) Rs. 15 lakh", "D) Rs. 20 lakh"], ans: 1 },
+      { id: 87, q: "Which statements are true about V.O. Chidambaram Pillai?\n(i) Follower of Gopalakrishna Gokhale\n(ii) Known as Chekkiluththa Chemmal\n(iii) Founded Servants of India Society\n(iv) Was a lawyer", options: ["A) (i) and (iii)", "B) (ii) and (iv) only", "C) (i) and (iv)", "D) (ii) and (iii)"], ans: 1 },
+      { id: 88, q: "The Swadeshi Steam Navigation Company was registered in which year?", options: ["A) October 16, 1906", "B) November 10, 1905", "C) January 15, 1907", "D) August 15, 1906"], ans: 0 },
+      { id: 89, q: "Assertion: Swadeshi Navigation shares were open only to Asian nationals.\nReason: Aurobindo Ghose lauded the Swadeshi efforts and helped promote the shares.", options: ["A) Both A and R are true, and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, R is false", "D) A is false, R is true"], ans: 0 },
+      { id: 90, q: "Who were the major shareholders of the Swadeshi Steam Navigation Company?", options: ["A) Pandithurai and Haji Fakir Mohammed", "B) G. Subramania Iyer and Bharathi", "C) Subramania Siva and Vanchinathan", "D) Rajaji and Satyamurti"], ans: 0 },
+      { id: 91, q: "Match the following:\nV.O. Chidambaram — Swadeshi Navigation Company | Bharathi — Bala Bharat | Namakkal Kavignar Ramalingam — Sangoli | Kavimani Desiga Vinayagam — Alagammai Asiriya Virutham", options: ["A) 1, 2, 3, 4", "B) 3, 4, 2, 1", "C) 2, 1, 4, 3", "D) 4, 3, 1, 2"], ans: 1 },
+      { id: 92, q: "The Swadeshi Steam Navigation Company was started by Chidambaram with the aim of:", options: ["A) Promoting international trade with France", "B) Challenging the British monopoly in sea transport", "C) Transporting pilgrims to Rameswaram", "D) Fishery development in Tuticorin"], ans: 1 },
+      { id: 93, q: "V.O. Chidambaram started the Swadeshi Steam Navigation Company in the year:", options: ["A) 1905", "B) 1906", "C) 1907", "D) 1908"], ans: 1 },
+      { id: 94, q: "Who was the Secretary of the New National Party of Madras Presidency after the split of Congress in 1907?", options: ["A) V.O. Chidambaram", "B) Subramania Siva", "C) Bharathiyar", "D) G.A. Natesan"], ans: 0 },
+      { id: 95, q: "Who was called the “Tilak of Tamil Nadu”?", options: ["A) V.O. Chidambaram Pillai", "B) Subramania Bharathi", "C) Subramania Siva", "D) Tiruppur Kumaran"], ans: 0 },
+      { id: 96, q: "Assertion: V.O. Chidambaram established the Swadeshi Steam Navigation Company.\nReason: He wanted to oppose the British monopoly in navigation along the coast.", options: ["A) Both A and R are true, and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, R false", "D) A false, R true"], ans: 0 },
+      { id: 97, q: "How did V.O. Chidambaram attract the attention of the British?", options: ["A) By launching the Swadeshi Steam Navigation Company", "B) By publishing revolutionary books", "C) By contesting municipal elections", "D) By entering the Central Legislative Assembly"], ans: 0 },
+      { id: 98, q: "According to the passage, what was the main objective of creating the Swadeshi Steam Navigation Company?", options: ["A) Restoration of Tamils’ knowledge of naval tradition", "B) Establishing trade posts in Africa", "C) Building warships for freedom fighters", "D) Lowering cargo rates for British merchants"], ans: 0 },
+      { id: 99, q: "Who was the “Tilak of South India”?", options: ["A) V.O. Chidambaranar", "B) Subramania Siva", "C) C. Rajagopalachari", "D) K. Kamaraj"], ans: 0 },
+      { id: 100, q: "The Swadeshi Steam Navigation Company of V.O. Chidambaram Pillai started in which year?", options: ["A) 1905", "B) 1906", "C) 1907", "D) 1908"], ans: 1 },
+      { id: 101, q: "“S.S. Gallia / S.S. Kaliyo”, the ship of the Swadeshi Steam Navigation Company, was sold to whom?", options: ["A) The English Company", "B) French Navigators", "C) Dutch Merchants", "D) Native Fishermen"], ans: 0 },
+      { id: 102, q: "Who was the editor of the Tamil weekly Viveka Banu?", options: ["A) V.O. Chidambaram", "B) Subramania Bharathi", "C) Subramania Siva", "D) Thiru. V.Ka"], ans: 0 },
+      { id: 103, q: "Pick out the wrong pair regarding V.O. Chidambaram:", options: ["A) V.O. Chidambaram — September 5, 1872", "B) Birthplace — Ottapidaram", "C) Title — Kappalottiya Thamizhan", "D) Trade route — Tuticorin to Colombo"], ans: 0 },
+      { id: 104, q: "V.O. Chidambaranar purchased two ships and operated them between which places?", options: ["A) Madras and Singapore", "B) Thoothukudi and Colombo", "C) Nagapattinam and Penang", "D) Cochin and Aden"], ans: 1 },
+      { id: 105, q: "Name the Tamilian who challenged the maritime might of British imperialism and the East India Company.", options: ["A) V.O. Chidambaram Pillai", "B) Veerapandiya Kattabomman", "C) Maruthu Pandiyar", "D) Dheeran Chinnamalai"], ans: 0 },
+      { id: 106, q: "Assertion: V.O. Chidambaram established the Swadeshi Steam Navigation Company.\nReason: He wanted to oppose the British monopoly in navigation through the coast.", options: ["A) Both A and R are true, and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, R false", "D) Both false"], ans: 0 },
+      { id: 107, q: "Which of the following statements about V.O. Chidambaram are true?\nI. Disciple of Tilak, extremists under him took lead in Madras Presidency\nII. Honest and never appeared in court for false cases\nIII. Bought ships from France and England", options: ["A) I and II only", "B) II and III only", "C) I and III only", "D) All are true"], ans: 0 },
+      { id: 108, q: "Which one of the following was not written by V.O. Chidambaram?", options: ["A) Meiyyarivu", "B) Meiyaram", "C) Suryodayam", "D) Autobiography in verse"], ans: 2 },
+      { id: 109, q: "Who was imprisoned due to participation in the Swadeshi Movement in Tamil Nadu?", options: ["A) V.O. Chidambaram", "B) Rajaji", "C) Kamarajar", "D) Sathyamurthi"], ans: 0 },
+      { id: 110, q: "In post-Independence India, the Mid-Day Meal Scheme was first launched in Tamil Nadu by whom?", options: ["A) K. Kamarajar", "B) M.G. Ramachandran", "C) C.N. Annadurai", "D) M. Karunanidhi"], ans: 0 },
+      { id: 111, q: "Choose the right matches:\n1. Madurai Gandhi — N.M. Subburaman\n2. Thatchina Gandhi — Rajaji\n3. Vidyalaya Iyya — Kamaraj\n4. Father of Tamil Nadu Library Movement — A. Ramasamy", options: ["A) (1) and (3) are correct", "B) (2) and (4) are correct", "C) (1) and (2) are correct", "D) All are correct"], ans: 0 },
+      { id: 112, q: "In 1976, Kamarajar was awarded with which honour?", options: ["A) Padma Bhushan", "B) Bharat Ratna", "C) Padma Vibhushan", "D) Knighthood"], ans: 1 },
+      { id: 113, q: "How many years did Kamarajar serve as Chief Minister of Tamil Nadu?", options: ["A) 7 years", "B) 9 years", "C) 11 years", "D) 13 years"], ans: 1 },
+      { id: 114, q: "In 1940, Kamaraj went to Wardha to meet whom?", options: ["A) Jawaharlal Nehru", "B) Gandhiji", "C) Subash Chandra Bose", "D) Sardar Patel"], ans: 1 },
+      { id: 115, q: "“Law and rules are only for the people; people are not for the law and the rules.” Who said this?", options: ["A) Kamaraj", "B) Periyar E.V.R.", "C) C.N. Annadurai", "D) Rajaji"], ans: 0 },
+      { id: 116, q: "During the Lok Sabha constituency election in 1952, Kamarajar was elected from:", options: ["A) Virudhunagar", "B) Srivilliputtur", "C) Madurai", "D) Sattur"], ans: 1 },
+      { id: 117, q: "Who was the Political Guru of Kamaraj?", options: ["A) S. Satyamurthi", "B) G.K. Gokhale", "C) C. Rajagopalachari", "D) V.O.C."], ans: 0 },
+      { id: 118, q: "Which of the following statements are true about Kamaraj?\n(i) Political guru was Satyamurti\n(ii) Elected to legislature from Salem in 1937\n(iii) Kundah River Project came into existence due to his efforts", options: ["A) (i) and (ii)", "B) (ii) and (iii)", "C) (i) and (iii) only", "D) All are true"], ans: 2 },
+      { id: 119, q: "The Political Guru of Kamarajar was:", options: ["A) Sathyamoorthy", "B) Rajaji", "C) Subhas Chandra Bose", "D) Periyar"], ans: 0 },
+      { id: 120, q: "Which of the following about Kamaraj are true?\n(i) Arrested under Section 74 of Salt Act\n(ii) Released on March 12, 1931\n(iii) Closely associated with Rajaji during 1926 election", options: ["A) (i) and (ii)", "B) (ii) and (iii)", "C) (i) and (iii)", "D) All are true"], ans: 0 },
+      { id: 121, q: "Who was arrested by the British Government for the bomb explosion at Srivilliputtur Police Station in 1933?", options: ["A) Kamaraj", "B) Vanchinathan", "C) Subramania Siva", "D) Tiruppur Kumaran"], ans: 0 },
+      { id: 122, q: "Kamaraj was elected Chairman of Virudhunagar Municipality in 1941 when he was in which jail?", options: ["A) Alipore Jail", "B) Vellore Jail", "C) Cannanore Jail", "D) Madurai Jail"], ans: 1 },
+      { id: 123, q: "Who introduced the Mid-Day Meal System in Tamil Nadu?", options: ["A) K. Kamaraj", "B) Rajaji", "C) C.N. Annadurai", "D) M. Karunanidhi"], ans: 0 },
+      { id: 124, q: "A Chief Minister supported by Thanthai Periyar challenged the argument about lower-caste doctors and engineers. Who was it?", options: ["A) Kamarajar", "B) Rajaji", "C) Omandur Ramasamy", "D) Bhaktavatsalam"], ans: 0 },
+      { id: 125, q: "Match the following foundations:\n(a) South Indian Liberal Federation | (b) Kudiyarasu Journal | (c) Emergence of Labour Organisations | (d) Swatantra Party", options: ["A) 1, 2, 3, 4", "B) 4, 3, 1, 2", "C) 2, 4, 1, 3", "D) 3, 1, 4, 2"], ans: 1 },
+      { id: 126, q: "Match the leaders with their pseudonyms:\n(a) C. Rajagopalachari — Rosappu Durai | (b) E.V. Ramasamy — Thachina Gandhi | (c) George Joseph — Velli Naaku Navalar | (d) S. Satyamurthi — Tamil Nadu Rousseau", options: ["A) 1, 2, 3, 4", "B) 2, 4, 3, 1", "C) 4, 3, 2, 1", "D) 3, 1, 4, 2"], ans: 1 },
+      { id: 127, q: "Choose the right matches:\n1. Rajaji — Sakravarthi Thirumagal\n2. Subramania Siva — Prabanchamitran\n3. Bharathiyar — Kadavul Oruvare\n4. V.O.C. — Meiyyarivu", options: ["A) (1), (2) and (3)", "B) (1), (3) and (4)", "C) (2) and (4) only", "D) All are correct"], ans: 1 },
+      { id: 128, q: "The plan that caused Rajaji to resign was:", options: ["A) Modified Scheme of Elementary Education / Hereditary Educational Policy", "B) Sales Tax Act", "C) Prohibition Policy", "D) Temple Entry Act"], ans: 0 },
+      { id: 129, q: "How many Satyagrahis participated in the Vedaranyam March under Rajaji in Tamil Nadu?", options: ["A) 78", "B) 95", "C) 100", "D) 120"], ans: 1 },
+      { id: 130, q: "Match correctly:\n(a) Swatantra Party | (b) Gadar Party | (c) Swaraj Party | (d) Forward Bloc Party", options: ["A) 1, 2, 3, 4", "B) 3, 1, 2, 4", "C) 4, 3, 1, 2", "D) 2, 4, 3, 1"], ans: 1 },
+      { id: 131, q: "C. Rajagopalachari had a 150-mile march of 98 Satyagrahis from ______ to Vedaranyam to break the Salt Law.", options: ["A) Madurai", "B) Trichy", "C) Madras", "D) Tanjore"], ans: 1 },
+      { id: 132, q: "The first Congress Ministry of Madras was formed by:", options: ["A) Rajaji", "B) Kamaraj", "C) Prakasam", "D) Subbarayan"], ans: 0 },
+      { id: 133, q: "Who was the first Indian Governor-General, served as Governor of Bengal, and became Chief Minister of Madras Presidency in 1937?", options: ["A) C. Rajagopalachari", "B) Dr. S. Radhakrishnan", "C) K. Kamaraj", "D) S. Satyamurti"], ans: 0 },
+      { id: 134, q: "Who opposed the proposal of “either mending or ending” the councils at the Gaya Session of Congress in 1922?", options: ["A) Motilal Nehru", "B) C. Rajagopalachari", "C) C.R. Das", "D) Hakim Ajmal Khan"], ans: 1 },
+      { id: 135, q: "Gandhiji established an ashram at Sabarmati. Likewise, Rajaji established an ashram in Tamil Nadu at:", options: ["A) Tiruchengode / Vedaranyam", "B) Madurai", "C) Kanchipuram", "D) Tirunelveli"], ans: 0 },
+      { id: 136, q: "Rajaji started the Civil Disobedience Movement on:", options: ["A) 13 April 1930", "B) 12 March 1930", "C) 6 April 1930", "D) 1 May 1930"], ans: 0 },
+      { id: 137, q: "Who was the first and only Governor-General from Madras Presidency in the Dominion of India?", options: ["A) C. Rajagopalachari", "B) Lord Mountbatten", "C) Dr. Rajendra Prasad", "D) Sir A. Ramasamy Mudaliar"], ans: 0 },
+      { id: 138, q: "Sales Tax was introduced in Tamil Nadu by:", options: ["A) Rajaji", "B) Kamaraj", "C) Omandur Ramasamy", "D) M.G.R."], ans: 0 },
+      { id: 139, q: "The Non-Cooperation Movement in Tamil Nadu was led by:", options: ["A) Rajaji", "B) Periyar E.V.R. and Rajaji", "C) Kamaraj", "D) Sathyamurthi"], ans: 0 },
+      { id: 140, q: "Match List I with List II:\nIndependent Labour Party, Bharatiya Jana Sangh, Swatantra Party, Communist Party", options: ["A) 1, 2, 3, 4", "B) 3, 4, 1, 2", "C) 2, 1, 4, 3", "D) 4, 3, 2, 1"], ans: 1 },
+      { id: 141, q: "The stalwart among the Congressmen who became Chief Minister of Madras in the first ministry from 1937 to 1939 was:", options: ["A) C. Rajaji", "B) K. Kamaraj", "C) T. Prakasam", "D) P. Subbarayan"], ans: 0 },
+      { id: 142, q: "Who was the founder of the Swatantra Party?", options: ["A) Rajaji", "B) Minoo Masani", "C) N.G. Ranga", "D) K.M. Munshi"], ans: 0 },
+      { id: 143, q: "Match the following historical events:\nDelhi Durbar — 1911 | Vernacular Press Act — 1878 | Ilbert Bill — 1883 | Alipore Bomb Conspiracy Case — 1908", options: ["A) 1, 2, 3, 4", "B) 3, 4, 1, 2", "C) 2, 1, 4, 3", "D) 4, 3, 2, 1"], ans: 1 },
+      { id: 144, q: "Choose the right matches:\n1. Anushilan Samiti — Pulin Das\n2. Dacca Anushilan Samiti — Ajit Singh\n3. Anjuman-i-Mohibban-i-Watan — Ashfaqulla Khan\n4. Hindustan Republican Army — Promotha Mitter", options: ["A) 1 only", "B) 1 and 2", "C) 3 and 4", "D) All are correct"], ans: 0 },
+      { id: 145, q: "Who appeared in court in defence of revolutionary nationalists in the Alipore Blast Case?", options: ["A) Chittaranjan Das", "B) Motilal Nehru", "C) Tej Bahadur Sapru", "D) Bhulabhai Desai"], ans: 0 },
+      { id: 146, q: "Ram Prasad Bismil and Ashfaqulla Khan were arrested and tried in the:", options: ["A) Lahore Conspiracy Case", "B) Kakori Conspiracy Case", "C) Alipore Conspiracy Case", "D) Meerut Conspiracy Case"], ans: 1 },
+      { id: 147, q: "Match the following conspiracy cases:\n(a) Chittagong Armed Raid — Kalpana Datta\n(b) Kanpur Conspiracy Case — M.N. Roy\n(c) Lahore Conspiracy Case — Bhagat Singh\n(d) Meerut Conspiracy Case — Benjamin Bradley", options: ["A) 1, 2, 3, 4", "B) 3, 1, 4, 2", "C) 4, 2, 1, 3", "D) 2, 4, 3, 1"], ans: 1 },
+      { id: 148, q: "Revolutionary movement mainly focuses on:", options: ["A) Reverse the current trends", "B) Preserving colonial hegemony", "C) Legislative lobbying", "D) Economic non-intervention"], ans: 0 },
+      { id: 149, q: "In the Saunders Murder Case, who were executed in Lahore Jail on 23 March 1931?", options: ["A) Bhagat Singh, Raj Guru and Sukhdev", "B) Ram Prasad Bismil and Ashfaqulla", "C) Surya Sen and Pritilata", "D) Batukeshwar Dutt and Jatin Das"], ans: 0 },
+      { id: 150, q: "Aurobindo Ghosh was defended in the Alipore Bomb Case by:", options: ["A) C. R. Das", "B) Surendranath Banerjee", "C) B.C. Pal", "D) Rabindranath Tagore"], ans: 0 },
+      { id: 151, q: "Match the following:\nDelhi Durbar | Vernacular Press Act | Ilbert Bill | Alipore Bomb Conspiracy Case", options: ["A) 1, 2, 3, 4", "B) 3, 4, 1, 2", "C) 2, 1, 4, 3", "D) 4, 2, 1, 3"], ans: 1 },
+      { id: 152, q: "Which organisation was founded by Promotha Mitter?", options: ["A) Anushilan Samiti", "B) Abhinav Bharat", "C) Yugantar", "D) Ghadar Party"], ans: 0 },
+      { id: 153, q: "Who appeared in court in defence of revolutionary nationalists in the Alipore Bomb Case?", options: ["A) Chittaranjan Das", "B) Motilal Nehru", "C) B.R. Ambedkar", "D) Asaf Ali"], ans: 0 },
+      { id: 154, q: "Ram Prasad Bismil and Ashfaqulla Khan were arrested and tried in which case?", options: ["A) Kakori Conspiracy Case", "B) Lahore Conspiracy Case", "C) Delhi Conspiracy Case", "D) Kanpur Bolshevik Case"], ans: 0 },
+      { id: 155, q: "Match the following trials:\nChittagong Armed Raid | Kanpur Conspiracy Case | Lahore Conspiracy Case | Meerut Conspiracy Case", options: ["A) 1, 2, 3, 4", "B) 3, 1, 4, 2", "C) 4, 3, 2, 1", "D) 2, 4, 1, 3"], ans: 1 },
+      { id: 156, q: "Revolutionary movement mainly focuses on:", options: ["A) Reverse the current trends", "B) Complete obedience to law", "C) Constitutional prayer", "D) International arbitration"], ans: 0 },
+      { id: 157, q: "Aurobindo Ghosh was defended in the Alipore Bomb Case by:", options: ["A) C. R. Das", "B) Tej Bahadur Sapru", "C) Rash Behari Ghosh", "D) Motilal Nehru"], ans: 0 },
+      { id: 158, q: "In the Saunders Murder Case, who were executed in Lahore Jail on 23 March 1931?", options: ["A) Bhagat Singh, Raj Guru and Sukhdev", "B) Udham Singh", "C) Madan Lal Dhingra", "D) Kartar Singh Sarabha"], ans: 0 },
+      { id: 159, q: "Match treaties with years:\nTreaty of Mangalore — 1784; Treaty of Paris — 1783; Treaty of Srirangapatnam — 1792; Treaty of Allahabad — 1765.", options: ["A) 1, 2, 3, 4", "B) 4, 3, 2, 1", "C) 2, 1, 4, 3", "D) 3, 4, 1, 2"], ans: 1 },
+      { id: 160, q: "British Government indirectly helped Indians in their upliftment through which of the following?\nI. Open schools everywhere | II. Starting new industries | III. Establishing new churches | IV. Establishing transport", options: ["A) I, II and III", "B) I, II and IV", "C) II and IV only", "D) All are true"], ans: 1 },
+      { id: 161, q: "Name the policy of Lord Warren Hastings to create buffer zones to protect the Company's borders.", options: ["A) Ring Fence Policy", "B) Doctrine of Lapse", "C) Subsidiary Alliance", "D) Policy of Masterly Inactivity"], ans: 0 },
+      { id: 162, q: "“What fifty thousand well-equipped soldiers could not do, the Mahatma has done—he has brought peace. He is one-man boundary force.” Who said this?", options: ["A) Lord Wavell", "B) Lord Mountbatten", "C) Winston Churchill", "D) Clement Attlee"], ans: 1 },
+      { id: 163, q: "The first fort constructed by the British in India was:", options: ["A) Fort William", "B) Fort St. George", "C) Fort St. David", "D) Fort St. Angelo"], ans: 1 },
+      { id: 164, q: "The Small Scale Industry of India was ruined due to the attitude of the Britishers. Reason: Declaration of free trade policy in 1833.", options: ["A) Both A and R are true, and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, R false", "D) A false, R true"], ans: 0 },
+      { id: 165, q: "Macaulay argued for Western education in English. Reason: He intended to educate Indians through English rather than Sanskrit or Persian.", options: ["A) Both A and R are true, and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, R false", "D) Both false"], ans: 0 },
+      { id: 166, q: "Education under British rule can be divided into which four periods?", options: ["A) 1, 2, 3 and 4", "B) 1 and 2 only", "C) 2 and 3 only", "D) 3 and 4 only"], ans: 0 },
+      { id: 167, q: "Mahalwari system was introduced by William Bentinck; introduced in 1833; village community was responsible for tax collection. Which are correct?", options: ["A) (i) and (ii)", "B) (ii) and (iv)", "C) (i), (ii) and (iv)", "D) All are correct"], ans: 2 },
+      { id: 168, q: "The practice of Sati was declared “legal and punishable” by:", options: ["A) Lord Dalhousie", "B) Lord William Bentinck", "C) Lord Wellesley", "D) Lord Cornwallis"], ans: 1 },
+      { id: 169, q: "Which statements regarding A.O. Hume are correct?", options: ["A) (i) and (ii) only", "B) (i), (ii) and (iii)", "C) (i), (ii), (iii) and (iv)", "D) (ii) and (iv) only"], ans: 2 },
+      { id: 170, q: "Which Governor under British rule was called the “Continental Emperor”?", options: ["A) Robert Clive", "B) Dupleix", "C) Warren Hastings", "D) Lord Wellesley"], ans: 1 },
+      { id: 171, q: "Who started the Zamindari system?", options: ["A) Lord Cornwallis", "B) Lord Dalhousie", "C) Sir Thomas Munro", "D) Warren Hastings"], ans: 0 },
+      { id: 172, q: "Who was the British Prime Minister who announced the Communal Award on 17 August 1932?", options: ["A) Ramsay MacDonald", "B) Stanley Baldwin", "C) Winston Churchill", "D) Clement Attlee"], ans: 0 },
+      { id: 173, q: "In which place did Lord Canning publish the Queen's Proclamation of 1858?", options: ["A) Calcutta", "B) Allahabad", "C) Delhi", "D) Bombay"], ans: 1 },
+      { id: 174, q: "The system in which the whole village was treated as a unit for payment of land revenue was:", options: ["A) Ryotwari System", "B) Zamindari System", "C) Mahalwari System", "D) Jagirdari System"], ans: 2 },
+      { id: 175, q: "Victoria Memorial Hall at Calcutta was constructed during the regime of:", options: ["A) Lord Ripon", "B) Lord Curzon", "C) Lord Minto", "D) Lord Hardinge"], ans: 1 },
+      { id: 176, q: "Zamindari system in India was introduced by:", options: ["A) Lord Cornwallis", "B) Lord Wellesley", "C) Lord Hastings", "D) Lord Bentinck"], ans: 0 },
+      { id: 177, q: "The policy of British rule in India was:", options: ["A) Divide and Rule", "B) Democratic Decentralization", "C) Complete Assimilation", "D) Industrial Autonomy"], ans: 0 },
+      { id: 178, q: "Who announced the August Offer in 1940?", options: ["A) Lord Linlithgow", "B) Lord Wavell", "C) Lord Mountbatten", "D) Sir Stafford Cripps"], ans: 0 },
+      { id: 179, q: "Under which system was ownership of land maintained by a collective body, usually the villagers?", options: ["A) Mahalwari System", "B) Ryotwari System", "C) Zamindari System", "D) Inamdari System"], ans: 0 },
+      { id: 180, q: "The Reformation in England was started not by theologians, but by the king:", options: ["A) Henry VIII", "B) Charles I", "C) James I", "D) Edward VI"], ans: 0 },
+      { id: 181, q: "If the Battle of Plassey was considered the beginning of British rule, by which battle did they complete the conquest of India?", options: ["A) Battle of Buxar", "B) Battle of Yandaboo", "C) Third Anglo-Maratha Battle", "D) Second Anglo-Sikh War"], ans: 1 },
+      { id: 182, q: "“Every registered land holder is its proprietor.” This system is called:", options: ["A) Ryotwari System", "B) Zamindari System", "C) Mahalwari System", "D) Taluqdari System"], ans: 0 },
+      { id: 183, q: "The Ryotwari system was an innovation of:", options: ["A) Sir Thomas Munro", "B) Lord Cornwallis", "C) Holt Mackenzie", "D) James Thomson"], ans: 0 },
+      { id: 184, q: "Lord Cornwallis introduced the:", options: ["A) Zamindari System", "B) Ryotwari System", "C) Mahalwari System", "D) Subsidiary Alliance"], ans: 0 },
+      { id: 185, q: "In December 1912, a bomb was thrown at ______ at Chandni Chowk, Delhi.", options: ["A) Lord Hardinge", "B) Lord Minto", "C) Lord Chelmsford", "D) Lord Curzon"], ans: 0 },
+      { id: 186, q: "Which Viceroy was mainly responsible for the clashes between the Moderates and the Extremists?", options: ["A) Lord Curzon", "B) Lord Ripon", "C) Lord Dufferin", "D) Lord Lansdowne"], ans: 0 },
+      { id: 187, q: "Who among the following started the Mitra Mela Association?", options: ["A) Vinayak Damodar Savarkar", "B) Barindra Kumar Ghosh", "C) Lala Har Dayal", "D) Madam Cama"], ans: 0 },
+      { id: 188, q: "Acharya Vinoba Bhave was born on:", options: ["A) 11 September 1895", "B) 2 October 1893", "C) 15 August 1890", "D) 14 November 1892"], ans: 0 },
+      { id: 189, q: "Choose the wrong match:\nV.D. Savarkar — Abhinav Bharat; Lala Hardayal — Ghadar Party; Khan Abdul Ghaffar Khan — Al-Hilal; Bharath Matha Association — Vanchinathan.", options: ["A) V.D. Savarkar — Abhinav Bharat", "B) Lala Hardayal — Ghadar Party", "C) Khan Abdul Ghaffar Khan — Al-Hilal", "D) Bharath Matha Association — Vanchinathan"], ans: 2 },
+      { id: 190, q: "Which of the following is not correctly matched?\nDadabhai Naoroji — East India Association; Savitribai Phule — Servants of India Society; Surendranath Banerjee — Indian Association; A.O. Hume — Indian National Congress.", options: ["A) Dadabhai Naoroji — East India Association", "B) Savitribai Phule — Servants of India Society", "C) Surendranath Banerjee — Indian Association", "D) A.O. Hume — Indian National Congress"], ans: 1 },
+      { id: 191, q: "Who wrote Poverty and Un-British Rule in India?", options: ["A) R.C. Dutt", "B) Dadabhai Naoroji", "C) M.G. Ranade", "D) Dinshaw Wacha"], ans: 1 },
+      { id: 192, q: "Who described Gopal Krishna Gokhale as the “Diamond of India, Jewel of Maharashtra and Prince of Workers”?", options: ["A) Bal Gangadhar Tilak", "B) Mahatma Gandhi", "C) Lala Lajpat Rai", "D) B.C. Pal"], ans: 1 },
+      { id: 193, q: "Which of the following statements are true about Khan Abdul Ghaffar Khan?\n1. Pashtun leader | 2. Known as Badshah Khan | 3. Known as Frontier Gandhi | 4. Founder of Khudai Khidmatgars", options: ["A) 1 and 2 only", "B) 2 and 3 only", "C) 1, 2, 3 and 4", "D) 3 and 4 only"], ans: 2 },
+      { id: 194, q: "Who said that British imperialism gave India political unity despite the many discordant elements in Indian society?", options: ["A) M.G. Ranade", "B) Surendranath Banerjee", "C) Dadabhai Naoroji", "D) Sir Syed Ahmed Khan"], ans: 0 },
+      { id: 195, q: "Who organised the Madras Youth League, a pro-Congress organisation?", options: ["A) Krishnabhai Nimbkar", "B) Rukmini Lakshmipathi", "C) Ambujammal", "D) Muthulakshmi Reddy"], ans: 0 },
+      { id: 196, q: "Who was possibly the first Indian writer to write about Socialism and Bolshevism?", options: ["A) M.N. Roy", "B) Lala Lajpat Rai", "C) Jawaharlal Nehru", "D) B.C. Pal"], ans: 1 },
+      { id: 197, q: "Rast Goftar, an Anglo-Gujarati newspaper started by Dadabhai Naoroji, means:", options: ["A) Truth Teller", "B) Voice of India", "C) Nation's Call", "D) Light of Truth"], ans: 0 },
+      { id: 198, q: "In 1946, who said that if the Indian National Congress came to power, Bengal would declare complete independence and set up a parallel government?", options: ["A) H.S. Suhrawardy", "B) A.K. Fazlul Huq", "C) Khwaja Nazimuddin", "D) Liaquat Ali Khan"], ans: 0 },
+      { id: 199, q: "Who was elected as the first Indian Member to the British House of Commons?", options: ["A) Dadabhai Naoroji", "B) W.C. Banerjee", "C) Lalmohan Ghosh", "D) Sir Pherozeshah Mehta"], ans: 0 },
+      { id: 200, q: "Vallabhbhai Patel was bestowed the title “Sardar” by the peasants of:", options: ["A) Kheda", "B) Bardoli", "C) Borsad", "D) Champaran"], ans: 1 },
+      { id: 201, q: "Arrange the following events in chronological order:\n(i) British India Society founded by Dadabhai Naoroji\n(ii) Dadabhai Naoroji elected to British House of Commons\n(iii) President of 22nd Calcutta Congress Session\n(iv) President of 9th Lahore Congress Session", options: ["A) (i), (ii), (iv), (iii)", "B) (ii), (i), (iii), (iv)", "C) (i), (iv), (ii), (iii)", "D) (iv), (i), (ii), (iii)"], ans: 0 },
+      { id: 202, q: "Who was a doctor who organised underground activities and even operated a wireless station during the Quit India Movement?", options: ["A) Krishna Bai Nimbkar", "B) Usha Mehta", "C) Aruna Asaf Ali", "D) Sucheta Kripalani"], ans: 0 },
+      { id: 203, q: "With regard to the Rae Bareilly Peasant Movement, which statements are true?\n1. Peasants treated as serfs\n2. Non-Cooperation provided impetus to rebels\n3. Took place in Madhya Pradesh", options: ["A) 1 and 2 only", "B) 2 and 3 only", "C) 1 and 3 only", "D) All are true"], ans: 0 },
+      { id: 204, q: "Who was the founder of the Swaraj Party?", options: ["A) Chittaranjan Das and Motilal Nehru", "B) Jawaharlal Nehru and Subhas Chandra Bose", "C) C. Rajagopalachari and Vallabhbhai Patel", "D) Lala Lajpat Rai and B.C. Pal"], ans: 0 },
+      { id: 205, q: "The Servants of India Society was founded by:", options: ["A) Bal Gangadhar Tilak", "B) Gopal Krishna Gokhale", "C) Lala Lajpat Rai", "D) M.G. Ranade"], ans: 1 },
+      { id: 206, q: "Which great Indian leader is known as the “Bismarck of India” for his services to India?", options: ["A) Sardar Vallabhbhai Patel", "B) Subhas Chandra Bose", "C) Jawaharlal Nehru", "D) B.R. Ambedkar"], ans: 0 },
+      { id: 207, q: "The Provincial Autonomy was the main recommendation of whom?", options: ["A) Gopal Krishna Gokhale", "B) Dadabhai Naoroji", "C) Bal Gangadhar Tilak", "D) Pherozeshah Mehta"], ans: 0 },
+      { id: 208, q: "Who was the second woman President of the Indian National Congress?", options: ["A) Annie Besant", "B) Sarojini Naidu", "C) Nalie Sengupta", "D) Indira Gandhi"], ans: 1 },
+      { id: 209, q: "Who was the founder and editor of the journals Punjabee, Bande Mataram and the English weekly The People?", options: ["A) Lala Lajpat Rai", "B) Bipin Chandra Pal", "C) Bal Gangadhar Tilak", "D) Ajit Singh"], ans: 0 },
+      { id: 210, q: "Assertion: Dadabhai Naoroji organised the East India Association in London.\nReason: He wanted to influence British public opinion.", options: ["A) Both A and R are true, and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, R false", "D) Both false"], ans: 0 },
+      { id: 211, q: "Who laid the foundation of Radhakrishna High School at Jagraon in 1914?", options: ["A) Lala Lajpat Rai", "B) Lala Hansraj", "C) Swami Shraddhanand", "D) Bhai Parmanand"], ans: 0 },
+      { id: 212, q: "The Arya Mahila Samaj at Poona in 1882 was founded by:", options: ["A) Pandita Ramabai", "B) Savitribai Phule", "C) Tarabai Shinde", "D) Anandibai Joshi"], ans: 0 },
+      { id: 213, q: "The famous patriotic song “Sare Jahan Se Acha” was composed by:", options: ["A) Rabindranath Tagore", "B) Mohammed Iqbal", "C) Kazi Nazrul Islam", "D) Bankim Chandra Chattopadhyay"], ans: 1 },
+      { id: 214, q: "The National Social Conference was organised by:", options: ["A) M.G. Ranade", "B) Raja Ram Mohan Roy", "C) Gopal Krishna Gokhale", "D) Behramji Malabari"], ans: 0 },
+      { id: 215, q: "Lala Lajpat Rai died on:", options: ["A) 17 November 1928", "B) 30 October 1928", "C) 23 March 1931", "D) 1 August 1920"], ans: 0 },
+      { id: 216, q: "Who was called by Valentine Chirol the “Father of Indian Unrest”?", options: ["A) Bal Gangadhar Tilak", "B) Bipin Chandra Pal", "C) Lala Lajpat Rai", "D) Aurobindo Ghose"], ans: 0 },
+      { id: 217, q: "Stri Purush Tulana was written and published by:", options: ["A) Tarabai Shinde", "B) Pandita Ramabai", "C) Savitribai Phule", "D) Begum Rokeya"], ans: 0 },
+      { id: 218, q: "Name the female speaker at the Congress Radio who possessed a startlingly rich voice and sharp expression.", options: ["A) Usha Mehta", "B) Aruna Asaf Ali", "C) Sucheta Kripalani", "D) Kalpana Datta"], ans: 0 },
+      { id: 219, q: "Iswar Chandra Gupta’s remarkable journal, which was the training ground of many distinguished writers, was:", options: ["A) Samvad Prabhakar", "B) Tattwabodhini Patrika", "C) Som Prakash", "D) Bengal Gazette"], ans: 0 },
+      { id: 220, q: "Match the publications:\nNew India | The People’s Friend | Vande Mataram | Rast Goftar", options: ["A) 1, 2, 3, 4", "B) 2, 4, 1, 3", "C) 3, 1, 4, 2", "D) 4, 3, 2, 1"], ans: 1 },
+      { id: 221, q: "Dadabhai Naoroji organised the East India Association in London. Why?", options: ["A) To influence British public opinion", "B) To train Indian civil servants", "C) To raise armed revolution funds", "D) To lobby the Queen directly"], ans: 0 },
+      { id: 222, q: "Who laid the foundation of Radhakrishna High School at Jagraon in 1914?", options: ["A) Lala Lajpat Rai", "B) Lala Hansraj", "C) Bhagat Singh", "D) Ajit Singh"], ans: 0 },
+      { id: 223, q: "Who founded the Arya Mahila Samaj at Poona in 1882?", options: ["A) Pandita Ramabai", "B) Savitribai Phule", "C) Tarabai Shinde", "D) Ramabai Ranade"], ans: 0 },
+      { id: 224, q: "Who composed the patriotic song “Sare Jahan Se Acha”?", options: ["A) Mohammed Iqbal", "B) Faiz Ahmad Faiz", "C) Hasrat Mohani", "D) Josh Malihabadi"], ans: 0 },
+      { id: 225, q: "The National Social Conference was organised by whom?", options: ["A) M.G. Ranade", "B) D.K. Karve", "C) B.G. Tilak", "D) Jyotirao Phule"], ans: 0 },
+      { id: 226, q: "Lala Lajpat Rai died on:", options: ["A) 17 November 1928", "B) 31 December 1929", "C) 15 August 1928", "D) 26 January 1930"], ans: 0 },
+      { id: 227, q: "Who was called the “Father of Indian Unrest” by Valentine Chirol?", options: ["A) Bal Gangadhar Tilak", "B) V.D. Savarkar", "C) Aurobindo Ghose", "D) Lala Lajpat Rai"], ans: 0 },
+      { id: 228, q: "Stri Purush Tulana was written and published by:", options: ["A) Tarabai Shinde", "B) Anandibai Joshi", "C) Pandita Ramabai", "D) Sarojini Naidu"], ans: 0 },
+      { id: 229, q: "Who was the female speaker at the Congress Radio known for her rich voice and sharp expression?", options: ["A) Usha Mehta", "B) Aruna Asaf Ali", "C) Sucheta Kripalani", "D) Matangini Hazra"], ans: 0 },
+      { id: 230, q: "Iswar Chandra Gupta’s remarkable journal, which was a training ground for many distinguished writers, was:", options: ["A) Samvad Prabhakar", "B) Bangadarshan", "C) Sulabh Samachar", "D) Sanjivani"], ans: 0 },
+      { id: 231, q: "Match correctly:\nNew India — Bipin Chandra Pal | The People’s Friend — A.O. Hume | Vande Mataram — Lala Lajpat Rai | Rast Goftar — Dadabhai Naoroji", options: ["A) 1, 2, 3, 4", "B) 2, 4, 1, 3", "C) 3, 1, 4, 2", "D) 4, 2, 1, 3"], ans: 1 },
+      { id: 232, q: "Match correctly:\nBal Gangadhar Tilak — Kesari | Dadabhai Naoroji — Rast Goftar | Macaulay — Minute on Indian Education | William Digby — Madras Time", options: ["A) 1, 2, 3, 4", "B) 3, 1, 4, 2", "C) 2, 4, 1, 3", "D) 4, 3, 2, 1"], ans: 1 },
+      { id: 233, q: "Which pair is incorrect?\nI. Gopala Krishna Gokhale — G.A. Natesan\nII. Vijaya Raghavachari — Lala Lajpat Rai\nIII. V.O. Chidambaram — Subramaniya Siva\nIV. T. Rengachari — V.S. Srinivasa Sastri", options: ["A) I only", "B) II only", "C) III only", "D) IV only"], ans: 3 },
+      { id: 234, q: "Who was regarded as “Moksha Guru” by Bal Gangadhar Tilak?", options: ["A) Anna Sahib", "B) Swami Vivekananda", "C) Ramakrishna Paramahamsa", "D) Dadabhai Naoroji"], ans: 0 },
+      { id: 235, q: "Who was the founder of the Abhinav Bharat Society?", options: ["A) Ganesh Damodar Savarkar", "B) V.D. Savarkar", "C) Lala Har Dayal", "D) Shyamji Krishna Varma"], ans: 0 },
+      { id: 236, q: "Who was considered the “Father of Indian Uprising”?", options: ["A) Bal Gangadhar Tilak", "B) B.C. Pal", "C) Lala Lajpat Rai", "D) Subhas Chandra Bose"], ans: 0 },
+      { id: 237, q: "The Shivaji Movement was started in 1895 by:", options: ["A) Bal Gangadhar Tilak", "B) M.G. Ranade", "C) Jyotirao Phule", "D) Gopal Krishna Gokhale"], ans: 0 },
+      { id: 238, q: "Which statements are true about Allan Octavian Hume?\n(i) Father of Indian National Congress\n(ii) An eminent economist\n(iii) President of Lahore Session in 1893", options: ["A) (i) only", "B) (ii) only", "C) (i) and (iii)", "D) All are true"], ans: 0 },
+      { id: 239, q: "The Drain Theory about poverty in India is associated with:", options: ["A) Dadabhai Naoroji", "B) R.C. Dutt", "C) M.G. Ranade", "D) G.K. Gokhale"], ans: 0 },
+      { id: 240, q: "“In a domestic Government, unity and co-operation are essential requisites” — who said this?", options: ["A) Sardar Vallabhbhai Patel", "B) Jawaharlal Nehru", "C) Mahatma Gandhi", "D) Dr. Rajendra Prasad"], ans: 0 },
+      { id: 241, q: "The Ghadar Party was formed by Lala Har Dayal in 1913 in:", options: ["A) America", "B) Germany", "C) England", "D) Canada"], ans: 0 },
+      { id: 242, q: "Who was the editor of the journal Bharat Mata?", options: ["A) Sufi Amba Prasad", "B) Ajit Singh", "C) Lala Lajpat Rai", "D) Kartar Singh Sarabha"], ans: 0 },
+      { id: 243, q: "Poverty and Un-British Rule in India was written by:", options: ["A) Dadabhai Naoroji", "B) Romesh Chunder Dutt", "C) Dinshaw Wacha", "D) William Digby"], ans: 0 },
+      { id: 244, q: "Which of the following is not associated with Gopal Krishna Gokhale?", options: ["A) Servants of India Society", "B) Imperial Legislative Council speeches", "C) Monthly Magazine – Voice of India", "D) Political mentor to Gandhi"], ans: 2 },
+      { id: 245, q: "Who was acclaimed as the “Diamond of India” due to his invaluable services to the nation?", options: ["A) Gopal Krishna Gokhale", "B) Bal Gangadhar Tilak", "C) Dadabhai Naoroji", "D) Lala Lajpat Rai"], ans: 0 },
+      { id: 246, q: "Who was the editor of The Hindustan Review, an English monthly magazine published by the Indian Press in Allahabad?", options: ["A) Sachchidananda Sinha", "B) Motilal Nehru", "C) Tej Bahadur Sapru", "D) Madan Mohan Malaviya"], ans: 0 },
+      { id: 247, q: "Which victory did Lokmanya Tilak write about in his papers Kesari and Mahratta?", options: ["A) The success of the Swadeshi Navigation Company", "B) Coral Mill Strike victory", "C) Boycott of foreign cloth in Bombay", "D) Victory in council elections"], ans: 0 },
+      { id: 248, q: "Who was called the “Iron Man of India”?", options: ["A) Sardar Vallabhbhai Patel", "B) Subhas Chandra Bose", "C) B.R. Ambedkar", "D) Bhagat Singh"], ans: 0 },
+      { id: 249, q: "Which day was named to celebrate the release of Bipin Chandra Pal by the Swadeshi leader of Tamil Nadu?", options: ["A) Swarajya Day", "B) Freedom Day", "C) Vandemataram Day", "D) Raksha Bandhan Day"], ans: 0 },
+      { id: 250, q: "Which statement is incorrect regarding Gopal Krishna Gokhale?", options: ["A) Statement 4 is incorrect — Gandhi did not describe Gokhale as “Diamond of India, Jewel of Maharashtra and Prince of Workers.”", "B) Founded Servants of India Society", "C) Member of Imperial Legislative Council", "D) Visited South Africa on Gandhi's invitation"], ans: 0 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(250, parseInt(customCountInput.value) || 25));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 30;
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : ""} (30s / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 250) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 30;
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const m = Math.floor(secs / 60);
+      const s = secs % 60;
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time is up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! High proficiency across Indian National Movement & Tamil Nadu Leaders.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review key publications, societies, and navigation history to boost accuracy.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive revision of modern Indian history and leaders recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Original #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+</html>

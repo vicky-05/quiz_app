@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern Indian History & National Movement — 100 MCQ Practice Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select, .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Modern Indian History &mdash; Q1 to Q100</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Automated exam pacing: <strong>30 seconds per question</strong> allocated based on your selected count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–100)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="100">All Questions (100 Questions)</option>
+            <option value="10">10 Questions</option>
+            <option value="25">25 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="75">75 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 100)</label>
+          <input type="number" id="custom-count-input" min="1" max="100" value="25" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">50 min 0 sec (30s / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#9678;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">General Studies</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#128196;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Indian History</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 100</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">50:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "Which European nation came to India at first?", options: ["A) Portugal", "B) Netherlands", "C) England", "D) France"], ans: 0 },
+      { id: 2, q: "The Reformation in England was started not by the theologians, but by the king. Who was he?", options: ["A) Henry VIII", "B) Charles I", "C) James I", "D) Edward VI"], ans: 0 },
+      { id: 3, q: "Who first brought Christian faith into South India?", options: ["A) St. Francis Xavier", "B) St. Thomas", "C) Robert de Nobili", "D) Bartholomew Ziegenbalg"], ans: 1 },
+      { id: 4, q: "Which Governor under British rule was called the “Continental Emperor”?", options: ["A) Robert Clive", "B) Dupleix", "C) Warren Hastings", "D) Lord Wellesley"], ans: 1 },
+      { id: 5, q: "Foreign accounts called Muziris the “First Emporium of India.” Which account?", options: ["A) Natural History", "B) Periplus of the Erythraean Sea", "C) Geography by Ptolemy", "D) Indica"], ans: 0 },
+      { id: 6, q: "The Own Account Workers Phenomenon is referred to as:", options: ["A) Self-exploitation", "B) Formalisation of labour", "C) Wage dependency", "D) Disguised employment"], ans: 0 },
+      { id: 7, q: "Ziegenbalg's remarkable contribution was the translation of:", options: ["A) The Old and New Testament", "B) Tirukkural", "C) Tolkappiyam", "D) Bhagavad Gita"], ans: 0 },
+      { id: 8, q: "Who established a full-fledged printing press in 1709 at Tranquebar?", options: ["A) Ziegenbalg", "B) Robert de Nobili", "C) Constantine Joseph Beschi", "D) William Carey"], ans: 0 },
+      { id: 9, q: "The first fort constructed by the British in India was:", options: ["A) Fort William", "B) Fort St. George", "C) Fort St. David", "D) Fort St. Angelo"], ans: 1 },
+      { id: 10, q: "Lord Warren Hastings' policy to create buffer zones to protect the Company's borders was called:", options: ["A) Ring Fence Policy", "B) Subsidiary Alliance", "C) Doctrine of Lapse", "D) Masterly Inactivity"], ans: 0 },
+      { id: 11, q: "From 1757 to 1833, India witnessed which of the following?\n- Different regions began to draw closer\n- Old social hierarchy began to disintegrate\n- Caste system tended to relax\n- Village economy lost its self-sufficiency and isolation", options: ["A) Different regions began to draw closer", "B) Old social hierarchy began to disintegrate", "C) Village economy lost isolation only", "D) All the above"], ans: 3 },
+      { id: 12, q: "Match the treaties with the years:\n(a) Treaty of Mangalore — 1784\n(b) Treaty of Paris — 1783\n(c) Treaty of Srirangapatnam — 1792\n(d) Treaty of Allahabad — 1765", options: ["A) 1, 2, 3, 4", "B) 4, 3, 2, 1", "C) 2, 1, 4, 3", "D) 3, 4, 1, 2"], ans: 1 },
+      { id: 13, q: "Match the following:\n(a) Ryotwari System — 1790\n(b) Third Mysore War — 1790\n(c) Wood's Dispatch — 1854\n(d) Hunter Commission — 1882", options: ["A) 1, 2, 3, 4", "B) 3, 1, 4, 2", "C) 4, 2, 1, 3", "D) 2, 4, 3, 1"], ans: 1 },
+      { id: 14, q: "______ was the first Anglican church built in India.", options: ["A) St. Mary's Church", "B) St. George's Cathedral", "C) All Saints Church", "D) San Thome Church"], ans: 0 },
+      { id: 15, q: "Assertion: Roberto-de-Nobili was considered the father of Tamil prose.\nReason: Portuguese sent Roman Catholic priests who converted thousands of fishermen to Catholicism.", options: ["A) Both A and R are true, and R explains A", "B) Both A and R are false", "C) A is true, but R is false", "D) A is false, but R is true"], ans: 2 },
+      { id: 16, q: "What was the chief outcome of the Santhals Rebellion of 1855?", options: ["A) The Bengal Tenancy Act was passed", "B) Creation of separate state of Jharkhand", "C) Complete abolition of British taxation", "D) Santhals were made permanent landlords"], ans: 0 },
+      { id: 17, q: "What were the main causes for tribal revolts against the British?\nI. Extension of British rule to their areas\nII. Penetration of others supported by the British\nIII. Recruitment of unpaid labour for manual work\nIV. Isolated nature of the tribals", options: ["A) I and II only", "B) II and III only", "C) I, II and III", "D) All of the above"], ans: 2 },
+      { id: 18, q: "The Moplah Rebellion of 1921 broke out in:", options: ["A) Tamil Nadu", "B) Kerala", "C) Andhra Pradesh", "D) Karnataka"], ans: 1 },
+      { id: 19, q: "What is Damin-i-koh in the Rajmahal area?", options: ["A) A military garrison", "B) Place of the Santhal tribes", "C) British indigo factory", "D) Forest timber reservation"], ans: 1 },
+      { id: 20, q: "Assertion: The first uprising against alien rule broke out in Bengal in 1770.\nReason: The main cause was destructive famine and exploitation of the farmers.", options: ["A) Both A and R are true, and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, but R is false", "D) A is false, but R is true"], ans: 0 },
+      { id: 21, q: "Damin-i-koh was the land given by the British to the:", options: ["A) Santhal tribes", "B) Munda tribes", "C) Gond tribes", "D) Bhil tribes"], ans: 0 },
+      { id: 22, q: "Name the major tribal revolt that took place in the Chotanagpur region.", options: ["A) Kol Revolt", "B) Bhil Uprising", "C) Rampa Rebellion", "D) Khasi Rebellion"], ans: 0 },
+      { id: 23, q: "Who declared that “Land belongs to God” and collecting rent or tax on it was against divine law?", options: ["A) Haji Shariatullah", "B) Dudu Mian", "C) Titu Mir", "D) Birsa Munda"], ans: 1 },
+      { id: 24, q: "The theme of the play ‘Neel Darpan’ is:", options: ["A) Plight of Plantation Workers", "B) Sati practice", "C) Widow remarriage struggle", "D) Sepoy discontent"], ans: 0 },
+      { id: 25, q: "Which tribal uprising is known as ‘Ulgulan’?", options: ["A) Santhal Rebellion", "B) Kol Revolt", "C) Munda Rebellion", "D) Ahom Revolt"], ans: 2 },
+      { id: 26, q: "Nil Darpan, a play portraying Indigo planters' oppression, was written by:", options: ["A) Dinabandhu Mitra", "B) Bankim Chandra Chattopadhyay", "C) Michael Madhusudan Dutt", "D) Rabindranath Tagore"], ans: 0 },
+      { id: 27, q: "Who drew the attention of the British to the suffering of Indigo cultivators through his play Nil Darpan?", options: ["A) Dinabandhu Mitra", "B) Sisir Kumar Ghosh", "C) Harish Chandra Mukherjee", "D) Keshub Chandra Sen"], ans: 0 },
+      { id: 28, q: "Which of the following pairs is wrongly matched?\n(I) Ramosis — Poona\n(II) Kuka — Punjab\n(III) Santhals — Orissa\n(IV) Kittur — Malabar", options: ["A) (I) and (II) only", "B) (II) and (III) only", "C) (III) and (IV) only", "D) (I) and (IV) only"], ans: 2 },
+      { id: 29, q: "Match the following tribal uprisings with their associated places:\n(a) Khasi Rising, 1829 — Jaintia and Garo Hills\n(b) Kol Rising, 1830 — Chota Nagpur\n(c) Khonda Rising, 1846 — Hill tracts of Bengal, Central Provinces and Madras\n(d) Santhal Insurrection, 1855–56 — Eastern India", options: ["A) 1, 2, 3, 4", "B) 4, 1, 2, 3", "C) 3, 4, 1, 2", "D) 2, 3, 4, 1"], ans: 1 },
+      { id: 30, q: "Whose birth anniversary is celebrated as Janjatiya Gaurav Divas (Tribal Pride Day)?", options: ["A) Sidhu Murmu", "B) Birsa Munda", "C) Kanhu Murmu", "D) Tirath Singh"], ans: 1 },
+      { id: 31, q: "Sidhu and Kanhu are associated with which revolt?", options: ["A) Kol Uprising", "B) Santhal Rebellion", "C) Munda Rebellion", "D) Rampa Rebellion"], ans: 1 },
+      { id: 32, q: "Which military General suppressed the Vellore Mutiny?", options: ["A) Sir Eyre Coote", "B) George Carmichael Smyth", "C) Colonel Gillespie", "D) General Lake"], ans: 1 },
+      { id: 33, q: "Which of the following were the causes for the outbreak of the Vellore Mutiny in 1806?", options: ["A) No promotion, poor salary, new turban, cartridges and clean shaving", "B) Annexation of Awadh and high land tax", "C) Overseas service compulsion and greased cartridges", "D) Imposition of income tax and judicial interference"], ans: 0 },
+      { id: 34, q: "In 1806, which historical event started at Vellore?", options: ["A) Sepoy Mutiny", "B) Vellore Mutiny", "C) Poligar War", "D) Barrackpore Mutiny"], ans: 1 },
+      { id: 35, q: "Arrange chronologically:\n(1) Vellore Mutiny\n(2) Execution of Kattabomman\n(3) Palani Conspiracy\n(4) Treaty of Pondicherry", options: ["A) 1, 2, 3, 4", "B) 4, 3, 2, 1", "C) 2, 3, 1, 4", "D) 3, 4, 2, 1"], ans: 1 },
+      { id: 36, q: "Name the earliest and best-known mutiny before the Revolt of 1857.", options: ["A) Barrackpore Revolt of 1824", "B) Indian Soldiers' Mutiny at Vellore (1806)", "C) Paika Rebellion (1817)", "D) Poligar Rebellion"], ans: 1 },
+      { id: 37, q: "Which statement is NOT TRUE about the consequences of the Vellore Revolt?", options: ["A) Tipu's family was shifted to Calcutta", "B) Sir John Cradock was recalled", "C) William Bentinck was recalled", "D) The new military regulations were continued to be implemented"], ans: 3 },
+      { id: 38, q: "Which statements are true regarding the Vellore Mutiny?\n(i) The Mutiny lasted for eight hours.\n(ii) The Mutiny lost its importance due to local treachery.\n(iii) After the Mutiny, Tipu's family was transferred to Madras.\n(iv) The British captured more than 2,000 Indian soldiers.", options: ["A) (i) and (iii) only", "B) (ii) and (iii) only", "C) (i), (ii) and (iv) only", "D) All are true"], ans: 2 },
+      { id: 39, q: "Vellore Mutiny was started in the year:", options: ["A) 1801", "B) 1806", "C) 1812", "D) 1857"], ans: 1 },
+      { id: 40, q: "Which statements are true about the Vellore Mutiny?\n1. Sir John Cradock was Commander-in-Chief of Chennai Army\n2. Sir George Barlow was Governor of Chennai\n3. Lord William Bentinck was Governor-General of India\n4. Major Payers was appointed Discipline Trainer for soldiers", options: ["A) 1 and 4 only", "B) 2 and 3 only", "C) 1, 2 and 3", "D) 2 and 4 only"], ans: 0 },
+      { id: 41, q: "Which statement is incorrect regarding the Revolt of 1857?", options: ["A) Began at Meerut on May 10, 1857", "B) Bahadur Shah II was proclaimed Emperor", "C) The peasants participated largely in the 1857 Mutiny", "D) Nana Sahib led the revolt in Kanpur"], ans: 2 },
+      { id: 42, q: "The first spark of the Sepoy Mutiny of 1857 was found at:", options: ["A) Meerut", "B) Barrackpore", "C) Delhi", "D) Lucknow"], ans: 1 },
+      { id: 43, q: "Give the correct chronological order:\nI. Revolt of Mangal Pandey\nII. Vellore Mutiny\nIII. Defeat of Jhansi Rani\nIV. Mutiny at Meerut", options: ["A) I, II, III, IV", "B) II, I, IV, III", "C) II, IV, I, III", "D) I, IV, II, III"], ans: 1 },
+      { id: 44, q: "British historians called the Revolt of 1857 as:", options: ["A) First War of Independence", "B) Great National Uprising", "C) Sepoy Mutiny", "D) War of Indian Emancipation"], ans: 2 },
+      { id: 45, q: "On 29 March 1857, who was hanged?", options: ["A) Ishwar Pande", "B) Mangal Pandey", "C) Tantia Tope", "D) Bakht Khan"], ans: 1 },
+      { id: 46, q: "Why did Nana Sahib develop a grudge against the British?", options: ["A) His estate was confiscated", "B) His pension was rejected", "C) He was exiled from Bithoor", "D) His adoption was derecognized"], ans: 1 },
+      { id: 47, q: "Which statement is incorrect regarding the 1857 Mutiny?", options: ["A) Bahadur Shah II was exiled to Rangoon", "B) Rani of Jhansi was killed in battle", "C) The peasants participated largely in the 1857 Mutiny", "D) Kunwar Singh led the rebellion in Bihar"], ans: 2 },
+      { id: 48, q: "The first spark of the Sepoy Mutiny of 1857 was found at:", options: ["A) Delhi", "B) Kanpur", "C) Barrackpore", "D) Ambala"], ans: 2 },
+      { id: 49, q: "Arrange chronologically:\nI. Revolt of Mangal Pandey\nII. Vellore Mutiny\nIII. Defeat of Jhansi Rani\nIV. Mutiny at Meerut", options: ["A) I, II, III, IV", "B) II, I, IV, III", "C) IV, II, I, III", "D) II, IV, I, III"], ans: 1 },
+      { id: 50, q: "The War of Noses took place during the reign of:", options: ["A) Thirumalai Nayak", "B) Chokkanatha Nayak", "C) Mangammal", "D) Viswanatha Nayak"], ans: 0 },
+      { id: 51, q: "Why did Queen Hazrat Mahal Begum of Lucknow fight against the British?", options: ["A) Against the Doctrine of Lapse", "B) For restoration of religious monuments", "C) Due to enhanced grain duties", "D) To gain British pension"], ans: 0 },
+      { id: 52, q: "Who called the Revolt of 1857 the “War of Indian Independence”?", options: ["A) V.D. Savarkar", "B) R.C. Majumdar", "C) S.N. Sen", "D) Jawaharlal Nehru"], ans: 0 },
+      { id: 53, q: "Who remarked about Rani Lakshmi Bai: “Here lay the woman who was the only man among the rebels”?", options: ["A) General Hugh Rose", "B) Colin Campbell", "C) Sir James Outram", "D) John Nicholson"], ans: 0 },
+      { id: 54, q: "Which statements are true about the Revolt of 1857?\n(1) Mangal Pandey had become a martyr before the outbreak.\n(2) Kanpur revolt was led by Zeenat Mahal.\n(3) Kunwar Singh was the chief organiser in Bihar.\n(4) Rani Lakshmi Bai died fighting on 17 June 1859.", options: ["A) (1) and (2) only", "B) (2) and (3) only", "C) (1) and (3) only", "D) (1), (3) and (4)"], ans: 2 },
+      { id: 55, q: "Mangal Pandey was hanged on:", options: ["A) 29 March 1857", "B) 8 April 1857", "C) 10 May 1857", "D) 24 April 1857"], ans: 1 },
+      { id: 56, q: "Govind Dhondu Pant, popularly known as Nanasaheb, was a frontline leader of the:", options: ["A) Revolt of 1857", "B) Vellore Mutiny", "C) Poligar Rebellion", "D) Rampa Rebellion"], ans: 0 },
+      { id: 57, q: "Which commission inquired into the working of police administration in 1902?", options: ["A) Hunter Commission", "B) Fraser Commission", "C) Raleigh Commission", "D) MacDonnell Commission"], ans: 1 },
+      { id: 58, q: "The Ryotwari system of revenue collection was an innovation of:", options: ["A) Sir Thomas Munro", "B) Lord Cornwallis", "C) Holt Mackenzie", "D) Lord Wellesley"], ans: 0 },
+      { id: 59, q: "The Zamindari system in India was introduced by:", options: ["A) Lord Cornwallis", "B) Lord Dalhousie", "C) Lord Hastings", "D) Lord William Bentinck"], ans: 0 },
+      { id: 60, q: "The policy of British rule in India was:", options: ["A) Divide and Rule", "B) Democratic Decentralisation", "C) Industrial Autonomy", "D) Cultural Assimilation"], ans: 0 },
+      { id: 61, q: "By which battle did the British complete the conquest of India, if Plassey was considered the beginning?", options: ["A) Battle of Buxar", "B) Battle of Kirkee", "C) Battle of Wandiwash", "D) Battle of Assaye"], ans: 1 },
+      { id: 62, q: "Assertion: The worldwide Depression which began in late 1929 affected India.\nReason: A sharp fall in prices, especially agricultural commodities, caused a major crisis in the export-oriented colonial economy.", options: ["A) Both A and R are true, and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, but R is false", "D) Both are false"], ans: 0 },
+      { id: 63, q: "When was the first National Education Policy formed?", options: ["A) 1968", "B) 1986", "C) 1992", "D) 2020"], ans: 0 },
+      { id: 64, q: "In which place did Lord Canning publish the Queen's Proclamation in 1858?", options: ["A) Calcutta", "B) Delhi", "C) Allahabad", "D) Bombay"], ans: 2 },
+      { id: 65, q: "Which is the wrong statement about the Education Policy under British rule?\n(i) Divided into four periods\n(ii) Commenced with Sir Charles Wood's Despatch in 1845\n(iii) Also called “Magna Carta”", options: ["A) Only (i)", "B) Only (ii)", "C) (ii) and (iii)", "D) Only (iii)"], ans: 1 },
+      { id: 66, q: "The Sharda Act raised the minimum marriageable age for girls to:", options: ["A) 12 years", "B) 14 years", "C) 16 years", "D) 18 years"], ans: 1 },
+      { id: 67, q: "What resulted from the frequent famines in British India?", options: ["A) Mass migration of population from famine-stricken regions", "B) Drastic decrease in land revenue rates", "C) Immediate abolition of the zamindari system", "D) Permanent closure of export trade"], ans: 0 },
+      { id: 68, q: "Education under British rule can be divided into which four periods?", options: ["A) All four — early days to 1813; 1813–1853; 1854–1920; 1921–1947", "B) 1757–1800; 1800–1850; 1850–1900; 1900–1947", "C) Early oriental, Anglicist, Despatch, and Post-War only", "D) None of the above"], ans: 0 },
+      { id: 69, q: "Assertion: Macaulay argued for Western education in the English language.\nReason: His intention was to educate Indians through English rather than Sanskrit or Persian.", options: ["A) Both A and R are true, and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, but R is false", "D) Both are false"], ans: 0 },
+      { id: 70, q: "Assertion: The small-scale industry of India was ruined due to the attitude of the Britishers.\nReason: The British Government declared the policy of free trade in 1833.", options: ["A) Both A and R are true, and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, but R is false", "D) A is false, but R is true"], ans: 0 },
+      { id: 71, q: "Who said that British imperialism gave India political unity despite the many discordant elements in Indian society?", options: ["A) Prof. Moon", "B) Sir John Strachey", "C) Vincent Smith", "D) Lord Macaulay"], ans: 0 },
+      { id: 72, q: "What was the impact of the Zamindari Abolition Act of 1951?", options: ["A) Landlords gained more estates", "B) Tenants and sharecroppers gained ownership of 62 lakh hectares of land", "C) Peasant land revenue doubled", "D) Conversion of all farmland into state cooperatives"], ans: 1 },
+      { id: 73, q: "“Operation Blackboard” was implemented in India to provide basic amenities in ______ schools.", options: ["A) Primary schools", "B) Secondary schools", "C) Higher secondary schools", "D) Universities"], ans: 0 },
+      { id: 74, q: "British Government indirectly helped Indians in their upliftment through:\nI. Opening schools everywhere\nII. Starting new industries\nIII. Establishing new churches\nIV. Establishing transport", options: ["A) I, II and III", "B) I, II and IV", "C) II and IV only", "D) All four"], ans: 1 },
+      { id: 75, q: "Which of the following is incorrectly paired?\n(1) Sir Thomas Munro — Licensing Act of 1857\n(2) Sir Charles Metcalfe — Liberator of the Indian Press\n(3) Lord Wellesley — Printers' name at the bottom of the paper\n(4) Lord Canning — System of License and Censorship", options: ["A) (1) and (2)", "B) (2) and (3)", "C) (1) and (4)", "D) (3) and (4)"], ans: 2 },
+      { id: 76, q: "Assertion: Permanent Settlement brought a fundamental change in Indian society and the rural economy.\nReason: It destroyed the old village community, changed property relations and created new social classes.", options: ["A) Both A and R are true, and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, but R is false", "D) Both are false"], ans: 0 },
+      { id: 77, q: "Which of the following pairs is correct?\n(1) Permanent Settlement — Lord Curzon\n(2) Partition of Bengal — Cornwallis\n(3) Ryotwari System — Munro\n(4) Network of Railways — Dalhousie", options: ["A) (1) and (2) only", "B) (2) and (3) only", "C) (3) and (4) only", "D) (1) and (4) only"], ans: 2 },
+      { id: 78, q: "Which book was written by Swami Dayanand Saraswati?", options: ["A) Satyarth Prakash", "B) Gulamgiri", "C) Anandamath", "D) The Arctic Home in the Vedas"], ans: 0 },
+      { id: 79, q: "Why did the social reformers of the first half of the 19th century fail to create a movement?\n(i) Social conditions were not suitable\n(ii) There was no other class supported them\n(iii) They criticised idolatry", options: ["A) (i) only", "B) (ii) only", "C) (i) and (ii)", "D) (iii) only"], ans: 2 },
+      { id: 80, q: "Politicians of which region under British Rule demanded regional autonomy of Non-Brahmin polity?", options: ["A) Bombay Presidency", "B) Bengal Presidency", "C) Madras Presidency", "D) Punjab Province"], ans: 2 },
+      { id: 81, q: "Rast Goftar was the voice of which movement?", options: ["A) Parsi Movement", "B) Aligarh Movement", "C) Young Bengal Movement", "D) Akali Movement"], ans: 0 },
+      { id: 82, q: "Match the social reforms with the reformers:\n(a) Abolition of Sati — Raja Ram Mohan Roy\n(b) Temple Entry for Dalits — Ambedkar\n(c) Widow Remarriage Act — Ishwar Chandra Vidyasagar\n(d) Self-respect movement — E.V. Ramasamy", options: ["A) 1, 2, 3, 4", "B) 3, 4, 1, 2", "C) 4, 3, 2, 1", "D) 2, 1, 4, 3"], ans: 1 },
+      { id: 83, q: "Who favoured the Permanent Settlement but urged that the Government should fix the maximum rent to be paid by each cultivator?", options: ["A) Raja Ram Mohan Roy", "B) Debendranath Tagore", "C) Dadabhai Naoroji", "D) Romesh Chunder Dutt"], ans: 0 },
+      { id: 84, q: "Regarding the Poona Sarvajanik Sabha, which statements are correct?\n1. Mahadev Govind Ranade was the brain of the organisation.\n2. The Sabha awakened people to their political rights.\n3. It protested against the Vernacular Press Act of 1878.\n4. It published Amrita Bazar Patrika.", options: ["A) 1 and 2 only", "B) 1, 2 and 3", "C) 2, 3 and 4", "D) All are correct"], ans: 1 },
+      { id: 85, q: "The practice of Sati was declared “illegal and punishable” by:", options: ["A) Lord William Bentinck", "B) Lord Dalhousie", "C) Lord Wellesley", "D) Lord Cornwallis"], ans: 0 },
+      { id: 86, q: "Match the following:\n(a) Justice Party — T.M. Nair\n(b) Self Respect Movement — E.V. Ramasamy\n(c) Satyashodhak Movement — Jotirao Phule\n(d) Satyashodhak Samaj — Chhatrapati Shahu Maharaj", options: ["A) 1, 2, 3, 4", "B) 4, 3, 1, 2", "C) 2, 4, 1, 3", "D) 3, 1, 4, 2"], ans: 1 },
+      { id: 87, q: "Which statement about Brahmo Samaj is NOT TRUE?", options: ["A) It worshiped the eternal and unsearchable Being", "B) It forbade idol worship", "C) It opposed the caste system", "D) It did not incorporate the teachings of other religions"], ans: 3 },
+      { id: 88, q: "The Hindu College at Calcutta was founded by:", options: ["A) David Hare", "B) Lord Macaulay", "C) William Jones", "D) Jonathan Duncan"], ans: 0 },
+      { id: 89, q: "The talented Maratha lady who helped in founding the Arya Mahila Samaj was:", options: ["A) Tarabai Shinde", "B) Pandit Ramabai", "C) Savitribai Phule", "D) Anandibai Joshi"], ans: 1 },
+      { id: 90, q: "Mula Sankara was later called:", options: ["A) Dayananda Saraswati", "B) Swami Vivekananda", "C) Ramakrishna Paramahamsa", "D) Swami Shraddhanand"], ans: 0 },
+      { id: 91, q: "Which statements regarding the Poona Sarvajanik Sabha are correct?\n1. Founded by M.G. Ranade and associates\n2. Mobilised public opinion against peasant distress\n3. Served as bridge between government and people", options: ["A) Statements 1, 2 and 3", "B) Statement 1 only", "C) Statements 1 and 2 only", "D) Statements 2 and 3 only"], ans: 0 },
+      { id: 92, q: "Which statements about the Bombay Presidency's political organisations are correct?\n(1) The first political organisation was the Bombay Association.\n(2) The first organisation in Madras Presidency was Madras Mahajana Sabha.\n(3) Mary Carpenter established Poona Sarvajanik Sabha on Raja Ram Mohan Roy's advice.", options: ["A) Statement (1) only", "B) Statement (2) only", "C) Statements (1) and (3)", "D) Statements (2) and (3)"], ans: 0 },
+      { id: 93, q: "Which statements regarding the Aligarh Movement are correct?\n(i) Sir Syed Ahmed Khan was initially supportive of Congress.\n(ii) Punjab Hindu Sabha founded in 1909 laid the foundation for Hindu communal politics.", options: ["A) Both are correct", "B) (i) correct, (ii) wrong", "C) (i) wrong, (ii) correct", "D) Both are wrong"], ans: 1 },
+      { id: 94, q: "The Muhammadan Literary and Scientific Society of Calcutta was organised by:", options: ["A) Abdul Latif", "B) Sir Syed Ahmed Khan", "C) Amir Ali", "D) Nawab Salimullah"], ans: 0 },
+      { id: 95, q: "Who showed compassion and mercy on all living beings, including plants?", options: ["A) Ramalinga Adigal", "B) Vaikunda Swamigal", "C) Sri Narayana Guru", "D) Ramakrishna Paramahamsa"], ans: 0 },
+      { id: 96, q: "The Arya Mahila Samaj at Poona in 1882 was founded by:", options: ["A) Pandit Ramabai", "B) Savitribai Phule", "C) Ramabai Ranade", "D) Tarabai Shinde"], ans: 0 },
+      { id: 97, q: "Match correctly:\n(1) Prophet of Indian nationalism — Raja Ram Mohan Roy\n(2) “Back to Vedas” — Swami Dayananda Saraswati\n(3) R.G. Pradhan called him the father of Indian nationalism — Swami Vivekananda\n(4) “Swaraj is my birthright” — Bal Gangadhar Tilak", options: ["A) 1 and 2 only", "B) 2 and 3 only", "C) 1 and 4 are correct", "D) All are correct"], ans: 2 },
+      { id: 98, q: "Assertion: The Aligarh Movement became communal under Sir Syed Ahmed Khan's guidance, which helped in the creation of Pakistan.\nReason: Sir Syed depended on the British for his activities, and the British encouraged Muslim communalism.", options: ["A) Both A and R are true, and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, but R is false", "D) Both are false"], ans: 0 },
+      { id: 99, q: "The Akali Movement was an offshoot of the:", options: ["A) Singh Sabha Movement", "B) Namdhari Movement", "C) Nirankari Movement", "D) Ghadar Movement"], ans: 0 },
+      { id: 100, q: "Who composed the famous song “Here Comes a war without blood, without sword / All those who believe in the eternity of Truth, join!”?", options: ["A) V. Ramalingam", "B) Subramania Bharathi", "C) Kavimani Desigavinayagam", "D) Bharathidasan"], ans: 0 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(100, parseInt(customCountInput.value) || 25));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 30;
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : ""} (30s / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 100) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 30;
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const m = Math.floor(secs / 60);
+      const s = secs % 60;
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time is up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${qData.id}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! High proficiency across early colonial history, tribal revolts, and social renaissance.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review Vellore Revolt, 1857 leaders, and British land systems to boost accuracy.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive revision of tribal rebellions and socio-religious reforms recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${q.id}. ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+</html>

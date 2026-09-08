@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seed Technology Examination Portal — 225 Questions</title>
+  <style>
+    :root {
+      --primary: #0284c7;
+      --primary-hover: #0369a1;
+      --primary-light: #f0f9ff;
+      --success: #16a34a;
+      --success-light: #dcfce7;
+      --danger: #dc2626;
+      --danger-light: #fee2e2;
+      --neutral: #475569;
+      --neutral-light: #f8fafc;
+      --border: #cbd5e1;
+      --card-bg: #ffffff;
+      --bg: #f1f5f9;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --radius: 10px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #0369a1;
+      color: #ffffff;
+      padding: 1.25rem 1rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    header h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-top: 0.25rem;
+    }
+
+    .container {
+      max-width: 820px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    select, input[type="number"] {
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-size: 1rem;
+      outline: none;
+    }
+
+    select:focus, input[type="number"]:focus {
+      border-color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .btn-secondary {
+      background-color: var(--neutral-light);
+      color: var(--neutral);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background-color: #e2e8f0;
+    }
+
+    .btn-success {
+      background-color: var(--success);
+      color: #ffffff;
+    }
+
+    .btn-success:hover {
+      background-color: #15803d;
+    }
+
+    .progress-wrapper {
+      margin-bottom: 1.5rem;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background-color: #e2e8f0;
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background-color: var(--primary);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .question-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+      white-space: pre-line;
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      width: 100%;
+      text-align: left;
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+      border: 1.5px solid var(--border);
+      background: #ffffff;
+      font-size: 0.95rem;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .option-btn:hover {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+    }
+
+    .option-btn.selected {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+      font-weight: 600;
+    }
+
+    .nav-controls {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .results-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .score-circle {
+      width: 125px;
+      height: 125px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto;
+      border: 3px solid var(--primary);
+    }
+
+    .score-circle .number {
+      font-size: 1.85rem;
+      font-weight: 800;
+    }
+
+    .score-circle .label {
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: var(--neutral-light);
+      padding: 1rem;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .stat-card .val {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .stat-card.correct .val { color: var(--success); }
+    .stat-card.wrong .val { color: var(--danger); }
+    .stat-card.unanswered .val { color: var(--neutral); }
+
+    .stat-card .desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .review-item.is-correct {
+      border-left: 5px solid var(--success);
+      background-color: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 5px solid var(--danger);
+      background-color: #fffdfd;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 5px solid var(--neutral);
+      background-color: var(--neutral-light);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .badge.correct { background: var(--success-light); color: var(--success); }
+    .badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .review-text {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .review-detail {
+      font-size: 0.875rem;
+      margin: 0.25rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 0.5rem;
+        margin: 1rem auto;
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .nav-controls {
+        flex-direction: column-reverse;
+      }
+      .nav-controls .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Seed Technology & Production Examination Portal</h1>
+    <p>Complete 225 Multiple-Choice Questions & Solutions</p>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Configure Test Session</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Choose test parameters to begin practicing or evaluating your knowledge.</p>
+      
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Exam Mode (Sequential, Hidden Answers)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="225">All Questions (225 Questions)</option>
+            <option value="10">10 Questions</option>
+            <option value="25">25 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="custom">Custom Number</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 225)</label>
+          <input type="number" id="custom-count-input" min="1" max="225" value="25" />
+        </div>
+
+        <button class="btn btn-primary" id="start-btn" style="margin-top: 1rem;">Start Quiz</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="card hidden">
+      <div class="progress-wrapper">
+        <div class="progress-meta">
+          <span id="q-counter">Question 1 of 225</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+      </div>
+
+      <div class="question-title" id="question-text"></div>
+      <div class="options-list" id="options-container"></div>
+
+      <div class="nav-controls">
+        <button class="btn btn-secondary" id="prev-btn">Previous</button>
+        <div style="display: flex; gap: 0.75rem;">
+          <button class="btn btn-primary" id="next-btn">Next</button>
+          <button class="btn btn-success hidden" id="submit-btn">Submit Quiz</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-header">
+        <h2>Assessment Completed</h2>
+        <div class="score-circle">
+          <span class="number" id="res-score-percent">0%</span>
+          <span class="label">Total Score</span>
+        </div>
+        <p id="res-feedback" style="font-weight: 600; font-size: 1.1rem;"></p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Total Questions</div>
+        </div>
+        <div class="stat-card correct">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="stat-card wrong">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="stat-card unanswered">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <button class="btn btn-primary" id="toggle-review-btn">Review Answers</button>
+        <button class="btn btn-secondary" id="restart-btn">Restart Quiz</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem;">Detailed Answer Key & Review</h2>
+        <button class="btn btn-secondary" id="back-to-results-btn">Back to Results</button>
+      </div>
+      <div id="review-items-container"></div>
+    </div>
+
+  </div>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "The science which deals with production, harvesting, processing, testing, packaging, storing & marketing of seeds refers to:", options: ["A) Seed technology", "B) Agronomy", "C) Seed production", "D) Horticulture"], ans: 0 },
+      { id: 2, q: "Basic input of Agriculture is:", options: ["A) Seed", "B) Fertiliser", "C) Soil", "D) Irrigation"], ans: 0 },
+      { id: 3, q: "Fertilised mature ovule is:", options: ["A) Seed", "B) Fruit", "C) Seedling", "D) Grain"], ans: 0 },
+      { id: 4, q: "Difference between seed and grain is:", options: ["A) Seed quality", "B) Genetic purity", "C) Seed quantity", "D) Cost"], ans: 1 },
+      { id: 5, q: "Which of the following is a monoecious plant?", options: ["A) Maize", "B) Cucurbits", "C) Coconut", "D) All of the above"], ans: 3 },
+      { id: 6, q: "When was Central Seed Testing Laboratory (CSTL) started?", options: ["A) 1961", "B) 1962", "C) 1963", "D) 1966"], ans: 2 },
+      { id: 7, q: "Find out the self-pollination mechanism:\n1. Bisexual flowers\n2. Homogamy\n3. Cleistogamy\n4. Unisexual flowers", options: ["A) 1, 2, 3", "B) 1, 4, 5", "C) 4, 5", "D) 1, 2, 3, 4, 5"], ans: 0 },
+      { id: 8, q: "Find out the correct statements:\n1. Self-pollination leads to a rapid increase in homozygosity.\n2. Self-pollination leads to slow inbreeding depression during selfing.\n3. Cross-pollination leads to highly heterozygous population.\n4. Cross-pollination is not shown inbreeding depression during selfing.", options: ["A) 1 and 3", "B) 2 only", "C) 2 and 4", "D) 3 and 4"], ans: 0 },
+      { id: 9, q: "Which mechanism leads to cross-pollination in bisexual flowers?", options: ["A) Homogamy", "B) Heterostyly", "C) Cleistogamy", "D) Chasmogamy"], ans: 3 },
+      { id: 10, q: "Which one of the following pairs is an example of protandry?", options: ["A) Sugarbeet & Carrot", "B) Castor & Cole crops", "C) Sunflower & Onion", "D) Maize & Sunflower"], ans: 0 },
+      { id: 11, q: "Match the following:\na) Self pollination\nb) Cross pollination\nc) Paleontology\nd) Geitonogamy\ne) Often cross pollination\n1. Black pepper | 2. Study of pollens | 3. Cotton | 4. Oat | 5. Coconut", options: ["A) a-4, b-5, c-2, d-1, e-3", "B) a-1, b-2, c-3, d-4, e-5", "C) a-3, b-4, c-5, d-1, e-2", "D) a-5, b-3, c-1, d-2, e-4"], ans: 0 },
+      { id: 12, q: "Which one of the following pairs is NOT an example of protandry?", options: ["A) Sugarbeet & Carrot", "B) Castor & Cole crops", "C) Sunflower & Onion", "D) Maize & Sunflower"], ans: 1 },
+      { id: 13, q: "The barren male flower is seen in ______ crops.", options: ["A) Maize", "B) Sunflower", "C) Bajra", "D) All of the above"], ans: 2 },
+      { id: 14, q: "Which of the following are dioecious crops?\n1. Mulberry\n2. Papaya\n3. Coconut\n4. Asparagus\n5. Maize", options: ["A) 1 and 4", "B) 3 only", "C) 4 only", "D) 1, 2 and 5"], ans: 0 },
+      { id: 15, q: "Which of the following is called “genetic emasculation”?", options: ["A) Male sterility", "B) Apomixis", "C) Heterogamy", "D) Dichogamy"], ans: 0 },
+      { id: 16, q: "Find out the correct statement regarding dichogamy:", options: ["A) It is due to physical barriers in hermaphrodite flowers", "B) It favours self-pollination", "C) In lucerne, honeybees break the waxy layer by tripping", "D) All of the above"], ans: 3 },
+      { id: 17, q: "Which of the following is a self-pollinated crop?", options: ["A) Soybean", "B) Sesame", "C) Cauliflower", "D) Mustard"], ans: 0 },
+      { id: 18, q: "Find out the cross-pollinated crops:\n1. Sunflower 2. Castor 3. Coconut 4. Rapeseed and Mustard 5. Sesame 6. Safflower 7. Groundnut", options: ["A) 1, 2, 3, 4", "B) 5, 6, 7", "C) 1, 3, 5, 7", "D) 2, 3, 5, 7"], ans: 0 },
+      { id: 19, q: "Find out the incorrect pair:", options: ["A) Alligator — Wasp", "B) Oil palm — Weevil", "C) Mango — House fly", "D) Black pepper — Wind"], ans: 2 },
+      { id: 20, q: "Find out correct pairs:", options: ["A) Endosperm — 2n", "B) Scutellum — 3n", "C) Aleurone layer — 3n", "D) Perisperm — n"], ans: 2 },
+      { id: 21, q: "______ is the embryo covering that protects the embryo.", options: ["A) Epicotyl", "B) Coleorhiza", "C) Coleoptile", "D) Endosperm"], ans: 2 },
+      { id: 22, q: "______ is the sheath that covers the radicle.", options: ["A) Epicotyl", "B) Hypocotyl", "C) Coleoptile", "D) Coleorhiza"], ans: 3 },
+      { id: 23, q: "Seeds are formed, but the embryos develop without fertilization is called:", options: ["A) Polyembryony", "B) Apomixis", "C) Apospory", "D) Apospory/Apogamy"], ans: 1 },
+      { id: 24, q: "Development of embryo from synergids or antipodals is called:", options: ["A) Androgenesis", "B) Parthenogenesis", "C) Apogamy", "D) Apospory"], ans: 1 },
+      { id: 25, q: "Find the incorrect pair (Crop — Inflorescence):", options: ["A) Sugarcane — Open panicle/Arrow", "B) Sunflower — Capitulum", "C) Castor — Spike", "D) Cucumber — Fascicle"], ans: 2 },
+      { id: 26, q: "Match the following:\na) Papaya b) Deppe c) Hesperidium d) Pomegranate e) Apple\n1. Apple | 2. Pomegranate | 3. Cucurbits | 4. Hesperidium | 5. Citrus", options: ["A) a-1, b-2, c-3, d-4, e-5", "B) a-2, b-3, c-4, d-5, e-1", "C) a-3, b-4, c-1, d-2, e-5", "D) a-4, b-5, c-2, d-1, e-3"], ans: 1 },
+      { id: 27, q: "A true fruit is produced in:", options: ["A) Apple", "B) Carrot", "C) Ragi", "D) All of the above"], ans: 2 },
+      { id: 28, q: "Which hormone is used for development of parthenocarpic fruits?", options: ["A) ABA", "B) Auxin", "C) Kinetin", "D) GA₃"], ans: 3 },
+      { id: 29, q: "Find out the incorrect pairs:", options: ["A) Bract and Perianth — Jackfruit, Pineapple", "B) Fleshy Peduncle — Cashew", "C) Mesocarp and Endocarp — Banana, Aonla", "D) Mesocarp — Apple, Guava"], ans: 2 },
+      { id: 30, q: "Match the following seed characters:\na) Black scaly structure at lateral side\nb) Paper structure attached to seed coat\nc) Thorn-like projection at tip of seeds\nd) Spongy white growth from micropyle\ne) Coloured fleshy mass on outside of seed\n1. Thorn-like projection | 2. Wing | 3. Caruncle | 4. Aril | 5. Funicle", options: ["A) a-4, b-5, c-1, d-2, e-3", "B) a-1, b-2, c-3, d-4, e-5", "C) a-5, b-3, c-2, d-1, e-4", "D) a-3, b-1, c-4, d-5, e-2"], ans: 0 },
+      { id: 31, q: "Pollination and fertilization take place but embryo gets aborted subsequently resulting in seedlessness is called:", options: ["A) Parthenocarpy", "B) Parthenogenesis", "C) Stenospermocarpy", "D) Adventitious embryony"], ans: 2 },
+      { id: 32, q: "______ seed has 100% genetic purity.", options: ["A) Breeder seed", "B) Certified seed", "C) Foundation seed", "D) Truthfully labelled seed"], ans: 0 },
+      { id: 33, q: "Find out the correct pairs about objectionable weeds:", options: ["A) Berseem — Melilotus sp.", "B) Rapeseed and Mustard — Argemone mexicana", "C) Wheat — Lactuca sativa", "D) Lettuce — Convolvulus arvensis"], ans: 1 },
+      { id: 34, q: "Match the physical purity percentages:\na) Groundnut b) Sorghum c) Safflower d) Carrot e) Chilli\n1. 99% | 2. 97% | 3. 98% | 4. 96% | 5. 95%", options: ["A) a-4, b-5, c-2, d-1, e-3", "B) a-1, b-2, c-3, d-4, e-5", "C) a-2, b-3, c-4, d-5, e-1", "D) a-5, b-4, c-1, d-2, e-3"], ans: 0 },
+      { id: 35, q: "Find out the correct statements regarding objectionable weed seeds:\nI. Difficult to remove from crop seeds\nII. Shape and size different from crop seeds\nIII. Detrimental to growing seed crop\nIV. Alternate hosts for crop pests and diseases", options: ["A) I, II and III", "B) II and III only", "C) I, II and IV", "D) I, III, IV and V"], ans: 3 },
+      { id: 36, q: "Ginger is propagated by:", options: ["A) Tuber", "B) Bulbs", "C) Rhizomes", "D) Cuttings"], ans: 2 },
+      { id: 37, q: "______ is highly self-pollinated.", options: ["A) Groundnut", "B) Rice", "C) Maize", "D) All of the above"], ans: 1 },
+      { id: 38, q: "Which is a family of cucurbits?", options: ["A) Papilionaceae", "B) Malvaceae", "C) Cucurbitaceae", "D) Asteraceae"], ans: 2 },
+      { id: 39, q: "Any treatment that softens the seed coat is called:", options: ["A) Scarification", "B) Stratification", "C) Chemical treatment", "D) Water soaking"], ans: 0 },
+      { id: 40, q: "Find out the incorrect pair:", options: ["A) Caryopsis — Pearl millet", "B) Achene — Sunflower", "C) Schizocarp — Safflower", "D) Hip — Rose"], ans: 2 },
+      { id: 41, q: "______ is a reproductive device in which male organ in hermaphrodite flowers is rendered defective.", options: ["A) Self incompatibility", "B) Male sterility", "C) Cleistogamy", "D) Chasmogamy"], ans: 1 },
+      { id: 42, q: "The colour of Breeder seed tag:", options: ["A) White", "B) Azure blue", "C) Golden yellow", "D) Opal green"], ans: 2 },
+      { id: 43, q: "Presence of ‘B’ line in a population in Sorghum hybrid seed production plot is called:", options: ["A) Shedding tassel", "B) Sowed boll", "C) Parental tassel", "D) Pollen shedder"], ans: 3 },
+      { id: 44, q: "The major genetic contaminant found in maize hybrid seed production plot is:", options: ["A) Selfed plants", "B) Partials", "C) Pollen shedders", "D) Shedder tassels"], ans: 2 },
+      { id: 45, q: "A problem when weed seed is mixed with crop seed and is extremely difficult to separate is called:", options: ["A) Non-parasitic weed", "B) Objectionable weed", "C) Parasitic weed", "D) Aquatic weed"], ans: 1 },
+      { id: 46, q: "______ is a type of cross.", options: ["A) Single cross", "B) Double cross", "C) Three-way cross", "D) Top cross"], ans: 3 },
+      { id: 47, q: "Rain is not known as a hybrid variety of:", options: ["A) Rice", "B) Maize", "C) Cotton", "D) Sugarcane"], ans: 0 },
+      { id: 48, q: "Plant produces two types of sexual methods:", options: ["A) True to type", "B) Having long juvenile period", "C) Vegetative propagation", "D) Having long juvenile period"], ans: 0 },
+      { id: 49, q: "Genetic male sterility is controlled by:", options: ["A) Single recessive gene (ms)", "B) Multiple genes", "C) Single dominant gene", "D) None of the above"], ans: 0 },
+      { id: 50, q: "When a F₁ is crossed with the recessive homozygous parents, the cross is known as:", options: ["A) Back cross", "B) Crossing over", "C) Test cross", "D) All of the above"], ans: 2 },
+      { id: 51, q: "Seedlessness in grapes is due to:", options: ["A) Embryo abortion", "B) Gibberellins", "C) Excess nitrogen", "D) None of the above"], ans: 0 },
+      { id: 52, q: "Certification is not required for:", options: ["A) Breeder seed", "B) Certified seed", "C) Foundation seed", "D) Registered seed"], ans: 0 },
+      { id: 53, q: "Gladiolus is propagated by:", options: ["A) Corms", "B) Bulbs", "C) Suckers", "D) Buddings"], ans: 0 },
+      { id: 54, q: "Inbreeding of cross-pollinated species leads to increase in:", options: ["A) Homozygosity", "B) Heterozygosity", "C) Both", "D) None"], ans: 0 },
+      { id: 55, q: "Genetic purity of seed production of red gram is done through:", options: ["A) CGMS", "B) Mutation", "C) DGMS", "D) PGMS"], ans: 0 },
+      { id: 56, q: "Tag colour for foundation seed is:", options: ["A) Green", "B) Blue", "C) White", "D) Yellow"], ans: 2 },
+      { id: 57, q: "Water requirement for pulses is:", options: ["A) 200 mm", "B) 300 mm", "C) 400 mm", "D) 350 mm"], ans: 1 },
+      { id: 58, q: "In sunflower, production of foundation seed requires isolation distance of:", options: ["A) 400 m", "B) 800 m", "C) 200 m", "D) 100 m"], ans: 0 },
+      { id: 59, q: "Match:\na) Bulb b) Corm c) Rhizome d) Tuber\n1. Gladiolus | 2. Onion | 3. Potato | 4. Ginger", options: ["A) a-2, b-1, c-4, d-3", "B) a-1, b-2, c-3, d-4", "C) a-3, b-4, c-1, d-2", "D) a-4, b-3, c-2, d-1"], ans: 0 },
+      { id: 60, q: "Which of the following is NOT cross-pollinated?", options: ["A) Sunflower", "B) Cabbage", "C) Maize", "D) Bajra"], ans: 2 },
+      { id: 61, q: "The type of male sterility used in hybrid seed production in cumbu is:", options: ["A) Genetic male sterility", "B) Cytoplasmic male sterility", "C) Genic cytoplasmic male sterility", "D) None"], ans: 2 },
+      { id: 62, q: "The ______ is more important in seed certification.", options: ["A) Self-pollinated crop", "B) Cross-pollinated crop", "C) Hybrid crop", "D) None"], ans: 1 },
+      { id: 63, q: "The isolation distance for production of certified seeds in sunflower is:", options: ["A) 50 m", "B) 100 m", "C) 200 m", "D) 300 m"], ans: 1 },
+      { id: 64, q: "The isolation distance required for sugarcane crop is:", options: ["A) 100 m", "B) 400 m", "C) 800 m", "D) 1000 m"], ans: 2 },
+      { id: 65, q: "To produce a hybrid seed, we need:", options: ["A) A maintainer and maintainer", "B) A maintainer, restorer and maintainer", "C) A male sterile line, restorer and maintainer", "D) Only a male sterile line"], ans: 2 },
+      { id: 66, q: "Registered seed is directly produced from:", options: ["A) Foundation seed", "B) Certified seed", "C) Breeder seed", "D) All of these"], ans: 2 },
+      { id: 67, q: "Foundation seed inspection should be done at:", options: ["A) Vegetative stage", "B) Flowering", "C) Maturity", "D) All of these"], ans: 3 },
+      { id: 68, q: "A hybrid rice variety released in Tamil Nadu is:", options: ["A) MGR Rice", "B) ADT 36", "C) CO 43", "D) None"], ans: 0 },
+      { id: 69, q: "A cross between a hybrid (F₁) and one of its parents is known as:", options: ["A) Back cross", "B) Bulk method", "C) Interspecific hybridization", "D) Pedigree"], ans: 0 },
+      { id: 70, q: "Removal of off-type flowering plants from seed field is called:", options: ["A) Weeding", "B) Roguing", "C) Hoeing", "D) Clipping"], ans: 1 },
+      { id: 71, q: "Which practice is used to break dormancy of bitter gourd seeds?", options: ["A) Removal of seed coat", "B) Soaking in H₂SO₄", "C) Piercing with needles", "D) Pre-chilling for 3–10 days"], ans: 2 },
+      { id: 72, q: "An induced mutation is produced by:", options: ["A) Registered corporation", "B) SGA", "C) National Seed Corporation", "D) None"], ans: 2 },
+      { id: 73, q: "Minimum isolation distance for production of foundation seed in field crop is:", options: ["A) 1 m", "B) 2 m", "C) 3 m", "D) 4 m"], ans: 3 },
+      { id: 74, q: "Foundation seed is produced by:", options: ["A) Nucleus seed, breeder seed", "B) Breeder seed, foundation seed, certified seed", "C) Foundation seed, registered seed, certified seed", "D) Nucleus seed, foundation seed, breeder seed, certified seed"], ans: 0 },
+      { id: 75, q: "A cross between two inbred lines by reversing the order of male and female parents is called:", options: ["A) Back cross", "B) Return cross", "C) Reverse cross", "D) Reciprocal cross"], ans: 3 },
+      { id: 76, q: "Development of new hybrid rice in India was pursued since:", options: ["A) 1950", "B) 1969", "C) 1990", "D) 2000"], ans: 1 },
+      { id: 77, q: "Which of the following is the latest rice hybrid in Tamil Nadu?", options: ["A) ADT RH2", "B) TRY (R) 2", "C) CORH 4", "D) CORH 2"], ans: 2 },
+      { id: 78, q: "Which method of breaking dormancy in seed is related to low temperature treatment?", options: ["A) Scarification", "B) Stratification", "C) Imbibition", "D) None"], ans: 1 },
+      { id: 79, q: "Improved seed distributed to farmers for commercial cultivation is:", options: ["A) Nucleus seed", "B) Breeder seed", "C) Foundation seed", "D) Certified seed"], ans: 3 },
+      { id: 80, q: "Annual seed multiplication rate for sorghum is:", options: ["A) 1:150", "B) 1:100", "C) 1:75", "D) 1:200"], ans: 2 },
+      { id: 81, q: "Self-pollinated crop in which about ______% of cross-pollination occurs:", options: ["A) 25%", "B) 40%", "C) 50%", "D) 75%"], ans: 0 },
+      { id: 82, q: "The flower removed or made non-functional during emasculation is:", options: ["A) Anther", "B) Calyx", "C) Corolla", "D) Ovary"], ans: 0 },
+      { id: 83, q: "Isolation distance for certified seed production in onion:", options: ["A) 1500 m", "B) 1000 m", "C) 500 m", "D) 200 m"], ans: 2 },
+      { id: 84, q: "A seed or rice containing 7–8% protein is located in:", options: ["A) Aleurone layer", "B) Husk", "C) Inside the endosperm", "D) Embryo"], ans: 0 },
+      { id: 85, q: "Potato is modified form of:", options: ["A) Root", "B) Stem", "C) Leaf", "D) Tuber"], ans: 1 },
+      { id: 86, q: "Reason for failure of viable pollen from a flower to fertilize the same flower is:", options: ["A) Dichogamy", "B) Heterostyly", "C) Self incompatibility", "D) Male sterility"], ans: 2 },
+      { id: 87, q: "First introduced variety of Trichoderma was produced by:", options: ["A) Kargbo", "B) Rimpau", "C) Koller", "D) None"], ans: 1 },
+      { id: 88, q: "In seed production, the genetic contaminant in seed production plot is:", options: ["A) Plants affecting by disease", "B) Other crop plants", "C) Weed plants", "D) All of these"], ans: 3 },
+      { id: 89, q: "Seed rate for hybrid paddy is:", options: ["A) 1:100", "B) 1:50", "C) 1:200", "D) 1:250"], ans: 0 },
+      { id: 90, q: "Which crop time isolation is permitted for seed production with modification in isolation distance?", options: ["A) Castor", "B) Cumbu", "C) Maize", "D) Sunflower"], ans: 2 },
+      { id: 91, q: "Removal of male flower of one plant falls on stigmas of other flowers of same plant is termed:", options: ["A) Cleistogamy", "B) Geitonogamy", "C) Autogamy", "D) Dichogamy"], ans: 1 },
+      { id: 92, q: "The method of contact seed germination is:", options: ["A) Hand emasculation & pollination in sunflower", "B) Use of CHAS", "C) CGMS", "D) GMS"], ans: 1 },
+      { id: 93, q: "Minimum number of border rows to be planted in A × B seed production plot of cumbu:", options: ["A) 2", "B) 4", "C) 6", "D) 8"], ans: 3 },
+      { id: 94, q: "What is the minimum isolation distance for foundation seed production of castor?", options: ["A) 100 m", "B) 200 m", "C) 300 m", "D) 400 m"], ans: 2 },
+      { id: 95, q: "Which of the following is correctly matched?", options: ["A) Sorghum — self-pollinated crop", "B) Pigeon pea — often cross-pollinated crop", "C) Black gram — cross-pollinated", "D) Sunflower — self-pollinated"], ans: 1 },
+      { id: 96, q: "The isolation distance for foundation seed of hybrid cucurbits seed production is:", options: ["A) 1000 m", "B) 400 m", "C) 800 m", "D) 1500 m"], ans: 3 },
+      { id: 97, q: "What is the maximum seed rate of sorghum?", options: ["A) 100–150 mm", "B) 1000–1200 mm", "C) 350–450 mm", "D) 800–900 mm"], ans: 0 },
+      { id: 98, q: "In a true breeding system, male sterile female can be multiplied by crossing:", options: ["A) A × A", "B) A × B", "C) B × B", "D) A × R"], ans: 1 },
+      { id: 99, q: "Unwanted plants growing from seed that remains in the field from a previous crop is called:", options: ["A) Off-type plants", "B) Volunteer plants", "C) Objectionable weed", "D) Rogues"], ans: 1 },
+      { id: 100, q: "The level of natural outcrossing in groundnut is:", options: ["A) 5%", "B) 10%", "C) 15%", "D) Negligible"], ans: 3 },
+      { id: 101, q: "Minimum isolation distance prescribed for foundation seeds of hybrid rice seed production is:", options: ["A) 3 m", "B) 100 m", "C) 200 m", "D) 400 m"], ans: 1 },
+      { id: 102, q: "What is the minimum genetic purity standard for hybrid seed production?", options: ["A) 90%", "B) 95%", "C) 99%", "D) 100%"], ans: 2 },
+      { id: 103, q: "Which flower is used as a live barrier in hybrid rice seed production plots?", options: ["A) Sunflower plants", "B) Cotton plants", "C) Daincha plants", "D) Castor plants"], ans: 2 },
+      { id: 104, q: "How many border rows to be provided on all sides of hybrid pearl millet seed production plot?", options: ["A) 2", "B) 4", "C) 6", "D) 8"], ans: 3 },
+      { id: 105, q: "The non-germination of seed when placed in favourable conditions is technically known as:", options: ["A) Seed maturation", "B) Seed dormancy", "C) Seed immaturation", "D) Seed death"], ans: 1 },
+      { id: 106, q: "What is the minimum isolation distance prescribed for hybrid seed production?", options: ["A) 100 m", "B) 200 m", "C) 400 m", "D) 800 m"], ans: 2 },
+      { id: 107, q: "In which of the following crop, three-line system is used for hybrid seed production?", options: ["A) Maize", "B) Sorghum", "C) Cotton", "D) Rice"], ans: 3 },
+      { id: 108, q: "Based on pollination behaviour of crop, identify the odd one:", options: ["A) Sorghum", "B) Red gram", "C) Cotton", "D) Pearl millet"], ans: 2 },
+      { id: 109, q: "Seedlessness in banana is due to:", options: ["A) Gibberellins", "B) Stimulative parthenocarpy", "C) Vegetative parthenocarpy", "D) None of the above"], ans: 2 },
+      { id: 110, q: "Edible banana is:", options: ["A) Diploid", "B) Triploid", "C) Tetraploid", "D) None"], ans: 1 },
+      { id: 111, q: "At which humidity percentage should cereal grains be stored?", options: ["A) 5–7%", "B) 7–9%", "C) 10–16%", "D) 8–10%"], ans: 3 },
+      { id: 112, q: "Green ear disease of bajra is caused by:", options: ["A) Sclerospora graminicola / Cercospora graminicola", "B) Albugo candida", "C) Erysiphe graminis", "D) Rhizopus oryzae"], ans: 0 },
+      { id: 113, q: "Which of the following is an aquatic plant?", options: ["A) Apple", "B) Brinjal", "C) Coconut", "D) Pineapple"], ans: 2 },
+      { id: 114, q: "Rice crop should be harvested when the grain has:", options: ["A) 12% moisture", "B) 14% moisture", "C) 16% moisture", "D) 18% moisture"], ans: 2 },
+      { id: 115, q: "The number of seeds per kilogram in Arachis hypogaea is:", options: ["A) 98", "B) 95", "C) 99", "D) 96"], ans: 2 },
+      { id: 116, q: "Sugar found in germinating seed is large amount:", options: ["A) Maltose", "B) Sucrose", "C) Cellulose", "D) Lactose"], ans: 0 },
+      { id: 117, q: "Possible reasons for seed dormancy are:", options: ["A) Presence of hard seed coat", "B) Immature embryo", "C) Immature endosperm", "D) Cracking of hulls"], ans: 0 },
+      { id: 118, q: "The seed which remains generally used are called:", options: ["A) Breeder seed", "B) Foundation seed", "C) Certified seed", "D) Nucleus seed"], ans: 3 },
+      { id: 119, q: "The rudimentary root of the seedling that forms the primary root of the young plant is known as:", options: ["A) Radicle", "B) Plumule", "C) Rachilla", "D) Raceme"], ans: 0 },
+      { id: 120, q: "Match varieties with years:\nFlavr Savr | IPCH-8 | Ganga-1 | PRH-10 | Cotton hybrid", options: ["A) 3, 4, 5, 2, 1", "B) 1, 2, 3, 4, 5", "C) 5, 4, 3, 2, 1", "D) 2, 3, 4, 5, 1"], ans: 0 },
+      { id: 121, q: "The process of removal of male part of a flower is called:", options: ["A) Crossing", "B) Emasculation", "C) Back cross", "D) Pure line selection"], ans: 1 },
+      { id: 122, q: "The first cotton hybrid developed in India was:", options: ["A) H4", "B) Varalakshmi", "C) Suguna", "D) None"], ans: 0 },
+      { id: 123, q: "Match:\na) Single cross b) Three-way cross c) Double cross d) Back cross", options: ["A) 3, 4, 2, 1", "B) 1, 2, 3, 4", "C) 4, 3, 2, 1", "D) 2, 1, 4, 3"], ans: 0 },
+      { id: 124, q: "Water pollination is called:", options: ["A) Entomophily", "B) Zoophily", "C) Anemophily", "D) Hydrophily"], ans: 3 },
+      { id: 125, q: "Ganga 5 is the name of hybrid variety of:", options: ["A) Rice", "B) Maize", "C) Cotton", "D) Sugarcane"], ans: 1 },
+      { id: 126, q: "In India, normally how many generations seed system are produced?", options: ["A) 1", "B) 2", "C) 3", "D) 4"], ans: 2 },
+      { id: 127, q: "Off-types are removed by:", options: ["A) Pure line selection", "B) Mass selection", "C) Pure seed selection", "D) None"], ans: 1 },
+      { id: 128, q: "Hypogeal germination is found in:", options: ["A) Pea", "B) Beans", "C) Castor", "D) Onion"], ans: 0 },
+      { id: 129, q: "Germination is inhibited by giving:", options: ["A) Red light", "B) Blue light", "C) IR light", "D) UV light"], ans: 3 },
+      { id: 130, q: "Production of seedless grapes requires:", options: ["A) Gibberellins", "B) NAA", "C) Ethylene", "D) IAA"], ans: 0 },
+      { id: 131, q: "First super fine aromatic Basmati hybrid released in India is:", options: ["A) PUSA RH-1", "B) PUSA RH-23", "C) PUSA Basmati-1", "D) PUSA Basmati hybrid-1"], ans: 0 },
+      { id: 132, q: "Isolation distance for soybean is:", options: ["A) 3 m", "B) 100 m", "C) 50 m", "D) 30 m"], ans: 0 },
+      { id: 133, q: "A ______ line is maintained by ______ line.", options: ["A) A; A", "B) A; B", "C) R; B", "D) B; C"], ans: 1 },
+      { id: 134, q: "Plants which have same male and female flowers on different plants are known as:", options: ["A) Monoecious", "B) Dioecious", "C) Hermaphrodite", "D) Gynodioecious"], ans: 1 },
+      { id: 135, q: "The tissue developed from sexual fusion of polar nuclei of ovule and second male gamete is termed as:", options: ["A) Embryo", "B) Endosperm", "C) Seed coat", "D) Fruit"], ans: 1 },
+      { id: 136, q: "The portion of embryo or seedling above cotyledons is known as:", options: ["A) Hypocotyl", "B) Epicotyl", "C) Hypogeal", "D) Epigeal"], ans: 1 },
+      { id: 137, q: "Male sterility is used to develop:", options: ["A) Inbreds", "B) Hybrids", "C) Test crosses", "D) None"], ans: 1 },
+      { id: 138, q: "Occurrence of more than one embryo in seed is known as:", options: ["A) Polyembryony", "B) Apomixis", "C) Polygamy", "D) Polyploidy"], ans: 0 },
+      { id: 139, q: "First hybrid of pigeonpea in the world developed by ICRISAT using GMS is:", options: ["A) PUSA", "B) ICPH", "C) PUSA-Asha", "D) PUSA HR-1"], ans: 1 },
+      { id: 140, q: "Match:\nA. Stratification | B. Nobbe | C. Lucerne | D. Cotton | E. Brinjal\n1. Low temperature treatment | 2. Father of seed technology | 3. Tripping | 4. Delinting | 5. Heterostyly", options: ["A) A-1, B-2, C-3, D-4, E-5", "B) A-2, B-3, C-4, D-5, E-1", "C) A-3, B-1, C-2, D-4, E-5", "D) A-5, B-4, C-3, D-2, E-1"], ans: 0 },
+      { id: 141, q: "Tip sterility is common in:", options: ["A) Chola", "B) Maize", "C) Paddy", "D) Cumbu"], ans: 3 },
+      { id: 142, q: "Pre-chilling treatment to seed is given for overcoming ______ of seed:", options: ["A) Pest", "B) Dormancy", "C) Self incompatibility", "D) Male sterility"], ans: 1 },
+      { id: 143, q: "Immature seed is classified as:", options: ["A) Contaminant", "B) Pure seed", "C) None", "D) Separate"], ans: 0 },
+      { id: 144, q: "To avoid contamination, the field of a variety to the prescribed distance from another variety is called:", options: ["A) Segregation", "B) Purification", "C) Isolation", "D) Selection"], ans: 2 },
+      { id: 145, q: "Seed or rice is called:", options: ["A) Caryopsis", "B) Berry", "C) Drupe", "D) Siliqua"], ans: 0 },
+      { id: 146, q: "Breeder seed is the progeny of:", options: ["A) Foundation seed", "B) Registered seed", "C) Nucleus seed", "D) Certified seed"], ans: 2 },
+      { id: 147, q: "Seed replacement ratio (SRR) for hybrids is:", options: ["A) 10%", "B) 20%", "C) 100%", "D) 50%"], ans: 2 },
+      { id: 148, q: "The seed multiplication rate for a fodder variety is:", options: ["A) 1:250", "B) 1:100", "C) 1:50", "D) 1:200"], ans: 0 },
+      { id: 149, q: "CGMS system includes:", options: ["A) A line", "B) B line", "C) R line", "D) All of these"], ans: 3 },
+      { id: 150, q: "Hybrid varieties were first commercially exploited in:", options: ["A) Cotton", "B) Maize", "C) Cumbu", "D) Sorghum"], ans: 1 },
+      { id: 151, q: "Match:\nA) Orthodox seed | B) Recalcitrant seed | C) Hard seed | D) Scarification\n1. Sulphuric acid | 2. Wheat | 3. Polyembryony | 4. Legumes | 5. Cocoa", options: ["A) 1, 2, 3, 4", "B) 5, 4, 1, 3, 2", "C) 2, 5, 4, 1", "D) 3, 1, 2, 5"], ans: 1 },
+      { id: 152, q: "Inbred variety cross is:", options: ["A) Top cross", "B) Double cross", "C) Three-way cross", "D) Poly cross"], ans: 0 },
+      { id: 153, q: "Self incompatibility promotes:", options: ["A) Allogamy", "B) Autogamy", "C) Apogamy", "D) Homogamy"], ans: 0 },
+      { id: 154, q: "A restorer line restores fertility to:", options: ["A) A line", "B) B line", "C) R line", "D) None"], ans: 2 },
+      { id: 155, q: "Which line is used as female parent in hybrid seed production?", options: ["A) A line", "B) B line", "C) R line", "D) None"], ans: 0 },
+      { id: 156, q: "The size of certification tag is:", options: ["A) 15 × 7.5 cm", "B) 10 × 11 cm", "C) 15 × 10 cm", "D) 15 × 15 cm"], ans: 0 },
+      { id: 157, q: "Central seed testing laboratory is in:", options: ["A) New Delhi", "B) Varanasi", "C) Coimbatore", "D) Answer not known"], ans: 1 },
+      { id: 158, q: "Isolation distance required for vegetables like bottle gourd and bitter gourd (FS):", options: ["A) 250 m", "B) 500 m", "C) 750 m", "D) 1000 m"], ans: 3 },
+      { id: 159, q: "Match the seed classes with their progenies:\n1. Progeny of breeder seed | 2. Progeny of foundation seed | 3. Progeny of nucleus seed | 4. Truthfully labelled seed", options: ["A) Foundation seed, certified seed, breeder seed and TL seed respectively", "B) Certified seed, foundation seed, breeder seed and nucleus seed", "C) Nucleus seed, breeder seed, foundation seed and certified seed", "D) None of the above"], ans: 0 },
+      { id: 160, q: "Headquarters of International Seed Testing Association (ISTA) is located at:", options: ["A) Switzerland", "B) Kolkata", "C) Hyderabad", "D) Bangalore"], ans: 0 },
+      { id: 161, q: "Bacterial gene for male sterility was isolated from:", options: ["A) Bacillus thuringiensis", "B) Bacillus amyloliquefaciens", "C) Streptomyces hygroscopicus", "D) Agrobacterium tumefaciens"], ans: 2 },
+      { id: 162, q: "Opaque 2 gene is present in:", options: ["A) Maize", "B) Wheat", "C) Sorghum", "D) Rice"], ans: 0 },
+      { id: 163, q: "A line is a nearly homozygous obtained through continuous inbreeding of a cross is called:", options: ["A) Inbred", "B) Hybrid", "C) Variety", "D) Open pollinated variety"], ans: 0 },
+      { id: 164, q: "Cytoplasmic-genetic male sterility is most widely used in:", options: ["A) Arachis hypogaea", "B) Sorghum bicolor", "C) Vigna radiata", "D) Saccharum officinarum"], ans: 1 },
+      { id: 165, q: "Which of the following organelles are implicated in cytoplasmic male sterility?", options: ["A) Chloroplast and Golgi bodies", "B) Mitochondria and chloroplast", "C) Mitochondria and endoplasmic reticulum", "D) Chloroplast and endoplasmic reticulum"], ans: 1 },
+      { id: 166, q: "Male sterility controlled by nuclear genes without any influence of cytoplasm is known as:", options: ["A) CMS", "B) CGMS", "C) GMS", "D) EGMS"], ans: 2 },
+      { id: 167, q: "Which technique can be followed to overcome self-incompatibility?", options: ["A) Heterosis breeding", "B) Bud pollination", "C) Apomixis", "D) Diploidy"], ans: 1 },
+      { id: 168, q: "______ are modified flowers that develop into plants directly without formation of seeds.", options: ["A) Bulbs", "B) Bulbil", "C) Corm", "D) Rhizome"], ans: 1 },
+      { id: 169, q: "Objectionable weed plant in lucerne seed crop is:", options: ["A) Cuscuta spp.", "B) Abelmoschus", "C) Heterostyly", "D) Alopecurus"], ans: 0 },
+      { id: 170, q: "The phenomenon in which two or more embryos develop from a single fertilized egg is called:", options: ["A) Polyembryony", "B) Polyploidy", "C) Apomixis", "D) Twins"], ans: 0 },
+      { id: 171, q: "Maturity of stamens and pistils at different times is called:", options: ["A) Cleistogamy", "B) Dichogamy", "C) Dioecy", "D) Apogamy"], ans: 1 },
+      { id: 172, q: "The flower does not open and self-pollination is the rule:", options: ["A) Allogamy", "B) Homogamy", "C) Autogamy", "D) Cleistogamy"], ans: 3 },
+      { id: 173, q: "Seeds with impermeable seed coat are called:", options: ["A) Synthetic seed", "B) Hard seed", "C) Coated seed", "D) Dead seed"], ans: 1 },
+      { id: 174, q: "The hard seed coat can be removed by:", options: ["A) Acid scarification", "B) After ripening", "C) Drying", "D) Stratification"], ans: 0 },
+      { id: 175, q: "The seed which will not germinate under normal environmental condition is:", options: ["A) Live seed", "B) Dead seed", "C) Dormant seed", "D) Rejected seed"], ans: 2 },
+      { id: 176, q: "Chemical used to treat seed dormancy in paddy is:", options: ["A) Potassium nitrate", "B) Sulphuric acid", "C) HCl", "D) None"], ans: 0 },
+      { id: 177, q: "Five generation system of seed multiplication can be followed in:", options: ["A) Self-pollinated crops", "B) Cross-pollinated crops", "C) Often cross-pollinated crops", "D) Hybrids"], ans: 0 },
+      { id: 178, q: "Registered seed is directly produced from (or recognised by class system in):", options: ["A) India", "B) Pakistan", "C) Canada", "D) America"], ans: 1 },
+      { id: 179, q: "Male parent is known in ______ crop.", options: ["A) Maize", "B) Cumbu", "C) Rice", "D) Redgram"], ans: 1 },
+      { id: 180, q: "Which supplementary pollination method is NOT practised in rice hybrid seed production?", options: ["A) Keep clipping of leaves", "B) GA₃ application", "C) Rope pulling/row pulling", "D) None"], ans: 0 },
+      { id: 181, q: "Match the following CMS sources:\nSorghum | Pearl millet | Sunflower | Cotton\na) Combine kafir 60 | b) G. hirsutum | c) Helianthus petiolaris | d) Tift 23A | e) Texas cytoplasm", options: ["A) 3-b, 1-c, 2-d, 5-e, 4-a", "B) 1-a, 2-b, 3-c, 4-d", "C) 4-a, 2-d, 1-c, 3-b", "D) None of the above"], ans: 0 },
+      { id: 182, q: "The seed which is used for multiplication of foundation seed is:", options: ["A) Foundation seed", "B) Breeder seed", "C) Certified seed", "D) Nucleus seed"], ans: 1 },
+      { id: 183, q: "Fine stature causes genetic contamination in hybrid seed production because:", options: ["A) Pollen and female line are true to type", "B) Pollen and female lines are not true to type", "C) Presence of male sterile line in female line", "D) Pollen and female lines are genetically pure"], ans: 1 },
+      { id: 184, q: "The generation system of seed multiplication used for sorghum and groundnut specifically:", options: ["A) 3, 5", "B) 4, 6", "C) 10, 7", "D) 5, 3"], ans: 0 },
+      { id: 185, q: "The extent of varietal contamination depends on:", options: ["A) Population of weeds", "B) Number of diseased plants", "C) Amount of foreign pollen", "D) Number of border rows"], ans: 2 },
+      { id: 186, q: "The plants that are very similar and resemble closely to seed crop plants in habit, morphological characters and growth are:", options: ["A) Off-types", "B) Pollen shedders", "C) Pollen particles", "D) Objectionable weed"], ans: 0 },
+      { id: 187, q: "Isolation distance for a seed crop depends on:", options: ["A) Flowering behaviour", "B) Pollination behaviour", "C) Fertilization capacity", "D) Receptivity of stigma"], ans: 1 },
+      { id: 188, q: "Pollinating agent for bajra:", options: ["A) Wind", "B) Beetle", "C) Wasp", "D) Water"], ans: 0 },
+      { id: 189, q: "Boron deficiency causes:", options: ["A) Cracking", "B) Marsh spots", "C) Cavity spot", "D) Hollow heart"], ans: 3 },
+      { id: 190, q: "A type of male sterility conditioned by cytoplasm rather than nuclear genes and transmitted only through the female parent is called:", options: ["A) GMS", "B) CGMS", "C) CMS", "D) EMS"], ans: 2 },
+      { id: 191, q: "Chemicals used to induce male sterility in crops are called:", options: ["A) Nematicides", "B) Herbicides", "C) Fungicides", "D) Gametocides"], ans: 3 },
+      { id: 192, q: "Designated objectionable weed in wheat seed crop:", options: ["A) Cichorium intybus", "B) Cucurbita sp.", "C) Convolvulus arvensis", "D) Cucurbita"], ans: 0 },
+      { id: 193, q: "Which of the following is the Seed Multiplication Ratio (SMR) for low?", options: ["A) Paddy", "B) Maize", "C) Bajra", "D) Groundnut"], ans: 3 },
+      { id: 194, q: "A long-day biennial crop which requires two seasons to produce seed:", options: ["A) Cluster bean", "B) Jute", "C) Karurani Cotton", "D) Sugar beet"], ans: 3 },
+      { id: 195, q: "Expand IMSCS / ISMS:", options: ["A) Indian Maximum Seed Certification Standards", "B) Indian Minimum Seed Certification Standards", "C) International Maximum Seed Certification Standards", "D) International Minimum Seed Certification Standards"], ans: 1 },
+      { id: 196, q: "A chemical is recommended for fuzzy cotton seed at the rate of:", options: ["A) 10 ml conc. Sulphuric acid/kg of seeds", "B) 100 ml conc. Sulphuric acid/kg of seeds", "C) 50 ml conc. Sulphuric acid/kg of seeds", "D) 25 ml conc. Sulphuric acid/kg of seeds"], ans: 1 },
+      { id: 197, q: "______ in bajra:", options: ["A) Downy mildew resistance", "B) Ergot disease resistance", "C) Male sterility", "D) Stem borer resistance"], ans: 1 },
+      { id: 198, q: "Which of the following method is not relevant to hybrid rice seed production?", options: ["A) Three-line system", "B) Two-line system", "C) Using chemical emasculators", "D) Using gynomonoecious lines"], ans: 3 },
+      { id: 199, q: "Cross pollination range of Gossypium hirsutum is:", options: ["A) 1–2%", "B) 5–10%", "C) 10–20%", "D) 10–50%"], ans: 3 },
+      { id: 200, q: "In which of the following crop staggered sowing is not required for hybrid seed production?", options: ["A) Rice", "B) Maize", "C) Tomato", "D) Sorghum"], ans: 2 },
+      { id: 201, q: "Chemical used for seed extraction in tomato is:", options: ["A) HCl", "B) HNO₃", "C) H₂SO₄", "D) CaCl₂"], ans: 0 },
+      { id: 202, q: "Rhizome and bulbs are found in:", options: ["A) Ginger and turmeric", "B) Tuber and bulb", "C) Corm", "D) Rhizome"], ans: 0 },
+      { id: 203, q: "Which cytoplasm in rice is most widely used as source of male sterility?", options: ["A) CMS-C", "B) CMS-Chinsurah Boro II", "C) CMS-Wild abortive", "D) CMS-Restorer"], ans: 2 },
+      { id: 204, q: "Match seed hardening chemicals:\nCyclocel | CaCl₂ | KH₂PO₄ | KCl\na) Groundnut | b) Maize | c) Cotton | d) Groundnut", options: ["A) 2, 3, 1, 4", "B) 1, 2, 3, 4", "C) 4, 3, 2, 1", "D) 3, 1, 4, 2"], ans: 0 },
+      { id: 205, q: "An example for chemical hybridizing agent is:", options: ["A) AgNO₃", "B) Ethrel", "C) H₂SO₄", "D) EMS"], ans: 1 },
+      { id: 206, q: "The superior F₁ over its parents is known as:", options: ["A) Composite", "B) Heterosis", "C) Cybrid", "D) Inbreeding depression"], ans: 1 },
+      { id: 207, q: "Polyethylene glycol is used in:", options: ["A) Hybrid seed production", "B) Haul priming", "C) Osmotic priming", "D) Matrix priming"], ans: 2 },
+      { id: 208, q: "Choose the correct statement about gingelly:\ni) It is regarded as one of the oldest crops because of its antiquity.\nii) Fruit type of gingelly is capsule.\niii) SVPR-1 black seeded variety of sesame.\niv) In self-pollinated crop, gynoecium of gingelly are fed to eri-worms.", options: ["A) i & iii", "B) i, ii & iii", "C) ii only", "D) i & ii only"], ans: 1 },
+      { id: 209, q: "The National Seed Corporation was established in:", options: ["A) 1961", "B) 1963", "C) 1965", "D) 1966"], ans: 1 },
+      { id: 210, q: "Triticale, a manmade cereal was developed by crossing:", options: ["A) Wheat and Rye", "B) Wheat and Rice", "C) Wheat and Oat", "D) Wheat and Sorghum"], ans: 0 },
+      { id: 211, q: "Minimum isolation distance for certified seed production of hybrid pearl millet is:", options: ["A) 200 m", "B) 400 m", "C) 800 m", "D) 1000 m"], ans: 0 },
+      { id: 212, q: "Chromosome doubling can be done in:", options: ["A) Gibberellic acid", "B) Colchicine", "C) Ethylene", "D) Proline"], ans: 1 },
+      { id: 213, q: "At what seed renewal period for hybrids?", options: ["A) Every year", "B) Once in 2 years", "C) Once in 3 years", "D) Once in 4 years"], ans: 0 },
+      { id: 214, q: "Proper lining is recommended for good seed set in hybrid seed production of:", options: ["A) Sorghum", "B) Rice", "C) Sunflower", "D) Castor"], ans: 0 },
+      { id: 215, q: "Hand rouging is practised for good seed set in hybrid seed production of:", options: ["A) Castor", "B) Sunflower", "C) Sorghum", "D) Rice"], ans: 1 },
+      { id: 216, q: "Isolation could be modified based on the number of border rows in:", options: ["A) Maize", "B) Paddy", "C) Niger", "D) Safflower"], ans: 0 },
+      { id: 217, q: "Famous cotton hybrid is:", options: ["A) Khandwa", "B) E. Siddiq", "C) Yuan long ping", "D) Roberts"], ans: 1 },
+      { id: 218, q: "Isolation distance for hybrid seed production in redgram is:", options: ["A) 100 m", "B) 200 m", "C) 300 m", "D) 400 m"], ans: 2 },
+      { id: 219, q: "Recommended number of border rows for paddy hybrid seed production:", options: ["A) 4", "B) 8", "C) 10", "D) 12"], ans: 1 },
+      { id: 220, q: "In rice hybrid seed production, GA₃ is sprayed for exertion of panicle at dosage:", options: ["A) 25 g/ha", "B) 50 g/ha", "C) 75 g/ha", "D) 100 g/ha"], ans: 1 },
+      { id: 221, q: "Planting ratio for hybrid seed production:", options: ["A) 8:1", "B) 4:2", "C) 1:1", "D) 5:1"], ans: 3 },
+      { id: 222, q: "Which of the following does not provide economic yield to the biological yield?", options: ["A) Yield index", "B) Harvest index", "C) Gross net profit", "D) Net sow area"], ans: 2 },
+      { id: 223, q: "In rice, the hybrid development is mainly through:", options: ["A) Milo cytoplasm", "B) Dee-gee-woo-gen", "C) T-23", "D) Wild abortive cytoplasm"], ans: 3 },
+      { id: 224, q: "Removal of fuzz/pollen from cotton seed is known as:", options: ["A) Delinting", "B) Defuzzing", "C) Chaffing", "D) Debearding"], ans: 0 },
+      { id: 225, q: "The prescribed isolation distance for certified crop production of cotton is:", options: ["A) 10 m", "B) 30 m", "C) 50 m", "D) 75 m"], ans: 1 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounter = document.getElementById("q-counter");
+    const progressPercent = document.getElementById("progress-percent");
+    const progressBarFill = document.getElementById("progress-bar-fill");
+    const questionText = document.getElementById("question-text");
+    const optionsContainer = document.getElementById("options-container");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePercent = document.getElementById("res-score-percent");
+    const resFeedback = document.getElementById("res-feedback");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+    const toggleReviewBtn = document.getElementById("toggle-review-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToResultsBtn = document.getElementById("back-to-results-btn");
+    const reviewItemsContainer = document.getElementById("review-items-container");
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+    });
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      let count = 225;
+
+      if (countSelect.value === "custom") {
+        count = Math.max(1, Math.min(225, parseInt(customCountInput.value) || 25));
+      } else {
+        count = parseInt(countSelect.value);
+      }
+
+      if (mode === "practice" || count < 225) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      userAnswers = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+    });
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounter.textContent = `Question ${currentIndex + 1} of ${total}`;
+      const pct = Math.round(((currentIndex + 1) / total) * 100);
+      progressPercent.textContent = `${pct}%`;
+      progressBarFill.style.width = `${pct}%`;
+
+      questionText.textContent = `${qData.id}. ${qData.q}`;
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optText, optIdx) => {
+        const btn = document.createElement("button");
+        btn.className = "option-btn";
+        if (userAnswers[currentIndex] === optIdx) {
+          btn.classList.add("selected");
+        }
+
+        btn.innerHTML = `<span>${optText}</span>`;
+        btn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+        optionsContainer.appendChild(btn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+      prevBtn.style.opacity = currentIndex === 0 ? "0.5" : "1";
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    submitBtn.addEventListener("click", () => {
+      evaluateAndShowResults();
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePercent.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resFeedback.textContent = "Outstanding Performance! High proficiency across Seed Technology concepts.";
+        resFeedback.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resFeedback.textContent = "Good Effort! Review isolation distances and breeding systems.";
+        resFeedback.style.color = "var(--primary)";
+      } else {
+        resFeedback.textContent = "Needs Revision. Focus on male sterility lines, tag classes, and certification rules.";
+        resFeedback.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    toggleReviewBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToResultsBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewItemsContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Answered";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="badge ${badgeClass}">${statusText}</span>
+          <div class="review-text">Q${idx + 1} (Orig #${q.id}). ${q.q}</div>
+          <div class="review-detail" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="review-detail" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewItemsContainer.appendChild(item);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Competitive Exam Portal — Test Series Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #02231c;
+      --bg-body: #f8fafc;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --text-dark: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --accent-badge: #facc15;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 2.25rem 1rem 1.75rem;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner h1 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--accent-badge);
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+
+    .banner .sub-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.35rem;
+      color: #e2e8f0;
+    }
+
+    .container {
+      max-width: 1050px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .section-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #022c22;
+      margin-bottom: 0.35rem;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .category-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .category-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .category-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+
+    .icon-amber { background: #fef3c7; color: #b45309; }
+    .icon-green { background: #dcfce7; color: #15803d; }
+    .icon-blue { background: #e0f2fe; color: #0369a1; }
+    .icon-purple { background: #f3e8ff; color: #7e22ce; }
+
+    .category-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      line-height: 1.25;
+    }
+
+    .category-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .tests-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-top: auto;
+    }
+
+    .test-link {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.85rem 1rem;
+      background: #f8fafc;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      color: var(--text-dark);
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: all 0.15s ease;
+    }
+
+    .test-link:hover {
+      background: #e6f3ef;
+      border-color: #79baaa;
+      color: #044e3e;
+      transform: translateX(3px);
+    }
+
+    .test-link .test-tag {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #044e3e;
+      background: #c5e6dc;
+      padding: 0.2rem 0.55rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.35rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    @media (max-width: 650px) {
+      .banner h1 {
+        font-size: 1.5rem;
+      }
+      .categories-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam Portal</h1>
+    <div class="sub-title">Online Practice Quiz Series</div>
+    <div class="tagline">Practice Today &bull; Perform Tomorrow &bull; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+    <div class="section-title">Select Module & Start Exam</div>
+    <div class="section-desc">Choose any test below to begin your timed interactive assessment.</div>
+
+    <div class="categories-grid">
+
+      <!-- Category 1: Indian National Movement (INM TEST SERIES) -->
+      <div class="category-card">
+        <div class="category-header">
+          <div class="category-icon icon-amber">&#9874;</div>
+          <div>
+            <div class="category-title">Indian National Movement</div>
+            <div class="category-meta">general_quiz &bull; INM Series</div>
+          </div>
+        </div>
+        <div class="tests-list">
+          <a href="general_quiz/INM%20TEST%20SERIES/INM_TEST_1.html" class="test-link">
+            <span>INM Test 1</span>
+            <span class="test-tag">History</span>
+          </a>
+          <a href="general_quiz/INM%20TEST%20SERIES/INM_TEST_2.html" class="test-link">
+            <span>INM Test 2</span>
+            <span class="test-tag">History</span>
+          </a>
+          <a href="general_quiz/INM%20TEST%20SERIES/INM_TEST_3.html" class="test-link">
+            <span>INM Test 3</span>
+            <span class="test-tag">History</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Category 2: Crop Protection (Entomology & Pathology) -->
+      <div class="category-card">
+        <div class="category-header">
+          <div class="category-icon icon-purple">&#128030;</div>
+          <div>
+            <div class="category-title">Entomology & Pathology</div>
+            <div class="category-meta">AGRI_QUIZ &bull; Crop Protection</div>
+          </div>
+        </div>
+        <div class="tests-list">
+          <a href="AGRI_QUIZ/AEN_1_TEST.html" class="test-link">
+            <span>Agricultural Entomology (AEN 1)</span>
+            <span class="test-tag">Entomology</span>
+          </a>
+          <a href="AGRI_QUIZ/PLANT_PATHOLOGY.html" class="test-link">
+            <span>Plant Pathology</span>
+            <span class="test-tag">Pathology</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Category 3: Horticulture & Crop Science -->
+      <div class="category-card">
+        <div class="category-header">
+          <div class="category-icon icon-green">&#127815;</div>
+          <div>
+            <div class="category-title">Horticulture & Crops</div>
+            <div class="category-meta">AGRI_QUIZ &bull; Production</div>
+          </div>
+        </div>
+        <div class="tests-list">
+          <a href="AGRI_QUIZ/AHO_2025.html" class="test-link">
+            <span>Assistant Horticultural Officer (AHO 2025)</span>
+            <span class="test-tag">Horticulture</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Category 4: Plant Breeding & Seed Technology -->
+      <div class="category-card">
+        <div class="category-header">
+          <div class="category-icon icon-blue">&#127793;</div>
+          <div>
+            <div class="category-title">Breeding & Seed Science</div>
+            <div class="category-meta">AGRI_QUIZ &bull; Genetics & Seeds</div>
+          </div>
+        </div>
+        <div class="tests-list">
+          <a href="AGRI_QUIZ/BREEDING.html" class="test-link">
+            <span>Plant Breeding & Genetics</span>
+            <span class="test-tag">Breeding</span>
+          </a>
+          <a href="AGRI_QUIZ/SEED_TEST_1.html" class="test-link">
+            <span>Seed Technology Test 1</span>
+            <span class="test-tag">Seed Tech</span>
+          </a>
+          <a href="AGRI_QUIZ/SEED_TEST_2.html" class="test-link">
+            <span>Seed Technology Test 2</span>
+            <span class="test-tag">Seed Tech</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Category 5: Agricultural Economics & Marketing -->
+      <div class="category-card">
+        <div class="category-header">
+          <div class="category-icon icon-green">&#128200;</div>
+          <div>
+            <div class="category-title">Agricultural Economics</div>
+            <div class="category-meta">AGRI_QUIZ &bull; Marketing & Finance</div>
+          </div>
+        </div>
+        <div class="tests-list">
+          <a href="AGRI_QUIZ/economics_test_1.html" class="test-link">
+            <span>Economics & Marketing Test 1</span>
+            <span class="test-tag">Economics</span>
+          </a>
+          <a href="AGRI_QUIZ/economics_Test_2.html" class="test-link">
+            <span>Economics & Banking Test 2</span>
+            <span class="test-tag">Economics</span>
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+</body>
+</html>

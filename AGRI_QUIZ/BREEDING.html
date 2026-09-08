@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plant Breeding & Genetics — 275 MCQ Examination Portal</title>
+  <style>
+    :root {
+      --primary: #4338ca;
+      --primary-hover: #3730a3;
+      --primary-light: #eef2ff;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --neutral: #475569;
+      --neutral-light: #f8fafc;
+      --border: #cbd5e1;
+      --card-bg: #ffffff;
+      --bg: #f1f5f9;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --radius: 10px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #312e81;
+      color: #ffffff;
+      padding: 1.25rem 1rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    header h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-top: 0.25rem;
+    }
+
+    .container {
+      max-width: 840px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    select, input[type="number"] {
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-size: 1rem;
+      outline: none;
+    }
+
+    select:focus, input[type="number"]:focus {
+      border-color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .btn-secondary {
+      background-color: var(--neutral-light);
+      color: var(--neutral);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background-color: #e2e8f0;
+    }
+
+    .btn-success {
+      background-color: var(--success);
+      color: #ffffff;
+    }
+
+    .btn-success:hover {
+      background-color: #166534;
+    }
+
+    .progress-wrapper {
+      margin-bottom: 1.5rem;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background-color: #e2e8f0;
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background-color: var(--primary);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .question-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+      white-space: pre-line;
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      width: 100%;
+      text-align: left;
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+      border: 1.5px solid var(--border);
+      background: #ffffff;
+      font-size: 0.95rem;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .option-btn:hover {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+    }
+
+    .option-btn.selected {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+      font-weight: 600;
+    }
+
+    .nav-controls {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .results-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .score-circle {
+      width: 125px;
+      height: 125px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto;
+      border: 3px solid var(--primary);
+    }
+
+    .score-circle .number {
+      font-size: 1.85rem;
+      font-weight: 800;
+    }
+
+    .score-circle .label {
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: var(--neutral-light);
+      padding: 1rem;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .stat-card .val {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .stat-card.correct .val { color: var(--success); }
+    .stat-card.wrong .val { color: var(--danger); }
+    .stat-card.unanswered .val { color: var(--neutral); }
+
+    .stat-card .desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .review-item.is-correct {
+      border-left: 5px solid var(--success);
+      background-color: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 5px solid var(--danger);
+      background-color: #fffdfd;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 5px solid var(--neutral);
+      background-color: var(--neutral-light);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .badge.correct { background: var(--success-light); color: var(--success); }
+    .badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .review-text {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .review-detail {
+      font-size: 0.875rem;
+      margin: 0.25rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 0.5rem;
+        margin: 1rem auto;
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .nav-controls {
+        flex-direction: column-reverse;
+      }
+      .nav-controls .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Plant Breeding, Genetics & PPV&FR Examination Portal</h1>
+    <p>Complete 275 Multiple-Choice Questions Interactive Practice Exam</p>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Configure Test Session</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Select exam mode and number of questions to begin testing your knowledge.</p>
+      
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Exam Mode (Sequential 1–275, Hidden Answers)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="275">All Questions (275 Questions)</option>
+            <option value="10">10 Questions</option>
+            <option value="25">25 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="custom">Custom Number</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 275)</label>
+          <input type="number" id="custom-count-input" min="1" max="275" value="25" />
+        </div>
+
+        <button class="btn btn-primary" id="start-btn" style="margin-top: 1rem;">Start Quiz</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="card hidden">
+      <div class="progress-wrapper">
+        <div class="progress-meta">
+          <span id="q-counter">Question 1 of 275</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+      </div>
+
+      <div class="question-title" id="question-text"></div>
+      <div class="options-list" id="options-container"></div>
+
+      <div class="nav-controls">
+        <button class="btn btn-secondary" id="prev-btn">Previous</button>
+        <div style="display: flex; gap: 0.75rem;">
+          <button class="btn btn-primary" id="next-btn">Next</button>
+          <button class="btn btn-success hidden" id="submit-btn">Submit Quiz</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-header">
+        <h2>Assessment Completed</h2>
+        <div class="score-circle">
+          <span class="number" id="res-score-percent">0%</span>
+          <span class="label">Total Score</span>
+        </div>
+        <p id="res-feedback" style="font-weight: 600; font-size: 1.1rem;"></p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Total Questions</div>
+        </div>
+        <div class="stat-card correct">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="stat-card wrong">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="stat-card unanswered">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <button class="btn btn-primary" id="toggle-review-btn">Review Answers</button>
+        <button class="btn btn-secondary" id="restart-btn">Restart Quiz</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem;">Detailed Answer Key & Review</h2>
+        <button class="btn btn-secondary" id="back-to-results-btn">Back to Results</button>
+      </div>
+      <div id="review-items-container"></div>
+    </div>
+
+  </div>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "Conservation of germplasm in its natural habitat or in the area where it naturally grows is known as:", options: ["A) Ex-situ conservation", "B) In-situ conservation", "C) Seed bank", "D) Field bank"], ans: 1 },
+      { id: 2, q: "Four-fold food production occurred in:", options: ["A) Blue revolution", "B) Green revolution", "C) White revolution", "D) None"], ans: 1 },
+      { id: 3, q: "Enclosure of all the plant production in a square:", options: ["A) Downy mildew resistance", "B) Ergot disease resistance", "C) Male sterility", "D) Stem borer resistance"], ans: 2 },
+      { id: 4, q: "Which of the following methods is not relevant to hybrid rice seed production?", options: ["A) Three-line system", "B) Two-line system", "C) Using chemical emasculators", "D) Using gynomonoecious lines"], ans: 3 },
+      { id: 5, q: "Cross pollen known as a source of ______ percentage:", options: ["A) 1 to 2%", "B) 5 to 10%", "C) 10 to 20%", "D) 10 to 50%"], ans: 1 },
+      { id: 6, q: "Central Rice Research Institute is located in which of the following states?", options: ["A) Odisha", "B) Tamil Nadu", "C) Punjab", "D) Haryana"], ans: 0 },
+      { id: 7, q: "In which of the following crop staggering is not required for hybrid seed production?", options: ["A) Maize", "B) Cotton", "C) Tomato", "D) Sorghum"], ans: 2 },
+      { id: 8, q: "An example for monoecious plant is:", options: ["A) Rice", "B) Groundnut", "C) Castor", "D) Cotton"], ans: 2 },
+      { id: 9, q: "Central Institute of Cotton Research is situated in:", options: ["A) Nagpur", "B) Coimbatore", "C) Kanpur", "D) Ludhiana"], ans: 0 },
+      { id: 10, q: "For evaluation of cultivated farms like land races, open-pollinated varieties, forms and wild relatives of crop plants:", options: ["A) Exploration", "B) Collection", "C) Evaluation", "D) Conservation"], ans: 1 },
+      { id: 11, q: "Breeding utilized for hybrid maize seed production is:", options: ["A) Hand emasculation and pollination", "B) Cytoplasmic genetic male sterility", "C) Genetic male sterility", "D) Detasseling"], ans: 3 },
+      { id: 12, q: "Storage organs of ginger and turmeric are:", options: ["A) Tuber", "B) Bulb", "C) Rhizome", "D) Corm"], ans: 2 },
+      { id: 13, q: "The chromosome number in maize is:", options: ["A) CMS-BT", "B) CMS-Chinsurah Boro II", "C) CMS-Wild abortive", "D) CMS-IRRI"], ans: 2 },
+      { id: 14, q: "Development of embryo sac from vegetative cells of the ovule such as nucellus, integument and chalaza is called:", options: ["A) Apogamy", "B) Parthenogenesis", "C) Adventitious embryony", "D) Diplospory"], ans: 2 },
+      { id: 15, q: "Name a new crop developed by crossing Triticum aestivum × Secale cereale:", options: ["A) Raphanobrassica", "B) Brassica oleracea", "C) Triticale", "D) Triticum dicoccum"], ans: 2 },
+      { id: 16, q: "Aonla is commercially propagated by:", options: ["A) Seeds", "B) Suckers", "C) Bulbs", "D) Tubers"], ans: 0 },
+      { id: 17, q: "Indian Institute of Horticulture Research is located at:", options: ["A) New Delhi", "B) Kolkata", "C) Bengaluru", "D) Mumbai"], ans: 2 },
+      { id: 18, q: "The breeding tool for commercial hybrid production in rice is:", options: ["A) Cytoplasmic male sterility", "B) Cytoplasmic genetic male sterility", "C) Genetic male sterility", "D) Hand pollination"], ans: 1 },
+      { id: 19, q: "The first Indian dwarf variety is:", options: ["A) Jaya", "B) IR-8", "C) Jaya/Jaya-type dwarf variety", "D) Basmati"], ans: 0 },
+      { id: 20, q: "Who discovered CMS (Cytoplasmic Male Sterility) in rice?", options: ["A) Professor S.S. Swaminathan", "B) Professor S.S. Virmani", "C) Professor S. V. Shanmugasundaram", "D) Professor T. T. Chang"], ans: 1 },
+      { id: 21, q: "Which of the following is used to produce hybrids in male sterile systems?", options: ["A) A-line × B-line", "B) A-line × R-line", "C) B-line × R-line", "D) A-line × A-line"], ans: 1 },
+      { id: 22, q: "The production of non-functional or sterile pollen grain while female gamete functions normally is known as:", options: ["A) Self-incompatibility", "B) Pollination", "C) Male sterility", "D) Male fertility"], ans: 2 },
+      { id: 23, q: "An example for chemical hybridizing agent (CHA) is:", options: ["A) Ethrel", "B) EMS", "C) Maleic hydrazide", "D) All of the above"], ans: 3 },
+      { id: 24, q: "A position in a chromosome that contains one or more polygenes involved in the determination of a quantitative trait is:", options: ["A) Quantitative trait locus", "B) Oligogenic trait locus", "C) Quantitative trait focus", "D) Qualitative trait locus"], ans: 0 },
+      { id: 25, q: "Which of the following is NOT correct?", options: ["A) Qualitative characters are discrete", "B) Quantitative characters are polygenic", "C) Quantitative characters are not affected by environment", "D) Answer not known"], ans: 2 },
+      { id: 26, q: "The dwarf gene in rice is:", options: ["A) Dee-Geo-Woo-Gen", "B) Norin 10", "C) Miro", "D) Wild abortive"], ans: 0 },
+      { id: 27, q: "The ploidy level of seedless watermelon is:", options: ["A) Tetraploid", "B) Triploid", "C) Hexaploid", "D) None"], ans: 1 },
+      { id: 28, q: "First interspecific cross between carnation and sweet william species of Dianthus was made by:", options: ["A) Thomas Fairchild (1717)", "B) Andrew Knight (1835)", "C) Darwin (1856)", "D) Koelreuter (1760)"], ans: 0 },
+      { id: 29, q: "The over-dominance concept of heterosis was independently proposed by:", options: ["A) Davenport (1908)", "B) Bruce (1910)", "C) Keeble and Pellew (1910)", "D) East and Shull (1908)"], ans: 0 },
+      { id: 30, q: "The first intergeneric hybrid Triticale was produced by:", options: ["A) Karpechenko", "B) Rimpau", "C) Farquhar", "D) Koelreuter"], ans: 1 },
+      { id: 31, q: "______ is the central agency in India for the export and introduction of germplasm of crop plants.", options: ["A) IBPGR", "B) NBPGR", "C) BSI", "D) NRR"], ans: 1 },
+      { id: 32, q: "Which of the following mating systems is used in production and maintenance of inbreds?", options: ["A) Random mating", "B) Genetically assortative mating", "C) Genetically disassortative mating", "D) Phenotypic assortative mating"], ans: 3 },
+      { id: 33, q: "Plant genetic engineering and biotechnology is located in:", options: ["A) TNAU", "B) IARI", "C) ICAR", "D) BARC"], ans: 3 },
+      { id: 34, q: "Which of these male sterile cytoplasmic sources are not patented to rice?", options: ["A) Wild abortive", "B) Chinsurah Boro II", "C) Ogura", "D) Oryza perennis"], ans: 2 },
+      { id: 35, q: "Adaptation of individual to their environment by means of special structures or function is:", options: ["A) Variation", "B) Heredity", "C) Adaptation", "D) Mutation"], ans: 2 },
+      { id: 36, q: "Immature fruits and vegetables are rich in:", options: ["A) Vitamins", "B) Protein", "C) Minerals", "D) All of the above"], ans: 3 },
+      { id: 37, q: "Plant growth regulator used for ripening is:", options: ["A) Gibberellic acid", "B) Cytokinin", "C) Ethylene", "D) Butyric acid"], ans: 2 },
+      { id: 38, q: "Particularly fatty seeds are rich in:", options: ["A) Groundnut oil", "B) Soy oil", "C) Sunflower", "D) Castor oil"], ans: 0 },
+      { id: 39, q: "Pungency in onion is due to:", options: ["A) Allyl sulphide", "B) Bud rot", "C) Rust", "D) None"], ans: 0 },
+      { id: 40, q: "In 1899, Mendel postulated laws of inheritance based on his work with:", options: ["A) Drosophila", "B) Field bean", "C) Pisum sativum", "D) Pigeon pea"], ans: 2 },
+      { id: 41, q: "Outbreeders have:", options: ["A) Cross pollination", "B) Random mating", "C) Heterozygous condition", "D) All of these"], ans: 3 },
+      { id: 42, q: "In plant breeding, homozygous individuals are represented as:", options: ["A) RR or rr", "B) HP or hr", "C) HH or ff", "D) FF or ff"], ans: 0 },
+      { id: 43, q: "Lamarck proposed:", options: ["A) Theory of Pangenesis", "B) Theory of Epigenesis", "C) Performance theory", "D) Theory of Acquired characters"], ans: 3 },
+      { id: 44, q: "Cutting is commonly propagated by:", options: ["A) Layering", "B) T-budding", "C) Budding", "D) Tongue grafting"], ans: 0 },
+      { id: 45, q: "National Institute of Millets Research is located at:", options: ["A) Hyderabad, Telangana", "B) Bengaluru, Karnataka", "C) Raipur, Chhattisgarh", "D) Kharar, Haryana"], ans: 0 },
+      { id: 46, q: "Gradual reduction in genetic variability due to elimination of various genotypes is:", options: ["A) Genetic erosion", "B) Genetic evolution", "C) Genotypic erosion", "D) Extinction"], ans: 0 },
+      { id: 47, q: "Who is known as the Father of Plant Tissue Culture?", options: ["A) Haberlandt", "B) Mendel", "C) Schleiden", "D) Schwann"], ans: 0 },
+      { id: 48, q: "In which of the following crops, the first transgenic plant resistant against herbicide, Manduca sexta is known?", options: ["A) Sugarcane", "B) Tomato", "C) Rice", "D) Tobacco"], ans: 3 },
+      { id: 49, q: "Jumping genes are also known as:", options: ["A) Cistrons", "B) Introns", "C) Recon", "D) Transposons"], ans: 3 },
+      { id: 50, q: "Gametophytic self-incompatibility was first reported by ______ in Nicotiana sanderae:", options: ["A) East & Mangelsdorf", "B) Babcock", "C) Gemes", "D) Gerstel"], ans: 0 },
+      { id: 51, q: "Gametophytic self-incompatibility was first reported in:", options: ["A) Africa", "B) China", "C) India", "D) Mexico"], ans: 0 },
+      { id: 52, q: "Which of the following is called bread wheat?", options: ["A) Triticum durum", "B) Triticum aestivum", "C) Triticum dicoccum", "D) Triticum persicum"], ans: 1 },
+      { id: 53, q: "National Hybridization Garden for sugarcane was established at:", options: ["A) Indian Institute of Sugarcane Research, Lucknow", "B) National Sugar Institute, Kanpur", "C) Directorate of Sugarcane Development, Lucknow", "D) Sugarcane Breeding Institute, Coimbatore"], ans: 3 },
+      { id: 54, q: "The first true flower was discovered by:", options: ["A) Koelreuter", "B) Sprout", "C) Allard", "D) Duvick"], ans: 0 },
+      { id: 55, q: "Which of the following is prerequisite for crop improvement?", options: ["A) Hybridization", "B) Genetic variation", "C) Mutation", "D) Male sterility"], ans: 1 },
+      { id: 56, q: "In ______, CMS is maintained by sibmating of sterile (msms) and heterozygous fertile (Msms) plants.", options: ["A) Mutation induced male sterility", "B) Cytoplasmic male sterility", "C) Genetic male sterility", "D) Male sterile plants"], ans: 2 },
+      { id: 57, q: "Find the correct statement:", options: ["A) The A line denotes male sterile line", "B) B line represents maintainer line", "C) The R line denotes heterozygous maintainer line", "D) All of the above"], ans: 3 },
+      { id: 58, q: "Which among the following crop is called Queen of cereals?", options: ["A) Sorghum", "B) Rice", "C) Maize", "D) Barley"], ans: 2 },
+      { id: 59, q: "The legal restriction on the movement of plants and plant materials between countries and between states to prevent introduction of disease is known as:", options: ["A) Plant quarantine", "B) Plant sanitation", "C) Plant reservation", "D) Plant survey"], ans: 0 },
+      { id: 60, q: "Which chemical is used to induce male sterility in wheat without affecting female fertility?", options: ["A) Maleic hydrazide", "B) Compound RH 531", "C) Ethrel", "D) EMS"], ans: 1 },
+      { id: 61, q: "The following crop three-line system is used for hybrid seed production:", options: ["A) Maize", "B) Rice", "C) Cotton", "D) Tomato"], ans: 1 },
+      { id: 62, q: "______ proposed pure line theory.", options: ["A) Johannsen", "B) Thomas Fairchild", "C) Mendel", "D) Darwin"], ans: 0 },
+      { id: 63, q: "The method of developing multiline in wheat was first outlined by:", options: ["A) Hull (1945)", "B) Borlaug (1953)", "C) M.S. Swaminathan", "D) None of these"], ans: 0 },
+      { id: 64, q: "Male sterility and self-incompatibility often mean:", options: ["A) Genetic male sterility", "B) Self-incompatibility", "C) Hand emasculation", "D) Fertilization"], ans: 1 },
+      { id: 65, q: "The economic part of potato plant belongs to which part of the plant?", options: ["A) Tender fruit", "B) Stem", "C) Root", "D) Mature fruit"], ans: 1 },
+      { id: 66, q: "In ______ breeding system, male sterile female parent can be multiplied by crossing:", options: ["A) A × A", "B) B × B", "C) B × R", "D) A × R"], ans: 0 },
+      { id: 67, q: "Coffee is native of:", options: ["A) Brazil", "B) Tanzania", "C) Africa", "D) Ethiopia"], ans: 3 },
+      { id: 68, q: "Write the origin of Tomato:", options: ["A) Peru", "B) South Africa", "C) India", "D) Mediterranean region"], ans: 0 },
+      { id: 69, q: "Tea is propagated through:", options: ["A) Soft wood cutting", "B) Leaf bud cutting", "C) Semi-hardwood cutting", "D) Hard wood cutting"], ans: 1 },
+      { id: 70, q: "What is the propagation material used in tuberose?", options: ["A) Bulbs", "B) Corms", "C) Tubers", "D) Seed"], ans: 0 },
+      { id: 71, q: "The level of natural outcrossing in groundnut is:", options: ["A) 5%", "B) 10%", "C) 15%", "D) Negligible"], ans: 1 },
+      { id: 72, q: "The major advantage of vegetative propagation is:", options: ["A) Uniform shape", "B) Uniform quality of fruits", "C) All plants are true to type", "D) Precocious bearing"], ans: 2 },
+      { id: 73, q: "Match the following:\ni) H.T. Patel | ii) Harrington | iii) Goulden | iv) Thomas Fairchild\na) Seed vigor | b) Citrus | c) Dianthus | d) Hybridization", options: ["A) i–i, ii–ii, iii–iii, iv–iv", "B) i–iv, ii–iii, iii–ii, iv–i", "C) i–ii, ii–iv, iii–i, iv–iii", "D) i–iii, ii–i, iii–iv, iv–ii"], ans: 2 },
+      { id: 74, q: "Somatic cell genesis in a species is called:", options: ["A) Gene pool", "B) Gene bank", "C) Genetic variability", "D) Genome"], ans: 2 },
+      { id: 75, q: "Development of embryo either from synergids or antipodal cells is referred to as:", options: ["A) Apomixis", "B) Adventive embryony", "C) Parthenogenesis", "D) Diplospory"], ans: 1 },
+      { id: 76, q: "______ is a reproductive deficiency of same plant where male organ in hermaphrodite flowers are rendered deficient:", options: ["A) Self-incompatibility", "B) Male sterility", "C) Cleistogamy", "D) Chasmogamy"], ans: 1 },
+      { id: 77, q: "The first cross between radish and cabbage made by:", options: ["A) Kihara", "B) Karpechenko", "C) Fairchild", "D) Lysenko"], ans: 1 },
+      { id: 78, q: "Which of the following is a monoecious plant?", options: ["A) Coconut", "B) Maize", "C) Castor", "D) All of the above"], ans: 3 },
+      { id: 79, q: "The suitability of a variety for general cultivation over a wide range of environmental conditions is known as:", options: ["A) Compatibility", "B) Comparability", "C) Heritability", "D) Stability"], ans: 3 },
+      { id: 80, q: "Pollen pollination is called:", options: ["A) Entomophily", "B) Zoophily", "C) Anemophily", "D) Hydrophily"], ans: 2 },
+      { id: 81, q: "Maize is a cross-pollinated crop because:", options: ["A) It is having bisexual flower", "B) Male flowers are found at the top and female flowers are found at the bottom of leaf axis", "C) Both A and R are true and R is the correct explanation of A", "D) Both A and R are true but R is not the correct explanation"], ans: 1 },
+      { id: 82, q: "Completion of pollination and fertilization in unopened flower is referred to as:", options: ["A) Cleistogamy", "B) Chasmogamy", "C) Heterogamy", "D) Dichogamy"], ans: 0 },
+      { id: 83, q: "Ranjit is the name of hybrid variety released in:", options: ["A) Rice", "B) Maize", "C) Cotton", "D) Sugarcane"], ans: 0 },
+      { id: 84, q: "Genetic male sterility is controlled by:", options: ["A) Single recessive gene", "B) Multiple genes", "C) Single dominant gene", "D) None of the above"], ans: 0 },
+      { id: 85, q: "Seedless grapes are formed due to:", options: ["A) Embryo abortion", "B) Gibberellins", "C) Excess nitrogen", "D) None of the above"], ans: 1 },
+      { id: 86, q: "Match the following:\na) Bulb | b) Corm | c) Rhizome | d) Tuber\ni) Gladiolus | ii) Onion | iii) Potato | iv) Canna", options: ["A) a–2, b–1, c–4, d–3", "B) a–1, b–2, c–3, d–4", "C) a–4, b–3, c–2, d–1", "D) a–3, b–4, c–1, d–2"], ans: 0 },
+      { id: 87, q: "Edible banana is:", options: ["A) Diploid", "B) Triploid", "C) Tetraploid", "D) None of the above"], ans: 1 },
+      { id: 88, q: "Genetic tool in hybrid seed production of red gram in:", options: ["A) CGMS", "B) GMS", "C) Mutation", "D) PGMS"], ans: 1 },
+      { id: 89, q: "Which of the following is cross-pollinated crop?", options: ["A) Sugarcane", "B) Sorghum", "C) Cabbage", "D) All of the above"], ans: 3 },
+      { id: 90, q: "The type of male sterility used in hybrid seed production in cucumber is:", options: ["A) Genetic male sterility", "B) Cytoplasmic male sterility", "C) Cytoplasmic genetic male sterility", "D) None of these"], ans: 0 },
+      { id: 91, q: "A hybrid rice variety released in Tamil Nadu is:", options: ["A) IR 36", "B) ADT 36", "C) CO 4", "D) None of these"], ans: 1 },
+      { id: 92, q: "The citrus species which is mono-embryonic is:", options: ["A) Citrus sinensis", "B) Citrus grandis", "C) Citrus reticulata", "D) Citrus aurantifolia"], ans: 3 },
+      { id: 93, q: "The process of removal of male part of a flower is called:", options: ["A) Crossing", "B) Pure line selection", "C) Backcross", "D) Emasculation"], ans: 3 },
+      { id: 94, q: "Nuclear (genic) male sterility system is followed for hybrid seed production in:", options: ["A) Rice", "B) Cotton", "C) Pulses", "D) Vegetables"], ans: 3 },
+      { id: 95, q: "Synthetic and composites varieties are:", options: ["A) Homozygous – Heterogeneous", "B) Homozygous – Homogeneous", "C) Heterozygous – Heterogeneous", "D) Heterogeneous – Homozygous"], ans: 0 },
+      { id: 96, q: "Match the crops with hybrids:\nList I: Maize, Jowar, Cotton, Coconut\nList II: Savithri, CSH-1, T × D, Ganga-1", options: ["A) 1, 4, 2, 3", "B) 4, 2, 1, 3", "C) 2, 1, 3, 4", "D) 3, 4, 1, 2"], ans: 0 },
+      { id: 97, q: "Match the propagation methods:\nFlowers: Banana, Jasmine, Marigold, Tuberose\nMethods: Bulbs, Suckers, Layering, Seeds", options: ["A) 1, 2, 3, 4", "B) 3, 2, 4, 1", "C) 2, 3, 4, 1", "D) 4, 1, 2, 3"], ans: 1 },
+      { id: 98, q: "Rejection of viable pollen from a flower to fertilize the same flower is:", options: ["A) Dichogamy", "B) Heterostyly", "C) Self-incompatibility", "D) Male sterility"], ans: 2 },
+      { id: 99, q: "Regency was developed by:", options: ["A) Johannsen", "B) Vilmorin", "C) B.P. Pal", "D) Thomas Fairchild"], ans: 2 },
+      { id: 100, q: "______ is an application of mature pollen to immature non-receptive stigma prior to anthesis.", options: ["A) Irradiation", "B) Double pollination", "C) Bud pollination", "D) Pollination"], ans: 2 },
+      { id: 101, q: "An example for variety recently released through mutation is:", options: ["A) Jaya", "B) CO 50", "C) TKM 13", "D) MDU 6"], ans: 2 },
+      { id: 102, q: "Which of the following is correctly matched?", options: ["A) Sorghum – self-pollinated crop", "B) Pigeon pea – often cross-pollinated crop", "C) Black gram – cross-pollinated crop", "D) Sunflower – self-pollinated crop"], ans: 1 },
+      { id: 103, q: "Assertion (A): Cumbu is a cross-pollinated crop.\nReason (R): Cumbu is protogyny.", options: ["A) Both A and R are true and R is the correct explanation of A", "B) Both A and R are true but R is not the correct explanation", "C) A is true but R is false", "D) A is false but R is true"], ans: 0 },
+      { id: 104, q: "Gene for gene hypothesis was proposed by:", options: ["A) McClintock", "B) Fisher", "C) Flor", "D) DeBary"], ans: 2 },
+      { id: 105, q: "The Mendel's laws of inheritance were rediscovered in 1900 by:", options: ["A) Hugo de Vries", "B) Correns", "C) Tschermak", "D) All of the above"], ans: 3 },
+      { id: 106, q: "Non-hybridization breeding methods refer to:", options: ["A) Pure line selection", "B) Mass selection", "C) Hybridization", "D) All of the above"], ans: 3 },
+      { id: 107, q: "The world's first rice hybrid was developed by ______ in 1976.", options: ["A) Yuan Long Ping", "B) Strassburger", "C) Painter", "D) Hull"], ans: 0 },
+      { id: 108, q: "The first transgenic tobacco was developed by Fraley et al. in:", options: ["A) 1974", "B) 1976", "C) 1983", "D) 1985"], ans: 2 },
+      { id: 109, q: "The world's first golden pea hybrid, ICR-8, was developed in 1991 from:", options: ["A) ICAR", "B) ICRISAT", "C) IARI", "D) CRIDA"], ans: 1 },
+      { id: 110, q: "Who was the famous Indian plant explorer and also called the Father of plant introduction in India?", options: ["A) Frankel", "B) H.S. Bhat", "C) D. Sankaram", "D) Harbhajan Singh / Frankel"], ans: 0 },
+      { id: 111, q: "National Bureau of Plant Genetic Resources (NBPGR) was established in:", options: ["A) 1980", "B) 1976", "C) 1988", "D) 1990"], ans: 2 },
+      { id: 112, q: "The International Board of Plant Genetic Resources (IBPGR) was established in Rome, Italy in the year:", options: ["A) 1974", "B) 1960", "C) 1976", "D) 1985"], ans: 2 },
+      { id: 113, q: "Consultative Group on International Agricultural Research (CGIAR) was established in:", options: ["A) 1964", "B) 1975", "C) 1967", "D) 1971"], ans: 3 },
+      { id: 114, q: "Land races and improved varieties of recent past are:", options: ["A) Modern cultivars", "B) Obsolete varieties", "C) Land races", "D) Advanced varieties"], ans: 1 },
+      { id: 115, q: "Find the correct statement:", options: ["A) The concept of core collection was developed by Hawkes", "B) Orthodox seeds show drastic loss in viability with decrease in moisture content below 12 to 13%", "C) Recalcitrant seeds can be dried to low moisture content without losing viability", "D) All of the above"], ans: 0 },
+      { id: 116, q: "Conservation of germplasm in the gene bank:", options: ["A) In-situ conservation", "B) Ex-situ conservation", "C) Cryopreservation", "D) None"], ans: 1 },
+      { id: 117, q: "Permanent loss of a crop species is called:", options: ["A) Genetic erosion", "B) Acclimatization", "C) Extinction", "D) Adaptation"], ans: 2 },
+      { id: 118, q: "An example for non-transgenic male sterile line is:", options: ["A) Barstar", "B) Kafir 60", "C) Wild abortive", "D) Texas"], ans: 1 },
+      { id: 119, q: "The process of adaptation of a variety, line or population to new environment is known as:", options: ["A) Hybridization", "B) Acclimatization", "C) Adaptation", "D) Natural selection"], ans: 1 },
+      { id: 120, q: "Apomixis can be applicable to:", options: ["A) Fixation of heterosis", "B) Production of homogeneous line alone", "C) Production of hybrids", "D) All the above"], ans: 3 },
+      { id: 121, q: "Example for male gametocide is:", options: ["A) EMS", "B) Hybridization", "C) Colchicine", "D) All of the above"], ans: 0 },
+      { id: 122, q: "By ______ we can reduce the frequency of heterozygote Aa to ____ percent of that in the previous generation.", options: ["A) 10", "B) 20", "C) 30", "D) 50%"], ans: 3 },
+      { id: 123, q: "The characters governed by many genes are called:", options: ["A) Polygenic characters", "B) Oligogenic characters", "C) Qualitative characters", "D) Contrasting characters"], ans: 0 },
+      { id: 124, q: "Quantitative trait is:", options: ["A) Qualitative trait", "B) Quantitative trait", "C) Plant height", "D) Test weight"], ans: 2 },
+      { id: 125, q: "Primary centre of origin of groundnut is:", options: ["A) Brazil", "B) USA", "C) Peru", "D) Hindustan"], ans: 0 },
+      { id: 126, q: "Donor for semi-dwarf gene in wheat is:", options: ["A) Dee-Geo-Woo-Gen", "B) Norin 10", "C) IR 36", "D) Peta"], ans: 1 },
+      { id: 127, q: "Examples of primitive cultivars are:", options: ["A) Old cultivars", "B) Wild relatives", "C) Obsolete cultivars", "D) Primitive cultivars"], ans: 3 },
+      { id: 128, q: "Extent of cross-pollination in often-cross-pollinated crops is:", options: ["A) 0–5%", "B) 5–10%", "C) 10–25%", "D) 25–50%"], ans: 2 },
+      { id: 129, q: "National Plant Biotechnology Institute is located at:", options: ["A) Hyderabad / New Delhi", "B) New York", "C) Rome", "D) Geneva"], ans: 0 },
+      { id: 130, q: "Law of homologous series was proposed by:", options: ["A) T.A. Fairchild", "B) N.I. Vavilov", "C) Johnson", "D) Mendel"], ans: 1 },
+      { id: 131, q: "Sources of cytoplasmic male sterility:", options: ["A) Texas Cytoplasm", "B) Tift 23A (Tifton)", "C) Combined kafir", "D) All of the above"], ans: 3 },
+      { id: 132, q: "The rice-wheat crop source for semi-dwarf types is:", options: ["A) Wheat", "B) Rice", "C) Sorghum", "D) Pearl millet"], ans: 1 },
+      { id: 133, q: "The use of multiple genes was first suggested by ______ in 1915 in oats.", options: ["A) Jones", "B) Borlaug", "C) Giller", "D) Browning"], ans: 0 },
+      { id: 134, q: "Biological Abstracts was started in the year:", options: ["A) 2002", "B) 2001", "C) 2000", "D) 2003"], ans: 1 },
+      { id: 135, q: "National Horticulture Authority was established in the year ______ in Chennai:", options: ["A) 1941", "B) 2001", "C) 2002", "D) 2003"], ans: 2 },
+      { id: 136, q: "The Plant Quarantine (Regulation of Import into India) Order was passed in:", options: ["A) 1914", "B) 1947", "C) 1993", "D) 2003"], ans: 3 },
+      { id: 137, q: "Transposable elements (jumping genes) were discovered by:", options: ["A) McClintock", "B) Mendel", "C) Robert", "D) Shull"], ans: 0 },
+      { id: 138, q: "Double cross was first suggested by:", options: ["A) Beal", "B) Shull", "C) Jones", "D) Knight"], ans: 2 },
+      { id: 139, q: "Who discovered triangle of Brassica in 1935?", options: ["A) U", "B) Nagaharu", "C) Nagaharu Karpechenko / U. Nagaharu", "D) None"], ans: 2 },
+      { id: 140, q: "Who first used artificial hybridization in fruit crops in 1800?", options: ["A) Rimpau", "B) Koelreuter", "C) Blakeslee", "D) T.A. Knight"], ans: 3 },
+      { id: 141, q: "The first study of population genetics was given by:", options: ["A) Shull & East", "B) Vilmorin", "C) Hardy & Weinberg", "D) Davison"], ans: 2 },
+      { id: 142, q: "Aster and endosperm are examples of transgenic variety of:", options: ["A) Tobacco", "B) Soybean", "C) Cotton", "D) Tomato"], ans: 2 },
+      { id: 143, q: "The plant type (crop ideotype) concept was first introduced by:", options: ["A) Jennings (1964)", "B) Donald (1968)", "C) Finley (1968)", "D) Rasmusson (1970)"], ans: 1 },
+      { id: 144, q: "Identify the correct statement: A Mendelian population means:", options: ["A) A self-pollinated population", "B) An inbred population", "C) A large random-mating population", "D) A hybrid population"], ans: 2 },
+      { id: 145, q: "PPVFR Act was enacted in:", options: ["A) 2000", "B) 2001", "C) 1999", "D) 2002"], ans: 1 },
+      { id: 146, q: "Which of the following is not a type of apomixis?", options: ["A) Parthenogenesis", "B) Adventive embryony", "C) Parthenocarpy", "D) None"], ans: 2 },
+      { id: 147, q: "A major source of male sterility in sorghum is:", options: ["A) Sorghum (Combine Kafir 60)", "B) Maize", "C) Cotton", "D) Rice"], ans: 0 },
+      { id: 148, q: "Greg 399 is an important source of male sterility in:", options: ["A) Cotton", "B) Maize", "C) Cumbu", "D) Rice"], ans: 0 },
+      { id: 149, q: "Which of the following is the latest rice hybrid in Tamil Nadu?", options: ["A) ADT RH 2", "B) TRY (R) 2", "C) CORH 4", "D) CORH 3"], ans: 2 },
+      { id: 150, q: "Cytoplasmic male sterility is governed by:", options: ["A) Nuclear genes", "B) Both plasma and nuclear genes", "C) Nuclear and mitochondrial genes", "D) Mitochondrial genes"], ans: 3 },
+      { id: 151, q: "In India, plant introduction work is carried out by:", options: ["A) NBPGR", "B) IRRI", "C) ICRISAT", "D) CICR"], ans: 0 },
+      { id: 152, q: "The concept of pure line theory was developed with:", options: ["A) Maize", "B) Garden pea", "C) Wheat", "D) French bean"], ans: 3 },
+      { id: 153, q: "Semi-dwarf rice varieties of IR-8 was developed by:", options: ["A) Philippines", "B) India", "C) China", "D) Mexico"], ans: 0 },
+      { id: 154, q: "Mass selection is always based on:", options: ["A) Phenotype", "B) Progeny test", "C) Genotype", "D) Heritability"], ans: 0 },
+      { id: 155, q: "Pure lines are:", options: ["A) Heterogeneous and Homogeneous", "B) Homogeneous", "C) Heterozygous", "D) Homogenous and Homozygous"], ans: 3 },
+      { id: 156, q: "Vilmorin practiced individual plant selection in sugarbeet to improve:", options: ["A) Root yield", "B) Sugar content", "C) Root colour", "D) Leaf colour"], ans: 1 },
+      { id: 157, q: "Match the following:\nList I: A) Mass pedigree method | B) Single seed method | C) Dianthus | D) First cotton hybrid\nList II: i) C.T. Patel | ii) Harrington | iii) Goulden | iv) Thomas Fairchild", options: ["A) A–ii, B–iii, C–iv, D–i", "B) A–i, B–ii, C–iii, D–iv", "C) A–iv, B–i, C–ii, D–iii", "D) A–iii, B–iv, C–i, D–ii"], ans: 0 },
+      { id: 158, q: "Among the following, which method is not appropriate for cross-pollinated crops?", options: ["A) Mass selection", "B) Bulk method", "C) Pureline selection", "D) Heterosis breeding"], ans: 2 },
+      { id: 159, q: "Ex-situ conservation is done in:", options: ["A) National parks", "B) Gene sanctuaries", "C) Biospheres", "D) Gene banks"], ans: 3 },
+      { id: 160, q: "Identify the correct statement:", options: ["A) The first artificial plant hybrid is also called Fairchild mule", "B) Maize presents an example of protogyny", "C) The first Agricultural University was established in 1960 at IARI", "D) Pearl millet exhibits example of protandry"], ans: 0 },
+      { id: 161, q: "Identify the correct statement with transgressive segregation:", options: ["A) Transfer of one or more characters into a single variety", "B) Improving yield or its contributing characters", "C) Plants in an F₂ generation are superior to both parents for one or more characters", "D) Ability of an inbred to transmit desirable performance to its hybrid progenies"], ans: 2 },
+      { id: 162, q: "Crossing between two different species of the same genus is called:", options: ["A) Intraspecific hybridization", "B) Intergeneric hybridization", "C) Interspecific hybridization", "D) Clonal hybridization"], ans: 2 },
+      { id: 163, q: "The oldest method of plant breeding is:", options: ["A) Introduction", "B) Selection", "C) Hybridization", "D) All the above"], ans: 1 },
+      { id: 164, q: "In ______, a large number of plants of similar phenotype are selected and their seeds are mixed together to constitute the new variety.", options: ["A) Pureline selection", "B) Mass selection", "C) Pedigree selection", "D) Bulk method"], ans: 1 },
+      { id: 165, q: "The selected plants are crossed to a tester with broad genetic base in:", options: ["A) Simple recurrent selection", "B) Recurrent selection for general combining ability", "C) Recurrent selection for specific combining ability", "D) Reciprocal recurrent selection"], ans: 1 },
+      { id: 166, q: "The chromosome number of Sesamum indicum is:", options: ["A) 2n = 32", "B) 2n = 26", "C) 2n = 64", "D) 2n = 52"], ans: 1 },
+      { id: 167, q: "A first-generation hybrid between a single cross and an inbred line is called:", options: ["A) Double cross", "B) Three-way cross", "C) Double top cross", "D) Multiple cross"], ans: 1 },
+      { id: 168, q: "Which one of the following is not an ionizing radiation?", options: ["A) Thermal neutrons", "B) α-rays", "C) UV rays", "D) X-rays"], ans: 2 },
+      { id: 169, q: "A method of breeding most commonly used when the desired variation is required to be induced in a vegetatively propagated crop is:", options: ["A) Polyploidy", "B) Pedigree method of breeding", "C) Mutation breeding", "D) Backcross method of breeding"], ans: 2 },
+      { id: 170, q: "The most effective method for the transfer of oligogenic character is:", options: ["A) Pedigree breeding", "B) Bulk breeding", "C) Backcross breeding", "D) Disruptive breeding"], ans: 2 },
+      { id: 171, q: "Breeding methods for self-pollinated crops are:\ni. Mass selection | ii. Pureline selection | iii. Pedigree methods | iv. Backcross methods", options: ["A) i, ii and iii", "B) i, iii and iv", "C) i, ii and iv", "D) i, ii, iii and iv"], ans: 3 },
+      { id: 172, q: "Bulk population breeding is suitable for:", options: ["A) Flower crops", "B) Vegetable crops", "C) Fruit crops", "D) Small grains"], ans: 3 },
+      { id: 173, q: "Most commonly used test for estimating GCA in crop species is:", options: ["A) Progeny test", "B) Top cross test", "C) Single cross test", "D) Backcross test"], ans: 1 },
+      { id: 174, q: "Mutation is due to change in gene because of:", options: ["A) Loss", "B) Degeneration", "C) Addition", "D) All the above"], ans: 3 },
+      { id: 175, q: "The formula 3n(n−1)(n−2)(n−3) / 24 (where n = number of inbred lines) indicates:", options: ["A) Double cross numbers", "B) Single cross numbers", "C) Both of these", "D) None of these"], ans: 0 },
+      { id: 176, q: "Which one of the following is an alkylating chemical mutagen?", options: ["A) Ethyl methane sulphonate", "B) Bromouracil", "C) Thiamine", "D) Adenine"], ans: 0 },
+      { id: 177, q: "Which one of the following is suitable for asexually propagated crops?", options: ["A) Top cross", "B) Pedigree method", "C) Heterosis breeding", "D) Clonal selection"], ans: 3 },
+      { id: 178, q: "Match the following crosses:\na) Single cross | b) Three-way cross | c) Double cross | d) Back cross\n1. (A×B) × (C×D) | 2. A×B → F₁×C | 3. A×B → F₁×A | 4. A×B", options: ["A) a–1, b–2, c–3, d–4", "B) a–2, b–3, c–4, d–1", "C) a–3, b–4, c–1, d–2", "D) a–4, b–2, c–1, d–3"], ans: 3 },
+      { id: 179, q: "Pureline variety is:", options: ["A) Homozygous – Heterogeneous", "B) Homozygous – Homogeneous", "C) Heterozygous – Heterogeneous", "D) Heterozygous – Homogeneous"], ans: 1 },
+      { id: 180, q: "In backcross breeding, repeated crossing with recurrent parent is due to:", options: ["A) Transfer the desirable gene from donor parent", "B) Break desirable linkage", "C) Retain the intensity of desirable gene", "D) Completely recover the genotype of recurrent parent"], ans: 3 },
+      { id: 181, q: "Chemical mutagenesis in crop plants can be carried out using:\nI. Acetone | II. Chloroform | III. Ethyl methane sulphonate | IV. Diethyl sulphate", options: ["A) I and II", "B) II and III", "C) III and IV", "D) I and III"], ans: 2 },
+      { id: 182, q: "A progeny of a single homozygous self-pollinated plant is called:", options: ["A) Compositae", "B) Synthetic", "C) Hybrid", "D) Pureline"], ans: 3 },
+      { id: 183, q: "An inbred crossed to a tester with a wide genetic base (open-pollinated variety, synthetic, double cross) is called:", options: ["A) Double cross", "B) Test cross", "C) Top cross", "D) Triple test cross"], ans: 2 },
+      { id: 184, q: "Crossing a F₁ with recessive parent is called:", options: ["A) Double cross", "B) Test cross", "C) Top cross", "D) Triple test cross"], ans: 1 },
+      { id: 185, q: "The method useful for improvement of local varieties of self-pollinated crop is:", options: ["A) Mass selection", "B) Reciprocal selection", "C) Bulk method selection", "D) Pedigree selection"], ans: 0 },
+      { id: 186, q: "Method of selection in plants showing vegetative propagation is:", options: ["A) Pedigree selection", "B) Pureline selection", "C) Clonal selection", "D) Mass selection"], ans: 2 },
+      { id: 187, q: "______ refers to selection procedures in which the segregating population of self-pollinated species is grown in bulk plot.", options: ["A) Pedigree selection", "B) Backcross selection", "C) Mass selection", "D) Bulk Method"], ans: 3 },
+      { id: 188, q: "In crops, more uniformity is seen in the population of:", options: ["A) Synthetic", "B) Double cross hybrid", "C) Single cross hybrid", "D) Composite"], ans: 2 },
+      { id: 189, q: "Which among the breeding methods is not suited to cross-pollinated crops?", options: ["A) Hybrid development", "B) Synthetics development", "C) Multiline development", "D) Double cross development"], ans: 2 },
+      { id: 190, q: "Which of the following have dimorphic anthers?", options: ["A) Cumbu", "B) Groundnut", "C) Rice", "D) Sesamum"], ans: 1 },
+      { id: 191, q: "Which among the breeding methods is not suited to self-pollinated crops?", options: ["A) Pureline selection", "B) Hybridization and selection", "C) Composite development", "D) Pedigree selection"], ans: 2 },
+      { id: 192, q: "The technique used for hybrid seed production in maize is:", options: ["A) Emasculation and dusting", "B) Three-line breeding system", "C) Detasseling", "D) Chemical emasculants"], ans: 2 },
+      { id: 193, q: "The minimum isolation distance for foundation seed production of hybrid pearl millet is:", options: ["A) 200 m", "B) 400 m", "C) 800 m", "D) 1000 m"], ans: 3 },
+      { id: 194, q: "Chromosome doubling can be done in plants by using:", options: ["A) Gibberellic acid", "B) Colchicine", "C) Ethylene", "D) Proline"], ans: 1 },
+      { id: 195, q: "When a F₁ is crossed with the recessive homozygous parent, the cross is known as:", options: ["A) Back cross", "B) Crossing over", "C) Test cross", "D) All the above"], ans: 2 },
+      { id: 196, q: "Inbreeding of cross-pollinated species leads to increase in:", options: ["A) Homozygosity", "B) Heterozygosity", "C) Both of the above", "D) None of the above"], ans: 0 },
+      { id: 197, q: "Mixture of several purelines constitutes:", options: ["A) Inbred line", "B) Composite", "C) Multiline", "D) Pure line"], ans: 2 },
+      { id: 198, q: "Highest adaptability is observed in:", options: ["A) Single cross", "B) Double cross", "C) Three-way cross", "D) Multiple cross"], ans: 3 },
+      { id: 199, q: "A cross between a hybrid (F₁) and one of its parents is known as:", options: ["A) Back cross", "B) Bulk method", "C) Interspecific hybridization", "D) Pedigree"], ans: 0 },
+      { id: 200, q: "A cross made between two inbred lines by reversing the order of male and female parents is called:", options: ["A) Back cross", "B) Return cross", "C) Reverse cross", "D) Reciprocal cross"], ans: 3 },
+      { id: 201, q: "Which of the following methods of breeding is not practiced for producing new varieties of self-pollinated crops?", options: ["A) Pureline selection", "B) Mass selection", "C) Hybridization", "D) Recurrent selection"], ans: 3 },
+      { id: 202, q: "Heterosis is exploited in which of the following crops?", options: ["A) Maize", "B) Cotton", "C) Pepper", "D) All of these"], ans: 3 },
+      { id: 203, q: "Consider the statements regarding colchicine:\nI. Most widely used for chromosome doubling | II. Poisonous chemical | III. Pure colchicine is yellow alkaloid | IV. Blocks spindle formation", options: ["A) I and II only", "B) IV only", "C) II only", "D) All are correct"], ans: 3 },
+      { id: 204, q: "Clone means:", options: ["A) Making an identical copy physically as well as genetically", "B) Replication of diploids or animals replicated asexually", "C) Having genetically identical from single parents", "D) All the above"], ans: 3 },
+      { id: 205, q: "Heterosis refers to hypothesis:", options: ["A) Gene-for-gene hypothesis", "B) Dominance hypothesis", "C) Over-dominance hypothesis", "D) Recessive hypothesis"], ans: 2 },
+      { id: 206, q: "Three-way cross is a cross between:", options: ["A) A × B", "B) A double cross and an inbred", "C) A single cross (A × B) and an inbred (C)", "D) A cross between a single cross and a variety"], ans: 2 },
+      { id: 207, q: "Which one of the following is incorrect?", options: ["A) Haploids carry two sets of identical chromosomes", "B) Doubled haploids are 100% homozygous", "C) Haploids can be generated from pollen", "D) Haploids can be generated from ovules"], ans: 0 },
+      { id: 208, q: "The wild progenitor of pigeonpea is:", options: ["A) Cajanus cajan", "B) Cajanus cajanifolius", "C) Cajanus albicans", "D) Cajanus elongatus"], ans: 1 },
+      { id: 209, q: "The haploid chromosome complement of a species is represented by:", options: ["A) 2n", "B) 2x", "C) n", "D) x"], ans: 2 },
+      { id: 210, q: "A long-day biennial crop requires two seasons to produce seed:", options: ["A) Onion", "B) Sugar beet", "C) Karunai", "D) All of the above"], ans: 3 },
+      { id: 211, q: "The term mutation was introduced by:", options: ["A) de Vries", "B) Hugo de Vries", "C) Muller", "D) Stadler"], ans: 1 },
+      { id: 212, q: "Pure line is a homogeneous population:", options: ["A) True", "B) False"], ans: 0 },
+      { id: 213, q: "Indicate the wrong statement:", options: ["A) Sugarcane is a C4 plant", "B) Sunflower is a C3 plant", "C) Pineapple is a CAM plant", "D) C3 plants are monocotyledons"], ans: 3 },
+      { id: 214, q: "Which one of the following is a C4 plant?", options: ["A) Rice", "B) Maize", "C) Wheat", "D) Black gram"], ans: 1 },
+      { id: 215, q: "The inbred crop varieties in synthetic and composite varieties are:", options: ["A) Low", "B) Very low", "C) Medium", "D) Very high"], ans: 3 },
+      { id: 216, q: "A plant-type of hybrid variety developed through:", options: ["A) Plant introduction", "B) Mass selection", "C) Pedigree method", "D) Mutation breeding"], ans: 2 },
+      { id: 217, q: "______ are those genotypes formed by crossing two or more pure lines, inbreds, clones or other genetically dissimilar lines of commercial cultivar.", options: ["A) Hybrid variety", "B) Inbred line", "C) Variety", "D) Pure line variety"], ans: 0 },
+      { id: 218, q: "An annual line developed by continued inbreeding accompanied by selection is:", options: ["A) Synthetics", "B) Inbred", "C) Hybrid", "D) Multilines"], ans: 1 },
+      { id: 219, q: "Which method of breeding is followed to transfer disease resistance to a ruling variety?", options: ["A) Mass selection", "B) Mass pedigree", "C) Single seed descent", "D) Back cross"], ans: 3 },
+      { id: 220, q: "A line carrying one chromosome pair from a different species in addition to the normal somatic chromosome complement is known as:", options: ["A) Alien addition line", "B) Alien substitution line", "C) Alien monosomic", "D) Alien nullisomic"], ans: 0 },
+      { id: 221, q: "Example for secondary centre of origin:", options: ["A) Sonora 64 and Lerma Rojo", "B) IR 8 and IR 64", "C) Kalyana sona and Sonalika", "D) Both A & B"], ans: 2 },
+      { id: 222, q: "Highly segregating population is:", options: ["A) F₁", "B) F₂", "C) F₃", "D) F₄"], ans: 1 },
+      { id: 223, q: "Mating between individuals sharing a common parent in their ancestry is known as:", options: ["A) Cross pollination", "B) Outbreeding", "C) Cross breeding", "D) Inbreeding"], ans: 3 },
+      { id: 224, q: "Widely used breeding method in self-pollinated crops is:", options: ["A) Introduction", "B) Pure line selection", "C) Pedigree method", "D) Recurrent selection"], ans: 2 },
+      { id: 225, q: "Genetic constitution of hybrid is:", options: ["A) Homozygous and heterogeneous", "B) Homozygous and homogeneous", "C) Heterozygous and homogeneous", "D) Heterozygous and heterogeneous"], ans: 3 },
+      { id: 226, q: "Inbreeding depression is generally:", options: ["A) Recessive", "B) Recurrent", "C) Allosteric", "D) All of these"], ans: 0 },
+      { id: 227, q: "Embryo rescue technique is being followed in:", options: ["A) Back cross", "B) Polyploidy", "C) Distant hybridization", "D) Pureline selection"], ans: 2 },
+      { id: 228, q: "Progeny of two inbreds is known as:", options: ["A) Single cross hybrid", "B) Double cross hybrid", "C) Top cross", "D) Three-way cross hybrid"], ans: 0 },
+      { id: 229, q: "Inability of pollen of one species or genotype to effect fertilization of female of related species is:", options: ["A) Cross incompatibility", "B) Hybrid infertility", "C) Hybrid breakdown", "D) Hybrid viability"], ans: 0 },
+      { id: 230, q: "______ refers to the inability of a hybrid to produce viable offsprings.", options: ["A) Cross incompatibility", "B) Hybrid infertility", "C) Hybrid breakdown", "D) Hybrid sterility"], ans: 3 },
+      { id: 231, q: "Kalyana sona is a variety of:", options: ["A) Wheat", "B) Rice", "C) Maize", "D) Chickpea"], ans: 0 },
+      { id: 232, q: "Example for chemical mutagen:", options: ["A) Mannitol", "B) X-ray", "C) EMS", "D) Fast Neutron"], ans: 2 },
+      { id: 233, q: "Match the following:\nA) Parent donating desirable gene | B) Parent receiving desirable gene | C) Mixture of isogenic genes | D) Genotypes having single locus difference\n1. Donor | 2. Multiline | 3. Recipient | 4. Isogenic lines", options: ["A) A–1, B–3, C–2, D–4", "B) A–2, B–1, C–4, D–3", "C) A–3, B–2, C–1, d–4", "D) A–4, B–3, C–2, D–1"], ans: 0 },
+      { id: 234, q: "Consider the following statements:\n1. Dominance hypothesis was proposed by Davenport (1908)\n2. Over-dominance was supported by Shull & East\n3. Dominance hypothesis was supported in 1910 by Bruce\n4. Dominance hypothesis of gene interaction was proposed in 1917", options: ["A) 1 and 2 only", "B) 1, 2 and 3", "C) 3 and 4 only", "D) All are correct"], ans: 1 },
+      { id: 235, q: "Consider the following:\nI. Sharbati Sonora and Pusa Lerma are mutant wheat varieties\nII. First mutant cotton variety is MA-9\nIII. Parent used for repeated backcross is non-recurrent\nIV. Agent causing mutation is mutagen", options: ["A) I and II only", "B) I, II and IV only", "C) II and III only", "D) All are correct"], ans: 1 },
+      { id: 236, q: "Among the following, recurrent selection is used in:", options: ["A) Simple recurrent selection", "B) Recurrent selection for GCA", "C) Reciprocal recurrent selection", "D) All of the above"], ans: 3 },
+      { id: 237, q: "Consider the following statements:\n1. F₁ superiority in vegetative growth is called luxuriance\n2. Luxuriance is pseudohybrid heterosis\n3. Heterosis over commercial cultivar is useful heterosis\n4. Heterobeltiosis is estimated over high-yielding cultivar", options: ["A) 1 and 2 only", "B) 1, 2, 3 and 4", "C) 2 and 3 only", "D) 1 and 4 only"], ans: 1 },
+      { id: 238, q: "The number of possible crosses among n lines:\nA) Single cross = n(n−1)/2\nB) Three-way crosses = n(n−1)(n−2)/6\nC) Double crosses = n(n−1)(n−2)(n−3)/8", options: ["A) A only", "B) B only", "C) C only", "D) All of the above"], ans: 3 },
+      { id: 239, q: "Match the following mutagens:\nA) Base analogues | B) Acridine dye | C) Alkylating agents | D) Ionizing radiation | E) Non-ionizing radiation\n1. Acriflavine | 2. 5-bromo-uracil | 3. MMS, EMS | 4. X-rays, γ-rays | 5. UV rays", options: ["A) A–2, B–1, C–3, D–4, E–5", "B) A–1, B–2, C–3, D–4, E–5", "C) A–3, B–4, C–1, D–2, E–5", "D) A–5, B–3, C–2, D–1, E–4"], ans: 0 },
+      { id: 240, q: "A dose of mutagen that kills 50% of treated individuals is:", options: ["A) LD 50", "B) ED 50", "C) KD 50", "D) TD 50"], ans: 0 },
+      { id: 241, q: "An individual lacking one chromosome from the diploid set is:", options: ["A) Monosomic", "B) Trisomic", "C) Nullisomic", "D) Tetrasomic"], ans: 0 },
+      { id: 242, q: "In cereals, X-rays were first used in barley in:", options: ["A) 1928", "B) 1930", "C) 1935", "D) 1940"], ans: 0 },
+      { id: 243, q: "Match the chromosome conditions:\nA) Disomic haploid | B) Nullisomic haploid | C) Substitution haploid | D) Monosomic\n1. n−1 | 2. 2n−1−1 | 3. n+1 | 4. 2n−1", options: ["A) A–4, B–3, C–2, D–1", "B) A–1, B–2, C–3, D–4", "C) A–2, B–1, C–4, D–3", "D) A–3, B–4, C–1, D–2"], ans: 0 },
+      { id: 244, q: "Choose the correct answer about effects of mutation on survival:", options: ["A) Lethal – kills the individual that carries it", "B) Sub-lethal – kills more than 50% of the individuals", "C) Sub-vital – kills less than 50%", "D) Vital – reduces viability of the individual, not used for crop improvement"], ans: 0 },
+      { id: 245, q: "Heterosis is due to:", options: ["A) Over-dominance hypothesis", "B) Dominance hypothesis", "C) Gene-for-gene hypothesis", "D) Over-dominance / Allelic interaction"], ans: 3 },
+      { id: 246, q: "Inbreeding depression in maize:", options: ["A) Shull (1914) provided a reliable method for prediction of double-cross performance", "B) First commercial hybrid variety of maize, Burrell, named 1922", "C) Double crosses hybrid", "D) Hybrid varieties were commercialized in 1922"], ans: 0 },
+      { id: 247, q: "It is produced by mixing seeds of several phenotypically outstanding lines and encouraging open pollination to produce crosses in all combination among the mixed lines. They are not uniform and are commonly called:", options: ["A) Synthetic variety", "B) Clone", "C) Composite variety", "D) Pure line"], ans: 2 },
+      { id: 248, q: "Indian first maize composite variety Amber, Jowar, Kisan, Vikram, Sona, Vijaya were released in:", options: ["A) 1967", "B) 1964", "C) 1965", "D) 1961"], ans: 0 },
+      { id: 249, q: "A breeding procedure in which proper records of individual selected plants and their progeny are maintained is called:", options: ["A) Bulk method", "B) Pedigree method", "C) Single seed descent method", "D) Hybridization"], ans: 1 },
+      { id: 250, q: "______ method: F₂ and subsequent generations are harvested as bulk to grow the next generation.", options: ["A) Single seed descent", "B) Back cross", "C) Pedigree method", "D) Bulk method"], ans: 3 },
+      { id: 251, q: "Identify the incorrect statement about mutation:", options: ["A) Mutations are non-recurrent", "B) Mutations are recessive", "C) Mutations are lethal", "D) Mutations are random"], ans: 0 },
+      { id: 252, q: "Identify the incorrect statement about Back cross:", options: ["A) A cross between a hybrid and its parents", "B) Characters lacking are transferred from a donor parent", "C) Donor parent is recurrent parent", "D) Character to be transferred must have high heritability and be determined by few genes"], ans: 2 },
+      { id: 253, q: "Consider the following:\na) The mass pedigree method is a modification of pedigree method\nb) Evolutionary method of crop improvement refers to Bulk method\nc) Single Seed Descent (SSD) is used in autogamous crops\nd) Single Seed Descent (SSD) is a modified form of Pedigree method", options: ["A) a is incorrect", "B) b is incorrect", "C) c is incorrect", "D) d is incorrect"], ans: 3 },
+      { id: 254, q: "XYZ system for hybrid seed production is practiced in:", options: ["A) Mustard", "B) Wheat", "C) Potato", "D) Barley"], ans: 1 },
+      { id: 255, q: "Balanced tertiary trisomics system of hybrid seed production is followed in:", options: ["A) Mustard", "B) Wheat", "C) Potato", "D) Barley"], ans: 3 },
+      { id: 256, q: "A line carrying one chromosome pair from a different species in the place of one chromosome pair of the recipient species is known as:", options: ["A) Alien – Addition line", "B) Alien – Substitution line", "C) Alien monosomic", "D) Alien nullisomic"], ans: 1 },
+      { id: 257, q: "The chairman of the State Variety Release Committee is:", options: ["A) Director of State Seed Corporation", "B) Director of Agriculture of the State", "C) Director of Seed Certification", "D) Additional Director of Agriculture"], ans: 1 },
+      { id: 258, q: "Any crop variety to be released in Tamil Nadu has to be approved by:", options: ["A) Department of Agriculture", "B) State Variety Release Committee", "C) State Variety Release Corporation", "D) Tamil Nadu Agricultural University"], ans: 1 },
+      { id: 259, q: "Suitability for general cultivation over a wide range of environmental conditions is:", options: ["A) Uniformity", "B) Adaptability", "C) Distinctness", "D) Novelty"], ans: 1 },
+      { id: 260, q: "Which one of the following is the correct expansion for the acronym CVRC?", options: ["A) Central Variety Records Committee", "B) Central Variety Release Centre", "C) Central Variety Release Committee", "D) Central Variety Release"], ans: 2 },
+      { id: 261, q: "A variety that is introduced from any foreign country for commercial cultivation is called:", options: ["A) Exotic variety", "B) Indigenous variety", "C) National variety", "D) Straight variety"], ans: 0 },
+      { id: 262, q: "Newness of a variety refers to:", options: ["A) Novelty", "B) Uniformity", "C) Stability", "D) Distinctiveness"], ans: 0 },
+      { id: 263, q: "______ is an indication which identifies a good as originating from a particular region.", options: ["A) Indigenous Property Rights", "B) Plant Breeders' Rights", "C) Geographical Indication", "D) Farmers' Right"], ans: 2 },
+      { id: 264, q: "______ was the first product to be tagged with GI in 2004:", options: ["A) Basmati rice", "B) Darjeeling tea", "C) Vazha kulam Pineapple", "D) Madurai Malli"], ans: 1 },
+      { id: 265, q: "The Union for the Protection of New Plant Varieties (UPOV) was constituted in 1961 with headquarters at:", options: ["A) Moscow", "B) Tokyo", "C) Geneva", "D) London"], ans: 2 },
+      { id: 266, q: "The UPOV convention was held at:", options: ["A) New York", "B) Paris", "C) London", "D) Moscow"], ans: 1 },
+      { id: 267, q: "Variety predominantly derived from the initial variety, which retains the expression of the essential characteristics from genotypes of the initial variety, is:", options: ["A) Candidate variety", "B) Essentially Derived Variety", "C) Reference variety", "D) Extant variety"], ans: 1 },
+      { id: 268, q: "PPV & FR Act is in conformity with International Union for the Protection of New Varieties of Plants (UPOV) Act ______:", options: ["A) 1972", "B) 1978", "C) 1991", "D) 1961"], ans: 1 },
+      { id: 269, q: "Find the correct statement regarding duration of protection under PPV & FR Act 2001:", options: ["A) Trees and vines – 18 years", "B) For other crops – 15 years", "C) For extant varieties notified – 15 years", "D) All"], ans: 3 },
+      { id: 270, q: "The headquarters for the PPV & FR Authority (estd. Nov 11, 2005) is located at:", options: ["A) Bangalore", "B) Geneva", "C) Mumbai", "D) New Delhi"], ans: 3 },
+      { id: 271, q: "“Madurai Malli” is an example of:", options: ["A) Patent", "B) Trademark", "C) Variety", "D) Geographical Indication"], ans: 3 },
+      { id: 272, q: "DUS means:", options: ["A) Distinctiveness, Uniformity and Stability", "B) Distinctiveness, Uniqueness and Stability", "C) Distinctiveness, Uniqueness and Selection", "D) Discrepancy, Uniformity and Stability"], ans: 0 },
+      { id: 273, q: "Varieties notified under Section 5 of the Seed Act 1966 and also the varieties in public domain are called:", options: ["A) Candidate variety", "B) Example variety", "C) Reference variety", "D) Extant variety"], ans: 3 },
+      { id: 274, q: "The capacity of a cell to develop into a complete plant is called:", options: ["A) Tissue culture", "B) Fecundity", "C) Totipotency", "D) Haploidy"], ans: 2 },
+      { id: 275, q: "A technique used to eliminate virus from infected germplasm and to produce virus-free plants is:", options: ["A) Meristem or shoot tip culture", "B) Somatic hybridization", "C) Plant quarantine", "D) Pureline selection"], ans: 0 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounter = document.getElementById("q-counter");
+    const progressPercent = document.getElementById("progress-percent");
+    const progressBarFill = document.getElementById("progress-bar-fill");
+    const questionText = document.getElementById("question-text");
+    const optionsContainer = document.getElementById("options-container");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePercent = document.getElementById("res-score-percent");
+    const resFeedback = document.getElementById("res-feedback");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+    const toggleReviewBtn = document.getElementById("toggle-review-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToResultsBtn = document.getElementById("back-to-results-btn");
+    const reviewItemsContainer = document.getElementById("review-items-container");
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+    });
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      let count = 275;
+
+      if (countSelect.value === "custom") {
+        count = Math.max(1, Math.min(275, parseInt(customCountInput.value) || 25));
+      } else {
+        count = parseInt(countSelect.value);
+      }
+
+      if (mode === "practice" || count < 275) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      userAnswers = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+    });
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounter.textContent = `Question ${currentIndex + 1} of ${total}`;
+      const pct = Math.round(((currentIndex + 1) / total) * 100);
+      progressPercent.textContent = `${pct}%`;
+      progressBarFill.style.width = `${pct}%`;
+
+      questionText.textContent = `${qData.id}. ${qData.q}`;
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optText, optIdx) => {
+        const btn = document.createElement("button");
+        btn.className = "option-btn";
+        if (userAnswers[currentIndex] === optIdx) {
+          btn.classList.add("selected");
+        }
+
+        btn.innerHTML = `<span>${optText}</span>`;
+        btn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+        optionsContainer.appendChild(btn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+      prevBtn.style.opacity = currentIndex === 0 ? "0.5" : "1";
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    submitBtn.addEventListener("click", () => {
+      evaluateAndShowResults();
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePercent.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resFeedback.textContent = "Outstanding Performance! High proficiency across Plant Breeding & Genetics.";
+        resFeedback.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resFeedback.textContent = "Good Result! Review breeding systems, formulas, and acts.";
+        resFeedback.style.color = "var(--primary)";
+      } else {
+        resFeedback.textContent = "Needs Revision. Focus on male sterility lines, selection methods, and PPV&FR rules.";
+        resFeedback.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    toggleReviewBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToResultsBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewItemsContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Answered";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="badge ${badgeClass}">${statusText}</span>
+          <div class="review-text">Q${idx + 1} (Orig #${q.id}). ${q.q}</div>
+          <div class="review-detail" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="review-detail" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewItemsContainer.appendChild(item);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TNPSC Horticulture & Agriculture Exam Prep - Interactive Quiz</title>
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --primary-light: #eff6ff;
+      --success: #16a34a;
+      --success-light: #dcfce7;
+      --danger: #dc2626;
+      --danger-light: #fee2e2;
+      --neutral: #4b5563;
+      --neutral-light: #f3f4f6;
+      --border: #e5e7eb;
+      --card-bg: #ffffff;
+      --bg: #f8fafc;
+      --text: #1f2937;
+      --text-muted: #6b7280;
+      --radius: 10px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #1e3a8a;
+      color: #ffffff;
+      padding: 1.2rem 1rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    header h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-top: 0.3rem;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Setup Screen */
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    select, input[type="number"] {
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-size: 1rem;
+      outline: none;
+    }
+
+    select:focus, input[type="number"]:focus {
+      border-color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .btn-secondary {
+      background-color: var(--neutral-light);
+      color: var(--neutral);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background-color: #e5e7eb;
+    }
+
+    .btn-success {
+      background-color: var(--success);
+      color: #ffffff;
+    }
+
+    .btn-success:hover {
+      background-color: #15803d;
+    }
+
+    /* Progress bar */
+    .progress-wrapper {
+      margin-bottom: 1.5rem;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background-color: #e5e7eb;
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background-color: var(--primary);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* Question Screen */
+    .question-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+      white-space: pre-line;
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      width: 100%;
+      text-align: left;
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+      border: 1.5px solid var(--border);
+      background: #ffffff;
+      font-size: 0.95rem;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .option-btn:hover {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+    }
+
+    .option-btn.selected {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+      font-weight: 600;
+    }
+
+    .nav-controls {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    /* Results */
+    .results-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .score-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto;
+      border: 3px solid var(--primary);
+    }
+
+    .score-circle .number {
+      font-size: 1.8rem;
+      font-weight: 800;
+    }
+
+    .score-circle .label {
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: var(--neutral-light);
+      padding: 1rem;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .stat-card .val {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .stat-card.correct .val { color: var(--success); }
+    .stat-card.wrong .val { color: var(--danger); }
+    .stat-card.unanswered .val { color: var(--neutral); }
+
+    .stat-card .desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Review Answers */
+    .review-item {
+      padding: 1.25rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .review-item.is-correct {
+      border-left: 5px solid var(--success);
+      background-color: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 5px solid var(--danger);
+      background-color: #fffdfd;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 5px solid var(--neutral);
+      background-color: var(--neutral-light);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .badge.correct { background: var(--success-light); color: var(--success); }
+    .badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .badge.unanswered { background: #e5e7eb; color: var(--neutral); }
+
+    .review-text {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .review-detail {
+      font-size: 0.875rem;
+      margin: 0.25rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 0.5rem;
+        margin: 1rem auto;
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .nav-controls {
+        flex-direction: column-reverse;
+      }
+      .nav-controls .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Agriculture & Horticulture Competitive Examination</h1>
+    <p>Complete 200-Question MCQ Practice Portal</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Screen 1: Settings / Setup -->
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.2rem; margin-bottom: 0.5rem;">Configure Test Session</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Select your testing parameters below to start practice or an exam simulation.</p>
+      
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Mode</label>
+          <select id="mode-select">
+            <option value="exam">Exam Mode (Sequential, Hidden Answers)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="200">All Questions (200 Questions)</option>
+            <option value="10">10 Questions</option>
+            <option value="20">20 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="custom">Custom Number</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 200)</label>
+          <input type="number" id="custom-count-input" min="1" max="200" value="25" />
+        </div>
+
+        <button class="btn btn-primary" id="start-btn" style="margin-top: 1rem;">Start Quiz</button>
+      </div>
+    </div>
+
+    <!-- Screen 2: Active Question Screen -->
+    <div id="quiz-screen" class="card hidden">
+      <div class="progress-wrapper">
+        <div class="progress-meta">
+          <span id="q-counter">Question 1 of 200</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+      </div>
+
+      <div class="question-title" id="question-text"></div>
+      <div class="options-list" id="options-container"></div>
+
+      <div class="nav-controls">
+        <button class="btn btn-secondary" id="prev-btn">Previous</button>
+        <div style="display: flex; gap: 0.75rem;">
+          <button class="btn btn-primary" id="next-btn">Next</button>
+          <button class="btn btn-success hidden" id="submit-btn">Submit Quiz</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 3: Results -->
+    <div id="result-screen" class="card hidden">
+      <div class="results-header">
+        <h2>Quiz Completed</h2>
+        <div class="score-circle">
+          <span class="number" id="res-score-percent">0%</span>
+          <span class="label">Total Score</span>
+        </div>
+        <p id="res-feedback" style="font-weight: 600; font-size: 1.05rem;"></p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Total Questions</div>
+        </div>
+        <div class="stat-card correct">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="stat-card wrong">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="stat-card unanswered">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <button class="btn btn-primary" id="toggle-review-btn">Review Answers</button>
+        <button class="btn btn-secondary" id="restart-btn">Restart Quiz</button>
+      </div>
+    </div>
+
+    <!-- Screen 4: Detailed Review -->
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem;">Answer Review</h2>
+        <button class="btn btn-secondary" id="back-to-results-btn">Back to Summary</button>
+      </div>
+      <div id="review-items-container"></div>
+    </div>
+
+  </div>
+
+  <script>
+    // Complete 200 Questions with verified choices and correct answer indices
+    const quizData = [
+      { id: 1, q: "______ is the weed species that causes health problems in human beings.", options: ["A) Abutilon sp", "B) Parthenium sp", "C) Solanum sp", "D) Cynodon sp"], ans: 1 },
+      { id: 2, q: "______ is the weed species at its tillering stage poisonous to grazing animals because of its high Prussic acid content.", options: ["A) Sorghum halepense", "B) Typha sp", "C) Lantana camara", "D) Melilotus alba"], ans: 0 },
+      { id: 3, q: "Echinochloa crusgalli is an example for ______ weed.", options: ["A) Broad leaf", "B) Grass", "C) Sedges", "D) Fern"], ans: 1 },
+      { id: 4, q: "______ is the method of utilization of solar energy for the desiccation of weeds.", options: ["A) Burning", "B) Solarisation", "C) Tillage", "D) Stale seed bed"], ans: 1 },
+      { id: 5, q: "______ is the oldest method of controlling weeds.", options: ["A) Digging", "B) Hand weeding", "C) Mowing", "D) Flooding"], ans: 1 },
+      { id: 6, q: "______ is the ultimate source of all kinds of water.", options: ["A) Sea water", "B) Rainfall", "C) Snowfall", "D) Lakes"], ans: 1 },
+      { id: 7, q: "Ninety per cent of world's total irrigated area is under ______ method of irrigation.", options: ["A) Sub-surface", "B) Surface", "C) Sprinkler", "D) Drip"], ans: 1 },
+      { id: 8, q: "Identify the irrigation method which is not a controlled flooding method.", options: ["A) Check basin", "B) Border strip", "C) Surge irrigation", "D) Surface trickle irrigation"], ans: 3 },
+      { id: 9, q: "Drip irrigation system comes under ______ irrigation methods.", options: ["A) Surface irrigation", "B) Subsurface irrigation", "C) Pressurised irrigation", "D) Gravitational irrigation"], ans: 2 },
+      { id: 10, q: "______ method of irrigation is best suited for tea plantation.", options: ["A) Basin irrigation", "B) Flat bed irrigation", "C) Furrow irrigation", "D) Sprinkler irrigation"], ans: 3 },
+      { id: 11, q: "The process of ammoniacal nitrogen to nitrate form of nitrogen taken place by which the microbial oxidation is known as ______.", options: ["A) Mineralisation", "B) Aminization", "C) Nitrification", "D) Ammonification"], ans: 2 },
+      { id: 12, q: "Soils containing excess of neutral soluble salts dominated by chlorides and sulphates are called ______.", options: ["A) Alkali soil", "B) Saline soil", "C) Saline-alkali soil", "D) Acid soil"], ans: 1 },
+      { id: 13, q: "Chemical fertilizers containing only one major nutrient is called as ______.", options: ["A) Complex fertilizers", "B) Straight fertilizers", "C) Complete fertilizers", "D) Mixed fertilizers"], ans: 1 },
+      { id: 14, q: "______ disease is favoured by alkali soil.", options: ["A) Common scab of potato", "B) Powdery scab of potato", "C) Clubroot of cabbage", "D) Bacterial wilt of potato"], ans: 0 },
+      { id: 15, q: "The symptoms of Aluminium toxicity in plants are:\n(i) Inhibits microbial activity in soil\n(ii) Restricts root growth\n(iii) Causes wilting of plants\n(iv) Enhances nutrient absorption", options: ["A) (i) only correct", "B) (ii) only correct", "C) All are correct", "D) (i), (ii) and (iii) only correct"], ans: 3 },
+      { id: 16, q: "Relative proportion of sand, silt and clay are known as ______.", options: ["A) Soil texture", "B) Soil structure", "C) Soil colloids", "D) Soil aggregates"], ans: 0 },
+      { id: 17, q: "Urea is hydrolysed by which of the following enzymes?", options: ["A) Nitrogenase", "B) Urease", "C) Hydrogenase", "D) Oxidase"], ans: 1 },
+      { id: 18, q: "Electrical conductivity of soil is 0.32 dS/m. Find out the TDS.", options: ["A) 202.6 ppm", "B) 203.4 ppm", "C) 204.8 ppm", "D) 205.1 ppm"], ans: 2 },
+      { id: 19, q: "Match the following with micronutrient elements and deficiency symptoms:\nSymptoms: (a) Pale leaf sugarcane, (b) Whip tail cauliflower, (c) Dieback in citrus, (d) Khaira disease in rice\nElements: 1. Mo, 2. Mn, 3. Cu, 4. Zn", options: ["A) 1, 2, 3, 4", "B) 2, 1, 3, 4", "C) 2, 1, 4, 3", "D) 4, 3, 2, 1"], ans: 2 },
+      { id: 20, q: "The arrangement and organization of primary and secondary particles in a soil mass is known as ______.", options: ["A) Soil texture", "B) Soil structure", "C) Soil bulk density", "D) Soil porosity"], ans: 1 },
+      { id: 21, q: "Which of the following tree produces yellow colour flowers?", options: ["A) Gulmohar", "B) Jacaranda", "C) Golden Shower Tree", "D) African Tulip Tree"], ans: 2 },
+      { id: 22, q: "Which of the following trees produces red colour flowers?", options: ["A) African Tulip Tree", "B) Jacaranda mimosifolia", "C) Golden Shower Tree", "D) Silver Oak"], ans: 0 },
+      { id: 23, q: "Choose the correct climber among the following.", options: ["A) Casuarina equisetifolia", "B) Croton sp.", "C) Nerium oleander", "D) Thunbergia grandiflora"], ans: 3 },
+      { id: 24, q: "The plant suitable for Topiary making is:", options: ["A) Banana", "B) Rose", "C) Papaya", "D) Casuarina"], ans: 3 },
+      { id: 25, q: "Glycerin method is used for drying of:", options: ["A) Petals", "B) Foliage", "C) Seeds", "D) Roots"], ans: 1 },
+      { id: 26, q: "Bonsai refers to:", options: ["A) Growing plants in water", "B) Growing miniature trees in containers", "C) Cultivating giant trees", "D) Propagation by layering"], ans: 1 },
+      { id: 27, q: "Choose the correct statement about Croton.", options: ["A) Grows only under submerged condition", "B) An annual root tuber", "C) Propagated exclusively by seed apomixis", "D) Crotones split and one or two branches break"], ans: 3 },
+      { id: 28, q: "Who developed the Fatehpur Sikri garden?", options: ["A) Babur", "B) Akbar", "C) Shah Jahan", "D) Jahangir"], ans: 1 },
+      { id: 29, q: "Name the tree producing blue colour flowers.", options: ["A) Jacaranda mimosifolia", "B) Cassia fistula", "C) Spathodea campanulata", "D) Delonix regia"], ans: 0 },
+      { id: 30, q: "Which of the following is an ornamental palm?", options: ["A) Coconut palm", "B) Oil palm", "C) Palmyrah palm", "D) Fishtail palm"], ans: 3 },
+      { id: 31, q: "International Flower Auction Centre in Tamil Nadu is located at:", options: ["A) Chennai", "B) Madurai", "C) Hosur (Krishnagiri)", "D) Coimbatore"], ans: 2 },
+      { id: 32, q: "The spikes of Orchids are harvested:", options: ["A) When a few buds on the top remain unopened", "B) Before any buds open", "C) When completely dry", "D) After all flowers fade"], ans: 0 },
+      { id: 33, q: "According to habitat, Dendrobium and orchids come under the category of:", options: ["A) Xerophytes", "B) Epiphytes", "C) Halophytes", "D) Hydrophytes"], ans: 1 },
+      { id: 34, q: "The ideal range of temperature for carnation cultivation is:", options: ["A) 5–10°C", "B) 10–20°C", "C) 25–35°C", "D) 35–40°C"], ans: 1 },
+      { id: 35, q: "Carnation needs regular supply of moisture due to:", options: ["A) Deep tap root system", "B) Shallow root system", "C) Epiphytic roots", "D) Tuberous root system"], ans: 1 },
+      { id: 36, q: "Leaf pruning is a special horticultural practice adopted in:", options: ["A) Rose", "B) Jasmine", "C) Anthurium", "D) Marigold"], ans: 2 },
+      { id: 37, q: "One of the largest and most decorative genus of orchid flowers are borne singly is:", options: ["A) Dendrobium", "B) Vanda", "C) Cattleya", "D) Phalaenopsis"], ans: 0 },
+      { id: 38, q: "Acidifying agent used in vase solution is:", options: ["A) Citric acid", "B) Hydrochloric acid", "C) Nitric acid", "D) Sulphuric acid"], ans: 0 },
+      { id: 39, q: "Alstroemeria is commercially propagated through:", options: ["A) Stem cuttings", "B) Rhizome and tissue culture", "C) Air layering", "D) Seeds only"], ans: 1 },
+      { id: 40, q: "What type of spacing is adopted for spray type of carnation?", options: ["A) 15 × 15 cm", "B) 30 × 30 cm", "C) 50 × 50 cm", "D) 1 × 1 m"], ans: 1 },
+      { id: 41, q: "In chrysanthemum, the objective of pinching is:", options: ["A) To prevent flowering", "B) To induce single large bloom", "C) To shorten plant height", "D) To encourage production of more number of branches"], ans: 3 },
+      { id: 42, q: "The optimum bud weight recommended for planting of tuberose is:", options: ["A) 5–10 g", "B) 10–15 g", "C) 25–30 g", "D) 50–60 g"], ans: 2 },
+      { id: 43, q: "Orange, Delhi, Lutea Yellow and Sebaculis Red are four different cultivars of Crossandra. Choose the correct match.", options: ["A) 1 and 3 are correct", "B) 2 and 4 are correct", "C) All are incorrect", "D) 1, 2 and 4 are correct"], ans: 0 },
+      { id: 44, q: "Number of Floriculture Agri-Export Zones in India is:", options: ["A) 2", "B) 4", "C) 6", "D) 8"], ans: 2 },
+      { id: 45, q: "Foliar spraying of ______ twice during vegetative stage increases the production of flowers and essential oil in Jasminum grandiflorum.", options: ["A) ABA", "B) GA₃", "C) Ethylene", "D) CCC"], ans: 1 },
+      { id: 46, q: "Roses are commercially propagated by:", options: ["A) T-budding", "B) Whip grafting", "C) Air layering", "D) Seed propagation"], ans: 0 },
+      { id: 47, q: "Nerium is easily propagated through:", options: ["A) Seeds", "B) Mound layering", "C) Micropropagation", "D) Graft cuttings"], ans: 3 },
+      { id: 48, q: "Calculate the number of rose plants that can be planted in one hectare with a spacing of 2.0 × 1.0 m.", options: ["A) 5000", "B) 2500", "C) 10000", "D) 7500"], ans: 0 },
+      { id: 49, q: "Choose the variety of chrysanthemum suitable for loose flower.", options: ["A) Snowball", "B) Indira", "C) Chandrama", "D) Sonali Tara"], ans: 1 },
+      { id: 50, q: "Centenary Rose Park in Tamil Nadu is located at:", options: ["A) Kodaikanal", "B) Ooty, Nilgiris (Dt.)", "C) Yercaud", "D) Coonoor"], ans: 1 },
+      { id: 51, q: "Which potato disease is favoured by alkaline soil?", options: ["A) Late blight", "B) Black scurf", "C) Early blight", "D) Common Scab"], ans: 3 },
+      { id: 52, q: "What symptoms do early blight disease produce in tomato?", options: ["A) Spot surrounded by circular rings resembling a target board", "B) Water soaked soft rot", "C) Veinal chlorosis", "D) Hypertrophy on stem"], ans: 0 },
+      { id: 53, q: "Tanjore wilt or basal stem rot of coconut is caused by:", options: ["A) Ganoderma lucidum", "B) Phytophthora palmivora", "C) Fusarium oxysporum", "D) Rhizoctonia solani"], ans: 0 },
+      { id: 54, q: "Cardamom Katte disease is transmitted by:", options: ["A) Aphids", "B) Thrips", "C) Whitefly", "D) Root bug"], ans: 0 },
+      { id: 55, q: "Coffee rust was introduced in India from:", options: ["A) Brazil", "B) Kenya", "C) Colombia", "D) Sri Lanka"], ans: 3 },
+      { id: 56, q: "Blossom end rot of tomato is due to deficiency of:", options: ["A) Calcium deficiency", "B) Nitrogen deficiency", "C) Potassium deficiency", "D) Boron deficiency"], ans: 0 },
+      { id: 57, q: "Bacterial wilt of Banana is otherwise called:", options: ["A) Panama disease", "B) Moko wilt", "C) Bunchy top", "D) Sigatoka leaf spot"], ans: 1 },
+      { id: 58, q: "Whiptail of cauliflower is due to deficiency of:", options: ["A) Boron", "B) Zinc", "C) Molybdenum", "D) Copper"], ans: 2 },
+      { id: 59, q: "The primary spread of Downy mildew of cauliflower is through:", options: ["A) Oospore", "B) Conidia", "C) Ascospores", "D) Zoospores"], ans: 0 },
+      { id: 60, q: "Powdery mildew of grapes is managed by:", options: ["A) Copper oxychloride", "B) Sulphur fungicides", "C) Streptocycline", "D) Bordeaux mixture"], ans: 1 },
+      { id: 61, q: "Kufri Swarna is a ______ nematode resistant hybrid potato.", options: ["A) Cyst nematodes", "B) Root knot nematodes", "C) Reniform nematodes", "D) Lesion nematodes"], ans: 0 },
+      { id: 62, q: "Chemicals which kill nematodes are called:", options: ["A) Nematicide", "B) Insecticide", "C) Fungicide", "D) Rodenticide"], ans: 0 },
+      { id: 63, q: "Which of the following is a nematicide used for controlling nematodes?", options: ["A) Carbofuran", "B) Mancozeb", "C) 2,4-D", "D) Streptomycin"], ans: 0 },
+      { id: 64, q: "Avoiding ______ as intercrop in citrus garden helps in management of citrus nematode.", options: ["A) Brinjal", "B) Maize", "C) Sorghum", "D) Pulses"], ans: 0 },
+      { id: 65, q: "______ is an effective cultural practice for reducing root-knot nematode population.", options: ["A) Flooding constantly", "B) Excessive nitrogen application", "C) Continuous monocropping", "D) Hot weather cultivation"], ans: 3 },
+      { id: 66, q: "First natural enemy to be introduced by man from one country to another was:", options: ["A) Aphelinus mali", "B) Vedalia beetle (Rodolia cardinalis)", "C) Trichogramma sp.", "D) Cryptolaemus sp."], ans: 1 },
+      { id: 67, q: "The mite infestation in chilli is called:", options: ["A) Dieback", "B) Little leaf", "C) Murana", "D) Leaf curl"], ans: 2 },
+      { id: 68, q: "______ is an act as vector of disease “yellow vein mosaic virus” in bhendi.", options: ["A) Aphid", "B) Thrips", "C) Jassid", "D) White fly"], ans: 3 },
+      { id: 69, q: "The following pest causing a serious problem in mango cultivation is:", options: ["A) Stem borer", "B) Leaf miner", "C) Fruit fly", "D) Bark caterpillar"], ans: 2 },
+      { id: 70, q: "Shedding of flowers and pods in cardamom is caused by:", options: ["A) Thrips", "B) Whitefly", "C) Scale insects", "D) Mealybug"], ans: 0 },
+      { id: 71, q: "Which one of the following materials is not used in food preservation?", options: ["A) Sodium benzoate", "B) Sugar", "C) Potassium metabisulphite", "D) Vinegar"], ans: 3 },
+      { id: 72, q: "A beverage which contains at least 10% fruit juice, 10% TSS and 0.3% percent acid is:", options: ["A) Cordial", "B) Squash", "C) Crush", "D) Ready to serve"], ans: 3 },
+      { id: 73, q: "In which percentage of salt is used for preservation in horticultural products?", options: ["A) 2–5%", "B) 8–10%", "C) 15–20%", "D) 25–30%"], ans: 2 },
+      { id: 74, q: "Syrups should have ______ °Brix.", options: ["A) 70–75° Brix", "B) 40–45° Brix", "C) 20–25° Brix", "D) 85–90° Brix"], ans: 0 },
+      { id: 75, q: "In jam preparation, final product is less than 30% invert sugar; the problem occurs due to:", options: ["A) Cloudiness", "B) Crystallisation", "C) Syneresis", "D) Mould growth"], ans: 1 },
+      { id: 76, q: "The main goal of HACCP is:", options: ["A) Increasing production yield", "B) Reducing labor cost", "C) Ensuring food safety from biological, chemical and physical hazards", "D) Designing package labels"], ans: 2 },
+      { id: 77, q: "What is the main purpose of the Food Safety and Standards Act?", options: ["A) Price fixing for agricultural crops", "B) Consolidate various food laws and regulate food safety", "C) Direct export of spices", "D) Controlling cold storage construction"], ans: 1 },
+      { id: 78, q: "Which among the following is the primary purpose of the Codex Alimentarius Commission?", options: ["A) Fix currency rates for trade", "B) To harmonize food standards globally to protect consumer health and ensure fair practice in the food trade", "C) Distribute organic seeds", "D) Regulate tractor manufacturing"], ans: 1 },
+      { id: 79, q: "______ is the heavy metal that may contaminate produce during production, handling and storage.", options: ["A) Lead", "B) Calcium", "C) Iron", "D) Potassium"], ans: 0 },
+      { id: 80, q: "Waxing is commonly practised in:", options: ["A) Banana", "B) Apple", "C) Grapes", "D) Strawberry"], ans: 1 },
+      { id: 81, q: "Ethylene concentration used in ripening chambers for fruit ripening is:", options: ["A) 5 ppm", "B) 20 ppm", "C) 100 ppm", "D) 500 ppm"], ans: 1 },
+      { id: 82, q: "The best preservative for cut flowers is:", options: ["A) Silver thiosulphate", "B) Formalin", "C) Acetic acid", "D) Sodium carbonate"], ans: 0 },
+      { id: 83, q: "Ethylene can be removed in storage by using:", options: ["A) Sodium chloride", "B) Potassium permanganate", "C) Calcium carbide", "D) Borax"], ans: 1 },
+      { id: 84, q: "Artificial curing of onion is done to:", options: ["A) Increase water content", "B) Promote early sprouting", "C) Reduce the root losses", "D) Enhance green colour"], ans: 2 },
+      { id: 85, q: "Blanching process refers to:", options: ["A) Freezing produce at -18°C", "B) Dehydrating under direct sun", "C) Dipped in boiling water followed by cooling", "D) Soaking in brine solution"], ans: 2 },
+      { id: 86, q: "Osmotic dehydration is the process by which ______ acts as preservative.", options: ["A) High salt and sugar", "B) Dilute acid", "C) Ethanol", "D) Nitrogen gas"], ans: 0 },
+      { id: 87, q: "The process of heating juice at 85–90°C for 30 minutes to kill spore-forming bacteria, mould spores and enzymes is called:", options: ["A) Pasteurization", "B) Sterilization", "C) Fermentation", "D) Carbonation"], ans: 1 },
+      { id: 88, q: "Onion and garlic can be cured in the field in regions where harvest coincides with dry season. This is called:", options: ["A) Artificial curing", "B) Field curing", "C) Cold curing", "D) Oven curing"], ans: 1 },
+      { id: 89, q: "Removal of water content from fruits and vegetables is called:", options: ["A) Respiration", "B) Dehydration", "C) Ripening", "D) Maceration"], ans: 1 },
+      { id: 90, q: "Which instrument is used to measure TSS present in fruits?", options: ["A) Hydrometer", "B) Refractometer", "C) Tensiometer", "D) Penetrometer"], ans: 1 },
+      { id: 91, q: "Panchayati Raj System was first adopted by the state of Rajasthan in India on:", options: ["A) 15.08.1947", "B) 26.01.1950", "C) 14.11.1956", "D) 02.10.1959"], ans: 3 },
+      { id: 92, q: "The crop risk mitigation scheme that supports farmers in case of loss of crops due to natural calamities, pests and diseases is:", options: ["A) National Horticulture Mission", "B) PM Krishi Sinchayee Yojana", "C) Crop Insurance Scheme", "D) Kisan Credit Card"], ans: 2 },
+      { id: 93, q: "IIHR stands for:", options: ["A) Indian Institute of Herbarium Research", "B) Indian Institute of Horticultural Research", "C) International Institute of Horticulture Resources", "D) Integrated Indian Horticulture Research"], ans: 1 },
+      { id: 94, q: "Which graph is drawn to show trends and relations?", options: ["A) Line graph", "B) Pie chart", "C) Bar graph", "D) Scatter plot only"], ans: 0 },
+      { id: 95, q: "The computer programme designed to simulate the problem-solving behaviour of a human expert in a discipline is called:", options: ["A) Database management system", "B) Expert system", "C) Operating system", "D) Spread sheet"], ans: 1 },
+      { id: 96, q: "Which organisation procures a sizeable portion of marketable surplus of food grains at procurement price from farmers on behalf of the Central and State Government?", options: ["A) APEDA", "B) NABARD", "C) ICAR", "D) Food Corporation of India – FCI"], ans: 3 },
+      { id: 97, q: "A statement which shows the financial condition and stability of a business at a given point of time is called:", options: ["A) Net worth statement / Balance Sheet", "B) Cash flow statement", "C) Income statement", "D) Trial balance"], ans: 0 },
+      { id: 98, q: "The market in which bonds, shares and securities are bought and sold is called:", options: ["A) Commodity market", "B) Money market", "C) Capital market / Stock exchange", "D) Wholesale market"], ans: 2 },
+      { id: 99, q: "CMD in tapioca is spread through the vector:", options: ["A) Aphid", "B) White fly", "C) Thrips", "D) Nematode"], ans: 1 },
+      { id: 100, q: "Colocasia tubers are rich in:", options: ["A) Protein", "B) Fat", "C) Starch", "D) Vitamin A"], ans: 2 },
+      { id: 101, q: "Arka Suryamukhi is an improved variety of:", options: ["A) Watermelon", "B) Bitter gourd", "C) Pumpkin", "D) Bottle gourd"], ans: 2 },
+      { id: 102, q: "Cassava is propagated through:", options: ["A) Setts / Stem cuttings", "B) Seeds", "C) Corms", "D) Leaves"], ans: 0 },
+      { id: 103, q: "Hermaphrodite cultivar of Ridge gourd is:", options: ["A) Pusa Nasdar", "B) CO–1", "C) PKM-1", "D) Arka Sumeet"], ans: 1 },
+      { id: 104, q: "Guar gum is extracted from ______ crop.", options: ["A) Cowpea", "B) Cluster bean", "C) French bean", "D) Broad bean"], ans: 1 },
+      { id: 105, q: "Blossom end rot in tomato is a physiological disorder caused by:", options: ["A) Calcium deficiency", "B) Nitrogen deficiency", "C) Potassium deficiency", "D) Iron deficiency"], ans: 0 },
+      { id: 106, q: "Moringa seed contains ______ % of non-drying oil.", options: ["A) 10–15%", "B) 20–25%", "C) 38–40%", "D) 60–65%"], ans: 2 },
+      { id: 107, q: "Pomegranate is propagated by ______ method.", options: ["A) T-budding", "B) Inarching", "C) Cuttings / Air layering", "D) Epicotyl grafting"], ans: 2 },
+      { id: 108, q: "Wood apple contains ______ which is responsible for making jelly.", options: ["A) Pectin", "B) Starch", "C) Sucrose", "D) Gelatin"], ans: 0 },
+      { id: 109, q: "TNAU released Amla variety is:", options: ["A) Kanchan", "B) Krishna", "C) NA-7", "D) BSR–1"], ans: 3 },
+      { id: 110, q: "Rootstock used for grafting Annona squamosa is:", options: ["A) A. reticulata", "B) A. muricata", "C) A. cherimola", "D) A. glabra"], ans: 0 },
+      { id: 111, q: "The physiological disorder of Amla is:", options: ["A) Spongy tissue", "B) Necrosis / Internal necrosis", "C) Granulation", "D) Hen and chicken"], ans: 1 },
+      { id: 112, q: "Commercial method of propagation in Ber is:", options: ["A) Air layering", "B) Budding (Ring/T-budding)", "C) Hardwood cuttings", "D) Seeds"], ans: 1 },
+      { id: 113, q: "The arid fruit crop suitable for live fencing is:", options: ["A) Fig", "B) Date palm", "C) Phalsa", "D) Manila tamarind"], ans: 3 },
+      { id: 114, q: "The variety recommended for processing (canning) industry in Pineapple is:", options: ["A) Queen", "B) Kew", "C) Mauritius", "D) Jaldhup"], ans: 1 },
+      { id: 115, q: "The growth regulator used for thinning of flowers is:", options: ["A) GA₃", "B) NAA", "C) Cytokinin", "D) Paclobutrazol"], ans: 1 },
+      { id: 116, q: "Albinism is a physiological disorder observed in:", options: ["A) Apple", "B) Peach", "C) Strawberry", "D) Grape"], ans: 2 },
+      { id: 117, q: "The TSS content at the time of maturity in plums is:", options: ["A) 8.0% Brix", "B) 12.5% Brix", "C) 18.5% Brix", "D) 25.0% Brix"], ans: 1 },
+      { id: 118, q: "The variety in pear recommended for cultivation in plains is:", options: ["A) Gola", "B) Bartlett", "C) Kieffer", "D) Conference"], ans: 0 },
+      { id: 119, q: "The growth regulator used to control fruit drop in apple is:", options: ["A) 2,4-D 50 ppm", "B) GA₃ 100 ppm", "C) NAA 10 ppm", "D) ABA 5 ppm"], ans: 2 },
+      { id: 120, q: "“Flattening of eyes” is a maturity index term used in:", options: ["A) Pineapple", "B) Custard apple", "C) Jackfruit", "D) Sapota"], ans: 0 },
+      { id: 121, q: "The use of interstock in addition to rootstock and scion is called:", options: ["A) Double working / Bridge grafting", "B) Inarching", "C) Tongue grafting", "D) Approach grafting"], ans: 0 },
+      { id: 122, q: "Cauliflorous bearing habit is observed in:", options: ["A) Mango", "B) Guava", "C) Jackfruit / Cocoa", "D) Citrus"], ans: 2 },
+      { id: 123, q: "Hexagonal system of planting accommodates ______% more than square system of planting.", options: ["A) 5%", "B) 10%", "C) 15%", "D) 20%"], ans: 2 },
+      { id: 124, q: "Mango belongs to the family:", options: ["A) Rutaceae", "B) Myrtaceae", "C) Sapindaceae", "D) Anacardiaceae"], ans: 3 },
+      { id: 125, q: "The Vitamin C content in guava is:", options: ["A) 20–30 mg/100 g", "B) 50–70 mg/100 g", "C) 100–120 mg/100 g", "D) 260–300 mg/100 g"], ans: 3 },
+      { id: 126, q: "Growth regulator used to induce femaleness in papaya is:", options: ["A) Ethrel 200 ppm", "B) NAA 100 ppm", "C) GA₃ 50 ppm", "D) ABA 10 ppm"], ans: 2 },
+      { id: 127, q: "Commercial propagation method of grapes is:", options: ["A) Softwood cuttings", "B) Air layering", "C) Hardwood cuttings", "D) Shield budding"], ans: 2 },
+      { id: 128, q: "Chemical used to control black tip in mango is:", options: ["A) Copper sulphate 1%", "B) Borax 0.6%", "C) Urea 2%", "D) Zinc sulphate 0.5%"], ans: 1 },
+      { id: 129, q: "Ooty-1 is a variety of:", options: ["A) Geranium", "B) Rosemary", "C) Thyme", "D) Sage"], ans: 1 },
+      { id: 130, q: "Patchouli belongs to the family:", options: ["A) Apiaceae", "B) Asteraceae", "C) Labiatae / Lamiaceae", "D) Solanaceae"], ans: 2 },
+      { id: 131, q: "The stage of harvest for medicinal coleus is ______ days after planting.", options: ["A) 60 days", "B) 90 days", "C) 120 days", "D) 180 days"], ans: 3 },
+      { id: 132, q: "Glory lily belongs to the family:", options: ["A) Colchicaceae", "B) Liliaceae", "C) Amaryllidaceae", "D) Orchidaceae"], ans: 0 },
+      { id: 133, q: "The seed rate recommended for planting one hectare of periwinkle is:", options: ["A) 500 g", "B) 2–3 kg", "C) 5–6 kg", "D) 10 kg"], ans: 1 },
+      { id: 134, q: "The growth habit of Gymnema is classified under:", options: ["A) Herb", "B) Shrub", "C) Climber", "D) Tree"], ans: 2 },
+      { id: 135, q: "The seed rate recommended for one hectare of planting palmarosa is:", options: ["A) 1 kg", "B) 1.5 kg", "C) 2 kg", "D) 2.5 kg"], ans: 3 },
+      { id: 136, q: "Medicinal coleus is the richest source of:", options: ["A) Quinine", "B) Reserpine", "C) Vincristine", "D) Forskolin"], ans: 3 },
+      { id: 137, q: "The root yield of Periwinkle under rainfed condition is:", options: ["A) 750 kg/ha", "B) 1500 kg/ha", "C) 2000 kg/ha", "D) 3000 kg/ha"], ans: 0 },
+      { id: 138, q: "Which is the state flower of Tamil Nadu?", options: ["A) Glory lily (Gloriosa superba)", "B) Jasmine", "C) Lotus", "D) Marigold"], ans: 0 },
+      { id: 139, q: "The popular cashew variety grown in Tamil Nadu is:", options: ["A) BPP-4", "B) VRI–3", "C) Ullal-1", "D) Madakkathara-1"], ans: 1 },
+      { id: 140, q: "Number of seedlings recommended in Cocoa to adopt one hectare of area under coconut gardens is:", options: ["A) 200", "B) 350", "C) 500", "D) 750"], ans: 2 },
+      { id: 141, q: "The cashew variety recommended for high density planting is:", options: ["A) VRI–1", "B) VRI–2", "C) VRI–3", "D) VRI–4"], ans: 2 },
+      { id: 142, q: "Brown and Green budding method of propagation is practised in:", options: ["A) Tea", "B) Coffee / Rubber", "C) Cardamom", "D) Clove"], ans: 1 },
+      { id: 143, q: "Multiple stem system of training in coffee is followed in:", options: ["A) Kenya and Tanzania", "B) India and Sri Lanka", "C) Brazil and Mexico", "D) Vietnam and Indonesia"], ans: 0 },
+      { id: 144, q: "In tea, spacing required for contour planting double hedge system is:", options: ["A) 1.35 × 0.75 × 0.75 m", "B) 2.0 × 1.0 × 1.0 m", "C) 1.0 × 0.5 × 0.5 m", "D) 1.5 × 1.5 × 1.5 m"], ans: 0 },
+      { id: 145, q: "The high yielding oil palm hybrid is:", options: ["A) Dura", "B) Pisifera", "C) Tenera", "D) Macrocarpa"], ans: 2 },
+      { id: 146, q: "Palma kola is a value-added product of:", options: ["A) Coconut", "B) Arecanut", "C) Oil palm", "D) Palmyrah"], ans: 3 },
+      { id: 147, q: "A hybrid variety recommended for HDP in arecanut is:", options: ["A) Mangala", "B) VTLAH1", "C) Sumangala", "D) Sreemangala"], ans: 1 },
+      { id: 148, q: "Crown choking/frond choke is a disorder in coconut due to deficiency of:", options: ["A) Boron", "B) Zinc", "C) Manganese", "D) Iron"], ans: 0 },
+      { id: 149, q: "Katte disease in cardamom is spread through the vector:", options: ["A) Thrips", "B) Whitefly", "C) Nematode", "D) Aphids (Pentalonia nigronervosa)"], ans: 3 },
+      { id: 150, q: "The seed rhizomes required for planting one hectare of ginger is:", options: ["A) 1500–1800 kg/ha", "B) 500–800 kg/ha", "C) 2500–3000 kg/ha", "D) 3500–4000 kg/ha"], ans: 0 },
+      { id: 151, q: "Nutmeg is propagated through:", options: ["A) Air layering", "B) T-budding", "C) Root cuttings", "D) Seeds / Epicotyl grafting"], ans: 3 },
+      { id: 152, q: "Which part of Cinnamon is used as a spice?", options: ["A) Leaves", "B) Dried flower buds", "C) Bark", "D) Fruits"], ans: 2 },
+      { id: 153, q: "The spacing adopted in tamarind is:", options: ["A) 5 × 5 m", "B) 10 × 10 m", "C) 15 × 15 m", "D) 8 × 8 m"], ans: 1 },
+      { id: 154, q: "The seed rate adopted for irrigated coriander per hectare is:", options: ["A) 5–8 kg", "B) 10–15 kg", "C) 20–25 kg", "D) 30–35 kg"], ans: 1 },
+      { id: 155, q: "Urigam is one of the varieties of:", options: ["A) Amla", "B) Ber", "C) Tamarind", "D) Wood apple"], ans: 2 },
+      { id: 156, q: "The fruit of cardamom is called:", options: ["A) Berry", "B) Drupe", "C) Siliqua", "D) Capsule"], ans: 3 },
+      { id: 157, q: "Pepper variety tolerant to root-knot nematode is:", options: ["A) Panniyur-1", "B) Panniyur-2", "C) Subhakara", "D) Pournami"], ans: 3 },
+      { id: 158, q: "The pungency in black pepper is due to:", options: ["A) Capsaicin", "B) Piperine", "C) Curcumin", "D) Eugenol"], ans: 1 },
+      { id: 159, q: "The orientation of the long axis of animal house should be:", options: ["A) North to south", "B) East to west", "C) North-east to south-west", "D) North-west to south-east"], ans: 1 },
+      { id: 160, q: "The act or process of shedding and renewing feathers in poultry is known as:", options: ["A) Moulting", "B) Brooding", "C) Candling", "D) Hatching"], ans: 0 },
+      { id: 161, q: "Consider the following statements:\nI. Blue tongue is a bacterial disease of sheep, goat and occasionally cattle.\nII. Bluetongue is transmitted mainly by culicoides.", options: ["A) Both I and II are true", "B) Both I and II are false", "C) I is true and II is false", "D) I is false and II is true"], ans: 3 },
+      { id: 162, q: "Accumulation of gas in the rumen is known as:", options: ["A) Bloat/tympany", "B) Ketosis", "C) Milk fever", "D) Anthrax"], ans: 0 },
+      { id: 163, q: "A female above one year which has not calved is called:", options: ["A) Cow", "B) Ewe", "C) Heifer", "D) Doe"], ans: 2 },
+      { id: 164, q: "Which of the following is a fungal biocontrol agent used against soil-borne plant pathogens?", options: ["A) Pseudomonas", "B) Trichoderma", "C) Bacillus", "D) Azotobacter"], ans: 1 },
+      { id: 165, q: "Choose the most favourable conditions to grow mushrooms.", options: ["A) Cool and humid", "B) Hot and dry", "C) High solar radiation", "D) Alkaline waterlogged"], ans: 0 },
+      { id: 166, q: "Identify the trade name of Bacillus thuringiensis.", options: ["A) Agree", "B) Dithane", "C) Rogor", "D) Bavistin"], ans: 0 },
+      { id: 167, q: "The minimum Genetic Purity Standard for breeder seed is:", options: ["A) 98%", "B) 100%", "C) 95%", "D) 99%"], ans: 1 },
+      { id: 168, q: "The crossing of two plants of dissimilar genotype is known as:", options: ["A) Selection", "B) Mutation", "C) Hybridization", "D) Inbreeding"], ans: 2 },
+      { id: 169, q: "Identify the recommended planting ratio between parental lines for hybrid seed production in brinjal.", options: ["A) 2:1", "B) 3:1", "C) 4:1", "D) 5:1"], ans: 3 },
+      { id: 170, q: "Minimum isolation distance prescribed for certified seed production of Bottlegourd is:", options: ["A) 100 m", "B) 200 m", "C) 500 m", "D) 1000 m"], ans: 2 },
+      { id: 171, q: "Which of the following is a secondary nutrient?", options: ["A) Nitrogen", "B) Magnesium", "C) Phosphorus", "D) Potassium"], ans: 1 },
+      { id: 172, q: "______ plant hormone is popularly known as rooting hormone.", options: ["A) GA₃", "B) Kinetin", "C) NAA / IBA", "D) Ethylene"], ans: 2 },
+      { id: 173, q: "Integrated Nutrient Management refers to:", options: ["A) Maintenance and adjustment of soil fertility", "B) Use of only chemical fertilizers", "C) Complete avoidance of manures", "D) Use of excessive micronutrients"], ans: 0 },
+      { id: 174, q: "The hormone that promotes elongation of cell is:", options: ["A) Gibberellic acid", "B) Abscisic acid", "C) Ethylene", "D) Florigen"], ans: 0 },
+      { id: 175, q: "One gram of Naphthalene Acetic Acid (NAA) dissolved in one litre of water will be the concentration of solution:", options: ["A) 100 ppm", "B) 1000 ppm", "C) 10 ppm", "D) 10000 ppm"], ans: 1 },
+      { id: 176, q: "Which of the following protected structure is used for hardening of tissue culture plantlets?", options: ["A) Glass house", "B) Shadenet house", "C) High tech polyhouse", "D) Mist chamber"], ans: 1 },
+      { id: 177, q: "Greenhouse structure should be designed to resist wind velocity:", options: ["A) 110 km/hr", "B) 80 km/hr", "C) 50 km/hr", "D) 30 km/hr"], ans: 0 },
+      { id: 178, q: "The ratio of sand, loam and leaf mould for potting of rooted cuttings is:", options: ["A) 2 : 1 : 1 mixture", "B) 2 : 2 : 1 mixture", "C) 1 : 2 : 1 mixture", "D) 1 : 2 : 2 mixture"], ans: 0 },
+      { id: 179, q: "Seed viability test can be done by using ______ chemical.", options: ["A) Hydrochloric acid", "B) 2, 3, 5-triphenyl tetrazolium chloride", "C) Formaldehyde", "D) Ether"], ans: 1 },
+      { id: 180, q: "Epicotyl or stone grafting is followed in which crop?", options: ["A) Cashew / Mango", "B) Plum", "C) Peach", "D) Pistachio nut"], ans: 0 },
+      { id: 181, q: "The age of Rootstock taken for Epicotyl grafting is:", options: ["A) 8–15 days", "B) 15–30 days", "C) 30–45 days", "D) 45–60 days"], ans: 0 },
+      { id: 182, q: "The most satisfactory medium for rooting of cuttings is:", options: ["A) Soil", "B) Sphagnum moss", "C) Vermiculite", "D) Sand"], ans: 3 },
+      { id: 183, q: "In which method after insertion of buds in the rootstock is covered with their bark flap?", options: ["A) Ring budding", "B) Flute budding", "C) Forket budding", "D) Bridge grafting"], ans: 2 },
+      { id: 184, q: "Begonia is commercially propagated through:", options: ["A) Root cutting", "B) Air layering", "C) Leaf cuttings", "D) Softwood grafting"], ans: 2 },
+      { id: 185, q: "The tool which is used for uprooting of seedlings and rooted cuttings is:", options: ["A) Shovel", "B) Digging fork", "C) Garden rake", "D) Spade"], ans: 1 },
+      { id: 186, q: "Vacuum cooling causes how much percentage of weight loss in produce?", options: ["A) 1%", "B) 5%", "C) 10%", "D) 15%"], ans: 0 },
+      { id: 187, q: "High frequency irrigation or trickle irrigation or daily flow irrigation are the various names for ______ irrigation.", options: ["A) Sprinkler irrigation", "B) Flood irrigation", "C) Rain gun", "D) Drip irrigation"], ans: 3 },
+      { id: 188, q: "The main objective of pruning is:", options: ["A) To regulate flower and fruiting", "B) To suppress the growth", "C) To elongate the internodes", "D) To arrest flowering"], ans: 0 },
+      { id: 189, q: "In fruits, maturity, softening of tissues is measured by:", options: ["A) Penetrometer", "B) Barometer", "C) Tensiometer", "D) Refractometer"], ans: 0 },
+      { id: 190, q: "Spoilage of vegetables during pickling can be avoided by adding ______ salt.", options: ["A) 15–20%", "B) 30–40%", "C) 40–50%", "D) 50–60%"], ans: 0 },
+      { id: 191, q: "In which crop root pruning is practised in India?", options: ["A) Orange / Citrus", "B) Mango", "C) Amla", "D) Jack"], ans: 0 },
+      { id: 192, q: "Choose the correct statement:", options: ["A) Training determines plant's outline, its branching and framework", "B) Training is annually done", "C) Training affects functions only", "D) Training assists fruiting behaviour"], ans: 0 },
+      { id: 193, q: "Multitier cropping system is associated with:", options: ["A) Fruit crops", "B) Vegetable crops", "C) Plantation crops", "D) Flower crops"], ans: 2 },
+      { id: 194, q: "The word horticulture is derived from which language?", options: ["A) Spanish", "B) Latin", "C) Hindi", "D) Greek"], ans: 1 },
+      { id: 195, q: "Horticulture occupies only ______ percentage of the cropped area in India.", options: ["A) 9%", "B) 11%", "C) 13%", "D) 15%"], ans: 2 },
+      { id: 196, q: "Which method of planting is also referred to as 'septule' among the following?", options: ["A) Diagonal system", "B) Triangular system", "C) Hexagonal system", "D) Double hedge planting system"], ans: 2 },
+      { id: 197, q: "The crop that comes under protective food are:", options: ["A) Cereals", "B) Millets", "C) Fruits and vegetables", "D) Spices and condiment"], ans: 2 },
+      { id: 198, q: "Find the false statement about High Density Planting System (HDP):", options: ["A) Trees should have maximum number of fruiting branches", "B) Trees are generally trained with an open leader", "C) The height should be one and half times its diameter at base", "D) Each branch cast a minimum amount of shade on other branches"], ans: 1 },
+      { id: 199, q: "The state coming under north central subtropical region is:", options: ["A) Andhra Pradesh", "B) Bihar", "C) Karnataka", "D) Kerala"], ans: 1 },
+      { id: 200, q: "Tamil Nadu has been divided into ______ agroclimatic zones.", options: ["A) 5", "B) 6", "C) 7", "D) 8"], ans: 2 }
+    ];
+
+    // State
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+
+    // Elements
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounter = document.getElementById("q-counter");
+    const progressPercent = document.getElementById("progress-percent");
+    const progressBarFill = document.getElementById("progress-bar-fill");
+    const questionText = document.getElementById("question-text");
+    const optionsContainer = document.getElementById("options-container");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePercent = document.getElementById("res-score-percent");
+    const resFeedback = document.getElementById("res-feedback");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+    const toggleReviewBtn = document.getElementById("toggle-review-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToResultsBtn = document.getElementById("back-to-results-btn");
+    const reviewItemsContainer = document.getElementById("review-items-container");
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+    });
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      let count = 200;
+
+      if (countSelect.value === "custom") {
+        count = Math.max(1, Math.min(200, parseInt(customCountInput.value) || 25));
+      } else {
+        count = parseInt(countSelect.value);
+      }
+
+      if (mode === "practice" || count < 200) {
+        let pool = [...quizData];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...quizData];
+      }
+
+      userAnswers = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+    });
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounter.textContent = `Question ${currentIndex + 1} of ${total}`;
+      const pct = Math.round(((currentIndex + 1) / total) * 100);
+      progressPercent.textContent = `${pct}%`;
+      progressBarFill.style.width = `${pct}%`;
+
+      questionText.textContent = `${qData.id}. ${qData.q}`;
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optText, optIdx) => {
+        const btn = document.createElement("button");
+        btn.className = "option-btn";
+        if (userAnswers[currentIndex] === optIdx) {
+          btn.classList.add("selected");
+        }
+
+        btn.innerHTML = `<span>${optText}</span>`;
+        btn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+        optionsContainer.appendChild(btn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+      prevBtn.style.opacity = currentIndex === 0 ? "0.5" : "1";
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    submitBtn.addEventListener("click", () => {
+      evaluateAndShowResults();
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePercent.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resFeedback.textContent = "Outstanding Performance! High likelihood of qualification.";
+        resFeedback.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resFeedback.textContent = "Good Result! Focus on recurring weak spots to maximize score.";
+        resFeedback.style.color = "var(--primary)";
+      } else {
+        resFeedback.textContent = "Needs Revision. Recommended to thoroughly review Horticultural & Agronomic concepts.";
+        resFeedback.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    toggleReviewBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToResultsBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewItemsContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Answered";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="badge ${badgeClass}">${statusText}</span>
+          <div class="review-text">Q${idx + 1} (Orig #${q.id}). ${q.q}</div>
+          <div class="review-detail" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Choice:</strong> ${selectedText}
+          </div>
+          <div class="review-detail" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewItemsContainer.appendChild(item);
+      });
+    }
+  </script>
+</body>
+</html>

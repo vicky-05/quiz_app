@@ -1,0 +1,934 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plant Pathology — 220 MCQ Interactive Examination Portal</title>
+  <style>
+    :root {
+      --primary: #15803d;
+      --primary-hover: #166534;
+      --primary-light: #f0fdf4;
+      --success: #16a34a;
+      --success-light: #dcfce7;
+      --danger: #dc2626;
+      --danger-light: #fee2e2;
+      --neutral: #4b5563;
+      --neutral-light: #f3f4f6;
+      --border: #e5e7eb;
+      --card-bg: #ffffff;
+      --bg: #f8fafc;
+      --text: #1f2937;
+      --text-muted: #6b7280;
+      --radius: 10px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #14532d;
+      color: #ffffff;
+      padding: 1.25rem 1rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    header h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-top: 0.25rem;
+    }
+
+    .container {
+      max-width: 820px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Setup Screen */
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    select, input[type="number"] {
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-size: 1rem;
+      outline: none;
+    }
+
+    select:focus, input[type="number"]:focus {
+      border-color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .btn-secondary {
+      background-color: var(--neutral-light);
+      color: var(--neutral);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background-color: #e5e7eb;
+    }
+
+    .btn-success {
+      background-color: var(--success);
+      color: #ffffff;
+    }
+
+    .btn-success:hover {
+      background-color: #15803d;
+    }
+
+    /* Progress bar */
+    .progress-wrapper {
+      margin-bottom: 1.5rem;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background-color: #e5e7eb;
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background-color: var(--primary);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* Question Screen */
+    .question-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+      white-space: pre-line;
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      width: 100%;
+      text-align: left;
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+      border: 1.5px solid var(--border);
+      background: #ffffff;
+      font-size: 0.95rem;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .option-btn:hover {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+    }
+
+    .option-btn.selected {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+      font-weight: 600;
+    }
+
+    .nav-controls {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    /* Results */
+    .results-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .score-circle {
+      width: 125px;
+      height: 125px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto;
+      border: 3px solid var(--primary);
+    }
+
+    .score-circle .number {
+      font-size: 1.85rem;
+      font-weight: 800;
+    }
+
+    .score-circle .label {
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: var(--neutral-light);
+      padding: 1rem;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .stat-card .val {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .stat-card.correct .val { color: var(--success); }
+    .stat-card.wrong .val { color: var(--danger); }
+    .stat-card.unanswered .val { color: var(--neutral); }
+
+    .stat-card .desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Review Answers */
+    .review-item {
+      padding: 1.25rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .review-item.is-correct {
+      border-left: 5px solid var(--success);
+      background-color: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 5px solid var(--danger);
+      background-color: #fffdfd;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 5px solid var(--neutral);
+      background-color: var(--neutral-light);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .badge.correct { background: var(--success-light); color: var(--success); }
+    .badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .badge.unanswered { background: #e5e7eb; color: var(--neutral); }
+
+    .review-text {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .review-detail {
+      font-size: 0.875rem;
+      margin: 0.25rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 0.5rem;
+        margin: 1rem auto;
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .nav-controls {
+        flex-direction: column-reverse;
+      }
+      .nav-controls .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Plant Pathology Examination Portal</h1>
+    <p>Complete 220-Question Exam & Practice Assessment</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Screen 1: Setup & Configuration -->
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Configure Test Session</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Select test mode and the number of questions to begin.</p>
+      
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Exam Mode (Sequential, Hidden Answers)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="220">All Questions (220 Questions)</option>
+            <option value="10">10 Questions</option>
+            <option value="20">20 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="custom">Custom Number</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 220)</label>
+          <input type="number" id="custom-count-input" min="1" max="220" value="25" />
+        </div>
+
+        <button class="btn btn-primary" id="start-btn" style="margin-top: 1rem;">Start Quiz</button>
+      </div>
+    </div>
+
+    <!-- Screen 2: Active Quiz Interface -->
+    <div id="quiz-screen" class="card hidden">
+      <div class="progress-wrapper">
+        <div class="progress-meta">
+          <span id="q-counter">Question 1 of 220</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+      </div>
+
+      <div class="question-title" id="question-text"></div>
+      <div class="options-list" id="options-container"></div>
+
+      <div class="nav-controls">
+        <button class="btn btn-secondary" id="prev-btn">Previous</button>
+        <div style="display: flex; gap: 0.75rem;">
+          <button class="btn btn-primary" id="next-btn">Next</button>
+          <button class="btn btn-success hidden" id="submit-btn">Submit Quiz</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 3: Results Page -->
+    <div id="result-screen" class="card hidden">
+      <div class="results-header">
+        <h2>Assessment Completed</h2>
+        <div class="score-circle">
+          <span class="number" id="res-score-percent">0%</span>
+          <span class="label">Total Score</span>
+        </div>
+        <p id="res-feedback" style="font-weight: 600; font-size: 1.1rem;"></p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Total Questions</div>
+        </div>
+        <div class="stat-card correct">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="stat-card wrong">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="stat-card unanswered">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <button class="btn btn-primary" id="toggle-review-btn">Review Answers</button>
+        <button class="btn btn-secondary" id="restart-btn">Restart Quiz</button>
+      </div>
+    </div>
+
+    <!-- Screen 4: Answer Review Section -->
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem;">Detailed Answer Key & Review</h2>
+        <button class="btn btn-secondary" id="back-to-results-btn">Back to Results</button>
+      </div>
+      <div id="review-items-container"></div>
+    </div>
+
+  </div>
+
+  <script>
+    // Complete 220 items with verbatim answers
+    const questionBank = [
+      { id: 1, q: "Bunchy top of banana is transmitted by:", options: ["A) Helopeltis antonii", "B) Phymatostetha deschampses", "C) Pentalonia nigronervosa", "D) Stephanitis typica"], ans: 2 },
+      { id: 2, q: "Aflatoxin is an example of:", options: ["A) Pathotoxin", "B) Vivotoxin", "C) Phytotoxin", "D) Mycotoxin"], ans: 3 },
+      { id: 3, q: "______ weed is an alternate weed host for Ergot disease in Pearl millet.", options: ["A) Cenchrus ciliaris", "B) Saccharum spontaneum", "C) Crotalaria sp.", "D) Parthenium"], ans: 1 },
+      { id: 4, q: "‘Vrikshabhaksha’ is:", options: ["A) A book written by Surapala", "B) An Ayurvedic formulation", "C) A fungal biocontrol agent", "D) An ancient irrigation manual"], ans: 0 },
+      { id: 5, q: "To prepare 1% Bordeaux mixture, the required quantity of copper sulphate, lime and water is:", options: ["A) 1 kg copper sulphate + 1 kg lime + 100 L water", "B) 2 kg copper sulphate + 1 kg lime + 50 L water", "C) 0.5 kg copper sulphate + 0.5 kg lime + 100 L water", "D) 1 kg copper sulphate + 2 kg lime + 200 L water"], ans: 0 },
+      { id: 6, q: "Banana bunchy top virus can be detected by:", options: ["A) Gram stain", "B) Iodine test", "C) Starch test", "D) NaOH test"], ans: 1 },
+      { id: 7, q: "Shoot tip culture technique is employed to produce:", options: ["A) High-yielding plants", "B) Virus-free plants", "C) Drought-resistant plants", "D) Polyploid plants"], ans: 1 },
+      { id: 8, q: "Rice with 20°C night temperature and 30°C day temperature is favourable for infection by:", options: ["A) Magnaporthe oryzae (rice blast)", "B) Xanthomonas oryzae", "C) Rhizoctonia solani", "D) Helminthosporium oryzae"], ans: 0 },
+      { id: 9, q: "Method adopted for assessment of downy mildew disease in grapes:", options: ["A) Embryo count test", "B) Disease severity charts", "C) Blotter test", "D) Seed-wash test"], ans: 1 },
+      { id: 10, q: "Anti-oomycete fungicides are:", options: ["A) Carbendazim and Benomyl", "B) Metalaxyl, Cymoxanil and Dimethomorph", "C) Tricyclazole and Carpropamid", "D) Thiram and Captan"], ans: 1 },
+      { id: 11, q: "Systemic fungicides having melanin biosynthesis inhibition activity:", options: ["A) Tricyclazole, Pyroquilon and Carpropamid", "B) Metalaxyl and Cymoxanil", "C) Wettable sulphur and Karathane", "D) Streptocycline and Agrimycin"], ans: 0 },
+      { id: 12, q: "In 2,4-D blotter method, 2,4-D solution is added to:", options: ["A) Stimulate seed germination", "B) Inhibit the growth of the pathogen / suppress seedling growth", "C) Induce sporulation", "D) Neutralize toxins"], ans: 1 },
+      { id: 13, q: "Cucurbitaceous plants are sensitive to:", options: ["A) Copper oxychloride", "B) Wettable sulphur", "C) Bordeaux mixture", "D) Mancozeb"], ans: 1 },
+      { id: 14, q: "Copper deficiency in soil leads to:", options: ["A) Little leaf in brinjal", "B) Exanthema in citrus", "C) Whiptail in cauliflower", "D) Khaira disease in rice"], ans: 1 },
+      { id: 15, q: "Which is NOT caused by wall-less prokaryotes?", options: ["A) Little leaf of brinjal", "B) Sesame phyllody", "C) Rice dwarf", "D) Coconut root wilt"], ans: 2 },
+      { id: 16, q: "Entry of bacterial canker in tomato is through:", options: ["A) Lenticels", "B) Hydathodes", "C) Trichomes", "D) Wounds only"], ans: 2 },
+      { id: 17, q: "Citrus exocortis disease is caused by:", options: ["A) Viroid", "B) Virus", "C) Phytoplasma", "D) Bacterium"], ans: 0 },
+      { id: 18, q: "Oxygen starvation during potato storage leads to:", options: ["A) Hollow heart", "B) Black heart", "C) Spongy tissue", "D) Internal brown spot"], ans: 1 },
+      { id: 19, q: "Little leaf of brinjal is transmitted by:", options: ["A) Whitefly", "B) Leafhopper (Hishimonus phycitis)", "C) Aphid", "D) Thrips"], ans: 1 },
+      { id: 20, q: "Whiptail is associated with deficiency of:", options: ["A) Boron", "B) Zinc", "C) Molybdenum", "D) Manganese"], ans: 2 },
+      { id: 21, q: "Disease and pest resistance is governed by:", options: ["A) Monogenes", "B) Oligogenes", "C) Polygenes", "D) All of the above — oligogenes, polygenes and monogenes"], ans: 3 },
+      { id: 22, q: "Components of integrated disease management include:", options: ["A) Cultural practices", "B) Biological control", "C) Chemical control", "D) All of the above"], ans: 3 },
+      { id: 23, q: "Phyllody in sesame is caused by:", options: ["A) Virus", "B) Phytoplasma", "C) Fungus", "D) Spiroplasma"], ans: 1 },
+      { id: 24, q: "Necrosis indicates:", options: ["A) Hypertrophy", "B) Death of cells", "C) Chlorosis", "D) Stunting"], ans: 1 },
+      { id: 25, q: "Root wilt of coconut is incited by:", options: ["A) Fungus", "B) Phytoplasma", "C) Viroid", "D) Virus"], ans: 1 },
+      { id: 26, q: "Predominant nursery disease in vegetable crops:", options: ["A) Anthracnose", "B) Damping-off", "C) Powdery mildew", "D) Bacterial wilt"], ans: 1 },
+      { id: 27, q: "Logical sequence in effective disease management:", options: ["A) Chemotherapeutants → quarantine → surveillance", "B) Surveillance → regulatory measures → exclusion/quarantine → chemotherapeutants", "C) Quarantine → chemotherapeutants → eradication", "D) Surveillance → chemotherapeutants → regulatory measures"], ans: 1 },
+      { id: 28, q: "Citrus canker, late blight of potato, bunchy top of banana and red rust of tea are caused by:", options: ["A) Bacteria, fungi, virus and algae respectively", "B) Fungi, bacteria, virus and algae respectively", "C) Virus, fungi, bacteria and algae respectively", "D) Algae, bacteria, fungi and virus respectively"], ans: 0 },
+      { id: 29, q: "Environmental factors associated with different diseases:", options: ["A) High temp → tomato leaf curl; low temp → rice blast; high moisture → powdery mildew/bacterial wilt", "B) Low temp → tomato leaf curl; high temp → rice blast", "C) High moisture → ergot only", "D) None of the above"], ans: 0 },
+      { id: 30, q: "Rust fungi completing their life cycle on one host are called:", options: ["A) Heteroecious", "B) Autoecious", "C) Monocyclic", "D) Hemicyclic"], ans: 1 },
+      { id: 31, q: "Which is internally seed-borne?", options: ["A) Loose smut of wheat", "B) Covered smut of barley", "C) Grain smut of jowar", "D) Bunt of wheat"], ans: 0 },
+      { id: 32, q: "Infection of maize smut occurs during:", options: ["A) Post-harvest", "B) Seed storage", "C) Vegetative stage", "D) Maturity stage"], ans: 2 },
+      { id: 33, q: "Fungicide that is NOT systemic:", options: ["A) Carbendazim", "B) Carboxin", "C) Thiram", "D) Metalaxyl"], ans: 2 },
+      { id: 34, q: "Fungicides absorbed into plants and moved to remote infection sites are called:", options: ["A) Contact fungicides", "B) Systemic fungicides", "C) Protectant fungicides", "D) Eradicant nonsystemic fungicides"], ans: 1 },
+      { id: 35, q: "Major source of more than half of known antibiotics:", options: ["A) Bacillus", "B) Streptomyces", "C) Penicillium", "D) Pseudomonas"], ans: 1 },
+      { id: 36, q: "Economic threshold level for sheath blight of rice:", options: ["A) 1% affected tillers/m²", "B) 5% affected tillers/m²", "C) 15% affected tillers/m²", "D) 25% affected tillers/m²"], ans: 1 },
+      { id: 37, q: "Tomato leaf curl is caused by:", options: ["A) Virus", "B) Bacterium", "C) Fungus", "D) Viroid"], ans: 0 },
+      { id: 38, q: "Bunchy top of banana is caused by:", options: ["A) Fungus", "B) Virus", "C) Phytoplasma", "D) Nematode"], ans: 1 },
+      { id: 39, q: "Bacterial leaf blight of rice is caused by:", options: ["A) Pseudomonas", "B) Xanthomonas", "C) Erwinia", "D) Ralstonia"], ans: 1 },
+      { id: 40, q: "Pathogen responsible for downy mildew of grapes:", options: ["A) Uncinula necator", "B) Plasmopara viticola", "C) Guignardia bidwellii", "D) Elsinoe ampelina"], ans: 1 },
+      { id: 41, q: "Hot-water treatment of sugarcane setts is done because:", options: ["A) It promotes rapid bud germination", "B) It controls seed-borne diseases", "C) It enhances sugar accumulation", "D) It kills termites in soil"], ans: 1 },
+      { id: 42, q: "Vein-clearing disease in bhendi is transmitted by:", options: ["A) Aphid", "B) Thrips", "C) Whitefly", "D) Leafhopper"], ans: 2 },
+      { id: 43, q: "Leaf spot, red rot, rust and wilt are caused by:", options: ["A) Colletotrichum, Cercospora, Puccinia and Fusarium respectively", "B) Cercospora, Colletotrichum, Puccinia and Fusarium respectively", "C) Fusarium, Puccinia, Cercospora and Colletotrichum respectively", "D) Puccinia, Colletotrichum, Fusarium and Cercospora respectively"], ans: 0 },
+      { id: 44, q: "Plant protection appliance used for fruit trees:", options: ["A) Knapsack sprayer", "B) Rocker sprayer / Power sprayer", "C) Hand sprayer", "D) Duster"], ans: 1 },
+      { id: 45, q: "Fusarium is:", options: ["A) Air-borne", "B) Soil-borne", "C) Vector-borne", "D) Water-borne strictly"], ans: 1 },
+      { id: 46, q: "Association between plant roots and certain soil fungi:", options: ["A) Lichen", "B) Vesicular-arbuscular mycorrhiza (VAM)", "C) Rhizobia", "D) Actinomycetes"], ans: 1 },
+      { id: 47, q: "Blast, rust, smut and wilt are associated with:", options: ["A) Rice, wheat, sorghum and cotton respectively", "B) Wheat, rice, cotton and sorghum respectively", "C) Cotton, sorghum, rice and wheat respectively", "D) Sorghum, cotton, wheat and rice respectively"], ans: 0 },
+      { id: 48, q: "Fungi that can grow only on living host plants are:", options: ["A) Obligate parasites", "B) Facultative parasites", "C) Saprophytes", "D) Facultative saprophytes"], ans: 0 },
+      { id: 49, q: "Alternaria blight can be effectively controlled by:", options: ["A) Treating seeds with hot water", "B) Excessive urea", "C) Storing in open bags", "D) Flooding soil"], ans: 0 },
+      { id: 50, q: "Cuscuta is a parasitic weed on:", options: ["A) Sorghum", "B) Sugarcane", "C) Blackgram", "D) Tobacco"], ans: 2 },
+      { id: 51, q: "Wrong pair of diseases introduced into India:", options: ["A) Late blight of potato & Coffee rust", "B) Black rot of crucifers and downy mildew of maize", "C) Bunchy top of banana & Wart of potato", "D) San Jose scale & Fire blight"], ans: 1 },
+      { id: 52, q: "Major source for survival of plant pathogen:", options: ["A) Air", "B) Soil", "C) Clouds", "D) Sunlight"], ans: 1 },
+      { id: 53, q: "Trichoderma is a phosphorus-solubilising organism related to:", options: ["A) Bacteria", "B) Actinomycetes", "C) Fungi", "D) Protozoa"], ans: 2 },
+      { id: 54, q: "Statements regarding sulphur as fungicide:", options: ["A) Only statement I is correct", "B) Only statement II is correct", "C) Both statements are correct", "D) Neither statement is correct"], ans: 2 },
+      { id: 55, q: "Bordeaux mixture was discovered for control of:", options: ["A) Powdery mildew of grapes", "B) Downy mildew of grapes", "C) Anthracnose of grapes", "D) Black rot of grapes"], ans: 1 },
+      { id: 56, q: "Die-back and fruit rot of chilli can be controlled by seed treatment with:", options: ["A) Thiram", "B) Streptomycin", "C) Agrimycin", "D) 2,4-D"], ans: 0 },
+      { id: 57, q: "Smut fungi in millets are:", options: ["A) Autoecious, systemic and infect the inflorescence", "B) Heteroecious and localized", "C) Obligate saprophytes", "D) Vector transmitted"], ans: 0 },
+      { id: 58, q: "After pruning, rose cut ends should be protected with:", options: ["A) Bordeaux paste", "B) Lime sulphur wash", "C) Formalin", "D) Kerosene"], ans: 0 },
+      { id: 59, q: "Ireland's potato famine was caused by:", options: ["A) Alternaria solani", "B) Phytophthora infestans", "C) Spongospora subterranea", "D) Synchytrium endobioticum"], ans: 1 },
+      { id: 60, q: "Corm injection in banana is practised to manage:", options: ["A) Panama wilt (Fusarial wilt)", "B) Anthracnose", "C) Sigatoka", "D) Tip over"], ans: 0 },
+      { id: 61, q: "Secondary infection in mango following hopper damage:", options: ["A) Anthracnose", "B) Sooty mould", "C) Powdery mildew", "D) Red rust"], ans: 1 },
+      { id: 62, q: "Most prevalent disease in nursery:", options: ["A) Damping-off", "B) Rust", "C) Smut", "D) Downy mildew"], ans: 0 },
+      { id: 63, q: "Discovery of Bordeaux mixture is linked with:", options: ["A) Downy mildew of grapes", "B) Late blight of potato", "C) Rust of wheat", "D) Coffee rust"], ans: 0 },
+      { id: 64, q: "Yellow network of veins in bhendi indicates:", options: ["A) Vein banding / Vein clearing", "B) Little leaf", "C) Necrosis", "D) Leaf curl"], ans: 0 },
+      { id: 65, q: "Severity of disease can be reduced by application of:", options: ["A) Lime", "B) Sulphur in excess", "C) Urea in excess", "D) Fresh dung"], ans: 0 },
+      { id: 66, q: "Panama disease of banana is caused by:", options: ["A) Fusarium oxysporum f. sp. cubense", "B) Rhizoctonia solani", "C) Colletotrichum musae", "D) Mycosphaerella fijiensis"], ans: 0 },
+      { id: 67, q: "Example of fungal biocontrol agent:", options: ["A) Bacillus subtilis", "B) Pseudomonas fluorescens", "C) Trichoderma viride", "D) Agrobacterium radiobacter"], ans: 2 },
+      { id: 68, q: "Antibiotic produced by Pseudomonas fluorescens during biocontrol:", options: ["A) Penicillin", "B) Pyoluteorin", "C) Streptomycin", "D) Tetracycline"], ans: 1 },
+      { id: 69, q: "Chance of virus transmission can be reduced by:", options: ["A) Clonal propagation / Tissue culture certification", "B) Open field cuttings", "C) Budding from infected stock", "D) Overhead spraying"], ans: 0 },
+      { id: 70, q: "Kittleson's killer is a:", options: ["A) Herbicide", "B) Fungicide (Captan)", "C) Rodenticide", "D) Nematicide"], ans: 1 },
+      { id: 71, q: "Paddy blast was introduced into India from:", options: ["A) Sri Lanka", "B) Philippines", "C) England", "D) Mexico"], ans: 1 },
+      { id: 72, q: "Tokra is a type of:", options: ["A) Phanerogamic parasite (Orobanche)", "B) Fungal parasite", "C) Viral symptom", "D) Bacterial blight"], ans: 0 },
+      { id: 73, q: "Most suitable biocontrol agent for rice disease in wetlands:", options: ["A) Trichoderma viride", "B) Pseudomonas fluorescens", "C) Beauveria bassiana", "D) Metarhizium anisopliae"], ans: 1 },
+      { id: 74, q: "Odd one out — Trichoderma, B. thuringiensis, B. subtilis, Pseudomonas fluorescens:", options: ["A) Trichoderma", "B) Bacillus thuringiensis", "C) Bacillus subtilis", "D) Pseudomonas fluorescens"], ans: 1 },
+      { id: 75, q: "Odd one out — black tip, khaira, blossom-end rot, black rot:", options: ["A) Black tip", "B) Khaira", "C) Blossom-end rot", "D) Black rot of crucifers"], ans: 3 },
+      { id: 76, q: "Plant disease favoured by alkaline soil:", options: ["A) Club root of cabbage", "B) Common scab of potato", "C) Late blight of potato", "D) Blast of rice"], ans: 1 },
+      { id: 77, q: "Bacterial biocontrol agent:", options: ["A) Trichoderma harzianum", "B) Bacillus subtilis", "C) Aspergillus flavus", "D) Metarhizium anisopliae"], ans: 1 },
+      { id: 78, q: "Correct statements about phyllody, mosaic, smut and rust symptoms:", options: ["A) Mosaic is specific to viral diseases; smut and rust are fungal diseases", "B) Mosaic is bacterial", "C) Smut is viral", "D) Rust is caused by algae"], ans: 0 },
+      { id: 79, q: "Nutrient deficiency indicator plant:", options: ["A) Maize", "B) Cotton", "C) Sugarcane", "D) Tobacco"], ans: 0 },
+      { id: 80, q: "Soil fertility evaluation method for boron deficiency:", options: ["A) Sunflower pot-culture / Mustard pot-culture technique", "B) Aspergillus niger method", "C) Water culture method", "D) EC test"], ans: 0 },
+      { id: 81, q: "Indicator plant for magnesium deficiency:", options: ["A) Wheat", "B) Potato", "C) Rice", "D) Sorghum"], ans: 1 },
+      { id: 82, q: "Crop disease due to vascular dysfunction is called:", options: ["A) Canker disease", "B) Wilt disease", "C) Blight disease", "D) Rot disease"], ans: 1 },
+      { id: 83, q: "“Pathogen must be associated with the disease...” postulate was proposed by:", options: ["A) Louis Pasteur", "B) Robert Koch", "C) Anton de Bary", "D) E.J. Butler"], ans: 1 },
+      { id: 84, q: "Seed-borne viral disease:", options: ["A) Bean common mosaic", "B) Tobacco mosaic", "C) Rice tungro", "D) Banana bunchy top"], ans: 0 },
+      { id: 85, q: "Culture medium used for mass production of Trichoderma:", options: ["A) Nutrient agar", "B) Trichoderma Special Medium (TSM)", "C) Czapek Dox agar", "D) King's B medium"], ans: 1 },
+      { id: 86, q: "To extend the life of Bordeaux mixture, what is added?", options: ["A) Salt", "B) Jaggery", "C) Urea", "D) Alcohol"], ans: 1 },
+      { id: 87, q: "Statements regarding biocontrol agents:", options: ["A) Should have broad spectrum activity, increased shelf life and amenability to mass production", "B) Should be highly strain-specific with 1-day shelf life", "C) Must be chemical derivatives", "D) None of the above"], ans: 0 },
+      { id: 88, q: "Important characteristics of biocontrol agents:", options: ["A) Broad spectrum, good shelf life and amenable to mass production", "B) Narrow target, high mammalian toxicity", "C) Obligate dependence on non-living media only", "D) Instability in soil"], ans: 0 },
+      { id: 89, q: "Bordeaux mixture was first used to control:", options: ["A) Downy mildew of grapes", "B) Powdery mildew of grapes", "C) Late blight of potato", "D) Apple scab"], ans: 0 },
+      { id: 90, q: "High-temperature short-time (HTST) pasteurization combination:", options: ["A) 63°C for 30 minutes", "B) 72°C for 15 seconds", "C) 100°C for 5 minutes", "D) 121°C for 15 seconds"], ans: 1 },
+      { id: 91, q: "Botanical survey, Forest Research Institute, DPPS, DPPQS and Biodiversity International locations:", options: ["A) Kolkata, Dehradun, Faridabad, New Delhi and Rome respectively", "B) Rome, Kolkata, New Delhi, Dehradun and Faridabad respectively", "C) Dehradun, Rome, Faridabad, New Delhi and Kolkata respectively", "D) New Delhi, Faridabad, Kolkata, Rome and Dehradun respectively"], ans: 0 },
+      { id: 92, q: "Potato famine of Ireland was caused by:", options: ["A) Phytophthora infestans", "B) Alternaria solani", "C) Streptomyces scabies", "D) Spongospora subterranea"], ans: 0 },
+      { id: 93, q: "Bengal famine of 1943 associated with:", options: ["A) Magnaporthe oryzae", "B) Helminthosporium oryzae", "C) Xanthomonas oryzae", "D) Rhizoctonia solani"], ans: 1 },
+      { id: 94, q: "Gene-for-gene concept was advanced by:", options: ["A) H. H. Flor", "B) Anton de Bary", "C) Vanderplank", "D) E. C. Stakman"], ans: 0 },
+      { id: 95, q: "Solar heat treatment of wheat seed was developed for:", options: ["A) Karnal bunt", "B) Loose smut", "C) Hill bunt", "D) Black rust"], ans: 1 },
+      { id: 96, q: "Wrong pair among famous nematologists/pathologists:", options: ["A) Father of Indian Plant Pathology – E.J. Butler", "B) Father of European Nematology – Bastian", "C) Father of Nematology – N.A. Cobb", "D) Gene-for-gene hypothesis – Flor"], ans: 1 },
+      { id: 97, q: "Club root of crucifers can be controlled by:", options: ["A) Lowering soil pH", "B) Raising soil pH (liming)", "C) Applying excessive ammonium sulphate", "D) Frequent flooding"], ans: 1 },
+      { id: 98, q: "First observable symptom of potassium deficiency:", options: ["A) Interveinal chlorosis of young leaves", "B) Marginal chlorosis and scorching of older leaves", "C) Stunting of apical shoot", "D) Little leaf"], ans: 1 },
+      { id: 99, q: "Method for detecting insect pests of vegetatively propagated material:", options: ["A) Visual examination", "B) Blotter method", "C) ELISA", "D) PCR"], ans: 0 },
+      { id: 100, q: "Tests associated with Karnal bunt, Fusarium, bacterial leaf blight and nematode:", options: ["A) NaOH test, ELISA test, seed-wash test and appropriate nematode detection test respectively", "B) Blotter test, Gram stain, PCR and float test", "C) Iodine test, guaiacol test, NaOH test and flame test", "D) None of the above"], ans: 0 },
+      { id: 101, q: "Blotter test recommended by ISTA for analysing:", options: ["A) Seed health", "B) Soil texture", "C) Plant height", "D) Moisture percentage in grains"], ans: 0 },
+      { id: 102, q: "QTL mapping is useful because it helps in finding:", options: ["A) Disease-resistance genes", "B) Weed seed contamination", "C) Soil fertility indices", "D) Virus vector populations"], ans: 0 },
+      { id: 103, q: "Penicillin acts by:", options: ["A) Inhibiting protein synthesis at 70S ribosomes", "B) Disrupting synthesis of the peptidoglycan layer of bacterial cell wall", "C) Disrupting fungal ergosterol", "D) Damaging plasma membranes directly"], ans: 1 },
+      { id: 104, q: "Decomposition of crucifer residues releases:", options: ["A) Nitrous oxide", "B) Volatile isothiocyanates", "C) Ethylene gas", "D) Hydrogen cyanide"], ans: 1 },
+      { id: 105, q: "Soil sterilization under greenhouse conditions is usually done at:", options: ["A) 40–50°C", "B) 60–72°C", "C) 100–120°C", "D) 150–180°C"], ans: 1 },
+      { id: 106, q: "Correct statements regarding fungicide action:", options: ["A) Carboxin inhibits mitochondrial activity and Tridemorph inhibits sterol synthesis", "B) Thiram inhibits sterol synthesis", "C) Metalaxyl inhibits chitin synthesis", "D) Mancozeb inhibits ergosterol directly"], ans: 0 },
+      { id: 107, q: "Amount of initial and secondary inoculum is important for predicting:", options: ["A) Wheat rust", "B) Tomato blossom-end rot", "C) Mango malformation", "D) Black heart of potato"], ans: 0 },
+      { id: 108, q: "Forecasting model for potato late blight:", options: ["A) EPIDEM", "B) BLITECAST", "C) FAST", "D) TOM-CAST"], ans: 1 },
+      { id: 109, q: "Disease prediction equation reveals the relationship between airborne spores and:", options: ["A) Soil organic matter", "B) Disease severity", "C) Leaf area index", "D) Root depth"], ans: 1 },
+      { id: 110, q: "Phytophthora infestans sporangia produce zoospores at:", options: ["A) Less than 15°C", "B) Greater than 25°C", "C) Exactly 37°C", "D) 40–45°C"], ans: 0 },
+      { id: 111, q: "Schneider et al. developed area-under-curve model for estimating:", options: ["A) Cercospora leaf spot", "B) Late blight of potato", "C) Stem rot of mustard", "D) Loose smut of wheat"], ans: 0 },
+      { id: 112, q: "Components of disease triangle:", options: ["A) Virulent pathogen + susceptible host + favourable environment", "B) Host + vector + fertilizer", "C) Vector + pathogen + water", "D) Fungus + bacterium + virus"], ans: 0 },
+      { id: 113, q: "Stem-pitting symptom is characteristic of:", options: ["A) Citrus tristeza", "B) Citrus canker", "C) Citrus greening", "D) Citrus exocortis"], ans: 0 },
+      { id: 114, q: "Cytoplasmic resistance in maize is exploited against:", options: ["A) Helminthosporium blight (Bipolaris maydis race T)", "B) Maize rust", "C) Downy mildew", "D) Head smut"], ans: 0 },
+      { id: 115, q: "Viral diseases and their vectors:", options: ["A) TMV – Olpidium brassicae; PVX – Synchytrium endobioticum; tomato spotted leaf curl – Bemisia tabaci; rice dwarf – Nephotettix apicalis", "B) TMV – Aphids; PVX – Thrips", "C) All are transmitted by beetles", "D) None of the above"], ans: 0 },
+      { id: 116, q: "Ethidium bromide gives visible fluorescence under:", options: ["A) Infrared light", "B) UV light", "C) Visible red light", "D) X-rays"], ans: 1 },
+      { id: 117, q: "Horizontal resistance is governed by:", options: ["A) Single major gene", "B) Many genes (polygenes)", "C) Cytoplasmic organelles only", "D) Plasmids"], ans: 1 },
+      { id: 118, q: "Albugo candida is a/an:", options: ["A) Obligate parasite", "B) Facultative saprophyte", "C) Saprophyte", "D) Endophytic bacterium"], ans: 0 },
+      { id: 119, q: "Downy mildew of pearl millet is:", options: ["A) Exclusively seed-borne", "B) Air-borne and soil/seed-borne", "C) Insect-borne exclusively", "D) Viroid-borne"], ans: 1 },
+      { id: 120, q: "For effective control of wilt, the crop should be intercropped with:", options: ["A) Sorghum", "B) Wheat", "C) Mustard", "D) Sesame"], ans: 0 },
+      { id: 121, q: "MLO / Phytoplasma diseases are transmitted by:", options: ["A) Leafhopper", "B) Aphid", "C) Thrips", "D) Beetle"], ans: 0 },
+      { id: 122, q: "Sterility mosaic disease of pigeonpea is spread by:", options: ["A) Whitefly", "B) Eriophyid mite (Aceria cajani)", "C) Aphid", "D) Thrips"], ans: 1 },
+      { id: 123, q: "Micrografting is used to produce plants free from:", options: ["A) Fungi", "B) Viruses", "C) Nematodes", "D) Weeds"], ans: 1 },
+      { id: 124, q: "Yellow vein mosaic of okra is spread by:", options: ["A) Bemisia tabaci", "B) Aphis gossypii", "C) Amrasca biguttula", "D) Scirtothrips dorsalis"], ans: 0 },
+      { id: 125, q: "Yellow mosaic virus of moong is spread by:", options: ["A) Bemisia tabaci", "B) Rhopalosiphum maidis", "C) Myzus persicae", "D) Frankliniella schultzei"], ans: 0 },
+      { id: 126, q: "Entomopathogenic fungi:", options: ["A) Beauveria bassiana and Metarhizium anisopliae", "B) Trichoderma viride and T. harzianum", "C) Puccinia graminis and Ustilago nuda", "D) Pythium debaryanum and Phytophthora"], ans: 0 },
+      { id: 127, q: "Little leaf of brinjal is caused by:", options: ["A) Virus", "B) Phytoplasma", "C) Fungus", "D) Bacterium"], ans: 1 },
+      { id: 128, q: "Bacterial diseases are controlled using:", options: ["A) Fungicides", "B) Antibiotics", "C) Nematicides", "D) Acaricides"], ans: 1 },
+      { id: 129, q: "Application of potash increases:", options: ["A) Disease susceptibility", "B) Disease resistance in plants", "C) Plant lodging", "D) Insect multiplication"], ans: 1 },
+      { id: 130, q: "Buckling, puckering and blistering symptoms are produced by:", options: ["A) Fungi", "B) Viruses", "C) Bacteria", "D) Algae"], ans: 1 },
+      { id: 131, q: "Quick and accurate detection of viruses can be done by:", options: ["A) ELISA", "B) Gram staining", "C) Ooze test", "D) Flame photometry"], ans: 0 },
+      { id: 132, q: "Potato virus diseases are spread by:", options: ["A) Beetles", "B) Aphids", "C) Ants", "D) Caterpillars"], ans: 1 },
+      { id: 133, q: "Which organism increases phosphorus uptake?", options: ["A) Azospirillum", "B) Mycorrhiza (VAM)", "C) Rhizobium", "D) Acetobacter"], ans: 1 },
+      { id: 134, q: "Club root of crucifers is a:", options: ["A) True fungal disease", "B) Chromista / Plasmodiophorid disease", "C) Viral infection", "D) Bacterial wilt"], ans: 1 },
+      { id: 135, q: "Citrus greening is caused by:", options: ["A) Fastidious vascular bacterium (Candidatus Liberibacter)", "B) Phytoplasma", "C) Viroid", "D) Potyvirus"], ans: 0 },
+      { id: 136, q: "Example of a polycyclic disease:", options: ["A) Loose smut of wheat", "B) Powdery mildew", "C) Covered smut of barley", "D) Grain smut of sorghum"], ans: 1 },
+      { id: 137, q: "Fourth component of disease triangle (making it a disease pyramid):", options: ["A) Host", "B) Time", "C) Vector", "D) Chemical"], ans: 1 },
+      { id: 138, q: "Rice blast becomes severe under:", options: ["A) Drizzle / prolonged leaf wetness", "B) Bright sunshine and drought", "C) High daytime temperature without humidity", "D) Alkaline flooding"], ans: 0 },
+      { id: 139, q: "Verticillium wilt of cotton is severe under:", options: ["A) High temperature", "B) Low temperature", "C) Drought", "D) High salinity"], ans: 1 },
+      { id: 140, q: "Brown spot of rice incidence increases with:", options: ["A) Heavy dew and nutrient deficiency", "B) High potash", "C) Submerged anaerobic mud", "D) High organic matter"], ans: 0 },
+      { id: 141, q: "Destructive Insects and Pests Act was enacted in:", options: ["A) 1914", "B) 1939", "C) 1947", "D) 1968"], ans: 0 },
+      { id: 142, q: "Sugarcane mosaic can be eliminated by:", options: ["A) Aerated steam therapy", "B) Spraying 2,4-D", "C) Liming soil", "D) Copper fungicide spray"], ans: 0 },
+      { id: 143, q: "Killing pathogens already present in a country/region is called:", options: ["A) Exclusion", "B) Eradication", "C) Protection", "D) Immunization"], ans: 1 },
+      { id: 144, q: "Potato movement is prohibited from which area to prevent potato cyst nematode?", options: ["A) Nilgiris", "B) Kodaikanal", "C) Shimla", "D) Dehradun"], ans: 0 },
+      { id: 145, q: "Total ban on import of plant material is called:", options: ["A) Quarantine inspection", "B) Embargo", "C) Notification", "D) Certification"], ans: 1 },
+      { id: 146, q: "Iodine test is used to detect infection by:", options: ["A) Rice blast", "B) Rice tungro", "C) Bacterial blight", "D) Sheath rot"], ans: 1 },
+      { id: 147, q: "Disease assessment in percentage is applicable to:", options: ["A) Leaf spot diseases", "B) Vascular wilts only", "C) Seed rots strictly", "D) Gall formations"], ans: 0 },
+      { id: 148, q: "Card produced when pest/disease occurrence reaches half ETL:", options: ["A) White card", "B) Yellow card", "C) Green card", "D) Red card"], ans: 1 },
+      { id: 149, q: "Disease grade range commonly used in disease assessment:", options: ["A) 0–5", "B) 0–9", "C) 1–100", "D) 0–3"], ans: 1 },
+      { id: 150, q: "Acid soil favours:", options: ["A) Common scab of potato", "B) Club root of cabbage", "C) Bacterial wilt", "D) None of the above"], ans: 1 },
+      { id: 151, q: "Luthra's solar treatment, PDI, loose smut and raised-bed nursery matching:", options: ["A) Luthra's solar treatment–Loose smut; PDI–Disease index; loose smut–Vitavax; raised-bed nursery–Damping-off", "B) Loose smut–Copper; PDI–Weeds", "C) All are matching with viral vectors", "D) None of the above"], ans: 0 },
+      { id: 152, q: "Rice blast, Verticillium, coffee rust and fire blight matching:", options: ["A) Rice blast–low night temp; Verticillium–vascular wilt; coffee rust–Sri Lanka; fire blight–England/USA", "B) Fire blight–Sri Lanka; coffee rust–blast", "C) Rice blast–high pH; fire blight–fungus", "D) None of the above"], ans: 0 },
+      { id: 153, q: "Dome test, embryo count test, Khaira disease and BER matching:", options: ["A) Embryo count test–loose smut; Khaira–Zn deficiency; BER–Ca deficiency; Dome test–resistance breakage", "B) BER–Zn deficiency; Khaira–Ca deficiency", "C) Embryo count–viral disease", "D) None of the above"], ans: 0 },
+      { id: 154, q: "Alternate host of wheat black stem rust:", options: ["A) Mahonia / Barberry", "B) Thalictrum", "C) Grasses", "D) Apple"], ans: 0 },
+      { id: 155, q: "Host plant of a different family that helps survival is called:", options: ["A) Alternate host", "B) Collateral host", "C) Primary host", "D) Intermediate host"], ans: 1 },
+      { id: 156, q: "Sugarcane ratoon crop helps survival of:", options: ["A) Ustilago scitaminea (whip smut)", "B) Puccinia graminis", "C) Plasmopara viticola", "D) Venturia inaequalis"], ans: 0 },
+      { id: 157, q: "Disease associated with sclerotial bodies in pearl millet:", options: ["A) Green ear", "B) Ergot of bajra", "C) Rust", "D) Blast"], ans: 1 },
+      { id: 158, q: "Paddy blast becomes severe when dew persists for:", options: ["A) 2 hours", "B) 8 hours", "C) 24 hours", "D) 48 hours"], ans: 1 },
+      { id: 159, q: "Maximum sporulation of sorghum downy mildew occurs at:", options: ["A) 50% RH", "B) 70% RH", "C) 100% RH", "D) 30% RH"], ans: 2 },
+      { id: 160, q: "In disease surveillance, incidence and weather data are submitted once a:", options: ["A) Day", "B) Week", "C) Month", "D) Fortnight"], ans: 1 },
+      { id: 161, q: "In roving survey, number of villages selected:", options: ["A) 2", "B) 5", "C) 8", "D) 20"], ans: 2 },
+      { id: 162, q: "Odd one out among surveillance report cards:", options: ["A) Green card", "B) Yellow card", "C) Red card", "D) White card"], ans: 3 },
+      { id: 163, q: "Cracking of carrot is due to:", options: ["A) Excess water / fluctuations in soil moisture", "B) Nitrogen starvation", "C) Viral infection", "D) Frost damage"], ans: 0 },
+      { id: 164, q: "Black tip of mango is due to:", options: ["A) Boron deficiency & brick-kiln fumes (SO₂)", "B) Fungal hyphae", "C) High humidity", "D) Bacterial blight"], ans: 0 },
+      { id: 165, q: "Overhead irrigation favours which pathogen?", options: ["A) Coffee rust", "B) Powdery mildew", "C) Charcoal rot", "D) Dry root rot"], ans: 0 },
+      { id: 166, q: "Fruit rot of chilli is:", options: ["A) Soil-borne strictly", "B) Externally seed-borne and air-borne", "C) Internally seed-borne strictly", "D) Aphid transmitted"], ans: 1 },
+      { id: 167, q: "Tomato spotted wilt virus is transmitted by:", options: ["A) Aphids", "B) Thrips", "C) Whiteflies", "D) Mites"], ans: 1 },
+      { id: 168, q: "Method used to detect fungi causing symptoms on roots and shoots:", options: ["A) Seedling symptom test", "B) Blotter method", "C) NaOH seed soak", "D) Iodine test"], ans: 0 },
+      { id: 169, q: "Chemical used for surface sterilization of infected tissue:", options: ["A) Formaldehyde", "B) Sodium hypochlorite (0.1%)", "C) Acetic acid", "D) Copper sulphate"], ans: 1 },
+      { id: 170, q: "Quarantine aimed at controlling disease spread within a country:", options: ["A) International quarantine", "B) Domestic quarantine", "C) State embargo", "D) Phytosanitary export control"], ans: 1 },
+      { id: 171, q: "Pest and Disease Act regulated in Madras State in:", options: ["A) 1914", "B) 1919", "C) 1947", "D) 1971"], ans: 1 },
+      { id: 172, q: "Disease occurring at irregular intervals over limited areas is:", options: ["A) Endemic disease", "B) Sporadic disease", "C) Epidemic disease", "D) Pandemic disease"], ans: 1 },
+      { id: 173, q: "Disease development restricted to the site of infection is:", options: ["A) Systemic disease", "B) Localized disease", "C) Chronic disease", "D) Infectious disease"], ans: 1 },
+      { id: 174, q: "Practice based on starving the pathogen of a specific host:", options: ["A) Crop rotation", "B) Green manuring", "C) Deep ploughing", "D) Soil solarization"], ans: 0 },
+      { id: 175, q: "Cropping pattern followed for reduction of wilt:", options: ["A) Red gram + sorghum", "B) Cotton + bhendi", "C) Tomato + potato", "D) Chilli + brinjal"], ans: 0 },
+      { id: 176, q: "Application of gypsum reduces which disease incidence?", options: ["A) Potato scab", "B) Late blight", "C) Rust of wheat", "D) Downy mildew"], ans: 0 },
+      { id: 177, q: "Coconut root wilt disease is caused by:", options: ["A) Candidatus Phytoplasma", "B) Ganoderma lucidum", "C) Phytophthora palmivora", "D) Viroid"], ans: 0 },
+      { id: 178, q: "Coconut cadang-cadang disease is caused by:", options: ["A) Virus", "B) Viroid", "C) Phytoplasma", "D) Bacterium"], ans: 1 },
+      { id: 179, q: "Sudden outbreak of a plant disease is known as:", options: ["A) Endemic", "B) Epidemic", "C) Sporadic", "D) Chronic"], ans: 1 },
+      { id: 180, q: "Disease triangle consists of:", options: ["A) Host + pathogen + environment", "B) Vector + pesticide + soil", "C) Water + fertilizer + heat", "D) Seed + root + shoot"], ans: 0 },
+      { id: 181, q: "AUDPC stands for:", options: ["A) Area Under Disease Progress Curve", "B) Annual Unit of Disease Protection Control", "C) Assessment Unit for Disease Prevention Cost", "D) Aggregate Urban Disease Program Center"], ans: 0 },
+      { id: 182, q: "Quarantine is a Latin word meaning:", options: ["A) 14 days", "B) 30 days", "C) 40 days (quarentena)", "D) 100 days"], ans: 2 },
+      { id: 183, q: "FRAC stands for:", options: ["A) Fertilizer Research Advisory Committee", "B) Fungicide Resistance Action Committee", "C) Farming Regulatory Action Commission", "D) Fungal Research Association Council"], ans: 1 },
+      { id: 184, q: "Preventing inoculum from entering or establishing in an area is:", options: ["A) Eradication", "B) Protection", "C) Exclusion", "D) Therapy"], ans: 2 },
+      { id: 185, q: "Directorate of Plant Protection Quarantine and Storage is situated at:", options: ["A) New Delhi", "B) Faridabad", "C) Hyderabad", "D) Bengaluru"], ans: 1 },
+      { id: 186, q: "Plant quarantine laws were first enacted in:", options: ["A) France", "B) England", "C) USA", "D) Germany"], ans: 1 },
+      { id: 187, q: "Seed treatment with Agrimycin is used for management of:", options: ["A) Fungal diseases", "B) Bacterial diseases", "C) Viral diseases", "D) Nematode infestation"], ans: 1 },
+      { id: 188, q: "Hot-water treatment of sugarcane setts for grassy shoot/ratoon stunting:", options: ["A) 45°C for 2 hours", "B) 50°C for 2 hours", "C) 52°C for 1 hour", "D) 60°C for 30 minutes"], ans: 2 },
+      { id: 189, q: "Diseases associated with viroids include:", options: ["A) Coconut cadang-cadang, citrus exocortis and potato spindle tuber", "B) Tomato leaf curl and bhendi yellow vein", "C) Banana bunchy top and grassy shoot", "D) Rice tungro and potato leaf roll"], ans: 0 },
+      { id: 190, q: "National nodal agency for exchange of germplasm in India:", options: ["A) NBPGR (New Delhi)", "B) NBAIR", "C) DPPQS", "D) FRI"], ans: 0 },
+      { id: 191, q: "Mild strain protecting against severe related strain is called:", options: ["A) Cross protection", "B) Systemic acquired resistance", "C) Hypersensitive response", "D) Induced resistance"], ans: 0 },
+      { id: 192, q: "Incorrect chemical formulation among Bordeaux, Burgundy, Cheshunt and Chaubattia preparations:", options: ["A) Bordeaux mixture (CuSO4 + Lime + Water)", "B) Burgundy mixture formulation given in question is incorrect", "C) Cheshunt compound (CuSO4 + Ammonium carbonate)", "D) Chaubattia paste (Copper carbonate + Red lead + Linseed oil)"], ans: 1 },
+      { id: 193, q: "Forecasting system for southern corn leaf blight:", options: ["A) BLITECAST", "B) EPIDEM / EPICORN", "C) FAST", "D) TOM-CAST"], ans: 0 },
+      { id: 194, q: "Chemical test for detection of mango anthracnose:", options: ["A) Tincture iodine test", "B) Guaiacol test", "C) Ninhydrin test", "D) Biuret test"], ans: 0 },
+      { id: 195, q: "Management method avoiding contact between pathogen and susceptible crop stage:", options: ["A) Avoidance", "B) Eradication", "C) Therapy", "D) Immunization"], ans: 0 },
+      { id: 196, q: "Exclusion of plant disease through legislation is called:", options: ["A) Plant quarantine", "B) Biological control", "C) Chemical barrier", "D) Cultural sanitation"], ans: 0 },
+      { id: 197, q: "Cercospora, powdery mildew, oomycetes and Phytophthora matching:", options: ["A) Cercospora–Chlorothalonil; powdery mildew–Sulphur; oomycetes–Apron; Phytophthora–Fosetyl aluminium", "B) Oomycetes–Sulphur; powdery mildew–Apron", "C) Cercospora–Fosetyl aluminium", "D) None of the above"], ans: 0 },
+      { id: 198, q: "Tanjore disease of coconut caused by Ganoderma is a:", options: ["A) Soil-borne disease", "B) Air-borne disease", "C) Seed-borne disease", "D) Insect-transmitted disease"], ans: 0 },
+      { id: 199, q: "Tobacco mosaic virus is transmitted by:", options: ["A) Aphids", "B) Whiteflies", "C) Mechanical transmission (sap)", "D) Thrips"], ans: 2 },
+      { id: 200, q: "Which is an antibiotic?", options: ["A) Blasticidin", "B) Carbendazim", "C) Mancozeb", "D) Captan"], ans: 0 },
+      { id: 201, q: "Selective fungicide for powdery mildew management:", options: ["A) Wettable sulphur", "B) Metalaxyl", "C) Streptomycin", "D) Fosetyl aluminium"], ans: 0 },
+      { id: 202, q: "Tetrazolium test, iodine test, ooze-out test and paraquat test matching:", options: ["A) Tetrazolium test–fungal spores/viability; iodine test–RTV; ooze-out test–bacterial disease; paraquat test–BBTV", "B) Iodine test–bacterial wilt; ooze test–RTV", "C) All tests are for seed protein", "D) None of the above"], ans: 0 },
+      { id: 203, q: "Whiteflies, thrips, mealybugs and psyllids matching:", options: ["A) Whitefly–bhendi vein clearing; thrips–groundnut bud necrosis; mealybug–cocoa swollen shoot; psyllid–citrus greening", "B) Thrips–bhendi vein clearing; whitefly–citrus greening", "C) Mealybug–groundnut bud necrosis", "D) None of the above"], ans: 0 },
+      { id: 204, q: "In tetrazolium test, banana affected with BBTV gives:", options: ["A) Bright red colour", "B) Yellow straw colour", "C) Blue colour", "D) Dark brown colour"], ans: 1 },
+      { id: 205, q: "Forecast models and pathogens matching:", options: ["A) EPIDEM–Alternaria; EPIVEN–Venturia; BLASTCAST–Pyricularia; EPICORN–Helminthosporium; MYCOS–Mycosphaerella", "B) EPIDEM–Venturia; BLASTCAST–Alternaria", "C) All are for viruses", "D) None of the above"], ans: 0 },
+      { id: 206, q: "Diseases/disorders and nutrient associations:", options: ["A) Whip-tail–Molybdenum; blossom-end rot–Calcium; heart rot–Boron", "B) Whip-tail–Boron; blossom-end rot–Potassium", "C) Heart rot–Nitrogen", "D) None of the above"], ans: 0 },
+      { id: 207, q: "Little leaf brinjal, sesame phyllody, grassy shoot sugarcane and rice yellow dwarf vectors:", options: ["A) Little leaf–Hishimonus phycitis; sesame phyllody–Orosius albicinctus; grassy shoot–Proutista moesta; rice yellow dwarf–Nephotettix virescens", "B) All are transmitted by whiteflies", "C) Little leaf–Aphids; sesame phyllody–Thrips", "D) None of the above"], ans: 0 },
+      { id: 208, q: "Cucumber mosaic, green gram yellow mosaic, redgram sterility mosaic and rice tungro vectors:", options: ["A) Aphid, whitefly, mite and leafhopper respectively", "B) Whitefly, aphid, leafhopper and mite respectively", "C) Mite, leafhopper, aphid and whitefly respectively", "D) Beetle, thrips, aphid and hopper respectively"], ans: 0 },
+      { id: 209, q: "Correct statements regarding fungicides and phytotoxicity:", options: ["A) Statements II, III and IV are correct", "B) Statement I only is correct", "C) Statements I and II are correct", "D) None are correct"], ans: 0 },
+      { id: 210, q: "Ergot disease of cumbu is caused by:", options: ["A) Claviceps microcephala / Claviceps fusiformis", "B) Tolyposporium penicillariae", "C) Sclerospora graminicola", "D) Puccinia penniseti"], ans: 0 },
+      { id: 211, q: "Important disease in brinjal nursery:", options: ["A) Early blight", "B) Damping-off", "C) Phomopsis blight", "D) Bacterial wilt"], ans: 1 },
+      { id: 212, q: "Trichoderma, Aspergillus flavus, Strobilurus and siderophore matching:", options: ["A) Trichoderma–fungal biocontrol agent; A. flavus–aflatoxin; Strobilurus–Azoxystrobin; siderophore–iron-chelating agent", "B) Siderophore–aflatoxin; Trichoderma–Azoxystrobin", "C) A. flavus–biocontrol agent", "D) None of the above"], ans: 0 },
+      { id: 213, q: "Sorghum, tobacco, mango and lucerne parasitic weeds:", options: ["A) Sorghum–Striga; tobacco–Orobanche; mango–Loranthus/giant mistletoe; lucerne–Cuscuta", "B) Sorghum–Cuscuta; tobacco–Orobanche/broomrape; mango–giant mistletoe; lucerne–witch weed", "C) All are Orobanche", "D) None of the above"], ans: 1 },
+      { id: 214, q: "Heterodera avenae is:", options: ["A) Root-knot nematode", "B) Cereal cyst nematode", "C) Citrus nematode", "D) Reniform nematode"], ans: 1 },
+      { id: 215, q: "Kresek symptoms are commonly found in:", options: ["A) Rice blast", "B) Bacterial leaf blight of paddy", "C) Sheath blight of rice", "D) Tungro disease"], ans: 1 },
+      { id: 216, q: "Grapevine fanleaf virus is associated with:", options: ["A) Longidorus", "B) Xiphinema index", "C) Trichodorus", "D) Meloidogyne"], ans: 1 },
+      { id: 217, q: "Groundnut bud necrosis is transmitted by:", options: ["A) Frankliniella schultzei / Thrips tabaci", "B) Aphis craccivora", "C) Bemisia tabaci", "D) Empoasca kerri"], ans: 0 },
+      { id: 218, q: "Panama wilt of banana is favoured by:", options: ["A) Meloidogyne incognita", "B) Radopholus similis", "C) Pratylenchus coffeae", "D) Heterodera cajani"], ans: 1 },
+      { id: 219, q: "Incorrect answer regarding ascocarps produced by fungi:", options: ["A) Cleistothecium", "B) Perithecium", "C) Apothecium", "D) Bracket (Basidiocarp)"], ans: 3 },
+      { id: 220, q: "Rice blast is characterized by:", options: ["A) Spindle-shaped spots with brown margins and grey centres on leaves, with discoloration of nodes and neck of panicles", "B) Water-soaked translucent streaks on leaf sheath", "C) Severely stunted tillers with yellow leaves", "D) Black powdery mass in grains only"], ans: 0 }
+    ];
+
+    // State
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+
+    // Elements
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounter = document.getElementById("q-counter");
+    const progressPercent = document.getElementById("progress-percent");
+    const progressBarFill = document.getElementById("progress-bar-fill");
+    const questionText = document.getElementById("question-text");
+    const optionsContainer = document.getElementById("options-container");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePercent = document.getElementById("res-score-percent");
+    const resFeedback = document.getElementById("res-feedback");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+    const toggleReviewBtn = document.getElementById("toggle-review-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToResultsBtn = document.getElementById("back-to-results-btn");
+    const reviewItemsContainer = document.getElementById("review-items-container");
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+    });
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      let count = 220;
+
+      if (countSelect.value === "custom") {
+        count = Math.max(1, Math.min(220, parseInt(customCountInput.value) || 25));
+      } else {
+        count = parseInt(countSelect.value);
+      }
+
+      if (mode === "practice" || count < 220) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      userAnswers = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+    });
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounter.textContent = `Question ${currentIndex + 1} of ${total}`;
+      const pct = Math.round(((currentIndex + 1) / total) * 100);
+      progressPercent.textContent = `${pct}%`;
+      progressBarFill.style.width = `${pct}%`;
+
+      questionText.textContent = `${qData.id}. ${qData.q}`;
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optText, optIdx) => {
+        const btn = document.createElement("button");
+        btn.className = "option-btn";
+        if (userAnswers[currentIndex] === optIdx) {
+          btn.classList.add("selected");
+        }
+
+        btn.innerHTML = `<span>${optText}</span>`;
+        btn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+        optionsContainer.appendChild(btn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+      prevBtn.style.opacity = currentIndex === 0 ? "0.5" : "1";
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    submitBtn.addEventListener("click", () => {
+      evaluateAndShowResults();
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePercent.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resFeedback.textContent = "Excellent Performance! High mastery of Plant Pathology concepts.";
+        resFeedback.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resFeedback.textContent = "Good Result! Review specific pathogen vectors and treatments.";
+        resFeedback.style.color = "var(--primary)";
+      } else {
+        resFeedback.textContent = "Needs Revision. Focus on key fungal, viral, and bacterial disorders.";
+        resFeedback.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    toggleReviewBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToResultsBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewItemsContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Answered";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="badge ${badgeClass}">${statusText}</span>
+          <div class="review-text">Q${idx + 1} (Orig #${q.id}). ${q.q}</div>
+          <div class="review-detail" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Choice:</strong> ${selectedText}
+          </div>
+          <div class="review-detail" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewItemsContainer.appendChild(item);
+      });
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TNPSC AAO - Agricultural Entomology Quiz</title>
+  <style>
+    :root {
+      --primary: #1e3a8a;
+      --primary-hover: #1e40af;
+      --primary-light: #eff6ff;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --neutral: #475569;
+      --neutral-light: #f1f5f9;
+      --card-bg: #ffffff;
+      --body-bg: #f8fafc;
+      --border: #cbd5e1;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
+
+    body {
+      background-color: var(--body-bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: var(--primary);
+      color: #ffffff;
+      padding: 1rem 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    header h1 {
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-top: 0.25rem;
+    }
+
+    .container {
+      max-width: 850px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    /* Start / Setup Screen */
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--neutral);
+    }
+
+    select, input[type="number"] {
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 1rem;
+      outline: none;
+    }
+
+    select:focus, input[type="number"]:focus {
+      border-color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .btn-secondary {
+      background-color: var(--neutral-light);
+      color: var(--neutral);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background-color: #e2e8f0;
+    }
+
+    .btn-success {
+      background-color: var(--success);
+      color: #ffffff;
+    }
+
+    .btn-success:hover {
+      background-color: #166534;
+    }
+
+    /* Progress bar */
+    .progress-wrapper {
+      margin-bottom: 1.5rem;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background-color: #e2e8f0;
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background-color: var(--primary);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    /* Question Screen */
+    .question-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      width: 100%;
+      text-align: left;
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      background: #ffffff;
+      font-size: 0.95rem;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .option-btn:hover {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+    }
+
+    .option-btn.selected {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+      font-weight: 600;
+    }
+
+    .option-prefix {
+      font-weight: 700;
+      min-width: 1.5rem;
+    }
+
+    .nav-controls {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    /* Results */
+    .results-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .score-circle {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto;
+      border: 4px solid var(--primary);
+    }
+
+    .score-circle .number {
+      font-size: 2rem;
+      font-weight: 800;
+    }
+
+    .score-circle .label {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: var(--neutral-light);
+      padding: 1rem;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .stat-card .val {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .stat-card.correct .val { color: var(--success); }
+    .stat-card.wrong .val { color: var(--danger); }
+    .stat-card.unanswered .val { color: var(--neutral); }
+
+    .stat-card .desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    /* Review Answers */
+    .review-item {
+      padding: 1.25rem;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .review-item.is-correct {
+      border-left: 5px solid var(--success);
+      background-color: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 5px solid var(--danger);
+      background-color: #fffdfd;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 5px solid var(--neutral);
+      background-color: var(--neutral-light);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .badge.correct { background: var(--success-light); color: var(--success); }
+    .badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .review-text {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .review-detail {
+      font-size: 0.875rem;
+      margin: 0.25rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 0.5rem;
+        margin: 1rem auto;
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .nav-controls {
+        flex-direction: column-reverse;
+      }
+      .nav-controls .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>TNPSC Assistant Agricultural Officer (AAO)</h1>
+    <p>UNIT VI Crop Protection &mdash; Agricultural Entomology Test 1</p>
+  </header>
+
+  <div class="container">
+
+    <!-- Screen 1: Start & Settings -->
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Quiz Configuration</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Configure your practice exam mode below to begin the test.</p>
+      
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Type</label>
+          <select id="mode-select">
+            <option value="exam">Exam Mode (No instant feedback, timer-free)</option>
+            <option value="practice">Practice Mode (Randomized Question Sets)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="200">All Questions (200 Questions)</option>
+            <option value="10">10 Questions</option>
+            <option value="20">20 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="custom">Custom Amount</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter question count (1 - 200)</label>
+          <input type="number" id="custom-count-input" min="1" max="200" value="25" />
+        </div>
+
+        <button class="btn btn-primary" id="start-btn" style="margin-top: 1rem;">Start Quiz</button>
+      </div>
+    </div>
+
+    <!-- Screen 2: Active Quiz Interface -->
+    <div id="quiz-screen" class="card hidden">
+      <div class="progress-wrapper">
+        <div class="progress-meta">
+          <span id="q-counter">Question 1 of 200</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+      </div>
+
+      <div class="question-title" id="question-text"></div>
+      <div class="options-list" id="options-container"></div>
+
+      <div class="nav-controls">
+        <button class="btn btn-secondary" id="prev-btn">Previous</button>
+        <div style="display: flex; gap: 0.75rem;">
+          <button class="btn btn-primary" id="next-btn">Next</button>
+          <button class="btn btn-success hidden" id="submit-btn">Submit Quiz</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Screen 3: Results Page -->
+    <div id="result-screen" class="card hidden">
+      <div class="results-header">
+        <h2>Assessment Completed</h2>
+        <div class="score-circle">
+          <span class="number" id="res-score-percent">0%</span>
+          <span class="label">Total Score</span>
+        </div>
+        <p id="res-feedback" style="font-weight: 600; font-size: 1.1rem;"></p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Total Questions</div>
+        </div>
+        <div class="stat-card correct">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="stat-card wrong">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="stat-card unanswered">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <button class="btn btn-primary" id="toggle-review-btn">Review Answers</button>
+        <button class="btn btn-secondary" id="restart-btn">Restart Quiz</button>
+      </div>
+    </div>
+
+    <!-- Screen 4: Answer Review Section -->
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem;">Detailed Answer Key & Review</h2>
+        <button class="btn btn-secondary" id="back-to-results-btn">Back to Results</button>
+      </div>
+      <div id="review-items-container"></div>
+    </div>
+
+  </div>
+
+  <script>
+    // Full verbatim database of all 200 questions extracted directly from the PDF
+    const questionBank = [
+      { id: 1, q: "Pest surveillance and monitoring in India is organized by", options: ["A) DPPQS", "B) NBPGR", "C) NBAIR", "D) IARI", "E) Answer not known"], ans: 0 },
+      { id: 2, q: "World's first transgenic plant for insect resistance is", options: ["A) Cotton", "B) Tobacco", "C) Brinjal", "D) Tomato", "E) Answer not known"], ans: 1 },
+      { id: 3, q: "Pest surveillance comprises of-------basic components", options: ["A) Four", "B) Two", "C) Ten", "D) Three", "E) Answer not known"], ans: 3 },
+      { id: 4, q: "Important environmental factor in pest forecasting is", options: ["A) Temperature", "B) Humidity", "C) Rainfall", "D) Wind", "E) Answer not known"], ans: 0 },
+      { id: 5, q: "Principal factor necessary to forecast critical infestation of pests are", options: ["A) Topographic", "B) Climatic", "C) Biotic", "D) All of these", "E) Answer not known"], ans: 3 },
+      { id: 6, q: "Biocontrol agent recommended to control rice yellow stem borer is", options: ["A) Trichogramma japonicum", "B) Spodoptera litura", "C) Both a and b", "D) Nilaparvata lugens", "E) Answer not known"], ans: 0 },
+      { id: 7, q: "NPV is most effective against", options: ["A) Helicoverpa armigera", "B) Spodoptera litura", "C) Both a and b", "D) None of these", "E) Answer not known"], ans: 2 },
+      { id: 8, q: "Madras agricultural pests and disease act was enacted in", options: ["A) 1919", "B) 1971", "C) 1939", "D) 1914", "E) Answer not known"], ans: 0 },
+      { id: 9, q: "Which one of the following is used to control the infestation of a weed Opuntia sp", options: ["A) Dactylopius indicus", "B) Salvinia molesta", "C) Both a and b", "D) None", "E) Answer not known"], ans: 0 },
+      { id: 10, q: "Salvinia molesta can be controlled by", options: ["A) Curculionid weevil", "B) Rhinoceros beetle", "C) Ash weevil", "D) All", "E) Answer not known"], ans: 0 },
+      { id: 11, q: "Locust warning station established in the year", options: ["A) 1939", "B) 1968", "C) 1914", "D) 1947", "E) Answer not known"], ans: 0 },
+      { id: 12, q: "Sex pheromone traps mostly attracts", options: ["A) Male Moths", "B) Female Moths", "C) Adult Insects", "D) All", "E) Answer not known"], ans: 0 },
+      { id: 13, q: "------- is type of survey in which the plot is fixed in an area and the counts are made periodically from seedlings to maturity phase", options: ["A) Roving survey", "B) Pest survey", "C) Fixed plot survey", "D) All", "E) Answer not known"], ans: 2 },
+      { id: 14, q: "The pest occurring more frequently and having close association with crop is categorized into", options: ["A) Irregular pest", "B) Major pest", "C) Regular pest", "D) Key pest", "E) Answer not known"], ans: 2 },
+      { id: 15, q: "The term pest management was coined by", options: ["A) Geier and Clark", "B) R.F. Smith", "C) Bartlett", "D) Brader", "E) Answer not known"], ans: 0 },
+      { id: 16, q: "Level of pest incidence or population density that triggers pest management is", options: ["A) ETL", "B) EIL", "C) Both a and b", "D) GEP", "E) Answer not known"], ans: 0 },
+      { id: 17, q: "The lowest population density that will cause economic damage is", options: ["A) ETL", "B) EIL", "C) Both a and b", "D) GEP", "E) Answer not known"], ans: 1 },
+      { id: 18, q: "The kind of pest occurring infrequently and causing damage at irregular interval with no close association to the crop is called", options: ["A) Irregular pest", "B) Occasional pest", "C) Regular pest", "D) Key pest", "E) Answer not known"], ans: 1 },
+      { id: 19, q: "The pest which occurring in few isolated localities are known as", options: ["A) Irregular pest", "B) Seasonal pest", "C) Sporadic pest", "D) Key pest", "E) Answer not known"], ans: 2 },
+      { id: 20, q: "Pest occurs throughout the year and is very difficult to control", options: ["A) Occasional", "B) Seasonal", "C) Persistent", "D) Annual", "E) Answer not known"], ans: 2 },
+      { id: 21, q: "Occurrence of pest in severe form in a region or locality at particular season or time called", options: ["A) Epidemic pest", "B) Endemic pest", "C) Sporadic pest", "D) Major pest", "E) Answer not known"], ans: 0 },
+      { id: 22, q: "Occurrence of pest in low level regularly and confined to particular area", options: ["A) Epidemic pest", "B) Endemic pest", "C) Sporadic pest", "D) Major pest", "E) Answer not known"], ans: 1 },
+      { id: 23, q: "Average pest population over the period of time is known as", options: ["A) GEP", "B) ETL", "C) EIL", "D) Damage Boundary", "E) Answer not known"], ans: 0 },
+      { id: 24, q: "------- refers to the constant watch on the population dynamics of pests, its incidence and damage on each crop at fixed intervals", options: ["A) Pest Survey", "B) Pest Monitoring", "C) Pest Surveillance", "D) None", "E) Answer not known"], ans: 2 },
+      { id: 25, q: "The level of ETL always will be", options: ["A) Lower than EIL", "B) Higher than EIL", "C) Equal to EIL", "D) Zero", "E) Answer not known"], ans: 0 },
+      { id: 26, q: "Summer ploughing after monsoon showers to expose resting pupae to birds and sunlight is to control", options: ["A) BPH", "B) Rice mealybug", "C) Red hairy caterpillar", "D) Leaf folder", "E) Answer not known"], ans: 2 },
+      { id: 27, q: "Application of slow releasing neem coated urea can effectively control", options: ["A) BPH", "B) Rice mealybug", "C) Earhead bug", "D) Rice Leaf folder", "E) Answer not known"], ans: 0 },
+      { id: 28, q: "Banding of coconut trunk with tin/ iron sheets at base to prevent rodent damage is", options: ["A) Cultural method", "B) Physical method", "C) Mechanical method", "D) Both b and c", "E) Answer not known"], ans: 2 },
+      { id: 29, q: "Fishmeal trap in sorghum attract and kills", options: ["A) Shoot fly", "B) Fruit fly", "C) Stem borer", "D) Gall fly", "E) Answer not known"], ans: 0 },
+      { id: 30, q: "------- is father of host plant resistance", options: ["A) R.H.Painter", "B) R.T.Painter", "C) Richard Henry", "D) H.S.Pruthi", "E) Answer not known"], ans: 0 },
+      { id: 31, q: "Earthing up in sugarcane done to control", options: ["A) Early shoot borer", "B) Top borer", "C) Internode borer", "D) All", "E) Answer not known"], ans: 0 },
+      { id: 32, q: "Detrashing in sugarcane gives significant control against", options: ["A) Termite", "B) Whitefly", "C) Scales", "D) Both b and c", "E) Answer not known"], ans: 3 },
+      { id: 33, q: "Trash mulching in sugarcane done for the management of", options: ["A) Early shoot borer", "B) Top borer", "C) Internode borer", "D) All", "E) Answer not known"], ans: 0 },
+      { id: 34, q: "Marigold is trap crop for the ---------insect", options: ["A) Helicoverpa armigera", "B) Spodoptera litura", "C) Amsacta albistricha", "D) Scirpophaga incertulus", "E) Answer not known"], ans: 0 },
+      { id: 35, q: "------attracts egg laying of Spodoptera litura", options: ["A) Castor", "B) Rice", "C) Cotton", "D) Bhendi", "E) Answer not known"], ans: 0 },
+      { id: 36, q: "Storage of food grains in air proof sealing to prevent insect development and damage is known as", options: ["A) Natural storage", "B) Controlled storage", "C) Hermetic storage", "D) All of these", "E) Answer not known"], ans: 2 },
+      { id: 37, q: "Non-preference of the host for feeding, oviposition and shelter is known as", options: ["A) Antixenosis", "B) Antibiosis", "C) Tolerance", "D) All of these", "E) Answer not known"], ans: 0 },
+      { id: 38, q: "Adverse effect of the host plant on survival, development and reproduction of insects is known as", options: ["A) Antixenosis", "B) Antibiosis", "C) Host escape", "D) All of these", "E) Answer not known"], ans: 1 },
+      { id: 39, q: "Which of the following is exotic pest", options: ["A) Pink bollworm", "B) Potato tuber moth", "C) San Jose scale", "D) All of these", "E) Answer not known"], ans: 3 },
+      { id: 40, q: "Destructive Insects and Pests act passed in the year", options: ["A) 1939", "B) 1971", "C) 1914", "D) 1947", "E) Answer not known"], ans: 2 },
+      { id: 41, q: "Chemical that mediates communication between organisms are called", options: ["A) Info chemical", "B) Semiochemical", "C) Both a and b", "D) Organic chemical", "E) Answer not known"], ans: 2 },
+      { id: 42, q: "------- is an example for intraspecific semiochemical", options: ["A) Allomone", "B) Kairamone", "C) Synamone", "D) Pheromone", "E) Answer not known"], ans: 3 },
+      { id: 43, q: "First sex pheromone discovered was", options: ["A) Bombycol", "B) Helilure", "C) Spodolure", "D) Trimedlure", "E) Answer not known"], ans: 0 },
+      { id: 44, q: "------- is moulting hormone", options: ["A) Juvenile hormone", "B) PTTH", "C) Ecdysone", "D) Brain hormone", "E) Answer not known"], ans: 2 },
+      { id: 45, q: "Synthetic analogue of natural ecdysone is known as ------- which kills insects by defective cuticle formation", options: ["A) Juvenile hormone", "B) Juvenoids", "C) Ecdysoids", "D) All", "E) Answer not known"], ans: 2 },
+      { id: 46, q: "Lady bird beetle imported from Australia to India in 1898 for the control of", options: ["A) Coccus viridis", "B) Icerya purchesi", "C) Eriosoma lanigerum", "D) All", "E) Answer not known"], ans: 1 },
+      { id: 47, q: "------- is an example for ectoparasitoid", options: ["A) Epiricania melanoleuca", "B) Encarsia Formosa", "C) Icerya purchesi", "D) Bracon hebetor", "E) Answer not known"], ans: 0 },
+      { id: 48, q: "Which of the following is egg parasitoid", options: ["A) Trichogramma chilonis", "B) Trichogramma japonicum", "C) Telenomus remus", "D) All the above", "E) Answer not known"], ans: 3 },
+      { id: 49, q: "Host used in mass culturing of Trichogramma is", options: ["A) Corcyra cephalonica", "B) Apanteles flavipes", "C) Both a and b", "D) None of the above", "E) Answer not known"], ans: 0 },
+      { id: 50, q: "Which one of the following natural enemy effectively utilized in management of grapevine mealy bug", options: ["A) Cryptolaemus montrouzieri", "B) Trichogramma chilonis", "C) Trichogramma japonicum", "D) All the above", "E) Answer not known"], ans: 0 },
+      { id: 51, q: "Bacillus thuringiensis was first discovered by ---------- in the year ----------", options: ["A) Ishiwata in 1901", "B) R.H.Painter in 1919", "C) Berliner in 1911", "D) None", "E) Answer not known"], ans: 0 },
+      { id: 52, q: "Bt is most effective against", options: ["A) Lepidopteran caterpillars", "B) Homopteran bugs", "C) Heteropteran bugs", "D) All the above", "E) Answer not known"], ans: 0 },
+      { id: 53, q: "Match the following: a. Green muscardine fungus (3. Metarhizium anisopliae), b. White muscardine fungus (2. Beauvaria bassiana), c. Yellow muscardine fungus (5. Paecilomyces farinosus), d. White hallow fungus (1. Verticillium lecanii), e. Mites (4. Hirsutella thompsoni)", options: ["A) a-2, b-1, c-3, d-4, e-5", "B) a-3, b-2, c-4, d-1, e-5", "C) a-3, b-5, c-2, d-4, e-1", "D) a-3, b-2, c-5, d-1, e-4", "E) Answer not known"], ans: 3 },
+      { id: 54, q: "Nuclear Polyhedrosis Virus (NPV) used to control", options: ["A) Helicoverpa armigera", "B) Spodoptera litura", "C) Amsacta albistricha", "D) All the above", "E) Answer not known"], ans: 3 },
+      { id: 55, q: "Methyl eugenol attracts", options: ["A) Fruit fly", "B) Whitefly", "C) Shoot fly", "D) Butterfly", "E) Answer not known"], ans: 0 },
+      { id: 56, q: "Granulosis Virus (GV) used to control", options: ["A) Chilo infuscatellus", "B) Achaea janata", "C) Pthorimaea operculella", "D) All the above", "E) Answer not known"], ans: 3 },
+      { id: 57, q: "Which of the following is an Entomopathogenic nematodes (EPN)", options: ["A) Meloidogyne sp", "B) Steinernema sp", "C) Heterorhabditis sp", "D) Both b and c", "E) Answer not known"], ans: 3 },
+      { id: 58, q: "Which of the following is not a bio-pesticide?", options: ["A) Bioneem", "B) Biolep", "C) Dipel", "D) Carbaryl", "E) Answer not known"], ans: 3 },
+      { id: 59, q: "Trichogramma parasitoid release is recommended for the management of", options: ["A) Gangara thyrsis", "B) Atherigona soccata", "C) Chilo infuscatellus", "D) Holotrichia serrata", "E) Answer not known"], ans: 2 },
+      { id: 60, q: "Which of the following laboratory host is used for the multiplication of egg parasitoids?", options: ["A) Spodoptera litura", "B) Chilo partellus", "C) Corcyra cephalonica", "D) Helicoverpa armigera", "E) Answer not known"], ans: 2 },
+      { id: 61, q: "Following is an example of Bt transgenic cotton", options: ["A) Jayadhar", "B) Varalaxmi", "C) NH - 44", "D) Bollguard", "E) Answer not known"], ans: 3 },
+      { id: 62, q: "The following is the effective pathogen on Helicoverpa armigera", options: ["A) Rickettsiae", "B) Bacillus popilliae", "C) Nuclear polyhedral virus", "D) Metarrhizium anisopliae", "E) Answer not known"], ans: 2 },
+      { id: 63, q: "Match the following: a. American boll worm (3. Trichogramma chilonis), b. Stripping of sugarcane (2. Mealy bugs), c. Sugarcane leaf hopper (5. Epiricania melanoleuca), d. Bagging of anar fruits (1. Butterfly sucking moth / Virachola isocrates), e. Pthorimaea operculella (4. Chelonus blackburni)", options: ["A) a-2, b-1, c-3, d-4, e-5", "B) a-3, b-2, c-5, d-1, e-4", "C) a-3, b-5, c-2, d-1, e-4", "D) a-3, b-2, c-5, d-4, e-1", "E) Answer not known"], ans: 1 },
+      { id: 64, q: "Clipping of rice tip seedlings before transplanting is done to eliminate egg masses of", options: ["A) Yellow stem borer", "B) Brown plant hopper", "C) Rice grass hopper", "D) Cut worm", "E) Answer not known"], ans: 0 },
+      { id: 65, q: "Use of light traps for the management of pest is an example of", options: ["A) Cultural control", "B) Mechanical method of control", "C) Legal method of control", "D) Biological control", "E) Answer not known"], ans: 1 },
+      { id: 66, q: "Biocontrol agent for lantana weed (Lantana camara) is", options: ["A) Ophiomyia lantanae", "B) Neochetina eichhorniae", "C) Cryptobagus singularis", "D) Zygogramma bicolorata", "E) Answer not known"], ans: 0 },
+      { id: 67, q: "Commercially granulosis virus (GV) used for the control of", options: ["A) Helicoverpa armigera", "B) Spodoptera litura", "C) Chilo infuscatellus", "D) None of these", "E) Answer not known"], ans: 2 },
+      { id: 68, q: "Metarrhizium anisopliae targeted against sugarcane pyrilla and rhinoceros beetle and commercially available under the trade name of", options: ["A) Boverin", "B) Mycar", "C) Biomax", "D) Vertilec", "E) Answer not known"], ans: 2 },
+      { id: 69, q: "Term 'third generation pesticides' is given for", options: ["A) Juvenile hormone", "B) Moulting hormone", "C) Brain hormone", "D) Anti juvenile hormone", "E) Answer not known"], ans: 0 },
+      { id: 70, q: "In India Genetic Engineering Approval Committee (GEAC) is responsible for monitoring GM crops come under ministry of", options: ["A) Agriculture", "B) Environment and forest", "C) Information and broadcasting", "D) Rural development", "E) Answer not known"], ans: 1 },
+      { id: 71, q: "Which of the following pair is not correctly matched?", options: ["A) Pink boll worm - Gossyplure", "B) American boll worm - Helilure", "C) Bombyx mori - Bombykol", "D) Cotton boll weevil - Hexalure", "E) Answer not known"], ans: 3 },
+      { id: 72, q: "Match the following: a. DIPA (3. 1914), b. DPPQS (2. 1946), c. Plant quarantine order (5. 2003), d. Insecticide rules (1. 1971), e. Insecticide act (4. 1968), f. Sterile insect technique (6. E.F. Knipling)", options: ["A) a-4, b-2, c-1, d-3, e-5, f-6", "B) a-5, b-4, c-2, d-3, e-6, f-1", "C) a-3, b-2, c-5, d-1, e-4, f-6", "D) a-6, b-5, c-1, d-4, e-2, f-3", "E) Answer not known"], ans: 2 },
+      { id: 73, q: "Inundative release is associated with", options: ["A) Biological control", "B) Physical control", "C) Mechanical control", "D) Cultural control", "E) Answer not known"], ans: 0 },
+      { id: 74, q: "What is optimum moisture content for storing wheat?", options: ["A) 10%", "B) 12%", "C) 14%", "D) 16%", "E) Answer not known"], ans: 1 },
+      { id: 75, q: "NCIPM is located at", options: ["A) Faridabad", "B) New Delhi", "C) Bangalore", "D) Udaipur", "E) Answer not known"], ans: 1 },
+      { id: 76, q: "Match the following: a. World, first field release of Bt cotton (3. 1996), b. In India Bt cotton released in (1. 2002), c. Transgenic crop highest area (2. Soybean), d. Barnase, barstar genes (4. Mustard), e. Grease banding in mango (5. Mealy bug)", options: ["A) a-4, b-2, c-1, d-3, e-5", "B) a-4, b-2, c-5, d-3, e-1", "C) a-3, b-1, c-2, d-4, e-5", "D) a-5, b-3, c-2, d-4, e-1", "E) Answer not known"], ans: 2 },
+      { id: 77, q: "Use of resistant varieties in the IPM of insect is an example of", options: ["A) Legal control", "B) Cultural control", "C) Chemical control", "D) Biological control", "E) Answer not known"], ans: 1 },
+      { id: 78, q: "Prickly pear weed has been effectively controlled by", options: ["A) Zygogramma bicolorata", "B) Neochetina eichhorniae", "C) Dactylopius tomentosus", "D) None of these", "E) Answer not known"], ans: 2 },
+      { id: 79, q: "The most widely used bacterium in insect control is", options: ["A) Fusarium sp", "B) Bacillus popilliae", "C) Bacillus cereus", "D) Bacillus thuringiensis", "E) Answer not known"], ans: 3 },
+      { id: 80, q: "Project Directorate of Biological Control is located at", options: ["A) Bangalore", "B) New Delhi", "C) Faridabad", "D) Jaipur", "E) Answer not known"], ans: 0 },
+      { id: 81, q: "Match the following biocontrol agents for weeds: a. Lantana camara (5. Ophiomyia lantanae), b. Opuntia dillenii (1. Dactylopius tomentosus), c. Eichhornia crassipes (2. Neochetina bruchi), d. Salvinia molesta (3. Cryptobagus singularis), e. Parthenium (4. Zygogramma bicolorata)", options: ["A) a-5, b-4, c-2, d-3, e-1", "B) a-5, b-1, c-2, d-3, e-4", "C) a-5, b-4, c-2, d-1, e-3", "D) a-4, b-2, c-5, d-3, e-1", "E) Answer not known"], ans: 1 },
+      { id: 82, q: "Insect are the most abundant and diversified of all animal due to their", options: ["A) Segmented body", "B) Antennae", "C) 3 pairs of legs", "D) Capacity of flight", "E) Answer not known"], ans: 3 },
+      { id: 83, q: "Alternate wetting & drying is control measure for------ pest", options: ["A) GLH", "B) BPH", "C) Stem borer", "D) Gall midge", "E) Answer not known"], ans: 1 },
+      { id: 84, q: "Yellow sticky trap used for the control of", options: ["A) Sucking pests", "B) Leaf feeders", "C) Root feeders", "D) Borers", "E) Answer not known"], ans: 0 },
+      { id: 85, q: "Favourable climatic condition for the multiplication of paddy stem borer is", options: ["A) High temperature & low humidity", "B) High humidity & low temperature", "C) High temperature & high humidity", "D) Low temperature & low humidity", "E) Answer not known"], ans: 2 },
+      { id: 86, q: "---crop is used as a intercrop for the control of Sorghum stem borers", options: ["A) Cowpea", "B) Black gram", "C) Green gram", "D) Bengal gram", "E) Answer not known"], ans: 0 },
+      { id: 87, q: "Flooding and pruning or topping are recommended to control", options: ["A) Scirpophaga incertulas (Paddy stem borer)", "B) Orseolia oryzae (Rice gall midge)", "C) Nymphula depunctalis (Rice case worm)", "D) Stenchaetothrips biformis (Rice thrips)", "E) Answer not known"], ans: 2 },
+      { id: 88, q: "Bollguard II has Cry 1ac & Cry 2 ab gene which confers resistant against", options: ["A) Earias vittella", "B) Spodoptera litura", "C) Pectinophora gossypiella", "D) Both a & b", "E) Answer not known"], ans: 1 },
+      { id: 89, q: "TKM 6 Rice variety resistant to", options: ["A) Gall midge", "B) Paddy stem borer", "C) GLH", "D) BPH", "E) Answer not known"], ans: 1 },
+      { id: 90, q: "Which crop used as a trap crop for the control of Spodoptera litura", options: ["A) Marigold", "B) Castor", "C) Sunflower", "D) Cotton", "E) Answer not known"], ans: 1 },
+      { id: 91, q: "Number of pheromone traps are used to monitor, attract and kill the male moths in Groundnut field", options: ["A) 12 Nos/ha", "B) 10 Nos/ha", "C) 8 Nos/ha", "D) 6 Nos/ha", "E) Answer not known"], ans: 0 },
+      { id: 92, q: "Microbial agent used for the control Spodoptera litura", options: ["A) NPV", "B) GV", "C) Green muscardine fungus", "D) White halo fungus", "E) Answer not known"], ans: 0 },
+      { id: 93, q: "Egg parasitoid used for the control of paddy stem borer", options: ["A) Trichogramma japonicum", "B) Trichogramma chilonis", "C) Platygaster oryzae", "D) Bracon chinensis", "E) Answer not known"], ans: 0 },
+      { id: 94, q: "Larval parasitoid used for the control of rice gall midge", options: ["A) Trichogramma japonicum", "B) Trichogramma chilonis", "C) Platygaster oryzae", "D) Bracon chinensis", "E) Answer not known"], ans: 2 },
+      { id: 95, q: "ETL for Orseolia oryzae (onion silver shoot)", options: ["A) 5% silver shoots", "B) 10% silver shoots", "C) 20% silver shoots", "D) 25% silver shoots", "E) Answer not known"], ans: 1 },
+      { id: 96, q: "ETL for Chilo partellus (Stem borer) in sorghum", options: ["A) 5% dead heart", "B) 2% dead heart", "C) 20% dead heart", "D) 10% dead heart", "E) Answer not known"], ans: 3 },
+      { id: 97, q: "Consider the following statement: 1) Sturmiopsis inferens can be released for control of early shoot borer. 2) Epiricania melanoleuca is a lepidopteran predator on sugarcane pyrilla. 3) High nitrogen reduces rapid buildup of Sugarcane leaf hopper. 4) An introduced pest on sugarcane - wooly aphid Ceratovacuna lanigera. 5) Use of synthetic pyrethroids should be encouraged to avoid problem of Whitefly. Find the incorrect:", options: ["A) 1, 2 only", "B) 2, 4 only", "C) 4 only", "D) 3, 5 only", "E) Answer not known"], ans: 3 },
+      { id: 98, q: "Growing of marigold as trap crop against to control", options: ["A) Spodoptera", "B) Maruca", "C) Helicoverpa", "D) Sylepta", "E) Answer not known"], ans: 2 },
+      { id: 99, q: "Digging of trench around ground nut field to manage...", options: ["A) BPH", "B) Leaf hopper", "C) Red hairy caterpillar", "D) GLH", "E) Answer not known"], ans: 2 },
+      { id: 100, q: "Increased seed rate in sorghum used to manage the", options: ["A) Gall fly", "B) Shoot fly", "C) Shoot bug", "D) Aphids", "E) Answer not known"], ans: 1 },
+      { id: 101, q: "------- is an invasive pest of coconut", options: ["A) Rugose Spiralling Whitefly", "B) Red palm weevil", "C) Rhinoceros beetle", "D) Black Headed Caterpillar", "E) Answer not known"], ans: 0 },
+      { id: 102, q: "Invasive pest of maize", options: ["A) Fall army warm, Spodoptera frugiperda", "B) Stem fly, Atherigona orientalis", "C) Corn worm/Earworm, Helicoverpa armigera", "D) Corn flea beetle, Chaetocnema pulicaria", "E) Answer not known"], ans: 0 },
+      { id: 103, q: "Grubs of rhinoceros beetle is effectively controlled by", options: ["A) Beauveria bassiana", "B) Verticillium lecanii", "C) Aspergillus flavus", "D) Metarhizium anisopliae", "E) Answer not known"], ans: 3 },
+      { id: 104, q: "The trap crop used in the management of tomato fruit borer is", options: ["A) Castor", "B) Mustard", "C) Marigold", "D) Greens", "E) Answer not known"], ans: 2 },
+      { id: 105, q: "The bio pesticide recommended for the control of diamond back moth on cabbage is", options: ["A) Pyrethroids", "B) Rotenone", "C) Spinosad", "D) Neem oil", "E) Answer not known"], ans: 2 },
+      { id: 106, q: "------- traps are used in mango orchards for controlling fruit flies", options: ["A) Methyl Eugenol lure", "B) Linalool", "C) Medlure", "D) Cuelure", "E) Answer not known"], ans: 0 },
+      { id: 107, q: "40 days old American tall marigold and 25 days old tomato seedling are grown simultaneously in 1:10 rows to attract adults for egg laying", options: ["A) Helicoverpa armigera", "B) Tuta absoluta", "C) Otheris materna", "D) Spodoptera litura", "E) Answer not known"], ans: 0 },
+      { id: 108, q: "Citrus fruit sucking moth larva feeds on the leaves of", options: ["A) Abutilon indicum", "B) Tinospora cardifolia", "C) Tridax procumbens", "D) Citrus aurantifolia", "E) Answer not known"], ans: 1 },
+      { id: 109, q: "The term IPM (Integrated Pest Management) was given by Bartlett in the year", options: ["A) 1914", "B) 1956", "C) 1849", "D) 1968", "E) Answer not known"], ans: 1 },
+      { id: 110, q: "Identify the correct statement", options: ["A) Ferrolure effective against rhinoceros beetle", "B) Ferrolure effective against eriophyid mite", "C) Ferrolure effective against black headed caterpillar", "D) Ferrolure effective against red palm weevil", "E) Answer not known"], ans: 3 },
+      { id: 111, q: "Helilure pheromone trap attracts", options: ["A) Male moths", "B) Female moths", "C) Female bugs", "D) Male beetles", "E) Answer not known"], ans: 0 },
+      { id: 112, q: "Match the following: A. Eocanthecona furcellata (iv. Red hairy caterpillar), B. Cotesia plutellae (i. Diamond back moth), C. Goniozus nephantidis (ii. Black headed caterpillar), D. Hirsutella thompsoni (iii. Coconut eriophyid mite)", options: ["A) A- ii, B- iii, C- iv, D- i", "B) A- iv, B- i, C- iii, D- ii", "C) A- iv, B- i, C- ii, D- iii", "D) A- ii, B- iii, C- iv, D- i", "E) Answer not known"], ans: 2 },
+      { id: 113, q: "Assertion (A): NPV is used against larvae of Helicoverpa and Spodoptera. Reason (R): NPV is specific to Lepidopteran larvae", options: ["A) A is alone correct", "B) R alone correct", "C) Both A and R are correct and R is the correct reason of A", "D) Both A and R are correct and R is not the correct reason of A", "E) Answer not known"], ans: 2 },
+      { id: 114, q: "Pheromone for red palm weevil is", options: ["A) Ferrilure", "B) Litlure", "C) Ferrolure", "D) Gyplure", "E) Answer not known"], ans: 2 },
+      { id: 115, q: "Identify the incorrect statement", options: ["A) 1898 First introduction of natural enemy beetle cryptolaemus montrouzieri into India", "B) 1929-31 - Rodolia cardinalis imported into India to control cottony cushion scale", "C) Dipha aphidivora is a predator of Sugarcane woolly aphid", "D) Mirid bug (predator-Cyrtorhinus lividipennis) is used to control GLH", "E) Answer not known"], ans: 3 },
+      { id: 116, q: "Match the following: A. Egg larval parasitoid (ii. Chelonus blackburni), B. Larval parasitoid (iii. Bracon hebetor), C. Larval pupal parasitoid (i. Isotima javensis), D. Pupal parasitoid (v. Tetrastichus israeli), E. Egg parasitoid (iv. Trichogramma chilonis)", options: ["A) a-ii, b-iii, c-i, d-v, e-iv", "B) a-i, b-ii, c-iii, d-iv, e-v", "C) a-v, b-iv, c-i, d-ii, e-iii", "D) a-iv, b-v, c-i, d-ii, e-iii", "E) Answer not known"], ans: 0 },
+      { id: 117, q: "Coffee green scale (Coccus viridis) is effectively controlled by using the entomogenous fungi", options: ["A) Hirsutella thompsoni", "B) Beauveria bassiana", "C) Metarhizium anisopliae", "D) Lecanicillium lecanii", "E) Answer not known"], ans: 3 },
+      { id: 118, q: "A true stomach poison for management of Plutella xylostella", options: ["A) Carbofuran", "B) Monocrotophos", "C) Bacillus thuringiensis", "D) Beauveria bassiana", "E) Answer not known"], ans: 2 },
+      { id: 119, q: "Sugarcane early shoot borer is controlled by", options: ["A) Sturmiopsis inferens", "B) Isotima javensis", "C) Dipha aphidivora", "D) None of these", "E) Answer not known"], ans: 0 },
+      { id: 120, q: "The recommended trap crop in IPM for diamondback moth on cabbage is", options: ["A) Radish", "B) Carrot", "C) Indian Mustard", "D) Cotton", "E) Answer not known"], ans: 2 },
+      { id: 121, q: "Green Scale, Coccus viridis is a major pest on", options: ["A) Coconut", "B) Coffee", "C) Tea", "D) Cocoa", "E) Answer not known"], ans: 1 },
+      { id: 122, q: "The lowest number of insect that will cause economic damage is", options: ["A) Economic damage", "B) Economic Injury Level", "C) Economic Threshold Level", "D) None of these", "E) Answer not known"], ans: 1 },
+      { id: 123, q: "Gall midge resistant rice variety is", options: ["A) CO 42", "B) Ratna", "C) MDU 3", "D) IR 36", "E) Answer not known"], ans: 1 },
+      { id: 124, q: "Mark the wrongly matched pair", options: ["A) Insecticide act - 1966", "B) Insecticide rules - 1971", "C) Destructive insect Pest Act - 1914", "D) DPPQ&S - 1946", "E) Answer not known"], ans: 0 },
+      { id: 125, q: "Match the following: A. Beauveria bassiana (iv. Coffee berry borer), B. Hirsutella thompsoni (i. Eriophyid mite), C. Acerophagous papayae (ii. Paracoccus marginatus), D. Isotima javensis (iii. Top shoot borer)", options: ["A) A- ii, B- iii, C- iv, D- i", "B) A- iv, B- i, C- iii, D- ii", "C) A- iv, B- i, C- ii, D- iii", "D) A- ii, B- iii, C- iv, D- i", "E) Answer not known"], ans: 2 },
+      { id: 126, q: "Use of kaolinite clay in IPM is a", options: ["A) Chemical method", "B) Physical method", "C) Biological method", "D) Behavioural method", "E) Answer not known"], ans: 1 },
+      { id: 127, q: "Integrated pest management aims to: 1) Minimum use of pesticide 2) Use of Biopesticide 3) Protects environment from pollution 4) Reducing the emergence of pest", options: ["A) 1 alone is correct", "B) 1 and 2 are correct", "C) 1, 2 and 3 are correct", "D) All are correct", "E) Answer not known"], ans: 3 },
+      { id: 128, q: "In Tamil Nadu, wattle tree is infested by", options: ["A) Cottony cushion scale", "B) Woolly aphid", "C) Aphis spp", "D) Whiteflies", "E) Answer not known"], ans: 0 },
+      { id: 129, q: "Assertion (A): Repeated spraying of synthetic pyrethroids should be avoided in cotton. Reason (R): It causes resurgence of white flies", options: ["A) Both (A) and (R) are true and (R) is correct explanation of (A)", "B) Both (A) and (R) are true and (R) is not correct explanation of (A)", "C) (A) is true but (R) is false", "D) (A) is false but (R) is true", "E) Answer not known"], ans: 0 },
+      { id: 130, q: "Asparagine decides the development of ------- pest in Rice", options: ["A) Whorl maggot", "B) Thrips", "C) Gall midge", "D) Brown plant hopper", "E) Answer not known"], ans: 3 },
+      { id: 131, q: "Sugarcane whiteflies & scales are controlled by ------- technique", options: ["A) Topping", "B) Earthing up", "C) Early sowing", "D) Detrashing", "E) Answer not known"], ans: 3 },
+      { id: 132, q: "Treating of stored pulses with vegetable oil to control the following pest", options: ["A) Pod fly", "B) Bruchid", "C) Red flour beetle", "D) Lesser grain borer", "E) Answer not known"], ans: 1 },
+      { id: 133, q: "Tremendous increases in the pest population brought by the insecticides despite of a good initial reduction in pest population at the time of treatment is called...", options: ["A) Resurgence", "B) Population", "C) Ecology", "D) ETL", "E) Answer not known"], ans: 0 },
+      { id: 134, q: "In rice, clipping of tip seedlings before transplanting is done to eliminate egg masses of", options: ["A) Yellow stem borer", "B) Brown plant hopper", "C) Rice grass hopper", "D) Cut worm", "E) Answer not known"], ans: 0 },
+      { id: 135, q: "Which one of the following pest is an introduced pest of coffee?", options: ["A) Green bug", "B) Berry borer", "C) Stem borer", "D) Mealy bug", "E) Answer not known"], ans: 1 },
+      { id: 136, q: "Bacillus thuringiensis is available in market as", options: ["A) Vertilec", "B) Dipel, Delfin", "C) Larvocel, Boverin", "D) Biomax", "E) Answer not known"], ans: 1 },
+      { id: 137, q: "Atropine is a / an", options: ["A) Repellent", "B) Antifeedant", "C) Antidote", "D) Pheromone", "E) Answer not known"], ans: 2 },
+      { id: 138, q: "Central Insecticides Laboratory (CIL) is located at", options: ["A) Gurgaon", "B) Faridabad", "C) Ghaziabad", "D) Kanpur", "E) Answer not known"], ans: 1 },
+      { id: 139, q: "Transgenic crop which have highest area in world is", options: ["A) Soybean", "B) Maize", "C) Cotton", "D) Mustard", "E) Answer not known"], ans: 0 },
+      { id: 140, q: "Barnase, barstar and bar genes are used for developing genetically modified", options: ["A) Cotton", "B) Mustard", "C) Maize", "D) Potato", "E) Answer not known"], ans: 1 },
+      { id: 141, q: "Predatory mirid bug that gives significant control against rice BPH is", options: ["A) Cyrtorhinus lividipennis", "B) Platymeris laevicollis", "C) Helopeltis antonii", "D) Geocoris tricolor", "E) Answer not known"], ans: 0 },
+      { id: 142, q: "Which of the following is management practice done against sorghum shoot fly", options: ["A) Seed pelleting with chlorpyriphos", "B) Higher seed rate (5kg/ac)", "C) Fish meal trap (5/ac)", "D) All of these", "E) Answer not known"], ans: 3 },
+      { id: 143, q: "Biocontrol agent used for the management of red hairy caterpillar", options: ["A) NPV", "B) GV", "C) Beauveria bassiana", "D) All the above", "E) Answer not known"], ans: 0 },
+      { id: 144, q: "Application of carbofuran in rice field induces resurgence of", options: ["A) BPH", "B) Leaf folder", "C) Stem borer", "D) Gall midge", "E) Answer not known"], ans: 0 },
+      { id: 145, q: "Application of Deltamethrin, Quinalphos, Phorate in rice field induces resurgence of", options: ["A) BPH", "B) Leaf folder", "C) Stem borer", "D) Gall midge", "E) Answer not known"], ans: 0 },
+      { id: 146, q: "Dipha aphidivora is a predator of", options: ["A) Sugarcane Pyrilla", "B) Sugarcane woolly aphid", "C) Blue butterflies", "D) Rice moth", "E) Answer not known"], ans: 1 },
+      { id: 147, q: "Sex pheromone traps can be used as a tool for", options: ["A) Monitoring", "B) Mating disruption", "C) Mass trapping", "D) All of these", "E) Answer not known"], ans: 3 },
+      { id: 148, q: "Protein hydrolysate poison bait is used against", options: ["A) Fruit borer", "B) Fruit flies", "C) Stem borer", "D) DBM", "E) Answer not known"], ans: 1 },
+      { id: 149, q: "Papaya mealy bug is controlled by", options: ["A) Pseudoleptomastix mexicana", "B) Acerophagus papayae", "C) Anagyrus loecki", "D) All of these", "E) Answer not known"], ans: 3 },
+      { id: 150, q: "Cryptolaemus montrouzieri is a predator on", options: ["A) Scales", "B) Mealy bugs", "C) Aphids", "D) All of these", "E) Answer not known"], ans: 1 },
+      { id: 151, q: "Male annihilation technique is used to control", options: ["A) Fruit flies", "B) Pumpkin caterpillar", "C) Snake gourd semilooper", "D) Leaf miner", "E) Answer not known"], ans: 0 },
+      { id: 152, q: "In Insects, if the food resources shared equally by the competing members it is called", options: ["A) Contest competition", "B) Inter competition", "C) Scramble competition", "D) Mutualistic competition", "E) Answer not known"], ans: 2 },
+      { id: 153, q: "The practical utilization of nematode transmitted bacterium Bacillus popilliae achieved towards which of the following insect.", options: ["A) Chaffer beetle", "B) Japanese beetle", "C) Rhinoceros beetle", "D) Epilachna beetle", "E) Answer not known"], ans: 1 },
+      { id: 154, q: "The entomopathogenic fungi effective against citrus rust mite is", options: ["A) Hirsutella thompsoni", "B) Metarhizium anisopliae", "C) Beauveria bassiana", "D) Verticillium lecanii", "E) Answer not known"], ans: 0 },
+      { id: 155, q: "Which of the following chemical is used in bird scarer to produce acetylene gas?", options: ["A) Calcium carbonate", "B) Calcium hydroxide", "C) Calcium oxide", "D) Calcium carbide", "E) Answer not known"], ans: 3 },
+      { id: 156, q: "Activated kaolinite clay is used to manage", options: ["A) Subterranean pests", "B) Leaf feeders", "C) Storage pests", "D) Stem borers", "E) Answer not known"], ans: 2 },
+      { id: 157, q: "The tip clipping of infested seedling to manage stem borer in rice is a", options: ["A) Mechanical control", "B) Physical control", "C) Cultural control", "D) Biological control", "E) Answer not known"], ans: 0 },
+      { id: 158, q: "The proportion of habitable space from which insect counts are taken is called as", options: ["A) Sample", "B) Sampling unit", "C) Sampling techniques", "D) Sampling program", "E) Answer not known"], ans: 1 },
+      { id: 159, q: "What are Insects?", options: ["A) An invertebrate animal capable of flying", "B) Segmented arthropods", "C) Breathe by means of tracheae", "D) All the above", "E) Answer not known"], ans: 3 },
+      { id: 160, q: "Aphids and scale insects can be effectively managed by the release of", options: ["A) Chrysoperla carnea", "B) Trichogramma sp", "C) Platygaster sp", "D) Cotesia flavipes", "E) Answer not known"], ans: 0 },
+      { id: 161, q: "Which of the following is not a biocontrol agent", options: ["A) Rhizobium", "B) Trichoderma", "C) Trichogramma", "D) Ampelomyces", "E) Answer not known"], ans: 0 },
+      { id: 162, q: "The commercial product of NPV of Helicoverpa species is", options: ["A) Elcar", "B) Gypcar", "C) Agrovit", "D) Spodolure", "E) Answer not known"], ans: 0 },
+      { id: 163, q: "Assertion (A): Sex pheromone attracts opposite sex. Reason (R): Pheromone released by females alone", options: ["A) Both (A) and (R) true and R is correct explanation of (A)", "B) Both (A) and (R) true and R is not correct explanation of (A)", "C) (A) is true but (R) is wrong", "D) (A) is wrong but (R) is true", "E) Answer not known"], ans: 2 },
+      { id: 164, q: "Insect belongs to the phylum", options: ["A) Coelenterata", "B) Arthropoda", "C) Protozoa", "D) Annelida", "E) Answer not known"], ans: 1 },
+      { id: 165, q: "The microbial agent used for management for sugarcane early shoot borer is", options: ["A) NPV", "B) GV", "C) CPV", "D) Bt", "E) Answer not known"], ans: 1 },
+      { id: 166, q: "Platymeris laevicollis is a predator of", options: ["A) Rhinoceros beetle", "B) Green scale", "C) Woolly aphid", "D) Black bug", "E) Answer not known"], ans: 0 },
+      { id: 167, q: "ETL for rice gallmidge is", options: ["A) 5% Silver shoot", "B) 10% Silver shoot", "C) 15% Silver shoot", "D) 20% Silver shoot", "E) Answer not known"], ans: 1 },
+      { id: 168, q: "Match the group of parasitoids: A. Egg - larval parasitoid (3. Chelonus blackburni), B. Larval parasitoid (1. Bracon hebetor), C. Larval pupal parasitoid (4. Isotima javensis), D. Pupal parasitoid (2. Tetrastichus israeli)", options: ["A) A-4, B-2, C-3, D-1", "B) A-3, B-1, C-4, D-2", "C) A-1, B-4, C-2, D-3", "D) A-4, B-3, C-2, D-1", "E) Answer not known"], ans: 1 },
+      { id: 169, q: "Earthing up operation in sugarcane reduces to attack of", options: ["A) Early shoot borer", "B) Internode borer", "C) Top shoot borer", "D) Gurdaspur borer", "E) Answer not known"], ans: 0 },
+      { id: 170, q: "Use of light trap is what method of pest control", options: ["A) Cultural", "B) Physical", "C) Mechanical", "D) Chemical", "E) Answer not known"], ans: 2 },
+      { id: 171, q: "Action to preserve the natural enemies by environmental manipulation", options: ["A) Augmentation", "B) Importation", "C) Conservation", "D) Multiplication", "E) Answer not known"], ans: 2 },
+      { id: 172, q: "San Jose scale is an example of", options: ["A) Regular pest", "B) Exotic pest", "C) Endemic pest", "D) None of the above", "E) Answer not known"], ans: 1 },
+      { id: 173, q: "Storage pests are controlled by", options: ["A) Termination", "B) Fumigation", "C) Elimination", "D) Fertigation", "E) Answer not known"], ans: 1 },
+      { id: 174, q: "The most commonly used organic pesticide used to control sucking pests", options: ["A) Castor Oil", "B) Neem Oil", "C) Pungam Oil", "D) Mahua Oil", "E) Answer not known"], ans: 1 },
+      { id: 175, q: "ETL level for diamond back moth", options: ["A) 10 larvae / plants", "B) 20 larvae / plants", "C) 25 larvae / plants", "D) 2 larvae / plants", "E) Answer not known"], ans: 1 },
+      { id: 176, q: "Papaya mealy bug can be controlled by", options: ["A) Acerophagus papayae", "B) Pseudomonas fluorescens", "C) Trichoderma viride", "D) Trichogramma sp.", "E) Answer not known"], ans: 0 },
+      { id: 177, q: "The grubs of coconut rhinoceros beetle are found in", options: ["A) Fronds", "B) Manure pits", "C) Soil", "D) Stem", "E) Answer not known"], ans: 1 },
+      { id: 178, q: "San Jose scale is a pest of", options: ["A) Apple and almond", "B) Banana and papaya", "C) Mango and guava", "D) Plum and pear", "E) Answer not known"], ans: 0 },
+      { id: 179, q: "Which one of the following insects is used to control the infestation of a weed Opuntia sp", options: ["A) Agromyza sp.", "B) Thecla bazochi", "C) Dactylopius indicus", "D) Procecidochares utilis", "E) Answer not known"], ans: 2 },
+      { id: 180, q: "The crop raised around chillies for the control of fruit borer", options: ["A) Cotton", "B) Bhendi", "C) Castor", "D) Cow pea", "E) Answer not known"], ans: 0 },
+      { id: 181, q: "In sugarcane trash mulching or earthing up is recommended to minimize the attack of", options: ["A) Leafhopper", "B) Termites", "C) Shoot borers", "D) White grubs", "E) Answer not known"], ans: 2 },
+      { id: 182, q: "Bonfire is a typical management practice for control of", options: ["A) Red hairy caterpillar", "B) Slug caterpillar", "C) Weevil", "D) Aphids", "E) Answer not known"], ans: 0 },
+      { id: 183, q: "In coconut iron hook are used to hook out", options: ["A) Red palm weevil", "B) Rhinoceros beetles", "C) Black headed caterpillar", "D) All of these", "E) Answer not known"], ans: 1 },
+      { id: 184, q: "A chemical compound which is volatile at ordinary temperature and sufficiently toxic known as", options: ["A) Insecticide", "B) Fungicide", "C) Acaricide", "D) Fumigant", "E) Answer not known"], ans: 3 },
+      { id: 185, q: "The field carry over storage pest in pulses is", options: ["A) Pulse pod bug", "B) Pulse pod fly", "C) Pulse pod wasp", "D) Pulse beetle", "E) Answer not known"], ans: 3 },
+      { id: 186, q: "Basic components of pest surveillance include", options: ["A) Determination of the level of incidence of the pest species", "B) Determination of what loss the incidence will cause", "C) Determination of the economic benefits", "D) All of these", "E) Answer not known"], ans: 3 },
+      { id: 187, q: "Most important environmental factor used in pest forecasting is", options: ["A) Relative Humidity", "B) Sunshine", "C) Rain", "D) Temperature", "E) Answer not known"], ans: 3 },
+      { id: 188, q: "ETL for leaf folder in rice is", options: ["A) 1 damaged leaf/ hill", "B) 2 damaged leaf/ hill", "C) 5 damaged leaf/ hill", "D) 10 damaged leaf/ hill", "E) Answer not known"], ans: 1 },
+      { id: 189, q: "Coffee green bug is effectively controlled by using the entomophagous fungi -", options: ["A) Hirsutella thompsoni", "B) Lecanicillium lecanii", "C) Beauveria bassiana", "D) Aspergillus flavus", "E) Answer not known"], ans: 1 },
+      { id: 190, q: "The constant watch on the population dynamics of pest is called", options: ["A) Pest observation", "B) Pest surveillance", "C) Pest survey", "D) Pest monitoring", "E) Answer not known"], ans: 1 },
+      { id: 191, q: "Use of higher seed rate, early sowing are cultural method used to manage ----- in sorghum", options: ["A) Calocoris angustatus", "B) Atherigona soccata", "C) Chilo partellus", "D) Ophiomyia phaseoli", "E) Answer not known"], ans: 1 },
+      { id: 192, q: "Detrashing in sugarcane is used to manage", options: ["A) Early shoot borer", "B) Internode borer", "C) Top shoot borer", "D) Root grub", "E) Answer not known"], ans: 1 },
+      { id: 193, q: "Nibble and cut off in rice ear heads due to", options: ["A) Ear head bug", "B) Grass hopper", "C) Horned caterpillar", "D) Leaf folder", "E) Answer not known"], ans: 1 },
+      { id: 194, q: "Important components of insect pest management are", options: ["A) Cultural", "B) Mechanical", "C) Biological", "D) All the above", "E) Answer not known"], ans: 3 },
+      { id: 195, q: "Banding grease or polythene sheets on the trunk of the mango helps to prevent", options: ["A) Stem borer", "B) Mango hoppers", "C) Fruit flies", "D) Mealy bugs", "E) Answer not known"], ans: 3 },
+      { id: 196, q: "In coconut --------pest is effectively controlled by the larval parasitoid Goniozus nephantidis", options: ["A) Red palm weevil", "B) Black headed caterpillar", "C) Coconut slug caterpillar", "D) Coconut eriophyid mite", "E) Answer not known"], ans: 1 },
+      { id: 197, q: "Which one of the following brinjal variety resistance to aphids", options: ["A) Annamalai", "B) Pusa ruby", "C) Pusa early dwarf", "D) Rashmi", "E) Answer not known"], ans: 0 },
+      { id: 198, q: "In nature, insect pest population is kept under check by factors such as", options: ["A) Topographic", "B) Climate", "C) Biotic", "D) All the above", "E) Answer not known"], ans: 3 },
+      { id: 199, q: "If the infestation by a pest is a regular feature and confined mostly to a particular area or locality, it is called", options: ["A) Epidemic pests", "B) Endemic pests", "C) Occasional pests", "D) Persistent pests", "E) Answer not known"], ans: 1 },
+      { id: 200, q: "Insects which normally cause a loss of yield from 5 to 10 per cent are called", options: ["A) Major pests", "B) Minor pests", "C) Grasshopper pests", "D) Regular pests", "E) Answer not known"], ans: 1 }
+    ];
+
+    // State Variables
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+
+    // Elements
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounter = document.getElementById("q-counter");
+    const progressPercent = document.getElementById("progress-percent");
+    const progressBarFill = document.getElementById("progress-bar-fill");
+    const questionText = document.getElementById("question-text");
+    const optionsContainer = document.getElementById("options-container");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePercent = document.getElementById("res-score-percent");
+    const resFeedback = document.getElementById("res-feedback");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+    const toggleReviewBtn = document.getElementById("toggle-review-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToResultsBtn = document.getElementById("back-to-results-btn");
+    const reviewItemsContainer = document.getElementById("review-items-container");
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+    });
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      let count = 200;
+
+      if (countSelect.value === "custom") {
+        count = Math.max(1, Math.min(200, parseInt(customCountInput.value) || 20));
+      } else {
+        count = parseInt(countSelect.value);
+      }
+
+      if (mode === "practice" || count < 200) {
+        let pool = [...questionBank];
+        // Fisher-Yates shuffle
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        // Exam mode with all questions maintains original numbering
+        activeQuiz = [...questionBank];
+      }
+
+      userAnswers = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+    });
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      // Update counters & progress
+      qCounter.textContent = `Question ${currentIndex + 1} of ${total}`;
+      const pct = Math.round(((currentIndex + 1) / total) * 100);
+      progressPercent.textContent = `${pct}%`;
+      progressBarFill.style.width = `${pct}%`;
+
+      // Set question text
+      questionText.textContent = `${qData.id}. ${qData.q}`;
+
+      // Build options
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optText, optIdx) => {
+        const btn = document.createElement("button");
+        btn.className = "option-btn";
+        if (userAnswers[currentIndex] === optIdx) {
+          btn.classList.add("selected");
+        }
+
+        btn.innerHTML = `<span>${optText}</span>`;
+        btn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+        optionsContainer.appendChild(btn);
+      });
+
+      // Update control buttons
+      prevBtn.disabled = currentIndex === 0;
+      prevBtn.style.opacity = currentIndex === 0 ? "0.5" : "1";
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    submitBtn.addEventListener("click", () => {
+      evaluateAndShowResults();
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePercent.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resFeedback.textContent = "Excellent Performance! High probability of selection.";
+        resFeedback.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resFeedback.textContent = "Good Effort! Review weak areas to boost accuracy.";
+        resFeedback.style.color = "var(--primary)";
+      } else {
+        resFeedback.textContent = "Needs Improvement. Thorough revision of IPM concepts recommended.";
+        resFeedback.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    toggleReviewBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToResultsBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewItemsContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Answered";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="badge ${badgeClass}">${statusText}</span>
+          <div class="review-text">Q${idx + 1} (PDF #${q.id}). ${q.q}</div>
+          <div class="review-detail" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="review-detail" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewItemsContainer.appendChild(item);
+      });
+    }
+  </script>
+</body>
+</html>

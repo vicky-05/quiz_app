@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agricultural Marketing Examination Portal</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select, .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Agricultural Marketing & Price Policy</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>30 seconds per question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–199)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="199">All Questions (199 Questions)</option>
+            <option value="10">10 Questions</option>
+            <option value="20">20 Questions</option>
+            <option value="30">30 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 199)</label>
+          <input type="number" id="custom-count-input" min="1" max="199" value="25" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">99 min 30 sec (30s / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#9678;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Agri Marketing</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#128196;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Market & Price</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 199</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">99:30</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "A market in which the purchase and sale of a commodity takes place at time ‘t’ but the exchange of commodity takes place on some specified date in future is called:", options: ["A) Forward market", "B) Spot market", "C) Secular market", "D) National market"], ans: 0 },
+      { id: 2, q: "These markets are of a permanent nature:", options: ["A) Short period markets", "B) Regional markets", "C) Periodic markets", "D) Secular markets"], ans: 3 },
+      { id: 3, q: "In India, warehouses were established based on the recommendation of:", options: ["A) AIRCSC", "B) AIRCRC", "C) Sivaraman Committee", "D) Narasimham Committee"], ans: 0 },
+      { id: 4, q: "Central AGMARK Lab is located at:", options: ["A) Nagpur", "B) Bhopal", "C) Delhi", "D) Chennai"], ans: 0 },
+      { id: 5, q: "Which of the following is not a sub-function of buying?", options: ["A) Planning the purchase", "B) Contractual function", "C) Demand creation", "D) Negotiation"], ans: 2 },
+      { id: 6, q: "On the basis of nature of transactions, a market in which goods are exchanged for money immediately after the sale is called:", options: ["A) Forward markets", "B) Spot (or) Cash market", "C) General markets", "D) Specialized markets"], ans: 1 },
+      { id: 7, q: "The following is not a special characteristic of agricultural marketing:", options: ["A) Perishability of the product", "B) Seasonality of production", "C) Small size of holdings", "D) Uniform in quality of products"], ans: 3 },
+      { id: 8, q: "Storage of perishable commodities in refrigerated chambers under controlled low temperatures is known as:", options: ["A) Underground storage", "B) Surface storage", "C) Image scale storage", "D) Cold storage"], ans: 3 },
+      { id: 9, q: "Which marketing function helps in protecting the quality and quantity of produce during transportation and storage?", options: ["A) Processing", "B) Packaging", "C) Grading", "D) Warehousing"], ans: 1 },
+      { id: 10, q: "Storage, Packing, Transportation, Grading and Distribution of commodities are classified as:", options: ["A) Exchange functions", "B) Facilitative functions", "C) Primary functions", "D) Physical movement functions"], ans: 3 },
+      { id: 11, q: "______ markets are located in towns near the centres of production of agricultural commodities.", options: ["A) Primary", "B) Secondary", "C) Terminal", "D) Regional"], ans: 0 },
+      { id: 12, q: "The word MARKET comes from the Latin word:", options: ["A) BAZAR", "B) HAATS", "C) MARCUTES", "D) MARCATUS"], ans: 3 },
+      { id: 13, q: "The hypothetical sphere within which the price-determining forces viz. demand and supply are operating is known as:", options: ["A) Buying", "B) Marketing", "C) Assembly", "D) Selling"], ans: 1 },
+      { id: 14, q: "______ is not a permanent grain storage structure.", options: ["A) Godown", "B) Silo", "C) Grain bin", "D) CAP"], ans: 3 },
+      { id: 15, q: "DMI stands for:", options: ["A) Director of Market and Inspection", "B) Directorate of Marketing and Inspection", "C) Department of Marketing in India", "D) Director of Marketing Intelligence"], ans: 1 },
+      { id: 16, q: "Agricultural markets were classified into regulated and unregulated markets on the basis of:", options: ["A) Basis of stage of marketing", "B) Basis of degree of competition", "C) Basis of nature of transactions", "D) Extent of public intervention"], ans: 3 },
+      { id: 17, q: "First cold storage was established at:", options: ["A) Kolkata, 1956", "B) Kolkata, 1892 / Kolkata, 1982", "C) Bihar, 1956", "D) Bihar, 1982"], ans: 1 },
+      { id: 18, q: "Which marketing function creates place utility to commodities/products?", options: ["A) Storage", "B) Processing", "C) Transportation", "D) Grading"], ans: 2 },
+      { id: 19, q: "Which marketing function creates time utility to commodities/products?", options: ["A) Storage", "B) Processing", "C) Transportation", "D) Grading"], ans: 0 },
+      { id: 20, q: "Match the following marketing risks with their basis:\nA) Production risk | B) Marketing risk | C) Price risk | D) Financial risk\n1) Due to fluctuation in price | 2) Increase with increase in credit | 3) Based on rainfall distribution | 4) Based on fluctuations in supply", options: ["A) 1, 2, 3, 4", "B) 4, 3, 2, 1", "C) 3, 1, 4, 2", "D) 2, 4, 1, 3"], ans: 2 },
+      { id: 21, q: "Who is responsible for announcing Minimum Support Price and when is it announced?", options: ["A) State Government, after sowing", "B) CACP, after sowing", "C) Government of India, before sowing", "D) Government of India, after sowing"], ans: 2 },
+      { id: 22, q: "First state warehousing corporation was set up in:", options: ["A) Tamil Nadu", "B) Bihar", "C) Kerala", "D) Maharashtra"], ans: 1 },
+      { id: 23, q: "Match the following markets with characteristics:\nA) Secular market | B) Terminal market | C) Local market | D) National market\n1) Demand over entire country | 2) Cattle market | 3) Manufactured goods | 4) Processing and storage dominant", options: ["A) 3, 4, 2, 1", "B) 1, 2, 3, 4", "C) 4, 3, 1, 2", "D) 2, 1, 4, 3"], ans: 0 },
+      { id: 24, q: "Which statement is correct with reference to demand creation?\n1. Sub-function of selling | 2. Done by advertisement | 3. Not by display | 4. By trade fairs", options: ["A) 1 and 2 only", "B) 2 only", "C) 1, 2 and 4 only", "D) 3 and 4 only"], ans: 2 },
+      { id: 25, q: "Statements with reference to market outlook:\n1. Gives market situation in near future | 2. Gives past price data | 3. TNAU provides market outlook to farmers | 4. Helps farmers in resource allocation", options: ["A) 2 only", "B) 1, 2 only", "C) 1, 2, 4 only", "D) 1, 3, 4 only"], ans: 3 },
+      { id: 26, q: "Buying and selling function creates ______ utility:", options: ["A) Form", "B) Place", "C) Possession", "D) Time"], ans: 2 },
+      { id: 27, q: "AGMARK seal is compulsory for:", options: ["A) Food grains", "B) Imports", "C) Exports", "D) Edible oil"], ans: 2 },
+      { id: 28, q: "The situation in which the marketed surplus is more than marketable surplus arises for ______ farmers:", options: ["A) Only marginal", "B) Small and marginal", "C) Medium", "D) Large"], ans: 1 },
+      { id: 29, q: "CWC was established in:", options: ["A) 1947", "B) 1950", "C) 1957", "D) 1965"], ans: 2 },
+      { id: 30, q: "The new name of Agricultural Price Commission is:", options: ["A) Commission for Farm and Prices", "B) Commission for Agricultural Costs and Prices (CACP)", "C) Commission for Agricultural Costs", "D) Commission for Kisan Costs and Prices"], ans: 1 },
+      { id: 31, q: "On the basis of ______, warehouses are classified into public, private and bonded.", options: ["A) Type of commodities stored", "B) Ownership", "C) Place of storage", "D) Quantity of storage"], ans: 1 },
+      { id: 32, q: "Eliminating unhealthy practices and reducing market charges with a view to benefiting the producer is the aim of:", options: ["A) Super market", "B) Wholesale market", "C) Regulated market", "D) Small market"], ans: 2 },
+      { id: 33, q: "The agricultural market found in villages is called:", options: ["A) Primary market", "B) Secondary market", "C) Terminal market", "D) None of these"], ans: 0 },
+      { id: 34, q: "The total number of Regulated Markets in Tamil Nadu is:", options: ["A) 237", "B) 260", "C) 284", "D) 292"], ans: 2 },
+      { id: 35, q: "Marketed surplus is:", options: ["A) Less than the total production", "B) More than the total production", "C) Equal to total production", "D) None of the above"], ans: 0 },
+      { id: 36, q: "The most common method existing in regulated markets is:", options: ["A) Open auction system", "B) Close tender system", "C) Moghum Sale", "D) Dara Sale"], ans: 0 },
+      { id: 37, q: "The sorting of unlike lots of produce into different lots according to quality specifications laid down is termed as:", options: ["A) Lotting", "B) Sorting", "C) Grading", "D) Standardizing"], ans: 2 },
+      { id: 38, q: "If marketed surplus is greater than marketable surplus, then the situation is known as:", options: ["A) Market efficiency", "B) Market integration", "C) Distress sale", "D) Duopoly market"], ans: 2 },
+      { id: 39, q: "Match the following surpluses:\nA) Marketable > Marketed | B) Marketable < Marketed | C) Marketable = Marketed | D) Marketable surplus formula\n1. MS = P-C | 2. Small & Medium Farmers / Distress sale | 3. Perishable / Average farmers | 4. Large farmers / Hoarding / Durable goods", options: ["A) 4, 2, 1, 3", "B) 1, 2, 3, 4", "C) 2, 3, 4, 1", "D) 3, 4, 1, 2"], ans: 0 },
+      { id: 40, q: "A marketing mix consists of:", options: ["A) Policies, Procedure, Plans and Personnel", "B) The customer and the “four Ps”", "C) All variables, controllable and uncontrollable", "D) Product, Price, Promotion and Place"], ans: 3 },
+      { id: 41, q: "Find the incorrect statement regarding godown schemes:", options: ["A) Private Entrepreneurship Guarantee (PEG) scheme started in 2008", "B) PEG was started to reduce the dependence of CAP method of storage", "C) National Grid of Rural Godown (NGRG) was initiated in 1979", "D) NGRG was started to construct rural godowns on PPM model"], ans: 3 },
+      { id: 42, q: "Which of the following is not correctly matched?", options: ["A) Unorganized market — Organization", "B) Regulated market — Control", "C) Perfect market — Competition", "D) Terminal market — Area"], ans: 3 },
+      { id: 43, q: "Match Acts/Orders with years:\nA) Prevention of Food Adulteration Act | B) Fruit Products Order Act | C) Solvent Extracted Oil Order | D) Vegetable Oil Products\n1) 1967 | 2) 1975 | 3) 1954 | 4) 1955", options: ["A) 1, 2, 3, 4", "B) 3, 4, 1, 2", "C) 4, 3, 2, 1", "D) 2, 1, 4, 3"], ans: 1 },
+      { id: 44, q: "Marketed surplus of produce includes:", options: ["A) Tradable produce", "B) Traded produce", "C) Total requirements", "D) Stocked produce"], ans: 0 },
+      { id: 45, q: "Match functions:\nA) Scientific storage | B) Sort out goods | C) Value addition | D) Crating of goods\nI) Processing | II) Warehousing | III) Grading | IV) Packaging", options: ["A) A-II, B-III, C-I, D-IV", "B) A-I, B-II, C-III, D-IV", "C) A-III, B-II, C-IV, D-I", "D) A-IV, B-I, C-II, D-III"], ans: 0 },
+      { id: 46, q: "______ is that quantity of produce which the producer farmer actually sells in the market, irrespective of requirements.", options: ["A) Marketed surplus", "B) Marketable surplus", "C) Producer surplus", "D) Total production"], ans: 0 },
+      { id: 47, q: "The markets that exist only for perishable commodities are:", options: ["A) Local market", "B) Regional market", "C) National market", "D) World market"], ans: 0 },
+      { id: 48, q: "In this market, buyers and sellers are drawn from a large area. These markets usually exist for food grains:", options: ["A) Local market", "B) Regional market", "C) National market", "D) World market"], ans: 1 },
+      { id: 49, q: "The market in which durable goods are bought and sold:", options: ["A) Local market", "B) Regional market", "C) National market", "D) World market"], ans: 2 },
+      { id: 50, q: "Match the following marketing functions:\nA) Exchange Functions | B) Facilitative Functions | C) Physical Functions | D) Tertiary Functions\nI) Financing | II) Buying | III) Storage | IV) Banking", options: ["A) A-II, B-I, C-III, D-IV", "B) A-I, B-II, C-III, D-IV", "C) A-III, B-IV, C-I, D-II", "D) A-IV, B-III, C-II, D-I"], ans: 0 },
+      { id: 51, q: "Which is the first function performed in the marketing of agricultural commodities?", options: ["A) Packing", "B) Fixed grading", "C) Packaging", "D) Grading"], ans: 2 },
+      { id: 52, q: "______ means the determination of the standards to be established for different commodities.", options: ["A) Standardization", "B) Grading", "C) Packaging", "D) Sorting"], ans: 0 },
+      { id: 53, q: "In ______ market, produce is either finally disposed to consumers or processors, or assembled for export.", options: ["A) Terminal market", "B) Secondary wholesale markets", "C) Primary wholesale markets", "D) Seaboard markets"], ans: 0 },
+      { id: 54, q: "______ transactions take place mainly between traders.", options: ["A) Wholesale markets", "B) Retail markets", "C) Forward market", "D) Terminal markets"], ans: 0 },
+      { id: 55, q: "The market in which commodities are transacted in large quantities is:", options: ["A) Wholesale market", "B) Retail market", "C) Regional market", "D) World market"], ans: 0 },
+      { id: 56, q: "The market that deals with limited products is:", options: ["A) General market", "B) Special market", "C) Retail market", "D) Spot market"], ans: 1 },
+      { id: 57, q: "Find the incorrect expansion regarding warehouse receipt:", options: ["A) NWR means Negotiable Warehouse Reserve", "B) It acts as collateral security to avail loan", "C) Using NWR, farmer can get loan up to 75% of value of produce", "D) NWR will be issued only by those warehouses registered with WDRA"], ans: 0 },
+      { id: 58, q: "Match period markets with commodities:\nA) Very short period | B) Short period | C) Long period | D) Secular market\nI) Vegetables | II) Manufactured goods | III) Less perishables | IV) Flowers", options: ["A) A-I, B-II, C-III, D-IV", "B) A-II, B-I, C-IV, D-III", "C) A-III, B-IV, C-I, D-II", "D) A-IV, B-I, C-III, D-II"], ans: 3 },
+      { id: 59, q: "Marketable surplus increases with an increase in:", options: ["A) Market size", "B) Family size", "C) Farm size", "D) Education"], ans: 2 },
+      { id: 60, q: "Which of the following cannot be stored under cold storage?", options: ["A) Bhendi", "B) Banana", "C) Fish", "D) Straw"], ans: 3 },
+      { id: 61, q: "A social institution which performs activities and provides facilities for exchanging commodities between buyers and sellers is called as:", options: ["A) Agricultural marketing", "B) Marketing", "C) Market", "D) All the above"], ans: 2 },
+      { id: 62, q: "The economic process by which goods and services are exchanged between producers and consumers and their value determined in terms of money prices is called:", options: ["A) Agricultural marketing", "B) Marketing", "C) Market", "D) All the above"], ans: 1 },
+      { id: 63, q: "Comprising of all activities involved in supply of farm inputs to farmers and movement of agricultural products from farms to ultimate consumers is called:", options: ["A) Agricultural marketing", "B) Marketing", "C) Market", "D) Social marketing"], ans: 0 },
+      { id: 64, q: "Food grain market is an example of an ______ market.", options: ["A) Local market", "B) National market", "C) International or world market", "D) Regional market"], ans: 3 },
+      { id: 65, q: "These markets are characterized by range of buyers and sellers at specific place on specific days and time:", options: ["A) Short period market", "B) Long period markets", "C) Periodic markets", "D) Secular market"], ans: 2 },
+      { id: 66, q: "______ are designed to stimulate an already existing desire for the satisfaction of the want of a given product.", options: ["A) Demand creation", "B) Contractual function", "C) Product planning", "D) Development"], ans: 0 },
+      { id: 67, q: "______ are the markets in which business is conducted without any set of rules and regulations.", options: ["A) Urban market", "B) Rural market", "C) Unregulated market", "D) Regulated market"], ans: 2 },
+      { id: 68, q: "______ method is common in villages, for farmers are indebted to local moneylenders.", options: ["A) Open auction method", "B) Moghum sale method", "C) Closed tender system", "D) Dara sale method"], ans: 1 },
+      { id: 69, q: "______ method: the sale of produce is affected on the basis of a verbal understanding between buyers and sellers without any pre-settlement of price.", options: ["A) Open auction method", "B) Moghum sale method", "C) Closed tender system", "D) Dara sale method"], ans: 1 },
+      { id: 70, q: "The packaging of a group of consumer packets is known as:", options: ["A) Primary packaging", "B) Primary packing", "C) Tertiary packaging", "D) Secondary packaging"], ans: 3 },
+      { id: 71, q: "Jute and textiles are an example of:", options: ["A) National market", "B) International market", "C) Local market", "D) Secular market"], ans: 0 },
+      { id: 72, q: "Method of sale followed in the regulated markets of Tamil Nadu:", options: ["A) Open auction system", "B) Dara sale method", "C) Closed tender system", "D) Both A and C"], ans: 3 },
+      { id: 73, q: "IGMRI institute is in:", options: ["A) Hapur", "B) Noida", "C) Ludhiana", "D) Jaipur"], ans: 0 },
+      { id: 74, q: "Weekly market is an example of a ______ market.", options: ["A) Short period market", "B) Periodic markets", "C) Long period markets", "D) Secular market"], ans: 1 },
+      { id: 75, q: "Local markets are also called:", options: ["A) Village market", "B) Primary market", "C) Terminal market", "D) Both A and B"], ans: 3 },
+      { id: 76, q: "A positive relationship between the ______ and ______ surplus:", options: ["A) Size of holding and marketable surplus", "B) Size of family and marketed", "C) Size of holding and perishable surplus", "D) Production level and marketed"], ans: 0 },
+      { id: 77, q: "The marketable surplus will be more in ______ commodities.", options: ["A) Pulses", "B) Millets", "C) Oilseeds", "D) None of these"], ans: 2 },
+      { id: 78, q: "Any single activity performed in carrying a product from the point of its production to the ultimate consumer is termed as:", options: ["A) Production function", "B) Marketing function", "C) Marketing performance", "D) Marketing structure"], ans: 1 },
+      { id: 79, q: "The price of the produce is determined by pressing/twisting the fingers of each other under cover of a piece of cloth is termed as:", options: ["A) Dara sale method", "B) Moghum sale method", "C) Hatha system", "D) Open auction method"], ans: 2 },
+      { id: 80, q: "The produce is given to the highest bidder after taking the consent of the seller in:", options: ["A) Dara sale method", "B) Hatha system", "C) Moghum sale method", "D) Open auction method"], ans: 3 },
+      { id: 81, q: "______ products are dependent on natural conditions.", options: ["A) Irregular supply of agricultural products", "B) Variation in quality of products", "C) Perishability of the product", "D) All of the above"], ans: 0 },
+      { id: 82, q: "______ products are time varies from a few hours to a few months.", options: ["A) Irregular supply of agricultural products", "B) Variation in quality of products", "C) Perishability of the product", "D) All of the above"], ans: 2 },
+      { id: 83, q: "______ products is higher because of the higher costs of transportation, handling and storage.", options: ["A) Irregular supply of agricultural products", "B) Variation in quality of products", "C) Perishability of the product", "D) Bulkiness of product"], ans: 3 },
+      { id: 84, q: "______ products are difficult to make their grading and standardization.", options: ["A) Irregular supply of agricultural products", "B) Variation in quality of products", "C) Perishability of the product", "D) Bulkiness of product"], ans: 1 },
+      { id: 85, q: "______ is a sub-function of standardization.", options: ["A) Grading", "B) Sorting", "C) Labeling", "D) Warehouse"], ans: 0 },
+      { id: 86, q: "Which of the following is not a problem in agricultural marketing?", options: ["A) Large number of middlemen", "B) Forced sale", "C) Lack of improved varieties", "D) Small and scattered holdings"], ans: 2 },
+      { id: 87, q: "______ is an example of decentralized grading products.", options: ["A) Fruits", "B) Vegetable oils", "C) Ghee", "D) Butter"], ans: 0 },
+      { id: 88, q: "______ grading method is not possible in India.", options: ["A) Fixed or mandatory grading", "B) Grading at producer's level", "C) Decentralized grading", "D) Permissive or variable grading"], ans: 3 },
+      { id: 89, q: "______ system is an authorised packer either sets up his own laboratory manned by qualified chemists or seeks access.", options: ["A) Centralized grading", "B) Decentralized grading", "C) Variable grading", "D) Permissive grading"], ans: 2 },
+      { id: 90, q: "AGMARK Act was enacted in:", options: ["A) 1956", "B) 1937", "C) 1965", "D) 1837"], ans: 1 },
+      { id: 91, q: "The AGMARK label indicates the ______ of the produce.", options: ["A) Quality", "B) Tasty", "C) Purity", "D) Both A and C"], ans: 3 },
+      { id: 92, q: "______ is the protector of national wealth.", options: ["A) Labeling", "B) Warehousing", "C) Both a and b", "D) None of the above"], ans: 1 },
+      { id: 93, q: "______ warehouses are specially constructed at a seaport or an airport and accept imported goods for storage till payment of customs duty:", options: ["A) Private warehouse", "B) Public warehouse", "C) Bonded warehouse", "D) General warehouse"], ans: 2 },
+      { id: 94, q: "National Cooperative Development Corporation was set up in:", options: ["A) March, 1956", "B) March, 1963", "C) April, 1962", "D) July, 1982"], ans: 1 },
+      { id: 95, q: "Abbreviate the term ‘AMA’ in agricultural marketing:", options: ["A) Agricultural Marketing Advisor", "B) Agricultural Marketing Agency", "C) Assistant Marketing of Agriculture", "D) Assistant Manager of Agriculture"], ans: 0 },
+      { id: 96, q: "Find the incorrect statement on Kisan Rath app:", options: ["A) Helps the farmers to transport their produce", "B) Helps the farmers to get information on market prices of agricultural commodities", "C) It was launched by Ministry of Agriculture & Farmers Welfare", "D) None of these"], ans: 1 },
+      { id: 97, q: "Match the following markets:\nA) Black market | B) Open market | C) Capital market | D) Spot market\n1. Share market | 2. Visible market | 3. Cash market | 4. Invisible market", options: ["A) 4, 2, 1, 3", "B) 1, 2, 3, 4", "C) 2, 3, 4, 1", "D) 3, 4, 1, 2"], ans: 0 },
+      { id: 98, q: "Distress sales of marketing refers to:", options: ["A) Selling price < MSP", "B) Selling price > MSP", "C) Selling price < cost of production", "D) Selling price > cost of production"], ans: 1 },
+      { id: 99, q: "Compared to paddy, the marketable surplus of cotton is:", options: ["A) Infinity", "B) Low", "C) High", "D) Equal"], ans: 2 },
+      { id: 100, q: "______ emphasizes on the product & ______ emphasizes on the customer needs and wants.", options: ["A) Selling, marketing", "B) Marketing, selling", "C) Consumer, customer", "D) Marketing, customer"], ans: 0 },
+      { id: 101, q: "Allocative efficiency is also called:", options: ["A) Pricing efficiency", "B) Physical efficiency", "C) Technical efficiency", "D) Operational efficiency"], ans: 0 },
+      { id: 102, q: "Difference between the price paid by the consumer and the price received by the farmer is:", options: ["A) Price spread", "B) Market margin", "C) Wholesale price", "D) Retail price"], ans: 0 },
+      { id: 103, q: "Under ______ system, the farmers are forced to sell part of their produce to the Government at the announced price.", options: ["A) Monopoly procurement", "B) Pre-emptive purchase", "C) Buffer stock", "D) Levy on farmers"], ans: 3 },
+      { id: 104, q: "The apex body in Co-operative marketing is:", options: ["A) MARKFED", "B) NAFED", "C) NCDC", "D) APC"], ans: 1 },
+      { id: 105, q: "Most of the commodity boards function under the purview of:", options: ["A) Ministry of Agriculture and Farmers Welfare, Govt. of India", "B) Ministry of Consumer Affairs, Food and Public Distribution", "C) Ministry of Finance, Govt. of India", "D) Ministry of Commerce and Industry, Govt. of India"], ans: 3 },
+      { id: 106, q: "Following is the market, which is classified on the basis of degree of competition:", options: ["A) Commodity markets", "B) Capital markets", "C) Monopoly markets", "D) Spot/cash markets"], ans: 2 },
+      { id: 107, q: "Coir Board was established during this year:", options: ["A) 1983", "B) 1973", "C) 1963", "D) 1953"], ans: 3 },
+      { id: 108, q: "APEDA is located at:", options: ["A) Bangalore", "B) Mumbai", "C) Varanasi", "D) New Delhi"], ans: 3 },
+      { id: 109, q: "Tobacco Board has its headquarters at:", options: ["A) Guntur", "B) Kurnool", "C) Hyderabad", "D) Vijayawada"], ans: 0 },
+      { id: 110, q: "NAFED stands for:", options: ["A) National Agricultural Consumers Federation", "B) National Agricultural Marketing Federation", "C) National Agricultural Co-operative Production Federation", "D) National Agricultural Co-operative Marketing Federation"], ans: 3 },
+      { id: 111, q: "Which of the following organization is not a member of NAFED?", options: ["A) NCDC", "B) TANFED", "C) RAJFED", "D) APEDA"], ans: 3 },
+      { id: 112, q: "______ want the marketing system to purchase their produce without loss of time and provide the maximum share in the consumer rupee.", options: ["A) Consumers", "B) Middlemen", "C) Government", "D) Producers"], ans: 3 },
+      { id: 113, q: "The structure of cooperative market in Tamil Nadu is:", options: ["A) Two tier system", "B) Three tier system", "C) A & B", "D) Four tier system"], ans: 0 },
+      { id: 114, q: "Expansion of firms by consolidating additional marketing functions and activities under a single management is:", options: ["A) Market integration", "B) Marketing efficiency", "C) Price spread", "D) Technical efficiency"], ans: 0 },
+      { id: 115, q: "The Expert Group on agricultural marketing was established under the chairmanship of:", options: ["A) Acharya", "B) Dantwala", "C) Shankarlal guru", "D) Jha L.K"], ans: 0 },
+      { id: 116, q: "APEDA functions under the:", options: ["A) Ministry of Agriculture", "B) Ministry of Food and Consumer Affairs", "C) Ministry of Commerce and Industry", "D) Ministry of Finance"], ans: 2 },
+      { id: 117, q: "Tea Board came into existence in the year:", options: ["A) 1963", "B) 1973", "C) 1983", "D) 1953"], ans: 3 },
+      { id: 118, q: "The main objective of hedging is:", options: ["A) Maximization of profit", "B) Minimization of price risk", "C) Reduction in transaction", "D) Reducing marketing cost"], ans: 1 },
+      { id: 119, q: "Superior alternative to fair price shop system suggested by the Fifth Five Year Plan:", options: ["A) Food coupon scheme", "B) Subsidy entitlement card", "C) Food stamp system", "D) Food card system"], ans: 3 },
+      { id: 120, q: "Pricing efficiency is said to be achieved if product is sold in two different forms, when:", options: ["A) Price difference is less than transport curve", "B) Price difference is less than storage cost", "C) Price difference is less than processing cost", "D) Price difference is more than processing cost"], ans: 2 },
+      { id: 121, q: "Match commodity boards with headquarters:\nA) Coconut Development Board | B) Tobacco Board | C) Rubber Board | D) Coffee Board\n1) Bangalore | 2) Kottayam | 3) Guntur | 4) Kochi", options: ["A) 4, 3, 2, 1", "B) 4, 2, 3, 1", "C) 2, 1, 3, 4", "D) 3, 4, 1, 2"], ans: 0 },
+      { id: 122, q: "The organization which advises the Government regarding Agricultural Price Policy is:", options: ["A) RBI", "B) NABARD", "C) CACP", "D) FCI"], ans: 2 },
+      { id: 123, q: "Match Agency with Activity:\nA) AGMARK | B) APEDA | C) NAFED | D) CWC\n1) Co-operative marketing | 2) Warehousing | 3) Quality grading | 4) Export development", options: ["A) 3, 1, 4, 2", "B) 3, 4, 1, 2", "C) 4, 3, 1, 2", "D) 4, 1, 3, 2"], ans: 1 },
+      { id: 124, q: "The Department of Agriculture Marketing in Tamil Nadu started functioning in the year:", options: ["A) 1972", "B) 1950", "C) 1947", "D) 1977"], ans: 3 },
+      { id: 125, q: "Which of the following website gives the details about Agriculture in India?", options: ["A) www.agriculture.in", "B) www.agriculture.nic.in", "C) www.agricoop.nic.in", "D) www.agricoop.in"], ans: 2 },
+      { id: 126, q: "To procure a sizeable portion of the marketable surplus of food grains at incentive prices from farmers on behalf of the Central and State Government is a function of:", options: ["A) Cotton Corporation of India", "B) AGMARKNET", "C) Coconut Development Board of India", "D) Food Corporation of India"], ans: 3 },
+      { id: 127, q: "Food Corporation of India was started on:", options: ["A) January 1st, 1965", "B) January 14th, 1965", "C) March 1st, 1965", "D) April 1st, 1995"], ans: 0 },
+      { id: 128, q: "Match the following middlemen:\nA) Merchant middlemen | B) Agent middlemen | C) Itinerant traders | D) Speculative middlemen\nI) Commission Agents | II) Wholesaler | III) Risk Taking | IV) Petty Merchants", options: ["A) A-II, B-IV, C-III, D-I", "B) A-III, B-II, C-IV, D-I", "C) A-II, B-I, C-IV, D-III", "D) A-II, B-IV, C-I, D-III"], ans: 2 },
+      { id: 129, q: "Match the following integration forms:\nA) Horizontal Integration | B) Backward Integration | C) Forward Integration | D) Conglomeration\nI) Producer assumes function of wholesaler | II) Cooperatives | III) Processor assumes assembling | IV) Combination of agencies", options: ["A) A-II, B-III, C-I, D-IV", "B) A-III, B-II, C-IV, D-I", "C) A-II, B-II, C-IV, D-I", "D) A-II, B-II, C-III, D-IV"], ans: 0 },
+      { id: 130, q: "These middlemen act as a representative of their clients. They don't take title to the produce they handle:", options: ["A) Agent middlemen", "B) Itinerant traders", "C) Merchant middlemen", "D) Speculative middlemen"], ans: 0 },
+      { id: 131, q: "It pertains to the cost of performing a marketing function like storage, processing and handling:", options: ["A) Technical/Operational Efficiency", "B) Marginal cost", "C) Pricing/Allocative Efficiency", "D) Total cost"], ans: 0 },
+      { id: 132, q: "Match the following definitions:\nA) Price spread | B) Market margin | C) Marketing Cost | D) Market Channel\nI) Way of movement | II) Price diff received by specific agency | III) Cost of movement | IV) Producer-Consumer price diff", options: ["A) A-IV, B-II, C-III, D-I", "B) A-III, B-II, C-IV, D-I", "C) A-II, B-I, C-IV, D-III", "D) A-IV, B-II, C-II, D-I"], ans: 0 },
+      { id: 133, q: "Match markets with places:\nA) Apni Mandi | B) Rythu Bazars | C) Uzhavar Sandhai | D) Central AGMARK Lab | E) CACP\nI) Tamil Nadu | II) Andhra Pradesh | III) Nagpur | IV) Punjab | V) New Delhi", options: ["A) A-IV, B-II, C-I, D-III, E-V", "B) A-II, B-III, C-I, D-IV, E-V", "C) A-III, B-I, C-II, D-IV, E-V", "D) A-V, B-I, C-II, D-III, E-IV"], ans: 0 },
+      { id: 134, q: "Match entities:\nA) Merchant middleman | B) Perishability | C) Market force | D) Village market | E) Producers\nI) Price | II) Farmer | III) Problem in marketing | IV) Own the produce | V) Primary market", options: ["A) A-I, B-V, C-II, D-III, E-IV", "B) A-II, B-IV, C-V, D-III, E-I", "C) A-III, B-IV, C-II, D-I, E-V", "D) A-IV, B-III, C-I, D-V, E-II"], ans: 3 },
+      { id: 135, q: "Match:\nA) Market news | B) Speculative middlemen | C) Merchant middlemen | D) AGMARK\nI) Retailers | II) Nagpur | III) Market price/arrivals info | IV) Later date transaction", options: ["A) A-II, B-IV, C-I, D-III", "B) A-III, B-IV, C-I, D-II", "C) A-III, B-I, C-IV, D-II", "D) A-I, B-III, C-II, D-IV"], ans: 1 },
+      { id: 136, q: "Match integration & market concepts:\nA) Forward Integration | B) Future market | C) Market Intelligence | D) Market research\nI) Overcome distress sale | II) Info about prices | III) Analyzing market problems | IV) Wholesaler assuming retailing", options: ["A) A-II, B-IV, C-I, D-III", "B) A-IV, B-I, C-II, D-III", "C) A-III, B-I, C-IV, D-II", "D) A-I, B-III, C-I, D-IV"], ans: 1 },
+      { id: 137, q: "Match:\nA) Backward Integration | B) Packaging Institute | C) Agent middlemen | D) Speculative middlemen\nI) Physical control | II) Mumbai | III) Wholesaler assuming assembling | IV) No physical control", options: ["A) A-II, B-IV, C-I, D-III", "B) A-IV, B-I, C-II, D-III", "C) A-III, B-II, C-IV, D-I", "D) A-II, B-III, C-I, D-IV"], ans: 2 },
+      { id: 138, q: "The difference between the price paid and received by a specific marketing agency, such as a single retailer, or by any type of marketing agency such as retailers or assemblers is called:", options: ["A) Marketing cost", "B) Marketing margin", "C) Marketing price", "D) Marketing effect"], ans: 1 },
+      { id: 139, q: "Which of the following falls under facilitative middlemen category in the regulated markets?", options: ["A) Broker", "B) Commission agent", "C) Wholesaler", "D) Hamali"], ans: 3 },
+      { id: 140, q: "Revamped Public Distribution System (RPDS) was launched on:", options: ["A) January 1, 1992", "B) June 1, 1992", "C) April 1, 1992", "D) June 1, 1995"], ans: 0 },
+      { id: 141, q: "AGMARKNET is being implemented jointly by ______?", options: ["A) DMI and ICAR", "B) DMI and NIC", "C) DMI and ISNAR", "D) DMI and ISAM"], ans: 1 },
+      { id: 142, q: "Find the incorrect statement regarding direct markets:", options: ["A) In Hadapsar Vegetable Market direct marketing of vegetable marketing is done in Pune", "B) In Andhra Pradesh direct marketing is done through Rythu Bazars", "C) In Tamil Nadu direct marketing is done through Uzhavar Sandies", "D) In Karnataka direct marketing is done through Shetkari Bazar"], ans: 3 },
+      { id: 143, q: "A combination of agencies or activities not directly related to each other, operates under a unified management:", options: ["A) Vertical integration", "B) Horizontal integration", "C) Conglomeration", "D) None"], ans: 2 },
+      { id: 144, q: "Match commodity boards with administrative ministries:\nA) Coconut Development Board | B) Coir Board | C) Central Silk Board | D) Rubber Board\n1) Textiles | 2) Agriculture & Farmers welfare | 3) MSME | 4) Commerce & industry", options: ["A) 1, 2, 3, 4", "B) 2, 1, 3, 4", "C) 2, 3, 1, 4", "D) 3, 2, 1, 4"], ans: 2 },
+      { id: 145, q: "Find incorrect statement about TANFED:", options: ["A) TANFED came into force on 20th Feb, 1959 with its headquarter at Chennai", "B) Area of operation of TANFED is entire Tamil Nadu", "C) Manufactures a fertilizer called “Pamini 17:17:17”", "D) Undertake procurement of agricultural commodities"], ans: 1 },
+      { id: 146, q: "The commission agents who render services on behalf of the farmers are called as:", options: ["A) Kaccha Arthiya", "B) Pucca Arthiya", "C) Broker", "D) Retailer"], ans: 0 },
+      { id: 147, q: "The apex body of the State Agricultural Marketing Boards is:", options: ["A) NAFED", "B) NABARD", "C) COSAMB", "D) DMI"], ans: 2 },
+      { id: 148, q: "Purchase or sale of a commodity at present price with the object of sale or purchase at a future date with the objective of profit making is:", options: ["A) Speculation", "B) Hedging", "C) Forward trading", "D) None"], ans: 0 },
+      { id: 149, q: "Match establish years:\nA) NAFED | B) NDDB | C) MPEDA | D) APEDA\n1) 1986 | 2) 1972 | 3) 1965 | 4) 1958", options: ["A) 4, 2, 1, 3", "B) 1, 3, 4, 2", "C) 4, 3, 2, 1", "D) 1, 2, 4, 3"], ans: 2 },
+      { id: 150, q: "Rice processor undertaking retailing is termed:", options: ["A) Vertical integration – one commodity", "B) Horizontal integration – multi commodity", "C) Conglomeration", "D) None"], ans: 0 },
+      { id: 151, q: "Match locations:\nA) DMI | B) Central AGMARK Lab | C) FCI | D) Jute Corporation of India (JCI)\n1) New Delhi | 2) Kolkata | 3) Faridabad | 4) Nagpur", options: ["A) 4, 2, 1, 3", "B) 1, 3, 4, 2", "C) 3, 4, 1, 2", "D) 1, 2, 4, 3"], ans: 2 },
+      { id: 152, q: "CCS National Institute of Agricultural Marketing (NIAM) was established in ______ and situated at ______:", options: ["A) 1980, Jaipur", "B) 1988, Raipur", "C) 1988, Jaipur", "D) 2000, Raipur"], ans: 2 },
+      { id: 153, q: "The stock of food grains maintained by the government to ensure its supply at times of emergency situations to the needy population is called:", options: ["A) Buffer stock", "B) Storage", "C) Marketable surplus", "D) None"], ans: 0 },
+      { id: 154, q: "First regulated market started at which place of India?", options: ["A) Karanja Cotton Market", "B) Apni Market", "C) Safal Market", "D) Hi-Tech Flower Market"], ans: 0 },
+      { id: 155, q: "The routes through which agricultural products move from producers to consumers are called:", options: ["A) Marketing Channel", "B) Market Margin", "C) Marketing Cost", "D) Price Spread"], ans: 0 },
+      { id: 156, q: "The movement of products from the producers to the ultimate consumers involves cost, tax, and cess are called:", options: ["A) Marketing Channel", "B) Market Margin", "C) Marketing Cost", "D) Price Spread"], ans: 2 },
+      { id: 157, q: "Profit of various market functionaries in moving the produce from point of production to consumption:", options: ["A) Marketing Channel", "B) Market Margin", "C) Marketing Cost", "D) Price Spread"], ans: 1 },
+      { id: 158, q: "______ market takes into account the time gap between buying & selling:", options: ["A) Concurrent", "B) Lagged", "C) Open", "D) All the above"], ans: 1 },
+      { id: 159, q: "Mashakores are:", options: ["A) Commission agents in regulated market", "B) Big retailers or small wholesalers", "C) Itinerant traders", "D) Brokers in unregulated markets"], ans: 0 },
+      { id: 160, q: "______ refers to the management of the entire set of production, distribution and marketing processes by which a consumer is supplied with a desired product.", options: ["A) Supply Chain Management", "B) Structure, Conduct and Performance", "C) Cold chain", "D) Value chain"], ans: 0 },
+      { id: 161, q: "A reduction in marketing cost without reduction in consumer satisfaction indicates:", options: ["A) Marketing efficiency", "B) Performance efficiency", "C) Technical efficiency", "D) Demand"], ans: 0 },
+      { id: 162, q: "The main function of FCI:", options: ["A) Storage", "B) Procurement", "C) Grading", "D) Market information"], ans: 1 },
+      { id: 163, q: "______ is also the central nodal agency for undertaking price support operations for pulses and oilseeds and market intervention operations for other agricultural commodities.", options: ["A) PACS", "B) NCDC", "C) TRIFED", "D) NAFED"], ans: 3 },
+      { id: 164, q: "CCI (Cotton Corporation of India) was a ______ agency.", options: ["A) Public sector", "B) Private sector", "C) Owned by both public & private", "D) None of these"], ans: 0 },
+      { id: 165, q: "CDB (Coconut Development Board) came into existence on:", options: ["A) 12th January 1991", "B) 12th January 1981", "C) 12th January 1971", "D) 12th January 1951"], ans: 1 },
+      { id: 166, q: "Coconut Development Board has set up a Technology Development Centre at:", options: ["A) Kochi", "B) Aluva", "C) Kodaikanal", "D) Ooty"], ans: 1 },
+      { id: 167, q: "______ is an autonomous board under the Ministry of Agriculture and Farmers Welfare and set up in the year ______:", options: ["A) National Dairy Development Board, 1965", "B) Spices board, 1987", "C) Rubber board, 1947", "D) National Horticulture Board, 1984"], ans: 1 },
+      { id: 168, q: "APEDA has built links between ______ and ______:", options: ["A) Foreign producers and global markets", "B) Indian producers and local markets", "C) Foreign producers and local markets", "D) Indian producers and global markets"], ans: 3 },
+      { id: 169, q: "APEDA Act was passed in the year:", options: ["A) 1985", "B) 1955", "C) 1995", "D) 1925"], ans: 0 },
+      { id: 170, q: "______ refers to speculation on the part of a person who makes it his profession.", options: ["A) Illegitimate Speculation", "B) Speculation Proper", "C) Hedging", "D) Speculation"], ans: 1 },
+      { id: 171, q: "______ is a specified quantum of commodity, at a pre-determined price and for a specified period of time.", options: ["A) Contract farming", "B) Uncertainty", "C) Hedging", "D) Speculation"], ans: 0 },
+      { id: 172, q: "______ analysis the past helps to take decision about the future:", options: ["A) Market news", "B) Market intelligence", "C) Market information", "D) Market research"], ans: 1 },
+      { id: 173, q: "Which of the following is an example of conglomeration?", options: ["A) Cooperative farming", "B) Wholesaler assuming retailing", "C) Ramoji group of industries", "D) Wholesaler assuming assembling"], ans: 2 },
+      { id: 174, q: "‘UZHAVAR SANTHAI’ was started in Tamil Nadu on ______ year:", options: ["A) 1989", "B) 1999", "C) 1979", "D) 2009"], ans: 1 },
+      { id: 175, q: "Market finance is the finance given to the farmers at times of:", options: ["A) Harvesting", "B) Processing", "C) Storage", "D) Grading"], ans: 2 },
+      { id: 176, q: "The agent of the Government for purchase, sale, storage and distribution of agricultural commodities and inputs is:", options: ["A) NAFED", "B) FCI", "C) PACS", "D) CWC"], ans: 0 },
+      { id: 177, q: "TPDS was based on the recommendation of ______ committee:", options: ["A) Lakdawala", "B) Amartya Sen", "C) M.S. Swaminathan", "D) David Miller"], ans: 0 },
+      { id: 178, q: "In Public Distribution System (PDS), the beneficiaries are identified by:", options: ["A) State government", "B) Central government", "C) Both State and Central government", "D) Designated Third Party"], ans: 0 },
+      { id: 179, q: "Find the incorrect statement regarding Institute of Rural Management (IRMA):\n1. Located in Anand | 2. Founded 1979 | 3. Brainchild of Kurien | 4. Publishes IJRM | 5. PG Diploma in RD", options: ["A) 1, 3 only", "B) 1, 3, 4 only", "C) 1, 2, 3, 4, 5 only", "D) 1, 2, 4 only"], ans: 1 },
+      { id: 180, q: "As per Lakdawala committee, the BPL was defined as those who are not having access to minimum of:", options: ["A) 2250 calories in both rural and urban areas", "B) 2400 calories in rural areas and 2100 calories in urban areas", "C) 2100 calories in rural areas and 2400 calories in urban areas", "D) Rs. 27 in rural areas and Rs. 35 in urban areas"], ans: 1 },
+      { id: 181, q: "Under ______ system, the government purchases food grains from the open market at a price negotiated between the traders and government:", options: ["A) Monopoly procurement", "B) Open market purchase", "C) Levy on traders", "D) Pre-emptive purchase"], ans: 3 },
+      { id: 182, q: "Most successful cooperative in India is:", options: ["A) Honey cooperatives", "B) Agri input cooperatives", "C) Turmeric cooperatives", "D) Dairy cooperatives"], ans: 3 },
+      { id: 183, q: "SILKS is an initiative of Silk Board for sericulture planning and development. Expand SILKS:", options: ["A) Silk Innovation Linkage and Knowledge System", "B) Silk Informal Linkage and Knowledge System", "C) Sericulture Innovation Linkage and Knowledge System", "D) Sericulture Information Linkage and Knowledge System"], ans: 3 },
+      { id: 184, q: "First cooperative marketing societies act was passed in the year:", options: ["A) 1904", "B) 1912", "C) 1922", "D) 1937"], ans: 0 },
+      { id: 185, q: "Price spread is also known as:", options: ["A) Farm retail spread", "B) Gross production margin", "C) Both A & B", "D) Total Marketing Cost"], ans: 2 },
+      { id: 186, q: "Friends of coconut tree is an initiative of:", options: ["A) Coconut Development Board", "B) Jointly by CDB & Tamil Nadu Govt", "C) Jointly by CDB & Kerala Govt", "D) ICAR"], ans: 0 },
+      { id: 187, q: "NAFED procures ______ number of notified agricultural commodities:", options: ["A) 16", "B) 23", "C) 32", "D) 52"], ans: 0 },
+      { id: 188, q: "Spice board deals with ______ number of spices in export promotion:", options: ["A) 16", "B) 23", "C) 48", "D) 52"], ans: 3 },
+      { id: 189, q: "Find the incorrect statement on NAFED:", options: ["A) Undertakes production and marketing of agricultural inputs", "B) Develops co-operative marketing of tribal produce", "C) Processes dairy and fisheries products", "D) Supports organic cultivators by providing market linkages"], ans: 2 },
+      { id: 190, q: "FCI functions under the purview of:", options: ["A) Ministry of Agriculture and Farmers Welfare, Govt. of India", "B) Ministry of Consumer Affairs, Food and Public Distribution", "C) Ministry of Finance, Govt. of India", "D) Ministry of Commerce and Industry, Govt. of India"], ans: 1 },
+      { id: 191, q: "______ is the price at which central government sells foodgrains to state government:", options: ["A) Central disposal price", "B) Linkage price", "C) State selling price", "D) Central issue price"], ans: 3 },
+      { id: 192, q: "Under AAY scheme, a household gets ______ quantity of foodgrains per month:", options: ["A) 20 kg", "B) 25 kg", "C) 30 kg", "D) 35 kg"], ans: 3 },
+      { id: 193, q: "Under National Food Security Act, the percentage of population covered in rural and urban areas, respectively:", options: ["A) 50% & 50%", "B) 75% & 50%", "C) 50% & 75%", "D) 100% & 75%"], ans: 1 },
+      { id: 194, q: "APEDA deals with ______ number of scheduled products:", options: ["A) 8", "B) 12", "C) 15", "D) 20"], ans: 2 },
+      { id: 195, q: "Mother Dairy is a subsidiary of:", options: ["A) AMUL", "B) NDDB", "C) NDRI", "D) NCDC"], ans: 1 },
+      { id: 196, q: "It is a Nodal Agency of Govt. of India to undertake MSP operations of cotton when prices fall below MSP:", options: ["A) Central Institute for Cotton Research", "B) Jute Corporation of India", "C) CIRCOT", "D) Cotton Corporation of India (CCI)"], ans: 3 },
+      { id: 197, q: "A primary market transaction usually takes place directly between:", options: ["A) Wholesalers and exporters", "B) Producers/farmers and village traders", "C) Commission agents and retail chain managers", "D) Exporters and port authorities"], ans: 1 },
+      { id: 198, q: "Warehousing corporations issue receipts against stored produce that enable farmers to:", options: ["A) Avoid price collapse and obtain credit facilities", "B) Avoid state taxes permanently", "C) Claim direct compensation for weather loss", "D) Compulsory convert produce into seeds"], ans: 0 },
+      { id: 199, q: "Forward contracts primarily assist producers and agribusinesses in managing:", options: ["A) Climatic drought uncertainty", "B) Yield fluctuations only", "C) Future price volatility and market risk", "D) Quality grading discrepancies"], ans: 2 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(199, parseInt(customCountInput.value) || 25));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 30;
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : ""} (30s / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 199) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 30;
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const m = Math.floor(secs / 60);
+      const s = secs % 60;
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your exam automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! High likelihood of qualifying in Competitive Agricultural Exams.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review market structures and agency acts to boost overall speed & accuracy.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Dedicate additional time to Agricultural Marketing & Price Policy basics.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+</html>

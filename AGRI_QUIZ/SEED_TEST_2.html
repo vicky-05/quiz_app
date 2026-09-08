@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Seed Technology & Quality Control Examination Portal — 200 MCQs</title>
+  <style>
+    :root {
+      --primary: #0f766e;
+      --primary-hover: #115e59;
+      --primary-light: #f0fdfa;
+      --success: #16a34a;
+      --success-light: #dcfce7;
+      --danger: #dc2626;
+      --danger-light: #fee2e2;
+      --neutral: #475569;
+      --neutral-light: #f8fafc;
+      --border: #cbd5e1;
+      --card-bg: #ffffff;
+      --bg: #f1f5f9;
+      --text: #0f172a;
+      --text-muted: #64748b;
+      --radius: 10px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: #115e59;
+      color: #ffffff;
+      padding: 1.25rem 1rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    header h1 {
+      font-size: 1.3rem;
+      font-weight: 700;
+    }
+
+    header p {
+      font-size: 0.85rem;
+      opacity: 0.9;
+      margin-top: 0.25rem;
+    }
+
+    .container {
+      max-width: 820px;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      padding: 1.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    label {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+
+    select, input[type="number"] {
+      padding: 0.75rem;
+      border-radius: 6px;
+      border: 1px solid var(--border);
+      font-size: 1rem;
+      outline: none;
+    }
+
+    select:focus, input[type="number"]:focus {
+      border-color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+    }
+
+    .btn-secondary {
+      background-color: var(--neutral-light);
+      color: var(--neutral);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      background-color: #e2e8f0;
+    }
+
+    .btn-success {
+      background-color: var(--success);
+      color: #ffffff;
+    }
+
+    .btn-success:hover {
+      background-color: #15803d;
+    }
+
+    .progress-wrapper {
+      margin-bottom: 1.5rem;
+    }
+
+    .progress-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+    }
+
+    .progress-bar-bg {
+      width: 100%;
+      height: 8px;
+      background-color: #e2e8f0;
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .progress-bar-fill {
+      height: 100%;
+      background-color: var(--primary);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+
+    .question-title {
+      font-size: 1.15rem;
+      font-weight: 600;
+      line-height: 1.5;
+      margin-bottom: 1.25rem;
+      white-space: pre-line;
+    }
+
+    .options-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      width: 100%;
+      text-align: left;
+      padding: 0.85rem 1rem;
+      border-radius: 6px;
+      border: 1.5px solid var(--border);
+      background: #ffffff;
+      font-size: 0.95rem;
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .option-btn:hover {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+    }
+
+    .option-btn.selected {
+      border-color: var(--primary);
+      background-color: var(--primary-light);
+      font-weight: 600;
+    }
+
+    .nav-controls {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .results-header {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .score-circle {
+      width: 125px;
+      height: 125px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto;
+      border: 3px solid var(--primary);
+    }
+
+    .score-circle .number {
+      font-size: 1.85rem;
+      font-weight: 800;
+    }
+
+    .score-circle .label {
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .stat-card {
+      background: var(--neutral-light);
+      padding: 1rem;
+      border-radius: 6px;
+      text-align: center;
+    }
+
+    .stat-card .val {
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+
+    .stat-card.correct .val { color: var(--success); }
+    .stat-card.wrong .val { color: var(--danger); }
+    .stat-card.unanswered .val { color: var(--neutral); }
+
+    .stat-card .desc {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: 6px;
+      margin-bottom: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    .review-item.is-correct {
+      border-left: 5px solid var(--success);
+      background-color: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 5px solid var(--danger);
+      background-color: #fffdfd;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 5px solid var(--neutral);
+      background-color: var(--neutral-light);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 0.2rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .badge.correct { background: var(--success-light); color: var(--success); }
+    .badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .review-text {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .review-detail {
+      font-size: 0.875rem;
+      margin: 0.25rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 0 0.5rem;
+        margin: 1rem auto;
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .nav-controls {
+        flex-direction: column-reverse;
+      }
+      .nav-controls .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Seed Technology, Testing & Certification Portal</h1>
+    <p>Complete 200 Multiple-Choice Questions Interactive Practice Exam</p>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Configure Test Session</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Select exam mode and question set size to start your practice test.</p>
+      
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Exam Mode (Sequential 1–200, Hidden Answers)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="200">All Questions (200 Questions)</option>
+            <option value="10">10 Questions</option>
+            <option value="25">25 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="custom">Custom Number</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 200)</label>
+          <input type="number" id="custom-count-input" min="1" max="200" value="25" />
+        </div>
+
+        <button class="btn btn-primary" id="start-btn" style="margin-top: 1rem;">Start Quiz</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="card hidden">
+      <div class="progress-wrapper">
+        <div class="progress-meta">
+          <span id="q-counter">Question 1 of 200</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar-bg">
+          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+      </div>
+
+      <div class="question-title" id="question-text"></div>
+      <div class="options-list" id="options-container"></div>
+
+      <div class="nav-controls">
+        <button class="btn btn-secondary" id="prev-btn">Previous</button>
+        <div style="display: flex; gap: 0.75rem;">
+          <button class="btn btn-primary" id="next-btn">Next</button>
+          <button class="btn btn-success hidden" id="submit-btn">Submit Quiz</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-header">
+        <h2>Assessment Completed</h2>
+        <div class="score-circle">
+          <span class="number" id="res-score-percent">0%</span>
+          <span class="label">Total Score</span>
+        </div>
+        <p id="res-feedback" style="font-weight: 600; font-size: 1.1rem;"></p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Total Questions</div>
+        </div>
+        <div class="stat-card correct">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="stat-card wrong">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="stat-card unanswered">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 1rem; justify-content: center;">
+        <button class="btn btn-primary" id="toggle-review-btn">Review Answers</button>
+        <button class="btn btn-secondary" id="restart-btn">Restart Quiz</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem;">Detailed Answer Key & Review</h2>
+        <button class="btn btn-secondary" id="back-to-results-btn">Back to Results</button>
+      </div>
+      <div id="review-items-container"></div>
+    </div>
+
+  </div>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "Number of plants to be counted during field inspection in “Wide Spaced Row crops” is:", options: ["A) 100", "B) 500", "C) 1000", "D) 1500"], ans: 1 },
+      { id: 2, q: "The axon plant was first discovered by:", options: ["A) Darwin", "B) Linnaeus", "C) Camerarius", "D) Frankel"], ans: 2 },
+      { id: 3, q: "In the old Seed Corporation, the:", options: ["A) Involved Operator", "B) Magnetic Separator", "C) Inclined Roller Separator", "D) Gravity Separator"], ans: 3 },
+      { id: 4, q: "Under which section of the Indian Seed Act, 1966, the seed testing laboratories are notified?", options: ["A) Sec. 3", "B) Sec. 5", "C) Sec. 7", "D) Sec. 9"], ans: 1 },
+      { id: 5, q: "Seed pelleting is a:", options: ["A) Pre-sowing seed treatment", "B) Pre-storage seed treatment", "C) Post-sowing seed treatment", "D) Mid-season seed treatment"], ans: 0 },
+      { id: 6, q: "How many numbers of heads are to be counted during field inspection of paddy seed crop?", options: ["A) 100", "B) 500", "C) 1000", "D) 1500"], ans: 1 },
+      { id: 7, q: "The answer to the number of count of 6 × 6 m area of a seed field is:", options: ["A) 5", "B) 8", "C) 10", "D) 18"], ans: 1 },
+      { id: 8, q: "Which of the following is a seed upgrading machine?", options: ["A) Pre-conditioner", "B) Destoner", "C) Pre-cleaner", "D) Gravity separator"], ans: 3 },
+      { id: 9, q: "Any crop agent which does not penetrate the cell wall is:", options: ["A) Copper", "B) Mannitol", "C) D-Mannitol", "D) Halogens"], ans: 2 },
+      { id: 10, q: "Any proprietary/agri-released variety in Tamil Nadu has to be approved by:", options: ["A) Department of Agriculture", "B) State Variety Release Committee", "C) State Seed Release Committee", "D) Tamil Nadu Agricultural University"], ans: 1 },
+      { id: 11, q: "The process of enclosing a seed into a small quantity of inert material as a globular unit is called:", options: ["A) Drilling", "B) Pelleting", "C) Hardening", "D) Wetting"], ans: 1 },
+      { id: 12, q: "Highest adaptability is observed in:", options: ["A) Single cross", "B) Double cross", "C) Three-way cross", "D) Multiple cross"], ans: 3 },
+      { id: 13, q: "Pre-sowing seed treatment to induce drought tolerance is:", options: ["A) Seed chilling", "B) Seed hardening", "C) Seed pelleting", "D) Seed tearing"], ans: 1 },
+      { id: 14, q: "A sample of seed taken from one point from a seed lot is called:", options: ["A) Working sample", "B) Primary sample", "C) Composite sample", "D) Submitted sample"], ans: 1 },
+      { id: 15, q: "Rice is harvested when the grains have:", options: ["A) 12% moisture", "B) 18% moisture", "C) 16% moisture", "D) 14% moisture"], ans: 2 },
+      { id: 16, q: "Which of the following is a popular white-seeded sesame variety in Tamil Nadu?", options: ["A) APK 1", "B) SVPR 1", "C) TPS 1", "D) VBN 1"], ans: 1 },
+      { id: 17, q: "SVRC stands for:", options: ["A) State Variety Release Committee", "B) State Variety Research Committee", "C) State Variety Release Corporation", "D) State Variety Research Corporation"], ans: 0 },
+      { id: 18, q: "The somatic embryogenesis:", options: ["A) Somatic and gametic hybrids", "B) Somatic hybrids", "C) Gametic hybrids", "D) None of these"], ans: 1 },
+      { id: 19, q: "The seed certification agencies perform:\ni) They select seed growers\nii) They carry out required field inspection\niii) They conduct seed tests\niv) They guide seed growers in production, processing and distribution of seeds", options: ["A) I only", "B) II and III", "C) I, II and III", "D) All are correct"], ans: 3 },
+      { id: 20, q: "Pulses are:", options: ["A) Rice", "B) Maize", "C) Wheat", "D) Sorghum"], ans: 2 },
+      { id: 21, q: "Seed sample taken from laboratory for testing is known as:", options: ["A) Primary sample", "B) Composite sample", "C) Submitted sample", "D) Working sample"], ans: 3 },
+      { id: 22, q: "The Seed Act was enacted by the Parliament in the year:", options: ["A) 1965", "B) 1966", "C) 1967", "D) 1968"], ans: 1 },
+      { id: 23, q: "Which of the following uses centrifugal force to mix and spread seeds over the dividing surface?", options: ["A) Gravity separator", "B) Spiral divider", "C) Gamet divider", "D) Riffle divider"], ans: 2 },
+      { id: 24, q: "Find the odd one:", options: ["A) Gravity separator", "B) Spiral divider", "C) Disc separator", "D) Pre-conditioner"], ans: 1 },
+      { id: 25, q: "Which property of seed is used in seed separator for upgrading?", options: ["A) Shape", "B) Weight", "C) Density", "D) Colour"], ans: 1 },
+      { id: 26, q: "Under the Indian Seeds Act 1966, the state seed testing laboratories are established in:", options: ["A) Sec. 2", "B) Sec. 4", "C) Sec. 5", "D) Sec. 9"], ans: 2 },
+      { id: 27, q: "Spray of which chemical helps to increase panicle exertion and seed set in hybrid rice?", options: ["A) DAP", "B) GA₃", "C) KCl", "D) Ethrel"], ans: 1 },
+      { id: 28, q: "Choose the correct explanation:\n(R) It is a cross-pollinated crop.\n(A) It is a monoecious crop.", options: ["A) Both A and R are true and R is the correct explanation of A", "B) Both A and R are true but R is not the correct explanation of A", "C) A is true and R is false", "D) Both A and R are false"], ans: 1 },
+      { id: 29, q: "Broadcasting seeds on the surface of seedbed is:", options: ["A) Placing the seeds in rows in seedbed and covering with soil", "B) Broadcasting the seeds in seedbed", "C) Dropping seeds in furrow lines in a continuous flow", "D) Dropping seeds at a fixed spacing and in a continuous stream"], ans: 1 },
+      { id: 30, q: "Consider the following statements:\nAssertion (A): Cumbu is a cross-pollinated crop.\nReason (R): Cumbu is protogyny.", options: ["A) Both A and R are true and R is the correct explanation of A", "B) Both A and R are true but R is not the correct explanation of A", "C) A is true but R is false", "D) A is false but R is true"], ans: 0 },
+      { id: 31, q: "______ is a new more uniform hybrid.", options: ["A) Synthetic", "B) Three-way cross hybrid", "C) Single cross hybrid", "D) Double cross hybrid"], ans: 2 },
+      { id: 32, q: "What is the validity period of certification tag issued by the seed certification agency?", options: ["A) 6 months", "B) 9 months", "C) 15 months", "D) 18 months"], ans: 2 },
+      { id: 33, q: "Which chemical is used to induce male sterility in wheat without affecting female fertility?", options: ["A) Maleic hydrazide", "B) Compound RH 531", "C) Ethrel", "D) EMS"], ans: 2 },
+      { id: 34, q: "Required quantity of seeds from seed box is delivered through:", options: ["A) Seed metering mechanism", "B) Seed drill", "C) Seed hopper", "D) Seed tube"], ans: 0 },
+      { id: 35, q: "The chemical used for seed hardening in rice:", options: ["A) Potassium chloride", "B) Succinic acid", "C) Sulphuric acid", "D) Potassium dihydrogen phosphate"], ans: 0 },
+      { id: 36, q: "______ is the process of removal of moisture from grains.", options: ["A) Screening", "B) Drying", "C) Crushing", "D) Grinding"], ans: 1 },
+      { id: 37, q: "The removal of seed coat hairs and short fibres in cotton is called:", options: ["A) Ginning", "B) Delinting", "C) Seed hardening", "D) Seed disinfection"], ans: 1 },
+      { id: 38, q: "Number of plants to be counted per count during field inspection in tillering crops:", options: ["A) 100", "B) 500", "C) 1000", "D) 1500"], ans: 1 },
+      { id: 39, q: "Under seed lot labelling, ______ is:", options: ["A) Voluntary", "B) Compulsory", "C) Optional", "D) None of these"], ans: 1 },
+      { id: 40, q: "A machine used to separate seeds on the basis of their surface smoothness used for seed cleaning:", options: ["A) Spiral separator", "B) Magnetic separator", "C) Specific gravity separator", "D) Velvet separator"], ans: 3 },
+      { id: 41, q: "Test weight of grains or seeds refers to weight of ______ seeds:", options: ["A) 100", "B) 1000", "C) 10", "D) 10000"], ans: 1 },
+      { id: 42, q: "Any method known by the principle of:", options: ["A) Specific gravity", "B) Gravitational force", "C) Centrifugal force", "D) None"], ans: 1 },
+      { id: 43, q: "Pulse grown in India:", options: ["A) Sapota", "B) Cauliflower", "C) Ber", "D) None"], ans: 3 },
+      { id: 44, q: "Number of ears to be taken for paddy inspection:", options: ["A) 5 counts", "B) 7 counts", "C) 6 counts", "D) 9 counts"], ans: 2 },
+      { id: 45, q: "Expand LFR:", options: ["A) Liable for rejection", "B) Liable for report verification", "C) Late field report", "D) Liable for report submission"], ans: 0 },
+      { id: 46, q: "Which section of the Seeds Act deals with seed inspector?", options: ["A) Section 15", "B) Section 10", "C) Section 13", "D) Section 11"], ans: 2 },
+      { id: 47, q: "Labelling seeds of notified kind/varieties is done under Section ______ of the Seeds Act, 1966.", options: ["A) 6", "B) 7", "C) 10", "D) 9"], ans: 1 },
+      { id: 48, q: "The minimum number of inspections carried out in groundnut:", options: ["A) 4 inspections", "B) 3 inspections", "C) 5 inspections", "D) 6 inspections"], ans: 0 },
+      { id: 49, q: "The central seed committee is formed under Section ______ of the Seeds Act.", options: ["A) 3", "B) 5", "C) 4", "D) 12"], ans: 0 },
+      { id: 50, q: "Validation for the seed lot can be obtained for ______ times.", options: ["A) 3", "B) 4", "C) Any number of times", "D) Answer not known"], ans: 2 },
+      { id: 51, q: "The safe moisture content for storage of paddy is:", options: ["A) 8%", "B) 10%", "C) 16%", "D) 13%"], ans: 3 },
+      { id: 52, q: "Boerner divider is also known as:", options: ["A) Mechanical divider", "B) Centrifugal divider", "C) Conical divider", "D) Gamet divider"], ans: 1 },
+      { id: 53, q: "Working sample for paddy is:", options: ["A) 40 g", "B) 50 g", "C) 70 g", "D) 100 g"], ans: 0 },
+      { id: 54, q: "A seed lot is sampled either in container or from bulk; several individual samples drawn from different containers are called:", options: ["A) Composite sample", "B) Working sample", "C) Primary sample", "D) Service sample"], ans: 0 },
+      { id: 55, q: "Hardened seed will perform well in:", options: ["A) Marginal land", "B) Rainfed sowing", "C) Garden land", "D) Wet land"], ans: 1 },
+      { id: 56, q: "The presence of pathogen inside the seed is termed as:", options: ["A) Admixture", "B) Infestation", "C) Infection", "D) Contamination"], ans: 2 },
+      { id: 57, q: "Government and State Governments coordinate matters relating to seed certification and functioning of agencies established under:", options: ["A) Section 6", "B) Section 8", "C) Section 3", "D) Section 4"], ans: 1 },
+      { id: 58, q: "The number of plants per count in medium spaced crops is:", options: ["A) 800 plants", "B) 200 plants", "C) 700 plants", "D) 500 plants"], ans: 3 },
+      { id: 59, q: "Float test is carried out in:", options: ["A) Maize", "B) Sunflower", "C) Paddy", "D) Groundnut"], ans: 0 },
+      { id: 60, q: "The percentage of ill-filled paddy seed should not exceed:", options: ["A) 2%", "B) 6%", "C) 7%", "D) 4%"], ans: 3 },
+      { id: 61, q: "Separate field inspection is also required if sowing or planting dates differ by more than:", options: ["A) 7 days", "B) 17 days", "C) 12 days", "D) 18 days"], ans: 0 },
+      { id: 62, q: "Maximum area per unit in seed certification is:", options: ["A) 5 acres", "B) 10 acres", "C) 20 acres", "D) 25 acres"], ans: 3 },
+      { id: 63, q: "Which among the following is NOT a field standard?", options: ["A) Isolation distance", "B) Other crop seed", "C) Off-types", "D) Objectionable weed plant"], ans: 1 },
+      { id: 64, q: "Find out the incorrect statement:", options: ["A) In India seed certification rules are based on rules proposed by OECD", "B) Nucleus & Breeder seed are exempted from certification", "C) Foundation and certified seeds do not come under the purview of certification", "D) Seed Control Order, 1983 brought accountability in seed transaction through licensing and regulatory provisions"], ans: 2 },
+      { id: 65, q: "In maize, how many plants/earheads are observed in one count during field inspection?", options: ["A) 100 plants/earheads", "B) 500 plants/earheads", "C) 1000 plants/earheads", "D) 1500 plants/earheads"], ans: 1 },
+      { id: 66, q: "Match the following inspections:\nA. Four inspections | B. Two inspections | C. Three inspections | D. L.F.R | E. Potato, Groundnut, Redgram", options: ["A) 2, 4, 5, 3, 1", "B) 1, 2, 3, 4, 5", "C) 3, 1, 2, 5, 4", "D) 4, 5, 1, 2, 3"], ans: 0 },
+      { id: 67, q: "Flat and round seeds can be separated by:", options: ["A) Specific gravity separator", "B) Spiral separator", "C) Magnetic separator", "D) None"], ans: 1 },
+      { id: 68, q: "Match the following:\nA. Tillering crops | B. ODV | C. Moisture estimation | D. Genetic contaminants", options: ["A) 2, 1, 4", "B) 4, 2, 1", "C) 1, 3, 4", "D) 3, 4, 1"], ans: 2 },
+      { id: 69, q: "Match the following:\nA. ISTA (1924) | B. Validity period | C. Re-validity period | D. Grow-out test | E. Upto 5", options: ["A) 1, 2, 3, 4, 5", "B) 2, 3, 4, 5, 1", "C) 3, 4, 2, 1, 5", "D) 4, 1, 5, 2, 3"], ans: 2 },
+      { id: 70, q: "Pre-cleaning of seeds is called:", options: ["A) Scarification", "B) Stratification", "C) Scalping", "D) Upgrading"], ans: 2 },
+      { id: 71, q: "The Indian Minimum Seed Certification Standards manual is published in:", options: ["A) 1966", "B) 1963", "C) 1968", "D) 1988"], ans: 2 },
+      { id: 72, q: "At market level, seed quality is monitored by:", options: ["A) Agricultural Officer", "B) Seed Inspector", "C) Seed Analyst", "D) Seed Certification Officer"], ans: 1 },
+      { id: 73, q: "The first generation resulting from crossing of two inbreds is:", options: ["A) Hybrids", "B) Synthetics", "C) Composites", "D) Variety"], ans: 0 },
+      { id: 74, q: "More segregation is found in:", options: ["A) F₁ generation", "B) F₂ generation", "C) F₃ generation", "D) F₅ generation"], ans: 1 },
+      { id: 75, q: "The reduction or loss in vigour and fertility as a result of inbreeding is called:", options: ["A) Inbreeding depression", "B) Co-heritability", "C) Heterosis", "D) Heritability"], ans: 0 },
+      { id: 76, q: "Two lines identical with respect to all other genes except the gene under investigation are known as:", options: ["A) Multilines", "B) Isogenic lines", "C) Hybrid lines", "D) Transition lines"], ans: 1 },
+      { id: 77, q: "Seed Act came into force on:", options: ["A) December 29, 1966", "B) October 2, 1969", "C) October 29, 1966", "D) December 29, 1969"], ans: 0 },
+      { id: 78, q: "The instrument used for seed sampling is:", options: ["A) Trier", "B) Bin", "C) Bags", "D) Dividers"], ans: 0 },
+      { id: 79, q: "In paddy ODV test, the seed lot is rejected if the result exceeds:", options: ["A) 2%", "B) 5%", "C) 6%", "D) 1%"], ans: 1 },
+      { id: 80, q: "Seed certification requires:", options: ["A) Genetic purity", "B) Physical purity", "C) Prescribed germination", "D) All the above"], ans: 3 },
+      { id: 81, q: "The method mainly suitable for seeds with working sample size of 10 g or less, where seeds should not be chaffy or bouncing, is:", options: ["A) Conical divider", "B) Soil divider", "C) Boerner divider", "D) Random cup method"], ans: 3 },
+      { id: 82, q: "If the field of a particular class does not meet the specified standards, ______ is done.", options: ["A) Inspection", "B) Acceptance", "C) Verification", "D) Downgrading"], ans: 3 },
+      { id: 83, q: "A plant that differs in morphological characters from the rest of the population of a crop variety is:", options: ["A) Off-type", "B) Crop", "C) Variety", "D) None"], ans: 0 },
+      { id: 84, q: "Separate field inspection report is required for different crop varieties if seed farmers are separated by more than:", options: ["A) 25 m", "B) 15 m", "C) 20 m", "D) 50 m"], ans: 3 },
+      { id: 85, q: "Match the following:\n1. Seed analysts | 2. Seed inspectors | 3. Certification agency | 4. Central Seed Committee\na) Section 13 | b) Section 8 | c) Section 3 | d) Section 12", options: ["A) 1-a, 2-b, 3-c, 4-d", "B) 1-d, 2-a, 3-b, 4-c", "C) 1-d, 2-c, 3-b, 4-a", "D) 1-b, 2-d, 3-a, 4-c"], ans: 1 },
+      { id: 86, q: "It is the real worth of seed lot for raising the crop. It is determined by calculating pure live seed percentage:", options: ["A) Planting value", "B) Germination", "C) Purity", "D) None"], ans: 0 },
+      { id: 87, q: "Germination percentage of chilli is:", options: ["A) 60%", "B) 65%", "C) 70%", "D) 75%"], ans: 2 },
+      { id: 88, q: "If the crop does not conform to prescribed standards, the report should be:", options: ["A) Warning report", "B) Liable for rejection report", "C) Rejection report", "D) Re-inspection report"], ans: 1 },
+      { id: 89, q: "______ is used to collect samples in both horizontal and vertical manner.", options: ["A) Nobbe trier", "B) Sleeve or stick trier", "C) Thief trier", "D) Sampling trier"], ans: 1 },
+      { id: 90, q: "The validity of breeder seed lot is:", options: ["A) 13 months", "B) 6 months", "C) 9 months", "D) 12 months"], ans: 2 },
+      { id: 91, q: "Mixing of all primary samples is known as:", options: ["A) Composite sample", "B) Sub-sample", "C) Working sample", "D) Submitted sample"], ans: 0 },
+      { id: 92, q: "A legally sanctioned system of quality control and seed multiplication and production is:", options: ["A) Seed certification", "B) Labelling", "C) Seed testing", "D) Field inspection"], ans: 0 },
+      { id: 93, q: "In paddy, ______ is the weight-grade technique using egg flotation.", options: ["A) Magnetic separator", "B) Specific gravity separator", "C) Cylinder separator", "D) Egg flotation"], ans: 1 },
+      { id: 94, q: "The officer appointed by the State Government to protect the quality of seed sold in the market is:", options: ["A) Seed Inspector", "B) Seed Analyst", "C) Seed Certification Officer", "D) Seed Testing Officer"], ans: 0 },
+      { id: 95, q: "Nobbe trier is useful in:", options: ["A) Sampling", "B) Dividing", "C) Weighing", "D) Purity analysis"], ans: 0 },
+      { id: 96, q: "The submitted sample size for paddy is:", options: ["A) 100 g", "B) 200 g", "C) 400 g", "D) 10 g"], ans: 2 },
+      { id: 97, q: "Seed sample taken for analysis by the seed inspector is called:", options: ["A) Certification sample", "B) Official sample", "C) Service sample", "D) Bulk sample"], ans: 1 },
+      { id: 98, q: "Seed sampling in cotton is done using:", options: ["A) Stick trier", "B) Nobbe trier", "C) Spoon method", "D) Hand method"], ans: 0 },
+      { id: 99, q: "What is the isolation distance for wheat crop infected with loose smut disease for certified seed production?", options: ["A) 100 m", "B) 150 m", "C) 200 m", "D) 250 m"], ans: 1 },
+      { id: 100, q: "Genuineness of cultivars refers to:", options: ["A) Genetic purity", "B) Physical purity", "C) Physiological quality", "D) Health quality"], ans: 0 },
+      { id: 101, q: "Number of field inspections is more in:", options: ["A) Self-pollinated crops", "B) Cross-pollinated crops", "C) Often cross-pollinated crops", "D) Hybrids"], ans: 1 },
+      { id: 102, q: "It is necessary to take a minimum of 5 counts up to:", options: ["A) 2 acres", "B) 10 acres", "C) 5 acres", "D) 8 acres"], ans: 2 },
+      { id: 103, q: "Normally, the number of field inspections made for a self-pollinated crop is:", options: ["A) 2", "B) 3", "C) 4", "D) 5"], ans: 1 },
+      { id: 104, q: "Number of phases of seed certification is:", options: ["A) 8", "B) 10", "C) 6", "D) 7"], ans: 2 },
+      { id: 105, q: "The order of seed sampling for seed quality analysis is:", options: ["A) Primary sample → Composite sample → Submitted sample → Working sample", "B) Submitted sample → Composite sample → Primary sample → Working sample", "C) Composite sample → Submitted sample → Working sample → Primary sample", "D) Working sample → Primary sample → Submitted sample → Composite sample"], ans: 0 },
+      { id: 106, q: "National organization involved in seed production is:", options: ["A) National Seed Corporation", "B) State Seed Certification Agency", "C) ISTA", "D) Central Seed Certification Agency"], ans: 0 },
+      { id: 107, q: "Pearson's square method is used in:", options: ["A) Seed sampling", "B) Seed blending", "C) Seed dividing", "D) Seed mixing"], ans: 1 },
+      { id: 108, q: "The pure seed fraction recommended for groundnut is:", options: ["A) 99%", "B) 98%", "C) 96%", "D) 97%"], ans: 0 },
+      { id: 109, q: "Only these kinds of crops are eligible for seed certification:", options: ["A) Newly released varieties", "B) Newly released hybrids", "C) All notified varieties", "D) All released varieties"], ans: 2 },
+      { id: 110, q: "Under the Seeds Act, 1966, certification is:", options: ["A) Voluntary", "B) Compulsory", "C) Ordinance", "D) None of these"], ans: 0 },
+      { id: 111, q: "The main features of the Seed Act are:", options: ["A) Voluntary certification", "B) Compulsory labelling", "C) Compulsory certification", "D) Both A & B"], ans: 3 },
+      { id: 112, q: "Dodder mill separates seed based on:", options: ["A) Surface texture", "B) Colour", "C) Size", "D) Shape"], ans: 0 },
+      { id: 113, q: "Chemical which is more suitable for seed priming is:", options: ["A) KCl", "B) PEG 6000", "C) HCl", "D) H₂SO₄"], ans: 1 },
+      { id: 114, q: "Which one of the following can be given with seed hardening treatment using 2% potassium chloride?", options: ["A) Cotton", "B) Safflower", "C) Blackgram", "D) Sorghum"], ans: 2 },
+      { id: 115, q: "The ideal temperature for mechanical drying of seeds is:", options: ["A) 40°C", "B) 30°C", "C) 50°C", "D) 20°C"], ans: 0 },
+      { id: 116, q: "The temperature limit for artificial air drying is:", options: ["A) 100°C", "B) 110°C", "C) 110°F", "D) 65°F"], ans: 3 },
+      { id: 117, q: "Process of bringing grains or other products to a desired moisture or temperature for processing is called:", options: ["A) Tempering", "B) Grading", "C) Processing", "D) Stacking"], ans: 0 },
+      { id: 118, q: "Moisture content of seeds in equilibrium with atmospheric humidity at a given temperature is called:", options: ["A) Inequilibrium moisture content", "B) Equilibrium moisture content", "C) Standard moisture content", "D) Graded moisture content"], ans: 1 },
+      { id: 119, q: "Who is the authority to issue licence for Seed Processing Unit (SPU)?", options: ["A) Deputy Director of Seed Inspector (DDSI)", "B) Assistant Director of Seed Certification (ADSC)", "C) Seed Certification Officer (SCO)", "D) Seed Inspector (SI)"], ans: 1 },
+      { id: 120, q: "Minimum number of ______ field inspection required for cross-pollinated crops?", options: ["A) 3", "B) 2", "C) 4", "D) None"], ans: 2 },
+      { id: 121, q: "Service sample is received from:", options: ["A) Seed inspectors", "B) Farmers", "C) Seed certification officers", "D) Certification agencies"], ans: 2 },
+      { id: 122, q: "Which method of mixing two or more different portions of seed produces uniformity in the final seed lot?", options: ["A) Hand halving method", "B) Spoon method", "C) Random cup method", "D) Pearson Square method"], ans: 3 },
+      { id: 123, q: "What is the Seed Multiplication Ratio (SMR) of paddy variety and hybrid?", options: ["A) 80, 100", "B) 100, 80", "C) 20, 80", "D) 80, 20"], ans: 1 },
+      { id: 124, q: "Sowing of seed crop is concerned with ______ days from the date of sowing before flowering, whichever is earlier:", options: ["A) 10 and 15", "B) 35 and 15", "C) 15 and 35", "D) None of the above"], ans: 1 },
+      { id: 125, q: "Who is the inspection authority of seed certification?", options: ["A) SCO", "B) ADA", "C) DDSI", "D) SI"], ans: 0 },
+      { id: 126, q: "The process of controlled hydration of seeds to a level that permits pre-germinative metabolic activity to proceed, but prevents actual emergence of the radicle is:", options: ["A) Seed hardening", "B) Seed fortification", "C) Seed priming", "D) Seed coating"], ans: 2 },
+      { id: 127, q: "______ are crossing between parents belonging to the same species but between two varieties.", options: ["A) Intraspecific hybrids", "B) Interspecific hybrids", "C) Intrageneric hybrids", "D) Intergeneric hybrids"], ans: 0 },
+      { id: 128, q: "Seed testing is done for:", options: ["A) Purity", "B) Germination", "C) Moisture content", "D) All the above"], ans: 3 },
+      { id: 129, q: "Which one of the following is a direct vigour test for seeds?", options: ["A) Speed of germination", "B) Tetrazolium test", "C) Accelerated ageing test", "D) Seedling length measurement"], ans: 2 },
+      { id: 130, q: "TZ test is used to estimate:", options: ["A) Seed moisture", "B) Seed purity", "C) Seed viability", "D) Genetic purity"], ans: 2 },
+      { id: 131, q: "As per the ISTA Rules, the final count for maize seed germination test has to be taken on:", options: ["A) 4th day", "B) 7th day", "C) 10th day", "D) 14th day"], ans: 1 },
+      { id: 132, q: "What is the name of the journal published by ISTA?", options: ["A) Seed Research", "B) Seed Tech", "C) Seed Science and Technology", "D) Journal of Seed Technology"], ans: 2 },
+      { id: 133, q: "The ISTA standard for minimum number of seeds for germination testing is:", options: ["A) 50", "B) 100", "C) 200", "D) 400"], ans: 3 },
+      { id: 134, q: "The maximum temperature for safe drying of orthodox seeds is:", options: ["A) 40°C", "B) 41°C", "C) 42°C", "D) 43°C"], ans: 0 },
+      { id: 135, q: "At which humidity percentage should cereal grains be stored?", options: ["A) 5–6%", "B) 7–9%", "C) 10–15%", "D) 8–10%"], ans: 3 },
+      { id: 136, q: "Storage pests are controlled by:", options: ["A) Termination", "B) Fumigation", "C) Elimination", "D) Fertigation"], ans: 1 },
+      { id: 137, q: "Weight of seed before drying is W₁ and W₂ after drying. Percentage of moisture content is calculated by:", options: ["A) W₁/W₂ × 100", "B) (W₁ − W₂)/W₁ × 100", "C) W₁ × W₂", "D) W₁W₂/W₂ × 100"], ans: 1 },
+      { id: 138, q: "Quality of seed is determined by:", options: ["A) Purity test", "B) Moisture content test", "C) Germination or seed viability", "D) All of these"], ans: 3 },
+      { id: 139, q: "Seed (Control) Order / Seed Enforcement was issued by Government of India during:", options: ["A) 1973", "B) 1975", "C) 1983", "D) 1985"], ans: 2 },
+      { id: 140, q: "Headquarters of the Union for the Protection of New Plant Varieties (UPOV) is located at:", options: ["A) Bangkok", "B) Washington", "C) Moscow", "D) Geneva"], ans: 3 },
+      { id: 141, q: "The most important factor which determines the stability of seed is:", options: ["A) Light", "B) Temperature", "C) Moisture", "D) Nutrient"], ans: 2 },
+      { id: 142, q: "Hidden infestation of stored grains can be detected by:", options: ["A) Staining method", "B) Ninhydrin method", "C) KOH method", "D) All of these"], ans: 3 },
+      { id: 143, q: "Seed health tests may be done through:", options: ["A) Visual examination", "B) Washing test", "C) Soaking", "D) Any one of the above"], ans: 3 },
+      { id: 144, q: "Match the crops with the respective seed tests:\na) Sorghum | b) Wheat | c) Soybean | d) Cotton\n1. Peroxidase test | 2. NaOH test | 3. PAGE | 4. KOH bleach test", options: ["A) 4, 2, 1, 2", "B) 1, 4, 2, 3", "C) 2, 3, 1, 4", "D) 4, 2, 2, 1"], ans: 2 },
+      { id: 145, q: "The ideal requirements for good seed are:", options: ["A) Genetic and physical purity", "B) Good germination", "C) Free from disease and weeds", "D) All the above"], ans: 3 },
+      { id: 146, q: "Which is the most useful method of detecting virus in seeds?", options: ["A) Seed plating test", "B) Agar test", "C) ELISA", "D) None of these"], ans: 2 },
+      { id: 147, q: "Indian seed industry comprises of state seed corporations:", options: ["A) 10", "B) 11", "C) 12", "D) 15"], ans: 2 },
+      { id: 148, q: "The test used for quick testing of seed is:", options: ["A) Acid Fuchsin test", "B) Thiourea test", "C) TZ test", "D) Succinic acid test"], ans: 2 },
+      { id: 149, q: "An equipment used to separate lightweight material from heavier seeds during purity analysis is:", options: ["A) Purity work board", "B) Seed blower", "C) Seed thresher", "D) Seed crusher"], ans: 1 },
+      { id: 150, q: "Seeds which, at the end of the test period, are neither hard nor fresh and have not produced seedlings are classified as:", options: ["A) Hard seeds", "B) Dead seeds", "C) Fresh & ungerminated seeds", "D) Dormant seeds"], ans: 1 },
+      { id: 151, q: "In 2,4-D blotter method, addition of 0.1–0.02% 2,4-D solution is to:", options: ["A) Enhance seed germination", "B) Inhibit growth of the pathogen", "C) Enhance growth of the pathogen", "D) Inhibit the germination of seeds"], ans: 3 },
+      { id: 152, q: "Economic part of sugar beet is:", options: ["A) Stem", "B) Leaves", "C) Tap root", "D) Lateral root"], ans: 2 },
+      { id: 153, q: "______ is an application of mature pollen to immature non-receptive stigma prior to anthesis.", options: ["A) Irradiation", "B) Double pollination", "C) Bud pollination", "D) Pollination"], ans: 2 },
+      { id: 154, q: "What is the maximum permissible number of ODV for foundation seed class of maize?", options: ["A) 5/kg", "B) 10/kg", "C) 15/kg", "D) 20/kg"], ans: 0 },
+      { id: 155, q: "The science of evaluating the planting quality of seed before it is sown refers to:", options: ["A) Seed processing", "B) Seed packaging & handling", "C) Seed testing", "D) Seed marketing"], ans: 2 },
+      { id: 156, q: "The loss in seed weight when it is dried is termed:", options: ["A) Seed vigour", "B) Seed viability", "C) Seed germination", "D) Seed moisture"], ans: 3 },
+      { id: 157, q: "Assertion (A): Low temperature storage helps to extend the storability of fruits and vegetables.\nReason (R): Low temperature storage slows down microbial action and enzymatic activity.", options: ["A) Both (A) & (R) are true and (R) is the correct explanation of (A)", "B) Both true but (R) is not the correct explanation", "C) A true, R false", "D) Both false"], ans: 0 },
+      { id: 158, q: "Which test is used to assess the genetic purity of seeds?", options: ["A) Potassium nitrate test", "B) Ferric chloride test", "C) Grow-out test", "D) Seed germination test"], ans: 2 },
+      { id: 159, q: "What is the maximum germination % for certified seed production of wheat and maize?", options: ["A) 90%, 90%", "B) 85%, 80%", "C) 85%, 90%", "D) 80%, 80%"], ans: 2 },
+      { id: 160, q: "Seed coat peroxidase test is used for:", options: ["A) Sorghum", "B) Wheat", "C) Soybean", "D) Groundnut"], ans: 2 },
+      { id: 161, q: "Alkaloid test is used for:", options: ["A) Lucerne", "B) Lupines", "C) Chrysanthemum", "D) Cereals"], ans: 1 },
+      { id: 162, q: "The blotter method of seed health testing detects primarily:", options: ["A) Virus", "B) Fungi", "C) Bacteria", "D) Nematodes"], ans: 1 },
+      { id: 163, q: "Seed drying is very important to maintain its:", options: ["A) Viability and vigour", "B) Protein content", "C) Oil content", "D) Chemical composition"], ans: 0 },
+      { id: 164, q: "The two most important factors influencing the life span of seeds under storage are:", options: ["A) Relative humidity and temperature", "B) Rainfall and RH", "C) Climate and temperature", "D) Seed size and moisture content"], ans: 0 },
+      { id: 165, q: "Maximum moisture content for safe storage in wheat seed is:", options: ["A) 12%", "B) 15%", "C) 7%", "D) None"], ans: 0 },
+      { id: 166, q: "When the pathogen is loosely mixed with seed in the form of sclerotia, galls, etc., they are called:", options: ["A) Infection", "B) Infestation", "C) Contamination", "D) Concomitant contamination"], ans: 3 },
+      { id: 167, q: "Tetrazolium test determines the level of activity of enzyme:", options: ["A) ATPase", "B) Dehydrogenase", "C) Carboxylase", "D) Isomerase"], ans: 1 },
+      { id: 168, q: "Match the following:\nA) Seed Act (1966) | B) Seed Rules (1968) | C) Seed Control Order (1983) | D) National Seed Programme (1976)", options: ["A) 1, 2, 3, 4", "B) 3, 4, 1, 5", "C) 3, 4, 5, 1", "D) 2, 1, 3, 4"], ans: 2 },
+      { id: 169, q: "Certified seed of cotton should have minimum germination of:", options: ["A) 50%", "B) 65%", "C) 70%", "D) 80%"], ans: 1 },
+      { id: 170, q: "Solar treatment is used for:", options: ["A) Loose smut", "B) Stem rust", "C) Powdery mildew", "D) Blast"], ans: 0 },
+      { id: 171, q: "The moisture content for safe storage of cereals is:", options: ["A) 12–14%", "B) 14–16%", "C) 16–18%", "D) 18–20%"], ans: 0 },
+      { id: 172, q: "Percentage oil content is highest in:", options: ["A) Sesame", "B) Groundnut", "C) Castor", "D) Soybean"], ans: 2 },
+      { id: 173, q: "The Indian Patent Act was passed in the year:", options: ["A) 1960", "B) 1970", "C) 1980", "D) 1990"], ans: 1 },
+      { id: 174, q: "Match the minimum germination percentage:\nA) Rice, Jute, Sesame (80%) | B) Cauliflower, Cotton, Bhendi (65%) | C) Carrot, Chilli, Cucurbits (60%) | D) Hybrid maize (90%) | E) Groundnut, Castor, Tomato, Cabbage (70%)", options: ["A) 2, 4, 3, 5, 1", "B) 2, 4, 5, 3, 1", "C) 3, 4, 1, 5, 2", "D) 5, 1, 4, 2, 3"], ans: 2 },
+      { id: 175, q: "Father of seed testing:", options: ["A) Roberts", "B) Lakon", "C) Frederick Nobbe", "D) Strasburger"], ans: 2 },
+      { id: 176, q: "Decayed seedlings are classified as:", options: ["A) Normal seedlings", "B) Dead seedlings", "C) Injured seedlings", "D) Abnormal seedlings"], ans: 3 },
+      { id: 177, q: "The Head Quarter of the Protection of Plant Varieties and Farmers' Rights (PPV&FR) Authority is located at:", options: ["A) New Delhi", "B) Chennai", "C) Bangalore", "D) Mumbai"], ans: 0 },
+      { id: 178, q: "Find the correct statement:\n1. Maharashtra was the first State to establish an official Seed Certification Agency during 1970.\n2. Karnataka was the first State to establish the Seed Certification Agency as an autonomous body during 1974.", options: ["A) 1 only", "B) 2 only", "C) Both 1 & 2", "D) Neither 1 nor 2"], ans: 2 },
+      { id: 179, q: "The National Seed Research and Training Centre is located at:", options: ["A) Varanasi", "B) Delhi", "C) Mumbai", "D) Kolkata"], ans: 0 },
+      { id: 180, q: "Indian Institute of Seed Science is located at:", options: ["A) Varanasi, UP", "B) Delhi", "C) Mumbai, Maharashtra", "D) Mau, UP"], ans: 3 },
+      { id: 181, q: "Only these kinds of crops are eligible for seed certification:", options: ["A) Newly released varieties", "B) Newly released hybrids", "C) All notified varieties", "D) All released varieties"], ans: 2 },
+      { id: 182, q: "In a seed sample, the proportion of all non-living matter, diseased and insect-infested seeds and broken seeds is called:", options: ["A) Garbage", "B) Genetic purity", "C) Pure matter", "D) Inert matter"], ans: 3 },
+      { id: 183, q: "The final count for paddy germination test is:", options: ["A) 14 days", "B) 16 days", "C) 8 days", "D) 10 days"], ans: 0 },
+      { id: 184, q: "The temperature used in the high constant-temperature method for estimation of moisture in rice seed is:", options: ["A) 140°C", "B) 130°C", "C) 120°C", "D) 110°C"], ans: 1 },
+      { id: 185, q: "Chemical used in quick viability test is:", options: ["A) Potassium permanganate", "B) GA₃", "C) 2,3,5-Triphenyl tetrazolium chloride", "D) NaCl"], ans: 2 },
+      { id: 186, q: "The seeds that withstand long-term storage are:", options: ["A) Orthodox seeds", "B) Recalcitrant seeds", "C) Intermediate seeds", "D) Difficult recalcitrant"], ans: 0 },
+      { id: 187, q: "According to Harrington's rule, the storage potential of the seed is doubled when there is:", options: ["A) 1% decrease in moisture content and 10°F decrease in temperature", "B) 1% decrease in moisture content and 10°F increase in temperature", "C) 1% increase in moisture content and 10°F increase in temperature", "D) 1% increase in moisture content and 10°F decrease in temperature"], ans: 0 },
+      { id: 188, q: "For long storage of seeds, the suitable seed storage container is:", options: ["A) Gada cloth bag", "B) Gunny bag", "C) Polythene bag", "D) Paper bag"], ans: 2 },
+      { id: 189, q: "Passport data of seed is:", options: ["A) Seed health status", "B) Germination", "C) Purity", "D) Complete information about seed"], ans: 3 },
+      { id: 190, q: "Blotter test is recommended by ISTA for analyzing:", options: ["A) Seed germination", "B) Seed vigour", "C) Seed health", "D) Mechanical damage"], ans: 2 },
+      { id: 191, q: "The toxin produced by Aspergillus flavus is:", options: ["A) Aflatoxin", "B) Ochratoxin", "C) Fumerosin", "D) Zeatin"], ans: 0 },
+      { id: 192, q: "Karnal bunt of paddy can be identified by soaking the seeds in:", options: ["A) KOH", "B) NaOH", "C) Phenol", "D) GA₃"], ans: 1 },
+      { id: 193, q: "A certificate from a recognized plant quarantine service indicating that a sample is substantially free from disease or pests is called:", options: ["A) DUS certificate", "B) Certification", "C) Quarantine", "D) Phytosanitary certificate"], ans: 3 },
+      { id: 194, q: "The prophylactic measure used to prevent entry of new diseases, insects and weeds from other countries is called:", options: ["A) Truthful certificate", "B) Certification", "C) Quarantine", "D) Phytosanitary certificate"], ans: 2 },
+      { id: 195, q: "The headquarters of ISTA is located at:", options: ["A) Geneva, Switzerland", "B) Rome, Italy", "C) Zurich, Switzerland", "D) Paris, France"], ans: 2 },
+      { id: 196, q: "Which Act/Order was enacted to ensure the production, marketing and equal distribution of seed and compulsory licensing of the dealer?", options: ["A) Seed Act 1966", "B) Seed Rules 1968", "C) Seed Control Order 1983", "D) National Seed Policy 2002"], ans: 2 },
+      { id: 197, q: "Nomograph used to construct seed viability is based on:", options: ["A) Seed moisture content & temperature", "B) Temperature & period of viability", "C) Moisture content & period of viability", "D) Temperature, seed moisture content & period of viability"], ans: 3 },
+      { id: 198, q: "______ is the total of all seed attributes that give effective plant stand in the field.", options: ["A) Viability", "B) Vigor", "C) Germinability", "D) All of the above"], ans: 1 },
+      { id: 199, q: "Ability of embryo to live, grow and develop into a seedling under favourable conditions:", options: ["A) Viability", "B) Vigor", "C) Germinability", "D) None of the above"], ans: 0 },
+      { id: 200, q: "______ seedlings do not show the capacity for continued development into normal plants when grown in favourable conditions.", options: ["A) Normal seedlings", "B) Abnormal seedlings", "C) Fresh ungerminated seeds", "D) Hard seeds"], ans: 1 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounter = document.getElementById("q-counter");
+    const progressPercent = document.getElementById("progress-percent");
+    const progressBarFill = document.getElementById("progress-bar-fill");
+    const questionText = document.getElementById("question-text");
+    const optionsContainer = document.getElementById("options-container");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePercent = document.getElementById("res-score-percent");
+    const resFeedback = document.getElementById("res-feedback");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+    const toggleReviewBtn = document.getElementById("toggle-review-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToResultsBtn = document.getElementById("back-to-results-btn");
+    const reviewItemsContainer = document.getElementById("review-items-container");
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+    });
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      let count = 200;
+
+      if (countSelect.value === "custom") {
+        count = Math.max(1, Math.min(200, parseInt(customCountInput.value) || 25));
+      } else {
+        count = parseInt(countSelect.value);
+      }
+
+      if (mode === "practice" || count < 200) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      userAnswers = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+    });
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounter.textContent = `Question ${currentIndex + 1} of ${total}`;
+      const pct = Math.round(((currentIndex + 1) / total) * 100);
+      progressPercent.textContent = `${pct}%`;
+      progressBarFill.style.width = `${pct}%`;
+
+      questionText.textContent = `${qData.id}. ${qData.q}`;
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optText, optIdx) => {
+        const btn = document.createElement("button");
+        btn.className = "option-btn";
+        if (userAnswers[currentIndex] === optIdx) {
+          btn.classList.add("selected");
+        }
+
+        btn.innerHTML = `<span>${optText}</span>`;
+        btn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+        optionsContainer.appendChild(btn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+      prevBtn.style.opacity = currentIndex === 0 ? "0.5" : "1";
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    submitBtn.addEventListener("click", () => {
+      evaluateAndShowResults();
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePercent.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resFeedback.textContent = "Outstanding Performance! High proficiency across Seed Testing & Certification standards.";
+        resFeedback.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resFeedback.textContent = "Good Result! Review field counts, seed acts, and ISTA regulations.";
+        resFeedback.style.color = "var(--primary)";
+      } else {
+        resFeedback.textContent = "Needs Revision. Re-read Seed Certification phases, sampling equipment, and germination limits.";
+        resFeedback.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    toggleReviewBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToResultsBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewItemsContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Answered";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="badge ${badgeClass}">${statusText}</span>
+          <div class="review-text">Q${idx + 1} (Orig #${q.id}). ${q.q}</div>
+          <div class="review-detail" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="review-detail" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewItemsContainer.appendChild(item);
+      });
+    }
+  </script>
+</body>
+</html>
