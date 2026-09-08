@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indian Polity — Test 5 (100 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select, .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Polity Test 5</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Parliamentary System, Legislative Procedure & State Executive (Test 5)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing: <strong>30 seconds per question</strong> allocated based on your selected count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–100)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="100">All Questions (100 Questions)</option>
+            <option value="10">10 Questions</option>
+            <option value="25">25 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="75">75 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 100)</label>
+          <input type="number" id="custom-count-input" min="1" max="100" value="25" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">50 min 0 sec (30s / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#9878;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">General Studies</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#128220;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Indian Polity</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 100</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">50:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "The bicameral parliamentary system in India is primarily based on the models of which two countries?", options: ["A) France and Germany", "B) Britain and USA", "C) Canada and Australia", "D) Ireland and South Africa"], ans: 1 },
+      { id: 2, q: "In India, how many sessions does Parliament conduct in a year?", options: ["A) 2", "B) 3", "C) 4", "D) 5"], ans: 1 },
+      { id: 3, q: "During which months is the Monsoon Session usually held?", options: ["A) February to May", "B) July to August", "C) November to December", "D) September to October"], ans: 1 },
+      { id: 4, q: "Which Constitutional Amendment Bill provided 33% reservation for women in Parliament and State Legislative Assemblies and was passed by Rajya Sabha in 2010 but later lapsed?", options: ["A) 100th Amendment Bill", "B) 108th Amendment Bill", "C) 110th Amendment Bill", "D) 128th Amendment Bill"], ans: 1 },
+      { id: 5, q: "The procedure followed to remove the President, Vice-President, and judges of the Supreme Court and High Courts is known as:", options: ["A) Censure procedure", "B) Impeachment procedure", "C) Recall procedure", "D) Prorogation procedure"], ans: 1 },
+      { id: 6, q: "What is the minimum quorum required to conduct a session of either Lok Sabha or Rajya Sabha?", options: ["A) One-fifth of the total members", "B) One-sixth of the total members", "C) One-tenth of the total members", "D) One-third of the total members"], ans: 2 },
+      { id: 7, q: "Who has the authority to summon Parliament at least twice a year?", options: ["A) Prime Minister", "B) Speaker of the Lok Sabha", "C) President of India", "D) Vice-President"], ans: 2 },
+      { id: 8, q: "Who is the administrative head of the Parliament Secretariat?", options: ["A) Secretary-General", "B) Minister of Parliamentary Affairs", "C) Prime Minister", "D) Speaker of the Lok Sabha"], ans: 3 },
+      { id: 9, q: "Who has the final authority to certify whether a Bill is a Money Bill?", options: ["A) President of India", "B) Speaker of the Lok Sabha", "C) Finance Minister", "D) Chairman of Rajya Sabha"], ans: 1 },
+      { id: 10, q: "Who presides over a joint sitting of both Houses of Parliament?", options: ["A) President of India", "B) Chairman of Rajya Sabha", "C) Speaker of the Lok Sabha", "D) Deputy Chairman of Rajya Sabha"], ans: 2 },
+      { id: 11, q: "Under which Amendment does the Speaker have power to disqualify a member on grounds of defection?", options: ["A) 42nd Amendment Act", "B) 44th Amendment Act", "C) 52nd Amendment Act", "D) 61st Amendment Act"], ans: 2 },
+      { id: 12, q: "The Speaker's vote used to break a tie is called:", options: ["A) Veto vote", "B) Casting vote", "C) Advisory vote", "D) Quorum vote"], ans: 1 },
+      { id: 13, q: "The Rajya Sabha was constituted on:", options: ["A) 26 January 1950", "B) 15 August 1947", "C) 3 April 1952", "D) 13 May 1952"], ans: 2 },
+      { id: 14, q: "What is the tenure of a Rajya Sabha member?", options: ["A) 4 years", "B) 5 years", "C) 6 years", "D) Permanent"], ans: 2 },
+      { id: 15, q: "What fraction of Rajya Sabha members retire every two years?", options: ["A) One-half", "B) One-third", "C) One-fourth", "D) One-fifth"], ans: 1 },
+      { id: 16, q: "Who acts as the ex-officio Chairman of the Rajya Sabha?", options: ["A) Speaker of Lok Sabha", "B) Chief Justice of India", "C) Vice-President", "D) Prime Minister"], ans: 2 },
+      { id: 17, q: "Which state has the maximum number of representatives (31) in the Rajya Sabha?", options: ["A) Maharashtra", "B) Uttar Pradesh", "C) Bihar", "D) West Bengal"], ans: 1 },
+      { id: 18, q: "How many members represent Tamil Nadu in the Rajya Sabha?", options: ["A) 16", "B) 18", "C) 20", "D) 39"], ans: 1 },
+      { id: 19, q: "If the Rajya Sabha wants to delay a Money Bill passed by the Lok Sabha, what is the maximum time it can withhold it?", options: ["A) 7 days", "B) 14 days", "C) 30 days", "D) 6 months"], ans: 1 },
+      { id: 20, q: "Under which Article can Rajya Sabha authorize Parliament to make laws on subjects in the State List?", options: ["A) Article 249", "B) Article 250", "C) Article 252", "D) Article 254"], ans: 0 },
+      { id: 21, q: "Which Article gives Rajya Sabha the power to authorize Parliament to create new All India Services?", options: ["A) Article 308", "B) Article 312", "C) Article 315", "D) Article 320"], ans: 1 },
+      { id: 22, q: "Who decides whether a Bill is a Money Bill or an ordinary Bill?", options: ["A) President of India", "B) Prime Minister", "C) Finance Minister", "D) Speaker of the Lok Sabha"], ans: 3 },
+      { id: 23, q: "A resolution for removal of the National Emergency can be introduced and passed in which House?", options: ["A) Rajya Sabha", "B) Lok Sabha", "C) Either House", "D) Joint sitting of both Houses"], ans: 1 },
+      { id: 24, q: "Under which Article are Hindi and English declared as the official languages of Parliament?", options: ["A) Article 110", "B) Article 120", "C) Article 210", "D) Article 343"], ans: 1 },
+      { id: 25, q: "Private Member Bills are typically debated on:", options: ["A) Monday", "B) Wednesday", "C) Friday", "D) Saturday"], ans: 2 },
+      { id: 26, q: "How many Private Member Bills have been passed in the history of the Indian Parliament?", options: ["A) 5", "B) 10", "C) 14", "D) 20"], ans: 2 },
+      { id: 27, q: "In which year was the last Private Member Bill passed in the Indian Parliament?", options: ["A) 1965", "B) 1970", "C) 1977", "D) 1984"], ans: 1 },
+      { id: 28, q: "The “Rights of Transgender Persons Bill, 2014” was introduced by:", options: ["A) Derek O'Brien", "B) Tiruchi Siva", "C) Shashi Tharoor", "D) Kanimozhi"], ans: 1 },
+      { id: 29, q: "The distribution of legislative powers between Union and States is detailed in which Schedule?", options: ["A) Fifth Schedule", "B) Seventh Schedule", "C) Ninth Schedule", "D) Eleventh Schedule"], ans: 1 },
+      { id: 30, q: "If there is a conflict between a Central law and State law on a Concurrent List subject, whose law prevails?", options: ["A) State Government", "B) Central Government", "C) Supreme Court decides arbitrarily", "D) Both laws become void"], ans: 1 },
+      { id: 31, q: "Which subjects belong to the State List?", options: ["A) Defense and Banking", "B) Railways and Post Office", "C) Police and Public Health", "D) Education and Forests"], ans: 2 },
+      { id: 32, q: "Which subjects belong to the Concurrent List?", options: ["A) Foreign Affairs and War", "B) Police and Agriculture", "C) Currency and Coinage", "D) Education and Trade Unions"], ans: 3 },
+      { id: 33, q: "To amend certain provisions such as the election of the President, what majority is required?", options: ["A) Simple majority of Parliament", "B) Special majority of Parliament only", "C) Special majority of Parliament and ratification by half of the State Legislatures", "D) Unanimous consent of all States"], ans: 2 },
+      { id: 34, q: "Which Article deals with the power and procedure for amending the Constitution?", options: ["A) Article 352", "B) Article 356", "C) Article 368", "D) Article 370"], ans: 2 },
+      { id: 35, q: "A special majority in Parliament requires:", options: ["A) Two-thirds of total membership", "B) Majority of total membership AND 2/3rd of members present and voting", "C) Simple majority of members present and voting", "D) Three-fourths of members present and voting"], ans: 1 },
+      { id: 36, q: "To alter the boundaries or names of existing States, what majority is required?", options: ["A) Simple majority", "B) Special majority", "C) Special majority with State ratification", "D) Three-fourths majority"], ans: 0 },
+      { id: 37, q: "To amend Fundamental Rights or Directive Principles, what majority is required?", options: ["A) Simple majority", "B) Special majority", "C) Special majority with State ratification", "D) Absolute majority of total membership only"], ans: 1 },
+      { id: 38, q: "What is the minimum age required to be appointed as a Governor?", options: ["A) 25 years", "B) 30 years", "C) 35 years", "D) 40 years"], ans: 2 },
+      { id: 39, q: "What fraction of the State Legislative Council can the Governor nominate from persons having special knowledge in literature, science, art, cooperative movement and social service?", options: ["A) 1/3", "B) 1/4", "C) 1/6", "D) 1/12"], ans: 2 },
+      { id: 40, q: "Who has the power to grant pardons, reprieves, respites or remissions of punishment at the State level?", options: ["A) Chief Minister", "B) Advocate General", "C) Governor", "D) High Court Chief Justice"], ans: 2 },
+      { id: 41, q: "According to Article 164(1), who appoints the Chief Minister of a State?", options: ["A) President of India", "B) Governor", "C) Speaker of the Legislative Assembly", "D) High Court Chief Justice"], ans: 1 },
+      { id: 42, q: "Who acts as the sole link of communication between the State Council of Ministers and the Governor?", options: ["A) Chief Secretary", "B) Speaker", "C) Chief Minister", "D) Advocate General"], ans: 2 },
+      { id: 43, q: "If the Governor returns an ordinary Bill for reconsideration and the State Legislature passes it again, what must the Governor do?", options: ["A) He can withhold assent permanently", "B) He must give his assent", "C) He must refer it to the Supreme Court", "D) He can dissolve the Assembly"], ans: 1 },
+      { id: 44, q: "In the State Legislative Assembly, who has the casting vote when there is a tie?", options: ["A) Chief Minister", "B) Speaker", "C) Governor", "D) Leader of the Opposition"], ans: 1 },
+      { id: 45, q: "Which is a Financial Committee of Parliament?", options: ["A) Committee on Privileges", "B) Committee on Petitions", "C) Estimates Committee", "D) Rules Committee"], ans: 2 },
+      { id: 46, q: "Which committee examines appropriation accounts and CAG reports?", options: ["A) Public Accounts Committee", "B) Estimates Committee", "C) Committee on Public Undertakings", "D) Business Advisory Committee"], ans: 0 },
+      { id: 47, q: "Which committee examines the autonomy, efficiency and business practices of public-sector enterprises?", options: ["A) Estimates Committee", "B) Public Accounts Committee", "C) Committee on Public Undertakings", "D) Standing Committee on Finance"], ans: 2 },
+      { id: 48, q: "The first hour of a Lok Sabha sitting in which members ask questions is called:", options: ["A) Zero Hour", "B) Question Hour", "C) Calling Attention Hour", "D) Motion Hour"], ans: 1 },
+      { id: 49, q: "Which committee suggests alternative economic policies and administrative reforms?", options: ["A) Public Accounts Committee", "B) Estimates Committee", "C) Rules Committee", "D) Committee on Subordinate Legislation"], ans: 1 },
+      { id: 50, q: "A motion introduced to test whether the ruling government still enjoys majority support is called:", options: ["A) Censure Motion", "B) Adjournment Motion", "C) No-confidence Motion", "D) Privilege Motion"], ans: 2 },
+      { id: 51, q: "What is the minimum age to become a Rajya Sabha member?", options: ["A) 21 years", "B) 25 years", "C) 30 years", "D) 35 years"], ans: 2 },
+      { id: 52, q: "Which Act removed the requirement that a Rajya Sabha candidate must be a resident of the State from which they are elected?", options: ["A) Representation of the People Act, 1951", "B) 44th Constitutional Amendment Act", "C) Representation of the People (Amendment) Act, 2003", "D) Delimitation Act, 2002"], ans: 2 },
+      { id: 53, q: "During which months is the Budget Session usually held?", options: ["A) February to May", "B) July to August", "C) November to December", "D) January to March"], ans: 0 },
+      { id: 54, q: "During which months is the Winter Session held?", options: ["A) September to October", "B) December to January", "C) November to December", "D) January to February"], ans: 2 },
+      { id: 55, q: "How many days before and after a parliamentary session is an MP protected from arrest in civil cases?", options: ["A) 14 days", "B) 30 days", "C) 40 days", "D) 60 days"], ans: 2 },
+      { id: 56, q: "Which State has the lowest representation in Rajya Sabha, with only one member?", options: ["A) Goa", "B) Sikkim", "C) Tripura", "D) Meghalaya"], ans: 1 },
+      { id: 57, q: "In which House can a Money Bill be introduced?", options: ["A) Rajya Sabha only", "B) Lok Sabha", "C) Either House", "D) Joint sitting of both Houses"], ans: 1 },
+      { id: 58, q: "What is the maximum period for which Rajya Sabha can delay a Money Bill?", options: ["A) 7 days", "B) 14 days", "C) 30 days", "D) 3 months"], ans: 1 },
+      { id: 59, q: "What happens if Rajya Sabha does not return a Money Bill within 14 days?", options: ["A) The Bill lapses", "B) The President calls a joint sitting", "C) The Bill is deemed to be passed by both Houses", "D) Lok Sabha must reintroduce it"], ans: 2 },
+      { id: 60, q: "Can a Money Bill be introduced without the President's prior recommendation?", options: ["A) Yes, with Speaker's approval", "B) No, President's recommendation is mandatory", "C) Yes, if Finance Minister introduces it", "D) Yes, if 50 MPs sign it"], ans: 1 },
+      { id: 61, q: "Which stage involves detailed clause-by-clause discussion of a Bill?", options: ["A) First Reading", "B) Second Reading (General discussion)", "C) Third Reading", "D) Report Stage"], ans: 3 },
+      { id: 62, q: "What is the main purpose of the Third Reading of a Bill?", options: ["A) Introduction and publication in Gazette", "B) Clause-by-clause amendment", "C) To get the formal approval of Parliament", "D) Reference to a Select Committee"], ans: 2 },
+      { id: 63, q: "Who can introduce a Private Member Bill?", options: ["A) Prime Minister only", "B) Any Cabinet Minister", "C) Any MP who is not a minister", "D) Leader of the Opposition only"], ans: 2 },
+      { id: 64, q: "How much advance notice must be given before introducing a Private Member Bill?", options: ["A) 7 days", "B) 14 days", "C) 1 month", "D) 3 months"], ans: 2 },
+      { id: 65, q: "On which day are Private Member Bills usually debated?", options: ["A) Every Monday", "B) Every Wednesday", "C) Alternate Fridays", "D) Last day of each session"], ans: 2 },
+      { id: 66, q: "Can a Private Member introduce a Financial/Money Bill?", options: ["A) Yes, with Speaker's permission", "B) No", "C) Yes, if certified by 10 MPs", "D) Yes, during Zero Hour only"], ans: 1 },
+      { id: 67, q: "If an ordinary Bill introduced by a Minister is defeated in the Lok Sabha, what happens?", options: ["A) The Bill is sent to Rajya Sabha", "B) The President issues an ordinance", "C) The government must resign", "D) Speaker resubmits the Bill"], ans: 2 },
+      { id: 68, q: "Defense, Foreign Affairs and Railways belong to which List?", options: ["A) Union List", "B) State List", "C) Concurrent List", "D) Residuary Powers"], ans: 0 },
+      { id: 69, q: "Police, Public Health and Agriculture belong to which List?", options: ["A) Union List", "B) State List", "C) Concurrent List", "D) Residuary Powers"], ans: 1 },
+      { id: 70, q: "Education and Trade Unions belong to which List?", options: ["A) Union List", "B) State List", "C) Concurrent List", "D) Residuary List"], ans: 2 },
+      { id: 71, q: "If there is a conflict between Central and State laws on a Concurrent List subject, whose law prevails?", options: ["A) State law", "B) Central law", "C) High Court decides", "D) Law passed earlier prevails"], ans: 1 },
+      { id: 72, q: "How many methods are provided for amending the Constitution under and outside Article 368?", options: ["A) 2", "B) 3", "C) 4", "D) 5"], ans: 1 },
+      { id: 73, q: "To create a new State or alter the boundaries of existing States, what majority is required?", options: ["A) Simple majority", "B) Special majority", "C) Special majority with State ratification", "D) Absolute majority of total membership"], ans: 0 },
+      { id: 74, q: "What majority is needed to amend Fundamental Rights and Directive Principles?", options: ["A) Simple majority", "B) Special majority", "C) Special majority with State ratification", "D) Simple majority with 50% State approval"], ans: 1 },
+      { id: 75, q: "For an amendment affecting the federal structure, what is additionally required along with a special majority?", options: ["A) Approval of Supreme Court", "B) Ratification by at least 50% of the State Legislatures", "C) Referendum by citizens", "D) Ratification by all States unanimously"], ans: 1 },
+      { id: 76, q: "Does the Constitution prescribe a time limit for State Legislatures to ratify a Constitutional Amendment Bill?", options: ["A) 6 months", "B) 1 year", "C) 2 years", "D) No time limit"], ans: 3 },
+      { id: 77, q: "Which Part of the Constitution deals with State Governments (Articles 152–237)?", options: ["A) Part V", "B) Part VI", "C) Part VII", "D) Part VIII"], ans: 1 },
+      { id: 78, q: "Under Article 164(1), who appoints the Chief Minister?", options: ["A) President of India", "B) Governor", "C) Speaker of Legislative Assembly", "D) Chief Justice of High Court"], ans: 1 },
+      { id: 79, q: "Can one person act as Governor for two or more States?", options: ["A) Yes", "B) No", "C) Only during financial emergency", "D) Only in Union Territories"], ans: 0 },
+      { id: 80, q: "Who appoints the Advocate General and members of the State Public Service Commission?", options: ["A) Chief Minister", "B) President", "C) Governor", "D) Law Minister"], ans: 2 },
+      { id: 81, q: "Under which Article can the Governor recommend President's Rule in a State?", options: ["A) Article 352", "B) Article 356", "C) Article 360", "D) Article 365"], ans: 1 },
+      { id: 82, q: "Who acts as the sole link between the State Council of Ministers and the Governor?", options: ["A) Chief Secretary", "B) Speaker", "C) Chief Minister", "D) Advocate General"], ans: 2 },
+      { id: 83, q: "Whose decision is final regarding interpretation of rules and procedures inside the State Legislative Assembly?", options: ["A) Chief Minister", "B) Speaker", "C) Governor", "D) High Court"], ans: 1 },
+      { id: 84, q: "Who appoints the chairpersons of all committees in the State Legislative Assembly?", options: ["A) Governor", "B) Chief Minister", "C) Speaker", "D) Leader of the House"], ans: 2 },
+      { id: 85, q: "What are the two main categories of Parliamentary Committees?", options: ["A) Executive and Judicial Committees", "B) Standing Committees and Ad-hoc Committees", "C) Permanent and Temporary Boards", "D) Union and State Committees"], ans: 1 },
+      { id: 86, q: "Who has exclusive power to make laws on subjects in the Union List?", options: ["A) Parliament", "B) State Legislature", "C) President by ordinance", "D) Inter-State Council"], ans: 0 },
+      { id: 87, q: "Which Article provides for a Council of Ministers headed by the Chief Minister to aid and advise the Governor?", options: ["A) Article 161", "B) Article 162", "C) Article 163(1)", "D) Article 165"], ans: 2 },
+      { id: 88, q: "Which Article states that the official languages of Parliament are Hindi and English?", options: ["A) Article 110", "B) Article 120", "C) Article 210", "D) Article 343"], ans: 1 },
+      { id: 89, q: "Who can permit an MP who does not know Hindi or English to speak in their mother tongue?", options: ["A) Prime Minister", "B) Minister of Parliamentary Affairs", "C) Presiding Officer / Speaker", "D) Leader of the Opposition"], ans: 2 },
+      { id: 90, q: "What was the maximum permitted strength of the Lok Sabha before the 104th Amendment?", options: ["A) 545", "B) 550", "C) 552", "D) 560"], ans: 2 },
+      { id: 91, q: "What is the maximum permitted strength of the Rajya Sabha?", options: ["A) 245", "B) 248", "C) 250", "D) 252"], ans: 2 },
+      { id: 92, q: "Out of the 545 members in the Lok Sabha (prior to abolition of nominated seats), how many were elected directly by the people?", options: ["A) 540", "B) 543", "C) 545", "D) 530"], ans: 1 },
+      { id: 93, q: "Which Financial Committee scrutinizes appropriation accounts?", options: ["A) Public Accounts Committee", "B) Estimates Committee", "C) Committee on Public Undertakings", "D) Finance Standing Committee"], ans: 0 },
+      { id: 94, q: "What happens if a Constitutional Amendment Bill is not passed because of disagreement between Lok Sabha and Rajya Sabha?", options: ["A) President calls a joint sitting", "B) Deadlock occurs as there is no provision for a joint sitting", "C) Lok Sabha passes it by simple majority", "D) Supreme Court decides the matter"], ans: 1 },
+      { id: 95, q: "Can the President return a Constitutional Amendment Bill to Parliament for reconsideration?", options: ["A) Yes, once", "B) No, the President must give assent", "C) Yes, with Supreme Court permission", "D) Yes, if passed without state ratification"], ans: 1 },
+      { id: 96, q: "In a Parliamentary democracy, the Council of Ministers remains in power as long as it enjoys the confidence of:", options: ["A) President", "B) Parliament (Lok Sabha)", "C) Rajya Sabha", "D) Supreme Court"], ans: 1 },
+      { id: 97, q: "Which House does NOT have the power to pass a no-confidence motion against the Council of Ministers?", options: ["A) Lok Sabha", "B) Rajya Sabha", "C) State Legislative Assembly", "D) House of the People"], ans: 1 },
+      { id: 98, q: "If both the Speaker and Deputy Speaker are absent, who presides over the State Legislative Assembly?", options: ["A) Governor", "B) Chief Minister", "C) Any senior member present in the House (or member from panel of chairpersons)", "D) Law Minister"], ans: 2 },
+      { id: 99, q: "In which House must the resolution for removal of the Vice-President be initiated?", options: ["A) Lok Sabha", "B) Rajya Sabha", "C) Either House", "D) Joint sitting of Parliament"], ans: 1 },
+      { id: 100, q: "Before a proposed law receives the President's assent, it is called a:", options: ["A) Act", "B) Bill", "C) Ordinance", "D) Statute"], ans: 1 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(100, parseInt(customCountInput.value) || 25));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 30;
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : ""} (30s / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 100) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 30;
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const m = Math.floor(secs / 60);
+      const s = secs % 60;
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time is up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${qData.id}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! High accuracy across parliamentary procedures, committees, and state executives.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review legislative stages, Private Member Bills, and amendment majorities to push higher.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Articles 120, 249, 312, 368, and parliamentary rules recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${q.id}. ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+</html>

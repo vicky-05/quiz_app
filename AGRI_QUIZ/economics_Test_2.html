@@ -553,7 +553,7 @@
 
     <div id="setup-screen" class="card">
       <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Agricultural Economics, Marketing & Credit</h2>
-      <p style="color: var(--text-muted); font-size: 0.9rem;">Automated exam pacing: <strong>30 seconds per question</strong> allocated based on question quantity.</p>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Automated exam pacing: <strong>1 minute per question</strong> allocated based on question quantity.</p>
 
       <div class="setup-grid">
         <div class="form-group">
@@ -584,7 +584,7 @@
         <div class="form-group">
           <label>Total Time Allotted</label>
           <div>
-            <span class="time-preview-badge" id="time-preview-pill">92 min 30 sec (30s / question)</span>
+            <span class="time-preview-badge" id="time-preview-pill">185 min 0 sec (1 min / question)</span>
           </div>
         </div>
 
@@ -619,7 +619,7 @@
           <div class="status-icon">&#9201;</div>
           <div>
             <div class="status-label">Time Left</div>
-            <div class="status-val" id="timer-val">92:30</div>
+            <div class="status-val" id="timer-val">03:05:00</div>
           </div>
         </div>
       </div>
@@ -936,10 +936,10 @@
 
     function updatePillTime() {
       const qCount = computeSelectedCount();
-      const totalSec = qCount * 30;
+      const totalSec = qCount * 60; // 1 minute per question
       const mins = Math.floor(totalSec / 60);
       const secs = totalSec % 60;
-      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : ""} (30s / question)`;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
     }
 
     countSelect.addEventListener("change", () => {
@@ -968,7 +968,7 @@
         activeQuiz = [...questionBank];
       }
 
-      totalTimeSeconds = count * 30;
+      totalTimeSeconds = count * 60; // 1 minute per question
       timeRemaining = totalTimeSeconds;
 
       userAnswers = {};
@@ -985,8 +985,12 @@
     });
 
     function formatTime(secs) {
-      const m = Math.floor(secs / 60);
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
       const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
       return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
     }
 
@@ -1000,7 +1004,7 @@
 
         if (timeRemaining <= 0) {
           clearInterval(timerInterval);
-          alert("Time is up! Submitting your examination automatically.");
+          alert("Time's up! Submitting your examination automatically.");
           evaluateAndShowResults();
         }
       }, 1000);

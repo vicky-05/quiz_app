@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GS Full Mock Examination (200 MCQs — 3 Hours)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f8fafc;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #facc15;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--accent-badge);
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+    }
+
+    .container {
+      max-width: 900px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: #022c22;
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.6;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--text-muted);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--text-muted); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.35rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam Portal</h1>
+    <div class="sub-title">GS Full Mock Test — 200 MCQs</div>
+    <div class="tagline">Practice Today &bull; Perform Tomorrow &bull; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">General Studies Full Mock Examination</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Comprehensive Test: 200 Questions covering Tamil Grammar, Polity, History, Tamil Nadu Admin, Economy, and Aptitude.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Official Exam Mode (Sequential 1–200, Timer active)</option>
+            <option value="practice">Practice Mode (Randomized)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Total Allocated Time</label>
+          <div>
+            <span class="time-preview-badge">3 Hours (180 Minutes)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start 3-Hour Exam Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#9678;</div>
+          <div>
+            <div class="status-label">Exam</div>
+            <div class="status-val">GS Full Mock</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#128196;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val" id="section-tag-val">General Studies</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 200</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">03:00:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Full Mock Exam Evaluation</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Final Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">200</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review All 200 Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Retake Mock Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const fullMockQuestions = [
+      { id: 1, q: "எடுத்துக்காட்டுகளுடன் இலக்கணத்தைப் பொருத்துக:\n(a) இடக்கரடக்கல் — 1. நிலம்\n(b) குழுஉக்குறி — 2. கால்கழுவி வந்தான்\n(c) மங்கலம் — 3. பறி\n(d) இலக்கணமுடையது — 4. இறைவனடி சேர்ந்தார்", options: ["A) 1, 2, 3, 4", "B) 2, 3, 4, 1", "C) 3, 4, 1, 2", "D) 4, 1, 2, 3"], ans: 1 },
+      { id: 2, q: "கீழ் இதழும் மேல்வாய்ப் பல்லும் இணைவதால் பிறக்கும் எழுத்து ______.", options: ["A) ம்", "B) ப்", "C) ய்", "D) வ்"], ans: 3 },
+      { id: 3, q: "“அக்களத்து” என்ற சொல்லைப் பிரித்து எழுதக் கிடைப்பது ______.", options: ["A) அ + களத்து", "B) அக் + களத்து", "C) அந்த + களத்து", "D) அ + களம்"], ans: 0 },
+      { id: 4, q: "“கசடற” என்னும் சொல்லைப் பிரித்து எழுதக் கிடைப்பது ______.", options: ["A) கச + டற", "B) கசடு + அறா", "C) கசட + அற", "D) கசடு + அற"], ans: 3 },
+      { id: 5, q: "எதிர்ச்சொல் தருக: மலர்தல்", options: ["A) விரிதல்", "B) பூத்தல்", "C) உதிர்தல்", "D) கூம்புதல்"], ans: 3 },
+      { id: 6, q: "“இடும்பை” என்பதற்குப் பொருத்தமான எதிர்ச்சொல்லைக் கண்டுபிடி.", options: ["A) துன்பம்", "B) இன்பம்", "C) துயர்", "D) வருத்தம்"], ans: 1 },
+      { id: 7, q: "சந்திப்பிழையற்ற தொடரை அறிக.", options: ["A) நெகிழிப்பையை புறக்கணிப்போம்; நெடுநாள் வாழ்வோம்.", "B) நெகிழிப்பை புறக்கணிப்போம் நெடுநாள் வாழ்வோம்.", "C) நெகிழிப்பையை புறக்கணிப்போம் நெடுநாள் வாழ்வோம்.", "D) நெகிழிப்பையைப் புறக்கணிப்போம்; நெடுநாள் வாழ்வோம்."], ans: 3 },
+      { id: 8, q: "சுவடியோடு பொருந்தாத ஒன்றைத் தேர்வு செய்க.", options: ["A) பனையோலை", "B) எழுத்தாணி", "C) கடுக்காய்", "D) மை"], ans: 2 },
+      { id: 9, q: "தவறான சொல்லை வட்டமிடுக.", options: ["A) வென்றாள்", "B) வென்றான்", "C) கண்டான்", "D) சென்றான்"], ans: 1 },
+      { id: 10, q: "சந்திப்பிழை அற்ற வாக்கியங்களைக் கண்டறிக.", options: ["A) முதியவருக்குக் கொடுக்கச் சொன்னார்.", "B) முதியவருக்கு கொடுக்க சொன்னார்.", "C) முதியவருக்கு கொடுக்கச் சொன்னார்.", "D) முதியவருக்குக் கொடுக்க சொன்னார்."], ans: 0 },
+      { id: 11, q: "உழவர் சேற்று வயலில் ______ நடுவர்.", options: ["A) செடி", "B) மரம்", "C) விதை", "D) நாற்று"], ans: 3 },
+      { id: 12, q: "பொருத்துக:\n(a) பூனை — 1. குனுகும்\n(b) புறா — 2. முரலும்\n(c) குரங்கு — 3. சீறும்\n(d) வண்டு — 4. அலப்பும்", options: ["A) 1, 2, 3, 4", "B) 2, 3, 4, 1", "C) 3, 1, 4, 2", "D) 4, 1, 2, 3"], ans: 2 },
+      { id: 13, q: "வழூஉச்சொல்லைத் தேர்வு செய்க.", options: ["A) சுவரில் எழுதாதே", "B) வலப்பக்கம் செல்", "C) வெந்நீர் தாழ்வாரத்தில் ஓடியது", "D) குடத்தை உருட்டினான்"], ans: 2 },
+      { id: 14, q: "வழுவற்ற வாக்கியம் எது?", options: ["A) மாடுகள் மேய்ந்தது", "B) குதிரைகள் ஓடிற்று", "C) மந்தையாக மேய்ந்து கொண்டிருந்த மாடுகளைப் புலி துரத்தியது.", "D) பறவைகள் பறந்தது"], ans: 2 },
+      { id: 15, q: "“DUBBING” என்ற ஆங்கிலச் சொல்லுக்குக் கீழ்க்காணும் விடைகளில் எது சரியானது?", options: ["A) மொழிபெயர்ப்பு", "B) படத்தொகுப்பு", "C) ஒலிச் சேர்க்கை", "D) காட்சியமைப்பு"], ans: 2 },
+      { id: 16, q: "ஆங்கிலச் சொல்லுக்கு நேரான தமிழ்ச் சொல்லைப் பெற்றிருக்கும் இணையைக் குறிப்பிடுக.", options: ["A) Agreement – ஒப்பந்தம்", "B) Order – சட்டம்", "C) Document – புத்தகம்", "D) File – தாள்"], ans: 0 },
+      { id: 17, q: "பொருத்துக:\n(a) திண்மை — 2. வலிமை\n(b) தின்மை — 1. தீமை\n(c) தண்மை — 4. குளிர்ச்சி\n(d) தன்மை — 3. இயல்பு", options: ["A) 2, 1, 4, 3", "B) 3, 4, 1, 2", "C) 4, 3, 2, 1", "D) 1, 3, 4, 2"], ans: 3 },
+      { id: 18, q: "பின்வருவனவற்றுள் பொருந்தும் இணையைக் தேர்ந்தெடு.", options: ["A) அமைதி – போர்", "B) நட்பு – பகை", "C) உண்மை – பொய்", "D) கோபப்படு – போரிடு"], ans: 3 },
+      { id: 19, q: "ஒரு பொருள் தரும் பல சொற்கள் — ______.", options: ["A) நிலம், நீர்", "B) உலகம், மேதினி", "C) காற்று, நெருப்பு", "D) விண், மண்"], ans: 1 },
+      { id: 20, q: "ஒரு பொருள் தரும் பல சொற்கள் — “சொல்லுதல்”.", options: ["A) கேட்டல், அறிதல்", "B) செப்புதல், கூறல்", "C) பார்த்தல், நுகர்தல்", "D) படித்தல், எழுதுதல்"], ans: 1 },
+      { id: 21, q: "“கல்” என்னும் வேர்ச்சொல்லின் பதம் அறிக.", options: ["A) கற்றல்", "B) கற்கிறான்", "C) கற்றான்", "D) கற்று"], ans: 0 },
+      { id: 22, q: "“மிக்க” இச்சொல்லின் வேர்ச்சொல்லைக் காண்க.", options: ["A) மிகுதி", "B) மிக்கார்", "C) மிகு", "D) மிக"], ans: 2 },
+      { id: 23, q: "“கொள்” என்று வேர்ச்சொல்லிலிருந்து உருவாகிய வினையெச்சம் எது?", options: ["A) கொண்டு", "B) கொண்டான்", "C) கொள்கிறான்", "D) கொண்ட"], ans: 0 },
+      { id: 24, q: "குறிப்புவினையெச்சம் வெளிப்படையாகக் காட்டாது:", options: ["A) காலத்தை", "B) செயலை", "C) பண்பை", "D) கருத்தாவை"], ans: 0 },
+      { id: 25, q: "அகர வரிசைப்படுத்துக:", options: ["A) மிளகு, மருங்கை, முசிறி, மூதூர், மேற்குமலை", "B) மூதூர், மேற்குமலை, மருங்கை, மிளகு, முசிறி", "C) மருங்கை, மிளகு, முசிறி, மூதூர், மேற்குமலை", "D) முசிறி, மூதூர், மருங்கை, மிளகு, மேற்குமலை"], ans: 2 },
+      { id: 26, q: "அகர வரிசையில் அமைந்துள்ள சொற்களைக் கண்டறிக.", options: ["A) அங்கை, அஞ்சு, அந்தி, அல்லல், அள்ளல்", "B) அஞ்சு, அங்கை, அந்தி, அல்லல், அள்ளல்", "C) அந்தி, அங்கை, அஞ்சு, அல்லல், அள்ளல்", "D) அள்ளல், அல்லல், அந்தி, அஞ்சு, அங்கை"], ans: 0 },
+      { id: 27, q: "சொற்களை ஒழுங்குப்படுத்தி சொற்றொடராக்குக:\nமணம் வைத்தாய், புதுமை, மண்ணில், மலர்க்குள்.", options: ["A) புதுமை மலர்க்குள் மண்ணில் மணம் வைத்தாய்.", "B) மண்ணில் புதுமை மலர்க்குள் மணம் வைத்தாய்.", "C) மணம் வைத்தாய் புதுமை மலர்க்குள் மண்ணில்.", "D) மலர்க்குள் மண்ணில் புதுமை மணம் வைத்தாய்."], ans: 1 },
+      { id: 28, q: "இருவினைகளின் வேறுபாடு அறிக: “பணிந்து – பணித்து”.", options: ["A) ஆசிரியர் பணித்தவுடன் மணி பணிந்தான்.", "B) மணி பணித்தவுடன் ஆசிரியர் பணிந்தார்.", "C) மணி பணிந்து ஆசிரியரைப் பணித்தார்.", "D) இருவரும் பணிந்து பணித்தனர்."], ans: 0 },
+      { id: 29, q: "சரியான தொடரைத் தேர்ந்தெடு.", options: ["A) குமரி கண்ட நோய்க்குக் குறி கொடு", "B) குமரி நோய்க்குக் குறி கண்ட கொடு", "C) குறி கொடு குமரி கண்ட நோய்க்கு", "D) நோய்க்குக் குறி கொடு குமரி கண்ட"], ans: 0 },
+      { id: 30, q: "சரியான தொடரைத் தேர்ந்தெடு: “சேர்த்து – சேர்ந்து”.", options: ["A) மாணவர்கள் சேர்ந்து சண்டையிட்டனர், ஆசிரியர் சேர்த்து வைத்தார்.", "B) ஆசிரியர் சேர்ந்து வைத்தார், மாணவர்கள் சேர்த்து சண்டையிட்டனர்.", "C) மாணவர்கள் சேர்த்து சண்டையிட்டனர் சேர்ந்து ஆசிரியர்.", "D) சேர்ந்து மாணவர்கள் சேர்த்து வைத்தார் ஆசிரியர்."], ans: 0 },
+      { id: 31, q: "கொல்லையிலே வாழை, பலா, மாங்கனிகள் குலுங்கும். இவ்விடைக்கேற்ற வினாவினை எழுதுக?", options: ["A) கொல்லையிலே பழங்கள் உள்ளதா?", "B) கொல்லையில் மாங்கனி எங்கே?", "C) கொல்லையிலே குலுங்குவன யாவை?", "D) கொல்லையில் மரங்கள் எவை?"], ans: 2 },
+      { id: 32, q: "விடைக்கேற்ற வினாவைத் தேர்ந்தெடு:\n“கன்னியாகுமரி இந்தியாவின் தென்முனையில் அமைந்துள்ளது.”", options: ["A) கன்னியாகுமரி எப்போது உருவானது?", "B) கன்னியாகுமரி எங்கு அமைந்துள்ளது?", "C) கன்னியாகுமரி பெரிய ஊரா?", "D) கன்னியாகுமரிக்கு செல்வது எப்படி?"], ans: 1 },
+      { id: 33, q: "“எழுவாய் செய்யும் வினையைக் கொண்டு முடியும்” தொடர்?", options: ["A) செயப்பாட்டுவினைத் தொடர்", "B) பிறவினைத் தொடர்", "C) தன்வினைத் தொடர்", "D) செய்வினைத் தொடர்"], ans: 3 },
+      { id: 34, q: "பிறமொழிச்சொல்லற்ற தொடர் எது?", options: ["A) என் நண்பன் நமஸ்காரம் கூறினான்.", "B) தினந்தோறும் யோகாசனம் செய்.", "C) பேப்பரில் கையெழுத்து போடு.", "D) அலுவலகத்தில் கையெழுத்து வாங்கக் கூடாது."], ans: 3 },
+      { id: 35, q: "மரபுத் தொடரில் அறிக — “ஏட்டுச் சுரைக்காய் கறிக்குதவாது”.", options: ["A) சுரைக்காய் சமையலுக்கு ஏற்றதல்ல", "B) புத்தகம் படித்து சமைக்க முடியாது", "C) பட்டறிவில்லாத படிப்பறிவு", "D) கறி சமைக்க சுரைக்காய் தேவை"], ans: 2 },
+      { id: 36, q: "கீழே கொடுக்கப்பட்டுள்ள குறியீடுகளைக் கொண்டு சரியான விடையைத் தேர்ந்தெடு.", options: ["A) 1–அ, 2–ஆ, 3–இ, 4–ஈ", "B) 1–இ, 2–ஈ, 3–அ, 4–ஆ", "C) 1–ஈ, 2–இ, 3–ஆ, 4–அ", "D) 1–ஆ, 2–அ, 3–ஈ, 4–இ"], ans: 1 },
+      { id: 37, q: "“கொக்கொக்க கூம்பும் பருவத்து” — இவ்வுவமையால் விளக்கப்படும் பொருள் யாது?", options: ["A) கொக்கு போல காத்திருத்தல்", "B) காலமறிந்து விரைந்து செயல்படுதல்", "C) அமைதியாக அமர்ந்திருத்தல்", "D) மீன் பிடிக்க முயற்சித்தல்"], ans: 1 },
+      { id: 38, q: "அலுவல் சார்ந்த சொற்கள் (கலைச்சொல்) — Electronic devices.", options: ["A) மின்னணுக் கருவிகள்", "B) மின்சாரப் பொருட்கள்", "C) இயந்திரக் கருவிகள்", "D) தொலைத்தொடர்புக் கருவிகள்"], ans: 0 },
+      { id: 39, q: "அலுவல் சார்ந்த கலைச்சொற்கள்: Launch Vehicle என்பதன் தமிழ்ச்சொல்லைக் கண்டறிக.", options: ["A) வானூர்தி", "B) தரை ஊர்தி", "C) ஏவு ஊர்தி", "D) விரைவு ஊர்தி"], ans: 2 },
+      { id: 40, q: "“கால் பந்து விளையாடுவாயா?” என்ற வினாவிற்கு “விளையாடுவேன்” என்பது எவ்வகை விடை?", options: ["A) சுட்டு விடை", "B) நேர் விடை", "C) மறை விடை", "D) ஏவல் விடை"], ans: 1 },
+      { id: 41, q: "“என்னுடன் ஊருக்கு வருவாயா? … வராமல் இருப்பேனா?” என்று கூறுவது எவ்வகை விடை?", options: ["A) ஏவல் விடை", "B) சுட்டு விடை", "C) வினா எதிர் வினாதல் விடை", "D) உற்றது உரைத்தல்"], ans: 2 },
+      { id: 42, q: "பூஜை, விஷயம், ராகம் என்பவை முறையே ______ என்று தமிழில் வழங்கப்படும்.", options: ["A) வழிபாடு, செய்தி, பண்ணிசை", "B) சடங்கு, பேச்சு, பாட்டு", "C) வணக்கம், பொருள், ஓசை", "D) அர்ச்சனை, சொல், பண்"], ans: 0 },
+      { id: 43, q: "இலக்கண நெறியிலிருந்து பிறழ்ந்து சிதைந்து வழங்கும் சொல்.", options: ["A) குடந்தை", "B) கும்பகோணம்", "C) தஞ்சாவூர்", "D) திருச்சிராப்பள்ளி"], ans: 0 },
+      { id: 44, q: "கீழ்க்காணும் ஊர் பெயர்களில் சரியான மருஉவை எழுதுக.", options: ["A) புதுவை – சென்னை", "B) கோவை – கோயம்புத்தூர்", "C) நெல்லை – மதுரை", "D) குடந்தை – திருவாரூர்"], ans: 1 },
+      { id: 45, q: "நிறுத்தற்குறி அறிக — எது சரியானது?", options: ["A) கண்ணா வா! அதோ அங்குள்ள துணி ஓவியங்களைப் பார்ப்போம்.", "B) “கண்ணா வா அதோ அங்குள்ள துணி ஓவியங்களைப் பார்ப்போம்!”", "C) “கண்ணா, வா! அதோ! அங்குள்ள துணி ஓவியங்களைப் பார்ப்போம்.”", "D) கண்ணா, வா அதோ அங்குள்ள துணி ஓவியங்களைப் பார்ப்போம்."], ans: 2 },
+      { id: 46, q: "நிறுத்தற்குறி அறிக — எது சரியானது?", options: ["A) ஓவியம் குமரனால் வரையப்பட்டது?", "B) ஓவியம்! குமரனால் வரையப்பட்டது.", "C) ஓவியம் குமரனால், வரையப்பட்டது!", "D) ஓவியம் குமரனால் வரையப்பட்டது."], ans: 3 },
+      { id: 47, q: "எழுத்து வழக்குத் தொடரைக் கண்டறிக.", options: ["A) உசிரு இருக்கற வரை தப்பு செய்ய மாட்டேன்.", "B) உசிரு இருக்கும் வரைக்கும் தப்பு செய்யமாட்டேன்.", "C) உயிர் இருக்கும் வரை தவறு செய்யமாட்டேன்.", "D) ஜீவன் இருக்கும் வரை தப்பு பண்ணமாட்டேன்."], ans: 2 },
+      { id: 48, q: "பின்வருவனவற்றுள் எது சரியானது? (பேச்சு வழக்கு)", options: ["A) அம்மா பசிக்குது எனக்குச் சோறு வேணும்.", "B) அம்மா பசிக்கிறது எனக்கு உணவு வேண்டும்.", "C) அன்னையே பசிக்கிறது சோறு கொடுங்கள்.", "D) தாய் பசிக்கிறது சாதம் தாருங்கள்."], ans: 0 },
+      { id: 49, q: "சொற்களை இணைத்து புதிய சொல் உருவாக்குக — “சோறு”.", options: ["A) குடித்தான்", "B) பருகினான்", "C) தின்றான்", "D) விழுங்கினான்"], ans: 2 },
+      { id: 50, q: "“மருள்” — எதிர்ச்சொல்.", options: ["A) மயக்கம்", "B) இருள்", "C) தெளிவு", "D) அறிவு"], ans: 1 },
+      { id: 51, q: "பொருத்தமான காலத்தைச் சுட்டுக: “மகாகவி சுப்ரமணிய பாரதியார் ‘நீடுதுயில் நீக்கப் பாடி வந்த நிலா’ என்று பாராட்டப் பெற்றவர்.”", options: ["A) இறந்தகாலம்", "B) நிகழ்காலம்", "C) எதிர்காலம்", "D) தொடர் எதிர்காலம்"], ans: 0 },
+      { id: 52, q: "பொருத்தமான காலம் அமைத்தல்: சரியான இணையைக் தேர்ந்தெடு.", options: ["A) கண்ணன் வந்தான் – இறந்தகாலம்", "B) கண்ணன் வருவான் – நிகழ்காலம்", "C) கண்ணன் வருகிறான் – எதிர்காலம்", "D) கண்ணன் வந்தான் – எதிர்காலம்"], ans: 0 },
+      { id: 53, q: "சரியான வினாச் சொல்லைத் தேர்ந்தெடு: “பொய்கையாழ்வார் — ______ பாமாலை சூட்டுகிறார்?”", options: ["A) ஏன்", "B) எங்கு", "C) எவற்றை", "D) எதற்கு"], ans: 2 },
+      { id: 54, q: "சரியான வினாச் சொல்லைத் தேர்ந்தெடுக்க: “குற்றாலக் குறவஞ்சியைப் பாடியவர் — ______?”", options: ["A) எவர்", "B) எங்கே", "C) யார்", "D) எப்படி"], ans: 2 },
+      { id: 55, q: "சரியான இணைப்புச் சொல்லினைத் தேர்ந்தெடு.", options: ["A) ஆனால்", "B) எனவே", "C) அதுபோல", "D) எனினும்"], ans: 2 },
+      { id: 56, q: "சரியான இணைப்புச் சொல் அமைந்த வாக்கியத்தைக் கண்டறிக.", options: ["A) நேற்று கனமழை பொழிந்தது ஆயினும் குளங்கள் நிரம்பின.", "B) நேற்று கனமழை பொழிந்தது; அதனால் ஏரி, குளங்கள் நிரம்பின.", "C) நேற்று கனமழை பொழிந்தது எனவே வெயில் அடித்தது.", "D) நேற்று கனமழை பொழிந்தது ஆனால் ஏரிகள் நிரம்பின."], ans: 1 },
+      { id: 57, q: "சரியான சொல்லைத் தேர்வு செய்க — “நாடு என்றும் தூய்மையைக் ______.”", options: ["A) கைக்கொள்வோம்", "B) கடைப்பிடிப்போம்", "C) செய்வோம்", "D) ஆக்குவோம்"], ans: 1 },
+      { id: 58, q: "அடைப்புக்குள் உள்ள சொல்லைத் தகுந்த இடத்தில் சேர்க்க — “கவிழும்”.", options: ["A) மலைமுகட்டில் மேகம் கவிழும்", "B) கடலில் கப்பல் கவிழும் அழகானது", "C) காற்றில் மரங்கள் கவிழும்", "D) ஆற்றில் நீர் கவிழும்"], ans: 0 },
+      { id: 59, q: "இரு பொருள் தரும் இணையைக் தேர்ந்தெடு — “செய்”.", options: ["A) பார், கேள்", "B) நன்செய், புன்செய்", "C) ஆடு, மாடு", "D) மண், கல்"], ans: 1 },
+      { id: 60, q: "ஒரு பொருள் தரும் இணையைக் தேர்ந்தெடு — “நகை”.", options: ["A) அழுகை, சோகம்", "B) புன்னகை, சிரிப்பு", "C) தங்கம், வெள்ளி", "D) அழகு, ஆடை"], ans: 1 },
+      { id: 61, q: "குறில் நெடில் மாற்றம் அறிந்து, பொருள் வேறுபாடு சரியானதைக் கண்டறிக: “தொடு – தோடு”.", options: ["A) பற்று – கழற்று", "B) இடி – மின்னல்", "C) பார் – கண்", "D) தொடுதல் – அணிகலன்"], ans: 3 },
+      { id: 62, q: "தவறான இணையைக் கண்டறிக.", options: ["A) கொடு – கோடு", "B) படு – பாடு", "C) சுடு – சூடு", "D) கெடு – கோடு"], ans: 3 },
+      { id: 63, q: "ஆங்கிலச் சொல்லுக்கு நேரான தமிழ்ச் சொல்லில் சரியானதைக் குறிப்பிடுக.", options: ["A) Homophone – ஒருசொல்", "B) Monolingual – பன்மொழி", "C) Homograph – ஒப்பெழுத்து", "D) Vowel – மெய்யெழுத்து"], ans: 2 },
+      { id: 64, q: "ஆங்கிலச் சொல்லுக்கான தமிழ்ச் சொல் பொருந்தா இணையைக் கண்டறிக.", options: ["A) Cyclone – புயல்", "B) Tempest – சுழல் காற்று", "C) Breeze – தென்றல்", "D) Storm – பெருங்காற்று"], ans: 1 },
+      { id: 65, q: "சொற்களின் கூட்டுப்பெயர்கள் — “பழம் – கூட்டுப்பெயர்”.", options: ["A) பழக்கூட்டம்", "B) பழக்குவியல்", "C) பழக்குலை", "D) பழத்தோட்டம்"], ans: 2 },
+      { id: 66, q: "சொற்களின் கூட்டுப்பெயர்கள் — தேர்ந்தெடு: “கம்பு”.", options: ["A) கம்பங்கூட்டம்", "B) கம்பங் கொல்லை", "C) கம்பங்காடு", "D) கம்பந்தோட்டம்"], ans: 1 },
+      { id: 67, q: "பிழையற்ற வாக்கியம்!", options: ["A) ஒரு மாவட்டத்தில் ஒரு அமைச்சர் மகனோடு சென்றார்.", "B) ஓர் மாவட்டத்தில் ஒரு அமைச்சர் மகனோடு சென்றார்.", "C) ஒரு மாவட்டத்தில் ஓர் அமைச்சர் அவருடைய மகனோடு சுற்றுலா மேற்கொண்டார்.", "D) ஓர் மாவட்டத்தில் ஓர் அமைச்சர் சுற்றுலா மேற்கொண்டார்."], ans: 2 },
+      { id: 68, q: "“குழலியும் பாடத் தெரியும்” — தொடரில் உள்ள பிழையை நீக்கி சரியான தொடரைத் தேர்ந்தெடுக்க.", options: ["A) குழலிக்குப் பாடத் தெரியும்", "B) குழலியைப் பாடத் தெரியும்", "C) குழலியில் பாடத் தெரியும்", "D) குழலியால் பாடத் தெரியும்"], ans: 0 },
+      { id: 69, q: "மயிலும் மானும் வனத்திற்கு ______ தருகின்றன.", options: ["A) வளம்", "B) வனப்பு", "C) உணவு", "D) வலிமை"], ans: 1 },
+      { id: 70, q: "சொற்பொருள் — பொருத்துக.", options: ["A) 1, 2, 3, 4", "B) 2, 4, 1, 3", "C) 4, 3, 2, 1", "D) 3, 1, 4, 2"], ans: 1 },
+      { id: 71, q: "ஒருமை பன்மைப் பிழைகளை நீக்குக: “நான் வாங்கிய நூல் இது அல்ல.”", options: ["A) நான் வாங்கிய நூல் இது இல்லை", "B) நான் வாங்கிய நூல் இது அன்று", "C) நான் வாங்கிய நூல் இது அல்லாதது", "D) நான் வாங்கிய நூல் இது அல்ல"], ans: 1 },
+      { id: 72, q: "“நான், யான்” என்பன ______.", options: ["A) தன்மை ஒருமைப் பெயர்கள்", "B) முன்னிலை ஒருமைப் பெயர்கள்", "C) படர்க்கைப் பெயர்கள்", "D) தன்மை பன்மைப் பெயர்கள்"], ans: 0 },
+      { id: 73, q: "உடல்நோய்க்கு ______ தேவை.", options: ["A) ஓய்தம்", "B) ஓய்வு", "C) உணவு", "D) தூக்கம்"], ans: 0 },
+      { id: 74, q: "இடுகுறிச்சிறப்புப்பெயரை வட்டமிடுக.", options: ["A) மரம்", "B) பறவை", "C) மீன்கொத்தி", "D) விலங்கு"], ans: 2 },
+      { id: 75, q: "“இந்த வேலையை முடிக்க ஒரு கை குறைகிறது” என்பது ______.", options: ["A) முதலாகுபெயர்", "B) சினையாகுபெயர்", "C) இடவாகுபெயர்", "D) தொழிலாகுபெயர்"], ans: 1 },
+      { id: 76, q: "பிரித்து எழுதுக: “கருநிறத்தரக்கியர்”.", options: ["A) கருமை + நிறம் + அரக்கியர்", "B) கரு + நிறத்து + அரக்கியர்", "C) கருமை + நிறத்தரக்கியர்", "D) கருமை + நிறத்து + அரக்கியர்"], ans: 3 },
+      { id: 77, q: "“Instinct” — ஆங்கிலச் சொல்லின் சரியான தமிழ்ச்சொல்.", options: ["A) நுண்ணறிவு", "B) செயற்கை அறிவு", "C) இயற்கை அறிவு", "D) பேரறிவு"], ans: 2 },
+      { id: 78, q: "பொருந்தாச் சொல்லைக் கண்டறிக — “மரக்கலம்”.", options: ["A) வங்கம்", "B) நாவாய்", "C) கப்பல்", "D) புணரி"], ans: 3 },
+      { id: 79, q: "ஏடு, சுவடி, பொத்தகம், பனுவல் முதலிய சொற்கள் தரும் பொருள் ______ என்பதாகும்.", options: ["A) நூல்", "B) பாட்டு", "C) உரை", "D) ஏடு"], ans: 0 },
+      { id: 80, q: "பிறமொழிச் சொற்களுக்கு இணையான தமிழ்ச் சொல்லைக் கண்டறிக: “விஷம்”.", options: ["A) கசப்பு", "B) நஞ்சு", "C) தீமை", "D) காரம்"], ans: 1 },
+      { id: 81, q: "மரபுப்பிழை இல்லாத தொடர் எது?", options: ["A) கம்பங்கொல்லை", "B) கம்பந்தோட்டம்", "C) கம்பங்காடு", "D) கம்பங்குவியல்"], ans: 0 },
+      { id: 82, q: "பிழையற்ற வாக்கியத்தைக் கூறுக.", options: ["A) வயலில் மாடுகள் மேய்ந்தது.", "B) வயலில் மாடு மேய்ந்தன.", "C) வயலில் மாடுகள் மேய்ந்தன.", "D) வயலில் மாடுகள் மேய்கிறது."], ans: 2 },
+      { id: 83, q: "பத்தி வினா: எழுத்து என்பதன் பொருள் யாது?", options: ["A) சொல்", "B) ஓவியம்", "C) பாட்டு", "D) வரி"], ans: 1 },
+      { id: 84, q: "பத்தி வினா: கீழ்க்கண்டவற்றுள் நுண்கலை அல்லாதது எது?", options: ["A) சிற்பம்", "B) ஓவியம்", "C) அறிவியல்", "D) இசை"], ans: 2 },
+      { id: 85, q: "பத்தி வினா: மொழிக்குறியீடுகள் எதிலிருந்து தோன்றின?", options: ["A) ஒலிகள்", "B) கை சமிக்ஞை", "C) எழுத்துக்கள்", "D) ஓவியம்"], ans: 3 },
+      { id: 86, q: "பத்தி வினா: கோட்டோவியங்கள் இவற்றுள் எதைக் கொண்டு வரையப்பட்டன?", options: ["A) நேர்கோடு", "B) கோணக்கோடு", "C) வளைகோடு", "D) இவையனைத்தும்"], ans: 3 },
+      { id: 87, q: "பத்தி வினா: சங்க காலத்தில் ஓவியத்தை எவ்வாறு அழைத்தனர்?", options: ["A) கண்ணெழுத்து", "B) சித்திரம்", "C) சித்திரக்கலை", "D) புனைவு"], ans: 0 },
+      { id: 88, q: "“டைரியம்” என்னும் இலத்தீன் சொல்லின் பொருள்:", options: ["A) வரவுசெலவு", "B) நாட்காட்டி", "C) நாட்குறிப்பு", "D) வரலாற்றுக் குறிப்பு"], ans: 2 },
+      { id: 89, q: "பின்வருவனவற்றுள் ஏவல் வினைமுற்றுச் சொல் ______.", options: ["A) உண்டான்", "B) படித்தான்", "C) வாழ்க", "D) சென்றான்"], ans: 2 },
+      { id: 90, q: "பொருள் கூறு — “தண்”.", options: ["A) வெம்மை", "B) குளிர்ச்சி", "C) இருள்", "D) ஒளி"], ans: 1 },
+      { id: 91, q: "பின்வரும் தொடரிலுள்ள ______ தேர்வு செய்க: (A) பழுத்த பழம், (B) பழுக்கும் பழம், (C) பழுக்கின்றது, (D) பழங்கள் பழுத்தன", options: ["A) பழுத்த பழம்", "B) பழுக்கும் பழம்", "C) பழுக்கின்றது", "D) பழங்கள் பழுத்தன"], ans: 2 },
+      { id: 92, q: "தன்வினை வாக்கியம் எது?", options: ["A) கோதை திருக்குறள் கற்பித்தாள்", "B) கோதை திருக்குறளைக் கற்றாள்", "C) கோதை திருக்குறள் பாடினாள்", "D) திருக்குறள் கோதையால் கற்கப்பட்டது"], ans: 1 },
+      { id: 93, q: "“இங்கு நின்று நிற்குமா?” என்று வழிப்போக்கர் கேட்டது ______ வினா; “அதோ, அங்கே நிற்கும்” என்பது ______ விடை.", options: ["A) அறியா வினா, நேர் விடை", "B) ஐய வினா, சுட்டு விடை", "C) அறியா வினா, சுட்டு விடை", "D) கொளல் வினா, ஏவல் விடை"], ans: 2 },
+      { id: 94, q: "“நெறி” என்னும் சொல்லின் பொருள்:", options: ["A) வழி", "B) அறிவு", "C) ஒழுக்கம்", "D) சட்டம்"], ans: 0 },
+      { id: 95, q: "ஒருமை பன்மைப் பிழையற்ற தொடர் எது?", options: ["A) நான் வாங்கிய நூல் இது அல்ல", "B) நான் வாங்கிய நூல் இது இல்லை", "C) நான் வாங்கிய நூல் இது அன்று", "D) நான் வாங்கிய நூல் இவை அல்ல"], ans: 2 },
+      { id: 96, q: "கழுத்தில் சூடுவது ______.", options: ["A) தார்", "B) மேகலை", "C) சுட்டி", "D) சிலம்பு"], ans: 0 },
+      { id: 97, q: "காந்தியடிகள் ______ அடிநிழலில் இருந்து தமிழ் கற்க வேண்டும் என்று விரும்பினார்.", options: ["A) பாரதிதாசன்", "B) உ.வே. சாமிநாதையர்", "C) திரு. வி.க.", "D) பாரதியார்"], ans: 3 },
+      { id: 98, q: "சேர்த்தெழுதுதல் — “தூக்கி + கொண்டு”.", options: ["A) தூக்கிகொண்டு", "B) தூக்கிக்கொன்டு", "C) தூக்கிக்கொண்டு", "D) தூக்குகொண்டு"], ans: 2 },
+      { id: 99, q: "வழுவற்ற தொடரை கண்டறிக.", options: ["A) ஞான பீட விருது", "B) ஞானபீடவிருது", "C) ஞானபீட விருதுகள்", "D) ஞான பீடம் விருது"], ans: 0 },
+      { id: 100, q: "பொருத்துக:\n(a) விடிவெள்ளி | (b) மணல் | (c) புயல் | (d) பனிமூட்டம்", options: ["A) 1, 2, 3, 4", "B) 3, 4, 1, 2", "C) 2, 3, 4, 1", "D) 4, 1, 2, 3"], ans: 3 },
+      { id: 101, q: "Find out the incorrect one:\nI. Aristotle is father of Political Science\nII. Man is by nature a Political Animal – Aristotle\nIII. History is past Politics and Politics is present History – Freeman\nIV. Machiavelli first used the term ‘State’", options: ["A) I only", "B) II only", "C) III and IV", "D) None"], ans: 3 },
+      { id: 102, q: "Match the following historical events:\nA) Lord Attlee’s Announcement | B) Indian Independence Act | C) Cabinet Mission | D) Mountbatten Plan", options: ["A) A–3, B–4, C–2, D–1", "B) A–1, B–2, C–3, D–4", "C) A–4, B–3, C–2, D–1", "D) A–2, B–1, C–4, D–3"], ans: 0 },
+      { id: 103, q: "Which council Act introduced the separate electorate for the Muslims?", options: ["A) Indian Councils Act 1861", "B) Indian Councils Act 1892", "C) Indian Councils Act 1909", "D) Government of India Act 1919"], ans: 2 },
+      { id: 104, q: "On which date was the Objectives Resolution adopted by the Constituent Assembly?", options: ["A) 9 December 1946", "B) 13 December 1946", "C) 22 January 1947", "D) 26 November 1949"], ans: 2 },
+      { id: 105, q: "Who described Indian Constitution as Cooperative Federalism?", options: ["A) K.C. Wheare", "B) Granville Austin", "C) Sir Ivor Jennings", "D) A.V. Dicey"], ans: 0 },
+      { id: 106, q: "Match the following constitutional articles:\nArticle 262 | Article 161 | Article 117 | Article 108", options: ["A) A–4, B–1, C–2, D–3", "B) A–1, B–2, C–3, D–4", "C) A–3, B–4, C–1, D–2", "D) A–2, B–1, C–4, D–3"], ans: 0 },
+      { id: 107, q: "Find the incorrect one:\n1. 99th CAA 2014 – NJAC\n2. 100th CAA 2015 – Bangladesh enclaves\n3. 101st CAA 2016 – GST\n4. 102nd CAA 2018 – 10% reservation for EWS", options: ["A) 1 only", "B) 2 only", "C) 3 only", "D) 4 only"], ans: 3 },
+      { id: 108, q: "Consider the statements regarding CAG of India auditing powers:\n1. Union Govt | 2. State Govt | 3. UT Govts | 4. Local bodies. Which are correct?", options: ["A) 1 and 2 only", "B) 1, 3 and 4", "C) 2 and 3 only", "D) All are correct"], ans: 1 },
+      { id: 109, q: "Which Constitutional authority can hold office during the pleasure of the President?", options: ["A) Governor of State", "B) Chief Justice of India", "C) Election Commissioner", "D) Comptroller and Auditor General"], ans: 0 },
+      { id: 110, q: "The body set up in 1964 based on recommendations of the Santhanam Committee to check corruption is:", options: ["A) CBI", "B) Central Vigilance Commission (CVC)", "C) Lokpal", "D) Enforcement Directorate"], ans: 1 },
+      { id: 111, q: "One of the main weaving centres of the Imperial Cholas was:", options: ["A) Madurai", "B) Uraiyur", "C) Kanchipuram", "D) Thanjavur"], ans: 1 },
+      { id: 112, q: "Who wrote Thiruthondar Puranam?", options: ["A) Nambi Andar Nambi", "B) Sekkilar", "C) Appar", "D) Sundarar"], ans: 1 },
+      { id: 113, q: "Name the council of Ministers who assisted kings in administrative functions during the Sangam period.", options: ["A) Enperayam", "B) Aim-perumkuzhu", "C) Sabha", "D) Ur"], ans: 1 },
+      { id: 114, q: "Keezhadi Museum was constructed in Chettinad architecture style at Sivaganga and opened by the Chief Minister on:", options: ["A) 15 August 2022", "B) 26 January 2023", "C) 6 March 2023", "D) 1 May 2023"], ans: 2 },
+      { id: 115, q: "What are the characteristics of a classical language?\nA. Independent literary tradition\nB. Oral literature only\nC. Large ancient body of written literature", options: ["A) A only", "B) B only", "C) A and C only", "D) All of the above"], ans: 2 },
+      { id: 116, q: "“Vadavenkadam Thenkumari Aayidai Kurum Nallulagam” — these lines are mentioned in which Tamil work?", options: ["A) Silappathikaram", "B) Manimekalai", "C) Tolkappiyam", "D) Purananuru"], ans: 2 },
+      { id: 117, q: "Which flower was worn as an identity during war between two kings with mutually fixed dates?", options: ["A) Vetchi", "B) Kanchi", "C) Thumbai", "D) Vangai"], ans: 2 },
+      { id: 118, q: "Which is known as the “Cradle of ancient Tamil civilization”?", options: ["A) Adichanallur", "B) Arikamedu", "C) Kodumanal", "D) Poompuhar"], ans: 0 },
+      { id: 119, q: "According to Valluvar, the good of the wealth obtained is to live:", options: ["A) In high luxury", "B) Encircled by Relatives", "C) Far from enemies", "D) In religious penance"], ans: 1 },
+      { id: 120, q: "“To use ______ is to make choice of unripe fruits to ripe fruits.” According to Thiruvalluvar, what is it?", options: ["A) Bitter words instead of sweet words", "B) Falsehood instead of truth", "C) Anger instead of patience", "D) Laziness instead of work"], ans: 0 },
+      { id: 121, q: "Match: A) National Poet | B) Revolutionary Poet | C) Tilak of South | D) Tamil Thendral", options: ["A) A–2, B–3, C–4, D–1", "B) A–1, B–2, C–3, D–4", "C) A–3, B–4, C–1, D–2", "D) A–4, B–1, C–2, D–3"], ans: 0 },
+      { id: 122, q: "Who was killed during the Vellore Mutiny?", options: ["A) Colonel Fancourt", "B) Colonel Gillespie", "C) Major Cradock", "D) Captain Campbell"], ans: 0 },
+      { id: 123, q: "Which army general of the British defeated Pulithevan in Nerkattum Seval?", options: ["A) Colonel Heron", "B) Captain Campbell", "C) Arthur Wellesley", "D) Colin Jackson"], ans: 1 },
+      { id: 124, q: "The founder of the Bharatha Ashram was:", options: ["A) Subramania Siva", "B) V.O.C.", "C) Bharathiyar", "D) V.V.S. Iyer"], ans: 0 },
+      { id: 125, q: "Which statement is correct regarding Tamil Nadu movements?\n1. SILF became Justice Party in 1917\n2. Kudi Arasu started in 1925\n3. Thani Tamil Iyakkam in 1916\n4. Justice Party Salem conference in 1944", options: ["A) 1 and 2 only", "B) 2 and 3 only", "C) 1, 2, 3 and 4", "D) 1, 3 and 4 only"], ans: 2 },
+      { id: 126, q: "Which are correct statements about the results of Vaikom Struggle of E.V.R.?\n1. E.V.R. known as Vaikom Hero\n2. Allowed inside temple\n3. Allowed to use streets around temple\n4. Organised by single group", options: ["A) 1 and 2", "B) 1 and 3", "C) 2 and 4", "D) 3 and 4"], ans: 1 },
+      { id: 127, q: "Match:\nA) Hindu Religious Endowment Act | B) Madras State Aid to Industrial Act | C) Public Service Commission | D) Andhra University", options: ["A) A–4, B–1, C–2, D–3", "B) A–1, B–2, C–3, D–4", "C) A–2, B–3, C–4, D–1", "D) A–3, B–4, C–1, D–2"], ans: 0 },
+      { id: 128, q: "Pick out the wrong statement about Raja Ram Mohan Roy.", options: ["A) Opposed Sati", "B) Established Brahmo Samaj", "C) He himself adopted a Christian boy", "D) Believed in monotheism"], ans: 2 },
+      { id: 129, q: "Match the following Islamic movements:\nA) Aligarh Movement | B) Deoband Movement | C) Ahmadiya Movement | D) Ahrar Movement", options: ["A) A–2, B–3, C–4, D–1", "B) A–1, B–2, C–3, D–4", "C) A–3, B–4, C–1, D–2", "D) A–4, B–1, C–2, D–3"], ans: 0 },
+      { id: 130, q: "Match:\nA) Pabna Movement | B) Moplah Movement | C) Deccan Riots | D) Bardoli Movement", options: ["A) A–2, B–4, C–1, D–3", "B) A–1, B–2, C–3, D–4", "C) A–4, B–3, C–2, D–1", "D) A–3, B–1, C–4, D–2"], ans: 0 },
+      { id: 131, q: "Consider statements on Zamindari system:\n1. Tiller pays tax\n2. Introduced in 1893\n3. Zamindars recognized as owners\n4. Introduced in Bengal, Bihar, Orissa", options: ["A) 1 and 2", "B) 2 and 3", "C) 3 and 4", "D) 1 and 4"], ans: 2 },
+      { id: 132, q: "Name the first Muslim president of Indian National Congress.", options: ["A) Maulana Abul Kalam Azad", "B) Syed Badruddin Tyabji", "C) M.A. Jinnah", "D) Rafi Ahmed Kidwai"], ans: 1 },
+      { id: 133, q: "Which session of the Indian National Congress approved the Gandhi-Irwin Pact?", options: ["A) Lahore Session", "B) Karachi Session", "C) Calcutta Session", "D) Madras Session"], ans: 1 },
+      { id: 134, q: "According to Vallalar, which one of the following is wrong?", options: ["A) Advocated universal compassion", "B) Established Sathya Gnana Sabai", "C) Preached feeding the poor", "D) He compiled his preachings into six Thirumurais in a single book called Thiruvarutpa"], ans: 3 },
+      { id: 135, q: "Write given incidents in chronological order:\ni) Gandhi-Irwin Pact\nii) Bhagat Singh executed\niii) Gandhi-Irwin Pact endorsed\niv) Second RTC", options: ["A) (i), (ii), (iii), (iv)", "B) (ii), (i), (iv), (iii)", "C) (i), (iii), (ii), (iv)", "D) (iv), (i), (ii), (iii)"], ans: 0 },
+      { id: 136, q: "Match:\nA) Poona Pact | B) Official demand for Pakistan | C) Simla Conference | D) Cabinet Mission", options: ["A) A–3, B–4, C–2, D–1", "B) A–1, B–2, C–3, D–4", "C) A–4, B–3, C–1, D–2", "D) A–2, B–1, C–4, D–3"], ans: 0 },
+      { id: 137, q: "Find out the incorrect statement regarding Rajaji:\nI. Established Gandhi Ashram in Pudupalayam\nII. Started Salt Satyagraha in TN\nIII. Home Minister in Interim Govt\nIV. Industrial Minister in Free India", options: ["A) I and II", "B) II and III", "C) III and IV", "D) I and IV"], ans: 2 },
+      { id: 138, q: "Match archaeological sites with states:\nA) Kot Diji | B) Kalibangan | C) Ropar | D) Surkotada", options: ["A) A–2, B–4, C–1, D–3", "B) A–1, B–2, C–3, D–4", "C) A–4, B–3, C–2, D–1", "D) A–3, B–1, C–4, D–2"], ans: 0 },
+      { id: 139, q: "Mohenjo-daro means:", options: ["A) Black Bangles", "B) Mound of Dead", "C) City of Ports", "D) Great Granary"], ans: 1 },
+      { id: 140, q: "Who introduced tax for irrigation first in medieval India?", options: ["A) Alauddin Khalji", "B) Feroz Tughlaq", "C) Muhammad bin Tughlaq", "D) Iltutmish"], ans: 1 },
+      { id: 141, q: "Babur wrote his autobiography Babur-Nama in ______ language.", options: ["A) Persian", "B) Arabic", "C) Turkish", "D) Urdu"], ans: 2 },
+      { id: 142, q: "The foundation for Vijayanagar city and Kingdom was laid by:", options: ["A) Harihara and Bukka", "B) Krishnadevaraya", "C) Devaraya II", "D) Saluva Narasimha"], ans: 0 },
+      { id: 143, q: "Find out the correct statement:", options: ["A) Korkai was on the banks of Vaigai", "B) Pearls were exported from Uvari near Korkai", "C) Musiri was the capital of Pandyas", "D) Poompuhar was an inland market"], ans: 1 },
+      { id: 144, q: "Ozone layer concentration is mainly above 10 to 15 km from earth surface. This layer is known as:", options: ["A) Troposphere", "B) Stratosphere", "C) Mesosphere", "D) Thermosphere"], ans: 1 },
+      { id: 145, q: "Palk Strait lies between:", options: ["A) Tamil Nadu and Sri Lanka", "B) Tamil Nadu and Kerala", "C) Gujarat and Pakistan", "D) Odisha and Bengal"], ans: 1 },
+      { id: 146, q: "The state with the lowest density of population in India as per 2011 Census is:", options: ["A) Sikkim", "B) Mizoram", "C) Arunachal Pradesh", "D) Nagaland"], ans: 2 },
+      { id: 147, q: "Which statement is incorrect regarding Census 2011?", options: ["A) 15th National Census", "B) Information about mobile, computer and internet users are not collected", "C) Covered 35 states and UTs", "D) Transgender population accounted"], ans: 1 },
+      { id: 148, q: "Which river flows between the Satpuras and the Vindhyas?", options: ["A) Tapi", "B) Narmada", "C) Godavari", "D) Mahanadi"], ans: 1 },
+      { id: 149, q: "Match geographical features:\nA) Tsangpo | B) Yamuna | C) New alluvium | D) Mt. Godwin Austen | E) Coromandel", options: ["A) A–3, B–1, C–5, D–2, E–4", "B) A–1, B–2, C–3, D–4, E–5", "C) A–2, B–3, C–4, D–5, E–1", "D) A–4, B–5, C–1, D–3, E–2"], ans: 0 },
+      { id: 150, q: "Where is the Sivalik hill located?", options: ["A) Greater Himalaya", "B) Lesser Himalaya", "C) Outer Himalaya", "D) Trans Himalaya"], ans: 2 },
+      { id: 151, q: "Which district in Tamil Nadu got first place in Child Development Index 2017?", options: ["A) Chennai", "B) Kanyakumari", "C) Coimbatore", "D) Madurai"], ans: 1 },
+      { id: 152, q: "The second Tamil Nadu Human Development Report was published in the year:", options: ["A) 2015", "B) 2017", "C) 2019", "D) 2021"], ans: 1 },
+      { id: 153, q: "Which one of the following is not a dimension to measure Multi-dimensional Poverty Index?", options: ["A) Health", "B) Education", "C) Standard of Living", "D) Labour Market"], ans: 3 },
+      { id: 154, q: "Match Tamil political organizations:\nA) Dravida Kazhagam | B) Dravida Mahajana Sabha | C) MNA | D) MMS | E) Oru Paisa Tamilan", options: ["A) A–5, B–1, C–4, D–3, E–2", "B) A–1, B–2, C–3, D–4, E–5", "C) A–4, B–3, C–2, D–1, E–5", "D) A–2, B–4, C–1, D–5, E–3"], ans: 0 },
+      { id: 155, q: "Find the incorrect one about Self-respect Provincial Conference.", options: ["A) 1 only", "B) 2 only", "C) 3 only", "D) None of these"], ans: 2 },
+      { id: 156, q: "Which Article of the Indian Constitution deals with reservation of seats for SCs/STs in House of People on 2001 Census basis?", options: ["A) Article 330", "B) Article 332", "C) Article 335", "D) Article 338"], ans: 0 },
+      { id: 157, q: "Match Tamil Nadu flagship welfare schemes with dates/places:\nA) Illam Thedi Kalvi | B) Varumun Kappom | C) Makkalai Thedi Maruthuvam | D) Innuyir Kappom", options: ["A) A–1, B–2, C–3, D–4", "B) A–2, B–3, C–4, D–1", "C) A–3, B–4, C–1, D–2", "D) A–4, B–1, C–2, D–3"], ans: 0 },
+      { id: 158, q: "Find the incorrect pair among state days and memorials:\n1. Equality Day – April 14\n2. Furniture Park – Tuticorin\n3. Porunai Museum – Tirunelveli\n4. Announcement of Tamil Nadu Day – July 20\n5. Social Justice Day – September 17", options: ["A) 2 only", "B) 3 only", "C) 4 only", "D) 5 only"], ans: 2 },
+      { id: 159, q: "Name a mineral found only in Karadikuttam in Madurai district of India.", options: ["A) Bauxite", "B) Molybdenum", "C) Gypsum", "D) Magnetite"], ans: 1 },
+      { id: 160, q: "Which state has approved a new policy aimed at women empowerment?", options: ["A) Kerala", "B) Tamil Nadu", "C) Karnataka", "D) Maharashtra"], ans: 1 },
+      { id: 161, q: "The aim of Cradle Baby Scheme of Tamil Nadu Government is:", options: ["A) Promoting institutional delivery", "B) To eradicate female infanticide", "C) Nutritious food supply to infants", "D) Free nursery schooling"], ans: 1 },
+      { id: 162, q: "Puratchi Thalaivar MGR Nutritious Meal Programme was started in rural areas on:", options: ["A) 1 July 1982", "B) 15 August 1984", "C) 14 January 1981", "D) 2 October 1983"], ans: 0 },
+      { id: 163, q: "Mugger crocodile is found in which of the following reservoirs?", options: ["A) Mettur Dam", "B) Bhavanisagar Dam", "C) Amaravathi Dam", "D) Vaigai Dam"], ans: 2 },
+      { id: 164, q: "Choose the correct one regarding Tamil Nadu extremities:\n1. East – Point Calimere | 2. West – Anaimalai | 3. North – Pulicat Lake | 4. South – Cape Comorin", options: ["A) 1 only is wrong", "B) 2 only is wrong", "C) 3 only is wrong", "D) 4 only is wrong"], ans: 2 },
+      { id: 165, q: "Match health helplines:\nA) 108 Ambulance | B) First Responder Bike | C) 104 | D) 155377. Which is incorrect?", options: ["A) A is incorrect", "B) B is incorrect", "C) C is incorrect", "D) D is the incorrect pair"], ans: 3 },
+      { id: 166, q: "______ is responsible for providing secondary care and implementing various Acts and Regulations in Tamil Nadu.", options: ["A) Directorate of Public Health", "B) Directorate of Medical and Rural Health Services", "C) Medical Services Recruitment Board", "D) TNMSC"], ans: 1 },
+      { id: 167, q: "Namadhu Arasu is a platform to:", options: ["A) File police complaints", "B) Online dissemination of information regarding governance", "C) Agricultural crop bidding", "D) Online hospital appointments"], ans: 1 },
+      { id: 168, q: "Which statements are correct for Moovalur Ramamirtham Ammaiyar Higher Education Assurance Scheme?\nI. Transformed from marriage assistance\nII. ₹1,000/month for girls studying 6–12 in govt schools\nIII. Launched on 5 September 2022", options: ["A) I and II only", "B) II and III only", "C) I and III only", "D) I, II and III"], ans: 3 },
+      { id: 169, q: "24-hours Educational Channel launched by Tamil Nadu Government for students is:", options: ["A) Kalvi", "B) Gyan Darshan", "C) Vidya", "D) Thiran"], ans: 0 },
+      { id: 170, q: "Monetary Policy in India is implemented by:", options: ["A) Ministry of Finance", "B) Reserve Bank of India", "C) NITI Aayog", "D) State Bank of India"], ans: 1 },
+      { id: 171, q: "Consider statements on Finance Commission:\n1. Determines resource transfers\n2. Art 280(3) deals with functions\n3. Tenure is 6 years\n4. 16th FC Chairman is Arvind Panagariya", options: ["A) 1 and 2 only", "B) 1, 2 and 4", "C) 2, 3 and 4", "D) All are true"], ans: 1 },
+      { id: 172, q: "The first measure of India’s National Income was made by:", options: ["A) V.K.R.V. Rao", "B) Dadabhai Naoroji", "C) William Digby", "D) P.C. Mahalanobis"], ans: 1 },
+      { id: 173, q: "Match Five-Year Plans with objectives:\nA) 2nd Plan | B) 1st Plan | C) 9th Plan | D) 3rd Plan", options: ["A) A–2, B–1, C–3, D–4", "B) A–1, B–2, C–3, D–4", "C) A–3, B–4, C–1, D–2", "D) A–4, B–3, C–2, D–1"], ans: 0 },
+      { id: 174, q: "In the year 1951, population growth rate is called:", options: ["A) Year of Great Divide", "B) Year of small divide", "C) Population explosion year", "D) Demographic stable year"], ans: 1 },
+      { id: 175, q: "National Agricultural Insurance Scheme (NAIS) was introduced in India during:", options: ["A) 1995–1996", "B) 1999–2000", "C) 2004–2005", "D) 2014–2015"], ans: 1 },
+      { id: 176, q: "Calculate the area of a sector whose diameter and arc length are 30 cm and 26 cm respectively.", options: ["A) 180 sq.cm", "B) 195 sq.cm", "C) 210 sq.cm", "D) 390 sq.cm"], ans: 1 },
+      { id: 177, q: "Base area of right circular cylinder is 30 sq.cm and height is 6 cm. What is its volume?", options: ["A) 180 cu.cm", "B) 90 cu.cm", "C) 360 cu.cm", "D) 240 cu.cm"], ans: 0 },
+      { id: 178, q: "Find the area of a triangle whose sides are 25 cm, 24 cm and 7 cm.", options: ["A) 168 cm²", "B) 84 cm²", "C) 96 cm²", "D) 72 cm²"], ans: 1 },
+      { id: 179, q: "Find the height of a cuboid whose base area is 180 cm² and volume is 900 cm³.", options: ["A) 4 cm", "B) 5 cm", "C) 6 cm", "D) 7 cm"], ans: 1 },
+      { id: 180, q: "Find the smallest 5-digit number exactly divisible by 16, 24, 36 and 54.", options: ["A) 10368", "B) 10800", "C) 10124", "D) 10584"], ans: 0 },
+      { id: 181, q: "Find the H.C.F. of x² + 5x - 6, x² + 4x - 12, and x² + 8x + 12.", options: ["A) x - 2", "B) x + 6", "C) x + 2", "D) x - 1"], ans: 1 },
+      { id: 182, q: "GCD and LCM of two polynomials are (x + 1) and (x⁶ - 1). If one polynomial is (x³ + 1), find the other.", options: ["A) (x³ - 1)(x + 1)", "B) (x² - 1)(x + 1)", "C) (x³ - 1)(x - 1)", "D) (x⁶ - 1)"], ans: 0 },
+      { id: 183, q: "Senthil bought a car for Rs.4,26,000, paid Rs.9,000 transport, Rs.15,000 insurance, sold for Rs.4,41,000. Find gain/loss %.", options: ["A) Gain 2%", "B) Loss 2%", "C) Loss 4%", "D) Gain 4%"], ans: 1 },
+      { id: 184, q: "Find the value of (1³ + 2³ + ... + 15³) - (1 + 2 + ... + 15).", options: ["A) 14400", "B) 14280", "C) 120", "D) 14160"], ans: 1 },
+      { id: 185, q: "If a² + b² = 234 and ab = 108, find the value of (a + b) / (a - b).", options: ["A) 3", "B) 4", "C) 5", "D) 6"], ans: 2 },
+      { id: 186, q: "What is the 8th term of a G.P. whose 6th term is 972 and common ratio is 3?", options: ["A) 2916", "B) 8748", "C) 26244", "D) 78732"], ans: 1 },
+      { id: 187, q: "Simplify: (4/3) + (3/2) - (5/3) ÷ (30/12) - (12/9) × (-27/16).", options: ["A) 41/12", "B) 53/12", "C) 35/12", "D) 47/12"], ans: 1 },
+      { id: 188, q: "If 1³ + 2³ + 3³ + ... + K³ = 4356, find K.", options: ["A) 10", "B) 11", "C) 12", "D) 13"], ans: 1 },
+      { id: 189, q: "If x = √3 + 1, find the value of (x - 2/x)².", options: ["A) 2", "B) 4", "C) 6", "D) 8"], ans: 1 },
+      { id: 190, q: "If (x⁴ - 1)/(x² + 1) = 8, find the value of x.", options: ["A) ±2", "B) ±3", "C) ±4", "D) ±9"], ans: 1 },
+      { id: 191, q: "A sum invested at CI amounts to Rs.800 in 3 years and Rs.840 in 4 years. Find rate of interest per annum.", options: ["A) 4%", "B) 5%", "C) 6%", "D) 8%"], ans: 1 },
+      { id: 192, q: "Find principal if difference between CI and SI at 15% per annum for 3 years is Rs.1,134.", options: ["A) Rs.15,000", "B) Rs.16,000", "C) Rs.18,000", "D) Rs.20,000"], ans: 1 },
+      { id: 193, q: "7 men can do a work in 52 days. How many days can 13 men do the same work?", options: ["A) 24 days", "B) 28 days", "C) 32 days", "D) 35 days"], ans: 1 },
+      { id: 194, q: "Sathis borrowed Rs.52,000 on SI. After 4 years he paid total Rs.79,040. Find rate of interest.", options: ["A) 11%", "B) 12%", "C) 13%", "D) 14%"], ans: 2 },
+      { id: 195, q: "Find the largest ratio among: 4:5, 8:15, 3:10, 1:2.", options: ["A) 8:15", "B) 4:5", "C) 1:2", "D) 3:10"], ans: 1 },
+      { id: 196, q: "21:x = y:25 = 9:15. Find x and y respectively.", options: ["A) 35, 15", "B) 15, 35", "C) 25, 15", "D) 35, 25"], ans: 0 },
+      { id: 197, q: "Find missing number in prime sequence: 2², 3², 5², 7², ____, 13².", options: ["A) 9²", "B) 11²", "C) 10²", "D) 12²"], ans: 1 },
+      { id: 198, q: "If CLASSIC is coded as XOZHHRX (reverse letters), then CHILD is coded as:", options: ["A) XSROW", "B) XTRPW", "C) YSROV", "D) XSOOW"], ans: 0 },
+      { id: 199, q: "Find missing number in sequence: 3, 12, 27, 48, 75, 108, ______.", options: ["A) 135", "B) 147", "C) 162", "D) 192"], ans: 1 },
+      { id: 200, q: "The value of x if 20% of x = 50 is:", options: ["A) 200", "B) 250", "C) 300", "D) 500"], ans: 1 }
+    ];
+
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalSeconds = 180 * 60; // 3 Hours
+    let timeRemaining = totalSeconds;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const startBtn = document.getElementById("start-btn");
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const sectionTagVal = document.getElementById("section-tag-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    startBtn.addEventListener("click", () => {
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+      timeRemaining = totalSeconds;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("3-Hour time limit reached! Submitting your exam automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function getSectionName(id) {
+      if (id <= 100) return "General Tamil / Language";
+      if (id <= 133) return "Polity & Ancient/Medieval History";
+      if (id <= 151) return "Indian National Movement & Geography";
+      if (id <= 168) return "TN Administration & Social Schemes";
+      if (id <= 176) return "Indian Economy & Planning";
+      return "Aptitude & Mental Ability";
+    }
+
+    function renderQuestion() {
+      const qData = fullMockQuestions[currentIndex];
+      const total = fullMockQuestions.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${qData.id}`;
+      qTextVal.textContent = qData.q;
+      sectionTagVal.textContent = getSectionName(qData.id);
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < fullMockQuestions.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to finish and submit the 3-Hour Full Mock Exam?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      fullMockQuestions.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = fullMockQuestions.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Rank-Level Performance! Outstanding accuracy across General Studies and Aptitude.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Attempt! Revise weaker segments (Math/Schemes) to push score beyond 75%.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Structured Revision. Work through incorrect questions in the detailed answer key.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      fullMockQuestions.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${q.id} [${getSectionName(q.id)}]: ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--text-muted)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+  </script>
+</body>
+</html>

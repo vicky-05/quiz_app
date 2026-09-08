@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indian National Movement — Test 6 (150 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select, .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — INM Test 6</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Periyar, Ambedkar, Gandhi Era & Freedom Struggle (Test 6)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing: <strong>30 seconds per question</strong> allocated based on your selected count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–150)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="150">All Questions (150 Questions)</option>
+            <option value="25">25 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="75">75 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 150)</label>
+          <input type="number" id="custom-count-input" min="1" max="150" value="25" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">75 min 0 sec (30s / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#9678;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">General Studies</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#128196;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">INM & Social Reform</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 150</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">75:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "In which year did Periyar organise the Dravida Nadu conference advocating a separate independent Dravida Nadu?", options: ["A) 1937", "B) 1938", "C) 1939", "D) 1944"], ans: 2 },
+      { id: 2, q: "Who was called the “Tilak of Tamil Nadu”?", options: ["A) Subramania Bharathi", "B) V.O. Chidambaram Pillai", "C) Subramania Siva", "D) Tiruppur Kumaran"], ans: 1 },
+      { id: 3, q: "Kula Kalvi Thittam was introduced by:", options: ["A) K. Kamarajar", "B) C. Rajaji", "C) C.N. Annadurai", "D) O.P. Ramaswamy Reddiyar"], ans: 1 },
+      { id: 4, q: "Which statements about V.O. Chidambaram are true?\nI. Disciple of Tilak, extremists under him took lead in Madras Presidency\nII. Honest and never appeared in court for false cases\nIII. Bought ships from France and England", options: ["A) I and II only", "B) II and III only", "C) I and III only", "D) All are true"], ans: 0 },
+      { id: 5, q: "Who first introduced cartoons in a Tamil magazine?", options: ["A) G. Subramania Iyer", "B) C. Subrahmanya Bharathi", "C) V.O. Chidambaranar", "D) Thiru. V.Ka"], ans: 1 },
+      { id: 6, q: "Assertion: In 1906 at Calcutta Congress, Dadabhai Naoroji proclaimed Swadeshi and Swaraj.\nReason: In the same year V.O. Chidambaram Pillai founded Swadeshi Steam Navigation Company.", options: ["A) Both A and R are true and R is the correct explanation of A", "B) Both A and R are true but R is not the correct explanation of A", "C) A is true, R is false", "D) Both are false"], ans: 0 },
+      { id: 7, q: "Which statement is incorrect regarding Gokhale?\n1. Started Servants of India Society in 1905\n2. Helped Gandhi against colour bar in South Africa\n3. Gandhi accepted him as Political Guru\n4. Gandhi described him as Diamond of India, Jewel of Maharashtra and Prince of workers", options: ["A) 1 is incorrect", "B) 2 is incorrect", "C) 3 is incorrect", "D) Statements 1, 2 and 3 are correct; only 4 is incorrect"], ans: 3 },
+      { id: 8, q: "Name the biographical work of Abul Kalam Azad written during his internment in 1916.", options: ["A) India Wins Freedom", "B) Tazkira", "C) Ghubar-e-Khatir", "D) Tarjuman-ul-Qur'an"], ans: 1 },
+      { id: 9, q: "Netaji Subhash Chandra Bose organised the Indian National Army in:", options: ["A) Tokyo", "B) Singapore", "C) Rangoon", "D) Bangkok"], ans: 1 },
+      { id: 10, q: "Match: Madan Mohan Malaviya, A.O. Hume, Annie Besant, Subash Chandra Bose.", options: ["A) 1, 2, 3, 4", "B) 3, 4, 2, 1", "C) 4, 3, 1, 2", "D) 2, 1, 4, 3"], ans: 1 },
+      { id: 11, q: "Who produced the great work Tarjuman-ul-Qur’an, a translation of Qur’an from Arabic to Urdu?", options: ["A) Sir Syed Ahmad Khan", "B) Maulana Abul Kalam Azad", "C) Mohammad Ali Jauhar", "D) Shibli Numani"], ans: 1 },
+      { id: 12, q: "Which statements are correct regarding Bharathiar?\n1. Participated in Kasi Conference 1905\n2. Started Balabharata Sabha in 1906\n3. Attended Surat Congress 1907 with VOC\n4. Composed Vangame Vazhiyave", options: ["A) 1 and 2 only", "B) 2 and 3 only", "C) 1, 2, 3 and 4", "D) 1, 3 and 4 only"], ans: 2 },
+      { id: 13, q: "The editor of the Tamil daily Kudiyarasu was:", options: ["A) Thanthai Periyar", "B) C.N. Annadurai", "C) Thiru. V.Ka", "D) Singaravelar"], ans: 0 },
+      { id: 14, q: "Which statement is incorrect regarding Maulana Abul Kalam Azad?\n1. Born in Calcutta\n2. Started Al-Hilal in 1912\n3. Youngest President of INC in 1923\n4. First Education Minister of independent India", options: ["A) 1 is incorrect; 2, 3 and 4 are correct", "B) 2 is incorrect", "C) 3 is incorrect", "D) 4 is incorrect"], ans: 0 },
+      { id: 15, q: "Assertion: V.O. Chidambaram established Swadeshi Steam Navigation Company.\nReason: He wanted to oppose the monopoly of the British in navigation through the coast.", options: ["A) Both A and R are true and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, R false", "D) Both false"], ans: 0 },
+      { id: 16, q: "What was the name given to the boycott of schools and colleges announced by Gandhiji?", options: ["A) Civil Disobedience Movement", "B) Non-Cooperation Movement", "C) Swadeshi Movement", "D) Quit India Movement"], ans: 1 },
+      { id: 17, q: "Which statements are correct regarding Subhash Chandra Bose?\n1. Joined freedom struggle under C.R. Das\n2. Protested visit of Prince of Wales in 1921\n3. Boycotted Simon Commission in 1927\n4. Secretary & President of Bengal Congress", options: ["A) 1 and 2 only", "B) 1, 2, 3 and 4 are correct", "C) 2 and 3 only", "D) 1, 3 and 4 only"], ans: 1 },
+      { id: 18, q: "Name the regiment of Indian National Army consisting of women soldiers.", options: ["A) Rani of Jhansi Regiment", "B) Kasturba Regiment", "C) Sarojini Regiment", "D) Velu Nachiyar Regiment"], ans: 0 },
+      { id: 19, q: "Thanthai Periyar wanted people to consider the following as equal in their lives:", options: ["A) Wealth", "B) Self-respect", "C) Power", "D) Fame"], ans: 1 },
+      { id: 20, q: "Which Chief Minister was challenged by Periyar with the statement about showing a person who died due to a lower-caste doctor or a building collapsing because it was built by a lower-caste engineer?", options: ["A) Rajaji", "B) Kamarajar", "C) Omandur Ramasamy", "D) Bhaktavatsalam"], ans: 1 },
+      { id: 21, q: "Which incident led Thanthai Periyar to agitate for communal reservation?", options: ["A) The High Court and Supreme Court declared communal reservation invalid for professional courses.", "B) The dismissal of Justice Party ministry in 1937", "C) The introduction of Hindi in schools", "D) The introduction of Kula Kalvi Thittam"], ans: 0 },
+      { id: 22, q: "Who was called the “Iron Man of India”?", options: ["A) Subhas Chandra Bose", "B) Vallabhbhai Patel", "C) Bal Gangadhar Tilak", "D) B.R. Ambedkar"], ans: 1 },
+      { id: 23, q: "Who said, “Better bullock carts and freedom than a train deluxe with subjection”?", options: ["A) Sarojini Naidu", "B) Annie Besant", "C) Sister Nivedita", "D) Madam Cama"], ans: 1 },
+      { id: 24, q: "Who was acclaimed as the “Diamond of India” due to his invaluable services to the nation?", options: ["A) Bal Gangadhar Tilak", "B) Gopala Krishna Gokhale", "C) Dadabhai Naoroji", "D) Lala Lajpat Rai"], ans: 1 },
+      { id: 25, q: "Who started the English paper called Comrade?", options: ["A) Maulana Muhammad Ali", "B) Maulana Abul Kalam Azad", "C) Sir Syed Ahmad Khan", "D) Shaukat Ali"], ans: 0 },
+      { id: 26, q: "In 1925 E.V. Ramasamy left the Congress because:", options: ["A) Congress was overwhelmingly dominated by Brahmin leaders and rejected communal representation.", "B) Congress adopted non-violence", "C) Gandhi refused to visit Vaikom", "D) He wanted to join the British government"], ans: 0 },
+      { id: 27, q: "In which year was Ambedkar bestowed with India’s highest award, Bharat Ratna?", options: ["A) 1987", "B) 1989", "C) 1990", "D) 1991"], ans: 2 },
+      { id: 28, q: "Assertion: In July 1924 Ambedkar founded Bahishkrit Hitakarini Sabha.\nReason: Its aim was to uplift the downtrodden socially and politically.", options: ["A) Both A and R are correct and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, R false", "D) Both false"], ans: 0 },
+      { id: 29, q: "Subash Chandra Bose joined the INC in:", options: ["A) 1921", "B) 1927", "C) 1930", "D) 1938"], ans: 1 },
+      { id: 30, q: "Assertion: Rajaji started the Swatantra Party in 1959.\nReason: Rajaji opposed land reforms introduced by the Government of India.", options: ["A) Both A and R are true and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, R false", "D) Both false"], ans: 0 },
+      { id: 31, q: "Who is called the “Bismarck of India”?", options: ["A) Jawaharlal Nehru", "B) Vallabhbhai Patel", "C) B.R. Ambedkar", "D) C. Rajagopalachari"], ans: 1 },
+      { id: 32, q: "Who organised the coral mill strike in the town near Tuticorin?", options: ["A) V.O. Chidambaranar", "B) Subramania Siva", "C) Subramania Bharathi", "D) Vanchinathan"], ans: 1 },
+      { id: 33, q: "For how many years did Kamaraj serve as Chief Minister of Tamil Nadu?", options: ["A) 7 years", "B) 9 years", "C) 11 years", "D) 13 years"], ans: 1 },
+      { id: 34, q: "Match the following titles:\nChanakya | Kingmaker | Kappalottiya Tamilan | Vaikom hero", options: ["A) 1, 2, 3, 4", "B) 2, 4, 3, 1", "C) 3, 1, 4, 2", "D) 4, 3, 2, 1"], ans: 1 },
+      { id: 35, q: "Kamaraj was famous for his policy called:", options: ["A) K Plan", "B) Madras Plan", "C) Congress Reshuffle Scheme", "D) Panchsheel Plan"], ans: 0 },
+      { id: 36, q: "At Vedaranyam, the Salt Satyagraha law was broken by:", options: ["A) K. Kamaraj", "B) Rajaji", "C) T.S.S. Rajan", "D) Rukmini Lakshmipathi"], ans: 1 },
+      { id: 37, q: "Who propagated the slogan “Jai Hind” to the nation?", options: ["A) Mahatma Gandhi", "B) Netaji Subhash Chandra Bose", "C) Jawaharlal Nehru", "D) Bhagat Singh"], ans: 1 },
+      { id: 38, q: "Who was the editor of Tamil weekly India?", options: ["A) Bharathiyar", "B) V.O.C.", "C) Thiru. V.Ka", "D) Subramania Siva"], ans: 0 },
+      { id: 39, q: "Who is called the architect of modern India?", options: ["A) Sardar Patel", "B) Jawaharlal Nehru", "C) Dr. B.R. Ambedkar", "D) Mahatma Gandhi"], ans: 1 },
+      { id: 40, q: "Which of the following newspapers was not started by Periyar?", options: ["A) Kudiyarasu", "B) Revolt", "C) Viduthalai", "D) Swarajya"], ans: 3 },
+      { id: 41, q: "The title “Punjab Kesari” was conferred on:", options: ["A) Bhagat Singh", "B) Lala Lajpat Rai", "C) Ajit Singh", "D) Bhai Parmanand"], ans: 1 },
+      { id: 42, q: "The newspaper Albalagh was started by:", options: ["A) Sir Syed Ahmad Khan", "B) Maulana Abul Kalam Azad", "C) Muhammad Ali Jinnah", "D) Hasrat Mohani"], ans: 1 },
+      { id: 43, q: "Assertion: B.R. Ambedkar launched Mahad Satyagraha.\nReason: He wanted to unite Hindus and Muslims.", options: ["A) Both A and R are true and R explains A", "B) A is correct; R does not explain A", "C) A is false, R is true", "D) Both are false"], ans: 1 },
+      { id: 44, q: "Match leaders with journals:\nMaulana Abul Kalam Azad — Al Hilal | Mahatma Gandhi — The People’s Friend | A.O. Hume — Desh | Dr. Rajendra Prasad — The Harijan", options: ["A) 1, 2, 3, 4", "B) 4, 3, 2, 1", "C) 2, 4, 1, 3", "D) 3, 1, 4, 2"], ans: 1 },
+      { id: 45, q: "Who was the first woman president of INC?", options: ["A) Sarojini Naidu", "B) Annie Besant", "C) Nellie Sengupta", "D) Indira Gandhi"], ans: 1 },
+      { id: 46, q: "Jawaharlal Nehru became President of the Indian National Congress in the:", options: ["A) Lahore Session", "B) Madras Session", "C) Calcutta Session", "D) Karachi Session"], ans: 0 },
+      { id: 47, q: "The first Indian National Congress leader who suggested Hindi should be the National Language of India was:", options: ["A) Jawaharlal Nehru", "B) Gandhiji", "C) Bal Gangadhar Tilak", "D) Subhas Chandra Bose"], ans: 1 },
+      { id: 48, q: "“Do or Die” slogan was associated with whom?", options: ["A) Subhas Chandra Bose", "B) Mahatma Gandhi", "C) Bhagat Singh", "D) Jawaharlal Nehru"], ans: 1 },
+      { id: 49, q: "Assertion: Periyar started Kudiyarasu in 1925.\nReason: Kudiyarasu is the official newspaper of the Self-Respect Movement.", options: ["A) Both A and R are true and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, R false", "D) Both false"], ans: 0 },
+      { id: 50, q: "Who referred to Bharathiar as the “Morning Star of Reformation”?", options: ["A) Thanthai Periyar", "B) C.N. Annadurai", "C) Rajaji", "D) Namakkal Kavignar"], ans: 1 },
+      { id: 51, q: "Find the objectives of the Self-Respect Movement:", options: ["A) Rational thinking & against caste system only", "B) Eradication of caste titles & non-Brahmin upliftment only", "C) Self-respect marriages only", "D) All of these — Rational Thinking, Against Caste System, No Caste-Based Surnames, Non-Brahmin Upliftment and Self-respect marriages"], ans: 3 },
+      { id: 52, q: "Point out the wrong statement/statements:\nI. V.O.C. born at Ettayapuram\nII. Annie Besant started Theosophical Society\nIII. Bharathiyar died at Pondicherry\nIV. E.V.R. started Self-Respect Movement", options: ["A) I and II only", "B) I, II and III", "C) III and IV only", "D) II and IV only"], ans: 1 },
+      { id: 53, q: "The English weekly edited by Mahatma Gandhi was:", options: ["A) Young India", "B) Commonweal", "C) The Hindu", "D) New India"], ans: 0 },
+      { id: 54, q: "Who bestowed the title “Sardar” on Vallabhbhai Patel?", options: ["A) Jawaharlal Nehru", "B) Mahatma Gandhi", "C) Subhas Chandra Bose", "D) C. Rajagopalachari"], ans: 1 },
+      { id: 55, q: "Who was the political guru of Kamaraj?", options: ["A) Satyamurthy", "B) Rajaji", "C) Gokhale", "D) Periyar"], ans: 0 },
+      { id: 56, q: "Who was the first and last Indian Governor-General of India?", options: ["A) Lord Mountbatten", "B) Rajaji", "C) Dr. Rajendra Prasad", "D) Dr. S. Radhakrishnan"], ans: 1 },
+      { id: 57, q: "Match the famous statements with their personalities.", options: ["A) 1, 2, 3, 4", "B) 4, 3, 2, 1", "C) 2, 4, 1, 3", "D) 3, 1, 4, 2"], ans: 1 },
+      { id: 58, q: "Find the incorrect statement regarding Rajaji:\nI. Headed first Congress ministry in Madras 1937\nII. Led Vedaranyam Salt March\nIII. Supported continuation of Kula Kalvi Thittam till 1967\nIV. Was a prominent founding member of CPI", options: ["A) I and II", "B) III and IV", "C) II and III", "D) IV only"], ans: 1 },
+      { id: 59, q: "The spiritual guru of Bharathi was:", options: ["A) Sister Nivedita", "B) Sri Aurobindo", "C) Swami Vivekananda", "D) Ramakrishna Paramahamsa"], ans: 0 },
+      { id: 60, q: "Who is the leader of the Swadeshi Movement in Tamil Nadu?", options: ["A) V.O. Chidambaram Pillai", "B) C. Rajagopalachari", "C) K. Kamaraj", "D) E.V. Ramasamy"], ans: 0 },
+      { id: 61, q: "Choose the incorrect statement regarding the First Self-Respect Conference:", options: ["A) 1 only", "B) 2 only", "C) 3 only", "D) None of these"], ans: 0 },
+      { id: 62, q: "Assertion: Self-respect marriages were legalised in 1967.\nReason: First Self-respect conference advocated self-respect marriages.", options: ["A) Both A and R are true and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, R false", "D) Both false"], ans: 0 },
+      { id: 63, q: "In 1908 Bharathiyar organised a huge public meeting to celebrate:", options: ["A) Swaraj Day", "B) Tilak Day", "C) Vande Mataram Day", "D) Independence Day"], ans: 0 },
+      { id: 64, q: "The Kheda Satyagraha was launched by Gandhi with the:", options: ["A) Peasants", "B) Mill workers", "C) Indigo planters", "D) Railway employees"], ans: 0 },
+      { id: 65, q: "Who was the first Education Minister of free India?", options: ["A) Dr. S. Radhakrishnan", "B) Abul Kalam Azad", "C) Jawaharlal Nehru", "D) Zakir Husain"], ans: 1 },
+      { id: 66, q: "When did Gandhi return to India from South Africa?", options: ["A) 1914", "B) 1915", "C) 1916", "D) 1917"], ans: 1 },
+      { id: 67, q: "Assertion: Right to property for women was given in 1989 in Tamil Nadu.\nReason: First Self-Respect Conference passed a resolution demanding right to property for women.", options: ["A) Both A and R are true and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, R false", "D) Both false"], ans: 0 },
+      { id: 68, q: "The Home Rule Movement in South India was started by:", options: ["A) Bal Gangadhar Tilak", "B) Annie Besant", "C) G. Subramania Iyer", "D) C. Rajagopalachari"], ans: 1 },
+      { id: 69, q: "Choose the correct pair regarding Self-Respect Conferences:\n1. First Self-respect Conference – Chengelpet\n2. Second Self-respect Conference – Erode\n3. Third Self-respect Conference – Virudhunagar", options: ["A) 1 only", "B) 1 and 2 only", "C) 1, 2 and 3", "D) 2 and 3 only"], ans: 2 },
+      { id: 70, q: "Assertion: Erode Action Plan was released in 1932.\nReason: Periyar toured Europe and Russia in 1931.", options: ["A) Both A and R are true and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, R false", "D) Both false"], ans: 0 },
+      { id: 71, q: "Periyar was elected as president of Justice Party in 1938 while he was in:", options: ["A) Madras Central Jail", "B) Bellary Jail", "C) Vellore Jail", "D) Coimbatore Jail"], ans: 1 },
+      { id: 72, q: "Who called Gandhi as the “father of nation”?", options: ["A) Jawaharlal Nehru", "B) Subash Chandra Bose", "C) Rabindranath Tagore", "D) Sarojini Naidu"], ans: 1 },
+      { id: 73, q: "Choose the incorrect pair regarding Periyar's journals:", options: ["A) Kudiyarasu – 1925", "B) Revolt – 1928", "C) Puratchi – 1933", "D) Pagutharivu – 1935"], ans: 3 },
+      { id: 74, q: "Faced with prospects of arrest by the British, Bharati escaped to:", options: ["A) Colombo", "B) Pondicherry", "C) Rangoon", "D) London"], ans: 1 },
+      { id: 75, q: "The greatest social reformer of Tamil Nadu is:", options: ["A) E.V.R. Periyar", "B) C. Rajagopalachari", "C) V.O. Chidambaranar", "D) K. Kamaraj"], ans: 0 },
+      { id: 76, q: "Who described the Self-Respect Movement as “Arivu Viduthalai Iyakkam”?", options: ["A) C.N. Annadurai", "B) Thanthai Periyar", "C) Bharathidasan", "D) Singaravelar"], ans: 1 },
+      { id: 77, q: "In 1940, Kamaraj went to Wardha to meet:", options: ["A) Jawaharlal Nehru", "B) Gandhiji", "C) Sardar Patel", "D) Subhas Chandra Bose"], ans: 1 },
+      { id: 78, q: "Which period is called the era of Gandhiji?", options: ["A) 1885–1905", "B) 1905–1920", "C) 1920–1947", "D) 1915–1935"], ans: 2 },
+      { id: 79, q: "Who described Tilak as the “Father of Unrest”?", options: ["A) Lord Curzon", "B) Valentine Chirol", "C) Lord Minto", "D) Sir John Strachey"], ans: 1 },
+      { id: 80, q: "Which of the following pairs are correctly matched?", options: ["A) 1 only", "B) 2 only", "C) 3 only", "D) 1 and 2"], ans: 2 },
+      { id: 81, q: "In which year was Rajaji elected as the Chief Minister of Madras?", options: ["A) 1935", "B) 1937", "C) 1942", "D) 1946"], ans: 1 },
+      { id: 82, q: "The autobiography of Nehru was entitled:", options: ["A) Auto Biography / Toward Freedom", "B) Discovery of India", "C) Glimpses of World History", "D) My Story"], ans: 0 },
+      { id: 83, q: "Rajaji was awarded Bharat Ratna in:", options: ["A) 1950", "B) 1954", "C) 1956", "D) 1960"], ans: 1 },
+      { id: 84, q: "The autobiography of Netaji Subash Chandra Bose is:", options: ["A) Indian Struggle", "B) The Springing Tiger", "C) My Experiments with Truth", "D) Toward Freedom"], ans: 0 },
+      { id: 85, q: "Assertion: Justice Party demanded communal representation for non-Brahmins.\nReason: Periyar came out of Congress since his demand for communal representation was rejected.", options: ["A) Both A and R are true and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, R false", "D) Both false"], ans: 0 },
+      { id: 86, q: "Match journals with founders:\nBala Gangadhar Tilak — Kesari | Dadabhai Naoroji — Voice of India | Annie Besant — Young India | Gandhi — New India", options: ["A) 1, 2, 3, 4", "B) 3, 1, 2, 4", "C) 4, 3, 1, 2", "D) 2, 4, 3, 1"], ans: 1 },
+      { id: 87, q: "Which statement is not true about Subramania Bharati?", options: ["A) Edited India weekly", "B) Wrote Panchali Sabatham", "C) Bharati’s Gurumani was Swami Vivekananda", "D) Participated in Surat Congress 1907"], ans: 2 },
+      { id: 88, q: "Thanthai Periyar passed resolutions for the welfare of women in the Suyamariyathai conference of:", options: ["A) Erode", "B) Chengelpet", "C) Virudhunagar", "D) Salem"], ans: 1 },
+      { id: 89, q: "The Interim Government of 1946 was headed by:", options: ["A) Lord Wavell", "B) Jawaharlal Nehru", "C) Sardar Vallabhbhai Patel", "D) Rajendra Prasad"], ans: 1 },
+      { id: 90, q: "Which idea does not fall within Thanthai Periyar’s definition of civilisation?", options: ["A) Eradication of caste prejudices", "B) Gender equality", "C) Progress based on the scientific inventions of today and making life pleasant", "D) Universal rational education"], ans: 2 },
+      { id: 91, q: "Mahatma Gandhi was assassinated on:", options: ["A) January 26, 1948", "B) January 30, 1948", "C) August 15, 1947", "D) October 2, 1948"], ans: 1 },
+      { id: 92, q: "The person who has been called by the nickname “Jail Bird” (Sirai Paravai) is:", options: ["A) Thanthai Periyar E.V. Ramasamy", "B) V.O. Chidambaranar", "C) Subramania Siva", "D) K. Kamaraj"], ans: 0 },
+      { id: 93, q: "The birth and death years of Dr. B.R. Ambedkar are:", options: ["A) 1889, 1954", "B) 1891, 1956", "C) 1893, 1958", "D) 1895, 1960"], ans: 1 },
+      { id: 94, q: "The social reform wing envisaged by E.V.R. Periyar after his visit to Soviet Union was:", options: ["A) Self-respect League", "B) Dravidar Kazhagam", "C) Justice League", "D) Rationalist Forum"], ans: 0 },
+      { id: 95, q: "Who is called the “Prophet from the South”?", options: ["A) C.N. Annadurai", "B) Periyar E.V. Ramasamy", "C) Sri Narayana Guru", "D) Ayothidasar"], ans: 1 },
+      { id: 96, q: "Those who joined Mahatma Gandhi during the Champaran Struggle included:", options: ["A) Jawaharlal Nehru and Subhas Bose", "B) Rajendra Prasad and Anugraha Narayan Sinha", "C) Sardar Patel and G.K. Gokhale", "D) C. Rajagopalachari and Satyamurti"], ans: 1 },
+      { id: 97, q: "Who was the founder of All India Harijan Sangha in 1932?", options: ["A) B.R. Ambedkar", "B) M.K. Gandhi", "C) Jyotirao Phule", "D) Thakkar Bapa"], ans: 1 },
+      { id: 98, q: "Who started the Bhoodan Movement?", options: ["A) Jayaprakash Narayan", "B) Acharya Vinoba Bhave", "C) Mahatma Gandhi", "D) Baba Amte"], ans: 1 },
+      { id: 99, q: "At the time of India’s independence, Mahatma Gandhiji was:", options: ["A) President of Congress", "B) Member of Working Committee", "C) Not a member of the Congress", "D) Minister of Peace in Interim Cabinet"], ans: 2 },
+      { id: 100, q: "Bhagat Singh, Rajguru and Sukhdev were hanged for their role in:", options: ["A) Kakori Train Robbery", "B) Lahore Conspiracy Case", "C) Central Assembly Bombing", "D) Meerut Conspiracy Case"], ans: 1 },
+      { id: 101, q: "The clarion call “Dilli Chalo” was given by:", options: ["A) Mahatma Gandhi", "B) Subash Chandra Bose", "C) Bhagat Singh", "D) Bal Gangadhar Tilak"], ans: 1 },
+      { id: 102, q: "The first venture of Gandhiji in all-India politics was the:", options: ["A) Champaran Satyagraha", "B) Rowlatt Satyagraha", "C) Kheda Satyagraha", "D) Non-Cooperation Movement"], ans: 1 },
+      { id: 103, q: "Who protested with Periyar against caste dharma in Vaikom in Travancore in 1924?", options: ["A) George Joseph", "B) K. Kelappan", "C) T.K. Madhavan", "D) C. Rajagopalachari"], ans: 0 },
+      { id: 104, q: "Who is regarded as the “Mother of the Indian revolution”?", options: ["A) Sarojini Naidu", "B) Madam Bhikaji Cama", "C) Annie Besant", "D) Aruna Asaf Ali"], ans: 1 },
+      { id: 105, q: "Which of the following is not correctly matched?", options: ["A) Deshbandhu – Chittaranjan Das", "B) Dinabandhu – C.F. Andrews", "C) Deshbandhu – Jatindranath Das", "D) Mahamana – Madan Mohan Malaviya"], ans: 2 },
+      { id: 106, q: "The author of the book Hindu Way of Life is:", options: ["A) Swami Vivekananda", "B) Dr. S. Radhakrishnan", "C) Sri Aurobindo", "D) B.G. Tilak"], ans: 1 },
+      { id: 107, q: "Who gave the title “Mahakavi” to Bharathi?", options: ["A) Va. Ramasamy Ayyangar", "B) King of Ettayapuram", "C) C. Rajagopalachari", "D) Bharathidasan"], ans: 0 },
+      { id: 108, q: "Bharathi’s first song titled “Thaninmai Irakam” was published in which magazine?", options: ["A) Swadesamitran", "B) Vivegabanu", "C) Chakravartini", "D) India"], ans: 1 },
+      { id: 109, q: "Name the newspaper started by Bharathi devoted to the cause of Indian women.", options: ["A) Bala Bharatham", "B) Chakravarthini", "C) Karmayogi", "D) Suryodayam"], ans: 1 },
+      { id: 110, q: "When did Bharathiyar publish Sudesa Geethangal?", options: ["A) 1906", "B) 1908", "C) 1910", "D) 1912"], ans: 1 },
+      { id: 111, q: "Name the English newspaper edited by Bharathi in 1907.", options: ["A) Bala Bharatham", "B) New India", "C) The Hindu", "D) Commonweal"], ans: 0 },
+      { id: 112, q: "Who translated Tilak’s Tenets of the New Party into Tamil?", options: ["A) V.O. Chidambaranar", "B) Bharathiyar", "C) Subramania Siva", "D) V.V.S. Iyer"], ans: 1 },
+      { id: 113, q: "In Tamil Nadu, Swaraj Day was celebrated for the release of:", options: ["A) Lala Lajpat Rai", "B) Bipin Chandra Pal", "C) Bal Gangadhar Tilak", "D) Subramania Siva"], ans: 1 },
+      { id: 114, q: "Which among the newspapers of Bharathi were banned by the British Government in 1909?", options: ["A) Swadesamitran & Vijaya", "B) India and Vijaya", "C) Chakravartini & Bala Bharata", "D) The Hindu & India"], ans: 1 },
+      { id: 115, q: "Name the elephant that struck Bharathi at Parthasarathy Temple.", options: ["A) Gajendra", "B) Lavanya", "C) Airavata", "D) Kamakshi"], ans: 1 },
+      { id: 116, q: "Dr. Bhimrao Ramji Ambedkar was often called Babasaheb. What is the meaning of Babasaheb?", options: ["A) Learned scholar", "B) Respected father", "C) Supreme leader", "D) Enlightened guide"], ans: 1 },
+      { id: 117, q: "What was Mooknayak?", options: ["A) Ambedkar’s newspaper", "B) A political party", "C) An ashram in Poona", "D) A legal aid society"], ans: 0 },
+      { id: 118, q: "In 1924 at Bombay, Ambedkar established Bahishkrit Hitakarini Sabha. What was it?", options: ["A) Society founded for the welfare of outcastes", "B) A trade union for textile workers", "C) A student literary association", "D) A political wing of the Congress"], ans: 0 },
+      { id: 119, q: "Which text was ceremonially burnt by Ambedkar and his followers in 1927?", options: ["A) Arthashastra", "B) Manusmriti", "C) Dharmashastra", "D) Ramcharitmanas"], ans: 1 },
+      { id: 120, q: "In which year did Ambedkar lead a Satyagraha in Mahad of Maharashtra for the right of the untouchable community to draw water?", options: ["A) 20 March 1925", "B) 20 March 1927", "C) 15 August 1928", "D) 26 January 1930"], ans: 1 },
+      { id: 121, q: "Which pairs are correctly matched about Ambedkar?", options: ["A) I and II only", "B) I and III", "C) II and III only", "D) All are correct"], ans: 1 },
+      { id: 122, q: "Which party did Ambedkar found during the pre-Independence Era (1936)?", options: ["A) Republican Party of India", "B) Independent Labour Party", "C) Scheduled Castes Federation", "D) Justice Party"], ans: 1 },
+      { id: 123, q: "Name the autobiography of Ambedkar.", options: ["A) Waiting for a Visa", "B) Castes in India", "C) Annihilation of Caste", "D) The Untouchables"], ans: 0 },
+      { id: 124, q: "When did Ambedkar become Chairman of the Constitution Drafting Committee?", options: ["A) August 15, 1947", "B) August 29, 1947", "C) November 26, 1949", "D) December 9, 1946"], ans: 1 },
+      { id: 125, q: "Ambedkar founded the Bharatiya Bauddha Mahasabha / Buddhist Society of India in Bombay in:", options: ["A) 1950", "B) 1955", "C) 1956", "D) 1952"], ans: 1 },
+      { id: 126, q: "Assertion: Ambedkar published his thesis The Problem of the Rupee in 1923.\nReason: RBI was established in 1934 based on the thesis presented by Ambedkar to the Hilton Young Commission.", options: ["A) Both A and R are true and R is the correct explanation of A", "B) Both true, but R does not explain A", "C) A is true, R false", "D) Both false"], ans: 0 },
+      { id: 127, q: "Ambedkar started the Republican Party of India in:", options: ["A) 1950", "B) 1952", "C) 1956", "D) 1957"], ans: 2 },
+      { id: 128, q: "What is the name of Dr. Ambedkar’s memorial site?", options: ["A) Raj Ghat", "B) Chaitya Bhoomi", "C) Shantivan", "D) Vijay Ghat"], ans: 1 },
+      { id: 129, q: "Which Indian state announced April 14 as “Equality Day” to celebrate the birth anniversary of Dr. Ambedkar?", options: ["A) Maharashtra", "B) Tamil Nadu", "C) Karnataka", "D) Uttar Pradesh"], ans: 1 },
+      { id: 130, q: "Which among the following books was not written by Bhagat Singh?", options: ["A) Why I am an Atheist", "B) The Jail Notebook and Other Writings", "C) Prison Diary", "D) To Young Political Workers"], ans: 2 },
+      { id: 131, q: "Who divided Bengal in 1905?", options: ["A) Lord Ripon", "B) Lord Curzon", "C) Lord Minto", "D) Lord Hardinge"], ans: 1 },
+      { id: 132, q: "Muslims observed “Direct Action Day” on:", options: ["A) 16th August 1946", "B) 22nd December 1939", "C) 23rd March 1940", "D) 14th August 1947"], ans: 0 },
+      { id: 133, q: "The British Prime Minister MacDonald announced the communal award which provided separate electorate for the:", options: ["A) Anglo-Indians", "B) Scheduled Castes", "C) Sikhs", "D) Indian Christians"], ans: 1 },
+      { id: 134, q: "When was the Khilafat Committee formed in Bombay?", options: ["A) January 1918", "B) March 1919", "C) August 1920", "D) October 1919"], ans: 1 },
+      { id: 135, q: "When did the Partition of Bengal come into effect?", options: ["A) 20 July 1905", "B) 16 October 1905", "C) 1 January 1906", "D) 15 August 1905"], ans: 1 },
+      { id: 136, q: "Khilafat Movement was led by:", options: ["A) Sir Syed Ahmad Khan", "B) Ali Brothers (Shaukat Ali & Mohammad Ali)", "C) M.A. Jinnah", "D) Khan Abdul Ghaffar Khan"], ans: 1 },
+      { id: 137, q: "Who coined the term “Pakistan”?", options: ["A) Muhammad Ali Jinnah", "B) Choudhry Rahmat Ali", "C) Muhammad Iqbal", "D) Liaquat Ali Khan"], ans: 1 },
+      { id: 138, q: "Assertion: Sarojini Naidu called Jinnah the “Ambassador of Hindu-Muslim Unity”.\nReason: Jinnah was the chief architect of the Lucknow Pact.", options: ["A) A is correct and R explains A", "B) Both true, but R does not explain A", "C) A is true, R false", "D) Both false"], ans: 0 },
+      { id: 139, q: "Which statements are correct?\ni. Sir Syed Ahmed Khan, founder of Aligarh movement, was initially supportive of Congress.\nii. Punjab Hindu Sabha founded in 1909 laid foundation for Hindu communal politics.", options: ["A) Statement I only", "B) Statement II only", "C) Statement I and II are correct", "D) Neither is correct"], ans: 2 },
+      { id: 140, q: "Match the following:\nAligarh Movement — Sir Syed Ahmad Khan | Deoband Movement — Maulana Hussain Ahmad | Muslim League — Sir Aga Khan | Muslim Electorate — Muhammad Ali Jinnah", options: ["A) 1, 2, 3, 4", "B) 4, 3, 1, 2", "C) 3, 4, 2, 1", "D) 2, 1, 4, 3"], ans: 1 },
+      { id: 141, q: "The Two Nation Theory first came from:", options: ["A) Sir Syed Ahmad Khan", "B) Sir Wazir Hasan", "C) Muhammad Iqbal", "D) M.A. Jinnah"], ans: 1 },
+      { id: 142, q: "Jinnah celebrated the resignation of Congress Ministry as a “Day of Deliverance” on:", options: ["A) 16 August 1946", "B) 22 December 1939", "C) 23 March 1940", "D) 14 August 1947"], ans: 1 },
+      { id: 143, q: "Communist Party of India (Marxist), CPI(M), was formed in:", options: ["A) 1925", "B) 1952", "C) 1964", "D) 1967"], ans: 2 },
+      { id: 144, q: "“A uniform measure of autonomy shall be granted to all provinces” — whose principle was this?", options: ["A) Jawaharlal Nehru", "B) Muhammad Ali Jinnah", "C) B.R. Ambedkar", "D) Subhas Chandra Bose"], ans: 1 },
+      { id: 145, q: "Which Viceroy convened the Simla Conference in 1945?", options: ["A) Lord Linlithgow", "B) Lord Wavell", "C) Lord Mountbatten", "D) Lord Willingdon"], ans: 1 },
+      { id: 146, q: "The All India Muslim League (AIML) was formed in:", options: ["A) 1905", "B) 1906", "C) 1909", "D) 1916"], ans: 1 },
+      { id: 147, q: "Who was the leader of the Wahabi movement in India?", options: ["A) Syed Ahmad", "B) Haji Shariatullah", "C) Titu Mir", "D) Dudu Mian"], ans: 0 },
+      { id: 148, q: "The Indian Independence Bill was brought in the British House of Commons on:", options: ["A) 4 July 1947", "B) 18 July 1947", "C) 3 June 1947", "D) 15 August 1947"], ans: 0 },
+      { id: 149, q: "When did the British Government announce the Partition of Bengal?", options: ["A) 20 July 1905", "B) 16 October 1905", "C) 7 August 1905", "D) 1 January 1906"], ans: 0 },
+      { id: 150, q: "Which Hindu National leader supported and led the Khilafat Movement?", options: ["A) Bal Gangadhar Tilak", "B) Mahatma Gandhi", "C) Lala Lajpat Rai", "D) Madan Mohan Malaviya"], ans: 1 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(150, parseInt(customCountInput.value) || 25));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 30;
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : ""} (30s / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 150) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 30;
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const m = Math.floor(secs / 60);
+      const s = secs % 60;
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time is up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${qData.id}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Command over Periyar, Ambedkar, and Gandhi Era movements is exceptional.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific dates of Dravidian conferences and Muslim League resolutions.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Tamil social reform and national leaders recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${q.id}. ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+</html>

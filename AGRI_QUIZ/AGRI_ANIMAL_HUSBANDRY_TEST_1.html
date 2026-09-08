@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agricultural Examination Portal — Animal Husbandry (149 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select, .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Animal Husbandry Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Animal Husbandry & Livestock Management (149 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–149)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="149">All Questions (149 Questions)</option>
+            <option value="25">25 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 149)</label>
+          <input type="number" id="custom-count-input" min="1" max="149" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">149 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#128004;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Animal Husbandry</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#128022;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Livestock & Dairy</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 149</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">02:29:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "What is the act of mating in sheep called?", options: ["A) Servicing", "B) Tupping", "C) Lambing", "D) Juxtaposition"], ans: 1 },
+      { id: 2, q: "What is a young female sheep (before first lambing) called?", options: ["A) Heifer", "B) Gilt", "C) Lamb", "D) Ewe lamb / Gimmer"], ans: 2 },
+      { id: 3, q: "Which vitamin is synthesized in the skin and supplied through outdoor exercise and exposure to sunlight?", options: ["A) Vitamin A", "B) Vitamin B Complex", "C) Vitamin C", "D) Vitamin D"], ans: 3 },
+      { id: 4, q: "Which chemicals are commonly used in chemical disbudding of calves?", options: ["A) Sodium chloride", "B) Caustic potash or caustic soda stick", "C) Copper sulphate", "D) Potassium permanganate"], ans: 1 },
+      { id: 5, q: "At what age should male calves ideally be castrated according to standard management practices?", options: ["A) 1 week", "B) 1 month", "C) 6 months", "D) 2 years (or earlier based on weaning)"], ans: 3 },
+      { id: 6, q: "Which instrument can be safely and effectively used for bloodless castration of sheep and goats?", options: ["A) Scalpel", "B) Burdizzo castrator", "C) Elastrator ring pliers", "D) Bone cutter"], ans: 1 },
+      { id: 7, q: "Which indigenous cattle breed is listed as a high milk producer in Southern India?", options: ["A) Kangayam", "B) Umblacherry", "C) Pulikulam", "D) Alambadi"], ans: 0 },
+      { id: 8, q: "Jamaica Hope dairy breed was evolved by crossing which breeds?", options: ["A) Jersey and Sahiwal", "B) Jersey and Kankrej", "C) Holstein Friesian and Red Sindhi", "D) Brown Swiss and Hariana"], ans: 1 },
+      { id: 9, q: "Which Indian buffalo breed has the highest milk-fat content?", options: ["A) Murrah", "B) Nili-Ravi", "C) Bhadawari", "D) Surti"], ans: 2 },
+      { id: 10, q: "Which Indian buffalo breed is globally renowned for having the highest milk yield?", options: ["A) Murrah", "B) Jaffarabadi", "C) Nagpuri", "D) Mehsana"], ans: 0 },
+      { id: 11, q: "Which hilly cattle breed is natively found in Darjeeling and Sikkim?", options: ["A) Siri", "B) Punganur", "C) Vechur", "D) Kankrej"], ans: 0 },
+      { id: 12, q: "Karan Swiss dairy cattle breed was evolved from crossing Brown Swiss with:", options: ["A) Sahiwal", "B) Red Sindhi", "C) Gir", "D) Tharparkar"], ans: 0 },
+      { id: 13, q: "Karan Fries dairy cattle breed was evolved using Holstein Friesian crossed with:", options: ["A) Sahiwal", "B) Tharparkar", "C) Red Sindhi", "D) Hariana"], ans: 1 },
+      { id: 14, q: "Sunandini dairy cattle breed was evolved in Kerala from crossing local cattle with:", options: ["A) Jersey", "B) Brown Swiss", "C) Holstein Friesian", "D) Ayrshire"], ans: 1 },
+      { id: 15, q: "Which buffalo breed was specifically evolved by crossing Surti and Murrah?", options: ["A) Mehsana", "B) Pandharpuri", "C) Toda", "D) Marathawadi"], ans: 0 },
+      { id: 16, q: "Which buffalo breed is distinctively found grazing in the Nilgiri hills of Tamil Nadu?", options: ["A) Toda", "B) Murrah", "C) Surti", "D) Nili-Ravi"], ans: 0 },
+      { id: 17, q: "Which geographic region has the largest sheep population in India?", options: ["A) Northern region", "B) Western region", "C) Southern region", "D) Eastern region"], ans: 2 },
+      { id: 18, q: "Nilgiri sheep breed was originally evolved by crossing Coimbatore sheep with Tasmanian Merino and:", options: ["A) Cheviot", "B) Rambouillet", "C) Corriedale", "D) Southdown"], ans: 0 },
+      { id: 19, q: "Which Indian sheep breeds are considered superior carpet-wool producers?", options: ["A) Nellore and Mandya", "B) Gaddi, Rampur Bushair and Poonchi", "C) Deccani and Marwari", "D) Patanwadi and Magra"], ans: 1 },
+      { id: 20, q: "Where did the famous Merino sheep breed originally originate?", options: ["A) Australia", "B) New Zealand", "C) Spain", "D) England"], ans: 2 },
+      { id: 21, q: "Which important dual-purpose exotic sheep breed was imported into India?", options: ["A) Corriedale", "B) Romney Marsh", "C) Border Leicester", "D) Dorset"], ans: 0 },
+      { id: 22, q: "Avikalin sheep breed was evolved at CSWRI by crossing Malpura with:", options: ["A) Merino", "B) Rambouillet", "C) Corriedale", "D) Dorset"], ans: 1 },
+      { id: 23, q: "Which is the tallest breed of sheep in India, found primarily in Andhra Pradesh?", options: ["A) Nellore", "B) Mecheri", "C) Vembur", "D) Kilakarsal"], ans: 0 },
+      { id: 24, q: "Pashmina (cashmere) fine fibre is produced from which specialized goat breed?", options: ["A) Jamunapari", "B) Beetal", "C) Chegu / Changthangi", "D) Barbari"], ans: 2 },
+      { id: 25, q: "During the initial post-colostrum period, whole milk is hand-fed to young calves at what rate of body weight?", options: ["A) 5%", "B) 10%", "C) 15%", "D) 20%"], ans: 1 },
+      { id: 26, q: "What is the practice of feeding extra concentrates to ewes before and during the breeding season called?", options: ["A) Flushing", "B) Steaming-up", "C) Creep feeding", "D) Weaning"], ans: 0 },
+      { id: 27, q: "What is the recommended ideal dry period in high-yielding dairy cattle?", options: ["A) 15 days", "B) 30 days", "C) 60 days (2 months)", "D) 120 days"], ans: 2 },
+      { id: 28, q: "“Lola” is a well-known synonym and pet name for which Indian dairy cattle breed?", options: ["A) Gir", "B) Red Sindhi", "C) Sahiwal", "D) Tharparkar"], ans: 2 },
+      { id: 29, q: "Which methods can be successfully used for drying off dairy cows at the end of lactation?", options: ["A) Incomplete milking", "B) Intermittent milking", "C) Complete cessation of milking", "D) All of the above methods"], ans: 3 },
+      { id: 30, q: "What percentage of live body weight approximately represents the dry-matter requirement of a dairy goat?", options: ["A) 1.0%", "B) 2.5–3.0%", "C) 5.0%", "D) 6.5%"], ans: 1 },
+      { id: 31, q: "What is the standard production concentrate ration required for a dairy cow producing milk?", options: ["A) 1 kg concentrate for every 1 kg of milk", "B) 1 kg concentrate for every 2 kg of milk", "C) 1 kg concentrate for every 4 kg of milk", "D) No concentrate is required"], ans: 1 },
+      { id: 32, q: "What is the removal or shearing of wool around a sheep's eyes to prevent wool blindness called?", options: ["A) Ringing", "B) Tagging", "C) Eyeing", "D) Crutching"], ans: 2 },
+      { id: 33, q: "Which Indian state is classically associated with the Nili-Ravi buffalo breed?", options: ["A) Gujarat", "B) Punjab", "C) Maharashtra", "D) Andhra Pradesh"], ans: 1 },
+      { id: 34, q: "Which Indian state is associated with the Bhadawari buffalo breed known for very high fat?", options: ["A) Madhya Pradesh (and UP border)", "B) Haryana", "C) Bihar", "D) Odisha"], ans: 0 },
+      { id: 35, q: "Which Indian state is the native tract of the Gir cattle breed?", options: ["A) Rajasthan", "B) Gujarat", "C) Maharashtra", "D) Karnataka"], ans: 1 },
+      { id: 36, q: "Which state is associated with the Nimari cattle breed?", options: ["A) Madhya Pradesh", "B) Uttar Pradesh", "C) Bihar", "D) Punjab"], ans: 0 },
+      { id: 37, q: "Which Indian state is associated with the Aseel game fowl breed?", options: ["A) Kerala", "B) Andhra Pradesh", "C) Tamil Nadu", "D) West Bengal"], ans: 1 },
+      { id: 38, q: "In which modern housing system are dairy cows kept in a covered yard and milked in batches in a separate milking parlour?", options: ["A) Tail-to-tail stall barn", "B) Head-to-head stall barn", "C) Loose housing system", "D) Tie-stall barn"], ans: 2 },
+      { id: 39, q: "Escherichia coli is used in dairy sanitation as an indicator organism for water polluted with:", options: ["A) Industrial effluents", "B) Chemical fertilizers", "C) Faecal matter", "D) Heavy metals"], ans: 2 },
+      { id: 40, q: "Which buffalo breed has jet-black colour, short tightly curled horns, and is the premier dairy buffalo of India?", options: ["A) Murrah", "B) Surti", "C) Jaffarabadi", "D) Nagpuri"], ans: 0 },
+      { id: 41, q: "Which is a well-known indigenous draught breed of cattle in Tamil Nadu?", options: ["A) Umblachery", "B) Kangayam", "C) Pulikulam", "D) Alambadi"], ans: 0 },
+      { id: 42, q: "What percentage of dry matter is required by standard adult cattle per 100 kg body weight?", options: ["A) 1.0 kg", "B) 2.5 kg", "C) 4.0 kg", "D) 5.5 kg"], ans: 1 },
+      { id: 43, q: "Which exotic dairy cattle breed has a distinctive black-and-white patched colour pattern?", options: ["A) Jersey", "B) Brown Swiss", "C) Holstein Friesian", "D) Ayrshire"], ans: 2 },
+      { id: 44, q: "What is the recommended maximum number of dairy cows that should ideally be housed under one roof for disease control?", options: ["A) 10 cows", "B) 25 cows", "C) 50 cows", "D) 200 cows"], ans: 2 },
+      { id: 45, q: "What does the management term “culling” mean in livestock farming?", options: ["A) Feeding extra concentrates", "B) Elimination of old, diseased, and unproductive animals from the herd", "C) Vaccinating against foot-and-mouth disease", "D) Weaning newborn calves"], ans: 1 },
+      { id: 46, q: "A calf belongs to which primary farm animal species?", options: ["A) Sheep", "B) Goat", "C) Cattle / Buffalo", "D) Swine"], ans: 2 },
+      { id: 47, q: "A gilt is a young female of which livestock species?", options: ["A) Swine (Pig)", "B) Sheep", "C) Goat", "D) Horse"], ans: 0 },
+      { id: 48, q: "A nanny (doe) is the female of which farm animal?", options: ["A) Sheep", "B) Goat", "C) Rabbit", "D) Swine"], ans: 1 },
+      { id: 49, q: "A lamb is the young one of which farm animal species?", options: ["A) Goat", "B) Sheep", "C) Pig", "D) Cattle"], ans: 1 },
+      { id: 50, q: "What is the normal average lactation period of a dairy cow?", options: ["A) 100 days", "B) 200 days", "C) 305 days", "D) 365 days"], ans: 2 },
+      { id: 51, q: "What is the average gestation period of a dairy cow?", options: ["A) 150 days", "B) 283 days", "C) 310 days", "D) 340 days"], ans: 1 },
+      { id: 52, q: "What is the standard dry period length of a dairy cow?", options: ["A) 1 month", "B) 2 months", "C) 4 months", "D) 6 months"], ans: 1 },
+      { id: 53, q: "What is the standard resting period (inter-calving gap) mandated between lactations?", options: ["A) 0 days (continuous milking)", "B) 30 days", "C) 60 days", "D) 90 days"], ans: 0 },
+      { id: 54, q: "What is the ideal target calving interval for a profitable dairy cow?", options: ["A) 8 months", "B) 12 months", "C) 18 months", "D) 24 months"], ans: 1 },
+      { id: 55, q: "When is the optimum service time (post-partum breeding window) of a dairy cow?", options: ["A) 10 days post-calving", "B) 30 days post-calving", "C) 85 days post-parturient", "D) 200 days post-calving"], ans: 2 },
+      { id: 56, q: "For permanent lifetime identification of large cattle, which marking method is traditionally used?", options: ["A) Ear notching", "B) Horn marking / Branding", "C) Toe clipping", "D) Tail tagging"], ans: 1 },
+      { id: 57, q: "What is considered the best permanent method of identification for sheep, goats, and newborn calves?", options: ["A) Tattooing", "B) Hot iron branding", "C) Paint marking", "D) Ear tagging only"], ans: 0 },
+      { id: 58, q: "What is flushing in sheep management?", options: ["A) Shearing wool before summer", "B) Feeding extra concentrate 2–3 weeks before breeding to boost ovulation", "C) Washing animals with antiseptic", "D) Deworming twice a year"], ans: 1 },
+      { id: 59, q: "What is steaming-up in pregnant ewes or cows?", options: ["A) Bathing with warm water", "B) Feeding extra concentrate during the last 6–8 weeks of pregnancy", "C) Keeping animals in a steam-heated barn", "D) Forcing dry period"], ans: 1 },
+      { id: 60, q: "What is eyeing in sheep management?", options: ["A) Tattooing the ear", "B) Shearing wool around the eyes to prevent wool blindness", "C) Checking eye color for anemia", "D) Administering eye drops"], ans: 1 },
+      { id: 61, q: "What is ringing in male sheep management?", options: ["A) Placing a metal ring in the nose", "B) Clipping wool at the region of the penis to facilitate mating", "C) Ear ringing for identification", "D) Hoof trimming"], ans: 1 },
+      { id: 62, q: "What is tagging in sheep management?", options: ["A) Shearing locks of wool from the dock (tail) region for hygiene", "B) Attaching plastic ear tags", "C) Attaching price tags", "D) Branding on thighs"], ans: 0 },
+      { id: 63, q: "What is a teaser bull (vasectomized male)?", options: ["A) A bull used for heavy draft work", "B) A sterile male used exclusively for detecting cows in heat", "C) A bull calf raised for meat", "D) An aged breeding bull"], ans: 1 },
+      { id: 64, q: "Does steaming-up increase the number of viable lambs born?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 65, q: "Does steaming-up increase the subsequent milk yield of the ewe or cow?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 66, q: "Does steaming-up increase the birth weight and growth rate of lambs/calves?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 67, q: "Does steaming-up significantly increase the quality and quantity of the wool clip?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 68, q: "What is one major agronomic/economic significance of a flushing ration in sheep?", options: ["A) It prevents foot rot", "B) It promotes multiple ovulations and higher multiple births (twinning)", "C) It stops wool growth", "D) It reduces feed consumption"], ans: 1 },
+      { id: 69, q: "What specific supplementary feeding practice can increase the lambing rate by about 10–20%?", options: ["A) Feeding 250 g grains per ewe daily before breeding", "B) Feeding urea molasses block", "C) Feeding green fodder only", "D) Salt lick restriction"], ans: 0 },
+      { id: 70, q: "For what primary operational purpose is a teaser bull maintained in a dairy herd?", options: ["A) To lead the herd to pasture", "B) To detect cows in estrus (heat)", "C) To guard against predators", "D) To test milking machines"], ans: 1 },
+      { id: 71, q: "What colour of muzzle does Sahiwal cattle have compared with the dark muzzle of Red Sindhi?", options: ["A) Pitch black", "B) Lighter-coloured muzzle (brown/flesh)", "C) Spotted pink", "D) Blue-grey"], ans: 1 },
+      { id: 72, q: "In which class of livestock is clinical mastitis most commonly prevalent?", options: ["A) Low yielders", "B) High-yielding dairy animals", "C) Working bullocks", "D) Pack camels"], ans: 1 },
+      { id: 73, q: "For which farm species is daily wallowing considered necessary to prevent heat stroke?", options: ["A) Sheep and goats", "B) Poultry and rabbits", "C) Buffalo and pigs", "D) Horses and donkeys"], ans: 2 },
+      { id: 74, q: "Does regular wallowing help eradicate external skin ectoparasites in buffaloes?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 75, q: "Does wallowing help animals regulate their body temperature in hot weather?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 76, q: "Does wallowing directly increase the quality of carabeef?", options: ["A) Yes", "B) No"], ans: 1 },
+      { id: 77, q: "Does wallowing eradicate both endoparasites and ectoparasites simultaneously?", options: ["A) Yes", "B) No"], ans: 1 },
+      { id: 78, q: "What is the very first yellowish faeces voided by a newborn calf called?", options: ["A) Colostrum", "B) Meconium", "C) Bile", "D) Chyme"], ans: 1 },
+      { id: 79, q: "Wall-eyes (light blue iris) are a distinct genetic peculiarity of which buffalo breed?", options: ["A) Murrah", "B) Nili-Ravi", "C) Surti", "D) Toda"], ans: 1 },
+      { id: 80, q: "Does daily grooming of dairy cattle remove dirt and loose hairs?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 81, q: "Is proper grooming considered an essential part of clean milk production?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 82, q: "Does grooming improve peripheral blood circulation and help produce a shining skin?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 83, q: "Does grooming help remove surface ectoparasites from the animal's body?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 84, q: "Canary colouration (yellowish stain) in the wool of indigenous sheep breeds typically occurs during which season?", options: ["A) Monsoon / Autumn", "B) Summer", "C) Winter", "D) Spring"], ans: 0 },
+      { id: 85, q: "How much drinking water does an adult dairy cow typically require per day?", options: ["A) 5–10 litres", "B) 30–35 litres (or up to 70+ litres in hot weather)", "C) 100 litres", "D) 500 litres"], ans: 1 },
+      { id: 86, q: "A sty is the specialized housing structure built for which animal?", options: ["A) Sheep", "B) Cattle", "C) Swine (Pigs)", "D) Poultry"], ans: 2 },
+      { id: 87, q: "A barn is the standard housing structure for:", options: ["A) Poultry", "B) Cattle and Buffaloes", "C) Swine", "D) Rabbits"], ans: 1 },
+      { id: 88, q: "A shed is the typical housing structure used for:", options: ["A) Horses", "B) Goats and sheep", "C) Camels", "D) Elephants"], ans: 1 },
+      { id: 89, q: "A pen is the traditional housing structure associated with:", options: ["A) Camels / small livestock", "B) Dairy cows", "C) Cart bullocks", "D) Hatchery chicks"], ans: 0 },
+      { id: 90, q: "From which week of age should high-quality calf starter be introduced to a dairy calf?", options: ["A) 1st week", "B) 2nd week", "C) 4th week", "D) 8th week"], ans: 1 },
+      { id: 91, q: "What is considered the best time for heat detection in dairy cattle and buffaloes?", options: ["A) Early morning and late evening", "B) Midday under direct sun", "C) Midnight", "D) Immediately after feeding"], ans: 0 },
+      { id: 92, q: "Which are known as the most prolific sheep and goat breeds respectively in India?", options: ["A) Nellore and Jamunapari", "B) Garole sheep and Black Bengal goat", "C) Merino and Saanen", "D) Marwari and Beetal"], ans: 1 },
+      { id: 93, q: "How often should sheep flocks be dipped in medicated baths for parasite control?", options: ["A) Once a month", "B) At least twice a year", "C) Every week", "D) Only once in a lifetime"], ans: 1 },
+      { id: 94, q: "What is the primary objective of dipping sheep?", options: ["A) To whiten wool", "B) To eradicate ectoparasites such as lice, ticks and mites", "C) To increase body weight", "D) To cure foot rot directly"], ans: 1 },
+      { id: 95, q: "When should dipping of sheep ideally be done in relation to shearing?", options: ["A) Before shearing", "B) Immediately after shearing (when wool is short and chemical penetration is best)", "C) 6 months after shearing", "D) Exactly during shearing"], ans: 1 },
+      { id: 96, q: "Is removing dust, dung and waste material from fleece the stated primary veterinary purpose of dipping?", options: ["A) Yes", "B) No (dipping is strictly for ectoparasite control; washing cleans fleece)"], ans: 1 },
+      { id: 97, q: "Which method is commonly used for controlling ectoparasites in sheep during freezing winter when liquid dipping is risky?", options: ["A) Spraying", "B) Dusting with insecticide powders", "C) Oral drenching", "D) Injection"], ans: 1 },
+      { id: 98, q: "Which is recognized as the smallest or most dwarf cattle breed in the world, native to Kerala?", options: ["A) Punganur", "B) Vechur", "C) Siri", "D) Red Kandhari"], ans: 1 },
+      { id: 99, q: "What is the primary veterinary purpose of deworming livestock?", options: ["A) To control internal parasites (endoparasites)", "B) To control ticks", "C) To improve milk fat", "D) To prevent bloat"], ans: 0 },
+      { id: 100, q: "What does livestock weaning mean?", options: ["A) Castrating young males", "B) Making the young calf/kid independent of its mother's milk", "C) Vaccinating against rabies", "D) Dehorning calves"], ans: 1 },
+      { id: 101, q: "What is the Burdizzo castrator specifically used for?", options: ["A) Ear tattooing", "B) Bloodless castration by crushing spermatic cords", "C) Hoof paring", "D) Dehorning adult cattle"], ans: 1 },
+      { id: 102, q: "What is selection in animal breeding programmes?", options: ["A) Culling all males", "B) Choosing superior parents for producing the next generation", "C) Buying exotic animals", "D) Crossbreeding randomly"], ans: 1 },
+      { id: 103, q: "What effect does shearing sheep just before the breeding season have on fertility?", options: ["A) It significantly improves reproductive fertility", "B) It reduces fertility to zero", "C) It has no effect", "D) It causes permanent sterility"], ans: 0 },
+      { id: 104, q: "Does shearing just before breeding reduce ewe fertility?", options: ["A) Yes", "B) No"], ans: 1 },
+      { id: 105, q: "Does shearing before breeding enhance feed intake and physical comfort?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 106, q: "Does shearing before breeding ultimately increase mutton quality?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 107, q: "Surgical or chemical castration of female cattle (heifers/cows) is known as:", options: ["A) Spaying", "B) Caponization", "C) Docking", "D) Mulesing"], ans: 0 },
+      { id: 108, q: "What is the recommended ideal age for dehorning or disbudding calves?", options: ["A) 4–10 days", "B) 6 months", "C) 1 year", "D) 2 years"], ans: 0 },
+      { id: 109, q: "Feed expenses account for approximately what percentage of total operational expenses in dairy cattle rearing?", options: ["A) 20–30%", "B) 40–45%", "C) 60–65%", "D) 90%"], ans: 2 },
+      { id: 110, q: "What is the average twinning rate percentage in well-managed goat farming?", options: ["A) 5%", "B) 20%", "C) 40%", "D) 90%"], ans: 2 },
+      { id: 111, q: "Which Indian cattle breed is famously known as “17 paces” or “Sawai Chal” due to its majestic gait?", options: ["A) Kankrej", "B) Tharparkar", "C) Hariana", "D) Ongole"], ans: 0 },
+      { id: 112, q: "Which indigenous cattle breed is also known by the regional name “Wadhiar”?", options: ["A) Gir", "B) Kankrej", "C) Red Sindhi", "D) Deoni"], ans: 1 },
+      { id: 113, q: "Which buffalo breed possesses two distinct white collars—one around the jaw and another around the brisket?", options: ["A) Murrah", "B) Nili-Ravi", "C) Surti", "D) Mehsana"], ans: 2 },
+      { id: 114, q: "Which chemical compound is commonly used as an effective dairy milking-equipment sanitizer?", options: ["A) Calcium hypochlorite / Chlorine solutions", "B) Sodium hydroxide", "C) Sulphuric acid", "D) Copper sulphate"], ans: 0 },
+      { id: 115, q: "Which cattle breed is world-famous for participating in Jallikattu bull-taming sports in southern Tamil Nadu?", options: ["A) Kangayam", "B) Pulikulam (Alanganallur breed)", "C) Umblacherry", "D) Bargur"], ans: 1 },
+      { id: 116, q: "Which indigenous dairy cattle breed produces the highest average milk yield per lactation?", options: ["A) Red Sindhi", "B) Sahiwal", "C) Gir", "D) Tharparkar"], ans: 1 },
+      { id: 117, q: "Is Mandya sheep polled (hornless) in nature?", options: ["A) Yes", "B) No (Mandya has rams with horns and ewes polled, but generally rams are horned)"], ans: 1 },
+      { id: 118, q: "Is Vembur sheep polled in nature?", options: ["A) Yes", "B) No (Vembur rams have horns)"], ans: 1 },
+      { id: 119, q: "Is Mecheri sheep naturally polled in both sexes?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 120, q: "Is Pashmina a fine specialty down fibre?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 121, q: "Is Pashmina produced from specialized goats?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 122, q: "Is Pashmina associated with Himalayan high-altitude cold regions?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 123, q: "Is Pashmina used for weaving luxury high-quality shawls and fabrics?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 124, q: "Is dipping performed for general cleanliness and cutaneous blood circulation in dairy cows?", options: ["A) Yes", "B) No (dipping is for ectoparasite control in sheep/goats; cows are groomed/washed)"], ans: 1 },
+      { id: 125, q: "Is grooming performed for cleanliness and improvement of cutaneous blood circulation in dairy cows?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 126, q: "Is clipping performed for blood circulation improvement?", options: ["A) Yes", "B) No (clipping is for removing dirty hair coats)"], ans: 1 },
+      { id: 127, q: "Which cattle breed is specifically described as native dwarf cattle of Kerala?", options: ["A) Punganur", "B) Vechur", "C) Kasargod", "D) Malnad Gidda"], ans: 1 },
+      { id: 128, q: "Which cattle breed of Tamil Nadu is excellent for wet puddle ploughing in paddy fields?", options: ["A) Umblacherry", "B) Kangayam", "C) Alambadi", "D) Bargur"], ans: 0 },
+      { id: 129, q: "Which cattle breed is known as miniature cattle, originating from Andhra Pradesh?", options: ["A) Punganur", "B) Vechur", "C) Hallikar", "D) Amritmahal"], ans: 0 },
+      { id: 130, q: "Which cattle breed is traditionally noted as suitable for uneven desert/hilly terrain?", options: ["A) Nagori", "B) Gir", "C) Red Sindhi", "D) Tharparkar"], ans: 0 },
+      { id: 131, q: "What is an aborted calf fetus termed in veterinary obstetrics?", options: ["A) Slink calf", "B) Neonate", "C) Fledgling", "D) Yearling"], ans: 0 },
+      { id: 132, q: "Which exotic dairy cattle breed is most preferred for upgrading low-producing non-descript cattle in tropical climates due to heat tolerance and high butterfat?", options: ["A) Holstein Friesian", "B) Jersey", "C) Ayrshire", "D) Guernsey"], ans: 1 },
+      { id: 133, q: "Pandharpuri is a well-known dairy breed of which animal?", options: ["A) Cattle", "B) Buffalo", "C) Goat", "D) Sheep"], ans: 1 },
+      { id: 134, q: "Vembur is a prominent meat sheep breed native to which Indian state?", options: ["A) Andhra Pradesh", "B) Tamil Nadu", "C) Karnataka", "D) Kerala"], ans: 1 },
+      { id: 135, q: "The unique body colour-change property (white to grey as age advances) is a feature of:", options: ["A) Sahiwal", "B) Tharparkar", "C) Gir", "D) Red Sindhi"], ans: 1 },
+      { id: 136, q: "Which farm animal is universally referred to as the “poor man's cow” due to its utility and small feed requirement?", options: ["A) Sheep", "B) Goat", "C) Pig", "D) Backyard poultry"], ans: 1 },
+      { id: 137, q: "Where are sick and contagious animals kept on a model dairy farm to prevent disease spread?", options: ["A) Maternity pen", "B) Isolation box / Quarantine barn", "C) Calf shed", "D) Milking parlour"], ans: 1 },
+      { id: 138, q: "How far from the main animal barn is the milk room / milk house generally placed for hygienic safety?", options: ["A) 0.5 m", "B) 2.5 m", "C) 50 m", "D) 100 m"], ans: 1 },
+      { id: 139, q: "What is a heifer defined as in dairy cattle management?", options: ["A) A mature breeding bull", "B) A female cattle that has reached puberty but has not yet calved", "C) A newborn female calf", "D) An aged dry cow"], ans: 1 },
+      { id: 140, q: "“Silent heat” (estrus with very weak external symptoms) is notably more common in which farm species?", options: ["A) Cattle", "B) Buffalo", "C) Sheep", "D) Goats"], ans: 1 },
+      { id: 141, q: "Which sheep breed produces the world's finest and softest wool?", options: ["A) Corriedale", "B) Merino", "C) Rambouillet", "D) Cheviot"], ans: 1 },
+      { id: 142, q: "Which of the following is recognized as an exotic dairy/milch goat breed?", options: ["A) Boer", "B) Saanen", "C) Angora", "D) Kanni Adu"], ans: 1 },
+      { id: 143, q: "At what age is a dairy calf traditionally weaned from milk in scientific management systems?", options: ["A) At birth (immediately)", "B) 3 months", "C) 6 months", "D) 1 year"], ans: 1 },
+      { id: 144, q: "At what percentage of adult body weight should young female dairy goats generally be bred/mated for best lifetime performance?", options: ["A) 40%", "B) 70%", "C) 90%", "D) 100%"], ans: 1 },
+      { id: 145, q: "At what approximate age are goat kids weaned in intensive commercial goat farming?", options: ["A) 1 month", "B) 3 months", "C) 6 months", "D) 9 months"], ans: 1 },
+      { id: 146, q: "What is the maximum permissible moisture percentage in a standard compound dairy-animal concentrate feed mixture?", options: ["A) 5%", "B) 11%", "C) 20%", "D) 30%"], ans: 1 },
+      { id: 147, q: "Which is a specialized exotic meat breed of goat originating from South Africa?", options: ["A) Saanen", "B) Toggenburg", "C) Boer", "D) Alpine"], ans: 2 },
+      { id: 148, q: "Which sheep breed is globally famous as a specialized “Pelt” (fur skin) breed?", options: ["A) Karakul", "B) Merino", "C) Dorset", "D) Suffolk"], ans: 0 },
+      { id: 149, q: "What is the primary commercial purpose of raising Karakul sheep?", options: ["A) Fine apparel wool", "B) Heavy meat production", "C) Fur pelt production from newborn lambs", "D) Milk yield"], ans: 2 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(149, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 149) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Animal Husbandry, Dairy Breeds, and Livestock Management.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific cattle/buffalo breed characteristics, feeding practices, and reproductive terms.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Animal Husbandry modules recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+</html>

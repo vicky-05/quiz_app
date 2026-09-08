@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agricultural Extension Test 2 — Communication & PRA (58 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select, .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Agriculture Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Agricultural Extension Test 2: Communication, Visual Aids & PRA</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard agriculture exam pacing of <strong>1 minute per question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–58)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="58">All Questions (58 Questions)</option>
+            <option value="10">10 Questions</option>
+            <option value="25">25 Questions</option>
+            <option value="40">40 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 58)</label>
+          <input type="number" id="custom-count-input" min="1" max="58" value="25" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">58 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#127793;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Agri Extension</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#128227;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Communication & PRA</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 58</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">58:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 101, q: "What is the optimum number of cards in a flash card set?", options: ["A) 3–5 cards", "B) 10–12 cards", "C) 25–30 cards", "D) 50+ cards"], ans: 1 },
+      { id: 102, q: "Which type of channel comes from outside the social system of the receiver and is important in changing farmers from traditional to modern?", options: ["A) Localite channel", "B) Personal cosmopolite channel", "C) Impersonal local channel", "D) Interpersonal informal channel"], ans: 1 },
+      { id: 103, q: "Where is a result demonstration conducted to prove the worth of a recommended practice?", options: ["A) Agricultural university laboratory", "B) Farmer's field", "C) District collectorate lawn", "D) Commercial seed factory"], ans: 1 },
+      { id: 104, q: "Seed treatment practice demonstration can be accomplished best by which method?", options: ["A) Circular letter", "B) Method demonstration", "C) Radio broadcast", "D) Extension bulletin"], ans: 1 },
+      { id: 105, q: "Who normally conducts a method demonstration before farmers?", options: ["A) Progressive village landlord", "B) Extension worker / Agent", "C) District magistrate", "D) Commercial fertilizer dealer"], ans: 1 },
+      { id: 106, q: "Which adopter category generally has direct contact with agricultural research stations and high-level extension functionaries?", options: ["A) Laggards", "B) Late majority", "C) Innovators", "D) Early majority"], ans: 2 },
+      { id: 107, q: "Which is considered the most important group teaching method that leads to quick local adoption?", options: ["A) Result demonstration", "B) General public meeting", "C) Poster campaign", "D) Cinema slide"], ans: 0 },
+      { id: 108, q: "Under conditions of limited manpower, time, and operating money, which extension method should be selected to reach crowds?", options: ["A) Farm and home visit", "B) Mass contact method", "C) Intensive individual coaching", "D) Office consultation"], ans: 1 },
+      { id: 109, q: "Which training or discussion type has several speakers covering subdivisions of a specific topic for a definite period?", options: ["A) Symposium", "B) Panel discussion", "C) Brainstorming", "D) Workshop"], ans: 0 },
+      { id: 110, q: "Adoption of an agricultural innovation is fundamentally a/an ______ process.", options: ["A) Mechanical process", "B) Mental / psychological process", "C) Legal process", "D) Financial transaction"], ans: 1 },
+      { id: 111, q: "Who formulated the well-known “4-S formula” (Short, Sincere, Simple, Strong) for writing a personal extension letter?", options: ["A) J.P. Leagans", "B) McCormick", "C) Everett Rogers", "D) Wilson and Gallup"], ans: 1 },
+      { id: 112, q: "According to communication retention studies, an individual tends to remember what percentage of information by actively saying/explaining it?", options: ["A) 10%", "B) 30%", "C) 50%", "D) 70%"], ans: 3 },
+      { id: 113, q: "Which of the following is classified as a presentation-type visual aid?", options: ["A) Flash card", "B) Tractor model", "C) Soil auger", "D) Spraying machine"], ans: 0 },
+      { id: 114, q: "What specific relationship does Edgar Dale's “Cone of Experience” explain?", options: ["A) Tax rates and adoption", "B) Learning, Activity and Participant Involvement", "C) Soil fertility and crop yield", "D) Rainfall and irrigation intervals"], ans: 1 },
+      { id: 115, q: "Where is the optical centre of a well-designed poster located?", options: ["A) Exactly at the bottom border", "B) Exactly at the top corner", "C) 5/8th from the bottom (or slightly above geometric centre)", "D) Left margin"], ans: 2 },
+      { id: 116, q: "Which of the following is NOT a limitation of the individual contact method of extension?", options: ["A) Time-consuming", "B) Reaches fewer farmers", "C) Less expensive per capita", "D) High operational cost"], ans: 2 },
+      { id: 117, q: "Which of the following is NOT a characteristic of interpersonal communication?", options: ["A) High feedback", "B) Direct two-way interaction", "C) Feedback is limited and delayed", "D) Personal touch"], ans: 2 },
+      { id: 118, q: "Which display board is commonly used in village offices for displaying notices and agricultural messages?", options: ["A) Flannel board", "B) Bulletin board", "C) Magnetic board", "D) Peg board"], ans: 1 },
+      { id: 119, q: "Flannel graphs, flash cards, and flip charts are generally recommended for small groups not exceeding how many people?", options: ["A) 10 people", "B) 30 people", "C) 100 people", "D) 500 people"], ans: 1 },
+      { id: 120, q: "In a well-designed extension poster, the number of words used in the main slogan should ideally not exceed:", options: ["A) 5 words", "B) 25 words", "C) 50 words", "D) 100 words"], ans: 0 },
+      { id: 121, q: "What is a three-dimensional scenic representation of an original landscape using specimens, models and painted backgrounds called?", options: ["A) Diorama", "B) Mock-up", "C) Chart", "D) Specimen"], ans: 0 },
+      { id: 122, q: "What are transparent big-size photographs displayed by providing strong illumination at the back called?", options: ["A) Flashcards", "B) Transslides (Translides)", "C) Slides", "D) OHP sheets"], ans: 1 },
+      { id: 123, q: "Dolls or figures controlled and manipulated by a person from behind a screen are used in a:", options: ["A) Slide show", "B) Puppet show", "C) Drama play", "D) Video conference"], ans: 1 },
+      { id: 124, q: "What communication system is deeply embedded in local culture and existed long before modern mass media?", options: ["A) Internet portal", "B) Satellite television", "C) Folk media", "D) Press release"], ans: 2 },
+      { id: 125, q: "Where is the National Institute of Agricultural Extension Management (MANAGE) located?", options: ["A) New Delhi", "B) Hyderabad", "C) Nagpur", "D) Anand"], ans: 1 },
+      { id: 126, q: "Who among the following rural sociologists first recognized that the adoption of a new agricultural idea consists of distinct temporal stages?", options: ["A) Ryan and Gross (1943)", "B) Thorstein Veblen", "C) Max Weber", "D) Stuart Chapin"], ans: 0 },
+      { id: 127, q: "In which stage of the adoption process does an individual mentally apply the new idea to present and anticipated future situations and decide whether to try it?", options: ["A) Awareness", "B) Evaluation stage", "C) Trial stage", "D) Adoption stage"], ans: 1 },
+      { id: 128, q: "Adoption of an innovation across a population over time typically follows what statistical distribution curve?", options: ["A) J-shaped curve", "B) U-shaped curve", "C) Bell-shaped normal curve (S-curve when cumulative)", "D) Linear straight line"], ans: 2 },
+      { id: 129, q: "Which of the following is NOT a characteristic of Participatory Rural Appraisal (PRA)?", options: ["A) Flexibility", "B) Rigidity", "C) Local empowerment", "D) Multi-disciplinary team work"], ans: 1 },
+      { id: 130, q: "What is the process of actively involving local rural people in the analysis and interpretation of their situation in the presence of specialists called?", options: ["A) Bureaucratic census", "B) Participatory Rural Appraisal (PRA)", "C) Laboratory sample testing", "D) Postal survey"], ans: 1 },
+      { id: 131, q: "Which methodological principle is most closely associated with and fundamental to PRA field work?", options: ["A) Triangulation", "B) Random sampling with replacement", "C) Controlled laboratory isolation", "D) Double-blind testing"], ans: 0 },
+      { id: 132, q: "Where is applied agricultural research under Participatory Technology Development (PTD) mostly carried out?", options: ["A) Central research farm", "B) University greenhouse", "C) Farmers' holdings / fields", "D) Industrial laboratory"], ans: 2 },
+      { id: 133, q: "What is the core methodological principle of PRA used to offset investigator bias and cross-check facts?", options: ["A) Triangulation", "B) Extrapolation", "C) Interpolation", "D) Regression"], ans: 0 },
+      { id: 134, q: "What is the primary operational role of agricultural extension personnel during a PRA exercise?", options: ["A) Authoritative director", "B) Tax collector", "C) Facilitator", "D) Judicial inspector"], ans: 2 },
+      { id: 135, q: "Where is the National Organic Farming Research Institute (ICAR) located?", options: ["A) Dehradun", "B) Sikkim (Gangtok / Tadong)", "C) Shillong", "D) Imphal"], ans: 1 },
+      { id: 136, q: "Where is the Indian Institute of Natural Resins and Gums located?", options: ["A) Dehradun, Uttarakhand", "B) Ranchi, Jharkhand", "C) Bhopal, Madhya Pradesh", "D) Shimla, Himachal Pradesh"], ans: 0 },
+      { id: 137, q: "Where is the Indian Institute of Water Management (IIWM) located?", options: ["A) Coimbatore, Tamil Nadu", "B) Hyderabad, Telangana", "C) Bhubaneswar, Odisha", "D) Karnal, Haryana"], ans: 2 },
+      { id: 138, q: "Where is the Indian Institute of Natural Resins and Gums (formerly IINRG / ILRI) located?", options: ["A) New Delhi", "B) Ranchi, Jharkhand", "C) Nagpur, Maharashtra", "D) Anand, Gujarat"], ans: 1 },
+      { id: 139, q: "Where is the ICAR headquarters and administrative base located?", options: ["A) New Delhi", "B) Pusa, Bihar", "C) Karnal, Haryana", "D) Izatnagar, UP"], ans: 0 },
+      { id: 140, q: "Where is the National Research Centre for Orchids located?", options: ["A) Pakyong, Sikkim", "B) Shillong, Meghalaya", "C) Itanagar, Arunachal Pradesh", "D) Aizawl, Mizoram"], ans: 0 },
+      { id: 141, q: "Participatory Rural Appraisal (PRA) is directly related to which academic and professional division?", options: ["A) Agricultural Extension", "B) Plant Breeding", "C) Agricultural Entomology", "D) Soil Chemistry"], ans: 0 },
+      { id: 142, q: "Which PRA technique prompts rural elderly people and key informants to narrate important historical events associated with their community?", options: ["A) Seasonal calendar", "B) Timeline", "C) Venn diagram", "D) Transect walk"], ans: 1 },
+      { id: 143, q: "In which country was the early participatory methodology framework that birthed PRA first applied and developed?", options: ["A) India", "B) Kenya", "C) Bangladesh", "D) Philippines"], ans: 1 },
+      { id: 144, q: "In which year was the TNAU Directorate of Extension Education monthly farm journal *Uzhavarin Valarum Velanmai* first published?", options: ["A) 1965", "B) 1975", "C) 1985", "D) 1990"], ans: 1 },
+      { id: 145, q: "All guiding principles of Participatory Rural Appraisal (PRA) are fundamentally based on:", options: ["A) Strict bureaucratic control", "B) People's active involvement and empowerment", "C) Centralized funding", "D) Computer modeling"], ans: 1 },
+      { id: 146, q: "Which PRA tool provides visual information on existing institutional infrastructure in a village and its social relevance to the community?", options: ["A) Resource map", "B) Venn diagram (Institutional diagram)", "C) Transect walk", "D) Seasonality chart"], ans: 1 },
+      { id: 147, q: "Who is widely acknowledged internationally as the “Father of PRA”?", options: ["A) Everett Rogers", "B) Robert Chambers", "C) Paulo Freire", "D) Norman Borlaug"], ans: 1 },
+      { id: 148, q: "Which PRA principle refers to deliberately refriving from gathering unnecessary data and focusing only on what is relevant?", options: ["A) Optimal ignorance", "B) Triangulation", "C) Offsetting bias", "D) Sequential sampling"], ans: 0 },
+      { id: 149, q: "Which PRA operating principle is used to consciously reduce or offset investigator and sampling bias?", options: ["A) Optimal ignorance", "B) Offsetting bias", "C) Direct observation", "D) Rapid survey"], ans: 1 },
+      { id: 150, q: "Which PRA principle involves using multiple investigators, sources, or methods to verify information?", options: ["A) Triangulation", "B) Monopolization", "C) Generalization", "D) Standardization"], ans: 0 },
+      { id: 151, q: "Which PRA principle involves considering different perspectives, local variations, and diverse community groups?", options: ["A) Uniformity", "B) Seeking diversity", "C) Centralization", "D) Standardization"], ans: 1 },
+      { id: 152, q: "Which PRA tool provides a systematic cross-sectional geographic representation of different agro-ecological zones and land uses?", options: ["A) Transect walk", "B) Timeline", "C) Venn diagram", "D) Seasonal matrix"], ans: 0 },
+      { id: 153, q: "Which PRA tool provides a comprehensive bird's-eye spatial view of natural resources, topography, and dwellings in a village?", options: ["A) Resource map", "B) Matrix ranking", "C) Trend analysis", "D) Flow chart"], ans: 0 },
+      { id: 154, q: "Participatory Rural Appraisal (PRA) was introduced and popularized in India during the late 1980s and 1990s mainly by:", options: ["A) International military pacts", "B) Non-Governmental Organisations (NGOs) and research institutes", "C) Tax revenue departments", "D) Railway boards"], ans: 1 },
+      { id: 155, q: "Which rural appraisal approach evolved directly from Rapid Rural Appraisal (RRA) as a more empowering methodology?", options: ["A) Participatory Rural Appraisal (PRA)", "B) Census survey", "C) Controlled clinical trial", "D) econometric modeling"], ans: 0 },
+      { id: 156, q: "Which is the quick exploratory approach used to analyse a rural situation and assess farmers' needs through a multidisciplinary team?", options: ["A) Rapid Rural Appraisal (RRA)", "B) Ten-year census", "C) Judicial inquiry", "D) Legislative audit"], ans: 0 },
+      { id: 157, q: "Semi-structured conversational interviews are extensively used as a primary tool in:", options: ["A) Closed-book examinations", "B) Participatory Rural Appraisal (PRA)", "C) Supreme court hearings", "D) Stock market trading"], ans: 1 },
+      { id: 158, q: "Which PRA tool is used graphically to understand pest attack incidence, crop rotation cycles, and monthly rainfall patterns?", options: ["A) Seasonality map / calendar", "B) Organizational chart", "C) Soil taxonomy map", "D) Demographic pyramid"], ans: 0 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(58, parseInt(customCountInput.value) || 25));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 58) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! High mastery over Agricultural Extension, Communication Tools, and PRA techniques.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific institutional research locations and PRA principles to boost your score.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Review visual aid specifications, Robert Chambers' PRA principles, and ICAR institution headquarters.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+</html>

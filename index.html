@@ -1,365 +1,674 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Competitive Exam Portal — Test Series Dashboard</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-header: #02231c;
-      --bg-body: #f8fafc;
-      --card-bg: #ffffff;
-      --primary: #044e3e;
-      --primary-hover: #033c30;
-      --text-dark: #0f172a;
-      --text-muted: #64748b;
-      --border: #e2e8f0;
-      --accent-badge: #facc15;
-      --radius-sm: 8px;
-      --radius-md: 12px;
-      --radius-lg: 16px;
-      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
-    }
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Competitive Exam Portal — Test Hub</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-header: #02231c;
+            --bg-body: #f8fafc;
+            --card-bg: #ffffff;
+            --primary: #044e3e;
+            --primary-hover: #033c30;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --accent-badge: #facc15;
+            --radius-sm: 8px;
+            --radius-md: 14px;
+            --radius-lg: 18px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 20px -3px rgba(0, 0, 0, 0.08);
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Plus Jakarta Sans', sans-serif;
-    }
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
 
-    body {
-      background-color: var(--bg-body);
-      color: var(--text-dark);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
 
-    .banner {
-      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
-      color: #ffffff;
-      padding: 2.25rem 1rem 1.75rem;
-      text-align: center;
-      position: relative;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    }
+        .banner {
+            background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+            color: #ffffff;
+            padding: 2.25rem 1rem 1.75rem;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
 
-    .banner h1 {
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      color: var(--accent-badge);
-      text-transform: uppercase;
-      margin-bottom: 0.35rem;
-    }
+        .banner h1 {
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: var(--accent-badge);
+            text-transform: uppercase;
+            margin-bottom: 0.35rem;
+        }
 
-    .banner .sub-title {
-      font-size: 1.05rem;
-      font-weight: 700;
-      letter-spacing: 0.15em;
-      color: #ffffff;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
+        .banner .sub-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 0.45rem;
+        }
 
-    .banner .tagline {
-      font-family: 'Caveat', cursive;
-      font-size: 1.35rem;
-      color: #e2e8f0;
-    }
+        .banner .tagline {
+            font-family: 'Caveat', cursive;
+            font-size: 1.35rem;
+            color: #e2e8f0;
+        }
 
-    .container {
-      max-width: 1050px;
-      width: 100%;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      flex: 1;
-    }
+        .container {
+            max-width: 1050px;
+            width: 100%;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            flex: 1;
+        }
 
-    .section-title {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: #022c22;
-      margin-bottom: 0.35rem;
-    }
+        /* Top Breadcrumb & Back Bar */
+        .nav-breadcrumb {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
 
-    .section-desc {
-      color: var(--text-muted);
-      font-size: 0.95rem;
-      margin-bottom: 1.75rem;
-    }
+        .breadcrumb-trail {
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
 
-    .categories-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-      gap: 1.5rem;
-    }
+        .breadcrumb-trail span {
+            color: var(--primary);
+            font-weight: 800;
+        }
 
-    .category-card {
-      background: var(--card-bg);
-      border-radius: var(--radius-lg);
-      padding: 1.5rem;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-md);
-      display: flex;
-      flex-direction: column;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
+        .btn-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0.55rem 1.1rem;
+            background: #ffffff;
+            border: 1.5px solid var(--primary);
+            color: var(--primary);
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-size: 0.88rem;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
 
-    .category-card:hover {
-      transform: translateY(-3px);
-      box-shadow: var(--shadow-lg);
-    }
+        .btn-back:hover {
+            background: #e6f3ef;
+            transform: translateX(-2px);
+        }
 
-    .category-header {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      margin-bottom: 1rem;
-      padding-bottom: 0.85rem;
-      border-bottom: 1px solid #f1f5f9;
-    }
+        .section-header {
+            margin-bottom: 1.75rem;
+        }
 
-    .category-icon {
-      width: 44px;
-      height: 44px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.3rem;
-      flex-shrink: 0;
-    }
+        .section-title {
+            font-size: 1.45rem;
+            font-weight: 800;
+            color: #022c22;
+            margin-bottom: 0.35rem;
+        }
 
-    .icon-amber { background: #fef3c7; color: #b45309; }
-    .icon-green { background: #dcfce7; color: #15803d; }
-    .icon-blue { background: #e0f2fe; color: #0369a1; }
-    .icon-purple { background: #f3e8ff; color: #7e22ce; }
+        .section-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
 
-    .category-title {
-      font-size: 1.1rem;
-      font-weight: 800;
-      color: var(--text-dark);
-      line-height: 1.25;
-    }
+        /* Level 1: Category Hub Cards */
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.4rem;
+        }
 
-    .category-meta {
-      font-size: 0.75rem;
-      color: var(--text-muted);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-    }
+        .hub-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-md);
+            padding: 1.6rem 1.4rem;
+            border: 1.5px solid var(--border);
+            box-shadow: var(--shadow-md);
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            display: flex;
+            align-items: center;
+            gap: 1.1rem;
+            position: relative;
+        }
 
-    .tests-list {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-      margin-top: auto;
-    }
+        .hub-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+            border-color: #79baaa;
+            background: #fbfdfc;
+        }
 
-    .test-link {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0.85rem 1rem;
-      background: #f8fafc;
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius-sm);
-      text-decoration: none;
-      color: var(--text-dark);
-      font-weight: 700;
-      font-size: 0.95rem;
-      transition: all 0.15s ease;
-    }
+        .hub-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
 
-    .test-link:hover {
-      background: #e6f3ef;
-      border-color: #79baaa;
-      color: #044e3e;
-      transform: translateX(3px);
-    }
+        .icon-indigo {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
 
-    .test-link .test-tag {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #044e3e;
-      background: #c5e6dc;
-      padding: 0.2rem 0.55rem;
-      border-radius: 999px;
-      white-space: nowrap;
-    }
+        .icon-amber {
+            background: #fef3c7;
+            color: #b45309;
+        }
 
-    .footer-motivate {
-      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
-      color: #ffffff;
-      padding: 1.75rem 1rem;
-      text-align: center;
-      margin-top: auto;
-      border-top: 3px solid #059669;
-    }
+        .icon-emerald {
+            background: #d1fae5;
+            color: #047857;
+        }
 
-    .footer-motivate .quote {
-      font-family: 'Caveat', cursive;
-      font-size: 1.45rem;
-      color: #f8fafc;
-      margin-bottom: 0.35rem;
-    }
+        .icon-purple {
+            background: #f3e8ff;
+            color: #7e22ce;
+        }
 
-    .footer-motivate .author-sub {
-      font-size: 0.8rem;
-      letter-spacing: 0.12em;
-      color: #94a3b8;
-      text-transform: uppercase;
-      font-weight: 600;
-    }
+        .icon-green {
+            background: #dcfce7;
+            color: #15803d;
+        }
 
-    @media (max-width: 650px) {
-      .banner h1 {
-        font-size: 1.5rem;
-      }
-      .categories-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+        .icon-blue {
+            background: #e0f2fe;
+            color: #0369a1;
+        }
+
+        .icon-rose {
+            background: #ffe4e6;
+            color: #be123c;
+        }
+
+        .hub-info {
+            flex: 1;
+        }
+
+        .hub-title {
+            font-size: 1.12rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 0.25rem;
+            line-height: 1.3;
+        }
+
+        .hub-count {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+        }
+
+        .hub-arrow {
+            font-size: 1.3rem;
+            color: #94a3b8;
+            font-weight: 800;
+            transition: transform 0.15s ease, color 0.15s ease;
+        }
+
+        .hub-card:hover .hub-arrow {
+            transform: translateX(4px);
+            color: var(--primary);
+        }
+
+        /* Level 2: Sub-Category Test List */
+        .tests-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.9rem;
+        }
+
+        .test-card {
+            background: var(--card-bg);
+            border-radius: var(--radius-md);
+            padding: 1.15rem 1.4rem;
+            border: 1.5px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: all 0.15s ease;
+        }
+
+        .test-card:hover {
+            background: #e6f3ef;
+            border-color: #79baaa;
+            transform: translateX(4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .test-left {
+            display: flex;
+            align-items: center;
+            gap: 0.9rem;
+        }
+
+        .test-number-badge {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #022c22;
+            color: #ffffff;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+
+        .test-name {
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .test-right {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .test-pill {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: #044e3e;
+            background: #c5e6dc;
+            padding: 0.3rem 0.75rem;
+            border-radius: 999px;
+            white-space: nowrap;
+        }
+
+        .test-enter {
+            font-weight: 800;
+            color: var(--primary);
+            font-size: 1.1rem;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        .footer-motivate {
+            background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+            color: #ffffff;
+            padding: 1.75rem 1rem;
+            text-align: center;
+            margin-top: auto;
+            border-top: 3px solid #059669;
+        }
+
+        .footer-motivate .quote {
+            font-family: 'Caveat', cursive;
+            font-size: 1.45rem;
+            color: #f8fafc;
+            margin-bottom: 0.35rem;
+        }
+
+        .footer-motivate .author-sub {
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            color: #94a3b8;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        @media (max-width: 650px) {
+            .banner h1 {
+                font-size: 1.55rem;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .test-card {
+                padding: 1rem;
+            }
+
+            .test-name {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-  <header class="banner">
-    <h1>Competitive Exam Portal</h1>
-    <div class="sub-title">Online Practice Quiz Series</div>
-    <div class="tagline">Practice Today &bull; Perform Tomorrow &bull; Small Steps Big Success!</div>
-  </header>
+    <header class="banner">
+        <h1>Competitive Exam Portal</h1>
+        <div class="sub-title">TNPSC & General Studies Test Hub</div>
+        <div class="tagline">Practice Today &bull; Perform Tomorrow &bull; Small Steps Big Success!</div>
+    </header>
 
-  <div class="container">
-    <div class="section-title">Select Module & Start Exam</div>
-    <div class="section-desc">Choose any test below to begin your timed interactive assessment.</div>
+    <div class="container">
 
-    <div class="categories-grid">
+        <!-- LEVEL 1: Clean Main Categories -->
+        <div id="category-view">
+            <div class="section-header">
+                <div class="section-title">Select a Subject</div>
+                <div class="section-desc">Click any category below to browse its available full-length mock tests and
+                    chapter series.</div>
+            </div>
 
-      <!-- Category 1: Indian National Movement (INM TEST SERIES) -->
-      <div class="category-card">
-        <div class="category-header">
-          <div class="category-icon icon-amber">&#9874;</div>
-          <div>
-            <div class="category-title">Indian National Movement</div>
-            <div class="category-meta">general_quiz &bull; INM Series</div>
-          </div>
-        </div>
-        <div class="tests-list">
-          <a href="general_quiz/INM%20TEST%20SERIES/INM_TEST_1.html" class="test-link">
-            <span>INM Test 1</span>
-            <span class="test-tag">History</span>
-          </a>
-          <a href="general_quiz/INM%20TEST%20SERIES/INM_TEST_2.html" class="test-link">
-            <span>INM Test 2</span>
-            <span class="test-tag">History</span>
-          </a>
-          <a href="general_quiz/INM%20TEST%20SERIES/INM_TEST_3.html" class="test-link">
-            <span>INM Test 3</span>
-            <span class="test-tag">History</span>
-          </a>
-        </div>
-      </div>
+            <div class="categories-grid">
 
-      <!-- Category 2: Crop Protection (Entomology & Pathology) -->
-      <div class="category-card">
-        <div class="category-header">
-          <div class="category-icon icon-purple">&#128030;</div>
-          <div>
-            <div class="category-title">Entomology & Pathology</div>
-            <div class="category-meta">AGRI_QUIZ &bull; Crop Protection</div>
-          </div>
-        </div>
-        <div class="tests-list">
-          <a href="AGRI_QUIZ/AEN_1_TEST.html" class="test-link">
-            <span>Agricultural Entomology (AEN 1)</span>
-            <span class="test-tag">Entomology</span>
-          </a>
-          <a href="AGRI_QUIZ/PLANT_PATHOLOGY.html" class="test-link">
-            <span>Plant Pathology</span>
-            <span class="test-tag">Pathology</span>
-          </a>
-        </div>
-      </div>
+                <!-- 1. Indian Polity -->
+                <div class="hub-card" onclick="openCategory('polity')">
+                    <div class="hub-icon icon-indigo">&#9878;</div>
+                    <div class="hub-info">
+                        <div class="hub-title">Indian Polity & Constitution</div>
+                        <div class="hub-count">14 Test Modules Available &rarr;</div>
+                    </div>
+                    <div class="hub-arrow">&rsaquo;</div>
+                </div>
 
-      <!-- Category 3: Horticulture & Crop Science -->
-      <div class="category-card">
-        <div class="category-header">
-          <div class="category-icon icon-green">&#127815;</div>
-          <div>
-            <div class="category-title">Horticulture & Crops</div>
-            <div class="category-meta">AGRI_QUIZ &bull; Production</div>
-          </div>
-        </div>
-        <div class="tests-list">
-          <a href="AGRI_QUIZ/AHO_2025.html" class="test-link">
-            <span>Assistant Horticultural Officer (AHO 2025)</span>
-            <span class="test-tag">Horticulture</span>
-          </a>
-        </div>
-      </div>
+                <!-- 2. Indian National Movement -->
+                <div class="hub-card" onclick="openCategory('inm')">
+                    <div class="hub-icon icon-amber">&#9874;</div>
+                    <div class="hub-info">
+                        <div class="hub-title">Indian National Movement (INM)</div>
+                        <div class="hub-count">6 Test Modules Available &rarr;</div>
+                    </div>
+                    <div class="hub-arrow">&rsaquo;</div>
+                </div>
 
-      <!-- Category 4: Plant Breeding & Seed Technology -->
-      <div class="category-card">
-        <div class="category-header">
-          <div class="category-icon icon-blue">&#127793;</div>
-          <div>
-            <div class="category-title">Breeding & Seed Science</div>
-            <div class="category-meta">AGRI_QUIZ &bull; Genetics & Seeds</div>
-          </div>
-        </div>
-        <div class="tests-list">
-          <a href="AGRI_QUIZ/BREEDING.html" class="test-link">
-            <span>Plant Breeding & Genetics</span>
-            <span class="test-tag">Breeding</span>
-          </a>
-          <a href="AGRI_QUIZ/SEED_TEST_1.html" class="test-link">
-            <span>Seed Technology Test 1</span>
-            <span class="test-tag">Seed Tech</span>
-          </a>
-          <a href="AGRI_QUIZ/SEED_TEST_2.html" class="test-link">
-            <span>Seed Technology Test 2</span>
-            <span class="test-tag">Seed Tech</span>
-          </a>
-        </div>
-      </div>
+                <!-- 3. GS Full Mocks -->
+                <div class="hub-card" onclick="openCategory('mocks')">
+                    <div class="hub-icon icon-rose">&#128221;</div>
+                    <div class="hub-info">
+                        <div class="hub-title">GS Full Mock Tests</div>
+                        <div class="hub-count">3-Hour Full Exam Simulation &rarr;</div>
+                    </div>
+                    <div class="hub-arrow">&rsaquo;</div>
+                </div>
 
-      <!-- Category 5: Agricultural Economics & Marketing -->
-      <div class="category-card">
-        <div class="category-header">
-          <div class="category-icon icon-green">&#128200;</div>
-          <div>
-            <div class="category-title">Agricultural Economics</div>
-            <div class="category-meta">AGRI_QUIZ &bull; Marketing & Finance</div>
-          </div>
+                <!-- 4. Entomology & Pathology -->
+                <div class="hub-card" onclick="openCategory('crop_prot')">
+                    <div class="hub-icon icon-purple">&#128030;</div>
+                    <div class="hub-info">
+                        <div class="hub-title">Crop Protection (Entomology & Pathology)</div>
+                        <div class="hub-count">2 Test Modules Available &rarr;</div>
+                    </div>
+                    <div class="hub-arrow">&rsaquo;</div>
+                </div>
+
+                <!-- 5. Horticulture & Crops -->
+                <div class="hub-card" onclick="openCategory('horti')">
+                    <div class="hub-icon icon-green">&#127815;</div>
+                    <div class="hub-info">
+                        <div class="hub-title">Horticulture & Crop Science</div>
+                        <div class="hub-count">Assistant Horti Officer Exam &rarr;</div>
+                    </div>
+                    <div class="hub-arrow">&rsaquo;</div>
+                </div>
+
+                <div class="hub-card" onclick="openCategory('agronomy')">
+                    <div class="hub-icon icon-emerald">&#127806;</div>
+                    <div class="hub-info">
+                        <div class="hub-title">Agronomy & Crop Production</div>
+                        <div class="hub-count">1 Test Module Available &rarr;</div>
+                    </div>
+                    <div class="hub-arrow">&rsaquo;</div>
+                </div>
+
+                <!-- 6. Breeding & Seeds -->
+                <div class="hub-card" onclick="openCategory('seed')">
+                    <div class="hub-icon icon-blue">&#127793;</div>
+                    <div class="hub-info">
+                        <div class="hub-title">Plant Breeding & Seed Technology</div>
+                        <div class="hub-count">3 Test Modules Available &rarr;</div>
+                    </div>
+                    <div class="hub-arrow">&rsaquo;</div>
+                </div>
+
+                <!-- 7. Agri Economics -->
+                <div class="hub-card" onclick="openCategory('economics')">
+                    <div class="hub-icon icon-emerald">&#128200;</div>
+                    <div class="hub-info">
+                        <div class="hub-title">Agricultural Economics & Marketing</div>
+                        <div class="hub-count">2 Test Modules Available &rarr;</div>
+                    </div>
+                    <div class="hub-arrow">&rsaquo;</div>
+                </div>
+
+                <div class="hub-card" onclick="openCategory('extension')">
+                    <div class="hub-icon icon-emerald">&#127793;</div>
+                    <div class="hub-info">
+                        <div class="hub-title">Agricultural Extension</div>
+                        <div class="hub-count">Adoption & Teaching Methods &rarr;</div>
+                    </div>
+                    <div class="hub-arrow">&rsaquo;</div>
+                </div>
+                <div class="hub-card" onclick="openCategory('animal_husbandry')">
+                    <div class="hub-icon icon-blue">&#128004;</div>
+                    <div class="hub-info">
+                        <div class="hub-title">Animal Husbandry & Dairy</div>
+                        <div class="hub-count">1 Test Module Available &rarr;</div>
+                    </div>
+                    <div class="hub-arrow">&rsaquo;</div>
+                </div>
+                <div class="hub-card" onclick="openCategory('meteorology')">
+                    <div class="hub-icon icon-cyan">&#127782;</div>
+                    <div class="hub-info">
+                        <div class="hub-title">Agricultural Meteorology</div>
+                        <div class="hub-count">1 Test Module Available &rarr;</div>
+                    </div>
+                    <div class="hub-arrow">&rsaquo;</div>
+                </div>
+
+            </div>
         </div>
-        <div class="tests-list">
-          <a href="AGRI_QUIZ/economics_test_1.html" class="test-link">
-            <span>Economics & Marketing Test 1</span>
-            <span class="test-tag">Economics</span>
-          </a>
-          <a href="AGRI_QUIZ/economics_Test_2.html" class="test-link">
-            <span>Economics & Banking Test 2</span>
-            <span class="test-tag">Economics</span>
-          </a>
+
+
+        <!-- LEVEL 2: Sub-Category Drawer (Visible only when category is clicked) -->
+        <div id="sub-view" class="hidden">
+
+            <div class="nav-breadcrumb">
+                <div class="breadcrumb-trail">Home &gt; <span id="breadcrumb-category-name">Selected Category</span>
+                </div>
+                <button class="btn-back" onclick="backToHome()">&larr; Back to All Subjects</button>
+            </div>
+
+            <div class="section-header">
+                <div class="section-title" id="sub-view-title">Subject Modules</div>
+                <div class="section-desc">Select a specific test module to begin your timed examination.</div>
+            </div>
+
+            <!-- Container dynamically populated via JavaScript -->
+            <div class="tests-grid" id="sub-tests-container"></div>
+
         </div>
-      </div>
 
     </div>
-  </div>
 
-  <footer class="footer-motivate">
-    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
-    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
-  </footer>
+    <footer class="footer-motivate">
+        <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+        <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+    </footer>
 
+    <script>
+        // Organized Data Hierarchy
+        const categoryData = {
+            polity: {
+                name: "Indian Polity & Constitution",
+                tests: [
+                    { name: "Polity Test 1: Constitution Master Set", tag: "570 MCQs", url: "general_quiz/POLITY_TEST_1.html" },
+                    { name: "Polity Test 2: Panchayats, Judiciary & Bodies", tag: "125 MCQs", url: "general_quiz/POLITY_TEST_2.html" },
+                    { name: "Polity Test 3: Amendments & Governance Review", tag: "100 MCQs", url: "general_quiz/POLITY_TEST_3.html" },
+                    { name: "Polity Test 4: Constitutional Sources & Rules", tag: "100 MCQs", url: "general_quiz/POLITY_TEST_4.html" },
+                    { name: "Polity Test 5: Parliament & State Executive", tag: "100 MCQs", url: "general_quiz/POLITY_TEST_5.html" },
+                    { name: "Polity Test 6: Foreign Policy & International Relations", tag: "100 MCQs", url: "general_quiz/POLITY_TEST_6.html" },
+                    { name: "Polity Test 7: State Government (மாநில அரசு)", tag: "100 MCQs", url: "general_quiz/POLITY_TEST_7.html" },
+                    { name: "Polity Test 8: Central Government (நடுவண் அரசு)", tag: "100 MCQs", url: "general_quiz/POLITY_TEST_8.html" },
+                    { name: "Polity Test 9: Constitution of India (இந்திய அரசியலமைப்பு)", tag: "100 MCQs", url: "general_quiz/POLITY_TEST_9.html" },
+                    { name: "Polity Test 10: Anti-Corruption, States & Framing", tag: "100 MCQs", url: "general_quiz/POLITY_TEST_10.html" },
+                    { name: "Polity Test 11: Citizenship, Rights, DPSP & Duties", tag: "100 MCQs", url: "general_quiz/POLITY_TEST_11.html" },
+                    { name: "Polity Test 12: Elections, Human Rights & RTI", tag: "100 MCQs", url: "general_quiz/POLITY_TEST_12.html" },
+                    { name: "Polity Test 13: Direct Practice Set (Rights & History)", tag: "72 MCQs", url: "general_quiz/POLITY_TEST_13.html" },
+                    { name: "Polity Test 14: Local Govt, State Govt & President", tag: "69 MCQs", url: "general_quiz/POLITY_TEST_14.html" }
+
+
+                ]
+            },
+            inm: {
+                name: "Indian National Movement (INM)",
+                tests: [
+                    { name: "INM Test 1: Early Leaders & Phase I", tag: "History", url: "general_quiz/INM%20TEST%20SERIES/INM_TEST_1.html" },
+                    { name: "INM Test 2: Mass Movements & Revolts", tag: "History", url: "general_quiz/INM%20TEST%20SERIES/INM_TEST_2.html" },
+                    { name: "INM Test 3: INM Full Review Test", tag: "History", url: "general_quiz/INM%20TEST%20SERIES/INM_TEST_3.html" },
+                    { name: "INM Test 4: INC Sessions & Land Systems", tag: "125 MCQs", url: "general_quiz/INM%20TEST%20SERIES/INM_TEST_4.html" },
+                    { name: "INM Test 5: Revolutionary & Reform Timeline", tag: "125 MCQs", url: "general_quiz/INM%20TEST%20SERIES/INM_TEST_5.html" },
+                    { name: "INM Test 6: Periyar, Ambedkar & Gandhi Era", tag: "150 MCQs", url: "general_quiz/INM%20TEST%20SERIES/INM_TEST_6.html" },
+
+                ]
+            },
+            mocks: {
+                name: "General Studies Full Mocks",
+                tests: [
+                    { name: "GS Full Mock 1 (Tamil, Polity, History, Science & Math)", tag: "200 MCQs • 3 Hours", url: "general_quiz/GS_FULL_MOCK_TEST_1.html" }
+                ]
+            },
+            crop_prot: {
+                name: "Crop Protection (Entomology & Pathology)",
+                tests: [
+                    { name: "Agricultural Entomology (AEN 1 Test)", tag: "Entomology", url: "AGRI_QUIZ/AEN_1_TEST.html" },
+                    { name: "Plant Pathology Master Test", tag: "Pathology", url: "AGRI_QUIZ/PLANT_PATHOLOGY.html" }
+                ]
+            },
+            horti: {
+                name: "Horticulture & Crop Science",
+                tests: [
+                    { name: "Assistant Horticultural Officer (AHO 2025)", tag: "200 MCQs • 3 Hours", url: "AGRI_QUIZ/AHO_2025.html" }
+                ]
+            },
+            agronomy: {
+                name: "Agronomy & Crop Production",
+                tests: [
+                    { name: "Agronomy Test 1: Fundamentals & Irrigation", tag: "150 MCQs • 150 Mins", url: "AGRI_QUIZ/AGRI_AGRONOMY_TEST_1.html" },
+                    { name: "Agronomy Test 2: Advanced Cropping Systems", tag: "321 MCQs • 321 Mins", url: "AGRI_QUIZ/AGRI_AGRONOMY_TEST_2.html" }
+                ]
+            },
+            extension: {
+                name: "Agricultural Extension",
+                tests: [
+                    { name: "Extension Test 1: Adoption & Methods", tag: "100 MCQs • 100 Mins", url: "AGRI_QUIZ/AGRI_EXT_TEST_1.html" },
+                    { name: "Extension Test 2: Communication, Visual Aids & PRA", tag: "58 MCQs • 58 Mins", url: "AGRI_QUIZ/AGRI_EXT_TEST_2.html" },
+                    { name: "Extension Test 3: ICT, Institutions & Sociology", tag: "179 MCQs • 179 Mins", url: "AGRI_QUIZ/AGRI_EXT_TEST_3.html" },
+                    { name: "Extension Test 4: Fundamentals & Schemes (AVN Test)", tag: "40 MCQs • 40 Mins", url: "AGRI_QUIZ/AGRI_EXT_TEST_4.html" }
+                ]
+            },
+            animal_husbandry: {
+                name: "Animal Husbandry & Dairy",
+                tests: [
+                    { name: "Animal Husbandry Test 1: Livestock Management", tag: "149 MCQs • 149 Mins", url: "AGRI_QUIZ/AGRI_ANIMAL_HUSBANDRY_TEST_1.html" },
+                    { name: "Animal Husbandry Test 2: Dairy Science & Management", tag: "101 MCQs • 101 Mins", url: "AGRI_QUIZ/AGRI_ANIMAL_HUSBANDRY_TEST_2.html" },
+                    { name: "Animal Husbandry Test 3: Fodder & Poultry Science", tag: "150 MCQs • 150 Mins", url: "AGRI_QUIZ/AGRI_ANIMAL_HUSBANDRY_TEST_3.html" },
+                    { name: "Animal Husbandry Test 4: Animal Health & Dairy Economics", tag: "115 MCQs • 115 Mins", url: "AGRI_QUIZ/AGRI_ANIMAL_HUSBANDRY_TEST_4.html" }
+                ]
+            },
+            meteorology: {
+                name: "Agricultural Meteorology",
+                tests: [
+                    { name: "Meteorology Test 1: Climate & Atmosphere", tag: "146 MCQs • 146 Mins", url: "AGRI_QUIZ/AGRI_MET_TEST_1.html" },
+                    { name: "Meteorology Test 2: Climatology & Forecasting", tag: "236 MCQs • 236 Mins", url: "AGRI_MET_TEST_2.html" }
+                ]
+            },
+            seed: {
+                name: "Plant Breeding & Seed Technology",
+                tests: [
+                    { name: "Plant Breeding & Genetics (Breeding Test)", tag: "Breeding", url: "AGRI_QUIZ/BREEDING.html" },
+                    { name: "Seed Technology & Testing Test 1", tag: "Seed Tech", url: "AGRI_QUIZ/SEED_TEST_1.html" },
+                    { name: "Seed Technology & Quality Control Test 2", tag: "Seed Tech", url: "AGRI_QUIZ/SEED_TEST_2.html" }
+                ]
+            },
+            economics: {
+                name: "Agricultural Economics & Marketing",
+                tests: [
+                    { name: "Economics & Marketing Test 1", tag: "Economics", url: "AGRI_QUIZ/economics_test_1.html" },
+                    { name: "Economics & Banking Test 2", tag: "Economics", url: "AGRI_QUIZ/economics_Test_2.html" }
+                ]
+            }
+        };
+
+        function openCategory(catKey) {
+            const data = categoryData[catKey];
+            if (!data) return;
+
+            document.getElementById('breadcrumb-category-name').textContent = data.name;
+            document.getElementById('sub-view-title').textContent = data.name + " Modules";
+
+            const container = document.getElementById('sub-tests-container');
+            container.innerHTML = "";
+
+            data.tests.forEach((t, idx) => {
+                const link = document.createElement('a');
+                link.className = 'test-card';
+                link.href = t.url;
+
+                link.innerHTML = `
+          <div class="test-left">
+            <div class="test-number-badge">${idx + 1}</div>
+            <div class="test-name">${t.name}</div>
+          </div>
+          <div class="test-right">
+            <span class="test-pill">${t.tag}</span>
+            <span class="test-enter">&rarr;</span>
+          </div>
+        `;
+                container.appendChild(link);
+            });
+
+            document.getElementById('category-view').classList.add('hidden');
+            document.getElementById('sub-view').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function backToHome() {
+            document.getElementById('sub-view').classList.add('hidden');
+            document.getElementById('category-view').classList.remove('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
 </body>
+
 </html>

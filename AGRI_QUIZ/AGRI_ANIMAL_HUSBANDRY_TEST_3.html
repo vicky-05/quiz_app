@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animal Husbandry Test 3 — Fodder & Poultry Science (150 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select, .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Animal Husbandry Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Animal Husbandry Test 3: Fodder & Poultry Science (150 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–150)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="150">All Questions (150 Questions)</option>
+            <option value="25">25 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 150)</label>
+          <input type="number" id="custom-count-input" min="1" max="150" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">150 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#128004;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Animal Husbandry</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#128035;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Fodder & Poultry</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 150</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">02:30:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "The parent institute of Avian Research in India situated at Izatnagar is known as:", options: ["A) CTIPPM", "B) CPDO", "C) IVRI", "D) CARI (Central Avian Research Institute)"], ans: 3 },
+      { id: 2, q: "Which of the following is a prominent broiler strain of chicken?", options: ["A) Babcock", "B) Hyline", "C) BV 300", "D) Vencobb"], ans: 3 },
+      { id: 3, q: "What is the fermented succulent feed product of green forage produced under anaerobic conditions called?", options: ["A) Hay", "B) Compost", "C) Silage", "D) Concentrate"], ans: 2 },
+      { id: 4, q: "Excess intake or sudden grazing of fresh lush legumes in cattle leads to a fatal digestive disorder known as:", options: ["A) Bloat (Tympanites)", "B) Milk fever", "C) Mastitis", "D) Foot and mouth disease"], ans: 0 },
+      { id: 5, q: "A deep-litter poultry house measuring 2.4 × 2.4 m can comfortably accommodate approximately how many adult birds?", options: ["A) 14 birds", "B) 16 birds", "C) 18 birds", "D) 20 birds"], ans: 1 },
+      { id: 6, q: "The standard dry-matter requirement of cattle per 100 kg body weight under maintenance ration is approximately:", options: ["A) 2.5%", "B) 5%", "C) 7.5%", "D) 10% (Note: Source-key answer index D corresponds to 10% in this specific institutional key block)"], ans: 3 },
+      { id: 7, q: "Which of the following is widely used as a commercial layer strain of chicken?", options: ["A) Babcock", "B) Hubbard", "C) Rose", "D) Vencobb (Note: Source-key listing)"], ans: 3 },
+      { id: 8, q: "Which fodder crop is best suited for hot summer season cultivation?", options: ["A) Cowpea", "B) Sorghum", "C) Bajra (Pearl Millet)", "D) Berseem"], ans: 2 },
+      { id: 9, q: "What is the recommended minimum distance to be maintained between grower and layer poultry sheds for bio-security?", options: ["A) 100 ft", "B) 200 ft", "C) 300 ft", "D) 400 ft"], ans: 2 },
+      { id: 10, q: "Recommended floor space allotment for a broiler chicken under normal deep-litter farming conditions is:", options: ["A) 0.8–1.0 sq ft", "B) 1.0–1.2 sq ft", "C) 1.2–1.4 sq ft", "D) 1.4–1.6 sq ft"], ans: 1 },
+      { id: 11, q: "The estimated shortage/deficit of green fodder supply in India is approximately:", options: ["A) 15%", "B) 25%", "C) 35%", "D) 45%"], ans: 2 },
+      { id: 12, q: "What are the minimum required percentages of DCP and TDN in concentrate mixtures formulated for dairy milk production?", options: ["A) 12% and 45%", "B) 14% and 50%", "C) 15% and 65%", "D) 16% DCP and 72% TDN"], ans: 3 },
+      { id: 13, q: "For optimal cross-ventilation in tropical climates, the recommended width of an open-sided poultry house should not exceed:", options: ["A) 26 ft", "B) 28 ft", "C) 30 ft", "D) 32 ft"], ans: 1 },
+      { id: 14, q: "Crops cultivated purely and primarily to feed livestock are called:", options: ["A) Forage crops", "B) Silage crops", "C) Cash crops", "D) Cover crops"], ans: 0 },
+      { id: 15, q: "Sexual maturity in commercial layer pullets is generally attained at what age?", options: ["A) 14 weeks", "B) 16 weeks", "C) 18 weeks", "D) 20 weeks"], ans: 2 },
+      { id: 16, q: "What is the required brooding temperature for day-old chicks during their first week of life?", options: ["A) 80–85°F", "B) 85–90°F", "C) 90–95°F (32–35°C)", "D) 95–100°F"], ans: 2 },
+      { id: 17, q: "What is cited as the primary advantage of intensive chicken rearing systems?", options: ["A) Low infrastructure cost", "B) Less ammonia accumulation", "C) Birds are under continuous daily observation", "D) Zero disease spread"], ans: 2 },
+      { id: 18, q: "Sexual maturity in standard layer chicken in terms of approximate days is:", options: ["A) 90 days", "B) 100 days", "C) 110 days", "D) 150 days"], ans: 3 },
+      { id: 19, q: "The characteristic deep yellow colour of a chicken egg yolk is primarily due to the presence of:", options: ["A) Xanthophyll (carotenoid pigments)", "B) Carotene", "C) Riboflavin", "D) Biotin"], ans: 0 },
+      { id: 20, q: "The estimated deficit of concentrate feed ingredients in India is approximately:", options: ["A) 35.6%", "B) 10.95%", "C) 44%", "D) 60%"], ans: 1 },
+      { id: 21, q: "What is the toxic anti-nutritional amino acid present in Subabul (Leucaena leucocephala)?", options: ["A) Aflatoxin", "B) Mimosine", "C) Cyanide", "D) Nitrate"], ans: 1 },
+      { id: 22, q: "Harmful Aflatoxin B1 contamination in groundnut cake can be effectively detoxified by:", options: ["A) Treating with anhydrous ammonia (NH₃)", "B) Autoclaving only", "C) Adding NaNO₂", "D) Methylene blue wash"], ans: 0 },
+      { id: 23, q: "What is the recommended dry-matter requirement of an adult buffalo per 100 kg body weight?", options: ["A) 2–2.5%", "B) 2.5–3.0%", "C) 4%", "D) 4–6%"], ans: 1 },
+      { id: 24, q: "What is the desirable ammoniacal nitrogen percentage content in good-quality well-fermented silage?", options: ["A) 10–15%", "B) 20%", "C) Less than 10% (<10%)", "D) Greater than 20% (>20%)"], ans: 2 },
+      { id: 25, q: "What are the standard proportions of urea and salt commonly added to silage to boost nitrogen and palatability?", options: ["A) 1% urea and 0.5% salt", "B) 5% urea and 2.5% salt", "C) 5% and 5%", "D) 8% and 5%"], ans: 0 },
+      { id: 26, q: "Which essential fat-soluble vitamin may be lost by up to 90% during traditional field hay making?", options: ["A) Vitamin B₆", "B) Vitamin A (carotene destruction)", "C) Vitamin C", "D) Vitamin D"], ans: 1 },
+      { id: 27, q: "Which green crop is universally considered the best and most ideal crop for silage making?", options: ["A) Maize", "B) Wheat", "C) Oats", "D) Berseem"], ans: 0 },
+      { id: 28, q: "What is the ideal target moisture content percentage of good silage at the time of ensiling?", options: ["A) 40–45%", "B) 50–60%", "C) 60–70%", "D) 70–75%"], ans: 1 },
+      { id: 29, q: "Good-quality well-preserved silage generally exhibits a pH range of:", options: ["A) 3.7–4.2", "B) 4.2–4.5", "C) 4.5–4.8", "D) Greater than 4.8"], ans: 1 },
+      { id: 30, q: "The total gross area under cultivated fodder crops in India is approximately:", options: ["A) 6.6 Mha", "B) 7.2 Mha", "C) 8.4 Mha", "D) 10 Mha"], ans: 2 },
+      { id: 31, q: "Which kharif and rabi fodder crops together occupy about 54% of India's cultivated fodder area?", options: ["A) Sorghum & Berseem", "B) Sorghum & Lucerne", "C) Maize & Berseem", "D) Maize & Lucerne"], ans: 0 },
+      { id: 32, q: "Which of the following is NOT classified as a leguminous green fodder?", options: ["A) Sudan grass (sorghum hybrid)", "B) Lucerne", "C) Berseem", "D) Cowpea"], ans: 0 },
+      { id: 33, q: "Which forage crop is famously known as the “King of fodders” due to its multiple nutritious cuts?", options: ["A) Pennisetum glaucum", "B) Vigna unguiculata", "C) Medicago sativa (Lucerne / Alfalfa)", "D) Trifolium alexandrinum"], ans: 2 },
+      { id: 34, q: "Which leguminous tree fodder is known as the “milk multiplier” in tropical livestock feeding?", options: ["A) Leucaena leucocephala (Subabul)", "B) Vigna unguiculata", "C) Medicago sativa", "D) Trifolium alexandrinum"], ans: 0 },
+      { id: 35, q: "Green forage crops conserved as dried hay are dehydrated by reducing moisture content to:", options: ["A) 5–10%", "B) 10–12%", "C) 15–20%", "D) 22–26%"], ans: 3 },
+      { id: 36, q: "Which of the following is listed in the source block as a leguminous forage tree?", options: ["A) Leucaena leucocephala", "B) Non-legume tree", "C) Shrub", "D) Aquatic weed"], ans: 0 },
+      { id: 37, q: "Dehydrated and dried green fodder preserved for lean periods is commonly known as:", options: ["A) Silage", "B) Haylage", "C) Hay", "D) Straw"], ans: 2 },
+      { id: 38, q: "Which of the following is cited as a direct advantage of proper silage making?", options: ["A) Destruction/loss of plant cyanide toxicity", "B) Destruction of vitamin A", "C) Formation of brown hay", "D) Increase in crude fibre"], ans: 0 },
+      { id: 39, q: "Which beneficial bacteria ferment soluble sugars in green fodder during ensiling to produce preservative organic acids?", options: ["A) Lactobacilli", "B) Clostridium", "C) Pseudomonas", "D) Trichoderma"], ans: 0 },
+      { id: 40, q: "At what optimum crop maturity stage are most cereal crops harvested for making high-quality silage?", options: ["A) 20% flowering", "B) 35% flowering", "C) 50% pod/grain stage", "D) 50% flowering (dough stage)"], ans: 3 },
+      { id: 41, q: "Roughage and concentrate feeds processed and compressed together mechanically are called:", options: ["A) Bales", "B) Feed blocks / Complete feed blocks", "C) Crumbles", "D) Pellets"], ans: 1 },
+      { id: 42, q: "The modern agricultural technique of growing fodder plants without soil in nutrient-rich water solutions is:", options: ["A) Aeroponics", "B) Hydroponic fodder production", "C) Semi-dry cultivation", "D) Aquaponics"], ans: 1 },
+      { id: 43, q: "The Indian Grassland and Fodder Research Institute (IGFRI) is situated at:", options: ["A) Indore", "B) Jhansi, Uttar Pradesh", "C) Mathura", "D) Mau"], ans: 1 },
+      { id: 44, q: "Gossypol is a natural toxic polyphenolic pigment present in:", options: ["A) Castor bean cake", "B) Groundnut cake", "C) Cotton seed cake", "D) Mustard cake"], ans: 2 },
+      { id: 45, q: "Genetic improvement of an already well-adapted local breed can be achieved by:", options: ["A) Selective breeding", "B) Grading-up", "C) Inbreeding", "D) Line breeding"], ans: 0 },
+      { id: 46, q: "A continuous succession of backcrosses from one animal population into another purebred population is called:", options: ["A) Cross breeding", "B) Backcrossing", "C) Grading-up", "D) Top crossing"], ans: 1 },
+      { id: 47, q: "Mating between two completely different species (e.g., goat and sheep) is an example of:", options: ["A) Top crossing", "B) Rotational crossing", "C) Species hybridization", "D) Backcrossing"], ans: 2 },
+      { id: 48, q: "Mating between closely related individuals sharing a common ancestor (e.g., brother and sister) is:", options: ["A) Inbreeding", "B) Outbreeding", "C) Species hybridization", "D) Crossbreeding"], ans: 0 },
+      { id: 49, q: "The most intensive form of inbreeding where animals are extremely closely related through multiple common ancestors is:", options: ["A) Close breeding", "B) Line breeding", "C) Grading-up", "D) Crossbreeding"], ans: 0 },
+      { id: 50, q: "Which type of animal breeding system inherently increases genetic heterozygosity and hybrid vigour (heterosis)?", options: ["A) Close breeding", "B) Line breeding", "C) Inbreeding", "D) Outbreeding"], ans: 3 },
+      { id: 51, q: "What happens to genetic homozygosity during continuous inbreeding?", options: ["A) It decreases", "B) It increases", "C) It remains constant", "D) It drops to zero"], ans: 1 },
+      { id: 52, q: "What happens to phenotypic uniformity within a flock during close inbreeding?", options: ["A) It increases", "B) It decreases", "C) Unpredictable", "D) Stops completely"], ans: 0 },
+      { id: 53, q: "Does close inbreeding generally increase susceptibility to infectious diseases and inbreeding depression?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 54, q: "What adverse physiological effect can severe inbreeding have on livestock production and milk yield?", options: ["A) It can depress and lower production traits", "B) It doubles milk yield", "C) It eliminates disease entirely", "D) It increases body size"], ans: 0 },
+      { id: 55, q: "Which breeding method is generally preferred for the genetic upgradation of non-descript village buffaloes in India?", options: ["A) Crossbreeding", "B) Grading-up using superior sires", "C) Species hybridization", "D) Backcrossing"], ans: 1 },
+      { id: 56, q: "The Backyard Poultry Research Centre in Tamil Nadu is located at:", options: ["A) Salem", "B) Namakkal", "C) Karur", "D) Chennai"], ans: 1 },
+      { id: 57, q: "The laying of an egg by a hen on consecutive days without a single day's break is called a:", options: ["A) Pause", "B) Clutch", "C) Molt", "D) Skip"], ans: 1 },
+      { id: 58, q: "The R2B (Ranikhet Mukteswar) vaccine strain is specifically used in poultry to control:", options: ["A) Marek's disease", "B) Ranikhet disease (Newcastle disease)", "C) Infectious Bursal Disease", "D) Chronic Respiratory Disease"], ans: 1 },
+      { id: 59, q: "Deworming and debeaking management practices are routinely NOT applied to:", options: ["A) Layers", "B) Broilers", "C) Breeders", "D) Pullets"], ans: 1 },
+      { id: 60, q: "Which vitamin plays a key supportive role in mitigating heat stress in poultry birds?", options: ["A) Vitamin C (ascorbic acid)", "B) Vitamin D", "C) Vitamin K", "D) Vitamin B₁₂"], ans: 0 },
+      { id: 61, q: "Improper management and dampness of poultry litter causes high toxic levels of:", options: ["A) Methane", "B) Carbon dioxide", "C) Carbon monoxide", "D) Ammonia (NH₃)"], ans: 3 },
+      { id: 62, q: "What is universally considered the best rearing system for broiler breeder parent stock?", options: ["A) Deep-litter system", "B) Battery cage system", "C) Free-range system", "D) Backyard system"], ans: 0 },
+      { id: 63, q: "The most economical poultry housing structures recommended across tropical countries are:", options: ["A) Controlled environment houses", "B) Non-conventional bunkers", "C) Open-sided houses", "D) Underground cellars"], ans: 2 },
+      { id: 64, q: "Which parasitic disease is very commonly encountered in deep-litter poultry rearing due to damp litter?", options: ["A) Coccidiosis", "B) Rinderpest", "C) Anthrax", "D) Foot rot"], ans: 0 },
+      { id: 65, q: "Are intestinal worms commonly encountered in deep-litter poultry rearing?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 66, q: "Is brooder pneumonia (Aspergillosis) a commonly encountered disease in damp deep-litter systems?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 67, q: "Which Tamil Nadu Veterinary University (TANUVAS) Nandanam chicken variety is officially a dual-purpose bird?", options: ["A) Nandanam Chicken-I", "B) Nandanam Chicken-II", "C) Nandanam Chicken-IV", "D) Both Nandanam Chicken-I and Chicken-IV"], ans: 3 },
+      { id: 68, q: "Floor space required per commercial broiler chicken up to standard marketing age is about:", options: ["A) 350 cm²", "B) 800 cm² (approx 0.8–1 sq ft)", "C) 1200 cm²", "D) 400 cm²"], ans: 1 },
+      { id: 69, q: "The best roofing material for standard poultry houses to reflect solar heat is:", options: ["A) Thatched straw", "B) Galvanized iron (GI) sheets / Asbestos", "C) Transparent plastic", "D) Mud tiles"], ans: 1 },
+      { id: 70, q: "How many successive batches of commercial broilers can typically be reared in a house in a year?", options: ["A) 3 batches", "B) 5 batches", "C) 7 batches", "D) 9 batches"], ans: 1 },
+      { id: 71, q: "During chick brooding in a deep-litter system, fresh dry litter should be spread to a depth of approximately:", options: ["A) 8 inches", "B) 6 inches", "C) 4 inches", "D) 2 inches"], ans: 1 },
+      { id: 72, q: "The chemical disinfectant commonly used with potassium permanganate for poultry house fumigation is:", options: ["A) Ethyl alcohol", "B) Formaldehyde (formalin)", "C) Tincture iodine", "D) Chlorine bleach"], ans: 1 },
+      { id: 73, q: "What is the approximate upper lethal body temperature limit in domestic birds beyond which heat stroke is fatal?", options: ["A) 27°C", "B) 37°C", "C) 47°C", "D) 57°C"], ans: 2 },
+      { id: 74, q: "Which housing systems are related to intensive poultry commercial rearing?", options: ["A) Deep litter system", "B) Battery cages", "C) Californian cages", "D) All of the above"], ans: 3 },
+      { id: 75, q: "What is the recommended parallel distance to be maintained between two adjacent open-sided layer houses?", options: ["A) 1 m", "B) 2 m", "C) 3 m", "D) 10 m (approx 30 ft for biosecurity)"], ans: 3 },
+      { id: 76, q: "Floor space allotted per layer chick in flat-deck rearing cages is about:", options: ["A) 250 cm²", "B) 280 cm²", "C) 300 cm²", "D) 337 cm²"], ans: 2 },
+      { id: 77, q: "What is the standard side wall height of a caged grower/layer open poultry house?", options: ["A) 3.20 m", "B) 2.75 m", "C) 2.15 m", "D) 1.50 m"], ans: 2 },
+      { id: 78, q: "What does the poultry industry acronym NECC stand for?", options: ["A) National Egg Consultation Committee", "B) National Egg Coordination Committee", "C) National Egg Coordination Commission", "D) National Egg Consumers Cooperative"], ans: 1 },
+      { id: 79, q: "What is the standard incubation temperature during the setter phase for chicken hatching eggs?", options: ["A) 46.5°C", "B) 37.5°C (99.5°F)", "C) 38.5°C", "D) 33°C"], ans: 1 },
+      { id: 80, q: "What is the normal standard incubation period of a chicken egg?", options: ["A) 21 days", "B) 18 days", "C) 20 days", "D) 22 days"], ans: 0 },
+      { id: 81, q: "Carbon dioxide (CO₂) concentration inside an incubator cabinet should not exceed:", options: ["A) 1.5%", "B) 2.0%", "C) 0.3–0.5%", "D) 3–5%"], ans: 1 },
+      { id: 82, q: "What is the standard breeding male-to-female sex ratio followed in commercial chicken broiler breeder flocks?", options: ["A) 1:1–2", "B) 1:10–12", "C) 1:15–16", "D) 1:17–20"], ans: 1 },
+      { id: 83, q: "What is the primary housing system used for broiler and layer breeder parent stock?", options: ["A) Deep litter", "B) Free range", "C) Cages (individual or colony)", "D) Semi-intensive"], ans: 2 },
+      { id: 84, q: "Which of the following materials can be safely used as litter material in poultry deep-litter houses?", options: ["A) Paddy husk", "B) Sawdust", "C) Groundnut hulls", "D) All the three"], ans: 3 },
+      { id: 85, q: "Which chicken breed is traditionally classified as a game-purpose fighting bird?", options: ["A) Aseel", "B) Kadaknath", "C) Javan jungle fowl (wild ancestor)", "D) Cochin"], ans: 2 },
+      { id: 86, q: "To what zoological species do domestic chickens belong?", options: ["A) Anas platyrhynchus", "B) Gallus domesticus", "C) Numida meleagris", "D) Meleagris gallopavo"], ans: 1 },
+      { id: 87, q: "Which bacterium is commonly implicated in water-borne colibacillosis infections in poultry?", options: ["A) Corynebacterium", "B) Bacillus anthracis", "C) Escherichia coli", "D) Klebsiella pneumoniae"], ans: 2 },
+      { id: 88, q: "What is the standard average weight of a commercial chicken egg?", options: ["A) 58 g", "B) 36 g", "C) 64 g", "D) 48 g"], ans: 0 },
+      { id: 89, q: "What is the classic chemical combination used for fumigating hatching eggs and incubators?", options: ["A) Phenyl + formalin", "B) Potassium permanganate (KMnO₄) + Formalin", "C) KMnO₄ + bleaching powder", "D) Bleaching powder + Aldepol"], ans: 1 },
+      { id: 90, q: "Fertilization of the chicken ovum by sperm takes place in which section of the oviduct?", options: ["A) Isthmus", "B) Magnum", "C) Uterus", "D) Infundibulum"], ans: 3 },
+      { id: 91, q: "What is the recommended longitudinal orientation for commercial poultry houses to minimize solar heat gain?", options: ["A) North–South", "B) South–West", "C) East–West", "D) East–South"], ans: 2 },
+      { id: 92, q: "What is considered the ideal comfortable environmental temperature zone for adult poultry?", options: ["A) 10–15°C", "B) 16–18°C", "C) 28–30°C", "D) 18.5–21.5°C"], ans: 3 },
+      { id: 93, q: "Highly pathogenic avian influenza (HPAI) in birds is caused by which viral strain subtype?", options: ["A) H5N1", "B) H2H5", "C) H1N5", "D) H1N1"], ans: 0 },
+      { id: 94, q: "Live poultry vaccines must be safely stored inside a refrigerator maintained at:", options: ["A) 0°C", "B) −2°C", "C) 4°C", "D) −4°C"], ans: 2 },
+      { id: 95, q: "Which is universally recognized as the most popular egg-type white-feathered chicken breed?", options: ["A) Sussex", "B) White Leghorn", "C) Rhode Island Red", "D) Australorp"], ans: 1 },
+      { id: 96, q: "Which chicken breed belongs to the American standard class?", options: ["A) Brahma", "B) Sussex", "C) White Leghorn", "D) New Hampshire"], ans: 3 },
+      { id: 97, q: "What is widely regarded as the cheapest and best available litter material for poultry bedding in rice-growing regions?", options: ["A) Sawdust", "B) Groundnut hulls", "C) Rice bran", "D) Rice husk"], ans: 3 },
+      { id: 98, q: "Vicious habits like cannibalism and feather pecking in poultry are primarily triggered by:", options: ["A) Fibre-free / nutrient-imbalanced diet", "B) Fat-free diet", "C) High-fibre diet", "D) High-protein diet"], ans: 0 },
+      { id: 99, q: "What is the optimum relative humidity percentage required inside the hatcher during the final days of incubation?", options: ["A) 45–50%", "B) 50–60%", "C) 70–75%", "D) 80%"], ans: 2 },
+      { id: 100, q: "Is a lack of excessive broodiness a desirable genetic quality selected in a good commercial egg layer?", options: ["A) Yes", "B) No (broodiness stops egg laying)"], ans: 1 },
+      { id: 101, q: "Is high physical alertness a desirable quality in a productive laying hen?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 102, q: "Is late annual moulting a desirable quality in a high-producing layer?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 103, q: "Is high physiological persistency (laying long without a break) a desirable quality in a good layer?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 104, q: "Thick and thin egg albumen forms approximately what percentage of total egg weight?", options: ["A) 58%", "B) 31%", "C) 11%", "D) 20%"], ans: 1 },
+      { id: 105, q: "The hard shell and outer shell membranes together form approximately what percentage of total egg weight?", options: ["A) 58%", "B) 31%", "C) 11%", "D) 5%"], ans: 2 },
+      { id: 106, q: "Is early embryonic death considered an incubation-related hatchery problem?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 107, q: "Is a “piped egg” (chick pipped shell but failed to hatch) an incubation problem?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 108, q: "Is “dead-in-shell” a common hatchery incubation problem?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 109, q: "What is the average daily feed consumption requirement of a modern commercial layer hen?", options: ["A) 80 g", "B) 100 g", "C) 120 g", "D) 150 g"], ans: 1 },
+      { id: 110, q: "What is the standard recommended daily lighting duration (daylight + artificial) for maintaining peak egg production in layers?", options: ["A) 10 hours", "B) 16 hours", "C) 18 hours", "D) 20 hours"], ans: 1 },
+      { id: 111, q: "Poor ventilation in an enclosed poultry house causes a dangerous accumulation of:", options: ["A) Carbon dioxide (CO₂)", "B) Oxygen", "C) Hydrogen", "D) Helium"], ans: 0 },
+      { id: 112, q: "Can poor ventilation cause dangerous accumulation of ammonia and nitrogenous gases?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 113, q: "Can poor ventilation directly cause wet, soggy litter conditions?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 114, q: "Which is the longest anatomical section of the poultry female oviduct?", options: ["A) Isthmus", "B) Magnum (site of albumen secretion)", "C) Uterus", "D) Infundibulum"], ans: 1 },
+      { id: 115, q: "What is the recommended continuous lighting duration provided for fast-growing commercial broilers?", options: ["A) 23 hours", "B) 16 hours", "C) 12 hours", "D) 8 hours"], ans: 0 },
+      { id: 116, q: "At what exact early age are day-old chicks routinely debeaked and vaccinated against Marek's disease?", options: ["A) 1 day old (at hatchery)", "B) 1 week old", "C) 1 month old", "D) 6 weeks old"], ans: 0 },
+      { id: 117, q: "What is the surgical removal of the comb and wattles in young poultry birds called?", options: ["A) Docking", "B) Dubbing", "C) Culling", "D) Debeaking"], ans: 1 },
+      { id: 118, q: "During artificial incubation, the regular turning of hatching eggs should be strictly maintained:", options: ["A) During the first 18 days only (stopped for last 3 days in hatcher)", "B) Throughout all 21 days until hatching", "C) Only during the last 3 days", "D) Never required"], ans: 0 },
+      { id: 119, q: "Curled-toe paralysis in young chicks is caused by a nutritional deficiency of:", options: ["A) Thiamine (Vit B₁)", "B) Riboflavin (Vit B₂)", "C) Niacin", "D) Pantothenic acid"], ans: 1 },
+      { id: 120, q: "The characteristic “star-gazing” posture (retraction of head) in poultry is due to deficiency of:", options: ["A) Thiamine (Vitamin B₁)", "B) Riboflavin", "C) Niacin", "D) Choline"], ans: 0 },
+      { id: 121, q: "Egg-white injury (biotin deficiency caused by raw egg white) is associated with the anti-vitamin protein:", options: ["A) Avidin", "B) Casein", "C) Gluten", "D) Pepsin"], ans: 0 },
+      { id: 122, q: "A high-producing good layer generally exhibits which annual moulting pattern?", options: ["A) Early and slow moulting", "B) Late and rapid moulting", "C) Continuous slow moulting", "D) No moulting ever"], ans: 1 },
+      { id: 123, q: "What is the recommended floor space required per broiler bird when reared in a deep-litter system?", options: ["A) 0.5 sq ft", "B) 1.0 sq ft", "C) 1.5 sq ft", "D) 2.0 sq ft"], ans: 0 },
+      { id: 124, q: "Giriraja and Vanaraja are popular multi-colored synthetic strains developed specifically for:", options: ["A) Commercial intensive layer farms", "B) Commercial broiler integrators", "C) Backyard / rural scavenging poultry farming", "D) Turkey production"], ans: 2 },
+      { id: 125, q: "What is the optimum ambient environmental temperature range for rearing commercial broilers efficiently?", options: ["A) 15–18°C", "B) 22–30°C", "C) 35–40°C", "D) 42°C"], ans: 1 },
+      { id: 126, q: "What is the recommended minimum distance between brooder and grower poultry houses for disease control?", options: ["A) 10–20 ft", "B) 50–100 ft", "C) 500 ft", "D) 1000 ft"], ans: 1 },
+      { id: 127, q: "According to BIS 2007 specifications, what is the minimum metabolizable energy requirement for growing pullets?", options: ["A) 2200 kcal/kg", "B) 2500 kcal/kg", "C) 2800 kcal/kg", "D) 2900 kcal/kg"], ans: 3 },
+      { id: 128, q: "What is considered an optimum efficient feed conversion ratio (FCR) in modern commercial broilers?", options: ["A) 4.0", "B) 3.5", "C) 2.4", "D) 1.6–1.8"], ans: 3 },
+      { id: 129, q: "Candling of hatching eggs on the 7th day of incubation is primarily done to discard:", options: ["A) Infertile eggs (clear eggs)", "B) Cracked shells", "C) Double yolk eggs", "D) Giant eggs"], ans: 0 },
+      { id: 130, q: "What is the major physiological purpose of turning hatching eggs regularly during incubation?", options: ["A) To prevent the developing embryo from sticking to the inner shell membrane", "B) To cook the yolk evenly", "C) To clean the shell pores", "D) To increase egg weight"], ans: 0 },
+      { id: 131, q: "Does turning hatching eggs properly help prevent the “piped-egg” hatching failure condition?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 132, q: "Does turning hatching eggs regularly help prevent early embryonic mortality?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 133, q: "Is controlling bacterial disease infection the primary objective of turning eggs?", options: ["A) Yes", "B) No (turning is strictly physical to prevent embryonic adhesion)"], ans: 1 },
+      { id: 134, q: "What is cited as the safe upper permissible limit for total dissolved salts (TDS) in drinking water for poultry?", options: ["A) 500 ppm", "B) 1000 ppm", "C) 3000 ppm", "D) 10,000 ppm"], ans: 2 },
+      { id: 135, q: "What is the safe upper threshold limit for fluoride in poultry drinking water?", options: ["A) 0.5 ppm", "B) 2 ppm", "C) 10 ppm", "D) 50 ppm"], ans: 1 },
+      { id: 136, q: "Is water containing 1000 ppm total dissolved solids considered acceptable and good for poultry?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 137, q: "Natural yellow-orange egg yolk colour depends primarily upon dietary intake of:", options: ["A) Carotene", "B) Xanthophyll pigments", "C) Anthocyanin", "D) Chlorophyll"], ans: 1 },
+      { id: 138, q: "Which feed additive is given to poultry to promote gut health and beneficial microflora balance?", options: ["A) Grit", "B) Probiotics", "C) Antibiotic growth promoters (restricted)", "D) Limestone"], ans: 1 },
+      { id: 139, q: "Which intensive housing system is standard in commercial egg-layer farming utilizing wire cages?", options: ["A) Semi-intensive range", "B) Deep-litter floor system", "C) Battery cage system", "D) Slat floor system"], ans: 2 },
+      { id: 140, q: "Which animal manure contains the highest concentration of plant nutrient calcium?", options: ["A) Cow manure", "B) Poultry manure", "C) Horse manure", "D) Sheep manure"], ans: 1 },
+      { id: 141, q: "To avoid selective picking of feed ingredients by birds in commercial poultry production, the best feeding method is:", options: ["A) Whole grain scattering", "B) All-mash complete feed", "C) Unmixed ingredients", "D) Grit supplementation only"], ans: 1 },
+      { id: 142, q: "What is considered the single most critical environmental factor during artificial egg incubation?", options: ["A) Light intensity", "B) Relative humidity", "C) Sound level", "D) Air pressure"], ans: 1 },
+      { id: 143, q: "The natural dark black meat and skin coloration characteristic of Kadaknath chicken is due to:", options: ["A) Anthocyanin", "B) Melanin pigment deposition", "C) Lycopene", "D) Hemoglobin"], ans: 1 },
+      { id: 144, q: "“Layer fatigue” (cage layer osteoporosis/paralysis) is a metabolic disorder primarily associated with:", options: ["A) Deep-litter housing systems", "B) High-density wire cage systems", "C) Free range rearing", "D) Backyard scavenging"], ans: 1 },
+      { id: 145, q: "In a standard multiple-bird commercial layer cage, how many birds are typically accommodated per cage unit?", options: ["A) 1 bird", "B) 3–4 birds", "C) 10 birds", "D) 25 birds"], ans: 1 },
+      { id: 146, q: "Which of the following is considered an indispensable essential amino acid in poultry nutrition?", options: ["A) Glycine", "B) Proline", "C) Methionine", "D) Serine"], ans: 2 },
+      { id: 147, q: "As per Bureau of Indian Standards (BIS), what is the maximum permissible limit of aflatoxin in poultry feed ingredients?", options: ["A) 5 ppb", "B) 15 ppb", "C) 50 ppb", "D) 100 ppb"], ans: 1 },
+      { id: 148, q: "Which of the following is NOT an official broiler chicken strain developed by ICAR-CARI?", options: ["A) Tropicana", "B) CARI-Broiler", "C) Vishal", "D) CS-F"], ans: 0 },
+      { id: 149, q: "Which of the following is an official dual-purpose rural poultry variety developed by ICAR-CARI?", options: ["A) CARI-Devendra / Nirbheek", "B) Vencobb", "C) Babcock", "D) Hubbard"], ans: 0 },
+      { id: 150, q: "What is the recommended optimum moisture level percentage of deep-litter material in poultry housing?", options: ["A) 5–10%", "B) 20–25%", "C) 40–50%", "D) 70%"], ans: 1 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(150, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 150) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Fodder Production, Silage, Animal Breeding, and Poultry Science.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific poultry incubation parameters, breeding systems, and silage chemistry.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Animal Nutrition and Poultry Management recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+</html>

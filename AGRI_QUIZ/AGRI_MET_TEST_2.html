@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agricultural Meteorology Test 2 — Climatology & Weather Forecasting (236 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select, .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Agri Meteorology Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Agricultural Meteorology Test 2: Climatology & Weather Forecasting (236 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–236)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="236">All Questions (236 Questions)</option>
+            <option value="25">25 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 236)</label>
+          <input type="number" id="custom-count-input" min="1" max="236" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">236 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#127782;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Agri Meteorology</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#127775;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Climatology</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 236</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">03:56:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 101, q: "Which gas contributes significantly to global warming?", options: ["A) Carbon dioxide", "B) Oxygen", "C) Nitrogen", "D) Argon"], ans: 0 },
+      { id: 102, q: "Which halocarbon compound contributes heavily to global warming and ozone destruction?", options: ["A) Chlorofluorocarbons (CFCs)", "B) Water vapour", "C) Methane", "D) Helium"], ans: 0 },
+      { id: 103, q: "Which of the following is a primary greenhouse gas contributing to global warming?", options: ["A) Methane", "B) Neon", "C) Krypton", "D) Hydrogen"], ans: 0 },
+      { id: 104, q: "Is hydrogen listed as a major greenhouse gas responsible for global warming in standard meteorological sources?", options: ["A) Yes", "B) No"], ans: 1 },
+      { id: 105, q: "What is the standard electromagnetic wavelength range of visible solar radiation?", options: ["A) 0.1–0.4 microns", "B) 390–760 microns (or nanometres in optical spectrum)", "C) 1000–5000 microns", "D) 10–50 microns"], ans: 1 },
+      { id: 106, q: "In very humid climates, is the diurnal temperature range generally very low?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 107, q: "In dry arid climates, can the diurnal temperature range reach 20°C or more?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 108, q: "What are the imaginary lines drawn on weather maps joining places having the same wind velocity called?", options: ["A) Isotachs", "B) Isotherms", "C) Isobars", "D) Isobaths"], ans: 0 },
+      { id: 109, q: "What are the imaginary lines joining places having the same air temperature called?", options: ["A) Isotherms", "B) Isobars", "C) Isohyets", "D) Isotachs"], ans: 0 },
+      { id: 110, q: "What are the imaginary lines joining places having the same atmospheric pressure called?", options: ["A) Isobars", "B) Isotherms", "C) Isobaths", "D) Isohyets"], ans: 0 },
+      { id: 111, q: "What are the lines joining places having the same water-table depth called?", options: ["A) Isobaths", "B) Isobars", "C) Isotherms", "D) Isotachs"], ans: 0 },
+      { id: 112, q: "What minimum daily amount of rainfall received is officially classified as a rainy day?", options: ["A) 1.0 mm", "B) 2.5 mm and above", "C) 5.0 mm", "D) 10.0 mm"], ans: 1 },
+      { id: 113, q: "Which instrument is specifically used to measure total solar radiation?", options: ["A) Bellani's pyranometer / Pyranometer", "B) Barometer", "C) Anemometer", "D) Rain gauge"], ans: 0 },
+      { id: 114, q: "Which lowest layer of the atmosphere is subject to active weather changes and temperature variation?", options: ["A) Troposphere", "B) Stratosphere", "C) Mesosphere", "D) Thermosphere"], ans: 0 },
+      { id: 115, q: "Is zero-tillage practice in the rice–wheat cropping system considered a climate-change mitigation strategy?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 116, q: "Does zero tillage help in timely early sowing of wheat following paddy harvest?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 117, q: "Which primary mode of heat transfer does not require any material medium?", options: ["A) Conduction", "B) Convection", "C) Radiation", "D) Advection"], ans: 2 },
+      { id: 118, q: "Which tall towering cloud type is classically associated with heavy rain, thunder, and lightning?", options: ["A) Cumulonimbus", "B) Cirrus", "C) Stratus", "D) Altocumulus"], ans: 0 },
+      { id: 119, q: "What are the freezing and boiling points of pure water on the Fahrenheit scale?", options: ["A) 0°F and 100°F", "B) 32°F and 212°F (approx 210°F in specific source keys)", "C) 32°F and 180°F", "D) 0°F and 273°F"], ans: 1 },
+      { id: 120, q: "How is Centigrade temperature converted to Kelvin?", options: ["A) Add 273", "B) Subtract 273", "C) Multiply by 2", "D) Divide by 100"], ans: 0 },
+      { id: 121, q: "What are sciophytes defined as in plant ecology?", options: ["A) Shade-loving plants", "B) Sun-loving plants", "C) Halophytic plants", "D) Xerophytic plants"], ans: 0 },
+      { id: 122, q: "What are heterophytes defined as in specific meteorological/ecological source keys?", options: ["A) Plants feeding on other plants / parasitic or saprophytic", "B) Aquatic plants", "C) Desert cacti", "D) Alpine mosses"], ans: 0 },
+      { id: 123, q: "What are hydrophytes?", options: ["A) Water-loving aquatic plants", "B) Drought-resistant plants", "C) Salt-tolerant plants", "D) High-altitude plants"], ans: 0 },
+      { id: 124, q: "What are halophytes?", options: ["A) Plants tolerant to high saline conditions", "B) Plants needing extreme cold", "C) Floating weeds", "D) Acid-loving plants"], ans: 0 },
+      { id: 125, q: "Approximately how many minutes do solar rays take to travel from the Sun to Earth?", options: ["A) 2 minutes", "B) 5 minutes", "C) 8 minutes (approx 8.3 minutes)", "D) 24 minutes"], ans: 2 },
+      { id: 126, q: "What is the mechanical lifting and uprooting of young crop plants along with soil due to severe freezing temperatures called?", options: ["A) Heaving", "B) Lodging", "C) Siltation", "D) Cracking"], ans: 0 },
+      { id: 127, q: "In which year was the India Meteorological Department (IMD) initially established at Pune?", options: ["A) 1857", "B) 1875", "C) 1905", "D) 1947"], ans: 1 },
+      { id: 128, q: "Which cloud type has a delicate white, fibrous, feather-like appearance at high altitudes?", options: ["A) Cirrus", "B) Cumulus", "C) Stratus", "D) Nimbus"], ans: 0 },
+      { id: 129, q: "Which cloud layer is associated with steady continuous rainfall in middle/high latitudes?", options: ["A) Altostratus / Nimbostratus", "B) Cirrostratus", "C) Cumulus", "D) Cirrocumulus"], ans: 0 },
+      { id: 130, q: "Which low cloud type occurs very close to the ground like an elevated fog?", options: ["A) Stratus", "B) Cirrus", "C) Cumulonimbus", "D) Lenticular"], ans: 0 },
+      { id: 131, q: "Which cloud type has a fluffy, dense, cauliflower-like vertical structure with a flat base?", options: ["A) Cumulus", "B) Stratus", "C) Cirrus", "D) Nimbus"], ans: 0 },
+      { id: 132, q: "During which post-monsoon period are tropical cyclones and heavy storms more common along Indian coasts?", options: ["A) January–February", "B) April–May", "C) October–December", "D) July–August"], ans: 2 },
+      { id: 133, q: "According to IMD standards, what percentage range of seasonal rainfall departure is classified as “normal”?", options: ["A) −5% to +5%", "B) −19% to +19%", "C) −50% to +50%", "D) 0% exactly"], ans: 1 },
+      { id: 134, q: "What percentage range of reporting stations receiving rainfall represents “scattered” rainfall?", options: ["A) Less than 25% (or 26–50% in regional splits)", "B) 50–75%", "C) 90%", "D) 100%"], ans: 0 },
+      { id: 135, q: "What percentage range of reporting stations receiving rainfall represents “fairly widespread” rainfall?", options: ["A) 26–50% (or 51–75%)", "B) 10%", "C) 90%", "D) 5%"], ans: 0 },
+      { id: 136, q: "What percentage range of stations receiving rainfall represents “widespread” rainfall?", options: ["A) 51–75% (or 76–100%)", "B) 10%", "C) 20%", "D) 30%"], ans: 0 },
+      { id: 137, q: "What percentage range of stations receiving rainfall represents “isolated” rainfall according to specific source keys?", options: ["A) 76–100% (or lowest station count bracket)", "B) 50%", "C) 40%", "D) 10%"], ans: 0 },
+      { id: 138, q: "Which of the following is a classic example of weather (short-term state)?", options: ["A) Hot sunny day", "B) Rainy afternoon", "C) Cloudy night", "D) All are examples of weather"], ans: 3 },
+      { id: 139, q: "Doldrums (equatorial calm belt) are confined approximately between which latitudes around the equator?", options: ["A) 5° N and 5° S", "B) 23.5° N and S", "C) 60° N and S", "D) 90° N"], ans: 0 },
+      { id: 140, q: "When does the normal onset of the South-West Monsoon take place over the southern tip of Kerala?", options: ["A) May 1", "B) June 1st week", "C) July 15", "D) August 1"], ans: 1 },
+      { id: 141, q: "Which Indian state benefits predominantly from the North-East Monsoon rains?", options: ["A) Punjab", "B) Rajasthan", "C) Tamil Nadu", "D) Uttar Pradesh"], ans: 2 },
+      { id: 142, q: "What is the local nighttime wind blowing from the cooling land towards the warmer sea called?", options: ["A) Land breeze", "B) Sea breeze", "C) Katabatic wind", "D) Foehn"], ans: 0 },
+      { id: 143, q: "What apparent deflecting force deflects moving air masses to the right in the Northern Hemisphere due to Earth's rotation?", options: ["A) Coriolis force", "B) Centrifugal force", "C) Gravitational pull", "D) Magnetic force"], ans: 0 },
+      { id: 144, q: "At what standard morning hour is daily accumulated rainfall measured in Indian meteorological observatories?", options: ["A) 5:30 AM", "B) 8:00 AM (08:30 IST standard)", "C) 12:00 noon", "D) 6:00 PM"], ans: 1 },
+      { id: 145, q: "On a synoptic weather map, what weather element is represented by narrow continuous black lines (isobars)?", options: ["A) Atmospheric pressure", "B) Temperature", "C) Rainfall volume", "D) Cloud cover"], ans: 0 },
+      { id: 146, q: "What weather element is traditionally represented by shading on weather charts?", options: ["A) Total amount of cloud cover", "B) Wind velocity", "C) Soil moisture", "D) Sunshine hours"], ans: 0 },
+      { id: 147, q: "What meteorological element is represented by arrows on weather maps?", options: ["A) Wind direction and speed", "B) Ocean currents", "C) Isobars", "D) Temperature gradients"], ans: 0 },
+      { id: 148, q: "What is represented by small station circles with internal shading on weather maps?", options: ["A) Precipitation / weather condition at station", "B) Elevation above sea level", "C) Latitude and longitude", "D) Solar radiation intensity"], ans: 0 },
+      { id: 149, q: "What physical parameter is a “knot” an official unit of?", options: ["A) Wind velocity / speed", "B) Water pressure", "C) Humidity", "D) Rainfall depth"], ans: 0 },
+      { id: 150, q: "What do paired wet-bulb and dry-bulb thermometers directly allow meteorologists to calculate?", options: ["A) Relative humidity and dew point", "B) Wind speed", "C) Atmospheric pressure", "D) Cloud height"], ans: 0 },
+      { id: 151, q: "Which Indian state has the largest absolute geographical area under arid climate?", options: ["A) Rajasthan", "B) Gujarat", "C) Haryana", "D) Punjab"], ans: 0 },
+      { id: 152, q: "In which hilly agro-climatic zone is shifting cultivation (Jhum) traditionally more common?", options: ["A) Eastern Himalayan zone", "B) Indo-Gangetic plain", "C) Western coastal plains", "D) Deccan plateau"], ans: 0 },
+      { id: 153, q: "Which agro-climatic zone records the highest percentage of forest cover according to national agricultural reports?", options: ["A) Island zone (Andaman & Nicobar / Lakshadweep)", "B) Southern plateau zone", "C) Eastern dry zone", "D) Western plains"], ans: 0 },
+      { id: 154, q: "Where was the UN Climate Change Conference COP-28 hosted?", options: ["A) Dubai, UAE", "B) Sharm el-Sheikh, Egypt", "C) Glasgow, UK", "D) Paris, France"], ans: 0 },
+      { id: 155, q: "At what approximate altitude above Earth's equator are meteorological geostationary satellites placed?", options: ["A) 500 km", "B) 1,000 km", "C) 36,000 km", "D) 100,000 km"], ans: 2 },
+      { id: 156, q: "For which end-users is short-range weather forecasting (up to 48 hours) most critically useful?", options: ["A) Irrigation engineers, farmers (for immediate spraying/harvesting), and mariners", "B) Long-term policy planners only", "C) Real estate developers", "D) Stock brokers"], ans: 0 },
+      { id: 157, q: "Is the Climate-Smart Village (CSV) approach in India part of a global research initiative led by CCAFS?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 158, q: "Is CCAFS operated under the umbrella of CGIAR?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 159, q: "Is ICRISAT (International Crops Research Institute for the Semi-Arid Tropics) one of CGIAR's international research centres?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 160, q: "Which stratiform cloud type characteristically produces steady, continuous, light-to-moderate precipitation?", options: ["A) Nimbostratus", "B) Cumulus", "C) Cirrus", "D) Stratocumulus"], ans: 0 },
+      { id: 161, q: "Which tall convective cloud is primarily responsible for intense summer afternoon convective rainfall/showers?", options: ["A) Cumulonimbus", "B) Altocumulus", "C) Cirrostratus", "D) Stratus"], ans: 0 },
+      { id: 162, q: "In what year was the National Centre for Medium Range Weather Forecasting (NCMRWF) established in India?", options: ["A) 1980", "B) 1989", "C) 1995", "D) 2002"], ans: 1 },
+      { id: 163, q: "Does India receive the majority of its annual water and agricultural rainfall from the South-West Monsoon?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 164, q: "A widespread seasonal shortage of rainfall is the primary quantitative indicator of which type of drought?", options: ["A) Meteorological drought", "B) Hydrological drought", "C) Agricultural drought", "D) Socio-economic drought"], ans: 0 },
+      { id: 165, q: "What are the standard diameter and rim height specifications of a USWB Class A evaporation pan?", options: ["A) 122 cm diameter and 25 cm depth", "B) 50 cm diameter and 10 cm depth", "C) 200 cm diameter", "D) 30 cm diameter"], ans: 0 },
+      { id: 166, q: "Which precision instrument is used to directly measure actual crop evapotranspiration (ET)?", options: ["A) Lysimeter", "B) Hydrometer", "C) Anemometer", "D) Barometer"], ans: 0 },
+      { id: 167, q: "Which type of weather forecast duration is most practically useful for scheduling farm irrigation and plant protection?", options: ["A) Medium-range forecast (3–10 days)", "B) Short-range (1 hour)", "C) Decadal climate forecast", "D) Century forecast"], ans: 0 },
+      { id: 168, q: "Which type of weather forecast is most useful for strategic macro-level planning of regional cropping systems?", options: ["A) Long-range forecast / seasonal outlook", "B) 24-hour weather report", "C) Hourly forecast", "D) Lightning alert"], ans: 0 },
+      { id: 169, q: "El Niño episodes are statistically correlated with what rainfall anomaly during the South-West Monsoon in India?", options: ["A) Deficit / drought-prone rainfall conditions", "B) Massive floods everywhere", "C) Zero impact", "D) Early winter frost"], ans: 0 },
+      { id: 170, q: "Which agro-climatic zone is geographically cited as the largest in Tamil Nadu?", options: ["A) Southern zone", "B) Cauvery delta zone", "C) North-eastern zone", "D) Hilly zone"], ans: 0 },
+      { id: 171, q: "Which instrument is used to measure relative humidity precisely inside a dense plant canopy?", options: ["A) Whirling psychrometer (sling psychrometer)", "B) Stationary wall barometer", "C) Rain gauge", "D) Sunshine recorder"], ans: 0 },
+      { id: 172, q: "Destructive hailstorms in Indian agricultural belts are most common during the transition of which season?", options: ["A) Summer / pre-monsoon thunderstorms", "B) Deep winter", "C) Autumn dry period", "D) Monsoonal peak"], ans: 0 },
+      { id: 173, q: "Groundnut cultivation is prominently associated with which regional agro-climatic zone in source examples?", options: ["A) North-Eastern Zone", "B) Hilly zone", "C) Delta zone", "D) Coastal belt"], ans: 0 },
+      { id: 174, q: "Tapioca production is prominently associated with which regional zone?", options: ["A) North-Western Zone", "B) Northern plains", "C) Desert tract", "D) Alpine zone"], ans: 0 },
+      { id: 175, q: "Coffee plantation is classically associated with which regional zone?", options: ["A) Western / Hilly Zone", "B) Gangetic plains", "C) Semi-arid tract", "D) Delta"], ans: 0 },
+      { id: 176, q: "Cotton farming is associated with which regional zone in source matching keys?", options: ["A) Hilly / Western Zone", "B) Marshy swamp", "C) High snow mountains", "D) Tundra"], ans: 0 },
+      { id: 177, q: "How far inland can heavy cyclonic rainfall spread from the landfall coast?", options: ["A) Up to 100 km or more", "B) Exactly 1 km", "C) Never leaves the beach", "D) 5000 km"], ans: 0 },
+      { id: 178, q: "In which general direction do tropical cyclones striking the eastern coast of India typically track upon moving inland?", options: ["A) North-west", "B) Due South", "C) Straight East", "D) Downward into ocean"], ans: 0 },
+      { id: 179, q: "What is the standard accepted average numerical value of the Solar Constant?", options: ["A) 1.94 cal/cm²/min (approx 1361 W/m²)", "B) 0.50 cal/cm²/min", "C) 5.00 cal/cm²/min", "D) 10.0 cal/cm²/min"], ans: 0 },
+      { id: 180, q: "Short-range weather forecasting refers to forecasting meteorological parameters within what time frame?", options: ["A) Within 3 days (0–72 hours)", "B) 10–30 days", "C) 1 year", "D) 10 years"], ans: 0 },
+      { id: 181, q: "What is the estimated average intensity of total solar radiation received daily across India?", options: ["A) 400–700 cal/cm²/day", "B) 50 cal/cm²/day", "C) 2000 cal/cm²/day", "D) 5000 cal/cm²/day"], ans: 0 },
+      { id: 182, q: "What is another technical meteorological name for planetary surface albedo?", options: ["A) Reflected radiation percentage", "B) Absorbed heat", "C) Latent heat flux", "D) Emissivity"], ans: 0 },
+      { id: 183, q: "Which instrument is universally used across Indian observatories to record daily sunshine hours?", options: ["A) Campbell–Stokes sunshine recorder", "B) Bellani pan", "C) Net radiometer", "D) Psychrometer"], ans: 0 },
+      { id: 184, q: "How are maximum and minimum thermometers positioned inside a Stevenson screen?", options: ["A) Both are placed horizontally on special brackets", "B) Both hang vertically", "C) Buried in soil", "D) Submerged in water"], ans: 0 },
+      { id: 185, q: "In what scientific units can Photosynthetically Active Radiation (PAR) be measured?", options: ["A) Einstein/m²/s or Watts/m²", "B) Litres per second", "C) Millimetres of mercury", "D) Decibels"], ans: 0 },
+      { id: 186, q: "Weather forecasts spanning a duration of 3 to 10 days are officially classified under which category?", options: ["A) Medium-range forecasts", "B) Short-range forecasts", "C) Extended range", "D) Seasonal forecasts"], ans: 0 },
+      { id: 187, q: "How is the moisture availability index (MAI) fundamentally calculated?", options: ["A) Precipitation in relation to potential evapotranspiration (PET)", "B) Soil weight minus water weight", "C) Relative humidity divided by temperature", "D) Wind speed times cloud cover"], ans: 0 },
+      { id: 188, q: "Which predominant food crop is classically associated with the Cauvery Delta Zone of Tamil Nadu?", options: ["A) Rice (Paddy)", "B) Wheat", "C) Barley", "D) Apple"], ans: 0 },
+      { id: 189, q: "Which tuber crop is associated with the Hilly agro-climatic Zone?", options: ["A) Potato", "B) Cassava", "C) Sweet potato", "D) Elephant foot yam"], ans: 0 },
+      { id: 190, q: "Which spice crop is associated with the Southern Zone in source keys?", options: ["A) Chillies", "B) Black pepper", "C) Cardamom", "D) Saffron"], ans: 0 },
+      { id: 191, q: "Cotton is associated with which regional zone in agricultural geography examples?", options: ["A) Western Zone", "B) Alpine zone", "C) Polar zone", "D) Desert core"], ans: 0 },
+      { id: 192, q: "What is universally considered the absolute uppermost layer of Earth's atmosphere?", options: ["A) Thermosphere / Exosphere", "B) Troposphere", "C) Stratosphere", "D) Mesosphere"], ans: 0 },
+      { id: 193, q: "Which violent meteorological storm phenomenon is physically identical to a hurricane or tropical cyclone?", options: ["A) Cyclone / Typhoon", "B) Tornado", "C) Dust devil", "D) Blizzard"], ans: 0 },
+      { id: 194, q: "Which shallow isothermal boundary layer separates the stratosphere below from the mesosphere above?", options: ["A) Stratopause", "B) Tropopause", "C) Mesopause", "D) Inter-tropical convergence zone"], ans: 0 },
+      { id: 195, q: "Which Indian state/UT is associated with the Eastern Himalayan agro-climatic region?", options: ["A) Meghalaya / Arunachal Pradesh", "B) Punjab", "C) Kerala", "D) Gujarat"], ans: 0 },
+      { id: 196, q: "Which major agricultural state is associated with the Indo-Gangetic Plains region?", options: ["A) Punjab", "B) Kerala", "C) Tamil Nadu", "D) Karnataka"], ans: 0 },
+      { id: 197, q: "Which Union Territory is associated with the Island agro-climatic region?", options: ["A) Lakshadweep / Andaman and Nicobar", "B) Delhi", "C) Chandigarh", "D) Puducherry"], ans: 0 },
+      { id: 198, q: "Which state is associated with the West Coast Plains and Hills region?", options: ["A) Kerala", "B) Rajasthan", "C) Bihar", "D) Assam"], ans: 0 },
+      { id: 199, q: "Which natural planetary surface or feature exhibits the highest percentage albedo?", options: ["A) Thick bright clouds (up to 70–90%)", "B) Dark forest canopy", "C) Deep ocean water", "D) Asphalt road"], ans: 0 },
+      { id: 200, q: "Which chemical compound is classically used for cold-cloud seeding (artificial rain-making)?", options: ["A) Potassium iodide / Silver iodide", "B) Sodium chloride", "C) Copper sulphate", "D) Urea"], ans: 0 },
+      { id: 201, q: "How is long-term climatological information of an area practically useful in agricultural engineering?", options: ["A) It assists in irrigation system design, water requirement estimation, and groundwater planning", "B) It predicts daily stock prices", "C) It controls pest genetics", "D) It regulates fertilizer imports"], ans: 0 },
+      { id: 202, q: "Which major cereal crop is classified as a short-day plant (SDP)?", options: ["A) Rice", "B) Wheat", "C) Barley", "D) Radish"], ans: 0 },
+      { id: 203, q: "What is the normal duration of the crop-growing season in the Cauvery Delta Zone of Tamil Nadu?", options: ["A) 165–180 days", "B) 60 days", "C) 300 days", "D) 365 days"], ans: 0 },
+      { id: 204, q: "How many distinct formal agro-climatic zones are officially designated in the state of Tamil Nadu?", options: ["A) 5", "B) 7", "C) 10", "D) 15"], ans: 1 },
+      { id: 205, q: "Which specialized lysimeter device measures percolation and leaching losses from an undisturbed soil column?", options: ["A) Drainage / Percolation lysimeter", "B) Barometer", "C) Pyranometer", "D) Hygrometer"], ans: 0 },
+      { id: 206, q: "Which self-recording instrument continuously measures and charts relative humidity?", options: ["A) Thermo-hygrograph", "B) Barograph", "C) Anemograph", "D) Seismograph"], ans: 0 },
+      { id: 207, q: "In India, commercial bamboo cultivation and forestry is predominant in which agro-climatic zone?", options: ["A) North-Eastern Hill Zone", "B) Western dry desert", "C) Gangetic alluvial tract", "D) Coastal delta"], ans: 0 },
+      { id: 208, q: "Below what soil depth are underground soil thermometers officially designated as earth thermometers?", options: ["A) 10 cm", "B) 30 cm", "C) 100 cm", "D) 200 cm"], ans: 1 },
+      { id: 209, q: "What minimum wind speed threshold characterizes a severe “storm” on the meteorological scale?", options: ["A) More than 120 km/h", "B) 10 km/h", "C) 30 km/h", "D) 50 km/h"], ans: 0 },
+      { id: 210, q: "What are the steady prevailing surface winds blowing from 35° N and S towards the equatorial trough called?", options: ["A) Trade winds", "B) Westerlies", "C) Polar highs", "D) Monsoonal gales"], ans: 0 },
+      { id: 211, q: "What is the daytime cool wind movement blowing from the ocean towards the warmer land called?", options: ["A) Sea breeze", "B) Land breeze", "C) Chinook", "D) Sirocco"], ans: 0 },
+      { id: 212, q: "One nautical knot is equal to approximately how many statute miles per hour?", options: ["A) 1.15 mph", "B) 0.50 mph", "C) 3.00 mph", "D) 10.0 mph"], ans: 0 },
+      { id: 213, q: "Which of the following is classified as a low-altitude cloud type?", options: ["A) Stratocumulus / Stratus", "B) Cirrus", "C) Cirrostratus", "D) Altocumulus"], ans: 0 },
+      { id: 214, q: "What is a mixed precipitation event involving simultaneous falling rain and melting snow called?", options: ["A) Sleet", "B) Hail", "C) Drizzle", "D) Frost"], ans: 0 },
+      { id: 215, q: "Which Indian states receive extended late monsoonal rainfall extending from September onwards?", options: ["A) Madhya Pradesh, Uttar Pradesh and Uttarakhand", "B) Kerala exclusively", "C) Punjab exclusively", "D) Tamil Nadu only"], ans: 0 },
+      { id: 216, q: "When is a specific calendar month climatologically considered “humid” in water-balance accounting?", options: ["A) When monthly precipitation exceeds monthly potential evapotranspiration (P > PET)", "B) When temperature is zero", "C) When wind speed is high", "D) When sunshine is absent"], ans: 0 },
+      { id: 217, q: "What is the correct vertical sequence of atmospheric layers from the Earth's surface upward?", options: ["A) Troposphere → Stratosphere → Mesosphere → Thermosphere", "B) Thermosphere → Mesosphere → Stratosphere → Troposphere", "C) Stratosphere → Troposphere → Thermosphere → Mesosphere", "D) Mesosphere → Troposphere → Exosphere → Stratosphere"], ans: 0 },
+      { id: 218, q: "What is the major intensive cereal cropping pattern followed across the Indo-Gangetic Plain region?", options: ["A) Rice–Wheat", "B) Cotton–Millets", "C) Tea–Coffee", "D) Rubber–Coconut"], ans: 0 },
+      { id: 219, q: "What approximate percentage of Tamil Nadu's total annual rainfall contribution comes from the North-East Monsoon?", options: ["A) 20%", "B) 47% (approx 48%)", "C) 80%", "D) 5%"], ans: 1 },
+      { id: 220, q: "Which statement regarding the IPCC is evaluated as incorrect according to specific source evaluation keys?", options: ["A) The statement claiming IPCC is an operational executive UN body that issues live daily weather forecasts", "B) IPCC assesses climate science", "C) IPCC produces assessment reports", "D) IPCC works with WMO and UNEP"], ans: 0 },
+      { id: 221, q: "What does the international scientific acronym IPCC stand for?", options: ["A) Intergovernmental Panel on Climate Change", "B) International Pollution Control Council", "C) Inter-ministerial Project for Crop Climatology", "D) International Panel for Conservation and Commerce"], ans: 0 },
+      { id: 222, q: "What is the primary core mandate and concern of the IPCC?", options: ["A) Comprehensive scientific assessment of climate change risks and science", "B) Enforcing industrial carbon taxes", "C) Issuing daily cyclone warnings", "D) Providing agricultural subsidies"], ans: 0 },
+      { id: 223, q: "How many official member states participate in the Intergovernmental Panel on Climate Change (IPCC)?", options: ["A) 100", "B) 150", "C) 195 member states", "D) 250"], ans: 2 },
+      { id: 224, q: "Where was the milestone 60th Session of the IPCC held in January 2024 according to source records?", options: ["A) Istanbul, Türkiye", "B) Geneva, Switzerland", "C) Nairobi, Kenya", "D) New York, USA"], ans: 0 },
+      { id: 225, q: "Under the influence of which oceanic-atmospheric phenomenon does the South-West Monsoon frequently fail or weaken over India?", options: ["A) El Niño", "B) La Niña", "C) Arctic Oscillation", "D) Indian Ocean Dipole neutral phase"], ans: 0 },
+      { id: 226, q: "Which empirical climatic classification scheme is most widely cited and suited for general agricultural zoning?", options: ["A) Köppen climate classification", "B) Thornthwaite index", "C) Richter scale", "D) Beaufort scale"], ans: 0 },
+      { id: 227, q: "Up to approximately what height above Earth's surface does the troposphere extend?", options: ["A) 8 km (at poles) to 18 km (at equator)", "B) 50 km", "C) 100 km", "D) 500 km"], ans: 0 },
+      { id: 228, q: "Which two light gases predominate significantly in the outermost layer of the atmosphere (exosphere)?", options: ["A) Hydrogen and helium", "B) Oxygen and nitrogen", "C) Carbon dioxide and methane", "D) Argon and neon"], ans: 0 },
+      { id: 229, q: "What are the imaginary geographic lines drawn on globes connecting the poles (north to south) called?", options: ["A) Longitude meridians", "B) Latitudes (parallels)", "C) Isobars", "D) Isotherms"], ans: 0 },
+      { id: 230, q: "Which industrial chemical compounds are primarily responsible for stratospheric ozone layer depletion?", options: ["A) Chlorofluorocarbons (CFCs)", "B) Carbon dioxide", "C) Methane", "D) Water vapour"], ans: 0 },
+      { id: 231, q: "In what historical year was the dedicated Division of Agricultural Meteorology established within IMD?", options: ["A) 1920", "B) 1935", "C) 1947", "D) 1965"], ans: 1 },
+      { id: 232, q: "Which climatic region receives an annual rainfall total of less than 500 mm?", options: ["A) Arid / semi-arid dry region", "B) Humid tropical rainforest", "C) Monsoonal delta", "D) Alpine zone"], ans: 0 },
+      { id: 233, q: "What is the instantaneous physical state of the atmosphere at a given place and time called?", options: ["A) Weather", "B) Climate", "C) Season", "D) Biome"], ans: 0 },
+      { id: 234, q: "What is the long-term statistical regime and aggregate of atmospheric variables over a given place called?", options: ["A) Climate", "B) Weather", "C) Storm front", "D) Air mass"], ans: 0 },
+      { id: 235, q: "What approximate percentage of nitrogen gas is present in Earth's clean dry lower atmosphere?", options: ["A) 21%", "B) 78%", "C) 50%", "D) 90%"], ans: 1 },
+      { id: 236, q: "Is the stratosphere known in meteorology as the “seat of active weather phenomena”?", options: ["A) Yes", "B) No (troposphere is the seat of weather phenomena; stratosphere is stable)"], ans: 1 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(236, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 236) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Climatology, Weather Forecasting, and Agricultural Meteorology.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific climatic zones, monsoon phenomena, and weather instruments.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Agricultural Meteorology recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+</html>

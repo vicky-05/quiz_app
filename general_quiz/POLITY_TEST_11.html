@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indian Polity — Test 11: Citizenship, Rights, DPSP & Duties (100 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select, .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Polity Test 11</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Citizenship, Fundamental Rights, DPSP & Duties (Test 11)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Automated exam pacing: <strong>30 seconds per question</strong> allocated based on your selected count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–100)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="100">All Questions (100 Questions)</option>
+            <option value="10">10 Questions</option>
+            <option value="25">25 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="75">75 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 100)</label>
+          <input type="number" id="custom-count-input" min="1" max="100" value="25" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">50 min 0 sec (30s / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#9878;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">General Studies</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#128220;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Rights & Duties</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 100</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">50:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "The word “Citizen” is derived from which word?", options: ["A) Polis", "B) Demos", "C) Civitas", "D) Civis (Latin)"], ans: 3 },
+      { id: 2, q: "In which year was the Citizenship Act passed in India?", options: ["A) 1955", "B) 1950", "C) 1952", "D) 1956"], ans: 0 },
+      { id: 3, q: "Which statements regarding citizenship by naturalisation are correct?", options: ["A) The person must not be an illegal migrant", "B) Must reside in India or be in Government service for 12 months immediately preceding the date of application", "C) Must possess good character and adequate knowledge of an Eighth Schedule language", "D) All statements are correct"], ans: 3 },
+      { id: 4, q: "In how many ways can Indian citizenship be acquired under the Citizenship Act of 1955?", options: ["A) 3", "B) 4", "C) 5", "D) 6"], ans: 2 },
+      { id: 5, q: "When did the Government of India grant Indian citizenship to the people of Pondicherry?", options: ["A) 1954", "B) 1962", "C) 1966", "D) 1971"], ans: 1 },
+      { id: 6, q: "Consider the statements regarding citizenship by birth/descent:\n1. A person born in India on or after 26 Jan 1950 but before 1 July 1987 is a citizen by birth irrespective of the nationality of his parents.\n2. A person born outside India on or after 26 Jan 1950 is always a citizen of India even if neither parent was an Indian citizen.", options: ["A) Statement 1 is correct", "B) Statement 2 is correct", "C) Both are correct", "D) Neither is correct"], ans: 0 },
+      { id: 7, q: "Citizenship provisions are included in which Part of the Constitution?", options: ["A) Part I", "B) Part III", "C) Part II", "D) Part IV"], ans: 2 },
+      { id: 8, q: "Which statements regarding NRI/PIO/OCI are correct?", options: ["A) NRI is an Indian citizen residing outside India holding an Indian passport", "B) PIO cardholder scheme was merged with OCI cardholder scheme in 2015", "C) OCI cardholders do not enjoy voting rights or rights to hold constitutional offices in India", "D) All statements are correct"], ans: 3 },
+      { id: 9, q: "Minimum duration of ordinary residence in India before applying for Indian citizenship by registration (for persons of Indian origin):", options: ["A) 3 years", "B) 5 years", "C) 7 years", "D) 10 years"], ans: 1 },
+      { id: 10, q: "From when is registration of birth at an Indian consulate mandatory for claiming Indian citizenship by descent?", options: ["A) 26 January 1950", "B) 10 December 1992", "C) 3 December 2004", "D) 15 August 1947"], ans: 1 },
+      { id: 11, q: "A person married to an Indian citizen and seeking citizenship by registration must have lived in India for:", options: ["A) 3 years", "B) 5 years", "C) 6 years", "D) 7 years"], ans: 3 },
+      { id: 12, q: "Tamil Nadu Lokayukta Act, 2018 became effective from:", options: ["A) 1 January 2018", "B) 15 August 2018", "C) 13 November 2018", "D) 26 January 2019"], ans: 2 },
+      { id: 13, q: "Indian citizenship CANNOT be acquired by:", options: ["A) Birth", "B) Descent", "C) Migration", "D) Naturalisation"], ans: 2 },
+      { id: 14, q: "Which statements about the National Register of Citizens (NRC) are correct?", options: ["A) First prepared in 1951 following the 1951 Census", "B) Mandated by the 2003 amendment of the Citizenship Act, 1955", "C) Updated recently in Assam under Supreme Court supervision", "D) All statements are correct"], ans: 3 },
+      { id: 15, q: "Which Articles of the Constitution relate to citizenship?", options: ["A) Articles 1 to 4", "B) Articles 12 to 35", "C) Articles 36 to 51", "D) Articles 5 to 11"], ans: 3 },
+      { id: 16, q: "The principle of single citizenship in India was borrowed from:", options: ["A) England", "B) USA", "C) Switzerland", "D) Canada"], ans: 0 },
+      { id: 17, q: "Which statements regarding citizenship are correct?\n1. Parliament has exclusive power under Article 11 to regulate the right of citizenship by law.\n2. State legislatures can also create state citizenship laws.", options: ["A) Statement 1 only", "B) Statement 2 only", "C) Both 1 and 2", "D) Neither 1 nor 2"], ans: 0 },
+      { id: 18, q: "In how many ways can Indian citizenship be lost under the Citizenship Act?", options: ["A) 3 (Renunciation, Termination, Deprivation)", "B) 4", "C) 5", "D) 2"], ans: 0 },
+      { id: 19, q: "Who is the first citizen of India?", options: ["A) President of India", "B) Prime Minister", "C) Chief Justice of India", "D) Speaker of Lok Sabha"], ans: 0 },
+      { id: 20, q: "Which Article contains citizenship provisions for persons who migrated from Pakistan to India?", options: ["A) Article 5", "B) Article 6", "C) Article 7", "D) Article 8"], ans: 1 },
+      { id: 21, q: "Which countries have dual citizenship (national and state)?", options: ["A) India and Britain", "B) France and Germany", "C) Switzerland and USA", "D) Canada and Australia"], ans: 2 },
+      { id: 22, q: "Which Articles dealt with citizenship at the commencement of the Constitution?", options: ["A) Articles 1 to 4", "B) Articles 5 to 11", "C) Articles 12 to 20", "D) Articles 21 to 30"], ans: 1 },
+      { id: 23, q: "Pravasi Bharatiya Divas is celebrated every two years on:", options: ["A) January 9", "B) January 26", "C) August 15", "D) October 2"], ans: 0 },
+      { id: 24, q: "Which statements regarding nationality and citizenship are correct?", options: ["A) Nationality is an ethnic or racial concept, while citizenship is legal and political", "B) Nationality cannot be changed easily, but citizenship can be altered", "C) A person can have nationality of one nation and citizenship of another", "D) All statements are correct"], ans: 3 },
+      { id: 25, q: "The category of Overseas Citizens of India (OCI) was introduced through an amendment to the Citizenship Act in:", options: ["A) 2003", "B) 2005", "C) 2015", "D) 2019"], ans: 1 },
+      { id: 26, q: "Fundamental Rights are included in which Part of the Constitution?", options: ["A) Part II", "B) Part III", "C) Part IV", "D) Part IVA"], ans: 1 },
+      { id: 27, q: "Match the Fundamental Rights with their Articles:\nRight to Equality — 14-18 | Right to Freedom — 19-22 | Right Against Exploitation — 23-24 | Cultural & Educational Rights — 29-30", options: ["A) 4, 3, 1, 2", "B) 1, 2, 3, 4", "C) 2, 1, 4, 3", "D) 3, 4, 2, 1"], ans: 0 },
+      { id: 28, q: "Fundamental Rights are described in which Articles of the Constitution?", options: ["A) Articles 5–11", "B) Articles 36–51", "C) Articles 14–32", "D) Articles 12–35"], ans: 3 },
+      { id: 29, q: "The first written document relating to Fundamental Rights of citizens was:", options: ["A) Magna Carta (1215)", "B) US Bill of Rights (1791)", "C) French Declaration of Rights of Man (1789)", "D) English Bill of Rights (1689)"], ans: 0 },
+      { id: 30, q: "Which of the following are Fundamental Rights under Part III?\n1. Right to equality\n2. Right to strike\n3. Right to freedom of religion\n4. Right to constitutional remedies", options: ["A) 1, 2, 3 and 4", "B) 1 and 3 only", "C) 2, 3 and 4 only", "D) Statements 1, 3 and 4 only"], ans: 3 },
+      { id: 31, q: "Fundamental Rights guaranteed by the Constitution of India are:", options: ["A) Enforceable by a court of law", "B) Non-justiciable moral precepts", "C) Dependent solely on executive grace", "D) Absolute and completely unrestricted"], ans: 0 },
+      { id: 32, q: "Match the rights with their Articles:\nEquality before Law — Art 14 | Abolition of Untouchability — Art 17 | Abolition of Titles — Art 18 | Protection of Life — Art 21", options: ["A) 3, 2, 4, 1", "B) 1, 2, 3, 4", "C) 4, 3, 2, 1", "D) 2, 1, 4, 3"], ans: 0 },
+      { id: 33, q: "Fundamental Rights (except Articles 20 and 21) can be suspended during:", options: ["A) Proclamation of National Emergency", "B) Financial Emergency", "C) President's Rule in a State", "D) Parliamentary dissolution"], ans: 0 },
+      { id: 34, q: "How many broad categories of Fundamental Rights are currently recognised in the Constitution?", options: ["A) Five", "B) Six", "C) Seven", "D) Eight"], ans: 1 },
+      { id: 35, q: "How many broad categories of Fundamental Rights were originally recognised in 1950?", options: ["A) Five", "B) Six", "C) Eight", "D) Seven"], ans: 3 },
+      { id: 36, q: "Fundamental Rights in the Indian Constitution were inspired by the Constitution of:", options: ["A) Britain", "B) Ireland", "C) France", "D) America"], ans: 3 },
+      { id: 37, q: "Which rights are envisaged under the Right Against Exploitation?\n1. Prohibition of human trafficking and forced labour (Art 23)\n2. Protection against arrest and detention (Art 22)\n3. Freedom to manage religious affairs (Art 26)\n4. Prohibition of employment of children in factories (Art 24)", options: ["A) 1 and 2 only", "B) 2 and 3 only", "C) Statements 1 and 4 only", "D) 1, 2 and 4"], ans: 2 },
+      { id: 38, q: "Which of the following is NOT a Fundamental Right under the Indian Constitution?", options: ["A) Right to Property", "B) Right to Equality", "C) Right to Freedom", "D) Right against Exploitation"], ans: 0 },
+      { id: 39, q: "Which of the following pairings of Fundamental Rights is accurate?", options: ["A) Article 14 — Equality before law", "B) Article 19 — Protection of six democratic freedoms", "C) Article 21 — Protection of life and personal liberty", "D) All are accurate constitutional provisions"], ans: 3 },
+      { id: 40, q: "Match Articles with corresponding rights:\nArt 14 — Equality before law | Art 19 — Freedom of speech | Art 25 — Freedom of conscience | Art 32 — Constitutional remedies", options: ["A) 4, 1, 3, 2", "B) 1, 2, 3, 4", "C) 3, 4, 1, 2", "D) 2, 3, 4, 1"], ans: 0 },
+      { id: 41, q: "Which Fundamental Rights are available to both citizens and foreigners (non-citizens)?\n1. Article 14 (Equality before law)\n2. Article 21 (Protection of life and personal liberty)\n3. Article 15 (Prohibition of discrimination on grounds of religion, race, etc.)\n4. Article 19 (Six democratic freedoms)", options: ["A) 3 and 4 only", "B) 1, 2, 3 and 4", "C) Statements 1 and 2 are correct", "D) 1 and 4 only"], ans: 2 },
+      { id: 42, q: "Articles 14–18 of the Constitution are based on the principle of:", options: ["A) Equality", "B) Liberty", "C) Secularism", "D) Fraternity"], ans: 0 },
+      { id: 43, q: "Article 19 guarantees:", options: ["A) Right to constitutional remedies", "B) Abolition of titles", "C) Right to freedom of speech and expression and five other freedoms", "D) Prohibition of child labour"], ans: 2 },
+      { id: 44, q: "Which Fundamental Right is available to both citizens and non-citizens?", options: ["A) Right to public employment (Art 16)", "B) Protection of language and culture (Art 29)", "C) Freedom to practice profession anywhere (Art 19)", "D) Right to equality before law (Art 14) and Protection of life (Art 21)"], ans: 3 },
+      { id: 45, q: "Match the writs with their meanings:\nMandamus — We command | Quo-Warranto — By what authority | Certiorari — To be certified | Prohibition — To forbid", options: ["A) 1, 2, 3, 4", "B) 3, 4, 1, 2", "C) 4, 3, 2, 1", "D) 2, 1, 4, 3"], ans: 3 },
+      { id: 46, q: "Who headed the historic nine-judge Supreme Court bench that declared the Right to Privacy a Fundamental Right in 2017?", options: ["A) Justice J.S. Khehar", "B) Justice Dipak Misra", "C) Justice Ranjan Gogoi", "D) Justice D.Y. Chandrachud"], ans: 0 },
+      { id: 47, q: "The Right of Children to Free and Compulsory Education (RTE) Act came into force nationwide on:", options: ["A) 1 April 2010", "B) 26 August 2009", "C) 15 August 2010", "D) 26 January 2011"], ans: 0 },
+      { id: 48, q: "Abolition of Untouchability under Article 17 is placed under:", options: ["A) Right to Freedom", "B) Cultural and Educational Rights", "C) Right to Equality", "D) Right against Exploitation"], ans: 2 },
+      { id: 49, q: "Which Article deals with laws inconsistent with or in derogation of Fundamental Rights being void?", options: ["A) Article 12", "B) Article 13", "C) Article 14", "D) Article 32"], ans: 1 },
+      { id: 50, q: "The Untouchability (Offences) Act, 1955 was amended and renamed as the Protection of Civil Rights Act in:", options: ["A) 1968", "B) 1972", "C) 1976", "D) 1989"], ans: 2 },
+      { id: 51, q: "Which statements regarding Part IV of the Constitution are correct?\n1. DPSPs are justiciable and enforceable by courts.\n2. DPSPs are fundamental in the governance of the country.\n3. It shall be the duty of the State to apply these principles in making laws.", options: ["A) Statements 2 and 3 are correct", "B) Statements 1 and 2 are correct", "C) Statements 1 and 3 are correct", "D) All are correct"], ans: 0 },
+      { id: 52, q: "Directive Principles of State Policy were derived from the Constitution of:", options: ["A) USA", "B) Britain", "C) Australia", "D) Ireland"], ans: 3 },
+      { id: 53, q: "DPSPs are contained in which Part of the Constitution?", options: ["A) Part II", "B) Part III", "C) Part IVA", "D) Part IV"], ans: 3 },
+      { id: 54, q: "“To promote international peace and security” is found in:", options: ["A) Preamble", "B) Part IV (Article 51)", "C) Part III", "D) Part IVA"], ans: 1 },
+      { id: 55, q: "Match the Articles with DPSPs:\nArt 39A — Equal justice and free legal aid | Art 40 — Village Panchayats | Art 44 — Uniform Civil Code | Art 50 — Separation of judiciary", options: ["A) 3, 4, 1, 2", "B) 1, 2, 3, 4", "C) 4, 3, 2, 1", "D) 2, 1, 4, 3"], ans: 0 },
+      { id: 56, q: "Who described DPSPs as having no legal force but being educational and influencing the government and electorate?", options: ["A) Dr. B.R. Ambedkar", "B) Granville Austin", "C) Sir Ivor Jennings", "D) K.C. Wheare"], ans: 1 },
+      { id: 57, q: "Who described Fundamental Rights and DPSPs together as the “Conscience of the Constitution”?", options: ["A) Dr. B.R. Ambedkar", "B) Granville Austin", "C) K.M. Munshi", "D) Jawaharlal Nehru"], ans: 1 },
+      { id: 58, q: "Which part is described as a “novel feature” of the Indian Constitution by Dr. B.R. Ambedkar?", options: ["A) Fundamental Rights", "B) Directive Principles of State Policy", "C) Preamble", "D) Fundamental Duties"], ans: 1 },
+      { id: 59, q: "Under the 86th Amendment Act 2002, Article 45 now directs the State to provide early childhood care and education for children up to:", options: ["A) 6 years of age", "B) 14 years of age", "C) 8 years of age", "D) 10 years of age"], ans: 0 },
+      { id: 60, q: "The ideal of a “Welfare State” in India is enshrined in:", options: ["A) Preamble only", "B) Directive Principles of State Policy", "C) Fundamental Rights", "D) Seventh Schedule"], ans: 1 },
+      { id: 61, q: "DPSPs are set forth in which Articles of the Constitution?", options: ["A) Articles 36 to 51", "B) Articles 12 to 35", "C) Articles 51A to 51K", "D) Articles 52 to 78"], ans: 0 },
+      { id: 62, q: "DPSPs were described as “life-giving provisions of the Constitution” by:", options: ["A) L.M. Singhvi", "B) Granville Austin", "C) Dr. B.R. Ambedkar", "D) M.C. Chagla"], ans: 0 },
+      { id: 63, q: "Which statements regarding the 86th Constitutional Amendment are correct?", options: ["A) Inserted Article 21A making elementary education a Fundamental Right", "B) Substituted Article 45 directing early childhood care until age 6", "C) Added duty (k) under Article 51A for parents/guardians", "D) All statements are correct"], ans: 3 },
+      { id: 64, q: "The primary aim of Directive Principles of State Policy is:", options: ["A) To establish political democracy", "B) To establish a police state", "C) To establish a welfare state with socio-economic justice", "D) To expand union territories"], ans: 2 },
+      { id: 65, q: "Which Article directs the State to organise village panchayats as units of self-government?", options: ["A) Article 40", "B) Article 44", "C) Article 48", "D) Article 50"], ans: 0 },
+      { id: 66, q: "The organisation of village panchayats (Article 40) represents which category of Directive Principles?", options: ["A) Socialistic Principle", "B) Gandhian Principle", "C) Liberal-Intellectual Principle", "D) International Principle"], ans: 1 },
+      { id: 67, q: "“Economic Justice” as one of the objectives of the Constitution is provided for in:", options: ["A) Preamble and Fundamental Rights", "B) Preamble and Directive Principles", "C) Fundamental Rights and Directive Principles", "D) Fundamental Rights and Duties"], ans: 1 },
+      { id: 68, q: "Which statements regarding the Right to Education Act are correct?", options: ["A) Passed by Parliament on 4 August 2009", "B) Enacted pursuant to Article 21A of the Constitution", "C) Came into force on 1 April 2010", "D) All statements are correct"], ans: 3 },
+      { id: 69, q: "Which is NOT one of the standard classifications into which Directive Principles are classified by scholars?", options: ["A) Socialistic Directives", "B) Gandhian Directives", "C) Liberal-Intellectual Directives", "D) Intellectual Directives"], ans: 3 },
+      { id: 70, q: "Promotion of educational and economic interests of Scheduled Castes, Scheduled Tribes, and other weaker sections comes under:", options: ["A) Fundamental Rights (Article 15)", "B) Directive Principles of State Policy (Article 46)", "C) Fundamental Duties (Article 51A)", "D) Preamble only"], ans: 1 },
+      { id: 71, q: "Right to work, education and public assistance in cases of unemployment, old age, sickness and disability is provided under:", options: ["A) Article 39", "B) Article 41", "C) Article 42", "D) Article 43"], ans: 1 },
+      { id: 72, q: "Securing for all citizens a Uniform Civil Code throughout India is directed under:", options: ["A) Article 44", "B) Article 40", "C) Article 48", "D) Article 51"], ans: 0 },
+      { id: 73, q: "Participation of workers in the management of industries is provided under:", options: ["A) Article 43", "B) Article 39A", "C) Article 43-A", "D) Article 48A"], ans: 2 },
+      { id: 74, q: "Which statements regarding Articles 46, 48 and 38 are correct?", options: ["A) Art 38 directs state to promote welfare of people by securing a social order", "B) Art 46 promotes educational and economic interests of SCs/STs", "C) Art 48 directs organization of agriculture and animal husbandry", "D) All statements are correct"], ans: 3 },
+      { id: 75, q: "Which Article directs the State to separate the judiciary from the executive in public services?", options: ["A) Article 45", "B) Article 48", "C) Article 50", "D) Article 51"], ans: 2 },
+      { id: 76, q: "Fundamental Duties are included in which Part of the Indian Constitution?", options: ["A) Part III", "B) Part IV", "C) Part IV-A", "D) Part V"], ans: 2 },
+      { id: 77, q: "Finance, property, contracts and suits are dealt with in which Part of the Constitution?", options: ["A) Part XI", "B) Part X", "C) Part XII", "D) Part XIII"], ans: 2 },
+      { id: 78, q: "Who were members of the Sardar Swaran Singh Committee (1976)?", options: ["A) A, B, C and D — All (Swaran Singh, A.R. Antulay, S.S. Ray, etc.)", "B) Swaran Singh and B.R. Ambedkar only", "C) Morarji Desai and Charan Singh only", "D) Kothari and Sarkaria only"], ans: 0 },
+      { id: 79, q: "The 11th Fundamental Duty was added by the 86th Constitutional Amendment Act in:", options: ["A) 2000", "B) 2002", "C) 2004", "D) 2009"], ans: 1 },
+      { id: 80, q: "Fundamental Duties of Indian citizens are mentioned in:", options: ["A) Article 39", "B) Article 48A", "C) Article 51A", "D) Article 52"], ans: 2 },
+      { id: 81, q: "The Swaran Singh Committee was set up to make recommendations about:", options: ["A) Centre-State relations", "B) Fundamental Duties", "C) Electoral reforms", "D) Official language"], ans: 1 },
+      { id: 82, q: "Which statements are part of Fundamental Duties under Article 51A?\n1. Duty to pay income tax on time.\n2. To cherish and follow the noble ideals of the freedom struggle.\n3. To protect and improve the natural environment.", options: ["A) Statements 2 and 3 are correct", "B) Statements 1 and 2 are correct", "C) Statements 1 and 3 are correct", "D) All are correct"], ans: 0 },
+      { id: 83, q: "Promotion of international peace and security is dealt with in:", options: ["A) Article 51A", "B) Article 50", "C) Article 45", "D) Article 51"], ans: 3 },
+      { id: 84, q: "Fundamental Duties were inserted into the Constitution by the 42nd Amendment Act in:", options: ["A) 1971", "B) 1975", "C) 1976", "D) 1978"], ans: 2 },
+      { id: 85, q: "Fundamental Duties in the Indian Constitution were adopted from the Constitution of:", options: ["A) USA", "B) Ireland", "C) Canada", "D) USSR"], ans: 3 },
+      { id: 86, q: "Consider the statements regarding Fundamental Duties:\n1. They are legally enforceable by writs under Article 32.\n2. They were part of the original Constitution of 1950.\n3. They remind citizens of their civic responsibilities while enjoying rights.", options: ["A) 1 and 2 are correct", "B) 2 and 3 are correct", "C) Statement 3 is correct", "D) All are correct"], ans: 2 },
+      { id: 87, q: "The Swaran Singh Committee recommended the insertion of:", options: ["A) Fundamental Rights", "B) Fundamental Duties (Part IVA)", "C) Directive Principles", "D) Preamble"], ans: 1 },
+      { id: 88, q: "Which is NOT mentioned as a Fundamental Duty in Article 51A?", options: ["A) To abide by the Constitution", "B) To develop scientific temper", "C) To safeguard public property", "D) To practice and propagate the message of fraternity in elections"], ans: 3 },
+      { id: 89, q: "The historic need for incorporating Fundamental Duties into the Constitution was acutely felt during the Emergency of:", options: ["A) 1962–1965", "B) 1971–1972", "C) 1975–1977", "D) 1990–1991"], ans: 2 },
+      { id: 90, q: "Which of the following is a recognized Fundamental Duty under Article 51A?", options: ["A) To cast vote in elections", "B) To pay taxes regularly", "C) To develop scientific temper, humanism and spirit of inquiry and reform", "D) To join armed forces during war"], ans: 2 },
+      { id: 91, q: "Which of the following was recommended by Swaran Singh Committee but NOT accepted by Government as a Fundamental Duty?", options: ["A) To respect the National Anthem", "B) To defend the country", "C) Duty to pay taxes", "D) To protect forests and wildlife"], ans: 2 },
+      { id: 92, q: "Article 300A inserted by the 44th Amendment Act, 1978 deals with:", options: ["A) Right to Education", "B) Right to Information", "C) Right to Property", "D) Right to Equality"], ans: 2 },
+      { id: 93, q: "Which statements regarding Fundamental Duties are correct?", options: ["A) Added on recommendation of Swaran Singh Committee", "B) Inspired by the Soviet Constitution", "C) Verma Committee identified legal provisions for their implementation", "D) All statements are correct"], ans: 3 },
+      { id: 94, q: "Article 43B (Promotion of Co-operative Societies) was inserted by which Constitutional Amendment?", options: ["A) 42nd Amendment Act, 1976", "B) 44th Amendment Act, 1978", "C) 86th Amendment Act, 2002", "D) 97th Constitutional Amendment Act, 2011"], ans: 3 },
+      { id: 95, q: "Article 42 of the Constitution provides for:", options: ["A) Provisions for just and humane conditions of work and maternity relief", "B) Living wage for workers", "C) Uniform Civil Code", "D) Separation of judiciary from executive"], ans: 0 },
+      { id: 96, q: "In the Indian judicial system, prerogative writs (Habeas Corpus, Mandamus, etc.) are issued by:", options: ["A) Supreme Court only", "B) High Courts only", "C) Supreme Court and High Courts only", "D) All civil and criminal courts"], ans: 2 },
+      { id: 97, q: "Which statements regarding the duties of every citizen under Article 51A are correct?", options: ["A) To promote harmony and spirit of common brotherhood transcending diversities", "B) To renounce practices derogatory to the dignity of women", "C) To strive towards excellence in all spheres of individual and collective activity", "D) All statements are correct"], ans: 3 },
+      { id: 98, q: "How many major and minor committees were constituted by the Constituent Assembly to prepare the draft Constitution?", options: ["A) 15 committees", "B) 18 committees", "C) 22 committees", "D) 25 committees"], ans: 2 },
+      { id: 99, q: "How many Fundamental Duties are currently provided under Part IVA of the Constitution?", options: ["A) 10", "B) 11", "C) 12", "D) 9"], ans: 1 },
+      { id: 100, q: "Which of the following is NOT explicitly mentioned as a Fundamental Duty in Article 51A?", options: ["A) To abide by the Constitution and respect its ideals and institutions", "B) To protect and improve the natural environment", "C) To cast vote in the election", "D) To develop scientific temper and humanism"], ans: 2 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(100, parseInt(customCountInput.value) || 25));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 30;
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : ""} (30s / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 100) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 30;
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const m = Math.floor(secs / 60);
+      const s = secs % 60;
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time is up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${qData.id}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Citizenship, Fundamental Rights, DPSP, and Duties.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific constitutional writ distinctions, DPSP article classifications, and Swaran Singh details.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Articles 12–51A recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${q.id}. ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+</html>

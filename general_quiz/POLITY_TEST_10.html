@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Indian Polity — Test 10: Anti-Corruption, States & Constitution (100 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select, .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Polity Test 10</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Anti-Corruption, States Reorganisation & Constitution (Test 10)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Automated exam pacing: <strong>30 seconds per question</strong> allocated based on your selected count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–100)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="100">All Questions (100 Questions)</option>
+            <option value="10">10 Questions</option>
+            <option value="25">25 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="75">75 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 100)</label>
+          <input type="number" id="custom-count-input" min="1" max="100" value="25" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">50 min 0 sec (30s / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#9878;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">General Studies</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#128220;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Polity & Anti-Corruption</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 100</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">50:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "The appointment of Lokayukta at the state level was first recommended by which committee?", options: ["A) Santhanam Committee", "B) Administrative Reforms Commission of India (1966–70)", "C) Sarkaria Commission", "D) Law Commission of India"], ans: 1 },
+      { id: 2, q: "The office of Lokpal and Lokayukta in India resembles which of the following?", options: ["A) Procurator system in Russia", "B) Ombudsman in Scandinavia", "C) Parliamentary Commissioner in Britain", "D) Conseil d'Etat in France"], ans: 1 },
+      { id: 3, q: "Consider the following statements regarding the Lokpal Bill:\n1. It was introduced in Parliament following the Jan Lokpal movement led by Anna Hazare in 2011.\n2. It was passed by Rajya Sabha on 17 December 2013.\n3. It was passed by Lok Sabha on 18 December 2013.", options: ["A) Statements 1 and 2 are correct", "B) Statements 2 and 3 are correct", "C) Statements 1 and 3 are correct", "D) All statements are correct"], ans: 3 },
+      { id: 4, q: "Who designed the logo for Lokpal in India?", options: ["A) Nandalal Bose", "B) Pingali Venkayya", "C) Udaya Kumar", "D) Prashant Mishra"], ans: 3 },
+      { id: 5, q: "The first Lokpal Bill was introduced in Parliament in the year:", options: ["A) 1964", "B) 1966", "C) 1971", "D) 1968"], ans: 3 },
+      { id: 6, q: "Consider the following statements:\n1. Creation of Lokpal was first recommended by the First Administrative Reforms Commission.\n2. The term Lokpal and Lokayukta was coined by Dr. L.M. Singhvi.\n3. The Second Administrative Reforms Commission recommended establishment of Lokpal in 2005.", options: ["A) Statements 1 and 2 are correct", "B) Statements 2 and 3 are correct", "C) Statements 1 and 3 are correct", "D) All statements are correct"], ans: 0 },
+      { id: 7, q: "According to the Lokpal and Lokayuktas Act, 2013, the Lokpal shall consist of a maximum of how many members including the Chairperson?", options: ["A) 4", "B) 6", "C) 8", "D) 10"], ans: 2 },
+      { id: 8, q: "A person can be appointed Chairperson of Lokpal if he/she:\n1. Is or has been Chief Justice of India.\n2. Is or has been a Judge of the Supreme Court.\n3. Has special knowledge and expertise of minimum 15 years in relevant fields.", options: ["A) Statements 1 and 2 are correct", "B) Statements 2 and 3 are correct", "C) Statements 1 and 3 are correct", "D) All statements are correct"], ans: 0 },
+      { id: 9, q: "The Lokpal and Lokayuktas Act received the assent of the President in:", options: ["A) 2014", "B) 2013", "C) 2015", "D) 2016"], ans: 0 },
+      { id: 10, q: "What should be the minimum age of a Lokpal Chairperson or Member on the date of assuming office?", options: ["A) Not less than 35 years", "B) Not less than 45 years", "C) Not less than 50 years", "D) Not less than 55 years"], ans: 1 },
+      { id: 11, q: "Who is the first Lokpal Chairperson of India?", options: ["A) Justice H.J. Kania", "B) Justice P.N. Bhagwati", "C) Justice Ranjan Gogoi", "D) Pinaki Chandra Ghose"], ans: 3 },
+      { id: 12, q: "Tamil Nadu Lokayukta Act, 2018 became effective from:", options: ["A) 1 January 2018", "B) 15 August 2018", "C) 13 November 2018", "D) 26 January 2019"], ans: 2 },
+      { id: 13, q: "In 1970, the first State in India to pass the Lokayukta Act was:", options: ["A) Maharashtra", "B) Karnataka", "C) Rajasthan", "D) Odisha"], ans: 3 },
+      { id: 14, q: "Who is involved in the selection/appointment of the Lokayukta and Uplokayukta?\n1. High Court Chief Justice\n2. Speaker of Legislative Assembly\n3. Leader of Opposition\n4. Governor", options: ["A) 1 and 2 only", "B) 3 and 4 only", "C) 1, 3 and 4 only", "D) All statements are correct"], ans: 3 },
+      { id: 15, q: "Which was the first Commonwealth country in the world to adopt the Ombudsman system?", options: ["A) United Kingdom", "B) Canada", "C) New Zealand", "D) Australia"], ans: 2 },
+      { id: 16, q: "Which state's Lokayukta office is considered strongest in terms of power and scope?", options: ["A) Maharashtra", "B) Karnataka", "C) Kerala", "D) Bihar"], ans: 1 },
+      { id: 17, q: "Match the Lokayukta institutions with the years:\nBihar – 1974 | Uttar Pradesh – 1977 | Madhya Pradesh – 1981 | Andhra Pradesh – 1983", options: ["A) 3, 4, 1, 2", "B) 1, 2, 3, 4", "C) 4, 3, 2, 1", "D) 2, 1, 4, 3"], ans: 0 },
+      { id: 18, q: "Who appoints the Lokayukta and Uplokayukta?", options: ["A) Chief Minister alone", "B) Chief Justice of High Court alone", "C) President of India", "D) Governor / Lieutenant Governor of the concerned State/UT"], ans: 3 },
+      { id: 19, q: "In which State was the office of Lokayukta first established (in 1971)?", options: ["A) Maharashtra", "B) Odisha", "C) Rajasthan", "D) Karnataka"], ans: 0 },
+      { id: 20, q: "Match the following Lokayukta institutions:\nWest Bengal – 2003 | Kerala – 1998 | Gujarat – 1988 | Delhi – 1995", options: ["A) 1, 2, 3, 4", "B) 2, 4, 1, 3", "C) 3, 1, 4, 2", "D) 4, 3, 2, 1"], ans: 2 },
+      { id: 21, q: "In which year was the institution of Lokayukta formed in Maharashtra?", options: ["A) 1968", "B) 1970", "C) 1975", "D) 1971"], ans: 3 },
+      { id: 22, q: "Which statement is false regarding Lokpal?", options: ["A) The term of office is 5 years or till 65 years of age", "B) Salary and allowances are equivalent to Chief Justice of India", "C) Can inquire into allegations against Prime Minister with safeguards", "D) It consists of judicial and non-judicial members"], ans: 0 },
+      { id: 23, q: "The CBI was set up on the recommendation of which committee?", options: ["A) Administrative Reforms Commission", "B) Kothari Committee", "C) Sarkaria Commission", "D) Santhanam Committee"], ans: 3 },
+      { id: 24, q: "Consider the following statements about the Central Vigilance Commission:\n1. Statutory status was conferred through the CVC Act, 2003.\n2. Chairperson and members are appointed/removed by the President.\n3. Appointment is based on the recommendation of a three-member committee.", options: ["A) 1 and 2 only", "B) 2 and 3 only", "C) 1 and 3 only", "D) All statements are correct"], ans: 3 },
+      { id: 25, q: "The Prevention of Corruption Act was passed in:", options: ["A) 1947", "B) 1964", "C) 1988", "D) 2003"], ans: 2 },
+      { id: 26, q: "The Prevention of Money Laundering Act, 2002 became effective from:", options: ["A) 1 January 2003", "B) 15 August 2004", "C) 26 January 2005", "D) 1 July 2005"], ans: 3 },
+      { id: 27, q: "Article 3 of the Constitution allows Parliament to:\n1. Increase the area of a State\n2. Diminish the area of a State\n3. Alter boundaries of a State\n4. Alter the name of a State", options: ["A) 1 and 2 only", "B) 3 and 4 only", "C) 1, 2 and 3 only", "D) All statements are correct"], ans: 3 },
+      { id: 28, q: "Prevention of Corruption (Amendment) Bill, 2018 amends provisions of the Prevention of Corruption Act, _____.", options: ["A) 1947", "B) 1964", "C) 1988", "D) 2002"], ans: 2 },
+      { id: 29, q: "According to the 2018 Prevention of Corruption Act, persons who give bribes can be sentenced to how many years in prison?", options: ["A) 3 years", "B) 5 years", "C) 7 years", "D) 10 years"], ans: 2 },
+      { id: 30, q: "The Central Vigilance Commission was established on the recommendation of:", options: ["A) Santhanam Committee", "B) First ARC", "C) Gorwala Committee", "D) Kripalani Committee"], ans: 0 },
+      { id: 31, q: "Central Vigilance Commissioner holds office for:", options: ["A) 5 years or 65 years of age", "B) 6 years or 65 years of age", "C) 3 years or 65 years of age", "D) 4 years or 65 years of age"], ans: 3 },
+      { id: 32, q: "Match the States with their formation dates:\nNagaland – 1 Dec 1963 | Haryana – 1 Nov 1966 | Himachal Pradesh – 25 Jan 1971 | Meghalaya – 21 Jan 1972", options: ["A) 1, 2, 3, 4", "B) 4, 3, 2, 1", "C) 2, 1, 4, 3", "D) 3, 4, 1, 2"], ans: 1 },
+      { id: 33, q: "In India, Vigilance Awareness Week is observed every year during the week of:", options: ["A) Sardar Vallabhbhai Patel's birth anniversary", "B) Mahatma Gandhi's birth anniversary", "C) Jawaharlal Nehru's birth anniversary", "D) Dr. B.R. Ambedkar's birth anniversary"], ans: 0 },
+      { id: 34, q: "Which Article of the Indian Constitution describes the Central Vigilance Commission?", options: ["A) Article 323A", "B) Article 324", "C) Article 338", "D) None of the above"], ans: 3 },
+      { id: 35, q: "In which year was the Central Vigilance Commission established by the Government via an executive resolution?", options: ["A) 1960", "B) 1962", "C) 1968", "D) 1964"], ans: 3 },
+      { id: 36, q: "Apart from the Central Vigilance Commissioner, how many Vigilance Commissioners are currently provided in the CVC?", options: ["A) 2", "B) 3", "C) 4", "D) 5"], ans: 0 },
+      { id: 37, q: "Match the States with the year of formation:\nSikkim – 1975 | Arunachal Pradesh – 1987 | Chhattisgarh – 2000 | Telangana – 2014", options: ["A) 1, 2, 3, 4", "B) 4, 3, 2, 1", "C) 3, 4, 1, 2", "D) 2, 1, 4, 3"], ans: 1 },
+      { id: 38, q: "Article 1 of the Constitution declares India as:", options: ["A) Federation of States", "B) Confederation of States", "C) Unitary State", "D) Union of States"], ans: 3 },
+      { id: 39, q: "The first Chief Vigilance Commissioner of India was:", options: ["A) B.K. Acharya", "B) N. Santhanam (N.S. Rau)", "C) S. Dutt", "D) P.V. Lepakshi"], ans: 1 },
+      { id: 40, q: "Consider the following statements:\n(a) S.K. Dhar Commission rejected linguistic basis of reorganisation.\n(b) JVP Commission accepted linguistic basis of reorganisation.", options: ["A) Statement (a) is correct", "B) Statement (b) is correct", "C) Both statements are correct", "D) Neither statement is correct"], ans: 0 },
+      { id: 41, q: "The Bombay Reorganisation Act, ____ bifurcated Bombay into Gujarat and Maharashtra.", options: ["A) 1956", "B) 1958", "C) 1960", "D) 1962"], ans: 2 },
+      { id: 42, q: "The 1948 Linguistic Provinces Commission was headed by:", options: ["A) Justice S.K. Dhar", "B) Justice Fazl Ali", "C) Sardar Patel", "D) Jawaharlal Nehru"], ans: 0 },
+      { id: 43, q: "Which committee was appointed by the Congress at its Jaipur session in 1948 to consider the Dhar Commission recommendations?", options: ["A) Fazl Ali Commission", "B) JVP Commission", "C) Sarkaria Commission", "D) Muddiman Committee"], ans: 1 },
+      { id: 44, q: "The first State created on a linguistic basis in independent India was:", options: ["A) Tamil Nadu", "B) Kerala", "C) Karnataka", "D) Andhra"], ans: 3 },
+      { id: 45, q: "Consider the following statements:\n1. 12th Constitutional Amendment gave state status to Nagaland.\n2. Tripura, Manipur and Meghalaya became full-fledged states under the North Eastern Region (Reorganisation) Act, 1971.\n3. Sikkim became an Indian State in 1975 through the 36th Amendment.", options: ["A) Statements 1 and 2 are correct", "B) Statements 1 and 3 are correct", "C) Statements 2 and 3 are correct", "D) All statements are correct"], ans: 2 },
+      { id: 46, q: "In which year was the first Indian State recognised on a linguistic basis (Andhra)?", options: ["A) 1947", "B) 1950", "C) 1956", "D) 1953"], ans: 3 },
+      { id: 47, q: "In which year was the Fazl Ali Commission (States Reorganisation Commission) appointed?", options: ["A) 1948", "B) 1953", "C) 1955", "D) 1956"], ans: 1 },
+      { id: 48, q: "Consider the following statements:\n1. Drafting Committee was set up on 29 August 1947 under Dr. B.R. Ambedkar.\n2. Constituent Assembly first met on 9 December 1946 and continued till 24 January 1950.\n3. The Drafting Committee consisted of seven listed members.", options: ["A) 1 and 2 only", "B) 2 and 3 only", "C) 1 and 3 only", "D) All statements are correct"], ans: 3 },
+      { id: 49, q: "Which day was declared as 'Purna Swaraj Day' by the Indian National Congress?", options: ["A) 26 January 1930", "B) 15 August 1947", "C) 26 November 1949", "D) 2 October 1931"], ans: 0 },
+      { id: 50, q: "The resolution of Poorna Swaraj was passed in which Congress session?", options: ["A) Calcutta", "B) Madras", "C) Karachi", "D) Lahore"], ans: 3 },
+      { id: 51, q: "Which of the following statements are correct?\n1. Objective Resolution was moved on 13 December 1946 by Jawaharlal Nehru.\n2. Constituent Assembly adopted the National Flag on 22 July 1947.\n3. Constituent Assembly adopted the National Anthem on 24 January 1950.", options: ["A) 1 and 2 only", "B) 2 and 3 only", "C) 1 and 3 only", "D) All statements are correct"], ans: 3 },
+      { id: 52, q: "The total membership of the Constituent Assembly was 389, of which how many were representatives of princely states?", options: ["A) 292", "B) 93", "C) 70", "D) 4"], ans: 1 },
+      { id: 53, q: "Delhi was made the National Capital Territory of Delhi under which Amendment?", options: ["A) 61st Constitutional Amendment", "B) 65th Constitutional Amendment", "C) 73rd Constitutional Amendment", "D) 69th Constitutional Amendment"], ans: 3 },
+      { id: 54, q: "On 9 December 1946, who chaired the first session of the Constituent Assembly?", options: ["A) Dr. Rajendra Prasad", "B) Dr. B.R. Ambedkar", "C) Sachchidananda Sinha", "D) B.N. Rau"], ans: 2 },
+      { id: 55, q: "Which statement about the Preamble is NOT correct?\n1. Preamble is based on Objective Resolution moved by B.R. Ambedkar.\n2. Preamble was amended in 1976.\n3. Preamble is non-justiciable.", options: ["A) Statement 1", "B) Statement 2", "C) Statement 3", "D) None of the above"], ans: 0 },
+      { id: 56, q: "The 42nd Constitutional Amendment (1976) added which words to the Preamble?\n1. Socialist | 2. Secular | 3. Democratic | 4. Republic | 5. Integrity", options: ["A) 1 and 2 only", "B) 1, 2 and 3 only", "C) 1, 2 and 5 only", "D) All five"], ans: 2 },
+      { id: 57, q: "How much time was taken by the Constituent Assembly to finalise the Constitution?", options: ["A) 2 years, 10 months and 15 days", "B) 2 years, 11 months and 18 days", "C) 3 years, 1 month and 12 days", "D) 2 years, 9 months and 20 days"], ans: 1 },
+      { id: 58, q: "How many female members were part of the Constituent Assembly?", options: ["A) 12", "B) 15", "C) 18", "D) 20"], ans: 1 },
+      { id: 59, q: "Constitution Day of India is celebrated on:", options: ["A) 26 January", "B) 26 November", "C) 15 August", "D) 9 December"], ans: 1 },
+      { id: 60, q: "Match the following cases regarding the Preamble:\na) Berubari Union Case — 2. Preamble not part of Constitution\nb) LIC of India Case — 1. Preamble part of Constitution\nc) Kesavananda Bharati Case — 3. Preamble integral part of Constitution", options: ["A) a-1, b-2, c-3", "B) a-3, b-2, c-1", "C) a-2, b-1, c-3", "D) a-2, b-3, c-1"], ans: 2 },
+      { id: 61, q: "How much did it cost approximately to draft the Constitution of India?", options: ["A) ₹50 lakh", "B) ₹60 lakh", "C) ₹64 lakh", "D) ₹1 crore"], ans: 2 },
+      { id: 62, q: "Who was appointed Constitutional Adviser to the Constituent Assembly in 1946?", options: ["A) K.M. Munshi", "B) Alladi Krishnaswamy Iyer", "C) Dr. B.R. Ambedkar", "D) B.N. Rau"], ans: 3 },
+      { id: 63, q: "Which statement regarding the Constitution is NOT correct?\n1. Socialist and Secular were not originally part of the Constitution.\n2. Preamble states the objectives of the Constitution.\n3. Preamble is enforceable in a court of law.", options: ["A) Statement 1", "B) Statement 2", "C) Statement 3", "D) None of the above"], ans: 2 },
+      { id: 64, q: "The original copies of the Indian Constitution were written in:", options: ["A) English only", "B) Hindi only", "C) Sanskrit and English", "D) Both Hindi and English"], ans: 3 },
+      { id: 65, q: "Currently, the Indian Constitution has approximately ___ Schedules, ___ Parts and ___ Articles:", options: ["A) 8, 22, 395", "B) 10, 24, 420", "C) 12, 22, 448", "D) 12, 25, 448"], ans: 3 },
+      { id: 66, q: "In the Preamble, liberty, equality and fraternity are derived from the revolution/constitution of:", options: ["A) France", "B) Russia", "C) USA", "D) Ireland"], ans: 0 },
+      { id: 67, q: "The term 'Justice' in the Preamble does NOT embrace which of the following dimensions?", options: ["A) Social", "B) Legal", "C) Economic", "D) Political"], ans: 1 },
+      { id: 68, q: "Match the descriptions of the Preamble:\nPolitical Horoscope — K.M. Munshi | Keynote — Ernest Barker | Soul — Thakur Das Bhargava | Paradise of Lawyers — Jennings", options: ["A) 1, 2, 3, 4", "B) 4, 3, 2, 1", "C) 2, 1, 4, 3", "D) 3, 4, 1, 2"], ans: 1 },
+      { id: 69, q: "How many types of Justice, Liberty, Equality and Fraternity respectively are mentioned in the Preamble?", options: ["A) 3, 5, 2, 1", "B) 3, 4, 2, 1", "C) 4, 5, 2, 1", "D) 3, 5, 1, 2"], ans: 0 },
+      { id: 70, q: "Which word was inserted into the Preamble by the 42nd Amendment Act, 1976?", options: ["A) Democratic", "B) Republic", "C) Sovereign", "D) Socialist"], ans: 3 },
+      { id: 71, q: "The Preamble is based on the Objective Resolution moved by Jawaharlal Nehru on:", options: ["A) 9 December 1946", "B) 13 December 1946", "C) 22 January 1947", "D) 26 November 1949"], ans: 1 },
+      { id: 72, q: "Who described the Preamble as the “identity card” of the Constitution?", options: ["A) N.A. Palkhivala", "B) K.M. Munshi", "C) Alladi Krishnaswamy Iyer", "D) Dr. B.R. Ambedkar"], ans: 0 },
+      { id: 73, q: "“What we had thought or dreamed for so long is expressed in the Preamble of our Constitution” — who said this?", options: ["A) Dr. B.R. Ambedkar", "B) Jawaharlal Nehru", "C) Sir Alladi Krishnaswamy Iyer", "D) K.M. Munshi"], ans: 2 },
+      { id: 74, q: "Match the following constitutional sources:\nOffice of Governor — GoI Act 1935 | Judicial Review — America | DPSP — Ireland | Parliamentary Govt — British Constitution", options: ["A) 1, 4, 3, 2", "B) 2, 3, 4, 1", "C) 4, 1, 2, 3", "D) 3, 2, 1, 4"], ans: 0 },
+      { id: 75, q: "The First Amendment to the Indian Constitution was enacted in:", options: ["A) 1950", "B) 1952", "C) 1951", "D) 1954"], ans: 2 },
+      { id: 76, q: "Which Constitutional Amendment incorporated Dadra and Nagar Haveli as a Union Territory?", options: ["A) Constitution (10th) Amendment Act, 1961", "B) Constitution (12th) Amendment Act, 1962", "C) Constitution (14th) Amendment Act, 1962", "D) Constitution (7th) Amendment Act, 1956"], ans: 0 },
+      { id: 77, q: "Who proposed the name of Dr. Sachchidananda Sinha for the post of provisional President of the Constituent Assembly?", options: ["A) Jawaharlal Nehru", "B) J.B. Kripalani", "C) Sardar Patel", "D) Dr. Rajendra Prasad"], ans: 1 },
+      { id: 78, q: "Match the following sources of the Constitution:\nConstitutional Amendment — South Africa | Fundamental Duties — Soviet Union | Joint Sitting — Australia | Federation with strong Centre — Canada", options: ["A) 1, 2, 3, 4", "B) 4, 3, 2, 1", "C) 3, 1, 4, 2", "D) 2, 4, 1, 3"], ans: 2 },
+      { id: 79, q: "When was the last formal session of the Constituent Assembly held?", options: ["A) 26 November 1949", "B) 24 January 1950", "C) 26 January 1950", "D) 15 August 1947"], ans: 1 },
+      { id: 80, q: "On which day was the handwritten Constitution signed by 284 members of the Constituent Assembly?", options: ["A) 26 November 1949", "B) 24 January 1950", "C) 26 January 1950", "D) 9 December 1946"], ans: 1 },
+      { id: 81, q: "When was the Citizenship Act originally passed by Parliament?", options: ["A) 1955", "B) 1950", "C) 1952", "D) 1956"], ans: 0 },
+      { id: 82, q: "Consider the following statements regarding Article 21A:\n1. Article 21A came into effect on 1 April 2010.\n2. The 86th Amendment Act, 2002 inserted Article 21A.\n3. It provides free and compulsory education for children aged 6–14 years.", options: ["A) 1 and 2 only", "B) 2 and 3 only", "C) 1 and 3 only", "D) All statements are correct"], ans: 3 },
+      { id: 83, q: "In which year was the voting age reduced from 21 to 18 years in India by the 61st Amendment?", options: ["A) 1985", "B) 1988", "C) 1989", "D) 1991"], ans: 1 },
+      { id: 84, q: "Currently, how many Fundamental Rights are recognised by the Indian Constitution?", options: ["A) Six Fundamental Rights", "B) Seven Fundamental Rights", "C) Eight Fundamental Rights", "D) Five Fundamental Rights"], ans: 0 },
+      { id: 85, q: "Part IV of the Indian Constitution contains provisions for:", options: ["A) Fundamental Rights", "B) Citizenship", "C) Fundamental Duties", "D) Directive Principles of State Policy"], ans: 3 },
+      { id: 86, q: "Which of the following is NOT explicitly mentioned as a Fundamental Duty in Article 51A?", options: ["A) To safeguard public property", "B) To develop scientific temper", "C) To cast vote in the election", "D) To abide by the Constitution"], ans: 2 },
+      { id: 87, q: "With reference to Part IV (DPSP) of the Constitution, which statements are correct?\n1. They shall be enforceable by courts.\n2. They shall not be enforceable by any court.\n3. They influence the making of laws by the State.", options: ["A) 1 and 2 only", "B) 1 and 3 only", "C) Statements 2 and 3 only", "D) All three"], ans: 2 },
+      { id: 88, q: "How many Fundamental Duties are currently set out in Article 51A?", options: ["A) 9", "B) 10", "C) 11", "D) 12"], ans: 2 },
+      { id: 89, q: "Article 51A containing Fundamental Duties was inserted by the 42nd Amendment in:", options: ["A) 1971", "B) 1975", "C) 1976", "D) 1978"], ans: 2 },
+      { id: 90, q: "In which year was the 11th Fundamental Duty added by the 86th Amendment?", options: ["A) 2000", "B) 2002", "C) 2005", "D) 2009"], ans: 1 },
+      { id: 91, q: "During the making of the Indian Constitution, who presented the Objective Resolution?", options: ["A) Dr. B.R. Ambedkar", "B) Sardar Vallabhbhai Patel", "C) Jawaharlal Nehru", "D) Dr. Rajendra Prasad"], ans: 2 },
+      { id: 92, q: "Article 300A of the Constitution provides which right?", options: ["A) Right to Education", "B) Right to Information", "C) Right to Property", "D) Right to Equality"], ans: 2 },
+      { id: 93, q: "Part III of the Constitution of India deals with:", options: ["A) Citizenship", "B) Fundamental Rights", "C) Directive Principles", "D) Fundamental Duties"], ans: 1 },
+      { id: 94, q: "Which country has the world's lengthiest and most detailed written Constitution?", options: ["A) India", "B) United States", "C) United Kingdom", "D) Australia"], ans: 0 },
+      { id: 95, q: "Part IVA of the Indian Constitution deals with:", options: ["A) Fundamental Duties", "B) Directive Principles", "C) Union Executive", "D) Citizenship"], ans: 0 },
+      { id: 96, q: "The Constitution of India was adopted, enacted and given to themselves by the people of India through the:", options: ["A) Constituent Assembly", "B) Parliament of Great Britain", "C) Governor-General in Council", "D) Supreme Court of India"], ans: 0 },
+      { id: 97, q: "Which statements are correct regarding Fundamental Duties under Article 51A?\n1. To cherish and follow noble ideals of the freedom struggle.\n2. To value and preserve the rich heritage of our composite culture.\n3. To develop scientific temper, humanism and spirit of inquiry.", options: ["A) 1 and 2 only", "B) 2 and 3 only", "C) 1 and 3 only", "D) All statements are correct"], ans: 3 },
+      { id: 98, q: "The Constituent Assembly set up how many major and minor committees to prepare the Constitution?", options: ["A) 15", "B) 22", "C) 28", "D) 32"], ans: 1 },
+      { id: 99, q: "The Indian National Congress officially made the demand for a Constituent Assembly for the first time in:", options: ["A) 1929", "B) 1930", "C) 1934", "D) 1942"], ans: 2 },
+      { id: 100, q: "The “Procedure Established by Law” embodied in Article 21 was taken from the Constitution of:", options: ["A) United States", "B) United Kingdom", "C) Japan", "D) Ireland"], ans: 2 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(100, parseInt(customCountInput.value) || 25));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 30;
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : ""} (30s / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 100) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 30;
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const m = Math.floor(secs / 60);
+      const s = secs % 60;
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time is up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${qData.id}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful knowledge of Anti-Corruption bodies, State Reorganisation, and Constitutional Framing.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific Lokpal statutory clauses, CVC composition, and state bifurcation dates.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Lokayukta origins, Article 3 procedures, and Preamble cases recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${q.id}. ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+</html>

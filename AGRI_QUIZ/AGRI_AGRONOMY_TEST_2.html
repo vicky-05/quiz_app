@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agronomy Test 2 — Advanced Crop Production & Systems (321 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select, .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Agronomy Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Agronomy Test 2: Advanced Crop Production & Systems (321 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–321)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="321">All Questions (321 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 321)</label>
+          <input type="number" id="custom-count-input" min="1" max="321" value="100" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">321 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#127806;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Agronomy</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#127795;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Cropping Systems</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 321</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">05:21:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 151, q: "Which herbicide is recommended for control of weeds in black gram?", options: ["A) 2,4-D @ 0.75 kg/ha", "B) Glyphosate", "C) Paraquat", "D) Atrazine"], ans: 0 },
+      { id: 152, q: "Argemone weed is commonly found as a co-infesting weed in which winter crop?", options: ["A) Mustard", "B) Rice", "C) Sugarcane", "D) Cotton"], ans: 0 },
+      { id: 153, q: "Which herbicide is known to have a significantly higher residual persistence period in soil?", options: ["A) Atrazine", "B) Paraquat", "C) Diquat", "D) Glyphosate"], ans: 0 },
+      { id: 154, q: "Which type of herbicide moves systemically from the point of application to another part where it produces its toxic effect?", options: ["A) Translocated herbicide", "B) Contact herbicide", "C) Fumigant", "D) Soil sterilant"], ans: 0 },
+      { id: 155, q: "Butachlor is particularly effective against which category of weeds in paddy?", options: ["A) Annual grasses", "B) Woody shrubs", "C) Parasitic dodder", "D) Aquatic algae"], ans: 0 },
+      { id: 156, q: "Which of the following is listed as a common weed of rice ecosystems?", options: ["A) Parthenium hysterophorus", "B) Echinochloa sp.", "C) Prosopis juliflora", "D) Lantana camara"], ans: 1 },
+      { id: 157, q: "Which weed is universally recognized as a major grassy weed mimicking rice?", options: ["A) Echinochloa (Barnyard grass)", "B) Cynodon", "C) Cyperus", "D) Chenopodium"], ans: 1 },
+      { id: 158, q: "Which insect is famously used for the biological control of prickly pear (Opuntia)?", options: ["A) Dactylopius tomentosus", "B) Zygogramma bicolorata", "C) Neochetina", "D) Teleonemia"], ans: 0 },
+      { id: 159, q: "Which herbicide is specifically recommended by TNAU for controlling weeds in transplanted rice?", options: ["A) Pretilachlor", "B) Glyphosate", "C) 2,4-D ester", "D) Paraquat"], ans: 0 },
+      { id: 160, q: "Which crop is highly suitable for carrying out manual or mechanical inter-row weeding?", options: ["A) Groundnut (or wider spaced row crops)", "B) Broadcast paddy", "C) Dense wheat", "D) Broadcast millet"], ans: 0 },
+      { id: 161, q: "Which statement correctly describes the nature and control of perennial weeds?", options: ["A) They possess deep underground vegetative structures making them hard to eradicate", "B) They die easily after one hoeing", "C) They have no roots", "D) They only reproduce by seeds"], ans: 0 },
+      { id: 162, q: "What is the typical soil persistence half-life period of atrazine?", options: ["A) 14 to 60 days (source notes 14 days active)", "B) 1 year", "C) 5 years", "D) 1 day"], ans: 0 },
+      { id: 163, q: "Weeds accidentally or intentionally brought in from another foreign country are called:", options: ["A) Exotic weeds", "B) Indigenous weeds", "C) Noxious weeds", "D) Endemic weeds"], ans: 0 },
+      { id: 164, q: "Which is a characteristic mixed grassy weed of rice fields?", options: ["A) Echinochloa crus-galli", "B) Phalaris minor", "C) Avena fatua", "D) Cuscuta"], ans: 0 },
+      { id: 165, q: "Which is a characteristic noxious weed of wheat fields?", options: ["A) Phalaris minor (Lister/Guili)", "B) Echinochloa", "C) Cyperus", "D) Striga"], ans: 1 },
+      { id: 166, q: "Which weed is commonly referred to as the “Dwarf weed” or mimic weed in rice?", options: ["A) Echinochloa crus-galli", "B) Parthenium", "C) Chenopodium", "D) Orobanche"], ans: 0 },
+      { id: 167, q: "What is a classic example of a persistent perennial grassy weed?", options: ["A) Cynodon dactylon (Bermuda grass)", "B) Amaranthus", "C) Portulaca", "D) Solanum"], ans: 0 },
+      { id: 168, q: "Which of the following is classified as a sedge weed?", options: ["A) Cyperus rotundus", "B) Cynodon dactylon", "C) Echinochloa colonum", "D) Parthenium hysterophorus"], ans: 0 },
+      { id: 169, q: "Which weed is cited globally as one of the worst and most widespread weeds in the world?", options: ["A) Cyperus rotundus (Nutgrass)", "B) Datura", "C) Argemone", "D) Solanum"], ans: 0 },
+      { id: 170, q: "Which of the following is an example of a broad-leaved weed (or listed in broad-leaf categories)?", options: ["A) Cynodon dactylon / broadleaf types", "B) Strict grass", "C) Sedge", "D) Fern"], ans: 0 },
+      { id: 171, q: "Which weed is commonly called “Nut grass”?", options: ["A) Cyperus rotundus", "B) Cynodon dactylon", "C) Sorghum halepense", "D) Echinochloa"], ans: 0 },
+      { id: 172, q: "Which weed is commonly called “Johnson grass”?", options: ["A) Sorghum halepense", "B) Cyperus rotundus", "C) Parthenium", "D) Eichhornia"], ans: 0 },
+      { id: 173, q: "Which weed is associated with the common name “Barnyard grass”?", options: ["A) Echinochloa crus-galli", "B) Cynodon", "C) Phalaris", "D) Amaranthus"], ans: 0 },
+      { id: 174, q: "Which weed is commonly called “Water hyacinth”?", options: ["A) Eichhornia crassipes", "B) Pistia", "C) Hydrilla", "D) Typha"], ans: 0 },
+      { id: 175, q: "Which weed is commonly called “Bermuda grass”?", options: ["A) Cynodon dactylon", "B) Cyperus rotundus", "C) Sorghum halepense", "D) Echinochloa"], ans: 0 },
+      { id: 176, q: "Which selective herbicide is commonly used for controlling broad-leaved weeds in cereals?", options: ["A) 2,4-D", "B) Glyphosate", "C) Paraquat", "D) Butachlor"], ans: 0 },
+      { id: 177, q: "What photosynthetic pathway type is exhibited by most aggressive C4 weeds?", options: ["A) C4 photosynthetic pathway", "B) C3 pathway", "C) CAM pathway", "D) None"], ans: 0 },
+      { id: 178, q: "What is generally considered the critical period of weed competition in most field crops?", options: ["A) First 30 to 45 days after sowing", "B) Maturity stage", "C) Harvesting", "D) Post-harvest"], ans: 0 },
+      { id: 179, q: "What is the mechanical cutting of weeds to the ground level without root destruction called?", options: ["A) Mowing", "B) Tillage", "C) Fumigation", "D) Upig"], ans: 0 },
+      { id: 180, q: "Is 2,4-D classified as a selective systemic herbicide?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 181, q: "Is glyphosate classified as a non-selective systemic herbicide?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 182, q: "Is glyphosate a systemic herbicide?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 183, q: "Is paraquat a fast-acting contact herbicide?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 184, q: "What type of herbicide is paraquat in terms of selectivity and action?", options: ["A) Non-selective and contact herbicide", "B) Selective systemic", "C) Soil sterilant", "D) Growth hormone"], ans: 0 },
+      { id: 185, q: "Prickly pear cactus is biologically controlled by which insect?", options: ["A) Dactylopius tomentosus", "B) Zygogramma", "C) Neochetina", "D) Aphid"], ans: 0 },
+      { id: 186, q: "Congress grass (Parthenium) is biologically controlled by which insect agent?", options: ["A) Zygogramma bicolorata", "B) Dactylopius", "C) Silkworm", "D) Trichogramma"], ans: 0 },
+      { id: 187, q: "Which herbicide was the first synthetic organic hormone herbicide discovered in 1944?", options: ["A) 2,4-D", "B) Atrazine", "C) Glyphosate", "D) Simazine"], ans: 0 },
+      { id: 188, q: "Which herbicide is recommended for post-emergence broad-spectrum control in oilseeds and pulses?", options: ["A) Imazethapyr", "B) 2,4-D", "C) Paraquat", "D) Atrazine"], ans: 0 },
+      { id: 189, q: "Diuron and linuron belong to which major chemical herbicide group?", options: ["A) Substituted ureas", "B) Triazines", "C) Phenoxy acids", "D) Amides"], ans: 0 },
+      { id: 190, q: "Which herbicide functions primarily as a pre-emergence soil-active herbicide?", options: ["A) Pendimethalin", "B) Glyphosate", "C) Paraquat", "D) Diquat"], ans: 0 },
+      { id: 191, q: "Which herbicide is widely used as a pre-emergence herbicide in maize and sugarcane?", options: ["A) Atrazine", "B) Paraquat", "C) Glyphosate", "D) Diquat"], ans: 0 },
+      { id: 192, q: "Which herbicide is effective for controlling stubborn perennial weeds?", options: ["A) Glyphosate", "B) Pendimethalin", "C) Butachlor", "D) Fluchloralin"], ans: 0 },
+      { id: 193, q: "Which herbicide leaves persistent soil activity?", options: ["A) Pendimethalin / Atrazine", "B) Paraquat", "C) Diquat", "D) Soap solution"], ans: 0 },
+      { id: 194, q: "Which herbicide group is targeted at perennial weed eradication?", options: ["A) Glyphosate / Atrazine systemic group", "B) Contact oils", "C) Spores", "D) Hormones"], ans: 0 },
+      { id: 195, q: "Which weed is commonly called carpet weed?", options: ["A) Portulaca / Mollugo", "B) Parthenium", "C) Striga", "D) Orobanche"], ans: 0 },
+      { id: 196, q: "Which weed is commonly called carrot grass?", options: ["A) Parthenium hysterophorus", "B) Cynodon", "C) Cyperus", "D) Eichhornia"], ans: 0 },
+      { id: 197, q: "Which herbicide is commonly tank-mixed for burndown weed control in zero-tillage systems?", options: ["A) Paraquat / Glyphosate", "B) 2,4-D only", "C) Butachlor", "D) Pendimethalin"], ans: 0 },
+      { id: 198, q: "Which systemic herbicide is standard for zero-tillage stale seedbed preparation?", options: ["A) Glyphosate", "B) Salt", "C) Urea", "D) Lime"], ans: 0 },
+      { id: 199, q: "Which herbicide is standard for weed management in transplanted rice?", options: ["A) Butachlor / Pretilachlor", "B) Glyphosate", "C) Atrazine", "D) 2,4-D ester"], ans: 0 },
+      { id: 200, q: "What does comprehensive “weed management” encompass as an overarching principle?", options: ["A) Prevention, eradication and controlled economic management", "B) Spraying poison everywhere", "C) Ignoring weeds", "D) Hand pulling only"], ans: 0 },
+      { id: 201, q: "Which chemical compound acts as a chemical growth retardant / antitranspirant?", options: ["A) Phenyl mercuric acetate (PMA)", "B) Urea", "C) DAP", "D) Zinc sulphate"], ans: 0 },
+      { id: 202, q: "Which chemical acts as a stomatal-closing antitranspirant?", options: ["A) Kaolin (reflective) / PMA / Abscisic acid (stomatal)", "B) Hexadecanol", "C) Oil film", "D) Wax"], ans: 0 },
+      { id: 203, q: "Which chemical acts as a film-forming antitranspirant?", options: ["A) Hexadecanol / plastic emulsions", "B) PMA", "C) Kaolin", "D) Salt"], ans: 0 },
+      { id: 204, q: "Which chemical acts as a reflective antitranspirant?", options: ["A) Kaolin (white reflecting powder)", "B) PMA", "C) Silicon", "D) Ethanol"], ans: 0 },
+      { id: 205, q: "Poor-quality saline irrigation water results in what visible toxicity symptom on plant leaves?", options: ["A) Leaf curl / marginal leaf burn and scorching", "B) Bright green lush growth", "C) Root thickening", "D) Stem elongation"], ans: 0 },
+      { id: 206, q: "What is the primary effect of poor-quality saline irrigation water on foliage?", options: ["A) Leaf burn and premature senescence", "B) Faster flowering", "C) Fruit enlargement", "D) Increased branching"], ans: 0 },
+      { id: 207, q: "Which type of crop photoperiod response is suitable for long-day conditions?", options: ["A) Long-day plants (or specific varieties)", "B) Short-day tropical rice", "C) Day-neutral weeds", "D) Aquatic ferns"], ans: 0 },
+      { id: 208, q: "What is cited as an example of a long-day plant or crop response in specific source keys?", options: ["A) Rice (or temperate long-day cereals)", "B) Soybean", "C) Tobacco", "D) Maize"], ans: 0 },
+      { id: 209, q: "What is the most critical stage of irrigation for securing higher yields in black gram (pulse)?", options: ["A) Flowering and pod-setting stage", "B) Germination", "C) Vegetative branching", "D) Maturity"], ans: 0 },
+      { id: 210, q: "Flowering and pod-setting is the critical moisture period for:", options: ["A) Black gram / pulses", "B) Rice tillering", "C) Sugarcane germination", "D) Cotton seedling"], ans: 0 },
+      { id: 211, q: "What is the general order of pesticide consumption by volume in Indian agriculture?", options: ["A) Fungicides > Insecticides > Herbicides (or Insecticides leading depending on year, source key specifies Fungicides > Insecticides > Herbicides)", "B) Herbicides > Insecticides > Fungicides", "C) Rodenticides only", "D) Equal share"], ans: 0 },
+      { id: 212, q: "Which pesticide group has major recorded consumption according to the specific source tabulation?", options: ["A) Fungicides", "B) Herbicides", "C) Rodenticides", "D) Fumigants"], ans: 0 },
+      { id: 213, q: "What is considered the simplest manual weeding tool in agriculture?", options: ["A) Hand hoe (khurpi)", "B) Combine harvester", "C) Tractor disc", "D) Subsoiler"], ans: 0 },
+      { id: 214, q: "Which irrigation method achieves the absolute highest irrigation application efficiency?", options: ["A) Drip irrigation", "B) Border flooding", "C) Check basin", "D) Sprinkler"], ans: 0 },
+      { id: 215, q: "What is the approximate total seasonal water requirement of sugarcane?", options: ["A) 1000–1500 mm (approx 1000–1200 mm)", "B) 200 mm", "C) 3000 mm", "D) 5000 mm"], ans: 0 },
+      { id: 216, q: "Which crop category is predominantly and reliably grown under delayed onset of monsoon conditions?", options: ["A) Drought-tolerant pulses and oilseeds", "B) Flooded rice", "C) Sugarcane", "D) Banana"], ans: 0 },
+      { id: 217, q: "Which herbicide is sometimes used for weed management in potato crops?", options: ["A) Fluchloralin (or Metribuzin)", "B) Glyphosate", "C) 2,4-D ester", "D) Butachlor"], ans: 0 },
+      { id: 218, q: "Sorghum halepense (Johnson grass) is classified botanically as a:", options: ["A) Perennial weed", "B) Annual grass", "C) Sedge", "D) Broadleaf annual"], ans: 0 },
+      { id: 219, q: "What is the total depth of irrigation water required for a crop with a 100-day duration, 10-day irrigation interval, and 8 cm depth per irrigation?", options: ["A) 80 cm (10 irrigations × 8 cm)", "B) 8 cm", "C) 100 cm", "D) 10 cm"], ans: 0 },
+      { id: 220, q: "The simultaneous application of liquid chemical fertilizers along with drip irrigation water is called:", options: ["A) Fertigation", "B) Chemigation", "C) Hydroponics", "D) Aeroponics"], ans: 0 },
+      { id: 221, q: "What is the simplest tool for manual weeding in small plots?", options: ["A) Hand hoe", "B) Combine", "C) Cultivator", "D) Power tiller"], ans: 0 },
+      { id: 222, q: "Which irrigation method boasts the highest water use and application efficiency?", options: ["A) Drip irrigation", "B) Flooding", "C) Border", "D) Furrow"], ans: 0 },
+      { id: 223, q: "How much commercial formulation of Simazine WP is required per hectare when the recommended rate is 3 kg a.i./ha and the commercial product contains 80% active ingredient?", options: ["A) 3.75 kg/ha (3 / 0.80)", "B) 3.0 kg/ha", "C) 2.4 kg/ha", "D) 5.0 kg/ha"], ans: 0 },
+      { id: 224, q: "“Striga” (witchweed) is a parasitic weed that can be controlled or trapped by growing trap crops like:", options: ["A) Cotton (or trap crops like Sunnhemp/Soybean)", "B) Rice", "C) Wheat", "D) Potato"], ans: 0 },
+      { id: 225, q: "What is a classic example of a multi-storeyed / multi-tier cropping system?", options: ["A) Coconut + Banana + Pineapple (multiple canopy heights)", "B) Pure wheat", "C) Sole rice", "D) Fallow rotation"], ans: 0 },
+      { id: 226, q: "If net irrigation requirement (NIR) is 4 cm and field application efficiency is 80% (0.80), what is the gross irrigation requirement (GIR)?", options: ["A) 5.00 cm (4 / 0.80)", "B) 4.00 cm", "C) 3.20 cm", "D) 8.00 cm"], ans: 0 },
+      { id: 227, q: "Should weed-management measures be directed toward reducing the viable weed seed bank and survival mechanisms?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 228, q: "Should individual weed-management methods be as far as possible environmentally eco-friendly?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 229, q: "Is crop husbandry practised with the objective of promoting obnoxious perennial weeds?", options: ["A) Yes", "B) No"], ans: 1 },
+      { id: 230, q: "Does integrated weed management aim to cultivate and propagate perennial weeds?", options: ["A) Yes", "B) No"], ans: 1 },
+      { id: 231, q: "Is drip irrigation exceptionally well-suited to saline soils due to salt leaching at wetting front edges?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 232, q: "Can clogging of micro-tubes and emitters occur in drip irrigation if water is unfiltered?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 233, q: "Is high initial capital installation cost considered a primary disadvantage of drip irrigation?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 234, q: "Does drip irrigation have absolutely zero operational disadvantages according to source texts?", options: ["A) Yes", "B) No"], ans: 1 },
+      { id: 235, q: "Which crop is vegetatively propagated through underground rhizomes?", options: ["A) Sugarcane (or ginger/turmeric)", "B) Potato", "C) Cassava", "D) Tomato"], ans: 0 },
+      { id: 236, q: "Which crop is vegetatively propagated through starchy tubers?", options: ["A) Potato", "B) Sugarcane", "C) Sweet potato", "D) Onion"], ans: 0 },
+      { id: 237, q: "Which tropical root crop is propagated through woody stem cuttings?", options: ["A) Cassava (tapioca)", "B) Potato", "C) Carrot", "D) Radish"], ans: 0 },
+      { id: 238, q: "Which turf grass spreads and propagates extensively through creeping stolons?", options: ["A) Bermuda grass (Cynodon dactylon)", "B) Rice", "C) Wheat", "D) Maize"], ans: 0 },
+      { id: 239, q: "What is the agronomic reason for replanting/renewing sugarcane ratoon crops every two to three years?", options: ["A) Ratoon yields and stool productivity decline progressively over successive cycles", "B) Soil becomes too wet", "C) Flowers appear", "D) Insects disappear"], ans: 0 },
+      { id: 240, q: "What is the main reason for uprooting sugarcane after 2–3 ratoon crops?", options: ["A) Decline in ratoon productivity and gappy stands", "B) Government law", "C) Fertilizer shortage", "D) High sugar prices"], ans: 0 },
+      { id: 241, q: "What is the correct agronomic formula for calculating crop water-use efficiency (WUE)?", options: ["A) WUE = Yield (Y) / Evapotranspiration (ET)", "B) WUE = ET / Y", "C) WUE = Y × ET", "D) WUE = P / Y"], ans: 0 },
+      { id: 242, q: "Which weed is notoriously difficult to eradicate and control in zero-tillage farming?", options: ["A) Cyperus rotundus (nutgrass with underground tubers)", "B) Annual grass", "C) Broadleaf weed", "D) Floating algae"], ans: 0 },
+      { id: 243, q: "Is Cyperus rotundus a persistent perennial weed problem in zero-tillage systems?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 244, q: "What is the core foundational principle of conservation tillage?", options: ["A) Minimum mechanical soil disturbance combined with surface crop residue retention", "B) Inverting soil deeply twice a year", "C) Burning all residues", "D) Leaving land completely bare"], ans: 0 },
+      { id: 245, q: "Which parasitic weed is specifically associated with tobacco root parasitism?", options: ["A) Orobanche (broomrape)", "B) Cuscuta", "C) Striga", "D) Loranthus"], ans: 0 },
+      { id: 246, q: "Is Cynodon dactylon classified as an aggressive perennial weed?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 247, q: "Does Cynodon dactylon possess an extensive underground rhizome and stolon system?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 248, q: "Does Cynodon dactylon propagate vigorously through both stolons and seeds?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 249, q: "Is Cynodon dactylon listed globally among the world's worst agricultural weeds?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 250, q: "Does root respiration shift from aerobic to anaerobic respiration under prolonged waterlogged conditions?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 251, q: "Does excessive soil waterlogging cause toxic reduction compounds (like organic acids) to accumulate in roots?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 252, q: "Does waterlogging severely inhibit and restrict root growth and nutrient uptake?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 253, q: "Does waterlogging increase oxygen availability to plant root zones?", options: ["A) Yes", "B) No"], ans: 1 },
+      { id: 254, q: "Which of the following herbicide groups is NOT correctly paired with its application description?", options: ["A) Benzamides – foliar applied systemic herbicide (as per source key mismatch)", "B) Phenoxy – 2,4-D", "C) Triazines – Atrazine", "D) Bipyridylium – Paraquat"], ans: 0 },
+      { id: 255, q: "Glyphosate herbicide belongs chemically to which chemical family?", options: ["A) Phosphonates (glycine phosphonate)", "B) Triazines", "C) Ureas", "D) Phenoxy acids"], ans: 0 },
+      { id: 256, q: "Paraquat herbicide belongs chemically to which chemical family?", options: ["A) Bipyridylium", "B) Organophosphate", "C) Pyrethroid", "D) Carbamate"], ans: 0 },
+      { id: 257, q: "Atrazine herbicide belongs chemically to which chemical family?", options: ["A) Triazines", "B) Amides", "C) Ureas", "D) Benzoic acids"], ans: 0 },
+      { id: 258, q: "2,4-D herbicide belongs chemically to which chemical family?", options: ["A) Phenoxyacetic acid (Phenoxy)", "B) Glyphosate", "C) Dinitroaniline", "D) Quaternary ammonium"], ans: 0 },
+      { id: 259, q: "Which chemical compound causes rapid contact cellular desiccation in plant and animal tissues?", options: ["A) Paraquat", "B) Urea", "C) Gypsum", "D) Lime"], ans: 0 },
+      { id: 260, q: "Which herbicide is a classic representative of the bipyridyl chemical group?", options: ["A) Paraquat", "B) Atrazine", "C) Pendimethalin", "D) Butachlor"], ans: 0 },
+      { id: 261, q: "What is the standard formula used for calculating actual crop evapotranspiration (ETc)?", options: ["A) ETc = ET₀ × Kc (Reference ET times Crop coefficient)", "B) ETc = P − R", "C) ETc = Y / W", "D) ETc = T + S"], ans: 0 },
+      { id: 262, q: "What is the approximate average daily consumptive water requirement cited for crops like maize or rice?", options: ["A) Approx 4.8 mm/day", "B) 20 mm/day", "C) 0.1 mm/day", "D) 50 mm/day"], ans: 0 },
+      { id: 263, q: "What is the standard cross-sectional dimension of an irrigation furrow in furrow irrigation?", options: ["A) 15–20 cm depth / width", "B) 1 metre depth", "C) 5 cm", "D) 3 metres"], ans: 0 },
+      { id: 264, q: "What is the recommended standard spacing distance between parallel irrigation furrows?", options: ["A) 60–75 cm", "B) 10 cm", "C) 5 metres", "D) 10 metres"], ans: 0 },
+      { id: 265, q: "Growing four distinct crops sequentially or simultaneously in a year is termed:", options: ["A) Multi-storeyed / intensive cropping", "B) Mono-cropping", "C) Fallowing", "D) Shifting cultivation"], ans: 0 },
+      { id: 266, q: "Growing more than one crop on the same piece of land during a single agricultural year is called:", options: ["A) Multiple cropping", "B) Sole cropping", "C) Mono-culture", "D) Ratooning"], ans: 1 },
+      { id: 267, q: "What does the agronomic term “crop geometry” refer to?", options: ["A) The spatial arrangement and plant population distribution of crops in a field", "B) The chemical formula of fertilizers", "C) The shape of leaves", "D) Soil particle size"], ans: 0 },
+      { id: 268, q: "What does “crop rotation” refer to in temporal terms?", options: ["A) The temporal arrangement and sequencing of different crops grown on the same land over time", "B) Tractor turning at field edges", "C) Sun movement", "D) Irrigation rotation"], ans: 0 },
+      { id: 269, q: "What is the Alternate Wetting and Drying (AWD) water management system in rice called?", options: ["A) AWD (Alternate Wetting and Drying)", "B) Continuous submergence", "C) Dry seeding", "D) Drip paddy"], ans: 0 },
+      { id: 270, q: "Which weed acts as an alternate natural host reservoir for peanut stem necrosis disease?", options: ["A) Croton sparsiflorus / Croton sp.", "B) Cynodon", "C) Cyperus", "D) Parthenium"], ans: 0 },
+      { id: 271, q: "Which herbicide is widely recommended for weed management in direct-seeded or transplanted rice?", options: ["A) Pretilachlor (or Butachlor)", "B) Atrazine", "C) Glyphosate", "D) 2,4-D high ester"], ans: 0 },
+      { id: 272, q: "Which herbicide is standard for selective post-emergence control of broad-leaved weeds?", options: ["A) 2,4-D", "B) Butachlor", "C) Pendimethalin", "D) Fluchloralin"], ans: 0 },
+      { id: 273, q: "Is intercropping considered an effective agronomic method for controlling soil erosion and runoff?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 274, q: "Is strip cropping an appropriate soil and water conservation method for controlling runoff?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 275, q: "Is intensive clean-tillage monocropping effective for controlling surface runoff?", options: ["A) Yes", "B) No"], ans: 1 },
+      { id: 276, q: "Is traditional crop rotation alone sufficient for stopping steep slope soil runoff without mechanical barriers?", options: ["A) Yes", "B) No"], ans: 1 },
+      { id: 277, q: "What is the cropping system where crops of distinctly different heights are grown together called?", options: ["A) Multi-storeyed cropping (multi-tier cropping)", "B) Monoculture", "C) Relay cropping", "D) Mixed broadcasting"], ans: 0 },
+      { id: 278, q: "What is the cropping system where companion crops occupy different vertical strata/spaces?", options: ["A) Multi-storeyed cropping", "B) Sequential cropping", "C) Fallow system", "D) Sole cropping"], ans: 0 },
+      { id: 279, q: "What is multiple cropping defined as?", options: ["A) Growing two or more crops in succession or simultaneously on the same land in a year", "B) Growing one crop every 5 years", "C) Forest plantation", "D) Pasture grazing"], ans: 0 },
+      { id: 280, q: "What is a crop rotation system spanning a fixed multi-year cycle called?", options: ["A) Crop rotation", "B) Mono-cropping", "C) Shifting agriculture", "D) Ratooning"], ans: 0 },
+      { id: 281, q: "What is cropping intensity defined as mathematically?", options: ["A) (Gross Cropped Area / Net Sown Area) × 100", "B) Net Sown Area only", "C) Total rainfall", "D) Yield per hectare"], ans: 0 },
+      { id: 282, q: "What is the ratio of gross cropped area to net cultivated area termed?", options: ["A) Cropping intensity", "B) Harvest index", "C) Land equivalent ratio", "D) Crop rotation index"], ans: 0 },
+      { id: 283, q: "What is the desired Land Equivalent Ratio (LER) value for a biologically beneficial intercropping system?", options: ["A) LER > 1.0", "B) LER = 0.5", "C) LER = 0", "D) LER < 1.0"], ans: 0 },
+      { id: 284, q: "What is a “catch crop” grown for?", options: ["A) To catch/fill a gap when the main crop fails due to weather/delays", "B) To catch fish", "C) To feed birds", "D) To cover rocks"], ans: 0 },
+      { id: 285, q: "What is a pre-crop grown before the main primary crop called?", options: ["A) Pre-crop / preparatory crop", "B) Catch crop", "C) Ratoon", "D) Weed"], ans: 0 },
+      { id: 286, q: "What is a ratoon crop defined as?", options: ["A) A crop grown from the stubbles/shoots of the previously harvested main crop", "B) A newly sown seed crop", "C) A cover crop", "D) A trap crop"], ans: 0 },
+      { id: 287, q: "Which crop type belongs to the grass family and possesses strong natural tillering and regrowth ability?", options: ["A) Turf crops / Grasses (like sugarcane/sorghum)", "B) Legumes", "C) Root crops", "D) Tubers"], ans: 0 },
+      { id: 288, q: "What determines final biological and economic crop production outcomes?", options: ["A) Cropping pattern combined with agronomic management practices", "B) Tractor brand", "C) Soil colour", "D) Seed sack size"], ans: 0 },
+      { id: 289, q: "What is the standard formula for calculating Cropping Intensity?", options: ["A) (Gross Cropped Area / Net Cultivated Area) × 100", "B) Number of crops / 100", "C) Net area / Gross area", "D) Yield / Area"], ans: 0 },
+      { id: 290, q: "What is the index of Crop Rotation Intensity?", options: ["A) (Number of crops grown in rotation cycle / Years in rotation) × 100", "B) Area times yield", "C) Water used", "D) Labour days"], ans: 0 },
+      { id: 291, q: "What is sequential cropping defined as?", options: ["A) Growing two or more crops in sequence on the same field per year (non-overlapping)", "B) Planting 10 crops at once", "C) Fallowing", "D) Mixed broadcasting"], ans: 0 },
+      { id: 292, q: "What is intercropping defined as?", options: ["A) Growing two or more crops simultaneously in distinct rows on the same field", "B) Growing crops in separate states", "C) Rotating crops yearly", "D) Planting trees in forests"], ans: 0 },
+      { id: 293, q: "What is opportunity cropping?", options: ["A) Raising a contingent crop taking advantage of unexpected favourable rains or soil moisture", "B) Planting strictly on fixed calendar dates", "C) Growing indoor plants", "D) Hydroponic farming"], ans: 0 },
+      { id: 294, q: "What is mixed cropping defined as?", options: ["A) Growing two or more crops simultaneously without distinct row arrangement (seed mixing)", "B) Planting in rows", "C) Sole cropping", "D) Plant tissue culture"], ans: 0 },
+      { id: 295, q: "What is a suitable integrated farming system (IFS) model for dryland/rainfed farming conditions?", options: ["A) Crop + Goat + Silvipasture (or poultry/horticulture)", "B) Wetland rice + fish + prawns", "C) Dairy + pisciculture exclusively", "D) Zero agriculture"], ans: 0 },
+      { id: 296, q: "What is the most suitable integrated farming system (IFS) model for wetland lowland conditions?", options: ["A) Crop (Rice) + Fish + Poultry (or Dairy)", "B) Dryland goat + sheep", "C) Camel pastoralism", "D) Forestry alone"], ans: 0 },
+      { id: 297, q: "What are the primary components of a wetland Integrated Farming System (IFS)?", options: ["A) Rice + Fish + Poultry", "B) Sorghum + Goat", "C) Maize + Sheep", "D) Millet + Camel"], ans: 0 },
+      { id: 298, q: "Which leguminous tree is predominantly used in alley cropping systems across India?", options: ["A) Leucaena leucocephala (Subabul) or Gliricidia", "B) Eucalyptus", "C) Teak", "D) Pine"], ans: 0 },
+      { id: 299, q: "Which tree species is commonly lopped for green leaf manure in alley cropping?", options: ["A) Gliricidia sepium", "B) Rubber", "C) Coconut", "D) Mango"], ans: 0 },
+      { id: 300, q: "What is a classic example pairing for ratoon cropping or intercropping systems?", options: ["A) Sugarcane + Blackgram (or Rice + Pulse)", "B) Wheat + Apple", "C) Tea + Rubber", "D) Coffee + Coconut"], ans: 0 },
+      { id: 301, q: "What is relay intercropping (relay cropping) exemplified by?", options: ["A) Sowing a succeeding crop into a standing ripening crop (e.g. cotton/pigeonpea/relay pulses)", "B) Harvesting everything before planting next", "C) Fallowing", "D) Monoculture"], ans: 0 },
+      { id: 302, q: "Which cropping system is appropriate when crops of diverse canopy heights are grown simultaneously?", options: ["A) Multi-storeyed / Multi-tier cropping", "B) Sole cropping", "C) Fallow rotation", "D) Strip cropping"], ans: 0 },
+      { id: 303, q: "Which fast-growing tree species is sometimes integrated in agroforestry boundary plantings?", options: ["A) Eucalyptus", "B) Rice", "C) Wheat", "D) Soybean"], ans: 0 },
+      { id: 304, q: "What is considered the most suitable complementary grain legume intercrop in maize?", options: ["A) Cowpea (or green gram)", "B) Castor", "C) Cotton", "D) Tobacco"], ans: 0 },
+      { id: 305, q: "Which intercrop combination is widely recommended for rainfed cotton cultivation?", options: ["A) Cotton + Cowpea (or blackgram)", "B) Cotton + Rice", "C) Cotton + Sugarcane", "D) Cotton + Wheat"], ans: 0 },
+      { id: 306, q: "What is the “additive series” in intercropping population design?", options: ["A) Main crop is planted at 100% recommended population and intercrop is added in between without reducing main crop population", "B) Halving both populations", "C) Eliminating main crop", "D) Random broadcasting"], ans: 0 },
+      { id: 307, q: "What does an “additive effect” signify in intercropping agronomy?", options: ["A) Total combined intercrop yield exceeds sole crop equivalents (LER > 1)", "B) Yield loss", "C) Zero production", "D) Weed dominance"], ans: 0 },
+      { id: 308, q: "What is the “replacement series” design in intercropping?", options: ["A) Component crops share the land by replacing a fraction of main crop population with intercrop plants", "B) Adding extra plants", "C) Monoculture", "D) Fallowing"], ans: 0 },
+      { id: 309, q: "What type of intercropping design features fixed proportional replacement of both component crops?", options: ["A) Replacement series (e.g. 1:1 or 2:1 row ratios)", "B) Additive series", "C) Sole cropping", "D) Broadcast mix"], ans: 0 },
+      { id: 310, q: "Which herbicide is highly effective against sedges like Cyperus rotundus?", options: ["A) 2,4-D (or Glyphosate translocated)", "B) Butachlor", "C) Pendimethalin", "D) Fluchloralin"], ans: 0 },
+      { id: 311, q: "Which herbicide is standard for selective weed control in maize?", options: ["A) Atrazine", "B) Butachlor", "C) Paraquat", "D) Diquat"], ans: 0 },
+      { id: 312, q: "Which weed is known as a noxious broad-leaved weed in agricultural fields?", options: ["A) Parthenium hysterophorus", "B) Cynodon", "C) Cyperus", "D) Echinochloa"], ans: 0 },
+      { id: 313, q: "What is the primary objective of seed priming before sowing?", options: ["A) Synchronized, rapid germination and seedling vigour", "B) Killing seeds", "C) Increasing moisture to 100%", "D) Coloring seeds"], ans: 0 },
+      { id: 314, q: "What is the role of antitranspirants in dryland agronomy?", options: ["A) To reduce excessive transpiration water loss from plant leaves during drought", "B) To increase leaf temperature", "C) To promote weed growth", "D) To dissolve fertilizers"], ans: 0 },
+      { id: 315, q: "Which chemical acts as a film-forming antitranspirant by coating stomata?", options: ["A) Plastic / wax emulsions (mobileaf)", "B) Kaolin", "C) PMA", "D) Cycocel"], ans: 0 },
+      { id: 316, q: "Which chemical acts as a reflective antitranspirant reducing net radiation absorption?", options: ["A) Kaolin (white clay spray)", "B) Plastic spray", "C) PMA", "D) Oil"], ans: 0 },
+      { id: 317, q: "What is the primary indicator of plant water stress used in irrigation scheduling?", options: ["A) Leaf water potential / canopy temperature / stomatal resistance", "B) Plant height", "C) Seed weight", "D) Root color"], ans: 0 },
+      { id: 318, q: "What is critical irrigation scheduling based on climatological approach?", options: ["A) Irrigation given when cumulative IW/CPE (Irrigation Water / Pan Evaporation) reaches a threshold ratio", "B) Watering every Sunday", "C) Random watering", "D) Flooding seasonally"], ans: 0 },
+      { id: 319, q: "What is the IW/CPE ratio commonly recommended for high-yielding crops like wheat or rice?", options: ["A) 0.8 to 1.0", "B) 0.1", "C) 5.0", "D) 10.0"], ans: 0 },
+      { id: 320, q: "Which tillage system leaves at least 30% of soil surface covered with crop residues after planting?", options: ["A) Conservation tillage / Residue management", "B) Clean tillage", "C) Intensive harrowing", "D) Puddling"], ans: 0 },
+      { id: 321, q: "What is the primary agronomic benefit of adopting conservation agriculture practices?", options: ["A) Enhanced soil organic carbon, moisture retention, and reduced soil erosion", "B) Increased soil compaction", "C) Higher fuel consumption", "D) Elimination of crop roots"], ans: 0 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(321, parseInt(customCountInput.value) || 100));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 321) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Advanced Agronomy, Cropping Systems, and Weed Science.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific cropping intensities, LER formulas, and herbicide families.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Advanced Agronomy and Systems recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+</html>
