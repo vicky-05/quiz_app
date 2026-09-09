@@ -1,0 +1,3223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indian Polity, Administration & INM Master Exam (196 MCQs)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-header: #022c22;
+            --bg-body: #f1f5f9;
+            --card-bg: #ffffff;
+            --primary: #044e3e;
+            --primary-hover: #033c30;
+            --accent-badge: #022c22;
+            --option-bg: #e6f3ef;
+            --option-border: #bcdcd3;
+            --option-hover-bg: #d7ede6;
+            --option-selected-bg: #c5e6dc;
+            --option-selected-border: #044e3e;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --timer-bg: #ffe4e6;
+            --timer-text: #e11d48;
+            --timer-border: #fecdd3;
+            --success: #15803d;
+            --success-light: #dcfce7;
+            --danger: #b91c1c;
+            --danger-light: #fee2e2;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .banner {
+            background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+            color: #ffffff;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .banner h1 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: #facc15;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .banner .sub-title {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+        }
+
+        .banner .tagline {
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            color: #e2e8f0;
+            letter-spacing: 0.02em;
+        }
+
+        .container {
+            max-width: 880px;
+            width: 100%;
+            margin: 1.5rem auto;
+            padding: 0 1rem;
+            flex: 1;
+        }
+
+        .status-ribbon {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .status-tile {
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            padding: 0.7rem 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e2e8f0;
+        }
+
+        .status-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .tile-green .status-icon {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .tile-blue .status-icon {
+            background: #e0f2fe;
+            color: #0284c7;
+        }
+
+        .tile-amber .status-icon {
+            background: #fef3c7;
+            color: #d97706;
+        }
+
+        .tile-rose .status-icon {
+            background: var(--timer-bg);
+            color: var(--timer-text);
+            border: 1px solid var(--timer-border);
+        }
+
+        .status-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            line-height: 1.1;
+        }
+
+        .status-val {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-top: 0.15rem;
+        }
+
+        .tile-rose .status-val {
+            color: var(--timer-text);
+            font-family: 'Plus Jakarta Sans', monospace;
+            font-size: 1.15rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 1.25rem;
+            position: relative;
+        }
+
+        .card-topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .q-badge {
+            background: var(--accent-badge);
+            color: #ffffff;
+            padding: 0.45rem 1rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+        }
+
+        .mark-badge {
+            background: #ffe4e6;
+            color: #be123c;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid #fecdd3;
+        }
+
+        .q-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.55;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            white-space: pre-line;
+        }
+
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.85rem 1.1rem;
+            background: var(--option-bg);
+            border: 1.5px solid var(--option-border);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.15s ease-in-out;
+            text-align: left;
+            width: 100%;
+        }
+
+        .option-item:hover {
+            background: var(--option-hover-bg);
+            border-color: #79baaa;
+        }
+
+        .option-item.selected {
+            background: var(--option-selected-bg);
+            border-color: var(--option-selected-border);
+            box-shadow: 0 0 0 1px var(--option-selected-border);
+        }
+
+        .option-letter {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #022c22;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background 0.15s ease;
+        }
+
+        .option-item.selected .option-letter {
+            background: #044e3e;
+        }
+
+        .option-content {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        .actions-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.75rem;
+            padding-top: 1rem;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.4rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .btn-prev {
+            background: #ffffff;
+            color: #0f172a;
+            border: 1.5px solid #cbd5e1;
+        }
+
+        .btn-prev:hover:not(:disabled) {
+            background: #f8fafc;
+            border-color: #94a3b8;
+        }
+
+        .btn-review {
+            background: #ffffff;
+            color: #044e3e;
+            border: 1.5px solid #044e3e;
+        }
+
+        .btn-review.marked {
+            background: #fef3c7;
+            color: #92400e;
+            border-color: #f59e0b;
+        }
+
+        .btn-next,
+        .btn-submit {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .btn-next:hover,
+        .btn-submit:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-submit {
+            background: #059669;
+        }
+
+        .btn-submit:hover {
+            background: #047857;
+        }
+
+        .btn:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+
+        .footer-motivate {
+            background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+            color: #ffffff;
+            padding: 1.75rem 1rem;
+            text-align: center;
+            margin-top: auto;
+            border-top: 3px solid #059669;
+        }
+
+        .footer-motivate .quote {
+            font-family: 'Caveat', cursive;
+            font-size: 1.45rem;
+            color: #f8fafc;
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-motivate .author-sub {
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            color: #94a3b8;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .setup-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            margin-top: 1.25rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+
+        .form-group select,
+        .form-group input {
+            padding: 0.75rem 0.9rem;
+            border-radius: var(--radius-sm);
+            border: 1.5px solid #cbd5e1;
+            font-size: 1rem;
+            background: #ffffff;
+            outline: none;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus {
+            border-color: var(--primary);
+        }
+
+        .time-preview-badge {
+            display: inline-block;
+            background: #dcfce7;
+            color: #166534;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-top: 0.25rem;
+        }
+
+        .results-center {
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .score-circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: #e6f3ef;
+            color: #044e3e;
+            border: 4px solid #044e3e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem auto 1.5rem auto;
+        }
+
+        .score-circle .pct {
+            font-size: 2.1rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .score-circle .lbl {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        .stats-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 0.85rem;
+            margin: 1.5rem 0;
+        }
+
+        .matrix-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .matrix-card .val {
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+
+        .matrix-card.c-green .val {
+            color: var(--success);
+        }
+
+        .matrix-card.c-red .val {
+            color: var(--danger);
+        }
+
+        .matrix-card.c-slate .val {
+            color: var(--text-muted);
+        }
+
+        .matrix-card .desc {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: 0.25rem;
+        }
+
+        .review-item {
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            border: 1.5px solid #e2e8f0;
+            background: #ffffff;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .review-item.is-correct {
+            border-left: 6px solid var(--success);
+            background: #fcfdfc;
+        }
+
+        .review-item.is-wrong {
+            border-left: 6px solid var(--danger);
+            background: #fffcfc;
+        }
+
+        .review-item.is-unanswered {
+            border-left: 6px solid var(--neutral);
+            background: #f8fafc;
+        }
+
+        .rev-badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+
+        .rev-badge.correct {
+            background: var(--success-light);
+            color: var(--success);
+        }
+
+        .rev-badge.wrong {
+            background: var(--danger-light);
+            color: var(--danger);
+        }
+
+        .rev-badge.unanswered {
+            background: #e2e8f0;
+            color: var(--neutral);
+        }
+
+        .rev-q-text {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+            white-space: pre-line;
+        }
+
+        .rev-detail-line {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0.35rem 0;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 680px) {
+            .status-ribbon {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card {
+                padding: 1.25rem;
+            }
+
+            .actions-bar {
+                flex-wrap: wrap;
+            }
+
+            .actions-bar .btn {
+                flex: 1 1 calc(50% - 0.5rem);
+            }
+
+            .actions-bar .btn-review {
+                order: 3;
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="banner">
+        <h1>Competitive Exam</h1>
+        <div class="sub-title">Practice Quiz — Indian Polity, Administration & INM Master Exam (196 MCQs)</div>
+        <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div id="setup-screen" class="card">
+            <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Indian Polity,
+                Administration & INM Master Exam (196 MCQs)</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+                    question</strong> applies automatically to your chosen question count.</p>
+
+            <div class="setup-grid">
+                <div class="form-group">
+                    <label for="mode-select">Exam Mode</label>
+                    <select id="mode-select">
+                        <option value="exam">Standard Exam Mode (Sequential 1–196)</option>
+                        <option value="practice">Practice Mode (Randomized Subset)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="count-select">Number of Questions</label>
+                    <select id="count-select">
+                        <option value="196">All Questions (196 Questions)</option>
+                        <option value="50">50 Questions</option>
+                        <option value="100">100 Questions</option>
+                        <option value="150">150 Questions</option>
+                        <option value="custom">Custom Count</option>
+                    </select>
+                </div>
+
+                <div class="form-group hidden" id="custom-count-wrapper">
+                    <label for="custom-count-input">Enter count (1 to 196)</label>
+                    <input type="number" id="custom-count-input" min="1" max="196" value="50" />
+                </div>
+
+                <div class="form-group">
+                    <label>Total Time Allotted</label>
+                    <div>
+                        <span class="time-preview-badge" id="time-preview-pill">196 min 0 sec (1 min / question)</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+                    Now</button>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="hidden">
+            <div class="status-ribbon">
+                <div class="status-tile tile-green">
+                    <div class="status-icon">&#9878;</div>
+                    <div>
+                        <div class="status-label">Subject</div>
+                        <div class="status-val">Indian Polity</div>
+                    </div>
+                </div>
+                <div class="status-tile tile-blue">
+                    <div class="status-icon">&#128220;</div>
+                    <div>
+                        <div class="status-label">Topic</div>
+                        <div class="status-val">Polity & Admin (196)</div>
+                    </div>
+                </div>
+                <div class="status-tile tile-amber">
+                    <div class="status-icon">&#128202;</div>
+                    <div>
+                        <div class="status-label">Question</div>
+                        <div class="status-val" id="q-counter-val">1 / 196</div>
+                    </div>
+                </div>
+                <div class="status-tile tile-rose">
+                    <div class="status-icon">&#9201;</div>
+                    <div>
+                        <div class="status-label">Time Left</div>
+                        <div class="status-val" id="timer-val">03:16:00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-topbar">
+                    <div class="q-badge" id="q-badge-val">Q.1</div>
+                    <div class="mark-badge">1 Mark</div>
+                </div>
+
+                <div class="q-text" id="q-text-val"></div>
+
+                <div class="options-grid" id="options-container"></div>
+
+                <div class="actions-bar">
+                    <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+                    <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+                    <div style="display: flex; gap: 0.6rem;">
+                        <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+                        <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="result-screen" class="card hidden">
+            <div class="results-center">
+                <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+                <div class="score-circle">
+                    <div class="pct" id="res-score-pct">0%</div>
+                    <div class="lbl">Total Score</div>
+                </div>
+                <p id="res-performance-msg"
+                    style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+            </div>
+
+            <div class="stats-matrix">
+                <div class="matrix-card">
+                    <div class="val" id="res-total">0</div>
+                    <div class="desc">Questions</div>
+                </div>
+                <div class="matrix-card c-green">
+                    <div class="val" id="res-correct">0</div>
+                    <div class="desc">Correct</div>
+                </div>
+                <div class="matrix-card c-red">
+                    <div class="val" id="res-wrong">0</div>
+                    <div class="desc">Wrong</div>
+                </div>
+                <div class="matrix-card c-slate">
+                    <div class="val" id="res-unanswered">0</div>
+                    <div class="desc">Unanswered</div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+                <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+                <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+            </div>
+        </div>
+
+        <div id="review-screen" class="hidden">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+                <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+            </div>
+            <div id="review-list-container"></div>
+        </div>
+
+    </div>
+
+    <footer class="footer-motivate">
+        <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+        <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+    </footer>
+
+    <script>
+        const questionBank = [
+            {
+                id: 1,
+                q: "Which one of the following is not correct pair? I. Poona Pact — 1931 A.D. II. Second Round Table Conference — 1932 A.D. III. Government of India Act — 1935 A.D. IV. Crips Mission — 1942 A.D.",
+                options: [
+                    "(A) I and II only",
+                    "(B) III and IV only",
+                    "(C) I and IV only",
+                    "(D) II and III only"
+                ],
+                ans: 0
+            },
+            {
+                id: 2,
+                q: "Consider the following statements : Assertion (A): The beginning of Swadeshi Movement in Tamil Nadu. Reason (R): The cause of the partition of Bengal in 1905.",
+                options: [
+                    "(A) Both (A) and (R) are incorrect",
+                    "(B) Both (A) and (R) are correct and (R) is the correct explanation for (A)",
+                    "(C) (A) is correct but (R) is incorrect",
+                    "(D) Both (A) and (R) are correct but (R) is not correct explanation for (A)"
+                ],
+                ans: 1
+            },
+            {
+                id: 3,
+                q: "After the Surat split in 1907 an association was started by V.O.C. and nationalist",
+                options: [
+                    "(A) Chennai Swadeshi Sangam",
+                    "(B) Chennai Mahajana Sangam",
+                    "(C) Chennai Bharathamatha Sangam",
+                    "(D) Chennai Jana Sangam"
+                ],
+                ans: 3
+            },
+            {
+                id: 4,
+                q: "Who was the Congress President in Tamil Nadu during the time of Non Co-Operation Movement?",
+                options: [
+                    "(A) Kamarajar",
+                    "(B) Rajagobalachariyar",
+                    "(C) E.V. Ramasamy",
+                    "(D) Sathiyamoorthy"
+                ],
+                ans: 2
+            },
+            {
+                id: 5,
+                q: "Match the following : (a) Rajagopalachari — 1. King Maker (b) Kamaraj — 2. Kappalotiya Thamizhan (c) V.O. Chidambarampillai — 3. Mundasu Kavi (d) Bharathiyar — 4. Chanakya",
+                options: [
+                    "(A) (a)-4, (b)-1, (c)-2, (d)-3",
+                    "(B) (a)-1, (b)-2, (c)-3, (d)-4",
+                    "(C) (a)-3, (b)-2, (c)-4, (d)-1",
+                    "(D) (a)-2, (b)-4, (c)-1, (d)-3"
+                ],
+                ans: 0
+            },
+            {
+                id: 6,
+                q: "Which is wrongly matched?",
+                options: [
+                    "(A) Sudhi Movement — Swami Dayananda Saraswathi",
+                    "(B) Ayyavazhi — Vaikunda Swamigal",
+                    "(C) Ramakrishna Movement — Ramakrishna Parama Hamsar",
+                    "(D) Namdhari Movement — Bama Ram Singh"
+                ],
+                ans: 2
+            },
+            {
+                id: 7,
+                q: "Which one of the following is correctly matched?",
+                options: [
+                    "(A) Arya Samaj — Vadalur",
+                    "(B) Theosophical Society — New York (USA)",
+                    "(C) Samarasa Sudha Sanmargha Sangham — Belur",
+                    "(D) Satyashodak Samaj — Gujarat"
+                ],
+                ans: 1
+            },
+            {
+                id: 8,
+                q: "When Sardar Bhagat Singh, Shiva Ram Raja Guru and Sukhdev were hanged?",
+                options: [
+                    "(A) 20th October 1930",
+                    "(B) 23rd March 1931",
+                    "(C) 26th January 1930",
+                    "(D) 25th December 1931"
+                ],
+                ans: 1
+            },
+            {
+                id: 9,
+                q: "In 1931, the Karachi session of the Indian National Congress was presided over by",
+                options: [
+                    "(A) Abul Kalam Azad",
+                    "(B) Vallabhai Patel",
+                    "(C) Jawaharlal Nehru",
+                    "(D) Sarojini Naidu"
+                ],
+                ans: 1
+            },
+            {
+                id: 10,
+                q: "When was the Indian Independence Act passed by the British parliament?",
+                options: [
+                    "(A) June 28, 1947",
+                    "(B) July 18, 1947",
+                    "(C) August 15, 1947",
+                    "(D) July 4, 1947"
+                ],
+                ans: 1
+            },
+            {
+                id: 11,
+                q: "Article 51(A) of the Indian Constitution deals",
+                options: [
+                    "(A) Fundamental Rights",
+                    "(B) Fundamental Duties",
+                    "(C) Directive principles of State Policy",
+                    "(D) Amendment of the Constitution"
+                ],
+                ans: 1
+            },
+            {
+                id: 12,
+                q: "Which article of the Indian Constitution granted powers to the President of India to nominate two members from Anglo-Indian community to Lok Sabha?",
+                options: [
+                    "(A) Article 335",
+                    "(B) Article 336",
+                    "(C) Article 331",
+                    "(D) Article 334"
+                ],
+                ans: 2
+            },
+            {
+                id: 13,
+                q: "The concept of Judicial review was borrowed from",
+                options: [
+                    "(A) USA",
+                    "(B) U.K",
+                    "(C) France",
+                    "(D) Australia"
+                ],
+                ans: 0
+            },
+            {
+                id: 14,
+                q: "Which one of the following is a state of India?",
+                options: [
+                    "(A) Daman and Diu",
+                    "(B) Dadra and Nagar Haveli",
+                    "(C) Goa",
+                    "(D) Chandigarh"
+                ],
+                ans: 2
+            },
+            {
+                id: 15,
+                q: "Match the following study teams with suitable options : List I (Study team) / List II (Chairman): (a) Study team on Panchayat raj Administration — 1. G.R. Raj Gopal (b) Study team on Nyaya Panchayats — 2. R.R. Diwakar (c) Study team on Panchayat raj Finances — 3. K. Santhanam (d) Study team on the position of Gram Sabha in Panchayat raj movement — 4. V. Iswaran",
+                options: [
+                    "(A) (a)-1, (b)-2, (c)-3, (d)-4",
+                    "(B) (a)-4, (b)-1, (c)-3, (d)-2",
+                    "(C) (a)-4, (b)-2, (c)-1, (d)-3",
+                    "(D) (a)-1, (b)-4, (c)-2, (d)-3"
+                ],
+                ans: 1
+            },
+            {
+                id: 16,
+                q: "Match the following : Newspapers / Editors: (a) Vande Mataram — 1. M.M. Malviya (b) Maharastra — 2. Firoz Shah Mehta (c) Hindustan — 3. Aurobindo Ghosh (d) Bombay Chronicle — 4. B.G. Tilak",
+                options: [
+                    "(A) (a)-3, (b)-4, (c)-1, (d)-2",
+                    "(B) (a)-2, (b)-4, (c)-3, (d)-1",
+                    "(C) (a)-4, (b)-3, (c)-1, (d)-2",
+                    "(D) (a)-1, (b)-2, (c)-3, (d)-4"
+                ],
+                ans: 0
+            },
+            {
+                id: 17,
+                q: "Who was the President of Hindu Mahasabha in 1938?",
+                options: [
+                    "(A) V.D. Savarkar",
+                    "(B) Pt. Madan Mohan Malaviya",
+                    "(C) Bala Gangadhar Tilak",
+                    "(D) Swami Vivekananda"
+                ],
+                ans: 0
+            },
+            {
+                id: 18,
+                q: "How many members were nominated by the British in the Cabinet Mission in 1946?",
+                options: [
+                    "(A) Five members",
+                    "(B) Six members",
+                    "(C) Four members",
+                    "(D) Three members"
+                ],
+                ans: 3
+            },
+            {
+                id: 19,
+                q: "Which Article of the Indian Constitution says that the 'State shall provide free and compulsory education to all children of the age of six to fourteen years in such a manner as the state may determine'?",
+                options: [
+                    "(A) 21",
+                    "(B) 21A",
+                    "(C) 22",
+                    "(D) 22A"
+                ],
+                ans: 1
+            },
+            {
+                id: 20,
+                q: "Who is regarded as the \"Father of All-India Services\"?",
+                options: [
+                    "(A) Lord Macaulay",
+                    "(B) Lord Cornwallis",
+                    "(C) B.R. Ambedkar",
+                    "(D) Sardar Vallabai Patel"
+                ],
+                ans: 3
+            },
+            {
+                id: 21,
+                q: "The 59th Amendment Act, 1988 provided that necessary restrictions could be imposed on",
+                options: [
+                    "(A) liberty of individual and life",
+                    "(B) economic rights",
+                    "(C) cultural rights",
+                    "(D) religious rights"
+                ],
+                ans: 0
+            },
+            {
+                id: 22,
+                q: "The number of Benches of Central Administrative Tribunal in India is",
+                options: [
+                    "(A) 15",
+                    "(B) 17",
+                    "(C) 19",
+                    "(D) 21"
+                ],
+                ans: 1
+            },
+            {
+                id: 23,
+                q: "Fifth General Elections was held on",
+                options: [
+                    "(A) 1971",
+                    "(B) 1972",
+                    "(C) 1973",
+                    "(D) 1974"
+                ],
+                ans: 0
+            },
+            {
+                id: 24,
+                q: "Which one of the following pair is not correctly matched?",
+                options: [
+                    "(A) Art. 280 — Finance Commission",
+                    "(B) Art. 315 — UPSC",
+                    "(C) Art. 324 — Election Commission",
+                    "(D) Art. 328 — National Commission for SC"
+                ],
+                ans: 3
+            },
+            {
+                id: 25,
+                q: "Who was the first Chairperson of National Commission for women?",
+                options: [
+                    "(A) Jayanti Patnaik",
+                    "(B) Mohini Giri",
+                    "(C) Poornima Advani",
+                    "(D) Girija Vyas"
+                ],
+                ans: 0
+            },
+            {
+                id: 26,
+                q: "A population is a group of",
+                options: [
+                    "(A) species in a community",
+                    "(B) communities in an ecosystem",
+                    "(C) individuals in a species",
+                    "(D) individuals in a family"
+                ],
+                ans: 2
+            },
+            {
+                id: 27,
+                q: "Which division of the constitution of India explains the right against exploitation?",
+                options: [
+                    "(A) 14-18",
+                    "(B) 19-22",
+                    "(C) 25-28",
+                    "(D) 23-24"
+                ],
+                ans: 3
+            },
+            {
+                id: 28,
+                q: "Name the social movement started by E.V.R",
+                options: [
+                    "(A) Thanithamil Iyakkam",
+                    "(B) Self Respect movement",
+                    "(C) Civil Disobedience movement",
+                    "(D) Anti untouchability movement"
+                ],
+                ans: 1
+            },
+            {
+                id: 29,
+                q: "Who was the minister of Kattabomman?",
+                options: [
+                    "(A) Umaitturai",
+                    "(B) Siva Subramaniya pillai",
+                    "(C) Jagavira Pandyan",
+                    "(D) Bommuturai"
+                ],
+                ans: 1
+            },
+            {
+                id: 30,
+                q: "The principles of Aligarh movement was opposed by whom?",
+                options: [
+                    "(A) W.C. Banerjee",
+                    "(B) Muhammad Ali Jinnah",
+                    "(C) LalaLajapati Roy",
+                    "(D) Netaji"
+                ],
+                ans: 1
+            },
+            {
+                id: 31,
+                q: "The Department of Border management is a department of which one of the following union ministries?",
+                options: [
+                    "(A) Ministry of External Affairs",
+                    "(B) Ministry of Home Affairs",
+                    "(C) Ministry of Environment and Forests",
+                    "(D) Ministry of Defence"
+                ],
+                ans: 1
+            },
+            {
+                id: 32,
+                q: "Find out the wrongly matched from the following :",
+                options: [
+                    "(A) Prohibition of Discrimination on grounds of religion, race, caste, sex or place of birth — Article 15",
+                    "(B) Right to Association — Article 19",
+                    "(C) Right to Protection of Life — Article 14",
+                    "(D) Right to Constitutional Remedies — Article 32"
+                ],
+                ans: 2
+            },
+            {
+                id: 33,
+                q: "Match the institutions with the Articles of the Indian Constitution : (a) Comptroller and Auditor General of India — 1. Art. 315 (b) Finance Commission — 2. Art. 280 (c) Administrative Tribunals — 3. Art. 148 (d) Union Public Service Commission — 4. Art. 323 (A)",
+                options: [
+                    "(A) (a)-3, (b)-4, (c)-2, (d)-1",
+                    "(B) (a)-1, (b)-2, (c)-4, (d)-3",
+                    "(C) (a)-3, (b)-2, (c)-4, (d)-1",
+                    "(D) (a)-1, (b)-4, (c)-2, (d)-3"
+                ],
+                ans: 2
+            },
+            {
+                id: 34,
+                q: "The separate communal electorates was introduced in India for the first time under the Act of",
+                options: [
+                    "(A) Govt. of India Act, 1909",
+                    "(B) Govt. of India Act, 1919",
+                    "(C) Govt. of India Act, 1935",
+                    "(D) Indian Independence Act, 1947"
+                ],
+                ans: 0
+            },
+            {
+                id: 35,
+                q: "In India, disguised unemployment is more prevalention the",
+                options: [
+                    "(A) Industrial sector",
+                    "(B) Agricultural sector",
+                    "(C) Service sector",
+                    "(D) External sector"
+                ],
+                ans: 1
+            },
+            {
+                id: 36,
+                q: "The religion founded by Guru Nanak",
+                options: [
+                    "(A) Parsi religion",
+                    "(B) Sikhism",
+                    "(C) Jainism",
+                    "(D) Buddhism"
+                ],
+                ans: 1
+            },
+            {
+                id: 37,
+                q: "The body that elects the Indian President is",
+                options: [
+                    "(A) Parliament",
+                    "(B) Judiciary",
+                    "(C) Electoral College",
+                    "(D) Legislative assembly"
+                ],
+                ans: 2
+            },
+            {
+                id: 38,
+                q: "Which revolutionist started 'Bala Bharathi' newspaper against British in TamilNadu?",
+                options: [
+                    "(A) Vanchinathan",
+                    "(B) V.V.S. Iyer",
+                    "(C) Sathyamurthy",
+                    "(D) Subramaniya Siva"
+                ],
+                ans: 1
+            },
+            {
+                id: 39,
+                q: "In 1917, the South Indian Liberal Federation came to be known as",
+                options: [
+                    "(A) Dravida Kazhagam",
+                    "(B) Women Improvement League",
+                    "(C) Justice party",
+                    "(D) Minority United League"
+                ],
+                ans: 2
+            },
+            {
+                id: 40,
+                q: "Who was the leader of the Wahabi movement?",
+                options: [
+                    "(A) Abdullah",
+                    "(B) Syed Ahmad",
+                    "(C) Nizam Muhammad",
+                    "(D) Ali Ismail"
+                ],
+                ans: 1
+            },
+            {
+                id: 41,
+                q: "Who among the following have not held the office of the Vice-President of India?",
+                options: [
+                    "(A) Mohammad Hidayatullah",
+                    "(B) Fakrudhin Ali Ahmed",
+                    "(C) V.V. Giri",
+                    "(D) Shankar Dayal Sharma"
+                ],
+                ans: 1
+            },
+            {
+                id: 42,
+                q: "Which is wrong statement about \"Rule of Law\"?",
+                options: [
+                    "(A) All are equal before the law",
+                    "(B) Legal spirit",
+                    "(C) Law is supremacy",
+                    "(D) Special status to officials"
+                ],
+                ans: 3
+            },
+            {
+                id: 43,
+                q: "Which one of the following feature is NOT in the Parliamentary system?",
+                options: [
+                    "(A) Majority Party rule",
+                    "(B) Leadership of Prime Minister",
+                    "(C) Dissolution of Lower House",
+                    "(D) Single executive"
+                ],
+                ans: 3
+            },
+            {
+                id: 44,
+                q: "Dr. P.V. Rajamannar Committee, was set up in 1969",
+                options: [
+                    "(A) To review the Centre - State relations",
+                    "(B) To study the Kashmir issue",
+                    "(C) To study the Indo-Srilankan issue",
+                    "(D) To review defence Administration"
+                ],
+                ans: 0
+            },
+            {
+                id: 45,
+                q: "Which one of the following functions is NOT performed by District Collector?",
+                options: [
+                    "(A) Maintenance of Law and Order",
+                    "(B) Collection of Land Revenue",
+                    "(C) Dispensation of Justice",
+                    "(D) Social Welfare"
+                ],
+                ans: 2
+            },
+            {
+                id: 46,
+                q: "Which Article of the constitution makes provision for the appointment of a law officer the attorney general by the President of India?",
+                options: [
+                    "(A) Article - 42",
+                    "(B) Article - 76",
+                    "(C) Article - 44",
+                    "(D) Article - 153"
+                ],
+                ans: 1
+            },
+            {
+                id: 47,
+                q: "Social contract theory found the support of",
+                options: [
+                    "(A) Morgan",
+                    "(B) Rousseau",
+                    "(C) Sir Henry Maine",
+                    "(D) Adam Smith"
+                ],
+                ans: 1
+            },
+            {
+                id: 48,
+                q: "Judicial review is an important contribution of",
+                options: [
+                    "(A) UK",
+                    "(B) USA",
+                    "(C) Germany",
+                    "(D) USSR"
+                ],
+                ans: 1
+            },
+            {
+                id: 49,
+                q: "Match the following and answer by using the codes : (a) Article 370 — 1. Legislative assembly (b) Article 153 — 2. Chief Minister (c) Article 163 — 3. Jammu and Kashmir (d) Article 170 — 4. Governor",
+                options: [
+                    "(A) (a)-1, (b)-4, (c)-2, (d)-3",
+                    "(B) (a)-3, (b)-1, (c)-4, (d)-2",
+                    "(C) (a)-2, (b)-4, (c)-1, (d)-3",
+                    "(D) (a)-3, (b)-4, (c)-2, (d)-1"
+                ],
+                ans: 3
+            },
+            {
+                id: 50,
+                q: "The Balwantrai Mehta committee was appointed in",
+                options: [
+                    "(A) 1975",
+                    "(B) 1956",
+                    "(C) 1950",
+                    "(D) 1992"
+                ],
+                ans: 1
+            },
+            {
+                id: 51,
+                q: "Which Industrial policy restructured the public sector and encouraged private participation in the economy?",
+                options: [
+                    "(A) 1817",
+                    "(B) 1960",
+                    "(C) 1990",
+                    "(D) 1991"
+                ],
+                ans: 3
+            },
+            {
+                id: 52,
+                q: "The teaching of _______ resulted in the birth of socialist state in Russia and China.",
+                options: [
+                    "(A) J.S. Mill",
+                    "(B) J.A. Schumpeter",
+                    "(C) Karl Marx",
+                    "(D) Arthur Lewis"
+                ],
+                ans: 2
+            },
+            {
+                id: 53,
+                q: "The modern State is a _______ State.",
+                options: [
+                    "(A) City State",
+                    "(B) Feudal State",
+                    "(C) Nation State",
+                    "(D) Welfare State"
+                ],
+                ans: 3
+            },
+            {
+                id: 54,
+                q: "The General Assembly of UNO passed declaration of Human Rights on",
+                options: [
+                    "(A) December 10, 1948",
+                    "(B) October 24, 1945",
+                    "(C) October 24, 1947",
+                    "(D) December 10, 1946"
+                ],
+                ans: 0
+            },
+            {
+                id: 55,
+                q: "Which one of the following statement is correct with regard to the qualification of the Supreme court Judge?",
+                options: [
+                    "(A) He/She must be a citizen of India",
+                    "(B) He/She must have worked at least 5 years as advocate in High court",
+                    "(C) He/She must have worked as advocate in munsiff court",
+                    "(D) He/She must have attained 65 years of age"
+                ],
+                ans: 0
+            },
+            {
+                id: 56,
+                q: "The maximum permissible gap between two sessions of parliament",
+                options: [
+                    "(A) 3 months",
+                    "(B) 4 months",
+                    "(C) 1 year",
+                    "(D) 6 months"
+                ],
+                ans: 3
+            },
+            {
+                id: 57,
+                q: "Match the following : Organisation / Year of establishing: (a) GATT — 1. 1966 (b) WTO — 2. 1945 (c) ADB — 3. 1948 (d) IBRD — 4. 1995",
+                options: [
+                    "(A) (a)-1, (b)-2, (c)-3, (d)-4",
+                    "(B) (a)-4, (b)-3, (c)-2, (d)-1",
+                    "(C) (a)-3, (b)-4, (c)-1, (d)-2",
+                    "(D) (a)-2, (b)-1, (c)-4, (d)-3"
+                ],
+                ans: 2
+            },
+            {
+                id: 58,
+                q: "How many subjects were transferred to concurrent list from state list by the 42nd Amendment Act?",
+                options: [
+                    "(A) 3",
+                    "(B) 4",
+                    "(C) 5",
+                    "(D) 6"
+                ],
+                ans: 2
+            },
+            {
+                id: 59,
+                q: "Who was the Chairman of Official language commission in 1955?",
+                options: [
+                    "(A) K.C. Pant",
+                    "(B) G.B. Pant",
+                    "(C) S.K. Dhar",
+                    "(D) B.G. Kher"
+                ],
+                ans: 3
+            },
+            {
+                id: 60,
+                q: "Match the following Match List I [Fundamental Rights] with List II [Articles of the Indian Constitution] and select the correct code : (a) Right to Equality — 1. Article 19 (b) Right to Freedom — 2. Article 14-18 (c) Right to Freedom of Religion — 3. Article 32 (d) Right to Constitutional Remedies — 4. Article 25",
+                options: [
+                    "(A) (a)-1, (b)-3, (c)-4, (d)-2",
+                    "(B) (a)-2, (b)-1, (c)-4, (d)-3",
+                    "(C) (a)-1, (b)-4, (c)-3, (d)-2",
+                    "(D) (a)-3, (b)-4, (c)-2, (d)-1"
+                ],
+                ans: 1
+            },
+            {
+                id: 61,
+                q: "Match the following : Subject Matter / Parts in India Constitution: (a) Public Service Commissions — 1. XVIII (b) Elections — 2. XIV-A (c) Emergency provisions — 3. XIV (d) Tribunals — 4. XV",
+                options: [
+                    "(A) (a)-1, (b)-2, (c)-3, (d)-4",
+                    "(B) (a)-2, (b)-3, (c)-1, (d)-4",
+                    "(C) (a)-4, (b)-3, (c)-2, (d)-1",
+                    "(D) (a)-3, (b)-4, (c)-1, (d)-2"
+                ],
+                ans: 3
+            },
+            {
+                id: 62,
+                q: "What was the real name of Muhammad Tughluq?",
+                options: [
+                    "(A) Nusrat Khan",
+                    "(B) Jauna Khan",
+                    "(C) Arkali Khan",
+                    "(D) Ulu Khan"
+                ],
+                ans: 1
+            },
+            {
+                id: 63,
+                q: "In which year the agricultural price commission was set up in India?",
+                options: [
+                    "(A) 1962",
+                    "(B) 1963",
+                    "(C) 1964",
+                    "(D) 1965"
+                ],
+                ans: 3
+            },
+            {
+                id: 64,
+                q: "All the expenditure from the consolidated fund in the annual financial statement to be voted by the Lok Sabha are submitted in the form of demand for grants in pursuance of",
+                options: [
+                    "(A) Article 110 of the constitution",
+                    "(B) Article 111 of the constitution",
+                    "(C) Article 112 of the constitution",
+                    "(D) Article 113 of the constitution"
+                ],
+                ans: 3
+            },
+            {
+                id: 65,
+                q: "The famous book, \"Law of the increase of state activities\" was written by",
+                options: [
+                    "(A) R.A. Musgrane",
+                    "(B) Adolph Wagner",
+                    "(C) Prof. Shirras",
+                    "(D) J.R. Hicks"
+                ],
+                ans: 1
+            },
+            {
+                id: 66,
+                q: "Which of the following Article says that \"when the state of emergency is in operation, the parliament can make laws on the state subject\"?",
+                options: [
+                    "(A) Article 249",
+                    "(B) Article 250",
+                    "(C) Article 252",
+                    "(D) Article 253"
+                ],
+                ans: 1
+            },
+            {
+                id: 67,
+                q: "Which one of the following article says about the protection and improvement of environment and to safeguard forests and wild life?",
+                options: [
+                    "(A) Article 39",
+                    "(B) Article 39 A",
+                    "(C) Article 43 A",
+                    "(D) Article 48 A"
+                ],
+                ans: 3
+            },
+            {
+                id: 68,
+                q: "Soli Sorabji committee is related to",
+                options: [
+                    "(A) Reforms in Criminal Law",
+                    "(B) Administrative reforms",
+                    "(C) Military activities in border area",
+                    "(D) Reforms in police law"
+                ],
+                ans: 3
+            },
+            {
+                id: 69,
+                q: "Which of the following Article of the constitution deals with the waters of inter-state rivers and river valleys?",
+                options: [
+                    "(A) Article 260",
+                    "(B) Article 261",
+                    "(C) Article 262",
+                    "(D) Article 263"
+                ],
+                ans: 2
+            },
+            {
+                id: 70,
+                q: "Which of the following Articles empowers the President to make proclamation of emergency if he feels the security of India is threatened by war, external aggression or armed rebellion.",
+                options: [
+                    "(A) Article 352",
+                    "(B) Article 353",
+                    "(C) Article 354",
+                    "(D) Article 355"
+                ],
+                ans: 0
+            },
+            {
+                id: 71,
+                q: "Which of the following article says that all the ministers appointed by the president on the advise of the Prime Minister?",
+                options: [
+                    "(A) Article 53",
+                    "(B) Article 53(1)",
+                    "(C) Article 75(1)",
+                    "(D) Article 74"
+                ],
+                ans: 2
+            },
+            {
+                id: 72,
+                q: "What was the name of the secret society founded by V.D. Savarkar?",
+                options: [
+                    "(A) London society",
+                    "(B) Anusilan Samiti",
+                    "(C) Abhinav Bharat",
+                    "(D) Jugantar"
+                ],
+                ans: 2
+            },
+            {
+                id: 73,
+                q: "As per the directions of Mahatma Gandhi who among the following was the first to launch the individual Satyagraha in 1940?",
+                options: [
+                    "(A) Jawaharlal Nehru",
+                    "(B) Vinoba Bhave",
+                    "(C) Rajagopalachari",
+                    "(D) Jayaprakash Narayan"
+                ],
+                ans: 1
+            },
+            {
+                id: 74,
+                q: "Which year Gandhi-Irwin pact was signed?",
+                options: [
+                    "(A) 1930",
+                    "(B) 1931",
+                    "(C) 1933",
+                    "(D) 1932"
+                ],
+                ans: 1
+            },
+            {
+                id: 75,
+                q: "In which year Dupleix, the French Governor of Chandernagar was promoted as Governor of Pondicherry?",
+                options: [
+                    "(A) 1735",
+                    "(B) 1740",
+                    "(C) 1741",
+                    "(D) 1744"
+                ],
+                ans: 2
+            },
+            {
+                id: 76,
+                q: "Assertion (A) : The Government of India passed a resolution on local self-government in 1918. Reason (R) : There is shortage of good books on the subject of Local self-government.",
+                options: [
+                    "(A) Both (A) and (R) are true (R) explains (A)",
+                    "(B) Both (A) and (R) are true (R) does not explain (A)",
+                    "(C) (A) is true and but (R) is false",
+                    "(D) (A) is false and but (R) is true"
+                ],
+                ans: 1
+            },
+            {
+                id: 77,
+                q: "How many years did The Justice party in Tamilnadu remain in power?",
+                options: [
+                    "(A) 13 years",
+                    "(B) 15 years",
+                    "(C) 11 years",
+                    "(D) 14 years"
+                ],
+                ans: 0
+            },
+            {
+                id: 78,
+                q: "Robert De Nobili changed his name as",
+                options: [
+                    "(A) Christava Thondan",
+                    "(B) Thathuva Podager",
+                    "(C) Christava Margan",
+                    "(D) Veerama Munivar"
+                ],
+                ans: 3
+            },
+            {
+                id: 79,
+                q: "How many phases of Lok Sabha polls conducted on 2019 elections?",
+                options: [
+                    "(A) 4",
+                    "(B) 5",
+                    "(C) 6",
+                    "(D) 7"
+                ],
+                ans: 3
+            },
+            {
+                id: 80,
+                q: "Which of the following amendment included the four languages \"Bodo, Dogri, Maithili and Santhali in the Indian Constitution?",
+                options: [
+                    "(A) 75th Amendment Act",
+                    "(B) 78th Amendment Act",
+                    "(C) 84th Amendment Act",
+                    "(D) 92nd Amendment Act"
+                ],
+                ans: 3
+            },
+            {
+                id: 81,
+                q: "Assertion (A): India is a sovereign democratic republic. Reason (R): The constitution of India strives to bring about a happy marriage between British Parliamentary System and US presidential system.",
+                options: [
+                    "(A) Both (A) and (R) are true and (R) is the correct explanation of (A)",
+                    "(B) Both (A) and (R) are true but (R) is not the correct explanation of (A)",
+                    "(C) (A) is true but (R) is false",
+                    "(D) (A) is false, but (R) is true"
+                ],
+                ans: 0
+            },
+            {
+                id: 82,
+                q: "In which amendment the words \"internal disturbance\" was omitted and 'armed rebellion' was substituted in the Article 352?",
+                options: [
+                    "(A) 44th Amendment",
+                    "(B) 45th Amendment",
+                    "(C) 62nd Amendment",
+                    "(D) 69th Amendment"
+                ],
+                ans: 0
+            },
+            {
+                id: 83,
+                q: "Name the chairman of the States Committee of Constituent Assembly",
+                options: [
+                    "(A) Dr. Rajendra Prasad",
+                    "(B) Dr. K.M. Munshi",
+                    "(C) Dr. B.R. Ambedkar",
+                    "(D) Jawaharlal Nehru"
+                ],
+                ans: 3
+            },
+            {
+                id: 84,
+                q: "Match the following : (a) The Factories Act — 1. 1961 (b) The Apprentice Act — 2. 1948 (c) The Beedi and Cigar workers (Conditions of Employment) Act — 3. 1986 (d) Child Labour (Protection) Act — 4. 1966",
+                options: [
+                    "(A) (a)-3, (b)-1, (c)-2, (d)-4",
+                    "(B) (a)-2, (b)-1, (c)-3, (d)-4",
+                    "(C) (a)-2, (b)-1, (c)-4, (d)-3",
+                    "(D) (a)-1, (b)-3, (c)-2, (d)-4"
+                ],
+                ans: 2
+            },
+            {
+                id: 85,
+                q: "Match the key words in the preamble of the Indian Constitution with their meanings : (a) Sovereign — 1. Opportunities for the development of individual personalities (b) Republic — 2. No discrimination on the basis of colour, caste, sex, religion etc (c) Liberty — 3. Head of the state is elected directly or indirectly by the people (d) Equality — 4. No Supreme authority above it",
+                options: [
+                    "(A) (a)-4, (b)-3, (c)-1, (d)-2",
+                    "(B) (a)-3, (b)-2, (c)-4, (d)-1",
+                    "(C) (a)-2, (b)-1, (c)-3, (d)-4",
+                    "(D) (a)-1, (b)-4, (c)-2, (d)-3"
+                ],
+                ans: 0
+            },
+            {
+                id: 86,
+                q: "Articles 5-9 of Part-II of Indian Constitution relating to Citizenship came into force from",
+                options: [
+                    "(A) January 26, 1950",
+                    "(B) August 15, 1947",
+                    "(C) November 26, 1949",
+                    "(D) January 26, 1955"
+                ],
+                ans: 2
+            },
+            {
+                id: 87,
+                q: "Point out the incorrect statement in the following :",
+                options: [
+                    "(A) The Comptroller and Auditor General of India is a Constitutional Authority",
+                    "(B) The Comptroller and Auditor General of India does not audit the accounts of State Governments",
+                    "(C) The Comptroller and Auditor General of India is the head of the Indian Audit and Accounts Department",
+                    "(D) He is the external auditor of Government - Owned Companies"
+                ],
+                ans: 1
+            },
+            {
+                id: 88,
+                q: "Article 124(2) of the Indian Constitution explains the appointment of",
+                options: [
+                    "(A) The Prime Minister",
+                    "(B) The Council of Ministers",
+                    "(C) The Governor",
+                    "(D) Judge of the Supreme Court"
+                ],
+                ans: 3
+            },
+            {
+                id: 89,
+                q: "Which regulation declared the practice of Sati as illegal and punishable?",
+                options: [
+                    "(A) Regulation No. XVII of December 1829",
+                    "(B) Regulation No. XVI of December 1829",
+                    "(C) Regulation No. XV of December 1829",
+                    "(D) Regulation No. XIV of December 1829"
+                ],
+                ans: 0
+            },
+            {
+                id: 90,
+                q: "Which one of the following formed the basis of the Preamble of the Indian Constitution adopted on 17, October, 1949?",
+                options: [
+                    "(A) \"Objective Resolutions\" moved by Jawaharlal Nehru in the Constitutional Assembly",
+                    "(B) Swarajya Declaration of B.G. Tilak",
+                    "(C) Gandhiji's RamRajya",
+                    "(D) Directive Principles of State Policy"
+                ],
+                ans: 0
+            },
+            {
+                id: 91,
+                q: "The objective of Swa-Shakti Project is",
+                options: [
+                    "(A) Socio-economic development of Women",
+                    "(B) Training to women",
+                    "(C) Financial Assistance to Old persons",
+                    "(D) Provide rights to Women"
+                ],
+                ans: 0
+            },
+            {
+                id: 92,
+                q: "P.C. Hota Committee is associated with",
+                options: [
+                    "(A) Civil Services Recruitment",
+                    "(B) Civil Services Transfer",
+                    "(C) Civil Services Reform",
+                    "(D) Privatisation of Civil Services"
+                ],
+                ans: 2
+            },
+            {
+                id: 93,
+                q: "Which one of the following statement is correct about the nature of High courts in India?",
+                options: [
+                    "(A) Assam High Court has been made a common high court for Assam, Nagaland, Tripura, Manipur etc",
+                    "(B) The Jurisdiction of a High Court is not coterminus with the territory of a state",
+                    "(C) Article 224 defines the meaning of High Court",
+                    "(D) President is empowered to establish a common High Court"
+                ],
+                ans: 0
+            },
+            {
+                id: 94,
+                q: "Who decides the disputes relating to the election of Vice-President?",
+                options: [
+                    "(A) The President",
+                    "(B) The Parliament",
+                    "(C) The Supreme Court",
+                    "(D) The Election Commission"
+                ],
+                ans: 2
+            },
+            {
+                id: 95,
+                q: "Which Article ensures the independence of Indian Election Commission?",
+                options: [
+                    "(A) 322",
+                    "(B) 320",
+                    "(C) 324",
+                    "(D) 330"
+                ],
+                ans: 2
+            },
+            {
+                id: 96,
+                q: "Match the following : (a) Municipal Corporation in Madras — 1. 1726 (b) Municipal Corporation in Bombay — 2. 1882 (c) Lord Rippon Resolution — 3. 1687 (d) Lord Mayo's resolution — 4. 1870",
+                options: [
+                    "(A) (a)-3, (b)-2, (c)-1, (d)-4",
+                    "(B) (a)-1, (b)-2, (c)-3, (d)-4",
+                    "(C) (a)-3, (b)-1, (c)-2, (d)-4",
+                    "(D) (a)-4, (b)-3, (c)-1, (d)-2"
+                ],
+                ans: 2
+            },
+            {
+                id: 97,
+                q: "Art 47 is associated with",
+                options: [
+                    "(A) Raising the level of nutrition and the standard of living",
+                    "(B) Raise the level of education",
+                    "(C) Raise the growth of industries",
+                    "(D) Raise the agricultural works"
+                ],
+                ans: 0
+            },
+            {
+                id: 98,
+                q: "Assertion (A): Court cannot direct legislature to enact a particular kind of law. Reason (R): Legislation is the exclusive rights of the Legislatures.",
+                options: [
+                    "(A) Both (A) and (R) are true and (R) is the correct explanation of (A)",
+                    "(B) Both (A) and (R) are true but (R) is not a correct explanation of (A)",
+                    "(C) (A) is true but (R) is false",
+                    "(D) (A) is false but (R) is true"
+                ],
+                ans: 0
+            },
+            {
+                id: 99,
+                q: "Which one of the following is exclusively different from others?",
+                options: [
+                    "(A) Article 352",
+                    "(B) Article 356",
+                    "(C) Article 360",
+                    "(D) Article 370"
+                ],
+                ans: 3
+            },
+            {
+                id: 100,
+                q: "Mandal Commission was established in India by which Government?",
+                options: [
+                    "(A) National Front Govt. (during V.P. Singh as P.M.)",
+                    "(B) Congress Party Govt. (during Rajiv Gandhi as P.M.)",
+                    "(C) BJP Govt. (during Vajpayee as P.M.)",
+                    "(D) Janata Party Govt. (during Morarji Desai as P.M.)"
+                ],
+                ans: 3
+            },
+            {
+                id: 101,
+                q: "The salaries of the judges of Supreme Court are charged upon the",
+                options: [
+                    "(A) Consolidated Fund of India and not votable",
+                    "(B) Contingency Fund of India and not votable",
+                    "(C) Contingency Fund of India and votable",
+                    "(D) Consolidated Fund of India and votable"
+                ],
+                ans: 0
+            },
+            {
+                id: 102,
+                q: "\"Lone fox dancing\" is the autobiography of a well known Indian writer namely",
+                options: [
+                    "(A) Nirad C Chaudhary",
+                    "(B) Mahesh Dattani",
+                    "(C) Anita Desai",
+                    "(D) Ruskin Bond"
+                ],
+                ans: 3
+            },
+            {
+                id: 103,
+                q: "Identify the Indian who has been appointed to the fifth and last seat of the International court of Justice.",
+                options: [
+                    "(A) Dalveer Bhandari",
+                    "(B) Krishnan Sitaraman",
+                    "(C) Amarnath Menon",
+                    "(D) Lalith Ahuja"
+                ],
+                ans: 0
+            },
+            {
+                id: 104,
+                q: "The authority to declare war or peace under the Indian Constitution is vested in",
+                options: [
+                    "(A) The Prime Minister",
+                    "(B) The Defence Minister",
+                    "(C) The Parliament",
+                    "(D) The President"
+                ],
+                ans: 3
+            },
+            {
+                id: 105,
+                q: "There is no reservation for the following in the local government election.",
+                options: [
+                    "(A) Scheduled Castes",
+                    "(B) Scheduled Tribes",
+                    "(C) Other backward classes",
+                    "(D) Women"
+                ],
+                ans: 2
+            },
+            {
+                id: 106,
+                q: "A President's rule can be imposed in a state under the provisions of Article - 356, Article - 360, Article - 352, Article - 365",
+                options: [
+                    "(A) 1 only",
+                    "(B) 1 and 3 only",
+                    "(C) 1 and 4 only",
+                    "(D) 1 and 2 only"
+                ],
+                ans: 2
+            },
+            {
+                id: 107,
+                q: "Which one of the following article states that \"All the ministers are to be appointed by the President on the advise of the Prime Minister\"?",
+                options: [
+                    "(A) Article 70",
+                    "(B) Article 72 (A)",
+                    "(C) Article 73",
+                    "(D) Article 75 (1)"
+                ],
+                ans: 3
+            },
+            {
+                id: 108,
+                q: "The conditions of service of members of All India Services are determined by",
+                options: [
+                    "(A) President of India",
+                    "(B) Constitution of India",
+                    "(C) Parliament of India",
+                    "(D) UPSC"
+                ],
+                ans: 2
+            },
+            {
+                id: 109,
+                q: "The responsibility of the Prime Minister and Cabinet to the Lok Sabha is",
+                options: [
+                    "(A) intermittent",
+                    "(B) indirect",
+                    "(C) at the time of elections",
+                    "(D) direct, continuous and collective"
+                ],
+                ans: 3
+            },
+            {
+                id: 110,
+                q: "The consumer protection Act of 1986 provides for the establishment Consumer Protection Council at",
+                options: [
+                    "(A) National level only",
+                    "(B) State level only",
+                    "(C) National and State levels only",
+                    "(D) National, State and District levels only"
+                ],
+                ans: 3
+            },
+            {
+                id: 111,
+                q: "When was the African Union founded?",
+                options: [
+                    "(A) 1992",
+                    "(B) 2002",
+                    "(C) 2004",
+                    "(D) 2006"
+                ],
+                ans: 1
+            },
+            {
+                id: 112,
+                q: "Who is the 15th Attorney General of India?",
+                options: [
+                    "(A) K.K. Venugopal",
+                    "(B) Mukul Rohatgi",
+                    "(C) Shashi Kant Sharma",
+                    "(D) K.K. Sharma"
+                ],
+                ans: 0
+            },
+            {
+                id: 113,
+                q: "The LPG model of development was introduced by",
+                options: [
+                    "(A) P. Chidambaram",
+                    "(B) Dr. Manmohan Singh",
+                    "(C) V.P. Singh",
+                    "(D) Jaswanth Singh"
+                ],
+                ans: 1
+            },
+            {
+                id: 114,
+                q: "The Union Territory of Delhi was renamed as the National Capital Territory of Delhi through",
+                options: [
+                    "(A) 67th Amendment",
+                    "(B) 66th Amendment",
+                    "(C) 69th Amendment",
+                    "(D) 68th Amendment"
+                ],
+                ans: 2
+            },
+            {
+                id: 115,
+                q: "A comprehensive law dealing with citizenship was passed in the Indian Parliament in the year",
+                options: [
+                    "(A) 1967",
+                    "(B) 1991",
+                    "(C) 1955",
+                    "(D) 1993"
+                ],
+                ans: 2
+            },
+            {
+                id: 116,
+                q: "In Indian Constitution which part states about the special provision to protect the interests of the Anglo-Indian community?",
+                options: [
+                    "(A) Part-XIII",
+                    "(B) Part-XIV",
+                    "(C) Part-XV",
+                    "(D) Part-XVI"
+                ],
+                ans: 3
+            },
+            {
+                id: 117,
+                q: "The Indian federation is based on the pattern of",
+                options: [
+                    "(A) Switzerland",
+                    "(B) USA",
+                    "(C) Russia",
+                    "(D) Canada"
+                ],
+                ans: 3
+            },
+            {
+                id: 118,
+                q: "In which year the Control Vigilance Commission was enacted by the Parliament as a statutory body?",
+                options: [
+                    "(A) 2002",
+                    "(B) 2003",
+                    "(C) 2005",
+                    "(D) 2006"
+                ],
+                ans: 1
+            },
+            {
+                id: 119,
+                q: "Which of the following is not true with regard to the Council of Ministers in India? 1. Ministers belong to the House of the People. 2. Finance Minister has to be from the Council of States. 3. Ministers keeps secrecy of the proceedings of the cabinet. 4. Ministers are collectively responsible to the House of People.",
+                options: [
+                    "(A) 1 and 2",
+                    "(B) 2 and 3",
+                    "(C) 3 and 4",
+                    "(D) 1 and 4"
+                ],
+                ans: 0
+            },
+            {
+                id: 120,
+                q: "The first UDAN flight started was flagged by Prime Minister from",
+                options: [
+                    "(A) Shimla",
+                    "(B) Amritsar",
+                    "(C) Kulu",
+                    "(D) Manali"
+                ],
+                ans: 0
+            },
+            {
+                id: 121,
+                q: "The cedar tree is the national emblem of which of the following countries?",
+                options: [
+                    "(A) Lebanon",
+                    "(B) Pakistan",
+                    "(C) Brunei",
+                    "(D) Bangkok"
+                ],
+                ans: 0
+            },
+            {
+                id: 122,
+                q: "The Pradhan Mantri Gram Sinchai Yojana is",
+                options: [
+                    "(A) to increase agricultural productivity",
+                    "(B) subsidy on LPG cylinders",
+                    "(C) to develop villages on health and sanitation",
+                    "(D) avail quality medicines at affordable prices"
+                ],
+                ans: 0
+            },
+            {
+                id: 123,
+                q: "Match the following and choose the correct option : (a) Gogamukh — 1. All India Institute of Medical Sciences (b) Changsari — 2. Oil terminal (c) Bhilar — 3. Indian Agricultural Research Institute (d) Motihari — 4. Book village",
+                options: [
+                    "(A) (a)-2, (b)-1, (c)-4, (d)-3",
+                    "(B) (a)-3, (b)-4, (c)-1, (d)-2",
+                    "(C) (a)-3, (b)-1, (c)-4, (d)-2",
+                    "(D) (a)-4, (b)-3, (c)-1, (d)-2"
+                ],
+                ans: 2
+            },
+            {
+                id: 124,
+                q: "In which year provincial autonomy was introduced?",
+                options: [
+                    "(A) 1919",
+                    "(B) 1935",
+                    "(C) 1947",
+                    "(D) 1950"
+                ],
+                ans: 1
+            },
+            {
+                id: 125,
+                q: "Consider the following statements regarding Attorney-General of India : 1. He advises the government of India on legal matters. 2. He is the chief law officer of the government. 3. Under Article 76 of the constitution he has to resign when the government was changed. 4. He has the right to speak and take part in the proceedings of either house of parliament without a right to vote. Which of the statements given above is/are not correct?",
+                options: [
+                    "(A) 3 only",
+                    "(B) 4 only",
+                    "(C) 1 and 3 only",
+                    "(D) 1 and 4 only"
+                ],
+                ans: 2
+            },
+            {
+                id: 126,
+                q: "What is the major change made in the Indian Parliament during budget session of 1992-93?",
+                options: [
+                    "(A) Introduction of G.S.T. Bill",
+                    "(B) Introduction of New committee system consisting of Rajya Sabha and Lok Sabha members",
+                    "(C) Introduction of Joint Parliament System",
+                    "(D) Introduction of Anti-Defection Bill"
+                ],
+                ans: 1
+            },
+            {
+                id: 127,
+                q: "Which one of the following case was not related to the Parliamentary Powers to amending the constitution?",
+                options: [
+                    "(A) Golaknath Vs State of Punjab",
+                    "(B) Keshavanandha Bharathi Vs State of Kerala",
+                    "(C) Shankari Prasad Vs Union of India",
+                    "(D) S.P. Gupta's Vs President of India"
+                ],
+                ans: 3
+            },
+            {
+                id: 128,
+                q: "The Article provides for the abolition and creation of second chambers in the state",
+                options: [
+                    "(A) Article 196",
+                    "(B) Article 169",
+                    "(C) Article 161",
+                    "(D) Article 191"
+                ],
+                ans: 1
+            },
+            {
+                id: 129,
+                q: "Which of the following was not inserted to the constitution of India through First Constitution Amendment Act 1951?",
+                options: [
+                    "(A) A new clause i.e clause 4 added in Article 15",
+                    "(B) After Article 31, Article 31A and 31 B were inserted",
+                    "(C) Entry 33 of the concurrent list was substituted by a new one",
+                    "(D) A Ninth schedule was added to the constitution"
+                ],
+                ans: 2
+            },
+            {
+                id: 130,
+                q: "The Amendment associated with \"To Curb President's Power\".",
+                options: [
+                    "(A) Forty Fourth Constitutional Amendment Act",
+                    "(B) Forty Second Constitutional Amendment Act",
+                    "(C) Twenty Sixth Constitutional Amendment Act",
+                    "(D) Forty Sixth Constitutional Amendment Act"
+                ],
+                ans: 1
+            },
+            {
+                id: 131,
+                q: "The Commission to investigate the allegations of large scale sexual abuse, rapes and murders of children in Nithari (NOIDA) was",
+                options: [
+                    "(A) Phukan Commission",
+                    "(B) K.K. Gupta Commission",
+                    "(C) Manjula Krishnan Commission",
+                    "(D) Justice Bellure.N. Sri Krishna Commission"
+                ],
+                ans: 2
+            },
+            {
+                id: 132,
+                q: "Whether any criminal proceedings what so ever can be instituted against President of India?",
+                options: [
+                    "(A) Yes, but prior approval is necessary",
+                    "(B) No, it is not at all possible",
+                    "(C) A civil suit can be instituted along with criminal suit",
+                    "(D) A civil suit can be instituted only before or after entering upon his/her office"
+                ],
+                ans: 1
+            },
+            {
+                id: 133,
+                q: "Which of the following statements, regarding National Human Rights Commission, are correct? I. The Chairperson and other members shall be appointed by the President by warrant under his hand and seal II. There shall be a Secretary General who shall be the Chief Executive Officer of the Commission III. Chief Justice of India shall be a Ex. Office member in the Committee for recommending Chairperson and other members IV. No member shall hold office after he/she has attained the age of 70 years",
+                options: [
+                    "(A) All are correct",
+                    "(B) Only I, II and III are correct",
+                    "(C) Only I, II and IV are correct",
+                    "(D) Only II, III and IV are correct"
+                ],
+                ans: 2
+            },
+            {
+                id: 134,
+                q: "On which date the objectives Resolutions was adopted by the Constituent Assembly?",
+                options: [
+                    "(A) January 22nd 1947",
+                    "(B) November 26th 1949",
+                    "(C) January 26th 1950",
+                    "(D) January 22nd 1950"
+                ],
+                ans: 0
+            },
+            {
+                id: 135,
+                q: "Assertion (A): Under the constitution, the Chief Minister holds office till the pleasure of the Governor. Reason (R): The Chief Minster is appointed by the Governor.",
+                options: [
+                    "(A) Both (A) and (R) are true and (R) is the correct explanation of (A).",
+                    "(B) Both (A) and (R) are true but (R) is not a correct explanation of (A).",
+                    "(C) (A) is true but (R) is false.",
+                    "(D) (A) is false but (R) is true."
+                ],
+                ans: 0
+            },
+            {
+                id: 136,
+                q: "The budget is presented in the House of the people",
+                options: [
+                    "(A) by the President",
+                    "(B) by the Prime Minister",
+                    "(C) by the Finance Minister",
+                    "(D) by the Finance Secretary"
+                ],
+                ans: 2
+            },
+            {
+                id: 137,
+                q: "Which of the following states was the first to introduce the Panchayat Raj System?",
+                options: [
+                    "(A) Tamilnadu",
+                    "(B) West Bengal",
+                    "(C) Rajasthan",
+                    "(D) Uttar Pradesh"
+                ],
+                ans: 2
+            },
+            {
+                id: 138,
+                q: "Which part of the Indian Constitution deals with the Union Territory?",
+                options: [
+                    "(A) Part - VI",
+                    "(B) Part - VII",
+                    "(C) Part - VIII",
+                    "(D) Part - IX"
+                ],
+                ans: 2
+            },
+            {
+                id: 139,
+                q: "Right to vote and to be elected in India is a",
+                options: [
+                    "(A) Fundamental Right",
+                    "(B) Constitutional Right",
+                    "(C) Natural Right",
+                    "(D) Legal Right"
+                ],
+                ans: 1
+            },
+            {
+                id: 140,
+                q: "Which mission was sent to India in 1946 that comprised of Lord Pethick Lawrence, Sir Stafford Cripps and A.V. Alexander?",
+                options: [
+                    "(A) Cabinet Mission",
+                    "(B) Cripps Mission",
+                    "(C) Simon Commission",
+                    "(D) Chelmsford Mission"
+                ],
+                ans: 0
+            },
+            {
+                id: 141,
+                q: "Which year the National Mental Health Programme was started in India?",
+                options: [
+                    "(A) 1980",
+                    "(B) 1981",
+                    "(C) 1982",
+                    "(D) 1983"
+                ],
+                ans: 2
+            },
+            {
+                id: 142,
+                q: "The words 'secular', 'socialist' and 'integrity' were added in which of the following amendents?",
+                options: [
+                    "(A) 42nd Amendment",
+                    "(B) 44th Amendment",
+                    "(C) 46th Amendment",
+                    "(D) 52nd Amendment"
+                ],
+                ans: 0
+            },
+            {
+                id: 143,
+                q: "Indian Parliament passed the Administrative Tribunal Act in the year",
+                options: [
+                    "(A) 1981",
+                    "(B) 1982",
+                    "(C) 1985",
+                    "(D) 1986"
+                ],
+                ans: 2
+            },
+            {
+                id: 144,
+                q: "Constitutional safeguards to Civil Servants are ensured by",
+                options: [
+                    "(A) Article 310",
+                    "(B) Article 311",
+                    "(C) Article 312",
+                    "(D) Article 315"
+                ],
+                ans: 3
+            },
+            {
+                id: 145,
+                q: "The council of Ministers in a state is collectively responsible to",
+                options: [
+                    "(A) Lok Sabha",
+                    "(B) Rajya Sabha",
+                    "(C) Parliament",
+                    "(D) Legislative Assembly"
+                ],
+                ans: 3
+            },
+            {
+                id: 146,
+                q: "Who of the following decides whether a Bill is a Money Bill?",
+                options: [
+                    "(A) The Finance Minister",
+                    "(B) The Chairman of the Rajya Sabha",
+                    "(C) The President",
+                    "(D) The Speaker of the Lok Sabha"
+                ],
+                ans: 3
+            },
+            {
+                id: 147,
+                q: "Palbinder Kaur Shergill was in news recently for",
+                options: [
+                    "(A) Appointed as Canada's Supreme Court Judge",
+                    "(B) Appointed as Secretary, Department of Economic affairs",
+                    "(C) Appointed as Judge of Supreme Court of India",
+                    "(D) Appointed as Judge of Chennai High Court"
+                ],
+                ans: 0
+            },
+            {
+                id: 148,
+                q: "The first Indian women to be elected to international tribunal for the law of the seas is",
+                options: [
+                    "(A) Seema Malhotra",
+                    "(B) Neeru Chadha",
+                    "(C) Lakshmi Pandit",
+                    "(D) Preet Kaur Gill"
+                ],
+                ans: 1
+            },
+            {
+                id: 149,
+                q: "The idea of Judicial review has been borrowed from the constitution of",
+                options: [
+                    "(A) England",
+                    "(B) Ireland",
+                    "(C) USA",
+                    "(D) France"
+                ],
+                ans: 0
+            },
+            {
+                id: 150,
+                q: "Which articles guarantee cultural and educational rights under the Indian Constitution?",
+                options: [
+                    "(A) Articles 27 and 28",
+                    "(B) Articles 29 and 30",
+                    "(C) Articles 31 and 32",
+                    "(D) Articles 33 and 34"
+                ],
+                ans: 1
+            },
+            {
+                id: 151,
+                q: "All executive action of the state government are done in the name of the",
+                options: [
+                    "(A) Governor",
+                    "(B) Chief Minister",
+                    "(C) Council of Ministers of State",
+                    "(D) Chief justice of State High Court"
+                ],
+                ans: 0
+            },
+            {
+                id: 152,
+                q: "The Attorney-General of India is appointed by whom?",
+                options: [
+                    "(A) The Chief Justice of India",
+                    "(B) The President of India",
+                    "(C) The Prime Minister of India",
+                    "(D) The Parliament of India"
+                ],
+                ans: 1
+            },
+            {
+                id: 153,
+                q: "Which feature of the Indian constitution is referred as \"Magna Carta\" of the Indian people?",
+                options: [
+                    "(A) Directive principles of state policy",
+                    "(B) Fundamental duties",
+                    "(C) Independent judiciary",
+                    "(D) Fundamental rights"
+                ],
+                ans: 3
+            },
+            {
+                id: 154,
+                q: "UNO declared International Women's decade as",
+                options: [
+                    "(A) 1976 – 1985",
+                    "(B) 1986 – 1996",
+                    "(C) 1996 – 2006",
+                    "(D) 2006 – 2016"
+                ],
+                ans: 0
+            },
+            {
+                id: 155,
+                q: "The National Commission for women was set up in",
+                options: [
+                    "(A) 1992",
+                    "(B) 1994",
+                    "(C) 1996",
+                    "(D) 1998"
+                ],
+                ans: 0
+            },
+            {
+                id: 156,
+                q: "The 42nd Amendment of the Constitution added a new part to the constitution - Part IV-A relating to",
+                options: [
+                    "(A) Fundamental rights",
+                    "(B) Directive principles of state policy",
+                    "(C) Fundamental duties",
+                    "(D) Citizenship"
+                ],
+                ans: 2
+            },
+            {
+                id: 157,
+                q: "Which body was constituted under Article 315 of the Indian Constitution?",
+                options: [
+                    "(A) Finance Commission",
+                    "(B) Election Commission",
+                    "(C) Union Public Service Commission",
+                    "(D) Central Vigilance Commission"
+                ],
+                ans: 2
+            },
+            {
+                id: 158,
+                q: "Eighth Lok Sabha General Elections were held between",
+                options: [
+                    "(A) 23.12.1984 and 27.12.1984",
+                    "(B) 24.12.1984 and 28.12.1984",
+                    "(C) 23.12.1985 and 27.12.1985",
+                    "(D) 24.12.1985 and 25.12.1985"
+                ],
+                ans: 1
+            },
+            {
+                id: 159,
+                q: "Todar Mal was associated with",
+                options: [
+                    "(A) Music",
+                    "(B) Land revenue reforms",
+                    "(C) Literature",
+                    "(D) Law"
+                ],
+                ans: 1
+            },
+            {
+                id: 160,
+                q: "Match List I with List II. Choose the correct answer from the codes given below : (a) Archaeological survey of India — 1. 1972 (b) National Archives of India — 2. 1909 (c) Madras Record Office — 3. 1891 (d) Antiquities and Art Treasures Act — 4. 1861",
+                options: [
+                    "(A) (a)-3, (b)-4, (c)-2, (d)-1",
+                    "(B) (a)-4, (b)-3, (c)-2, (d)-1",
+                    "(C) (a)-2, (b)-3, (c)-4, (d)-1",
+                    "(D) (a)-1, (b)-3, (c)-4, (d)-2"
+                ],
+                ans: 1
+            },
+            {
+                id: 161,
+                q: "Mention the name of the leader who went to London to present the despicable position of the Non-Brahmins before the British parliamentary committee for demanding the necessity of communal representation and died in London.",
+                options: [
+                    "(A) Thiru M.C. Raja",
+                    "(B) Thiru Natesa Mudaliar",
+                    "(C) Thiru T.M. Nair",
+                    "(D) Thiru Pitty Thiyagarayar"
+                ],
+                ans: 2
+            },
+            {
+                id: 162,
+                q: "National policy on Education announcement of free and compulsory education for children upto the age of 14 was based on the recommendations of:",
+                options: [
+                    "(A) University Education Commission",
+                    "(B) Kothari commission",
+                    "(C) Mehrotra committee",
+                    "(D) National Knowledge commission"
+                ],
+                ans: 1
+            },
+            {
+                id: 163,
+                q: "Assertion : Tribunals exist in order to provide simpler, speedier, cheaper and more accessible justice. Reason : Tribunals have limited jurisdiction and their errors are subject to judicial review.",
+                options: [
+                    "(A) Both [A] and [R] are correct and [R] is correct explanation for [A]",
+                    "(B) Both [A] and [R] are correct but [R] is not the correct explanation for [A]",
+                    "(C) [A] is right [R] is wrong",
+                    "(D) [A] is wrong [R] is right"
+                ],
+                ans: 1
+            },
+            {
+                id: 164,
+                q: "Which of the following statements related to the central administrative tribunal are correct? 1. It is a statutory body 2. Its members are drawn from administrative background only 3. It is not bound by the procedure prescribed in the code of civil procedure 4. Its jurisdiction corers the members of All India services as well as central services and central govt. posts 5. It was set up in 1985",
+                options: [
+                    "(A) 2, 3 and 5",
+                    "(B) 1 and 4",
+                    "(C) 1, 3, 4 and 5",
+                    "(D) 2 and 3"
+                ],
+                ans: 2
+            },
+            {
+                id: 165,
+                q: "Who has the authority to endorse that a bill is a money bill?",
+                options: [
+                    "(A) Finance Minister",
+                    "(B) President",
+                    "(C) Finance Commission",
+                    "(D) Speaker"
+                ],
+                ans: 3
+            },
+            {
+                id: 166,
+                q: "Article 370 has given a special status to",
+                options: [
+                    "(A) Sikkim",
+                    "(B) Jammu and Kashmir",
+                    "(C) Nagaland",
+                    "(D) Arunachal Pradesh"
+                ],
+                ans: 1
+            },
+            {
+                id: 167,
+                q: "In which one of the following year was the Supreme Court of India inaugurated?",
+                options: [
+                    "(A) 1947",
+                    "(B) 1950",
+                    "(C) 1951",
+                    "(D) 1956"
+                ],
+                ans: 1
+            },
+            {
+                id: 168,
+                q: "The object of the adjournment motion in parliament is to",
+                options: [
+                    "(A) Topple the government",
+                    "(B) Collect information from Ministers",
+                    "(C) Make a cut in the budget proposals",
+                    "(D) A definite matter of urgent public importance can be brought before the House"
+                ],
+                ans: 3
+            },
+            {
+                id: 169,
+                q: "Who headed the Chairmanship of Official Language Commission in the year 1955?",
+                options: [
+                    "(A) Abul Kalam Azad",
+                    "(B) B.G. Kher",
+                    "(C) Syama Prasad Mukherji",
+                    "(D) Ayyangar"
+                ],
+                ans: 1
+            },
+            {
+                id: 170,
+                q: "Match List - I with List - II : Personalities / States: (a) Virandra Patil — 1. West Bengal (b) Ajay Mukherji — 2. Orissa (c) Sardar Gurnam Singh — 3. Karnataka (d) R.N. Singh Deo — 4. Punjab",
+                options: [
+                    "(A) (a)-1, (b)-3, (c)-2, (d)-4",
+                    "(B) (a)-3, (b)-1, (c)-4, (d)-2",
+                    "(C) (a)-2, (b)-4, (c)-3, (d)-1",
+                    "(D) (a)-4, (b)-2, (c)-1, (d)-3"
+                ],
+                ans: 1
+            },
+            {
+                id: 171,
+                q: "101st Constitutional Amendment Act refers to",
+                options: [
+                    "(A) Extending reservation for SC & ST",
+                    "(B) National Judicial Appointment Commission",
+                    "(C) National Commission for BC",
+                    "(D) Goods and Services Tax"
+                ],
+                ans: 3
+            },
+            {
+                id: 172,
+                q: "Give the correct chronological order : Gandhi-Irwin pact, Bengal Division, Surat Split, Simon Commission",
+                options: [
+                    "(A) 2, 3, 4, 1",
+                    "(B) 3, 1, 2, 4",
+                    "(C) 3, 2, 1, 4",
+                    "(D) 1, 3, 4, 2"
+                ],
+                ans: 0
+            },
+            {
+                id: 173,
+                q: "Match the following : (a) Hazari Report — 1. To inquire the working of licensing system in India (b) Subimal committee — 2. Reviewed the working of Industrial licensing under Industries (D and R) Act 1951 (c) Rangarajan committee 1993 — 3. Problems of untimely and inadequate credit availabilities to SSIs (d) Nayek committee 1991 — 4. Disinvestment of shares in PSEs",
+                options: [
+                    "(A) (a)-4, (b)-2, (c)-3, (d)-1",
+                    "(B) (a)-1, (b)-3, (c)-2, (d)-4",
+                    "(C) (a)-2, (b)-1, (c)-3, (d)-4",
+                    "(D) (a)-2, (b)-1, (c)-4, (d)-3"
+                ],
+                ans: 3
+            },
+            {
+                id: 174,
+                q: "Match List I with List II correctly and select your answer using the codes given below : List I / List II (Art. of the constitution of India): (a) Finance commission — 1. 148 (b) Union Public Service Commission — 2. 280 (c) Election commission — 3. 315 (d) Comptroller and Auditor General of India — 4. 324",
+                options: [
+                    "(A) (a)-4, (b)-1, (c)-2, (d)-3",
+                    "(B) (a)-2, (b)-3, (c)-4, (d)-1",
+                    "(C) (a)-4, (b)-3, (c)-2, (d)-1",
+                    "(D) (a)-2, (b)-1, (c)-4, (d)-3"
+                ],
+                ans: 1
+            },
+            {
+                id: 175,
+                q: "Art 338 of the Indian constitution has provided for the establishment of which of the following commission?",
+                options: [
+                    "(A) National Minorities Commission",
+                    "(B) National Commission for scheduled castes and scheduled tribes",
+                    "(C) National Commission for women",
+                    "(D) National Commission on the review of the working of the constitution"
+                ],
+                ans: 1
+            },
+            {
+                id: 176,
+                q: "District administration and the office of District collector were introduced in India in the year of",
+                options: [
+                    "(A) 1857",
+                    "(B) 1772",
+                    "(C) 1992",
+                    "(D) 1919"
+                ],
+                ans: 1
+            },
+            {
+                id: 177,
+                q: "The Right to Information Act came into force fully on",
+                options: [
+                    "(A) 12th June 2005",
+                    "(B) 15th June 2005",
+                    "(C) 12th October 2005",
+                    "(D) 15th October 2005"
+                ],
+                ans: 2
+            },
+            {
+                id: 178,
+                q: "The speaker of the Legislative Assembly is",
+                options: [
+                    "(A) Nominated by the Governor",
+                    "(B) Elected by the Legislative Assembly",
+                    "(C) Nominated by the Chief Minister",
+                    "(D) Elected by the people"
+                ],
+                ans: 1
+            },
+            {
+                id: 179,
+                q: "The office of the District Collector in India was created by",
+                options: [
+                    "(A) Lord Cornwallis",
+                    "(B) Lord Warren Hastings",
+                    "(C) Lord Rippon",
+                    "(D) Lord Mayo"
+                ],
+                ans: 1
+            },
+            {
+                id: 180,
+                q: "Article 75 clearly states that the council of Ministers is collectively responsible to",
+                options: [
+                    "(A) Prime Minister",
+                    "(B) President",
+                    "(C) Lok Sabha",
+                    "(D) Rajya Sabha"
+                ],
+                ans: 2
+            },
+            {
+                id: 181,
+                q: "In which General Election Electronic Voting Machines were used in all parliamentary constituencies?",
+                options: [
+                    "(A) 2009 General Elections",
+                    "(B) 2004 General Elections",
+                    "(C) 1996 General Elections",
+                    "(D) 1999 General Elections"
+                ],
+                ans: 1
+            },
+            {
+                id: 182,
+                q: "When the Constitution Act 1992 known as 73rd Amendment came into force",
+                options: [
+                    "(A) October 2, 1992",
+                    "(B) September 16, 1991",
+                    "(C) April 24, 1993",
+                    "(D) April 16, 1994"
+                ],
+                ans: 2
+            },
+            {
+                id: 183,
+                q: "Which one of the following thinkers called the Indian Constitution as extremely federal?",
+                options: [
+                    "(A) Sir Ivory Jennings",
+                    "(B) K.C. Where",
+                    "(C) Paul Appleby",
+                    "(D) Paras Diwan"
+                ],
+                ans: 2
+            },
+            {
+                id: 184,
+                q: "Under which Article can the Governor reserve the bill for the consideration of the President?",
+                options: [
+                    "(A) 199",
+                    "(B) 200",
+                    "(C) 201",
+                    "(D) 202"
+                ],
+                ans: 2
+            },
+            {
+                id: 185,
+                q: "The Chief Election Commissioner of India can be removed from office during his tenure by",
+                options: [
+                    "(A) The Chief Justice of India if some charges are proved against him",
+                    "(B) By the President on the basis of a resolution of the union cabinet",
+                    "(C) By a committee consisting of Chief Justice of India, Law Minister of India and the Vice-President of India",
+                    "(D) By the President on the basis of resolution passed by the parliament by two thirds majority"
+                ],
+                ans: 3
+            },
+            {
+                id: 186,
+                q: "Consider the following statements : The purpose of judicial control over administration is 1. to control the polity and expenditure of the government 2. to ensure the legality of official's acts and thereby to safeguard the rights of the citizens 3. to bring all officials under the control of the people Which of the statements given above is/are correct?",
+                options: [
+                    "(A) 1 only",
+                    "(B) 2 only",
+                    "(C) 2 and 3",
+                    "(D) 3 only"
+                ],
+                ans: 1
+            },
+            {
+                id: 187,
+                q: "Which was the first country to introduce the Right to Information?",
+                options: [
+                    "(A) Canada",
+                    "(B) India",
+                    "(C) Japan",
+                    "(D) Sweden"
+                ],
+                ans: 3
+            },
+            {
+                id: 188,
+                q: "Match List-I with List-II and select the correct answer using the codes given below : (a) Bhagat Singh — 1. Kakori Conspiracy Case (b) Ramprasad Bismil — 2. Chittagong Armoury Raid (c) Udham Singh — 3. Lahore Conspiracy Case (d) Surya Sen — 4. Murder of Michael O'Dyer",
+                options: [
+                    "(A) (a)-4, (b)-1, (c)-2, (d)-3",
+                    "(B) (a)-1, (b)-3, (c)-2, (d)-4",
+                    "(C) (a)-3, (b)-1, (c)-4, (d)-2",
+                    "(D) (a)-3, (b)-2, (c)-4, (d)-1"
+                ],
+                ans: 2
+            },
+            {
+                id: 189,
+                q: "Point out the wrong statement/statements in the following : I. Henry Vivian Derozio started the Asiatic society of Bengal. II. Dayananda Saraswathi started the Shuddhi Movement. III. E.V. Ramasamy started the Self-Respect Movement. IV. Mirza Ghulam Ahmed started the Aligarh Movement.",
+                options: [
+                    "(A) I, II and IV",
+                    "(B) I and IV",
+                    "(C) II, III and IV",
+                    "(D) I and II"
+                ],
+                ans: 1
+            },
+            {
+                id: 190,
+                q: "Match List-I with List-II correctly and select your answer using the codes given below : (a) Subramania Bharathi — 1. Young India (b) Anne Besant — 2. Desabhakthan (c) Mahatma Gandhi — 3. India (d) Thiru.Vi.Ka. — 4. New India",
+                options: [
+                    "(A) (a)-3, (b)-4, (c)-1, (d)-2",
+                    "(B) (a)-4, (b)-1, (c)-3, (d)-2",
+                    "(C) (a)-4, (b)-3, (c)-2, (d)-1",
+                    "(D) (a)-3, (b)-2, (c)-1, (d)-4"
+                ],
+                ans: 0
+            },
+            {
+                id: 191,
+                q: "Who among the following translated Megasthenese Greek work Indika in to English?",
+                options: [
+                    "(A) Shyam Sastri",
+                    "(B) S. Beveridge",
+                    "(C) McCrindle",
+                    "(D) Neelakanda Sastri"
+                ],
+                ans: 2
+            },
+            {
+                id: 192,
+                q: "The governor of the state is appointed by the president, under Article",
+                options: [
+                    "(A) 152",
+                    "(B) 153",
+                    "(C) 154",
+                    "(D) 155"
+                ],
+                ans: 3
+            },
+            {
+                id: 193,
+                q: "Which of the following statements about the Central Vigilance Commission are Correct/True? I. The central vigilance commission was set up in 1964. II. The commission is required to submit an annual report to the ministry Home Affairs about its activity. III. It undertakes enquiry on a public servant involved in corruption.",
+                options: [
+                    "(A) I and II are correct",
+                    "(B) II and III are correct",
+                    "(C) I and III are correct",
+                    "(D) I, II and III are correct"
+                ],
+                ans: 3
+            },
+            {
+                id: 194,
+                q: "The first High Commissioner of the United Nations Human Rights Commission was",
+                options: [
+                    "(A) Jose Ayalalasso",
+                    "(B) Kofi Annan",
+                    "(C) Banki Moon",
+                    "(D) Broutas Ghali"
+                ],
+                ans: 0
+            },
+            {
+                id: 195,
+                q: "Lok Adalat Means",
+                options: [
+                    "(A) People's Court",
+                    "(B) Village Court",
+                    "(C) High Court",
+                    "(D) District Court"
+                ],
+                ans: 0
+            },
+            {
+                id: 196,
+                q: "Which part of the Indian Constitution deals with elections?",
+                options: [
+                    "(A) Part XI",
+                    "(B) Part XV",
+                    "(C) Part XVII",
+                    "(D) Part IV"
+                ],
+                ans: 1
+            }
+        ];
+
+        let activeQuiz = [];
+        let currentIndex = 0;
+        let userAnswers = {};
+        let markedForReview = {};
+        let timerInterval = null;
+        let totalTimeSeconds = 0;
+        let timeRemaining = 0;
+
+        const setupScreen = document.getElementById("setup-screen");
+        const quizScreen = document.getElementById("quiz-screen");
+        const resultScreen = document.getElementById("result-screen");
+        const reviewScreen = document.getElementById("review-screen");
+
+        const modeSelect = document.getElementById("mode-select");
+        const countSelect = document.getElementById("count-select");
+        const customCountWrapper = document.getElementById("custom-count-wrapper");
+        const customCountInput = document.getElementById("custom-count-input");
+        const timePreviewPill = document.getElementById("time-preview-pill");
+        const startBtn = document.getElementById("start-btn");
+
+        const qCounterVal = document.getElementById("q-counter-val");
+        const timerVal = document.getElementById("timer-val");
+        const qBadgeVal = document.getElementById("q-badge-val");
+        const qTextVal = document.getElementById("q-text-val");
+        const optionsContainer = document.getElementById("options-container");
+
+        const prevBtn = document.getElementById("prev-btn");
+        const markBtn = document.getElementById("mark-btn");
+        const nextBtn = document.getElementById("next-btn");
+        const submitBtn = document.getElementById("submit-btn");
+
+        const resScorePct = document.getElementById("res-score-pct");
+        const resPerformanceMsg = document.getElementById("res-performance-msg");
+        const resTotal = document.getElementById("res-total");
+        const resCorrect = document.getElementById("res-correct");
+        const resWrong = document.getElementById("res-wrong");
+        const resUnanswered = document.getElementById("res-unanswered");
+
+        const reviewAnswersBtn = document.getElementById("review-answers-btn");
+        const restartBtn = document.getElementById("restart-btn");
+        const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+        const reviewListContainer = document.getElementById("review-list-container");
+
+        function computeSelectedCount() {
+            if (countSelect.value === "custom") {
+                return Math.max(1, Math.min(183, parseInt(customCountInput.value) || 50));
+            }
+            return parseInt(countSelect.value);
+        }
+
+        function updatePillTime() {
+            const qCount = computeSelectedCount();
+            const totalSec = qCount * 60; // 1 minute per question
+            const mins = Math.floor(totalSec / 60);
+            const secs = totalSec % 60;
+            timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+        }
+
+        countSelect.addEventListener("change", () => {
+            if (countSelect.value === "custom") {
+                customCountWrapper.classList.remove("hidden");
+            } else {
+                customCountWrapper.classList.add("hidden");
+            }
+            updatePillTime();
+        });
+
+        customCountInput.addEventListener("input", updatePillTime);
+
+        startBtn.addEventListener("click", () => {
+            const mode = modeSelect.value;
+            const count = computeSelectedCount();
+
+            if (mode === "practice" || count < 183) {
+                let pool = [...questionBank];
+                for (let i = pool.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [pool[i], pool[j]] = [pool[j], pool[i]];
+                }
+                activeQuiz = pool.slice(0, count);
+            } else {
+                activeQuiz = [...questionBank];
+            }
+
+            totalTimeSeconds = count * 60; // 1 minute per question
+            timeRemaining = totalTimeSeconds;
+
+            userAnswers = {};
+            markedForReview = {};
+            currentIndex = 0;
+
+            setupScreen.classList.add("hidden");
+            resultScreen.classList.add("hidden");
+            reviewScreen.classList.add("hidden");
+            quizScreen.classList.remove("hidden");
+
+            renderQuestion();
+            startTimer();
+        });
+
+        function formatTime(secs) {
+            const h = Math.floor(secs / 3600);
+            const m = Math.floor((secs % 3600) / 60);
+            const s = secs % 60;
+            if (h > 0) {
+                return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+            }
+            return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }
+
+        function startTimer() {
+            if (timerInterval) clearInterval(timerInterval);
+            timerVal.textContent = formatTime(timeRemaining);
+
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    alert("Time's up! Submitting your examination automatically.");
+                    evaluateAndShowResults();
+                }
+            }, 1000);
+        }
+
+        function renderQuestion() {
+            const qData = activeQuiz[currentIndex];
+            const total = activeQuiz.length;
+
+            qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+            qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+            qTextVal.textContent = qData.q;
+
+            if (markedForReview[currentIndex]) {
+                markBtn.classList.add("marked");
+                markBtn.innerHTML = `&#10004; Marked for Review`;
+            } else {
+                markBtn.classList.remove("marked");
+                markBtn.innerHTML = `&#128278; Mark for Review`;
+            }
+
+            optionsContainer.innerHTML = "";
+            qData.options.forEach((optStr, optIdx) => {
+                const itemBtn = document.createElement("button");
+                itemBtn.className = "option-item";
+                if (userAnswers[currentIndex] === optIdx) {
+                    itemBtn.classList.add("selected");
+                }
+
+                const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+                const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+                const content = letterMatch ? letterMatch[2] : optStr;
+
+                itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+                itemBtn.addEventListener("click", () => {
+                    userAnswers[currentIndex] = optIdx;
+                    renderQuestion();
+                });
+
+                optionsContainer.appendChild(itemBtn);
+            });
+
+            prevBtn.disabled = currentIndex === 0;
+
+            if (currentIndex === total - 1) {
+                nextBtn.classList.add("hidden");
+                submitBtn.classList.remove("hidden");
+            } else {
+                nextBtn.classList.remove("hidden");
+                submitBtn.classList.add("hidden");
+            }
+        }
+
+        prevBtn.addEventListener("click", () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderQuestion();
+            }
+        });
+
+        nextBtn.addEventListener("click", () => {
+            if (currentIndex < activeQuiz.length - 1) {
+                currentIndex++;
+                renderQuestion();
+            }
+        });
+
+        markBtn.addEventListener("click", () => {
+            markedForReview[currentIndex] = !markedForReview[currentIndex];
+            renderQuestion();
+        });
+
+        submitBtn.addEventListener("click", () => {
+            if (confirm("Are you sure you want to submit your examination?")) {
+                clearInterval(timerInterval);
+                evaluateAndShowResults();
+            }
+        });
+
+        function evaluateAndShowResults() {
+            let correct = 0;
+            let wrong = 0;
+            let unanswered = 0;
+
+            activeQuiz.forEach((q, idx) => {
+                const selected = userAnswers[idx];
+                if (selected === undefined) {
+                    unanswered++;
+                } else if (selected === q.ans) {
+                    correct++;
+                } else {
+                    wrong++;
+                }
+            });
+
+            const total = activeQuiz.length;
+            const percentage = Math.round((correct / total) * 100);
+
+            resScorePct.textContent = `${percentage}%`;
+            resTotal.textContent = total;
+            resCorrect.textContent = correct;
+            resWrong.textContent = wrong;
+            resUnanswered.textContent = unanswered;
+
+            if (percentage >= 80) {
+                resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Indian Polity & Governance Master Exam.";
+                resPerformanceMsg.style.color = "var(--success)";
+            } else if (percentage >= 60) {
+                resPerformanceMsg.textContent = "Good Result! Review specific articles, constitutional amendments, and INM events.";
+                resPerformanceMsg.style.color = "var(--primary)";
+            } else {
+                resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Indian Polity & Governance recommended.";
+                resPerformanceMsg.style.color = "var(--danger)";
+            }
+
+            quizScreen.classList.add("hidden");
+            resultScreen.classList.remove("hidden");
+        }
+
+        reviewAnswersBtn.addEventListener("click", () => {
+            buildReviewList();
+            resultScreen.classList.add("hidden");
+            reviewScreen.classList.remove("hidden");
+        });
+
+        backToSummaryBtn.addEventListener("click", () => {
+            reviewScreen.classList.add("hidden");
+            resultScreen.classList.add("hidden");
+            setupScreen.classList.remove("hidden");
+        });
+
+        restartBtn.addEventListener("click", () => {
+            resultScreen.classList.add("hidden");
+            setupScreen.classList.remove("hidden");
+        });
+
+        function buildReviewList() {
+            reviewListContainer.innerHTML = "";
+
+            activeQuiz.forEach((q, idx) => {
+                const selected = userAnswers[idx];
+                const isAnswered = selected !== undefined;
+                const isCorrect = selected === q.ans;
+
+                const item = document.createElement("div");
+                item.className = "review-item";
+
+                let badgeClass = "unanswered";
+                let statusText = "Unanswered";
+
+                if (isAnswered) {
+                    if (isCorrect) {
+                        badgeClass = "correct";
+                        statusText = "Correct";
+                        item.classList.add("is-correct");
+                    } else {
+                        badgeClass = "wrong";
+                        statusText = "Wrong";
+                        item.classList.add("is-wrong");
+                    }
+                } else {
+                    item.classList.add("is-unanswered");
+                }
+
+                const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+                const correctText = q.options[q.ans];
+
+                item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+                reviewListContainer.appendChild(item);
+            });
+        }
+
+        updatePillTime();
+    </script>
+</body>
+
+</html>

@@ -981,15 +981,16 @@
         }
       }
 
-      // Re-label options
+      // Re-label options safely
       question.options = newOptions.map((option, i) => {
-        return option.replace(
-          /^[A-D]\)\s*/,
-          `${String.fromCharCode(65 + i)}) `
-        );
+        const cleanText = String(option)
+          .replace(/^[A-D]\)\s*/, "")
+          .trim();
+
+        return `${String.fromCharCode(65 + i)}) ${cleanText}`;
       });
 
-      // Update correct answer
+      // Update correct answer index
       question.ans = targetIndex;
     });
 

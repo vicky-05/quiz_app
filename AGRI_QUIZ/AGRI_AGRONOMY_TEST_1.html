@@ -931,15 +931,16 @@
         }
       }
 
-      // Re-label options
+      // Re-label options safely
       question.options = newOptions.map((option, i) => {
-        return option.replace(
-          /^[A-D]\)\s*/,
-          `${String.fromCharCode(65 + i)}) `
-        );
+        const cleanText = String(option)
+          .replace(/^[A-D]\)\s*/, "")
+          .trim();
+
+        return `${String.fromCharCode(65 + i)}) ${cleanText}`;
       });
 
-      // Update correct answer
+      // Update correct answer index
       question.ans = targetIndex;
     });
 
@@ -987,11 +988,118 @@
     const reviewListContainer = document.getElementById("review-list-container");
 
     function computeSelectedCount() {
+      let count;
+
       if (countSelect.value === "custom") {
-        return Math.max(1, Math.min(150, parseInt(customCountInput.value) || 50));
+        count = parseInt(customCountInput.value, 10);
+
+        if (isNaN(count) || count < 1) {
+          alert("Please enter a valid number of questions.");
+          customCountInput.focus();
+          return null;
+        }
+
+        if (count > questionBank.length) {
+          alert(`Maximum available questions: ${questionBank.length}`);
+          customCountInput.focus();
+          return null;
+        }
+      } else {
+        count = parseInt(countSelect.value, 10);
       }
-      return parseInt(countSelect.value);
+
+      return count;
     }
+
+
+    function updatePillTime() {
+      let qCount;
+
+      if (countSelect.value === "custom") {
+        const entered = parseInt(customCountInput.value, 10);
+
+        if (isNaN(entered) || entered < 1) {
+          timePreviewPill.textContent = "Enter question count";
+          return;
+        }
+
+        qCount = Math.min(entered, questionBank.length);
+      } else {
+        qCount = parseInt(countSelect.value, 10);
+      }
+
+      const totalSec = qCount * 60;
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+
+      timePreviewPill.textContent =
+        `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+        customCountInput.focus();
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+
+      updatePillTime();
+    });
+
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (count === null) {
+        return;
+      }
+
+      /*
+       * STANDARD EXAM MODE
+       * Questions appear sequentially:
+       * Q1 → Q2 → Q3 → ...
+       */
+      if (mode === "exam") {
+        activeQuiz = questionBank.slice(0, count);
+      }
+
+      /*
+       * PRACTICE MODE
+       * Random questions are selected.
+       */
+      else if (mode === "practice") {
+        let pool = [...questionBank];
+
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+
+        activeQuiz = pool.slice(0, count);
+      }
+
+      // Exactly 1 minute per question
+      totalTimeSeconds = count * 60;
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
 
     function updatePillTime() {
       const qCount = computeSelectedCount();

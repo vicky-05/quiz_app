@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tamil Nadu History, Society & Tamil Literature Master Exam (200 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select, .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Tamil Literature & History Master Exam (200 MCQs)</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Tamil Nadu History, Society & Tamil Literature Master Exam (200 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–200)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="200">All Questions (200 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 200)</label>
+          <input type="number" id="custom-count-input" min="1" max="200" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">200 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#128218;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Tamil Lit & History</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#9873;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Questions 1–200</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 200</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">03:20:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "Who is known as the “Reforming Luther of Hinduism”?", options: ["A) Swami Vivekananda", "B) Dayananda Saraswathi", "C) Raja Ram Mohan Roy", "D) Ramakrishna Paramahamsa"], ans: 1 },
+      { id: 2, q: "What is the main theme of the play Neel Darpan?", options: ["A) Plight of plantation workers", "B) Revolt of soldiers", "C) Zamindari system", "D) Religious reform"], ans: 0 },
+      { id: 3, q: "Who first gave the call “Swaraj as India for Indians”?", options: ["A) Bal Gangadhar Tilak", "B) Swami Dayanand Saraswathi", "C) Dadabhai Naoroji", "D) Lala Lajpat Rai"], ans: 1 },
+      { id: 4, q: "Which social reformer represented a synthesis of Eastern and Western thought?", options: ["A) Swami Vivekananda", "B) Raja Ram Mohan Roy", "C) Dayananda Saraswathi", "D) Ishwar Chandra Vidyasagar"], ans: 1 },
+      { id: 5, q: "Who organized the East India Association in London?", options: ["A) Surendranath Banerjee", "B) Dadabhai Naoroji", "C) Gopal Krishna Gokhale", "D) W.C. Bonnerjee"], ans: 1 },
+      { id: 6, q: "Which movement was termed the “Congress Rebellion”?", options: ["A) Swadeshi Movement", "B) Civil Disobedience Movement", "C) Quit India Movement", "D) Non-Cooperation Movement"], ans: 2 },
+      { id: 7, q: "Which award did Gandhi return during the Non-Cooperation Movement?", options: ["A) Bharat Ratna", "B) Kaiser-i-Hind", "C) Victoria Medal", "D) Order of the Star of India"], ans: 1 },
+      { id: 8, q: "Who coined the name “Pakistan” or “Pak-stan”?", options: ["A) Muhammad Ali Jinnah", "B) Liaquat Ali Khan", "C) Choudhry Rahmat Ali", "D) Sir Muhammad Iqbal"], ans: 2 },
+      { id: 9, q: "The slogan “Inquilab Zindabad” became popular through the voice of whom?", options: ["A) Subhas Chandra Bose", "B) Bhagat Singh", "C) Chandrashekhar Azad", "D) Ram Prasad Bismil"], ans: 1 },
+      { id: 10, q: "Who was the first president of the All-India Trade Union Congress?", options: ["A) B.P. Wadia", "B) Lala Lajpat Rai", "C) N.M. Joshi", "D) S.A. Dange"], ans: 1 },
+      { id: 11, q: "Which ideology strengthened the National Movement?", options: ["A) Communal ideology", "B) Secular ideology", "C) Imperial ideology", "D) Feudal ideology"], ans: 1 },
+      { id: 12, q: "Which day was observed on 8 January 1933?", options: ["A) Independence Day", "B) Temple Entry Day", "C) Khadi Day", "D) Satyagraha Day"], ans: 1 },
+      { id: 13, q: "Where was Gandhi when India attained independence on 15 August 1947?", options: ["A) Delhi", "B) Kolkata", "C) Noakhali", "D) Mumbai"], ans: 2 },
+      { id: 14, q: "After Japan surrendered to the Allies during World War II, where did Subhas Chandra Bose go?", options: ["A) Singapore", "B) Rangoon", "C) Taipai in Formosa", "D) Tokyo"], ans: 2 },
+      { id: 15, q: "Who embraced the gallows with the slogan “I wish the downfall of the British Empire”?", options: ["A) Bhagat Singh", "B) Ram Prasad Bismil", "C) Ashfaqulla Khan", "D) Rajendra Lahiri"], ans: 1 },
+      { id: 16, q: "Who was the founder of the Indian Independence League?", options: ["A) Subhas Chandra Bose", "B) Rash Behari Bose", "C) Mohan Singh", "D) Jawaharlal Nehru"], ans: 1 },
+      { id: 17, q: "In which jail was Subhas Chandra Bose imprisoned after his arrest in 1924?", options: ["A) Cellular Jail", "B) Alipore Jail", "C) Mandalay Jail", "D) Vellore Jail"], ans: 2 },
+      { id: 18, q: "Who wrote The Great Tragedy of Indian Partition?", options: ["A) S.S. Sharma", "B) B.R. Ambedkar", "C) Maulana Azad", "D) R.C. Majumdar"], ans: 0 },
+      { id: 19, q: "Who put forward the Fourteen Points Programme in the Muslim League meeting at Delhi?", options: ["A) Muhammad Ali Jinnah", "B) Muhammad Iqbal", "C) Liaquat Ali Khan", "D) Aga Khan"], ans: 0 },
+      { id: 20, q: "In which Major Rock Edict of Ashoka are the Cheras, Cholas and Pandyas mentioned?", options: ["A) II Rock Edict", "B) V Rock Edict", "C) XIII Rock Edict", "D) XIV Rock Edict"], ans: 2 },
+      { id: 21, q: "Which Chola inscription describes village administration?", options: ["A) Thiruvalangadu inscription", "B) Uttaramerur inscription", "C) Leiden inscription", "D) Anbil inscription"], ans: 1 },
+      { id: 22, q: "The term “Yavana Priya” refers to which commodity?", options: ["A) Pearl", "B) Pepper", "C) Silk", "D) Cardamom"], ans: 1 },
+      { id: 23, q: "Padaiyachiyar were a class of:", options: ["A) Merchants", "B) Priests", "C) Militants", "D) Farmers"], ans: 2 },
+      { id: 24, q: "Where were the oldest microlithic relics found in Tamil Nadu according to the source?", options: ["A) Adichanallur", "B) Paiyampalli", "C) Thoothukudi", "D) Keezhadi"], ans: 2 },
+      { id: 25, q: "The six stages of hero-stone worship are mentioned in which literature?", options: ["A) Silappathikaram", "B) Tolkappiyam", "C) Purananuru", "D) Akananuru"], ans: 1 },
+      { id: 26, q: "What does “Alvilai Piramana Isaivu Tittu” mean?", options: ["A) Land revenue document", "B) Sales document of slaves", "C) Marriage agreement", "D) Trade agreement"], ans: 1 },
+      { id: 27, q: "What was considered the foremost virtue of Tamil women?", options: ["A) Courage", "B) Charity", "C) Chastity", "D) Wisdom"], ans: 2 },
+      { id: 28, q: "Where was a Roman factory excavated?", options: ["A) Karur", "B) Arikamedu", "C) Keezhadi", "D) Alagankulam"], ans: 1 },
+      { id: 29, q: "Where were the coins of the Sangam Cholas unearthed by archaeologists?", options: ["A) Karur", "B) Korkai", "C) Arikkamedu", "D) Uraiyur"], ans: 2 },
+      { id: 30, q: "Where is the “Stone Alignment Burial” tradition found in Tamil Nadu according to the source?", options: ["A) Korkai", "B) Adichanallur", "C) Keezhadi", "D) Arikamedu"], ans: 2 },
+      { id: 31, q: "Keezhadi excavation suggests that urbanization in Tamil Nadu began from which century?", options: ["A) 10th century BCE", "B) 8th century BCE", "C) 6th century BCE", "D) 2nd century BCE"], ans: 2 },
+      { id: 32, q: "Who first excavated the Adichchanallur site?", options: ["A) Alexander Rea", "B) Mortimer Wheeler", "C) Andrew Jagor", "D) Robert Bruce Foote"], ans: 2 },
+      { id: 33, q: "What does the word “Sangam” denote?", options: ["A) Religious institution", "B) Assembly of Tamil poets", "C) Royal court", "D) Trade guild"], ans: 1 },
+      { id: 34, q: "What was the name of the script used during the Sangam age?", options: ["A) Grantha", "B) Vatteluttu", "C) Tamil-Brahmi", "D) Kharosthi"], ans: 2 },
+      { id: 35, q: "The Madurai Kaanji describes the people of which ecosystem?", options: ["A) Kurinji", "B) Mullai", "C) Marutham", "D) Neithal"], ans: 2 },
+      { id: 36, q: "Where did Sangam poets categorize their poetry?", options: ["A) Kanchi", "B) Madurai", "C) Uraiyur", "D) Puhar"], ans: 1 },
+      { id: 37, q: "Which foreign account called Muziri the “First Emporium of India”?", options: ["A) Periplus of the Erythraean Sea", "B) Natural History", "C) Indica", "D) Geography"], ans: 1 },
+      { id: 38, q: "Which was a unit of measuring gold during the Sangam age?", options: ["A) Kalanju", "B) Kalam", "C) Ma", "D) Kani"], ans: 0 },
+      { id: 39, q: "How many Naligais were there in a day during the Sangam age?", options: ["A) 30", "B) 48", "C) 60", "D) 72"], ans: 2 },
+      { id: 40, q: "Which was considered a brave entertainment of Sangam society?", options: ["A) Silambam", "B) Erutazhuvuthal", "C) Wrestling", "D) Hunting"], ans: 1 },
+      { id: 41, q: "Which festival was celebrated throughout Tamilaham during the Sangam age?", options: ["A) Pongal", "B) Thiruvathirai", "C) Chithirai", "D) Karthigai"], ans: 1 },
+      { id: 42, q: "High literacy among Tamil people by the 6th century BCE has been indicated by Tamil-Brahmi inscriptions excavated at:", options: ["A) Arikamedu", "B) Keezhadi", "C) Korkai", "D) Alagankulam"], ans: 1 },
+      { id: 43, q: "The Kharosthi script was derived from:", options: ["A) Brahmi", "B) Greek", "C) Aramaic", "D) Persian"], ans: 2 },
+      { id: 44, q: "When did Malayalam become a separate language according to the source?", options: ["A) 7th century", "B) 9th century", "C) 11th century", "D) 13th century"], ans: 2 },
+      { id: 45, q: "The Pallavan Kovil Plates explain about which religious order?", options: ["A) Digambara Jaina Order", "B) Buddhist Order", "C) Saiva Order", "D) Vaishnava Order"], ans: 0 },
+      { id: 46, q: "Which war marked a turning point in the career of Karikalan?", options: ["A) Talaiyalanganam War", "B) Venni War", "C) Battle of Kannanur", "D) Battle of Puhar"], ans: 1 },
+      { id: 47, q: "Who mentioned the Andhra origin of the Pallavas?", options: ["A) R. Sathianathaier", "B) K.A. Nilakanta Sastri", "C) V. Kanakasabhai", "D) S. Krishnaswami Aiyangar"], ans: 1 },
+      { id: 48, q: "What was the term used for the event in which Kopperundevi died immediately after her husband Nedunjelian?", options: ["A) Kaikilai", "B) Arakarpu", "C) Perunthinai", "D) Vadakkiruthal"], ans: 1 },
+      { id: 49, q: "Roman coins discovered at Arikkamedu confirm trade contacts with Rome during the period of:", options: ["A) Nero", "B) Augustus", "C) Trajan", "D) Constantine"], ans: 1 },
+      { id: 50, q: "“Houangtche” refers to which place?", options: ["A) Madurai", "B) Kanchi", "C) Puhar", "D) Uraiyur"], ans: 1 },
+      { id: 51, q: "Who among the Kadaiyelu Vallal offered horses to needy people?", options: ["A) Pari", "B) Pegan", "C) Kaari", "D) Aai Andiran"], ans: 2 },
+      { id: 52, q: "Where were the earliest Roman Republican coins found in Tamil Nadu?", options: ["A) Arikamedu", "B) Karur", "C) Korkai", "D) Keezhadi"], ans: 1 },
+      { id: 53, q: "At which excavation site did Sir Mortimer Wheeler use the scientific stratigraphic method?", options: ["A) Adichanallur", "B) Keezhadi", "C) Arikkamedu", "D) Korkai"], ans: 2 },
+      { id: 54, q: "Which empire's embassies were received by Emperor Augustus Caesar at Tarracota and Cyprus according to the source?", options: ["A) Chola", "B) Chera", "C) Pandyan", "D) Pallava"], ans: 2 },
+      { id: 55, q: "Who called themselves “Varnashrama Dharmangal Anupalitha” in Tamil Nadu history?", options: ["A) Cholas", "B) Nayaks", "C) Pandyas", "D) Pallavas"], ans: 1 },
+      { id: 56, q: "Kapadapuram was engulfed by the sea during the reign of which Pandyan king?", options: ["A) Nedunjeliyan", "B) Mudathirumaran", "C) Ugraperuvaluthi", "D) Maran Valuthi"], ans: 1 },
+      { id: 57, q: "Who founded the Third Sangam at Madurai?", options: ["A) Nedunjeliyan", "B) Mudathirumaran", "C) Karikalan", "D) Senguttuvan"], ans: 1 },
+      { id: 58, q: "Who conducted the excavation at Arikkamedu?", options: ["A) Alexander Rea", "B) Mortimer Wheeler", "C) Andrew Jagor", "D) Robert Bruce Foote"], ans: 1 },
+      { id: 59, q: "According to whom did trade links exist between the Malabar coast and Arabia even before the Roman Empire?", options: ["A) K.A. Nilakanta Sastri", "B) A.P. Ibrahim Kunju", "C) R. Sewell", "D) Mortimer Wheeler"], ans: 1 },
+      { id: 60, q: "Which book describes the marriage customs of Sangam-age people?", options: ["A) Purananuru", "B) Akananuru", "C) Kurunthogai", "D) Pathitrupathu"], ans: 1 },
+      { id: 61, q: "One Kalam is equal to how many kilograms according to the source?", options: ["A) 20 kg", "B) 25 kg", "C) 28 kg", "D) 30 kg"], ans: 2 },
+      { id: 62, q: "Which Puram thinai was associated with protecting one's homeland during war?", options: ["A) Vetchi", "B) Kaanji", "C) Vanchi", "D) Tumpai"], ans: 1 },
+      { id: 63, q: "Who established, after studying Roman coins, that commercial contacts between Rome and South India began during Emperor Augustus' reign?", options: ["A) R. Sewell", "B) Alexander Rea", "C) Mortimer Wheeler", "D) Caldwell"], ans: 0 },
+      { id: 64, q: "Which poem was composed by Gangadevi?", options: ["A) Madura Vijayam", "B) Kalingathupparani", "C) Moovarula", "D) Thiruvilayadal"], ans: 0 },
+      { id: 65, q: "Which epic describes the significance of Tamil music?", options: ["A) Manimekalai", "B) Silappathigaram", "C) Civaka Chintamani", "D) Kundalakesi"], ans: 1 },
+      { id: 66, q: "Who first discovered a Paleolithic stone tool in India in 1863?", options: ["A) Robert Bruce Foote", "B) Alexander Rea", "C) Andrew Jagor", "D) Caldwell"], ans: 0 },
+      { id: 67, q: "The discovery of Augustus coins further confirmed Roman trade contacts at:", options: ["A) Karur", "B) Arikamedu", "C) Korkai", "D) Keezhadi"], ans: 1 },
+      { id: 68, q: "Which Moorish traveller described the condition of Tamil Nadu during the reign of Muhammad-bin-Tughlaq?", options: ["A) Al-Biruni", "B) Ibn Battuta", "C) Marco Polo", "D) Nicolo Conti"], ans: 1 },
+      { id: 69, q: "The lines “Vadavenkadam Thenkumari Aayidai Tamil Kuru Nallulagam” occur in which Tamil work?", options: ["A) Purananuru", "B) Silappathigaram", "C) Tolkappiyam", "D) Akananuru"], ans: 2 },
+      { id: 70, q: "Which Roman writer referred to the Pandyan kingdom?", options: ["A) Pliny", "B) Strabo", "C) Ptolemy", "D) Plutarch"], ans: 1 },
+      { id: 71, q: "During the Sangam age, where were Roman coins minted according to the source?", options: ["A) Karur", "B) Madurai", "C) Arikkamedu", "D) Korkai"], ans: 2 },
+      { id: 72, q: "Where was the Dravida Sangha of Deccan founded in 470 AD?", options: ["A) Kanchi", "B) Madurai", "C) Uraiyur", "D) Thanjavur"], ans: 1 },
+      { id: 73, q: "Which Sangam literature describes Pasumpoon Pandiyan as having white flags flying on his elephants?", options: ["A) Purananuru", "B) Akananuru", "C) Natrinai", "D) Kurunthogai"], ans: 1 },
+      { id: 74, q: "What kind of knowledge can be learnt from Sirupanjamoolam?", options: ["A) Political knowledge", "B) Medical knowledge", "C) Astronomical knowledge", "D) Military knowledge"], ans: 1 },
+      { id: 75, q: "Who wrote the lines beginning “Inbath Thamizhkalvi…”?", options: ["A) Bharathiyar", "B) Bharathidasan", "C) Kavimani", "D) Namakkal Kavignar"], ans: 1 },
+      { id: 76, q: "What is the method of narrating old epics and legendary stories through modern poetry called?", options: ["A) Thonmam", "B) Puthukkavithai", "C) Urai Nadai", "D) Venpa"], ans: 0 },
+      { id: 77, q: "Who compiled the Nalayira Divya Prabandham?", options: ["A) Nammalvar", "B) Nadamuni", "C) Periyalvar", "D) Thirumangai Alvar"], ans: 1 },
+      { id: 78, q: "Which work gives a vivid account of the reign of Karikalan?", options: ["A) Maduraikkanji", "B) Pattinappalai", "C) Purananuru", "D) Porunaratrupadai"], ans: 1 },
+      { id: 79, q: "Who patronised Sangam poets and literature?", options: ["A) Cholas", "B) Cheras", "C) Pandyas", "D) Pallavas"], ans: 2 },
+      { id: 80, q: "Approximately how many poems are contained in Ettuthogai and Pathupattu together according to the source?", options: ["A) 1,500", "B) 2,000", "C) 2,400", "D) 3,000"], ans: 2 },
+      { id: 81, q: "Which Tamil work is known as “Irumbu Kadalai”?", options: ["A) Pathitrupathu", "B) Akananuru", "C) Purananuru", "D) Kalithogai"], ans: 0 },
+      { id: 82, q: "Whose songs did Sekkizhar describe as the “origin of literature”?", options: ["A) Appar", "B) Sundarar", "C) Thirugnanasambandar", "D) Manikkavasakar"], ans: 2 },
+      { id: 83, q: "Who kindled the spirit of patriotism through the play Kadarin Vetri?", options: ["A) Sankaradas Swamigal", "B) Po. Krishnaswamy", "C) Bharathidasan", "D) Cho"], ans: 1 },
+      { id: 84, q: "How many chapters and sections does Tolkappiyam have according to the source?", options: ["A) 3 chapters and 27 sections", "B) 3 chapters and 30 sections", "C) 5 chapters and 27 sections", "D) 2 chapters and 27 sections"], ans: 0 },
+      { id: 85, q: "In the context of Kalingathupparani, what does the word “Yoga” mean?", options: ["A) Meditation", "B) Concentration", "C) Physical exercise", "D) Union"], ans: 1 },
+      { id: 86, q: "Which Azhwar sang devotional songs in the guise of folk songs?", options: ["A) Nammalvar", "B) Periyalvar", "C) Thirumangai Azhwar", "D) Kulasekara Azhwar"], ans: 2 },
+      { id: 87, q: "Who wrote Manumurai Kanda Vasakam?", options: ["A) Vallalar", "B) Ramalinga Adigal", "C) Ayothidasa Pandithar", "D) Maraimalai Adigal"], ans: 1 },
+      { id: 88, q: "Who was praised with the words “Kaadu Kamazhum, Karpoora Sorko…”?", options: ["A) Bharathidasan", "B) Bharathiyar", "C) Kamban", "D) Kannadasan"], ans: 1 },
+      { id: 89, q: "What was the first collection of modern poetry released in Tamil?", options: ["A) Puthukkuralgal", "B) Kannan Pattu", "C) Kuyil Pattu", "D) Thani Tamil"], ans: 0 },
+      { id: 90, q: "Who wrote “Evvazhi Nallavar Aadavar Avvazhi Nallai; Vaazhiya Nilanae”?", options: ["A) Avvaiyar", "B) Kabilar", "C) Paranar", "D) Nakkeerar"], ans: 0 },
+      { id: 91, q: "The lines “Koorvael Kuvaieeya…” occur in which poem?", options: ["A) Akananuru", "B) Purananuru", "C) Kurunthogai", "D) Natrinai"], ans: 1 },
+      { id: 92, q: "What is the meaning of “Aaru” in Aatruppadai literature?", options: ["A) River", "B) One who guides others", "C) Warrior", "D) Poet"], ans: 1 },
+      { id: 93, q: "Who wrote the play Baliyaadugal?", options: ["A) K.A. Gunasekaran", "B) Cho", "C) Sankaradas Swamigal", "D) C.N. Annadurai"], ans: 0 },
+      { id: 94, q: "What is the Tamil name for a Haiku poem?", options: ["A) Kurumpaa", "B) Venpa", "C) Agaval", "D) Kalippa"], ans: 0 },
+      { id: 95, q: "Who is the author of the novel Malarum Sarukum?", options: ["A) D. Selvaraj", "B) Jayakanthan", "C) Mu. Varadarajan", "D) T. Janakiraman"], ans: 0 },
+      { id: 96, q: "Who sang the holy verse “Paavai Padia Vaayaal Kovai”?", options: ["A) Andal", "B) Manikkavasakar", "C) Appar", "D) Sambandar"], ans: 1 },
+      { id: 97, q: "Which Pathupattu work begins with “Vaiyagam Panippa Valanerbu Valaii”?", options: ["A) Pattinappalai", "B) Nedunalvadai", "C) Kurinjippattu", "D) Malaipadukadam"], ans: 1 },
+      { id: 98, q: "Who wrote the historical novel Ratham Ore Niram?", options: ["A) Kalki", "B) Sujatha", "C) Akilan", "D) Sandilyan"], ans: 1 },
+      { id: 99, q: "Who transformed the Bhakti Movement into a mass movement according to the source?", options: ["A) Appar", "B) Sundarar", "C) Thirugnanasambandar", "D) Manikkavasakar"], ans: 2 },
+      { id: 100, q: "What are didactic old mocking proverbs in Tamil oral literature called?", options: ["A) Pazhamozhi", "B) Solavadai", "C) Vidukathai", "D) Naanmani"], ans: 1 },
+      { id: 101, q: "Who founded Thirupanandhal Kasi Mutt?", options: ["A) Kumarakurubarar", "B) Thayumanavar", "C) Vallalar", "D) Manikkavasakar"], ans: 0 },
+      { id: 102, q: "Among the Pathupattu works, which texts are called “Sempaathi” texts?", options: ["A) Aatrupadai Noolgal", "B) Agam texts", "C) Puram texts", "D) Kalambakam"], ans: 0 },
+      { id: 103, q: "Which literature mentions the existence of the barter system during the Sangam period?", options: ["A) Kurunthogai", "B) Akananuru", "C) Purananuru", "D) Pathitrupathu"], ans: 0 },
+      { id: 104, q: "Who started the Tamil weekly magazine Navasakthi?", options: ["A) Bharathiyar", "B) V. Kalyana Sundaram", "C) V.O. Chidambaram", "D) Subramania Siva"], ans: 1 },
+      { id: 105, q: "Who received the Sahitya Akademi Award for translating Akni Shatshi into Tamil?", options: ["A) Sirpi Balasubramanian", "B) Jayakanthan", "C) Ki. Rajanarayanan", "D) Mu. Varadarajan"], ans: 0 },
+      { id: 106, q: "Which book by Mu. Va. received the Sahitya Akademi Award?", options: ["A) Karithundu", "B) Akal Vilakku", "C) Puthiya Dharisanangal", "D) Malar Vizhi"], ans: 1 },
+      { id: 107, q: "Who is called “Thambiran Thozhar”?", options: ["A) Sundarar", "B) Appar", "C) Sambandar", "D) Manikkavasakar"], ans: 0 },
+      { id: 108, q: "Who wrote Kumbesar Kuravanji?", options: ["A) Papanasa Mudaliyar", "B) Kumarakurubarar", "C) Thayumanavar", "D) Arunagirinathar"], ans: 0 },
+      { id: 109, q: "Which book contains no poems written by poetesses according to the source?", options: ["A) Ainkurunuru", "B) Akananuru", "C) Natrinai", "D) Kurunthogai"], ans: 0 },
+      { id: 110, q: "The Purananuru verse “Pirappu oru anna…” conveys which truth?", options: ["A) Wealth", "B) Education", "C) War", "D) Love"], ans: 1 },
+      { id: 111, q: "Who sang “Oruvanai Oruvan aduthalum Tholaithalum…”?", options: ["A) Idaikundroorkilaar", "B) Avvaiyar", "C) Kabilar", "D) Paranar"], ans: 0 },
+      { id: 112, q: "Which poet had relations with the Odisha country?", options: ["A) Othakuthar", "B) Kambar", "C) Ottakoothar", "D) Sekkizhar"], ans: 0 },
+      { id: 113, q: "Who wrote the drama Yaarukkum Vetkamillai?", options: ["A) Cho", "B) C.N. Annadurai", "C) M. Karunanidhi", "D) Sankaradas Swamigal"], ans: 0 },
+      { id: 114, q: "Which Azhwar was greatly involved with Ramavatara?", options: ["A) Nammalvar", "B) Kulasekarar", "C) Thirumangai Azhwar", "D) Periyalvar"], ans: 1 },
+      { id: 115, q: "Who is the author of Mullai Paattu?", options: ["A) Nappothanar", "B) Mangudi Maruthanar", "C) Kapilar", "D) Kadiyalur Uruttirangannanar"], ans: 0 },
+      { id: 116, q: "From where did Manimekalai receive the Amudhasurabhi?", options: ["A) Kaveripoompattinam", "B) Manipallava Island", "C) Madurai", "D) Kanchi"], ans: 1 },
+      { id: 117, q: "For whom does Vaanidasan mourn in the lines “Poo madanthai…”?", options: ["A) Kamban", "B) Bharathiyar", "C) Avvaiyar", "D) Thiruvalluvar"], ans: 0 },
+      { id: 118, q: "Who received the Sahitya Akademi Award in 1994 for Puthiya Dharisanangal?", options: ["A) Ponneelan", "B) Jayakanthan", "C) Akilan", "D) Ki. Rajanarayanan"], ans: 0 },
+      { id: 119, q: "Which work preceding the Thirukkural praises the need for water through the idea “Neerindri Amaiyathu Ulagu”?", options: ["A) Natrinai", "B) Kurunthogai", "C) Akananuru", "D) Purananuru"], ans: 0 },
+      { id: 120, q: "The lines “Pulam mikkavarai pulamai therithal…” are found in which work?", options: ["A) Tolkappiyam", "B) Pazhamozhi", "C) Nannool", "D) Naladiyar"], ans: 1 },
+      { id: 121, q: "Which epic contains the philosophical lines “Naaluku Naal Sakindrom…”?", options: ["A) Manimekalai", "B) Kundalakesi", "C) Silappathigaram", "D) Civaka Chintamani"], ans: 1 },
+      { id: 122, q: "Which book is also called “Nedunthogai”?", options: ["A) Akananuru", "B) Purananuru", "C) Natrinai", "D) Kalithogai"], ans: 0 },
+      { id: 123, q: "Who sang “Nallathu Seithal Aatreer Aayinum…”?", options: ["A) Nariveroothalaiyar", "B) Avvaiyar", "C) Kabilar", "D) Paranar"], ans: 0 },
+      { id: 124, q: "Who wrote the novel Marappasu?", options: ["A) T. Janakiraman", "B) Akilan", "C) Sujatha", "D) Jayakanthan"], ans: 0 },
+      { id: 125, q: "Which book says “Magalir madaleruthal Thamilar Marabandru…”?", options: ["A) Periya Thirumadal", "B) Thirukkural", "C) Manimekalai", "D) Silappathigaram"], ans: 0 },
+      { id: 126, q: "Who spoke the words “Maarivaram koorin Mannuyir illai…” to Udhayakumaran?", options: ["A) Manimekalai deity", "B) Manimekalai", "C) Madhavi", "D) Chithrapathi"], ans: 0 },
+      { id: 127, q: "Who described death as an undefiable force in the cited Thirumandiram verse?", options: ["A) Thirumoolar", "B) Appar", "C) Sambandar", "D) Sundarar"], ans: 0 },
+      { id: 128, q: "According to the cited Purananuru verse, whose character plays an important role in the progress of the world?", options: ["A) Kings", "B) Women", "C) Men (Aadavar)", "D) Poets"], ans: 2 },
+      { id: 129, q: "Which Tamil poet injected the spirit of nationalism and national integration?", options: ["A) Bharathiyar", "B) Bharathidasan", "C) Kavimani", "D) Namakkal Kavignar"], ans: 0 },
+      { id: 130, q: "Who speaks the line “Tharumathin Vazhvudhanai Soodhu Kavvum…” in Bharathiyar's Panchali Sabadham?", options: ["A) Arjunan", "B) Krishna", "C) Yudhishthira", "D) Bhima"], ans: 0 },
+      { id: 131, q: "Who wrote the Thirupallandu songs found in Saiva and Vaishnava religious literature?", options: ["A) Senthanar and Periyalvar", "B) Appar and Sambandar", "C) Sundarar and Andal", "D) Nammalvar and Manikkavasakar"], ans: 0 },
+      { id: 132, q: "Who was a predecessor among Tamil women novelists?", options: ["A) Vai. Mu. Kothainayaki", "B) Rajam Krishnan", "C) Ambujathammal", "D) Lakshmi"], ans: 0 },
+      { id: 133, q: "Who received the Sahitya Akademi Award in 1991 for Kopallapurathu Makkal?", options: ["A) Ki. Rajanarayanan", "B) Ponneelan", "C) T. Janakiraman", "D) Mu. Varadarajan"], ans: 0 },
+      { id: 134, q: "In Kalithogai, “In Uyir Tharuthalum Aatrumo…” belongs to which thinai?", options: ["A) Kurinji", "B) Mullai", "C) Palai", "D) Neithal"], ans: 2 },
+      { id: 135, q: "Who wrote Thinai Maalai Nootraimbathu?", options: ["A) Kanimethaviyar", "B) Kapilar", "C) Nakkirar", "D) Paranar"], ans: 0 },
+      { id: 136, q: "Who wrote Yesu Kaaviyam?", options: ["A) Kannadasan", "B) Bharathidasan", "C) Vairamuthu", "D) Mu. Metha"], ans: 0 },
+      { id: 137, q: "Who wrote Madurai Kaanji?", options: ["A) Mangudi Maruthanar", "B) Kadiyalur Uruttirangannanar", "C) Nakkirar", "D) Kapilar"], ans: 0 },
+      { id: 138, q: "Who praised the courageous mother on the battlefield in Sangam literature?", options: ["A) Okkur Masathiyar", "B) Avvaiyar", "C) Velliveethiyar", "D) Kakkai Padiniyar"], ans: 0 },
+      { id: 139, q: "The lives of the 63 Saiva Nayanmars are narrated in:", options: ["A) Periyapuranam", "B) Thiruvilaiyadal Puranam", "C) Thevaram", "D) Thirumurai"], ans: 0 },
+      { id: 140, q: "Who wrote Oru Vandi Centriyu, described as the first major centriyu collection in Tamil?", options: ["A) Erode Tamilanban", "B) Abdul Rahman", "C) Vairamuthu", "D) Mu. Metha"], ans: 0 },
+      { id: 141, q: "Which work mentions the custom of sati in Sangam society?", options: ["A) Tolkappiyam", "B) Akananuru", "C) Purananuru", "D) Silappathigaram"], ans: 0 },
+      { id: 142, q: "What is meant by “Lyric Poetry”?", options: ["A) Historical poems", "B) Emotional/romantic songs", "C) Religious epics", "D) War poems"], ans: 1 },
+      { id: 143, q: "Who wrote Kaasi Kaandam?", options: ["A) Adhi Veerarama Pandiyar", "B) Kambar", "C) Ottakoothar", "D) Arunagirinathar"], ans: 0 },
+      { id: 144, q: "The verses beginning “Wrapped in silk…” refer to:", options: ["A) Kambaramayanam", "B) Padikaasu Pulavar's songs", "C) Thirukkural", "D) Naladiyar"], ans: 1 },
+      { id: 145, q: "Who was the Cambridge University professor who praised Sangam literature as having no equal in world literature?", options: ["A) R.E. Asher", "B) G.U. Pope", "C) Caldwell", "D) Kamil Zvelebil"], ans: 0 },
+      { id: 146, q: "Which ruler is praised by Kalavali Narpadu?", options: ["A) Sengannan", "B) Karikalan", "C) Nedunjelian", "D) Senguttuvan"], ans: 0 },
+      { id: 147, q: "Which moral text is called “Velaan Vedham”?", options: ["A) Thirukkural", "B) Naladiyar", "C) Pazhamozhi", "D) Aathichudi"], ans: 1 },
+      { id: 148, q: "Who wrote the Haiku poem “Pullin Nuniyil Panithuli”?", options: ["A) Arivumathi", "B) Mu. Metha", "C) Abdul Rahman", "D) Vairamuthu"], ans: 0 },
+      { id: 149, q: "Which poetic play contains the “Thamizh Thaai Vaazhthu” beginning “Neerarung Kadaludutha…”?", options: ["A) Manonmaniam", "B) Panchali Sabadham", "C) Kuyil Pattu", "D) Kannan Pattu"], ans: 0 },
+      { id: 150, q: "In which book do the lines “Ponnodum Vandhu Kariyodum Peyarum” occur?", options: ["A) Akananuru", "B) Purananuru", "C) Pattinappalai", "D) Natrinai"], ans: 0 },
+      { id: 151, q: "Who composed “Namaarkkum Kudiyallam Namanai Anjam”?", options: ["A) Thirunavukkarasar", "B) Sambandar", "C) Sundarar", "D) Manikkavasakar"], ans: 0 },
+      { id: 152, q: "Who said “Nee Kandanaiyo? Kandaar Ketanaiyo?” to whom?", options: ["A) Lady love to minstrel/musician", "B) King to poet", "C) Poet to king", "D) Wife to husband"], ans: 0 },
+      { id: 153, q: "Which book mentions that Kaveripoompattinam was engulfed by the sea in the 2nd century AD?", options: ["A) Silappathigaram", "B) Manimekalai", "C) Purananuru", "D) Akananuru"], ans: 1 },
+      { id: 154, q: "Why is Kalki praised as the “Walter Scott of Tamil Nadu”?", options: ["A) He wrote religious poems", "B) He wrote historical novels", "C) He translated English novels", "D) He founded a newspaper"], ans: 1 },
+      { id: 155, q: "Which is identified as the first Tamil text stating that the globe is spherical?", options: ["A) Tolkappiyam", "B) Mudhumozhi Kanchi", "C) Thirukkural", "D) Manimekalai"], ans: 1 },
+      { id: 156, q: "Which Ettuthogai work contains abundant historical incidents?", options: ["A) Akananuru", "B) Natrinai", "C) Ainkurunuru", "D) Kalithogai"], ans: 0 },
+      { id: 157, q: "What is the central theme of the novel Sool?", options: ["A) Land reforms", "B) Water problem", "C) Caste conflict", "D) Industrialization"], ans: 1 },
+      { id: 158, q: "Who wrote Marainthupona Tamil Noolgal?", options: ["A) Mayilai Seeni Venkatasamy", "B) Mu. Varadarajan", "C) U.V. Swaminatha Iyer", "D) K.A. Nilakanta Sastri"], ans: 0 },
+      { id: 159, q: "The Purananuru poem “Last full moon / We had our father…” expresses which state?", options: ["A) Victory", "B) Kayaru Nilai — helplessness in distress", "C) Love", "D) Heroism"], ans: 1 },
+      { id: 160, q: "Who wrote free verse under the pen name “Pasuvayya”?", options: ["A) Sundara Ramasamy", "B) Bharathidasan", "C) Mu. Metha", "D) Abdul Rahman"], ans: 0 },
+      { id: 161, q: "The text praising the victories of Lord Vishnu belongs to which genre according to the source?", options: ["A) Kandazhi", "B) Ula", "C) Parani", "D) Kalambakam"], ans: 0 },
+      { id: 162, q: "Which Nayanar built a Shiva temple in his mind?", options: ["A) Poosalar Nayanar", "B) Appar", "C) Sundarar", "D) Sambandar"], ans: 0 },
+      { id: 163, q: "Which book is called the “Veda of the Tamils”?", options: ["A) Naladiyar", "B) Thirukkural", "C) Tolkappiyam", "D) Periyapuranam"], ans: 1 },
+      { id: 164, q: "Who wrote Tembavani?", options: ["A) Veeramamunivar", "B) Beschi", "C) Caldwell", "D) U.V. Swaminatha Iyer"], ans: 0 },
+      { id: 165, q: "According to Purananuru, who was the head of the learned poets?", options: ["A) Mangudi Marudanar", "B) Kapilar", "C) Nakkirar", "D) Paranar"], ans: 0 },
+      { id: 166, q: "Who translated the Bhagavad Gita into Tamil in 1912 according to the source?", options: ["A) Bharathiyar", "B) Bharathidasan", "C) U.V. Swaminatha Iyer", "D) V.O. Chidambaram"], ans: 0 },
+      { id: 167, q: "Who is called “Madhanubangi”?", options: ["A) Thiruvalluvar", "B) Kambar", "C) Bharathiyar", "D) Avvaiyar"], ans: 0 },
+      { id: 168, q: "To whom does Thiruvalluvar compare toddy drinkers (Kalunpor)?", options: ["A) Nanjunpor", "B) Farmers", "C) Warriors", "D) Poets"], ans: 0 },
+      { id: 169, q: "The line “Thelivu Kuruvin Thirumeni Kandal” is from:", options: ["A) Thirukkural", "B) Thirumanthiram", "C) Thevaram", "D) Periyapuranam"], ans: 1 },
+      { id: 170, q: "According to Valluvar, who are those whom even the God of Death hesitates to approach?", options: ["A) Those who never kill", "B) Kings", "C) Scholars", "D) Warriors"], ans: 0 },
+      { id: 171, q: "Who becomes the ornaments of a well-knit family according to Valluvar?", options: ["A) Good children", "B) Wealthy relatives", "C) Scholars", "D) Elders"], ans: 0 },
+      { id: 172, q: "What is the foster mother of “Grace” according to Valluvar?", options: ["A) Knowledge", "B) Wealth", "C) Love", "D) Charity"], ans: 1 },
+      { id: 173, q: "What blessing comes to people with clear vision and freedom from delusion?", options: ["A) Wealth", "B) Bliss", "C) Fame", "D) Power"], ans: 1 },
+      { id: 174, q: "To which flower does Valluvar compare the sensitivity of a guest's face?", options: ["A) Lotus", "B) Mullai", "C) Anicham", "D) Jasmine"], ans: 2 },
+      { id: 175, q: "Who will be respected by all living beings according to Valluvar?", options: ["A) Kings", "B) Those who do not kill and do not eat flesh", "C) Scholars", "D) Farmers"], ans: 1 },
+      { id: 176, q: "Who, according to Valluvar, will not suffer from hunger?", options: ["A) Wealthy people", "B) People who share food with others", "C) Farmers", "D) Kings"], ans: 1 },
+      { id: 177, q: "What does Thiruvalluvar emphasize greatly in the Thirukkural according to the source?", options: ["A) Wealth", "B) Friendship", "C) War", "D) Politics"], ans: 1 },
+      { id: 178, q: "In the saying “Naalum Irandum; Sollukkuruthi,” what do “Naalum” and “Irandum” refer to?", options: ["A) Tolkappiyam and Nannool", "B) Naladiyar and Thirukkural", "C) Akananuru and Purananuru", "D) Silappathigaram and Manimekalai"], ans: 1 },
+      { id: 179, q: "Who are the Tamil writers who received the Jnanpith Award according to the source?", options: ["A) Jeyakanthan and Akilan", "B) Kalki and Bharathiyar", "C) Kannadasan and Jayakanthan", "D) Akilan and Ponneelan"], ans: 0 },
+      { id: 180, q: "Who are called the Four Saiva Samaya Kuravars?", options: ["A) Sambandar, Navukkarasar, Sundarar, Manikkavasakar", "B) Appar, Nammalvar, Sundarar, Andal", "C) Sambandar, Andal, Appar, Kambar", "D) Sundarar, Kambar, Sekkizhar, Appar"], ans: 0 },
+      { id: 181, q: "What is the sweetest thing that makes people happy according to the cited Kural?", options: ["A) Wealth", "B) Seeing one's children excel in knowledge", "C) Fame", "D) Friendship"], ans: 1 },
+      { id: 182, q: "Whom does Valluvar compare to a medicinal tree growing at the centre of a town?", options: ["A) A generous man", "B) A king", "C) A scholar", "D) A farmer"], ans: 0 },
+      { id: 183, q: "According to Valluvar, what prevents one's wealth from being destroyed?", options: ["A) Spending wisely", "B) Being free from covetousness", "C) Accumulating gold", "D) Avoiding charity"], ans: 1 },
+      { id: 184, q: "To whom does Valluvar compare wrong-doing ascetics?", options: ["A) Hunter", "B) Merchant", "C) Soldier", "D) Farmer"], ans: 0 },
+      { id: 185, q: "What does Valluvar compare to the sweet music of the Yaazh?", options: ["A) Birdsong", "B) Child's babble", "C) Veena music", "D) Temple music"], ans: 1 },
+      { id: 186, q: "What six things are considered the essential components of a king's strength?", options: ["A) Army, subjects, wealth, ministry, allies and fort", "B) Wealth, land, army, religion, trade and agriculture", "C) Fort, temples, ministers, farmers, merchants and army", "D) Army, navy, treasury, roads, forts and courts"], ans: 0 },
+      { id: 187, q: "What three things should be shunned to dispel pain and sorrow?", options: ["A) Fear, greed and jealousy", "B) Lust, wrath and delusion", "C) Wealth, fame and power", "D) Anger, poverty and fear"], ans: 1 },
+      { id: 188, q: "Which book stands before the Thirukkural as the world's most translated book?", options: ["A) Bible", "B) Quran", "C) Bhagavad Gita", "D) Iliad"], ans: 0 },
+      { id: 189, q: "In which Tamil literature does the word “Kudumbam” appear for the first time according to the source?", options: ["A) Tolkappiyam", "B) Thirukkural", "C) Purananuru", "D) Silappathigaram"], ans: 1 },
+      { id: 190, q: "According to Thirukkural, what destroys the strength of a king's army?", options: ["A) Lack of wealth", "B) Stringency and punishment", "C) Lack of soldiers", "D) Foreign invasion"], ans: 1 },
+      { id: 191, q: "When does Valluvar say one should never perform an act condemned by sages?", options: ["A) When the king orders it", "B) When one's mother is starving", "C) During war", "D) During famine"], ans: 1 },
+      { id: 192, q: "According to Thiruvalluvar, what protects us from all disasters?", options: ["A) Wealth", "B) Knowledge", "C) Power", "D) Friendship"], ans: 1 },
+      { id: 193, q: "The lines “Peyakandu Nanjundu Amaivar…” are from which work?", options: ["A) Naladiyar", "B) Thirukkural", "C) Purananuru", "D) Tolkappiyam"], ans: 1 },
+      { id: 194, q: "What does “Oppuravu” mean in Thirukkural?", options: ["A) Wealth", "B) Aide/help", "C) Friendship", "D) Justice"], ans: 1 },
+      { id: 195, q: "Which word is NOT found in the Thirukkural according to the source?", options: ["A) Aram", "B) Porul", "C) Inbam", "D) Tamil"], ans: 3 },
+      { id: 196, q: "Who was the first commentator of the Thirukkural?", options: ["A) Parimelazhagar", "B) Manakkudavar", "C) Kalingar", "D) Parithiyar"], ans: 1 },
+      { id: 197, q: "What does “Anicham” refer to in the Thirukkural?", options: ["A) A tree", "B) A tender flower", "C) A fruit", "D) A medicinal herb"], ans: 1 },
+      { id: 198, q: "Who stated that the term “virtue” has different meanings in Tamil?", options: ["A) K.T. Thirunavukkarasu", "B) Mu. Varadarajan", "C) U.V. Swaminatha Iyer", "D) Kamil Zvelebil"], ans: 0 },
+      { id: 199, q: "The saying “Yaayaiyum Paadi Kovai Paadu” emphasizes what?", options: ["A) Practice is necessary", "B) Wealth is necessary", "C) War is necessary", "D) Education is unnecessary"], ans: 0 },
+      { id: 200, q: "Who used the word “Irai” to indicate the king?", options: ["A) Thiruvalluvar", "B) Kambar", "C) Avvaiyar", "D) Nakkirar"], ans: 0 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(200, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 200) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Tamil Literature & History Master Exam.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific social reform history, Sangam literature, and Thirukkural concepts.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Tamil Nadu History & Literature recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+</html>

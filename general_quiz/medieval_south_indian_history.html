@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medieval India & South Indian History Master Exam (263 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select, .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Medieval India & South Indian History Master Exam (263 MCQs)</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Medieval India & South Indian History Master Exam (263 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–263)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="263">All Questions (263 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 263)</label>
+          <input type="number" id="custom-count-input" min="1" max="263" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">263 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#128214;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Medieval & South India</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#9873;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Batch 11 (263 MCQs)</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 263</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">04:23:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "During the rule of the Khalji dynasty, the merchants had to bring all their goods for sale to:", options: ["A) Sarai-e-Adl", "B) Karkhana", "C) Kotwal", "D) Iqta"], ans: 0 },
+      { id: 2, q: "Reason and Assertion type:\nAssertion [A] : Ala-ud-din sent Zafar Khan and Ulugh Khan against the Mongols.\nReason [R] : The Mongols were defeated and Zafar Khan was made the rules of Mongols.", options: ["A) [A] is true But [R] is false", "B) Both are true But [R] is not the correct explanation of [A]", "C) [A] is False [R] is True", "D) Both [A] and [R] are True and [R] is the correct explanation of [A]"], ans: 1 },
+      { id: 3, q: "Alam Shah was the Last Sultan of Sayyid Dynasty. What was the original name of Alam Shah?", options: ["A) Hissan Khan", "B) Ala-Ud-Din Shah", "C) Hamid Khan", "D) Sarwar-Ul Mulk"], ans: 1 },
+      { id: 4, q: "______ dynasty is known as the Mamluk dynasty.", options: ["A) Slave", "B) King", "C) Queen", "D) Soldier"], ans: 0 },
+      { id: 5, q: "In the Sultanate rule, the Prime Minister was known as Wazir:\n(i) He was primarily the head of the finance department called the Devani-i-Wazarat.\n(ii) He was in a position to supervise only the income and expenditure of the department.\nWhich of the above statements are correct?", options: ["A) (i)", "B) (ii)", "C) (i) and (ii)", "D) None of the above"], ans: 2 },
+      { id: 6, q: "Which one of the following is correctly matched?", options: ["A) Jalaluddin Firoz Khalji — (1292-1295)", "B) Ala-ud-din Khalji — (1296-1316)", "C) Kutbudin Mubarak - Shah — (1310-1320)", "D) Nasiruddin (Khusru-sha) — (1321-1324)"], ans: 1 },
+      { id: 7, q: "Assertion [A] : Alaudin khalji imposed price control in Delhi.\nReason [R] : He wanted to pay lower wages to artisans building his palaces in Delhi.", options: ["A) Both [A] and [R] are true, and [R] is the correct explanation of [A]", "B) Both [A] and [R] are true; but [R] is not the correct explanation of [A]", "C) [A] is true, but [R] is false", "D) [A] is false but [R] is true"], ans: 2 },
+      { id: 8, q: "Kharaj means:", options: ["A) Land tax from non-Muslims", "B) Booty captured in the War", "C) Religious tax on the non-Muslims", "D) Land Tax from Muslim Peasants"], ans: 0 },
+      { id: 9, q: "Choose the wrong matches.\nContemporaries of Alauddin Khilji:\n1. Ramachandra Deva — Warrangal\n2. Prataparudra Deva — Devagiri\n3. Vira Ballala III — Dwarasamudra\n4. Vira Pandiyan — Madurai\n5. Ravi Varma — Kollam\n6. Banu Deva — Orissa", options: ["A) (1) and (2) are wrong", "B) (2) and (3) are wrong", "C) (3) and (4) are wrong", "D) (1) and (3) are wrong"], ans: 0 },
+      { id: 10, q: "Who levied Jizya tax on non-muslims for the first time in India?", options: ["A) Aurangazeb", "B) Akbar", "C) Qutb-ud-din Aibak", "D) Muhammad Bin Tughlaq"], ans: 2 },
+      { id: 11, q: "Reason and Assertion type:\nAssertion [A] : Firuz Tughluq was pious and merciful ruler.\nReason [R] : He has resolved never to make war upon men of Muhammadan faith by avoiding an expedition to Dauladabad.", options: ["A) [A] is true but [R] is false", "B) Both [A] and [R] are true; and [R] is the correct explanation of [A]", "C) [A] is false, [R] is true", "D) Both [A] and [R] are true; but [R] is not the correct explanation of [A]"], ans: 1 },
+      { id: 12, q: "Arrange the following events of Mohammad Tughlaq's reign in Chronological order :\n(1) Change of capital\n(2) Token currency\n(3) Camped at Swargdwari\n(4) Plan to invade Khurasan", options: ["A) 1, 2, 3, 4", "B) 1, 4, 2, 3", "C) 1, 2, 4, 3", "D) 4, 1, 3, 2"], ans: 2 },
+      { id: 13, q: "Arrange the Conquests of Iltutmish in Chronological order :\n(1) Bengal\n(2) Bilsa Fort\n(3) Gwalior\n(4) Ranthambhor", options: ["A) (1), (2), (3), (4)", "B) (1), (3), (4), (2)", "C) (4), (1), (3), (2)", "D) (4), (3), (2), (1)"], ans: 2 },
+      { id: 14, q: "Reason and Assertion type:\nAssertion [A] : Muhammad Ghur attacked the Fortress of Tabarhind, a strategic point for the Chauhans of Ajmer.\nReason [R] : The Ruler of Ajmer Prithvi Raj Chauhan marched to Tabarhinda and faced the invader in the first Battle of Tarain (1191).", options: ["A) [A] is true, but [R] is false", "B) Both [A] and [R] are true, and [R] is the correct explanation of [A]", "C) [A] is false, [R] is true", "D) Both [A] and [R] are true, but [R] is not the correct explanation of [A], [A] only is correct"], ans: 1 },
+      { id: 15, q: "Reason and Assertion type:\nAssertion [A] : Iltutmish whenever left his capital made Raziya Sultan as incharge of Delhi affairs.\nReason [R] : After the death of Iltutmish, Razia Sultan succeeded his father's throne and she became the first female Muslim ruler of South Asia.", options: ["A) [A] is true, but [R] is false", "B) Both [A] and [R] are true; and [R] is the correct explanation of [A]", "C) [A] is false [R] is true", "D) Both [A] and [R] are true but [R] is not the correct explanation of [A]"], ans: 3 },
+      { id: 16, q: "Which of the following statement(s) is/are true about Khilji building?\n(i) K.S. Lal observes that with the enthronement of Alauddin Khilji, a new era was ushered in architecture in the Hindu Muslim style.\n(ii) Marshall writes \"Hauz-i-khas is one of the most treasured gems of Islamic architecture.\"\n(iii) \"Percy Brown remarks\" the entrance gateway of the mosque of Alauddin Khilji occupies a key position in the evolution of Islamic architecture in India.", options: ["A) (i) only", "B) (i) and (ii) only", "C) (i) and (iii) only", "D) (ii) and (iii) only"], ans: 2 },
+      { id: 17, q: "What is the correct chronology of the following events of Akbar's reign?\nI. Conquest of Malwa\nII. Abolition of pilgrim tax.\nIII. Promulgation of Din-I-Ilahi\nIV. Construction of Ibadat Khana at Fatehpur sikri", options: ["A) I, II, IV, III", "B) II, I, IV, III", "C) III, IV, I, II", "D) IV, I, II, III"], ans: 0 },
+      { id: 18, q: "Which of the Statement is correct regarding Muhammad Gawan?\n1. He rose to prominence during the reign of Alauddin Ahammad Shah II.\n2. He was the chief minister under Humayun.\n3. He was a afagi.\n4. He was executed by a sultan in 1481.", options: ["A) 1, 2 are correct, 3, 4 are incorrect", "B) 1, 3 are correct, 2, 4 are incorrect", "C) 1, 2, 4 are correct, 3 only incorrect", "D) All are correct"], ans: 3 },
+      { id: 19, q: "The Mughal Emperor who gave permission to East India Company to set up trading post at Surat:", options: ["A) Akbar", "B) Aurangazeb", "C) Jahangir", "D) Shahjahan"], ans: 2 },
+      { id: 20, q: "Which one is mis matching in the following in the Babar invasion:\nConquest of Kabul — 1504\nConquest of Kandhakar — 1522\nBattle of Kanva — 1528\nBattle of Panipat — 1526", options: ["A) 1, 2, 3 are correctly matching 4 only mis matching", "B) 1, 3, 4 are correctly matching 2 only mis matching", "C) 1, 2 are correctly matching 3, 4 are mis matching", "D) 1, 2, 4 are correctly matching 3 only mis matching"], ans: 3 },
+      { id: 21, q: "Muhammad Gawan was appointed as Governor of which region by Humayun?", options: ["A) Bijapur", "B) Golkonda", "C) Bedar", "D) Birar"], ans: 0 },
+      { id: 22, q: "Who wrote Ain-i-Akbari?", options: ["A) Akbar", "B) Alberuni", "C) Abul Fazl", "D) Todarmal"], ans: 2 },
+      { id: 23, q: "'Sufism' originated and developed in:", options: ["A) Christianity", "B) Hinduism", "C) Islam", "D) Zoroastrianism"], ans: 2 },
+      { id: 24, q: "Indian Mughal miniature painting dating was around the years:", options: ["A) Early 17th Century", "B) Later 17th Century", "C) Early 18th Century", "D) Later 18th Century"], ans: 0 },
+      { id: 25, q: "Alamgir nama was written by whom?", options: ["A) Jafar Khan", "B) Muhammad Qazim", "C) Aurangazeb", "D) Mukhtiar khan"], ans: 1 },
+      { id: 26, q: "Which of the following is/are not situated in Rajasthan?\n(a) Dilwara Temples\n(b) Mehrangarh fort\n(c) Bara Imambara\n(d) Purana Qila", options: ["A) (a) and (b)", "B) (c) and (d)", "C) (a) and (c)", "D) (b) and (d)"], ans: 1 },
+      { id: 27, q: "Arrange the chronological order:\nDeath of Humayun\nSecond Battle of Panipat\nBuilding at Fatehpur Sikri\nProclamation of Din-illahi", options: ["A) 2 – 1 – 4 – 3", "B) 1 – 2 – 3 – 4", "C) 3 – 4 – 2 – 1", "D) 4 – 3 – 2 – 1"], ans: 1 },
+      { id: 28, q: "Who served as British Ambassador to the Mughal Court?", options: ["A) Bernier", "B) Edward Terry", "C) Thomas Roe", "D) William Hawkins"], ans: 2 },
+      { id: 29, q: "______ was the contemporary of Emperor Akbar in England.", options: ["A) King John", "B) Queen Elizabeth-I", "C) Queen Victoria", "D) King Charles II"], ans: 1 },
+      { id: 30, q: "Which one of the following is not correctly matched?", options: ["A) Arif Qandhari — Tarikh-i-Akbari", "B) Nizamuddhin Ahmad — Tabaqat-i-Akbari", "C) Abdul Qadir Badaoni — Muntakhab-ut-Tawarikh", "D) Muhammad Khan — Khulasat Tawarikh"], ans: 3 },
+      { id: 31, q: "Choose the right matches:\nKhizr Khan — Orissa\nDurgavati — Gondwana\nRana Udai Singh — Mewar\nKunwar Man Singh — Ajmir", options: ["A) 1 and 2 are correct", "B) 2 and 3 are correct", "C) 1 and 4 are correct", "D) 3 and 4 are correct"], ans: 1 },
+      { id: 32, q: "Name the Mughal ruler who was defeated by the British East India Company at the Battle of Buxar in 1764:", options: ["A) Akbar", "B) Shah Jahan", "C) Shah Alam II", "D) Aurangazeb"], ans: 2 },
+      { id: 33, q: "During the rule of Humayun, Bihar was under the control of:", options: ["A) Bahadur Shah", "B) Baz Bahadur", "C) Mohammd Zaman", "D) Sher Khan"], ans: 3 },
+      { id: 34, q: "The master gunner in army of Babur at the battle of Panipat:", options: ["A) Ustad Ali", "B) Zafar Khan", "C) Humayun", "D) Hindal"], ans: 0 },
+      { id: 35, q: "'Lal Qila' was constructed of red sand stone by:", options: ["A) Jahangir", "B) Shahjahan", "C) Akbar", "D) Aurangazeb"], ans: 1 },
+      { id: 36, q: "During the time of which Mughal Emperor gave permission to the British East India Company to established its 1st factory in Surat?", options: ["A) Akbar", "B) Jahangir", "C) Shahjahan", "D) Humayun"], ans: 1 },
+      { id: 37, q: "Which pair is not correct?", options: ["A) Shahjahan Nama — Shahjahan", "B) Tuzuk-i-Jahangiri — Jahangir", "C) Tuzuk-i-Baburi — Babur", "D) Humayun nama — Gulbadan Begum"], ans: 0 },
+      { id: 38, q: "Which one of the following was not correct about the most well known musician of Akbar's court?", options: ["A) Tansen", "B) Sur Dass", "C) Ram Dass", "D) Tarachand"], ans: 3 },
+      { id: 39, q: "Which reference says that the bankers work was done mostly by the Sarrofs, Sahukars and Mahajan's during the Mughal period?", options: ["A) Tazkirai – ul – waqiat of Jauhar", "B) Razik Priya of Kesh Das", "C) Ain – i – Akbari of Abul Fazl", "D) Khulasat – ul – Twarikh of Sujan Rai"], ans: 3 },
+      { id: 40, q: "______ instructed for his mausoleum was that it should incorporate elements from different religions including Islam and Hinduism.", options: ["A) Ashoka", "B) Akbar", "C) Shahjahan", "D) Aurangazeb"], ans: 1 },
+      { id: 41, q: "Name the Mughal ruler under whose reign European painting was introduced by the Portuguese priest:", options: ["A) Babur", "B) Akbar", "C) Shahjahan", "D) Aurangazeb"], ans: 1 },
+      { id: 42, q: "During whose reign Firozshah's Yamuna canal was repaired for the first time?", options: ["A) Babur", "B) Akbar", "C) Shahjahan", "D) Aurangazeb"], ans: 1 },
+      { id: 43, q: "Alamgir-nama was written by:", options: ["A) Munshi Mirza Mohamed Kasim", "B) Khafi Khan", "C) Bhimsen", "D) Tansen"], ans: 0 },
+      { id: 44, q: "Which one of the statement is correct regarding Mihrunnisha?\n1. Mihrunnisha father name was Miza Liyaz Beg, a Afghan.\n2. She was born in 1577.\n3. She married to Ali Quli beg Isgulla.\n4. He was conferred the title of Nurjahan and then Normahal.", options: ["A) 1, 2, 3 are correct 4 only incorrect", "B) 2, 3 are correct 1, 4 are incorrect", "C) 1, 2, 4 are correct 3 only incorrect", "D) 1, 2, 3, 4 are correct"], ans: 1 },
+      { id: 45, q: "In 1657 Aurangazeb defeated Dara Shikoh at the battle of:", options: ["A) Dharmat", "B) Sarhind", "C) Udaipur", "D) Jodhpur"], ans: 0 },
+      { id: 46, q: "Name the persian scholar who was chosen as Akbar's tutor:", options: ["A) Abdul Latif", "B) Abdul Salam", "C) Abdul Samad", "D) Abdul Rahim"], ans: 0 },
+      { id: 47, q: "Name the Mughal ruler who initiated a programme of building sea-going vessels:", options: ["A) Babur", "B) Akbar", "C) Shahjahan", "D) Aurangazeb"], ans: 2 },
+      { id: 48, q: "The principle construction material used by Shahjahan to built Jumma Masjit at Delhi:", options: ["A) Yellow Sand Stone", "B) Red Sand Stone", "C) Black Sand Stone", "D) Metal"], ans: 1 },
+      { id: 49, q: "Which of the given statements is/are correct?\n(i) Amir Khusroe, Abul Fazal, Ziauddin Barani were famous persian Historians in medieval period.\n(ii) Tughlaq Nama, Akbar Nama, Tarik Firoz Shahi are the books written by them respectively.", options: ["A) (i) and (ii) are wrong", "B) (i) correct (ii) wrong", "C) Both (i), (ii) are correct", "D) (i) wrong (ii) correct"], ans: 2 },
+      { id: 50, q: "Match correctly the Battles with their corresponding year:\n(a) First battle of Panipat — 1. 1527\n(b) Battle of Ghaghra — 2. 1529\n(c) Second battle of Panipat — 3. 1526\n(d) Battle of Khanwa — 4. 1556", options: ["A) (a)-1, (b)-2, (c)-3, (d)-4", "B) (a)-4, (b)-2, (c)-1, (d)-3", "C) (a)-4, (b)-1, (c)-2, (d)-3", "D) (a)-3, (b)-2, (c)-4, (d)-1"], ans: 3 },
+      { id: 51, q: "The only Hindu Courtier of Akbar who accepted Din-e-Ilahi was:", options: ["A) Raja Todarmal", "B) Raja Birbal", "C) Raja Mansingh", "D) Tansen"], ans: 1 },
+      { id: 52, q: "Which one of the following pairs is not correctly matched?", options: ["A) Babur — Tardi Beg", "B) Humayun — Bairamkhan", "C) Jehangir — Sawai Jai Singh", "D) Aurangazeb — Jaswant Singh"], ans: 2 },
+      { id: 53, q: "Identify the wrongly matched pair from the following:", options: ["A) Zahir-ud-din Babur — The conqueror of the World", "B) Shah Jahan — King of the world", "C) Shahji Bhonsle — Shivaji's Father", "D) Regent of Akbar — Bairam Khan"], ans: 0 },
+      { id: 54, q: "______ is the epitome of Mughal architecture.", options: ["A) Gol Gumbaz", "B) The Shalimar Gardens", "C) Humayun's Tomb", "D) Tajmahal"], ans: 3 },
+      { id: 55, q: "Kamran, Askari, Hindal are brothers of:", options: ["A) Akbar", "B) Humayun", "C) Shajahan", "D) Aurangzeb"], ans: 1 },
+      { id: 56, q: "'Sur' dynasty founded by:", options: ["A) Akbar", "B) Sher Shah", "C) Babur", "D) Tej Bahadur"], ans: 1 },
+      { id: 57, q: "The Court poet of Akbar who was popularly known as the blind bard of Agra is:", options: ["A) Tuka Ram", "B) Mirabai", "C) Sur Das", "D) Ramananda"], ans: 2 },
+      { id: 58, q: "From the following, find out the wrong pair:", options: ["A) Babur Nama — Auto biography", "B) Konark — Siva Temple", "C) Qutb Minar — Victory power", "D) Muhammed Iqbal — Urdu poet"], ans: 1 },
+      { id: 59, q: "Assertion [A] : The temporary eclipse of the Rajputs facilitated Babur to establish his rule in India.\nReason [R] : The Battle of Khanua resulted in the defeat of Rajput confederacy.", options: ["A) [A] is true, but [R] is false", "B) Both [A] and [R] are true, and [R] is the correct explanation of [A]", "C) [A] is false, but [R] is true", "D) Both [A] and [R] are true, but [R] is not the correct explanation of [A]"], ans: 1 },
+      { id: 60, q: "Assertion [A] : Akbar approached his subjects with liberal ideas.\nReason [R] : Akbar's tutor Abdul Lateef taught the principle of Sulh-I-Kul to Akbar.", options: ["A) [A] is true, but [R] is false", "B) Both [A] and [R] are true, and [R] is the correct explanation of [A]", "C) [A] is false, but [R] is true", "D) Both [A] and [R] are true, but [R] is not the correct explanation of [A]"], ans: 1 },
+      { id: 61, q: "Which one of the statement is correct?\n(i) Humayun Nama compiled by Gulbadan Begum.\n(ii) Badauni translated the Bhagavata Purana into persian.\n(iii) Todarmal translated the Bhagavata Purana into persian.\n(iv) Haji Ibrahim Sirhindi translated Atharvaveda.", options: ["A) (i), (ii), (iii) are correct (iv) only incorrect", "B) (i), (iii), (iv) are correct (ii) only incorrect", "C) (i), (ii), (iv) are correct (iii) only incorrect", "D) All are correct"], ans: 1 },
+      { id: 62, q: "During Mughal rule ______ were the assistants of Subhadar in the maintenance of peace.", options: ["A) Amin", "B) Diwan", "C) Kotwal", "D) Faujdar"], ans: 3 },
+      { id: 63, q: "Which of the following Statements is / are not correct about Akbar?\n(a) Akbar was influenced by his mother.\n(b) Akbar took Roopmathi from Baz Bahadur.\n(c) Bairam khan was killed by Akbar.\n(d) Akbar attacked Chitoor to get the treasure.", options: ["A) (a) and (b) are correct; (c) and (d) are wrong", "B) (b) and (d) are correct; (a) and (c) are wrong", "C) (b) and (c) are wrong; (a) and (d) are correct", "D) (a) is correct; (b), (c) and (d) are wrong"], ans: 3 },
+      { id: 64, q: "Who ascended the throne after the death of Aurangazeb in 1707?", options: ["A) Bahadur Shah I", "B) Farukh Shiyar", "C) Muhammad Kam", "D) Alam Shah"], ans: 0 },
+      { id: 65, q: "\"If a man died without a successor, then all his property should be utilized in the development of schools and colleges\" was ordered by:", options: ["A) Akbar", "B) Humayun", "C) Jahangir", "D) Aurangzeb"], ans: 2 },
+      { id: 66, q: "Who introduced the idea of \"Sulh-i-kul\" which means universal peace?", options: ["A) Akbar", "B) Sada shiva Rao", "C) Rafi-ud-Daullat", "D) Shivaji"], ans: 0 },
+      { id: 67, q: "Before the Second battle of Panipat, in Delhi ______ had assumed the title of 'Raja Vikramjit'.", options: ["A) Bairam Khan", "B) Salim Khan", "C) Hemu", "D) Kiya Khan"], ans: 2 },
+      { id: 68, q: "Assertion (A) : Akbar introduced the Mansabdari system.\nReason (R) : This system was borrowed from Iran.", options: ["A) (A) is true (R) is false", "B) Both (A) and (R) are true, and (R) is the correct explanation of (A)", "C) (A) is false (R) is true", "D) Both (A) and (R) are true, but (R) is not the correct explanation of (A)"], ans: 0 },
+      { id: 69, q: "The most famous Calligraphist at Akbar's court was Muhammad Husain Kashmiri and he was given ______ title:", options: ["A) Zarin Qalam", "B) Abul Fazl", "C) Ustad Ahmad", "D) Abdur Rahim"], ans: 0 },
+      { id: 70, q: "______ was the last battle of Babar fought against the Afghans.", options: ["A) Battle of Chanderi", "B) Battle of Ghagra", "C) Battle of Kanauj", "D) Battle of Chausa"], ans: 1 },
+      { id: 71, q: "Which are the pairs are correctly matched?\nTomb of Itmud-Uddaula — Nurjahan\nMosque at Sambal — Babur\nJama Masjid — Shahjahan\nKabuli Bagh Mosque at Panipat — Aurangazeb", options: ["A) 1, 2, 3", "B) 1, 2, 4", "C) 1 & 2", "D) 1, 2, 3, 4"], ans: 0 },
+      { id: 72, q: "Akbar appointed his Foster brother, Mirza Aziz Kokah as the Governor of:", options: ["A) Bengal", "B) Bihar", "C) Kabul", "D) Jaunpur"], ans: 0 },
+      { id: 73, q: "In 1573, Todarmal conducted his famous systematic survey of all the lands of:", options: ["A) Gujarat", "B) Bengal", "C) Bihar", "D) Orissa"], ans: 0 },
+      { id: 74, q: "Which of the following are correctly paired?\nAbdur Qasim Khan Namkin — Munshat-i-Namkin\nInayatullah Khan — Kalimat-i-Tayyakat\nMuhammed Sadiq — Nigarnama-i-Munshi\nMalikzada — Adam-i-Alamgiri", options: ["A) 1 and 2 are correct", "B) 1 and 3 are correct", "C) 2 and 4 are correct", "D) 3 and 4 are correct"], ans: 0 },
+      { id: 75, q: "On behalf of Mughal Emperor Aurangzeb who signed the treaty of Purandhar with Shivaji?", options: ["A) Mansingh", "B) Jai Singh", "C) Shaista Khan", "D) Afzal Khan"], ans: 1 },
+      { id: 76, q: "Assertion [A] : Humayun was a cruel Bahmani Sultan.\nReason [R] : There was a fratricidal war before his accession.", options: ["A) [A] is correct [R] is wrong", "B) Both [A] and [R] are correct", "C) Both [A] and [R] are wrong", "D) [A] is correct [R] is the correct explanation of [A]"], ans: 3 },
+      { id: 77, q: "Who introduced Mansabdari system?", options: ["A) Babur", "B) Akbar", "C) Jahangir", "D) Aurangazeb"], ans: 1 },
+      { id: 78, q: "The two Mughal emperors who wrote their autobiographies were:", options: ["A) Akbar and Jehangir", "B) Babur and Jehangir", "C) Babur and Humayun", "D) Aurangazeb and Shahjahan"], ans: 1 },
+      { id: 79, q: "Which Mughal Prince album is still preserved in the library of the Indian office at London?", options: ["A) Jawan Bakht", "B) Azam Shah", "C) Bahadur Shah Zafar", "D) Darasukoh"], ans: 3 },
+      { id: 80, q: "Gun powder was first Invented by:", options: ["A) India", "B) Europe", "C) Chinese", "D) America"], ans: 2 },
+      { id: 81, q: "Who among the following is the only woman historian to have written a historical account of Mughal period?", options: ["A) Gulbadan Begum", "B) Zeenat-un-Nisa Begum", "C) Jahanara Begum", "D) Zeb-un-Nissa Begum"], ans: 0 },
+      { id: 82, q: "Arrange chronologically – conquests of Akbar:\n1. Kashmir\n2. Kabul\n3. Qandhar\n4. Ahmednagar", options: ["A) (1), (3), (2), (4)", "B) (2), (1), (3), (4)", "C) (1), (3), (4), (2)", "D) (3), (2), (4), (1)"], ans: 1 },
+      { id: 83, q: "Match the following:\n(a) Abolition of Jiziya — 1. A.D. 1563\n(b) Abolition of Pilgrimage tax — 2. A.D. 1564\n(c) Abolition of enslaving war prisoners — 3. A.D. 1562\n(d) Fall of Bairam Khan — 4. A.D. 1560", options: ["A) (a)-2, (b)-1, (c)-3, (d)-4", "B) (a)-4, (b)-1, (c)-3, (d)-2", "C) (a)-1, (b)-2, (c)-3, (d)-4", "D) (a)-3, (b)-4, (c)-2, (d)-1"], ans: 0 },
+      { id: 84, q: "Match the following:\n(a) Gwalior Fort — 1. Shah Jahan\n(b) Shahjahanabad — 2. Mansingh Tomar\n(c) The Jama Masjid — 3. Shershah Suri\n(d) The Purana Quila — 4. Babur", options: ["A) (a)-2, (b)-1, (c)-4, (d)-3", "B) (a)-1, (b)-2, (c)-3, (d)-4", "C) (a)-1, (b)-3, (c)-4, (d)-2", "D) (a)-1, (b)-2, (c)-4, (d)-3"], ans: 0 },
+      { id: 85, q: "Assertion [A] : The mighty ruler like Chandra Gupta Maurya, Asoka, Samudra Gupta, Alaudin Khilji and Akbar subjugated Indian Principalities but real unity could not be established.\nReason [R] : Due to Lack of means of communication, transportation and national consciousness India never could be united.", options: ["A) [A] is correct [R] is wrong", "B) [A] and [R] are correct [R] is the correct explanation of [A]", "C) [A] is wrong [R] is correct", "D) [A] and [R] are correct [R] is not the correct explanation of [A]"], ans: 1 },
+      { id: 86, q: "Abdur Rahim Khan-i-Khanan was the poet during the reign of:", options: ["A) Akbar and Jehangir", "B) Jehangir and Shahjahan", "C) Shahjahan and Aurangazeb", "D) Babur and Humayun"], ans: 0 },
+      { id: 87, q: "Arranging the following events in chronological order:\n(1) First Battle of Panipat\n(2) Jahangir was buried at Lahore\n(3) Akbar died in 1605\n(4) Bahadur Shah II", options: ["A) (1), (2), (4), (3)", "B) (1), (3), (4), (2)", "C) (2), (3), (1), (4)", "D) (1), (3), (2), (4)"], ans: 3 },
+      { id: 88, q: "Assertion [A] : Uniform Administration was set up all over the country during the rule of the Guptas and the Mughals.\nReason [R] : British has been an agency for uniting the provinces of India.", options: ["A) [A] is true but [R] is false", "B) [A] is false but [R] is true", "C) Both [A] and [R] are true and [R] is the correct explanation of [A]", "D) Both [A] and [R] are true but [R] is not the correct explanation of [A]"], ans: 3 },
+      { id: 89, q: "Which of the following statements are true about Shah Jahan?\n1. English Trader Manucci visited India in his reign.\n2. A contemporary of Louis XIV of France, Shah Jahan ruled for 30 years.\n3. In his reign the famous Peacock Throne was made for the king.", options: ["A) (2) and (3) only", "B) (1) and (2) only", "C) (3) only", "D) (1) and (3) only"], ans: 0 },
+      { id: 90, q: "The Battle of Dharmat was fought between Raja Jaswant Singh and Aurangazeb in the year:", options: ["A) 1658", "B) 1656", "C) 1655", "D) 1666"], ans: 0 },
+      { id: 91, q: "Arrange in the chronological order:\n(1) Battle of Ghaghra\n(2) Battle of Chausa\n(3) Battle of Khanwa\n(4) Battle of Panipat I", options: ["A) (1) – (2) – (3) – (4)", "B) (1) – (3) – (2) – (4)", "C) (4) – (3) – (1) – (2)", "D) (4) – (3) – (2) – (1)"], ans: 2 },
+      { id: 92, q: "The cultivable land under the Zabti system was always in cultivation was known as:", options: ["A) Polaj", "B) Parauti", "C) Chachar", "D) Banjar"], ans: 0 },
+      { id: 93, q: "Arrange the events in chronological order :\nBattle of Chanderi\nBattle of Kanauj\nBattle of Khanwa\nBattle of Chausa", options: ["A) 3, 4, 1, 2", "B) 3, 1, 4, 2", "C) 2, 3, 1, 4", "D) 2, 1, 4, 3"], ans: 1 },
+      { id: 94, q: "Match the following:\n(a) Abolition of Jaziya — 1. A.D. 1563\n(b) Abolition of pilgrims tax — 2. A.D. 1564\n(c) Abolition of enslaving war prisoners — 3. A.D. 1561\n(d) Fall of Bairam khan — 4. A.D. 1560", options: ["A) (a)-2, (b)-1, (c)-3, (d)-4", "B) (a)-4, (b)-3, (c)-1, (d)-2", "C) (a)-1, (b)-2, (c)-3, (d)-4", "D) (a)-3, (b)-4, (c)-2, (d)-1"], ans: 0 },
+      { id: 95, q: "Which of the following is incorrectly paired?\nHolyoake — Lack of belief in god and gods\nKhajuraho — Hindu temple\nDin-i-illahi — Akbar\nIqbal — Social reformer", options: ["A) 1 and 3 are incorrect pairs", "B) 1, 2 and 4 are incorrect pairs", "C) 1 and 4 are incorrect pairs", "D) 3 and 4 are incorrect pairs"], ans: 2 },
+      { id: 96, q: "Match the following:\n(a) Babar — 1. Tajmahal\n(b) Shershah — 2. First Battle of panipat\n(c) Akbar — 3. Sur Dynasty\n(d) Shahjahan — 4. Second Battle of panipat", options: ["A) (a)-2, (b)-3, (c)-4, (d)-1", "B) (a)-3, (b)-4, (c)-1, (d)-2", "C) (a)-4, (b)-2, (c)-1, (d)-3", "D) (a)-1, (b)-4, (c)-2, (d)-3"], ans: 0 },
+      { id: 97, q: "Name the woman who influenced prince Jahandar Shah:", options: ["A) Jahanara Begam", "B) Lal Kunwar", "C) Mumtaz Mahal", "D) Zeenat Mahal"], ans: 1 },
+      { id: 98, q: "Match the following:\n(a) Abolition of Jizya — 1. A.D. 1563\n(b) Abolition of Pilgrimage Tax — 2. A.D. 1564\n(c) Abolition of Enslaving war prisoner — 3. A.D. 1562\n(d) Fall of Bairam Khan — 4. A.D. 1560", options: ["A) (a)-2, (b)-1, (c)-3, (d)-4", "B) (a)-4, (b)-1, (c)-3, (d)-2", "C) (a)-1, (b)-2, (c)-3, (d)-4", "D) (a)-3, (b)-4, (c)-2, (d)-1"], ans: 0 },
+      { id: 99, q: "Identify the incorrect statement(s) from the following:\n1. Babur lost his kingdom and roaming like a nomad in central Asia.\n2. He captured Samarkand the capital of Timur twice.\n3. In 1504 A.D. he captured Kabul and he ruled as a king of Kabul nearly 30 years.\n4. In 1526 A.D. in the first Battle of Panipat, Babar defeated Ibrahim Lodi.", options: ["A) (1) only", "B) (1) and (3) only", "C) (3) only", "D) (2) and (4) only"], ans: 2 },
+      { id: 100, q: "Which of the following statement(s) about the Din-i-Ilahi is/are correct?", options: ["A) The number of the followers of the Din-i-Ilahi was large", "B) It is a state religion", "C) To establish a national religion which would be acceptable to the Muslims and the Hindus", "D) To expand its territories and gain control over the independent states"], ans: 2 },
+      { id: 101, q: "Who was responsible for the security of the village under the Marathas in South India?", options: ["A) Deshmukh", "B) Faujdar", "C) Kotwal", "D) Patil"], ans: 3 },
+      { id: 102, q: "What is the meaning of 'Maval'?", options: ["A) Soldiers of Shivaji", "B) Maratha Chiefs", "C) Sunset-land", "D) Eastern belt of Poona district"], ans: 2 },
+      { id: 103, q: "Identify the wrong statement from the following:", options: ["A) Shivaji's Guardian was Dadaji Kondadev", "B) The coronation of Shivaji was celebrated with great splendour at Raigad", "C) Shivaji's soldiers plundered Surat in 1665", "D) In 1674, Shivaji crowned himself by assuming the title of \"Chatrapati\""], ans: 2 },
+      { id: 104, q: "Assertion (A) : Chauth and Sardeshmukhi were the important sources of Maratha state Revenue.\nReason (R) : Chauth was a charge of 25% of the land Revenue of the area which was claimed by the Marathas as a price for offering their protection against foreign aggression. Sardesh Mukhi was a charge equal to 1/10 of the land revenue.", options: ["A) (A) is true but (R) is false", "B) Both (A) and (R) are true (R) is the correct explanation of (A)", "C) (A) is false but (R) is true", "D) Both (A) and (R) are true but (R) is not the correct explanation of (A)"], ans: 1 },
+      { id: 105, q: "It is called as 'Troy of the East':", options: ["A) Vellore Fort", "B) The fort at Chenji (Gingee)", "C) Fort of Tarangampadi", "D) Sivaganga Fort"], ans: 1 },
+      { id: 106, q: "Among the following, what was the great achievement of Shivaji?", options: ["A) He was the father of the Marathen nation", "B) Defeated the Mughal forces", "C) He was a benevolent ruler", "D) Checked expansion of Mughal empire in South India"], ans: 3 },
+      { id: 107, q: "Which port on the Western coast was attacked and plundered by Shivaji in 1664?", options: ["A) Goa", "B) Bassein", "C) Chaul", "D) Surat"], ans: 3 },
+      { id: 108, q: "Which of the following generals was killed by the Maratha ruler Shivaji?", options: ["A) Afzal khan", "B) Shaista khan", "C) Mir Jumla", "D) Jai Singh"], ans: 0 },
+      { id: 109, q: "Which among the following dynasties levied the tax known as \"Chauth\"?", options: ["A) Marathas", "B) Cholas", "C) Chandellas", "D) Mauryas"], ans: 0 },
+      { id: 110, q: "Shivaji maintained a Naval fleet at:", options: ["A) Salsette", "B) Kolaba", "C) Bassein", "D) Kalyan"], ans: 1 },
+      { id: 111, q: "During the Maratha rule, the revenue of the state came mainly from:", options: ["A) Land", "B) Trade", "C) Fine", "D) Transport"], ans: 0 },
+      { id: 112, q: "Choose the wrongly matched pairs:\n1. Ashtapradhan — Council of Eight Ministers\n2. Sardeshmukhi — Tax on territories\n3. Chauth — Custom duty\n4. Amatya — Foreign Minister", options: ["A) (1) and (2) are correct", "B) (3) and (4) are correct", "C) (2) and (3) are correct", "D) (1) and (4) are correct"], ans: 1 },
+      { id: 113, q: "Who was the first Maratha king in Thanjavur?", options: ["A) Shivaji", "B) Venkoji", "C) Serfoji – I", "D) Tukoji"], ans: 1 },
+      { id: 114, q: "Choose the correct pair from the following :", options: ["A) Holkar — Pune", "B) Bhonsle — Nagpur", "C) Scindhia — Baroda", "D) Peshwa — Indore"], ans: 1 },
+      { id: 115, q: "Who was succeeded to the throne of Marathas after the Third Battle of Panipat?", options: ["A) Narayan Rao", "B) Madhav Rao", "C) Ragoba", "D) Tukoji Holkar"], ans: 1 },
+      { id: 116, q: "Who was the most powerful peshwa?", options: ["A) Balaji Baji Rao", "B) Baji Rao-I", "C) Madhava Rao-I", "D) Balaji Vishwanath"], ans: 1 },
+      { id: 117, q: "In the Ashtapradhan of Shivaji Cabinet, Chief Justice was called as:", options: ["A) Nyayadhish", "B) Panditrao", "C) Sumant", "D) Pant Pradhan"], ans: 0 },
+      { id: 118, q: "Arrange the successors of Shivaji in Chronological order:\n(i) Sahu – I\n(ii) Shivaji – II\n(iii) Raja Ram – I\n(iv) Sambhaji\n(v) Ram Raja", options: ["A) (iv), (iii), (ii), (i), (v)", "B) (ii), (i), (v), (iii), (iv)", "C) (v), (iv), (ii), (i), (iii)", "D) (i), (ii), (iii), (v), (iv)"], ans: 0 },
+      { id: 119, q: "Which of the following is true about the finance and revenue system under Shivaji?\n(i) The Chauth and the Sardeshmukhi\n(ii) Village officials were Deshmuks and Patil's\n(iii) The Revenue Officer appointed by Shivaji was called Karkuns", options: ["A) (i) only", "B) (i) and (iii) only", "C) (i) and (ii) only", "D) (ii) and (iii) only"], ans: 2 },
+      { id: 120, q: "Treaty of Bassein was signed between Peshwa Baji Rao II and:", options: ["A) Shivaji", "B) Wellesley", "C) Dalhousie", "D) Smith"], ans: 1 },
+      { id: 121, q: "From whom Shivaji Captured the Fort of Singhagad in 1670?", options: ["A) Ahmednagar", "B) Mughals", "C) Bidar", "D) Golkonda"], ans: 1 },
+      { id: 122, q: "Match the following with their correct answers:\n(a) Peshwa — 1. Secretary\n(b) Shurnavis — 2. Chief Justice\n(c) Nyayadhish — 3. High Priest\n(d) Pandit Rao — 4. Prime Minister", options: ["A) (a)-1, (b)-2, (c)-3, (d)-4", "B) (a)-4, (b)-1, (c)-2, (d)-3", "C) (a)-3, (b)-4, (c)-2, (d)-1", "D) (a)-2, (b)-3, (c)-4, (d)-1"], ans: 1 },
+      { id: 123, q: "The second founder of the Maratha Kingdom was:", options: ["A) Bajirao", "B) Balaji Bajirao", "C) Balaji Viswanath", "D) Madhavrao"], ans: 2 },
+      { id: 124, q: "Who got the nickname \"Father of Guerrilla warfare in India\"?", options: ["A) Shivaji", "B) Balaji Baji Rao", "C) Harshavardhana", "D) Alauddin Khilji"], ans: 0 },
+      { id: 125, q: "In which year Shivaji took the title of 'Chatrapathi'?", options: ["A) 1673 A.D", "B) 1674 A.D", "C) 1675 A.D", "D) 1676 A.D"], ans: 1 },
+      { id: 126, q: "Find out the correct statement in Maratha Shivaji Rule:", options: ["A) Afzalkhan was appointed the Governor of the Deccan in 1660 with the main purpose of crushing Shivaji.", "B) Senji acted as the first line of defence for Shivajis successors.", "C) The revenue administration of Shivaji was humane and beneficient to the cultivators.", "D) Sardeshmukhi was an additional 15% of the revenue which Shivaji collected."], ans: 2 },
+      { id: 127, q: "Ram Das Samarth, the Guru of Shivaji taught the philosophy of:", options: ["A) Advaita Vedanta", "B) Equality of all believes before God", "C) Love of man", "D) Faith in one God"], ans: 0 },
+      { id: 128, q: "Choose the right matches among type:\nMukhya pradhan — Prime Minister\nSummant — Commander-in-chief\nNyayadhish — Chief Justice\nSari Naubat — Foreign secretary", options: ["A) 1 and 3 are correct", "B) 1 and 2 are correct", "C) 2 and 3 are correct", "D) 3 and 4 are correct"], ans: 0 },
+      { id: 129, q: "Match the following:\n(a) Peshwa — 1. Foreign Secretary\n(b) Amatya — 2. Chief Minister\n(c) Sachiva — 3. Finance Minister\n(d) Sumant — 4. Superintendent", options: ["A) (a)-1, (b)-2, (c)-3, (d)-4", "B) (a)-1, (b)-4, (c)-2, (d)-3", "C) (a)-2, (b)-3, (c)-4, (d)-1", "D) (a)-3, (b)-2, (c)-1, (d)-4"], ans: 2 },
+      { id: 130, q: "Shivaji was crowned as an independent king at:", options: ["A) Raigad", "B) Surat", "C) Ahmedabad", "D) Poona"], ans: 0 },
+      { id: 131, q: "Who wrote Amuktamalyada?", options: ["A) Krishnadevaraya", "B) Harihara", "C) Bukka", "D) Ramadeva"], ans: 0 },
+      { id: 132, q: "Which one is the correct statement?\n1. The relation between the portuguese and vijayanagar began in the reign of Krishnadevaraya.\n2. Venkata II received a letter from Philip II king of Spain for protection of trade.\n3. Antonio Cabral met Akbar at Surat.\n4. Akbar dispatched an embassy to Philip II in 1582.", options: ["A) 1, 2, 3 are correct 4 only incorrect", "B) 1, 2 are correct 3, 4 are incorrect", "C) 2, 3, 4 are correct 1 is incorrect", "D) 3 only correct 1, 2, 4 are incorrect"], ans: 3 },
+      { id: 133, q: "The war of Noses took place during the reign of:", options: ["A) Sevappa Nayak", "B) Thirumalai Nayak", "C) Chokkanatha Nayak", "D) Ranimangammal"], ans: 1 },
+      { id: 134, q: "Who was the Vijayanagar emperor when Goa was occupied by Portuguese?", options: ["A) Narasimha", "B) Vira Narasimha", "C) Krishna Deva Raya", "D) Achyutaraya"], ans: 2 },
+      { id: 135, q: "Name the states where the Bahmani government spread over:", options: ["A) Maharashtra and Karnataka", "B) Maharashtra and Gujarat", "C) Maharashtra and Telangana", "D) Maharashtra and Madhya Pradesh"], ans: 0 },
+      { id: 136, q: "Nicolo Conti, who visited Vijayanagar was a:", options: ["A) Italian traveller", "B) Persian traveller", "C) Portuguese traveller", "D) Chinese traveller"], ans: 0 },
+      { id: 137, q: "Which one of the coins of Vijayanagar kings came under the copper category?", options: ["A) Varagan", "B) Jittal", "C) Dhara", "D) Pagoda"], ans: 1 },
+      { id: 138, q: "How the coronation of crown prince was described under the Vijayanagar rule?", options: ["A) Aswamedayagam", "B) Pattabhisekam", "C) Satabhisekam", "D) Yuvaraja Pattabhisekam"], ans: 3 },
+      { id: 139, q: "Meadows Taylor observes that the death of ______ was 'the beginning of the end' of the Bahmani kingdom.", options: ["A) Mahmud Gawan", "B) Ahmad Shah", "C) Mahmud Shah", "D) Humayun"], ans: 0 },
+      { id: 140, q: "Read the following and pick out the correct statements :\n(i) Musical Pillars is one of the wonders of the Nayakka King's Rule.\n(ii) Music created by rhythmic hitting of stones is wondered by International Musicians.\n(iii) In the Thousand Pillared Hall of Meenakshi Temple in Madurai, one can find small pillars that exude music when played upon.\n(iv) The Arthanaareeswara Temple at Rameshwaram consists of Pillars that can be played to bring out the seven swaras (Notes).", options: ["A) (i) and (ii) alone are correct", "B) (i), (ii) and (iii) alone are correct", "C) (i), (ii), (iii) and (iv) all are correct", "D) (i), (ii) and (iv) alone are correct"], ans: 1 },
+      { id: 141, q: "Harihara I organised the country into sthalas and nadus on the model of:", options: ["A) Mughals", "B) Turks", "C) Kakatiyas", "D) Hoysalas"], ans: 2 },
+      { id: 142, q: "Name the Russian traveller who visited India in 1474 A.D.", options: ["A) Nicolas", "B) Rasputin", "C) Buchanan", "D) Nikitin"], ans: 3 },
+      { id: 143, q: "Which one was called industrial tax under Vijayanagar rule?\nAttakada Sangam, Masthi\nPadi Kaval\nSandhai Mudhal\nTari kadamai and Chekku Kadamai", options: ["A) 1 only", "B) 2 only", "C) 3 only", "D) 4 only"], ans: 3 },
+      { id: 144, q: "The city Vijayanagaram was called as:\nBija Nagar\nVirupatchapuram\nHosepattanam\nVidyanagaram", options: ["A) 1 only", "B) 2 only", "C) 2, 3 only", "D) 1, 2, 3, 4"], ans: 3 },
+      { id: 145, q: "During the period of Achyuta Devaraya the Vijayanagar kingdom was divided into:", options: ["A) 15 Rajyas", "B) 16 Rajyas", "C) 17 Rajyas", "D) 18 Rajyas"], ans: 2 },
+      { id: 146, q: "Mahmud Gawan was executed on the charge of:", options: ["A) Murder", "B) Adultery", "C) Forged charge of Treason", "D) Theft"], ans: 2 },
+      { id: 147, q: "Match List I with List II and choose your answer from the codes given below:\n(a) Nicolo de Conti — 1. Krishnadevaraya\n(b) Domingo Paes — 2. Devaraya II\n(c) Fernao Nuniz — 3. Devaraya I\n(d) Abdur Razzak — 4. Achyuta Raya", options: ["A) (a)-3, (b)-1, (c)-4, (d)-2", "B) (a)-1, (b)-4, (c)-2, (d)-3", "C) (a)-3, (b)-2, (c)-1, (d)-4", "D) (a)-2, (b)-1, (c)-4, (d)-3"], ans: 0 },
+      { id: 148, q: "Sambavati Kalyanam was written in the language of:", options: ["A) Telugu", "B) Tamil", "C) Marathi", "D) Sanskrit"], ans: 3 },
+      { id: 149, q: "Who shifted his capital from Gulbarga to Bidar in the Bahmani Kingdom?", options: ["A) Ahmad Shah I", "B) Bahman Shah", "C) Muhammad Shah I", "D) Alauddin Mujahid Shah"], ans: 0 },
+      { id: 150, q: "Nicolo Conti and Abdur Razzaq visited India during the reign of:", options: ["A) Cholas", "B) Pandyas", "C) Vijayanagar rulers", "D) Bahmani Sultans"], ans: 2 },
+      { id: 151, q: "The most famous state festival of the Vijayanagara empire was:", options: ["A) Brahmotsavam", "B) Mahanavami", "C) Spring (vasant) festival", "D) Ramana Vaidi"], ans: 1 },
+      { id: 152, q: "The last ruler of Sangama Dynasty:", options: ["A) DevaRaya – I", "B) MallikarjunaRaya", "C) Virupaksha – II", "D) DevaRaya – II"], ans: 2 },
+      { id: 153, q: "An astronomical observatory near Daulatabad was built by:", options: ["A) Alauddin Hasan Gangu", "B) Mohamed Gawan", "C) Humayun Shah", "D) Firoz Shah Bahmani"], ans: 3 },
+      { id: 154, q: "The battle that gave a severe blow to the Vijayanagar Empire and thereby paved the way for the transfer of capital from Vijayanagar to Penukonda was:", options: ["A) Battle of Talaikotta", "B) Battle of Toppur", "C) Thiru Purambiam War", "D) First Carnatic War"], ans: 0 },
+      { id: 155, q: "Name the rulers who had organized a military department called Kandachara:", options: ["A) Vijayanagar rulers", "B) Bahmani Sultans", "C) Marathas", "D) Mughals"], ans: 0 },
+      { id: 156, q: "Tarafdars in Bahmani Sultanate refers to:", options: ["A) Provincial Governors", "B) Prince", "C) Commander", "D) Horsemen"], ans: 0 },
+      { id: 157, q: "Match List I with List II and choose your answer from the codes given below:\n(a) Nizam Shahi — 1. Golkonda\n(b) Qutub Shahi — 2. Bijapur\n(c) Imad Shahi — 3. Ahmednagar\n(d) Adil Shahi — 4. Berar", options: ["A) (a)-3, (b)-1, (c)-4, (d)-2", "B) (a)-2, (b)-3, (c)-1, (d)-4", "C) (a)-1, (b)-2, (c)-4, (d)-3", "D) (a)-4, (b)-2, (c)-3, (d)-1"], ans: 0 },
+      { id: 158, q: "Who founded the Adilshahi Kingdom of Bijapur?", options: ["A) Mahmud Gawan", "B) Mahmud Shah", "C) Nizam Shah", "D) Yusuf Adil Shah"], ans: 3 },
+      { id: 159, q: "\"Amuktamalyada\" the work of Krishnadevaraya deals with the life of:", options: ["A) Perialvar", "B) Devaraya II", "C) Saluva Narasimha", "D) Krishnadevaraya"], ans: 0 },
+      { id: 160, q: "Ala-ud-din Hasan Shah was succeeded by:", options: ["A) Muhammad Shah I", "B) Ahmad Shah", "C) Firoz Shah", "D) Jafar Khan Ala-ud-din II"], ans: 0 },
+      { id: 161, q: "Which foreign traveller mentioned that \"The circumference of the Vijaya Nagar city was sixty miles\"?", options: ["A) Edoardo Barbosa", "B) Nicolo Conti", "C) Abdur Razzaq", "D) Domingos Paes"], ans: 1 },
+      { id: 162, q: "Allasani Peddana was often described as:", options: ["A) Andhra Bhoja", "B) Andhra Kavita - Pitamaha", "C) Hasan Gangu", "D) Gajabentakara"], ans: 1 },
+      { id: 163, q: "Until A.D. 1425 ______ served as the capital of Bahmani state.", options: ["A) Golconda", "B) Gulbarga", "C) Bidar", "D) Ahmednagar"], ans: 1 },
+      { id: 164, q: "Which of the following is correctly paired?\nHoysala — Devagiri\nYadavas — Dwarasamudra\nKakatiyas — Warangal\nPallavas — Madurai", options: ["A) (1) and (2)", "B) (3) and (4)", "C) (3) only", "D) (1), (2) and (4)"], ans: 2 },
+      { id: 165, q: "______ the ruler of Vijayanagar constructed a huge dam on the river Tungabhadra.", options: ["A) Harihara – II", "B) Bukka – II", "C) Virupaksha – II", "D) Devaraya – II"], ans: 1 },
+      { id: 166, q: "Which of the following statements is true about the Vijayanagar Empire?\n(i) Sea Trade was ignored.\n(ii) The Famous Persian Ambassador Abdur Razzaq was invited by Devaraya II.\n(iii) Vijayanagar Kingdom was founded by Harihara I.\n(iv) Vijayanagar forces were defeated by Bahmani armies.", options: ["A) (ii) and (iv)", "B) (i) and (ii)", "C) (ii) and (iii)", "D) (i) and (iv)"], ans: 2 },
+      { id: 167, q: "Mahmud Gawan's Madrasa is a large Library, containing a collection of 3000 manuscripts situated at:", options: ["A) Berar", "B) Bijapur", "C) Bidar", "D) Ahmad Nagar"], ans: 2 },
+      { id: 168, q: "The Bahmani Sultan kept his personal bodyguards called the:", options: ["A) Khas-i-khel", "B) Amir-ul-Umra", "C) Kiledars", "D) Mansabs"], ans: 0 },
+      { id: 169, q: "Arrange the following dynasties which ruled Vijayanagar empire in chronological order :\n(1) Tuluva Dynasty\n(2) Sangama Dynasty\n(3) Saluva Dynasty\n(4) Aravidu Dynasty", options: ["A) 2, 3, 1, 4", "B) 1, 2, 4, 3", "C) 4, 3, 2, 1", "D) 3, 1, 4, 2"], ans: 0 },
+      { id: 170, q: "A king who emerged victorious in all his expeditions and engraved the title Second Alexander on his coins:", options: ["A) Bahman Shah", "B) Mohammed Gawan", "C) Krishnadevaraya", "D) Samudragupta"], ans: 0 },
+      { id: 171, q: "Pagoda was a ______ coin of Vijayanagar descent.", options: ["A) Silver", "B) Copper", "C) Bronze", "D) Gold"], ans: 3 },
+      { id: 172, q: "Which one of the following is false with regard to the reign of Ahmad Shah?", options: ["A) He transferred his capital from Gulbarga to Bidar (1425)", "B) The rivalry between the Dakshin party and foreign party became accentuated during his period", "C) He conquered Warrangal in 1424-25", "D) He annexed the kingdom of Gujarat to his Empire"], ans: 3 },
+      { id: 173, q: "Dakhni literature was patronised by the Qutb Shahi Sultans of:", options: ["A) Golkonda", "B) Bijapur", "C) Ahmednagar", "D) Bidar"], ans: 0 },
+      { id: 174, q: "Assertion [A] : Bahman Shah attempted to exact an annual tribute from the State of Warrangal, the Reddi Kingdoms Rajamundry and Kondaveedu.\nReason [R] : This led to frequent wars.", options: ["A) [A] is correct [R] is not the correct explanation of [A]", "B) [A] is correct [R] is wrong", "C) [A] and [R] are wrong", "D) [A] is correct, [R] is the correct explanation of [A]"], ans: 3 },
+      { id: 175, q: "Krishna Devaraya belongs to ______ dynasty of the Vijayanagar Empire.", options: ["A) Aravidu", "B) Saluva", "C) Sangama", "D) Tuluva"], ans: 3 },
+      { id: 176, q: "The book Parijathapa Haranamu written by whom?", options: ["A) Allasani Peddanna", "B) Nandi Timmanna", "C) Dhurjati", "D) Tenali Rama Krishna"], ans: 1 },
+      { id: 177, q: "Match the following Bahmani Kingdoms:\n(a) Adil Shahi — 1. Ahmednagar\n(b) Nizam Shahi — 2. Bidar\n(c) Imad Shahi — 3. Golconda\n(d) Qutub Shahi — 4. Bijapur\n(e) Barid Shahi — 5. Berar", options: ["A) (a)-2, (b)-5, (c)-1, (d)-4, (e)-3", "B) (a)-3, (b)-2, (c)-4, (d)-1, (e)-5", "C) (a)-4, (b)-1, (c)-5, (d)-3, (e)-2", "D) (a)-5, (b)-3, (c)-2, (d)-4, (e)-1"], ans: 2 },
+      { id: 178, q: "Which rule came to an end at the end of Battle of Talaikotta?", options: ["A) Lodi Dynasty", "B) Vijayanagar Empire", "C) Pandian Empire", "D) Sayyid Dynasty"], ans: 1 },
+      { id: 179, q: "Who helped Muhammad Gawan in the war of succession?", options: ["A) Kapileshwar Gajapati", "B) Hambir", "C) Purushotham Gajapati", "D) Malik Kasan"], ans: 2 },
+      { id: 180, q: "Under Vijayanagar rulers, the Indo-Saracenic school of art could be found in the secular structures of:", options: ["A) Lotus Mahal and Elephant stables", "B) Vittalasswami temple - garbhagriha", "C) Hazararama temple - gopuram", "D) Devi Shrine"], ans: 0 },
+      { id: 181, q: "Name the king of Vijayanagar who captured Goa:", options: ["A) Harihara – I", "B) Harihara – II", "C) Bukka – I", "D) Bukka – II"], ans: 1 },
+      { id: 182, q: "Which of the following statements are true about Krishnadevaraya?\n(i) He belonged to Saluva dynasty.\n(ii) He was popularly known as \"Andhra Bhoji\".\n(iii) He wrote the famous work \"Amuktamalyada\" in Telugu.\n(iv) He died on 17 September 1530.", options: ["A) (i) and (iv) only", "B) (ii) and (iii) only", "C) (i), (ii) and (iii) only", "D) All the above"], ans: 1 },
+      { id: 183, q: "Building 'Kalyana Mandapas' was a notable feature of the temple construction in the kingdom of:", options: ["A) Chalukyas", "B) Chandellas", "C) Rashtrakutas", "D) Vijayanagar"], ans: 3 },
+      { id: 184, q: "Who among the following served as the first Mahamandaleswara of Tamil province under Vijayanagar Rule?", options: ["A) Empana", "B) Prakasa", "C) Kampana", "D) Viruppanna"], ans: 2 },
+      { id: 185, q: "The Talaikota Battle was also called as:", options: ["A) Toppur Battle", "B) Rakahasi – Tangadi Battle", "C) Battle of Rajagambira Rajyam", "D) Battle of Kannanur Kuppam"], ans: 1 },
+      { id: 186, q: "Match the following:\n(a) Amoghavarsha — 1. Mahapurana\n(b) Jinasena — 2. Kavirajamarga\n(c) Gunabhadra — 3. Kadambari\n(d) Bana — 4. Adipurana", options: ["A) (a)-2, (b)-4, (c)-3, (d)-1", "B) (a)-2, (b)-4, (c)-1, (d)-3", "C) (a)-2, (b)-3, (c)-4, (d)-1", "D) (a)-2, (b)-3, (c)-1, (d)-4"], ans: 1 },
+      { id: 187, q: "Which among the following statements are correct regarding Krishna Devaraya?\nI. Amuktha Malyatha was written by Krishnadevaraya.\nII. Krishnadevaraya maintained cordial relationship with Portuguese.\nIII. Appaji Saluvathimma was his son.\nIV. Krishna devaraya was a Vaishnavite.", options: ["A) I alone is correct", "B) I, II and III are correct", "C) I, II and IV are correct", "D) All are correct"], ans: 2 },
+      { id: 188, q: "Nizam Shahi kingdom of Ahmadnagar was founded by:", options: ["A) Hasan Shah", "B) Malik Ahmad", "C) Muhammad Shah", "D) Nizam-ul-Mulk"], ans: 1 },
+      { id: 189, q: "The Andhra Origin of the Pallavas was mentioned by:", options: ["A) K.A. Nilakanta Sastri", "B) K.P. Jayaswal", "C) S. Krishnaswamy Iyengar", "D) R. Sathianathier"], ans: 0 },
+      { id: 190, q: "The Chinese Pilgrim Hiuen Tsang visited Kanchi during the reign of:", options: ["A) Mahendravarman", "B) Narasimhavarman", "C) Rajasimha", "D) Aparajithan"], ans: 1 },
+      { id: 191, q: "One among the following inscriptions speaks about the village administrations of the Pallavas:", options: ["A) Manur Inscription", "B) Thiruchirapalli Inscription", "C) Kalugumalai Inscription", "D) Ervadi Inscription"], ans: 1 },
+      { id: 192, q: "Which one of the following Pallava rulers assumed the title of \"Vatapikondan\"?", options: ["A) Mahendravarman – I", "B) Mahendravarman – II", "C) Narasimhavarman – I", "D) Narasimhavarman – II"], ans: 2 },
+      { id: 193, q: "A treatise on South Indian Paintings:", options: ["A) Dakshinachitra", "B) Mattavilasaprahasam", "C) Nandikkalambagam", "D) Bharathavenba"], ans: 0 },
+      { id: 194, q: "The book 'Dasakumara Charita' was written by:", options: ["A) Amar Singh", "B) Kalidasa", "C) Dandin", "D) Vatsyayana"], ans: 2 },
+      { id: 195, q: "Who established the earliest Brahmodayas in Tondaimandalam?", options: ["A) Nandivarman I", "B) Nandivarman II", "C) Nandivarman III", "D) Vishnugopa"], ans: 0 },
+      { id: 196, q: "Which one of the following Pallava rulers assumed the title of \"Vatapikondan\"?", options: ["A) Mahendravarman – I", "B) Mahendravarman – II", "C) Narasimhavarman – I", "D) Narasimhavarman – II"], ans: 2 },
+      { id: 197, q: "Methods of measuring lands such as Are, Nivarthanam and Pattigai were followed during which King's period?", options: ["A) Cholar period", "B) Cherar period", "C) Pandiar period", "D) Pallavan period"], ans: 3 },
+      { id: 198, q: "Fines are mentioned in the Kasakudi plates of:", options: ["A) Nandivarman", "B) Narasimhavarman", "C) Paramesvaravarman", "D) Dantivarman"], ans: 0 },
+      { id: 199, q: "(i) Chola period was famous for rock sculptures.\n(ii) Pallava period was famous for Vimanas.", options: ["A) (i) is True", "B) (ii) is True", "C) (i) True and (ii) False", "D) Both are False"], ans: 3 },
+      { id: 200, q: "Match the following:\n(a) Rashtrakutas — 1. Large number of forts\n(b) Cholas — 2. Village self-government\n(c) Pallavas — 3. Patronage of architecture\n(d) Chalukyas — 4. Vesara Style of Architecture", options: ["A) (a)-1, (b)-2, (c)-3, (d)-4", "B) (a)-4, (b)-1, (c)-2, (d)-3", "C) (a)-2, (b)-3, (c)-4, (d)-1", "D) (a)-3, (b)-4, (c)-1, (d)-2"], ans: 0 },
+      { id: 201, q: "______ established their Kingdom in Tondaimandalam.", options: ["A) Cheras", "B) Cholas", "C) Pallavas", "D) Pandias"], ans: 2 },
+      { id: 202, q: "Which among the following plates are not associated with Simma Vishnu?", options: ["A) Vellorepalayam plates", "B) Kasakkudi plates", "C) Kanchanur plates", "D) Chinnamanur plates"], ans: 3 },
+      { id: 203, q: "Assertion [A] : The Pallavas constructed the Cave temples without brick, wood, metal and sudhai.\nReason [R] : The stones kept one upon another and not bound with plaster is known as \"Katraligal\".", options: ["A) [A] true, but [R] false", "B) [A] false but [R] true", "C) Both [A] and [R] are true", "D) Both [A] and [R] are false"], ans: 2 },
+      { id: 204, q: "Match the following:\n(a) Simhavishnu Chaturvedimangalam — 1. Manali\n(b) Parantaka Chaturvedimangalam — 2. Kurattur\n(c) Dinachintamani Chaturvedimangalam — 3. Velachcheri\n(d) Vanavanmadevi Chaturvedimangalam — 4. Pallavaram", options: ["A) (a)-1, (b)-2, (c)-3, (d)-4", "B) (a)-4, (b)-3, (c)-2, (d)-1", "C) (a)-1, (b)-3, (c)-4, (d)-2", "D) (a)-2, (b)-3, (c)-4, (d)-1"], ans: 1 },
+      { id: 205, q: "Arranging the chronological order. Arrange the major Pallava Kings:\nSimhavishnu — 555 to 590 CE\nMahendravarman I — 590 to 630 CE\nNarasimhavarman I — 630 to 668 CE\nRajasimha — 695 to 728 CE", options: ["A) 1, 2, 3, 4", "B) 3, 1, 2, 4", "C) 4, 2, 3, 1", "D) 2, 4, 1, 3"], ans: 0 },
+      { id: 206, q: "The garland of the Cheras was:", options: ["A) Fig flower", "B) Palmyra flower", "C) Margosa flower", "D) Leucas flower"], ans: 1 },
+      { id: 207, q: "The capital city of Sangam Cheras was:", options: ["A) Kanchi", "B) Musiri", "C) Venni", "D) Vanji"], ans: 3 },
+      { id: 208, q: "In which major Rock Edict of Asoka, the reference about the kings of Cheras, Cholas and Pandyas are mentioned?", options: ["A) XIII Rock edict", "B) I Rock edict", "C) VI Rock edict", "D) IX Rock edict"], ans: 0 },
+      { id: 209, q: "Match the following:\n(a) Simhavishnu — 1. Chalukya\n(b) Jayasimhan-I — 2. Pallava\n(c) Aditya-I — 3. Satavahana\n(d) Satakarni — 4. Chola", options: ["A) (a)-4, (b)-3, (c)-2, (d)-1", "B) (a)-4, (b)-1, (c)-2, (d)-3", "C) (a)-2, (b)-1, (c)-4, (d)-3", "D) (a)-4, (b)-3, (c)-2, (d)-1"], ans: 2 },
+      { id: 210, q: "Pugalur Inscription refers to which dynasty?", options: ["A) Cheras", "B) Cholas", "C) Pandyas", "D) Pallavas"], ans: 0 },
+      { id: 211, q: "Which dynasty is mentioned in the literature titled Pathittruppathu?", options: ["A) Cheras", "B) Cholas", "C) Pandyas", "D) Pallavas"], ans: 0 },
+      { id: 212, q: "Reason and Assertion type:\nAssertion [A] : Archaeological excavations conducted in Pattanam, Ernakulam, Kerala unearthed signs of early Roman trade.\nReason [R] : The excavation proved that Pattanam was a part of Muziris, the port city of the Sangam Cheras.", options: ["A) [A] is true but [R] is false", "B) Both [A] and [R] are true and [R] is correct explanation of [A]", "C) [A] is false", "D) Both [A] and [R] are true but [R] is not the correct explanation of [A]"], ans: 1 },
+      { id: 213, q: "Which of the following councils assisted the sangam rulers?", options: ["A) Sabha and Samithi", "B) Aimperum Kuzhu and Enperayam", "C) Ashtathik - kajas and Ashtapradhans", "D) Ur and Mantram"], ans: 1 },
+      { id: 214, q: "Which literature says the social political condition of Chola dynasty?", options: ["A) Thirukkural", "B) Naladiyar", "C) Kalingathuparani", "D) Periyapuranam"], ans: 2 },
+      { id: 215, q: "Assertion (A) : Periyapuranam was written by Sekkizhar during the reign of Cholas. Seevakasindhamani and Kambaramayanam were also written during the reign of Cholas.\nReason (R) : Tamil literature flourished during Cholas period.", options: ["A) (A) is true, (R) is false.", "B) (A) is false, (R) is true.", "C) Both (A) and (R) are true and (R) is the correct explanation of (A).", "D) Both (A) and (R) are true but (R) is not the correct explanation of (A)."], ans: 2 },
+      { id: 216, q: "Elaborate survey of land was carried out by the imperial Cholas:\n(i) To assess land under cultivation\n(ii) To classify land into different grades\n(iii) To minimize arbitrariness in the holding of land\n(iv) To encourage guild system\nConsider the above statements and select the correct response:", options: ["A) (i), (ii) and (iii) are true", "B) (i) and (iii) are true", "C) (ii) and (iii) are true", "D) (i), (ii), (iii) and (iv) are true"], ans: 3 },
+      { id: 217, q: "History of local self Government in Tamil Nadu is evident from inscription in ______ District.", options: ["A) Uthiramerur, Kanchipuram", "B) Keeladi, Madurai", "C) Adichanallur, Thoothukudi", "D) Sittanavasal, Pudukottai"], ans: 0 },
+      { id: 218, q: "During which Period Bronze Icons of Nataraja deity with four hands was casted?", options: ["A) Chera Period", "B) Chola Period", "C) Pandiyas Period", "D) Shunga Period"], ans: 1 },
+      { id: 219, q: "Choose the correct chronological order:", options: ["A) Rajadhiraja I, Parantaka I, Kulothunga I, Rajaraja I", "B) Kulothunga I, Parantaka I, Rajadhiraja I, Rajaditya I", "C) Parantaka I, Rajadhiraja I, Kulothunga I, Rajaraja I", "D) Parantaka I, Rajaraja I, Rajadhiraja I, Kulothunga I"], ans: 3 },
+      { id: 220, q: "During the 'Later Chola period', 'Irayili' was associated with:", options: ["A) Tax free land", "B) Taxed land", "C) Tax levied on temple land", "D) Tax levied on leasing land"], ans: 0 },
+      { id: 221, q: "Which of the following statements are true about the Cholas?\n(i) The first mention of the cholas is in the Asokan inscription.\n(ii) They were independent rulers in Tamilagam.\n(iii) Kanyakumari Inscription and Anbil Plates give information of the early Cholas.", options: ["A) (i) is correct", "B) (i) and (ii) are correct", "C) (i), (ii) and (iii) are correct", "D) (i) and (iii) are correct"], ans: 2 },
+      { id: 222, q: "Find the odd one out:", options: ["A) Illamchetchenni", "B) Kochchenganan", "C) Perum Cheral Irumporai", "D) Perunarkilli"], ans: 2 },
+      { id: 223, q: "The original name of Karikal chola:", options: ["A) Karikala", "B) Arunmozhi", "C) Thirumavalavan", "D) Sundarar"], ans: 2 },
+      { id: 224, q: "The Chola ruler directly participated in the battle of Thirupurambiam was:", options: ["A) Vijayalaya Chola", "B) Aditya Chola", "C) Parantaga Chola", "D) Rajendra Chola"], ans: 1 },
+      { id: 225, q: "The eldest son of the Chola king was called to be:", options: ["A) Yuvarajan", "B) Prince", "C) King", "D) Governor"], ans: 0 },
+      { id: 226, q: "______ Foreign accounts called Muziri as the \"First Emporium of India\".", options: ["A) Natural History", "B) Geography", "C) The Periplus of the Erythrean sea", "D) Buddhist chronicles"], ans: 0 },
+      { id: 227, q: "Which inscription mentioned about the kingdom of Cholas for the first time?", options: ["A) Minor Rock edicts of Asoka", "B) 12th Rock Inscription of Asoka", "C) 13th Rock Inscription of Asoka", "D) 14th Rock Inscription of Asoka"], ans: 2 },
+      { id: 228, q: "______ inscription of the Cholas mentioned about the administration in a village.", options: ["A) Utteramerur inscription", "B) Bhattiprolu inscription", "C) Meenakshipuram inscription", "D) Tiruvisalur inscription"], ans: 0 },
+      { id: 229, q: "'Kurram' of Chola Period were:", options: ["A) Unions of Village", "B) Brahminical educational centres", "C) Province", "D) Towns and township"], ans: 0 },
+      { id: 230, q: "______ gives a vivid account of Karikalan reign.", options: ["A) Maduraikanchi", "B) Pattinappalai", "C) Patittruppathu", "D) Paripadal"], ans: 1 },
+      { id: 231, q: "Which one of the following was educational centre(s) under the cholas?\nEnnayiram\nThirubhuvanam\nThirumukkudal\nThiruvetriyur", options: ["A) 1, 2 only", "B) 2, 3 only", "C) 4 only", "D) All the above"], ans: 3 },
+      { id: 232, q: "The Military and political activities of Rajendra Chola in Ceylon are mentioned in ______ plates.", options: ["A) Hiragathahalli Plates", "B) Karandai Copper Plates", "C) Uthiramerur Inscriptions", "D) Thiruvalangadu Copper Plates"], ans: 1 },
+      { id: 233, q: "Arrange the following events in chronological order:\n(1) Paranthaka II\n(2) Rajendra III\n(3) Vikrama Chola\n(4) Vira Rajendra", options: ["A) (3), (4), (2), (1)", "B) (1), (4), (3), (2)", "C) (2), (3), (4), (1)", "D) (3), (1), (2), (4)"], ans: 1 },
+      { id: 234, q: "In the later chola period one veli represented how many acres?", options: ["A) 6.5 acres", "B) 5.6 acres", "C) 6 acres", "D) 6.6 acres"], ans: 0 },
+      { id: 235, q: "Who gave special importance to Village Administration?", options: ["A) Cheras", "B) Cholas", "C) Pandyas", "D) Pallavas"], ans: 1 },
+      { id: 236, q: "Arrange the following events (Rulers) in chronological order:\nRajaraja - I\nVikrama Chola\nKulottunga - I\nKulottunga - II", options: ["A) 2, 3, 4, 1", "B) 1, 2, 3, 4", "C) 1, 3, 2, 4", "D) 3, 1, 4, 2"], ans: 2 },
+      { id: 237, q: "Match the following:\n(a) Mummudi Chozhan — 1. Kulothungan I\n(b) Kadaram Kondan — 2. Paranthagan I\n(c) Sungam Thavirtha Chozhan — 3. Raja Rajan I\n(d) Ponveintha Peruman — 4. Rajendiran I", options: ["A) (a)-3, (b)-4, (c)-1, (d)-2", "B) (a)-4, (b)-3, (c)-2, (d)-1", "C) (a)-1, (b)-2, (c)-3, (d)-4", "D) (a)-2, (b)-1, (c)-3, (d)-4"], ans: 0 },
+      { id: 238, q: "______ plate exposed that the Chola Queen Vanavanmadevi Committed Sati.", options: ["A) Anbil Plate", "B) Tiruvalangadu Plate", "C) Bahur Plate", "D) Velvikudi Plate"], ans: 1 },
+      { id: 239, q: "Who was the Roman writer who made reference about the Pandyan kingdom in Tamilnadu?", options: ["A) Megasthenes", "B) Strabo", "C) Pliny", "D) Augustus"], ans: 1 },
+      { id: 240, q: "Which of the following titles are related with Pandyas?\n(i) Minavar\n(ii) Villavar\n(iii) Kudavar\n(iv) Panchavar", options: ["A) (i) only", "B) (ii) only", "C) (i) and (iv) only", "D) (ii) and (iii) only"], ans: 2 },
+      { id: 241, q: "Which empire's embassies were received by Emperor Augustus Caesar at Terragoda and on the island of Cyprus?", options: ["A) Chera", "B) Chola", "C) Pallava", "D) Pandyan"], ans: 3 },
+      { id: 242, q: "______ hailed the Pandyan Kingdom as 'the richest and the most splendid province in the world'.", options: ["A) Fahien", "B) Marco Polo", "C) Megasthenes", "D) Hieun Tsang"], ans: 1 },
+      { id: 243, q: "What does the word 'Sangam' denote?", options: ["A) Assembly of Elders", "B) Assembly of Artists", "C) Assembly of Tamil Poets", "D) Assembly of Tamil Kings"], ans: 2 },
+      { id: 244, q: "The Sangam Poets and literature were Patronised by:", options: ["A) Cholas", "B) Pallavas", "C) Pandyas", "D) Cheras"], ans: 2 },
+      { id: 245, q: "Marco Polo states that ______ rulers were \"very strict in executing justice upon criminals\".", options: ["A) The Pallavas", "B) The Pandyas", "C) The Cholas", "D) The Chalukyas"], ans: 1 },
+      { id: 246, q: "What was the royal emblem of the Rashtrakutas?", options: ["A) Lion", "B) Golden Eagle", "C) Tiger", "D) Elephant"], ans: 1 },
+      { id: 247, q: "Which of the following is correctly paired?\n1. Pattadakkal — Chalukyas of Vatapi\n2. Elephanta Caves — Ashoka\n3. Ellora Caves — Rashtrakutas\n4. Mamallapuram — Narasimha Varma I", options: ["A) 1, 3, 4 are correct", "B) 2, 3, 4 are correct", "C) 4, 3, 2 are correct", "D) 4, 1, 2 are correct"], ans: 0 },
+      { id: 248, q: "The greatest king of the Rashtrakuta dynasty was:", options: ["A) Amoghavarsha I", "B) Krishna II", "C) Indra III", "D) Govinda II"], ans: 0 },
+      { id: 249, q: "Which one of the following inscription mention the 'Confederacy of Tamil Kings'?", options: ["A) Hathigumpha Inscription", "B) Velvikkudi Copper Plates", "C) Thirukovilur Inscription", "D) Chinnamanur Copper Plate Inscription"], ans: 0 },
+      { id: 250, q: "Pick the odd one out:", options: ["A) Chalukyas – Badami", "B) Chalukyas – Vengi", "C) Chalukyas – Nandhi", "D) Chalukyas – Kalyani"], ans: 2 },
+      { id: 251, q: "Which of the following inscriptions describes the victories of Pulakesin II?", options: ["A) Aihole", "B) Saranath", "C) Sanchi", "D) Junagath"], ans: 0 },
+      { id: 252, q: "The Ajanta and Ellora caves were designated as a UNESCO World Heritage site in the year:", options: ["A) 1980", "B) 1981", "C) 1982", "D) 1983"], ans: 3 },
+      { id: 253, q: "Which one among the following is described as \"The cradle of the Indian Architecture\"?", options: ["A) Aihole", "B) Kailasa", "C) Virupaksha", "D) Papanatha"], ans: 0 },
+      { id: 254, q: "Leptestheria Chalukya, which was recently discovered in Karnataka belongs to which species?", options: ["A) Alius shrimp", "B) Actinimenes koyas", "C) Glass shrimp", "D) Spiny clam shrimp"], ans: 3 },
+      { id: 255, q: "The Pattadakkal temple complex is related to ______ Kings.", options: ["A) Pallava", "B) Chalukya", "C) Rashtrakuta", "D) Chola"], ans: 1 },
+      { id: 256, q: "What is the Ideology of oriental despotism?", options: ["A) Changing society", "B) Democracy", "C) Oligarchy", "D) Unchanging society"], ans: 3 },
+      { id: 257, q: "Which society transmitted Indian culture to Europe?", options: ["A) Afghani", "B) Gujarati", "C) Parsi", "D) Sindhi"], ans: 1 },
+      { id: 258, q: "The Nagara, the Dravida and the Vesara are the:", options: ["A) Three main racial groups of the Indian subcontinent", "B) Three main Linguistic division into which the languages of India can be classified", "C) Three main style of Indian temple architecture", "D) Three main musical Gharanas prevalent in India"], ans: 2 },
+      { id: 259, q: "The Stupa at Amaravati is a best example of what?", options: ["A) Nagara style of architecture", "B) Vesara style of architecture", "C) Mughal Architecture", "D) Dravidian architecture"], ans: 3 },
+      { id: 260, q: "Consider the statement given below and choose the correct answer:\nAssertion [A] : Cultural diffusion is the spread of cultural beliefs and social activities from one group of people to another.\nReason [R] : Cultural landscapes have been defined by the world heritage committee as cultural properties representing the combined works of nature and of man.", options: ["A) Both [A] and [R] are true: [R] explains [A]", "B) Both [A] and [R] are true: [R] does not explain [A]", "C) [A] is true [R] is false", "D) [A] is false [R] is true"], ans: 1 },
+      { id: 261, q: "\"The Cultural Development is characterised by intellectual, aesthetic and spiritual attainments\" Who said the above statement?", options: ["A) J.S. Mill", "B) S.M. Fairchild", "C) Max Weber", "D) Tansen"], ans: 1 },
+      { id: 262, q: "Assertion (A) : The Indian heritage advocates hospitality, charity, friendship, love, respect for parents and elders and tolerance.\nReason (R) : All these help the people to live in unity.", options: ["A) Both (A) and (R) are true (R) is the correct explanation of (A)", "B) Both (A) and (R) are true (R) is not the correct explanation of (A)", "C) (A) is true but (R) is false", "D) (A) is false but (R) is true"], ans: 0 },
+      { id: 263, q: "Konark Sun Temple is also called as:", options: ["A) Blue Pagoda", "B) Golden Pagoda", "C) Black Pagoda", "D) White Pagoda"], ans: 2 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(263, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 263) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Medieval & South Indian History Master Exam.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific dynasties, empires, and regional histories.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of History recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+</html>

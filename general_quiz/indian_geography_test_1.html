@@ -1,0 +1,1583 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Indian Geography Master Exam — Questions 1–200 (Complete Series)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-header: #022c22;
+            --bg-body: #f1f5f9;
+            --card-bg: #ffffff;
+            --primary: #044e3e;
+            --primary-hover: #033c30;
+            --accent-badge: #022c22;
+            --option-bg: #e6f3ef;
+            --option-border: #bcdcd3;
+            --option-hover-bg: #d7ede6;
+            --option-selected-bg: #c5e6dc;
+            --option-selected-border: #044e3e;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --timer-bg: #ffe4e6;
+            --timer-text: #e11d48;
+            --timer-border: #fecdd3;
+            --success: #15803d;
+            --success-light: #dcfce7;
+            --danger: #b91c1c;
+            --danger-light: #fee2e2;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .banner {
+            background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+            color: #ffffff;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .banner h1 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: #facc15;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .banner .sub-title {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+        }
+
+        .banner .tagline {
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            color: #e2e8f0;
+            letter-spacing: 0.02em;
+        }
+
+        .container {
+            max-width: 880px;
+            width: 100%;
+            margin: 1.5rem auto;
+            padding: 0 1rem;
+            flex: 1;
+        }
+
+        .status-ribbon {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .status-tile {
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            padding: 0.7rem 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e2e8f0;
+        }
+
+        .status-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .tile-green .status-icon {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .tile-blue .status-icon {
+            background: #e0f2fe;
+            color: #0284c7;
+        }
+
+        .tile-amber .status-icon {
+            background: #fef3c7;
+            color: #d97706;
+        }
+
+        .tile-rose .status-icon {
+            background: var(--timer-bg);
+            color: var(--timer-text);
+            border: 1px solid var(--timer-border);
+        }
+
+        .status-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            line-height: 1.1;
+        }
+
+        .status-val {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-top: 0.15rem;
+        }
+
+        .tile-rose .status-val {
+            color: var(--timer-text);
+            font-family: 'Plus Jakarta Sans', monospace;
+            font-size: 1.15rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 1.25rem;
+            position: relative;
+        }
+
+        .card-topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .q-badge {
+            background: var(--accent-badge);
+            color: #ffffff;
+            padding: 0.45rem 1rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+        }
+
+        .mark-badge {
+            background: #ffe4e6;
+            color: #be123c;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid #fecdd3;
+        }
+
+        .q-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.55;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            white-space: pre-line;
+        }
+
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.85rem 1.1rem;
+            background: var(--option-bg);
+            border: 1.5px solid var(--option-border);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.15s ease-in-out;
+            text-align: left;
+            width: 100%;
+        }
+
+        .option-item:hover {
+            background: var(--option-hover-bg);
+            border-color: #79baaa;
+        }
+
+        .option-item.selected {
+            background: var(--option-selected-bg);
+            border-color: var(--option-selected-border);
+            box-shadow: 0 0 0 1px var(--option-selected-border);
+        }
+
+        .option-letter {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #022c22;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background 0.15s ease;
+        }
+
+        .option-item.selected .option-letter {
+            background: #044e3e;
+        }
+
+        .option-content {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        .actions-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.75rem;
+            padding-top: 1rem;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.4rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .btn-prev {
+            background: #ffffff;
+            color: #0f172a;
+            border: 1.5px solid #cbd5e1;
+        }
+
+        .btn-prev:hover:not(:disabled) {
+            background: #f8fafc;
+            border-color: #94a3b8;
+        }
+
+        .btn-review {
+            background: #ffffff;
+            color: #044e3e;
+            border: 1.5px solid #044e3e;
+        }
+
+        .btn-review.marked {
+            background: #fef3c7;
+            color: #92400e;
+            border-color: #f59e0b;
+        }
+
+        .btn-next,
+        .btn-submit {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .btn-next:hover,
+        .btn-submit:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-submit {
+            background: #059669;
+        }
+
+        .btn-submit:hover {
+            background: #047857;
+        }
+
+        .btn:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+
+        .footer-motivate {
+            background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+            color: #ffffff;
+            padding: 1.75rem 1rem;
+            text-align: center;
+            margin-top: auto;
+            border-top: 3px solid #059669;
+        }
+
+        .footer-motivate .quote {
+            font-family: 'Caveat', cursive;
+            font-size: 1.45rem;
+            color: #f8fafc;
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-motivate .author-sub {
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            color: #94a3b8;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .setup-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            margin-top: 1.25rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+
+        .form-group select,
+        .form-group input {
+            padding: 0.75rem 0.9rem;
+            border-radius: var(--radius-sm);
+            border: 1.5px solid #cbd5e1;
+            font-size: 1rem;
+            background: #ffffff;
+            outline: none;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus {
+            border-color: var(--primary);
+        }
+
+        .time-preview-badge {
+            display: inline-block;
+            background: #dcfce7;
+            color: #166534;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-top: 0.25rem;
+        }
+
+        .results-center {
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .score-circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: #e6f3ef;
+            color: #044e3e;
+            border: 4px solid #044e3e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem auto 1.5rem auto;
+        }
+
+        .score-circle .pct {
+            font-size: 2.1rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .score-circle .lbl {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        .stats-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 0.85rem;
+            margin: 1.5rem 0;
+        }
+
+        .matrix-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .matrix-card .val {
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+
+        .matrix-card.c-green .val {
+            color: var(--success);
+        }
+
+        .matrix-card.c-red .val {
+            color: var(--danger);
+        }
+
+        .matrix-card.c-slate .val {
+            color: var(--text-muted);
+        }
+
+        .matrix-card .desc {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: 0.25rem;
+        }
+
+        .review-item {
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            border: 1.5px solid #e2e8f0;
+            background: #ffffff;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .review-item.is-correct {
+            border-left: 6px solid var(--success);
+            background: #fcfdfc;
+        }
+
+        .review-item.is-wrong {
+            border-left: 6px solid var(--danger);
+            background: #fffcfc;
+        }
+
+        .review-item.is-unanswered {
+            border-left: 6px solid var(--neutral);
+            background: #f8fafc;
+        }
+
+        .rev-badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+
+        .rev-badge.correct {
+            background: var(--success-light);
+            color: var(--success);
+        }
+
+        .rev-badge.wrong {
+            background: var(--danger-light);
+            color: var(--danger);
+        }
+
+        .rev-badge.unanswered {
+            background: #e2e8f0;
+            color: var(--neutral);
+        }
+
+        .rev-q-text {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+            white-space: pre-line;
+        }
+
+        .rev-detail-line {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0.35rem 0;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 680px) {
+            .status-ribbon {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card {
+                padding: 1.25rem;
+            }
+
+            .actions-bar {
+                flex-wrap: wrap;
+            }
+
+            .actions-bar .btn {
+                flex: 1 1 calc(50% - 0.5rem);
+            }
+
+            .actions-bar .btn-review {
+                order: 3;
+                flex: 1 1 100%;
+            }
+        }
+
+        /* =========================================================
+   📱 COMMON MOBILE RESPONSIVE LAYOUT
+   Use this same block in ALL quiz files
+   ========================================================= */
+
+        /* Prevent horizontal scrolling */
+        html,
+        body {
+            width: 100%;
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        /* Better touch experience */
+        button,
+        .option-item,
+        select,
+        input {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        /* ---------- Tablets & Mobile ---------- */
+        @media (max-width: 768px) {
+
+            body {
+                font-size: 15px;
+            }
+
+            /* Header / Banner */
+            .banner {
+                padding: 1.5rem 1rem 1.25rem;
+            }
+
+            .banner h1 {
+                font-size: clamp(1.35rem, 6vw, 2rem);
+                line-height: 1.25;
+            }
+
+            .banner .sub-title {
+                font-size: 0.9rem;
+                line-height: 1.45;
+            }
+
+            .banner .tagline {
+                font-size: 0.8rem;
+            }
+
+            /* Main container */
+            .container {
+                width: 100%;
+                max-width: 100%;
+                padding: 0.75rem;
+                box-sizing: border-box;
+            }
+
+            /* Status ribbon */
+            .status-ribbon {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.6rem;
+            }
+
+            .status-tile {
+                min-width: 0;
+                padding: 0.75rem 0.6rem;
+            }
+
+            .status-icon {
+                font-size: 1rem;
+            }
+
+            /* Cards */
+            .card {
+                width: 100%;
+                box-sizing: border-box;
+                padding: 1rem;
+                border-radius: 14px;
+            }
+
+            /* Question top bar */
+            .card-topbar {
+                gap: 0.5rem;
+                flex-wrap: wrap;
+            }
+
+            .q-badge,
+            .mark-badge {
+                font-size: 0.75rem;
+            }
+
+            /* Question text */
+            .q-text {
+                font-size: 1rem;
+                line-height: 1.6;
+                word-break: break-word;
+                overflow-wrap: anywhere;
+            }
+
+            /* MCQ options — one column on mobile */
+            .options-grid {
+                grid-template-columns: 1fr;
+                gap: 0.65rem;
+            }
+
+            .option-item {
+                width: 100%;
+                min-height: 52px;
+                box-sizing: border-box;
+                padding: 0.75rem;
+                font-size: 0.92rem;
+                line-height: 1.5;
+            }
+
+            .option-letter {
+                width: 32px;
+                min-width: 32px;
+                height: 32px;
+                font-size: 0.85rem;
+            }
+
+            .option-content {
+                min-width: 0;
+                overflow-wrap: anywhere;
+            }
+
+            /* Action buttons */
+            .actions-bar {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.6rem;
+            }
+
+            .actions-bar .btn {
+                min-height: 46px;
+                flex: 1 1 calc(50% - 0.3rem);
+                font-size: 0.85rem;
+                padding: 0.7rem 0.75rem;
+            }
+
+            .actions-bar .btn-review {
+                flex: 1 1 100%;
+                order: 3;
+            }
+
+            /* Setup screen */
+            .setup-grid {
+                grid-template-columns: 1fr !important;
+                gap: 0.8rem;
+            }
+
+            /* Inputs */
+            input,
+            select {
+                width: 100%;
+                max-width: 100%;
+                box-sizing: border-box;
+                min-height: 44px;
+                font-size: 16px;
+            }
+
+            /* Result screen */
+            .result-stats,
+            .stats-matrix {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+                gap: 0.6rem;
+            }
+
+            .score-circle {
+                width: 130px;
+                height: 130px;
+            }
+
+            /* Review section */
+            .review-question {
+                padding: 0.9rem;
+            }
+
+            /* Footer */
+            footer {
+                padding: 1rem 0.75rem;
+                font-size: 0.75rem;
+            }
+        }
+
+
+        /* ---------- Small Mobile Phones ---------- */
+        @media (max-width: 480px) {
+
+            body {
+                font-size: 14px;
+            }
+
+            .banner {
+                padding: 1.25rem 0.75rem 1rem;
+            }
+
+            .banner h1 {
+                font-size: 1.3rem;
+            }
+
+            .banner .sub-title {
+                font-size: 0.82rem;
+            }
+
+            .container {
+                padding: 0.5rem;
+            }
+
+            /* Status tiles remain 2 columns */
+            .status-ribbon {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 0.45rem;
+            }
+
+            .status-tile {
+                padding: 0.65rem 0.4rem;
+            }
+
+            .status-tile .value {
+                font-size: 0.9rem;
+            }
+
+            .status-tile .label {
+                font-size: 0.68rem;
+            }
+
+            .card {
+                padding: 0.8rem;
+                border-radius: 12px;
+            }
+
+            .q-text {
+                font-size: 0.95rem;
+                line-height: 1.55;
+            }
+
+            .option-item {
+                min-height: 50px;
+                padding: 0.65rem;
+                font-size: 0.88rem;
+            }
+
+            .option-letter {
+                width: 30px;
+                min-width: 30px;
+                height: 30px;
+            }
+
+            .actions-bar .btn {
+                min-height: 44px;
+                font-size: 0.8rem;
+                padding: 0.65rem 0.5rem;
+            }
+
+            .result-stats,
+            .stats-matrix {
+                grid-template-columns: 1fr 1fr !important;
+            }
+
+            .score-circle {
+                width: 115px;
+                height: 115px;
+            }
+        }
+
+
+        /* ---------- Very Small Phones ---------- */
+        @media (max-width: 360px) {
+
+            .banner h1 {
+                font-size: 1.15rem;
+            }
+
+            .banner .sub-title {
+                font-size: 0.76rem;
+            }
+
+            .status-ribbon {
+                gap: 0.35rem;
+            }
+
+            .status-tile {
+                padding: 0.55rem 0.3rem;
+            }
+
+            .card {
+                padding: 0.65rem;
+            }
+
+            .option-item {
+                padding: 0.55rem;
+                font-size: 0.84rem;
+            }
+
+            .option-letter {
+                width: 28px;
+                min-width: 28px;
+                height: 28px;
+                font-size: 0.75rem;
+            }
+
+            .actions-bar .btn {
+                font-size: 0.75rem;
+            }
+        }
+
+
+        /* ---------- Prevent iOS Input Zoom ---------- */
+        @media (max-width: 768px) {
+
+            input,
+            select,
+            textarea,
+            button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="banner">
+        <h1>Competitive Exam</h1>
+        <div class="sub-title">Practice Quiz — Indian Geography Master Exam (200 MCQs)</div>
+        <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div id="setup-screen" class="card">
+            <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Indian Geography
+                Master Exam: Questions 1–200 (Complete Series)</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+                    question</strong> applies automatically to your chosen question count.</p>
+
+            <div class="setup-grid">
+                <div class="form-group">
+                    <label for="mode-select">Exam Mode</label>
+                    <select id="mode-select">
+                        <option value="exam">Standard Exam Mode (Sequential 1–200)</option>
+                        <option value="practice">Practice Mode (Randomized Subset)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="count-select">Number of Questions</label>
+                    <select id="count-select">
+                        <option value="200">All Questions (200 Questions)</option>
+                        <option value="50">50 Questions</option>
+                        <option value="100">100 Questions</option>
+                        <option value="150">150 Questions</option>
+                        <option value="custom">Custom Count</option>
+                    </select>
+                </div>
+
+                <div class="form-group hidden" id="custom-count-wrapper">
+                    <label for="custom-count-input">Enter count (1 to 200)</label>
+                    <input type="number" id="custom-count-input" min="1" max="200" value="50" />
+                </div>
+
+                <div class="form-group">
+                    <label>Total Time Allotted</label>
+                    <div>
+                        <span class="time-preview-badge" id="time-preview-pill">200 min 0 sec (1 min / question)</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+                    Now</button>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="hidden">
+            <div class="status-ribbon">
+                <div class="status-tile tile-green">
+                    <div class="status-icon">&#127758;</div>
+                    <div>
+                        <div class="status-label">Subject</div>
+                        <div class="status-val">Indian Geography</div>
+                    </div>
+                </div>
+                <div class="status-tile tile-blue">
+                    <div class="status-icon">&#128205;</div>
+                    <div>
+                        <div class="status-label">Topic</div>
+                        <div class="status-val">Questions 1–200</div>
+                    </div>
+                </div>
+                <div class="status-tile tile-amber">
+                    <div class="status-icon">&#128202;</div>
+                    <div>
+                        <div class="status-label">Question</div>
+                        <div class="status-val" id="q-counter-val">1 / 200</div>
+                    </div>
+                </div>
+                <div class="status-tile tile-rose">
+                    <div class="status-icon">&#9201;</div>
+                    <div>
+                        <div class="status-label">Time Left</div>
+                        <div class="status-val" id="timer-val">03:20:00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-topbar">
+                    <div class="q-badge" id="q-badge-val">Q.1</div>
+                    <div class="mark-badge">1 Mark</div>
+                </div>
+
+                <div class="q-text" id="q-text-val"></div>
+
+                <div class="options-grid" id="options-container"></div>
+
+                <div class="actions-bar">
+                    <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+                    <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+                    <div style="display: flex; gap: 0.6rem;">
+                        <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+                        <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="result-screen" class="card hidden">
+            <div class="results-center">
+                <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+                <div class="score-circle">
+                    <div class="pct" id="res-score-pct">0%</div>
+                    <div class="lbl">Total Score</div>
+                </div>
+                <p id="res-performance-msg"
+                    style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+            </div>
+
+            <div class="stats-matrix">
+                <div class="matrix-card">
+                    <div class="val" id="res-total">0</div>
+                    <div class="desc">Questions</div>
+                </div>
+                <div class="matrix-card c-green">
+                    <div class="val" id="res-correct">0</div>
+                    <div class="desc">Correct</div>
+                </div>
+                <div class="matrix-card c-red">
+                    <div class="val" id="res-wrong">0</div>
+                    <div class="desc">Wrong</div>
+                </div>
+                <div class="matrix-card c-slate">
+                    <div class="val" id="res-unanswered">0</div>
+                    <div class="desc">Unanswered</div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+                <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+                <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+            </div>
+        </div>
+
+        <div id="review-screen" class="hidden">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+                <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+            </div>
+            <div id="review-list-container"></div>
+        </div>
+
+    </div>
+
+    <footer class="footer-motivate">
+        <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+        <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+    </footer>
+
+    <script>
+        const questionBank = [
+            { id: 1, q: "What is the outermost layer of the Earth?", options: ["A) Mantle", "B) Crust", "C) Outer core", "D) Inner core"], ans: 1 },
+            { id: 2, q: "How does the density of Earth's material change with increasing depth?", options: ["A) It decreases", "B) It remains constant", "C) It increases", "D) It becomes zero"], ans: 2 },
+            { id: 3, q: "What is the equatorial low-pressure belt also called?", options: ["A) Horse latitudes", "B) Doldrums", "C) Roaring Forties", "D) Polar belt"], ans: 1 },
+            { id: 4, q: "Shimla, Mussoorie and Darjeeling belong to which Himalayan division?", options: ["A) Inner Himalayas", "B) Middle Himalayas", "C) Outer Himalayas", "D) Trans-Himalayas"], ans: 1 },
+            { id: 5, q: "Which is the southernmost island of Lakshadweep?", options: ["A) Kavaratti", "B) Agatti", "C) Minicoy", "D) Kalpeni"], ans: 2 },
+            { id: 6, q: "Which type of alluvium is also known as Bet land?", options: ["A) Bhangar", "B) Khadar", "C) Bhabar", "D) Terai"], ans: 1 },
+            { id: 7, q: "Which is the highest peak of the Peninsular Plateau?", options: ["A) Gurushikhar", "B) Anaimudi", "C) Doddabetta", "D) Mahendragiri"], ans: 1 },
+            { id: 8, q: "Which Himalayan range receives less rainfall and has the highest peaks?", options: ["A) Siwaliks", "B) Lesser Himalayas", "C) Greater Himalayas", "D) Eastern Himalayas"], ans: 2 },
+            { id: 9, q: "Which is the youngest range of the Himalayas?", options: ["A) Greater Himalayas", "B) Lesser Himalayas", "C) Outer Himalayas (Siwaliks)", "D) Trans-Himalayas"], ans: 2 },
+            { id: 10, q: "Which was the first Biosphere Reserve in India?", options: ["A) Nanda Devi", "B) Nilgiris", "C) Sundarbans", "D) Gulf of Mannar"], ans: 1 },
+            { id: 11, q: "Which of the following is an ex-situ conservation measure?", options: ["A) National Park", "B) Wildlife Sanctuary", "C) Botanical Garden", "D) Protected Forest"], ans: 2 },
+            { id: 12, q: "When was Project Tiger launched in India?", options: ["A) April 1972", "B) April 1973", "C) April 1974", "D) April 1975"], ans: 1 },
+            { id: 13, q: "Silent Valley National Park is part of which Biosphere Reserve?", options: ["A) Nilgiris Biosphere Reserve", "B) Gulf of Mannar Biosphere Reserve", "C) Sundarbans Biosphere Reserve", "D) Nanda Devi Biosphere Reserve"], ans: 0 },
+            { id: 14, q: "What is the temperature at 2,000 m altitude if the surface temperature is 30°C, using the normal lapse rate of 6.5°C/km?", options: ["A) 25°C", "B) 15°C", "C) 17°C", "D) 21°C"], ans: 2 },
+            { id: 15, q: "Which type of Indian Ocean Dipole generally favours higher monsoon rainfall in India?", options: ["A) Negative IOD", "B) Positive IOD", "C) Neutral IOD", "D) Both negative and neutral IOD"], ans: 1 },
+            { id: 16, q: "Which of the following influences India's climate?", options: ["A) Westerly jet stream", "B) El Niño", "C) Western disturbances", "D) All of the above"], ans: 3 },
+            { id: 17, q: "What causes the Coriolis effect?", options: ["A) Revolution of Earth", "B) Rotation of Earth", "C) Gravity of Moon", "D) Revolution of Moon"], ans: 1 },
+            { id: 18, q: "Which are secondary wind systems?", options: ["A) Trade winds and Westerlies", "B) Monsoons and Cyclones", "C) Polar Easterlies and Westerlies", "D) Loo and Norwester"], ans: 1 },
+            { id: 19, q: "Which breeze blows from land towards the sea at night?", options: ["A) Sea breeze", "B) Land breeze", "C) Monsoon wind", "D) Valley breeze"], ans: 1 },
+            { id: 20, q: "Which is the longest river in India according to the source?", options: ["A) Yamuna", "B) Godavari", "C) Ganges", "D) Brahmaputra"], ans: 2 },
+            { id: 21, q: "Which lakes are situated along India's Eastern Coastal Plains?", options: ["A) Chilika, Kolleru and Pulicat", "B) Vembanad, Chilika and Pulicat", "C) Wular, Kolleru and Pulicat", "D) Sambhar, Chilika and Vembanad"], ans: 0 },
+            { id: 22, q: "Which rivers flow through rift valleys in India?", options: ["A) Narmada, Tapi and Damodar", "B) Ganges, Narmada and Tapi", "C) Krishna, Ganges and Damodar", "D) Ganges, Yamuna and Tapi"], ans: 0 },
+            { id: 23, q: "Which is India's largest freshwater lake?", options: ["A) Sambhar", "B) Wular", "C) Chilika", "D) Vembanad"], ans: 1 },
+            { id: 24, q: "Which water body is surrounded by land on three sides and has a wide opening towards the ocean?", options: ["A) Strait", "B) Gulf", "C) Bay", "D) Isthmus"], ans: 2 },
+            { id: 25, q: "What is the highest type of tide occurring during full moon and new moon?", options: ["A) Neap tide", "B) Spring tide", "C) Ebb tide", "D) Low tide"], ans: 1 },
+            { id: 26, q: "Which statement correctly describes India's western coastal plain?", options: ["A) It is broader and has large deltas", "B) It is narrower and favours natural harbours", "C) It is an emergent coast", "D) It is dominated by large deltas"], ans: 1 },
+            { id: 27, q: "Which soil is black, heavy, highly acidic and rich in organic matter?", options: ["A) Laterite soil", "B) Peaty and marshy soil", "C) Desert soil", "D) Red soil"], ans: 1 },
+            { id: 28, q: "Which type of rock is generally impermeable and does not contain fossils?", options: ["A) Sedimentary", "B) Metamorphic", "C) Igneous", "D) Alluvial"], ans: 2 },
+            { id: 29, q: "Which states lie between Arunachal Pradesh and Tamil Nadu on the shortest route mentioned in the source?", options: ["A) Assam, West Bengal, Odisha and Andhra Pradesh", "B) Bihar, Jharkhand, Odisha and Andhra Pradesh", "C) Assam, Bihar, Odisha and Telangana", "D) Meghalaya, West Bengal, Odisha and Karnataka"], ans: 0 },
+            { id: 30, q: "Which of the following states does NOT have an international land border?", options: ["A) Punjab", "B) Bihar", "C) Haryana", "D) West Bengal"], ans: 2 },
+            { id: 31, q: "Why are rocket launching stations generally located on the eastern coast?", options: ["A) Trade winds provide the main boost", "B) Coriolis force and Earth's eastward rotation provide advantages", "C) Western winds stop rocket movement", "D) Ocean currents propel rockets"], ans: 1 },
+            { id: 32, q: "Farming that relies mainly on locally available and farm-based resources is called:", options: ["A) Intensive farming", "B) Organic farming", "C) Natural farming", "D) Commercial farming"], ans: 2 },
+            { id: 33, q: "Which Indian tea is called the “Champagne of teas”?", options: ["A) Assam Tea", "B) Darjeeling Tea", "C) Bohea Tea", "D) Robusta Tea"], ans: 1 },
+            { id: 34, q: "Which of the following is indigenous to India according to the source?", options: ["A) Wheat", "B) Jowar", "C) Rice", "D) Bajra"], ans: 2 },
+            { id: 35, q: "Which crop fixes atmospheric nitrogen and is the world's largest-produced pulse crop in India?", options: ["A) Bajra", "B) Barley", "C) Pulses", "D) Jowar"], ans: 2 },
+            { id: 36, q: "Which metal is a good conductor of heat and electricity and is chiefly produced by Chile?", options: ["A) Iron", "B) Copper", "C) Gold", "D) Silver"], ans: 1 },
+            { id: 37, q: "Why is Chennai called the “Detroit of Asia”?", options: ["A) It is India's largest automobile manufacturing centre", "B) It is India's largest automobile importer", "C) It is India's largest iron-producing centre", "D) It is India's largest shipbuilding centre"], ans: 0 },
+            { id: 38, q: "Which is the coldest layer of the atmosphere?", options: ["A) Troposphere", "B) Stratosphere", "C) Mesosphere", "D) Thermosphere"], ans: 2 },
+            { id: 39, q: "Where did Cyclone Mocha form?", options: ["A) Arabian Sea", "B) Bay of Bengal", "C) South China Sea", "D) Mediterranean Sea"], ans: 1 },
+            { id: 40, q: "What is the difference between the geographic and magnetic poles?", options: ["A) They are exactly the same", "B) Geographic poles are determined by Earth's spin; magnetic poles by Earth's magnetic field", "C) Both are determined only by the compass", "D) Magnetic poles never move"], ans: 1 },
+            { id: 41, q: "Which type of migration is particularly significant in India according to the source?", options: ["A) Pull migration", "B) Push migration", "C) Seasonal migration only", "D) International migration"], ans: 1 },
+            { id: 42, q: "When sea-surface temperature remains about 3–4°C above average for at least five days, it is called:", options: ["A) El Niño", "B) Marine heatwave", "C) Tsunami", "D) Oceanic inversion"], ans: 1 },
+            { id: 43, q: "Which organisation created the Comprehensive Environmental Pollution Index (CEPI)?", options: ["A) NITI Aayog", "B) CPCB", "C) MoEFCC", "D) WHO"], ans: 1 },
+            { id: 44, q: "Who released the Composite Water Management Index?", options: ["A) NITI Aayog", "B) Central Water Commission", "C) National Institute of Oceanography", "D) Ministry of Jal Shakti"], ans: 0 },
+            { id: 45, q: "Which committee reviewed pesticides that were banned/restricted in other countries but continued to be registered in India?", options: ["A) Raja Chelliah Committee", "B) Anupam Verma Committee", "C) JJ Irani Committee", "D) KV Kamath Committee"], ans: 1 },
+            { id: 46, q: "Which city launched “No Honking Day”?", options: ["A) Delhi", "B) Mumbai", "C) Lucknow", "D) Patna"], ans: 1 },
+            { id: 47, q: "Which tribe is associated with Maharashtra?", options: ["A) Katkari", "B) Bru", "C) Siddi", "D) Mundapota Kela"], ans: 0 },
+            { id: 48, q: "Which channel separates the Maldives from Minicoy?", options: ["A) 6° Channel", "B) 8° Channel", "C) 9° Channel", "D) 10° Channel"], ans: 1 },
+            { id: 49, q: "Which plateau is NOT of volcanic origin?", options: ["A) Deccan Plateau", "B) Chota Nagpur Plateau", "C) Columbia Plateau", "D) None"], ans: 1 },
+            { id: 50, q: "Which plateau is called the “Roof of the World”?", options: ["A) Deccan Plateau", "B) Malwa Plateau", "C) Tibetan Plateau", "D) Chota Nagpur Plateau"], ans: 2 },
+            { id: 51, q: "Which strait connects the Atlantic Ocean with the Mediterranean Sea?", options: ["A) Malacca Strait", "B) Palk Strait", "C) Gibraltar Strait", "D) Bering Strait"], ans: 2 },
+            { id: 52, q: "Which crust is denser?", options: ["A) Continental crust", "B) Oceanic crust", "C) Both have equal density", "D) Upper continental crust only"], ans: 1 },
+            { id: 53, q: "Which discontinuity separates the crust and mantle?", options: ["A) Gutenberg discontinuity", "B) Lehmann discontinuity", "C) Mohorovicic discontinuity", "D) Conrad discontinuity"], ans: 2 },
+            { id: 54, q: "What is the inner core mainly composed of?", options: ["A) Silica and aluminium", "B) Nickel and iron", "C) Calcium and magnesium", "D) Silicon and carbon"], ans: 1 },
+            { id: 55, q: "What is the movement of Earth's lithospheric plates called?", options: ["A) Isostatic movement", "B) Tectonic movement", "C) Erosional movement", "D) Glacial movement"], ans: 1 },
+            { id: 56, q: "Approximately what percentage of earthquakes occur in the circum-Pacific belt according to the source?", options: ["A) 25%", "B) 40%", "C) 68%", "D) 90%"], ans: 2 },
+            { id: 57, q: "What is molten rock material beneath Earth's surface called?", options: ["A) Lava", "B) Magma", "C) Crater", "D) Ash"], ans: 1 },
+            { id: 58, q: "The Deccan Plateau was formed mainly by which type of volcanic eruption?", options: ["A) Explosive eruption", "B) Fissure eruption", "C) Mud eruption", "D) Submarine eruption"], ans: 1 },
+            { id: 59, q: "Which is NOT a glacial landform?", options: ["A) Cirque", "B) Tarn Lake", "C) Arete", "D) Inselberg"], ans: 3 },
+            { id: 60, q: "Which sequence represents the mountains from east to west?", options: ["A) Vindhya–Ural–Alps–Rockies", "B) Ural–Vindhya–Alps–Rockies", "C) Vindhya–Ural–Alps–Rockies", "D) Rockies–Alps–Ural–Vindhya"], ans: 2 },
+            { id: 61, q: "Which seismic waves are the fastest and reach the epicentre first?", options: ["A) L-waves", "B) S-waves", "C) P-waves", "D) Surface waves"], ans: 2 },
+            { id: 62, q: "Which of the following is a depositional glacial landform?", options: ["A) Moraine", "B) Terra rossa", "C) Lappies", "D) Polje"], ans: 0 },
+            { id: 63, q: "What is Karst topography mainly formed by?", options: ["A) Deposition of sand", "B) Dissolution of soluble rocks", "C) Volcanic eruption", "D) Glacial deposition"], ans: 1 },
+            { id: 64, q: "What grows upward from the floor of a limestone cave?", options: ["A) Stalactite", "B) Stalagmite", "C) Moraine", "D) Arete"], ans: 1 },
+            { id: 65, q: "Matterhorn is an example of a:", options: ["A) Hanging valley", "B) U-shaped valley", "C) Pyramidal peak", "D) Fjord"], ans: 2 },
+            { id: 66, q: "Which of the following is an erosional landform of glaciers?", options: ["A) Moraine", "B) Esker", "C) Cirque", "D) Drumlin"], ans: 2 },
+            { id: 67, q: "How wide are the Northern Mountains approximately in Kashmir?", options: ["A) 100 km", "B) 200 km", "C) 500 km", "D) 800 km"], ans: 2 },
+            { id: 68, q: "Which pass is located in Jammu and Kashmir?", options: ["A) Shipki La", "B) Bomdila", "C) Karakoram Pass", "D) Nathula"], ans: 2 },
+            { id: 69, q: "Which range belongs to the Trans-Himalayas?", options: ["A) Pir Panjal", "B) Dhauladhar", "C) Zaskar", "D) Mahabharat"], ans: 2 },
+            { id: 70, q: "Which Himalayan range contains most of the lofty Himalayan peaks?", options: ["A) Siwaliks", "B) Lesser Himalayas", "C) Greater Himalayas", "D) Outer Himalayas"], ans: 2 },
+            { id: 71, q: "The Khyber Pass connects:", options: ["A) India and China", "B) Pakistan and Afghanistan", "C) Nepal and China", "D) Afghanistan and Kazakhstan"], ans: 1 },
+            { id: 72, q: "What is the new alluvium along river courses called?", options: ["A) Bhangar", "B) Khadar", "C) Bils", "D) Chars"], ans: 1 },
+            { id: 73, q: "What are the salt lakes of the Thar Desert called?", options: ["A) Bils", "B) Dhands", "C) Chars", "D) Kayals"], ans: 1 },
+            { id: 74, q: "Where is the Thar Desert located relative to the Aravalli Range?", options: ["A) Eastern side", "B) Western side", "C) Northern side only", "D) Southern side only"], ans: 1 },
+            { id: 75, q: "Which river broadly divides the Peninsular Plateau into Central Highlands and Deccan Plateau?", options: ["A) Godavari", "B) Mahanadi", "C) Narmada", "D) Krishna"], ans: 2 },
+            { id: 76, q: "Which is the correct west-to-east order of the plateaus?", options: ["A) Malwa–Bundelkhand–Baghelkhand–Chota Nagpur", "B) Bundelkhand–Malwa–Chota Nagpur–Baghelkhand", "C) Malwa–Bundelkhand–Baghelkhand–Chota Nagpur", "D) Chota Nagpur–Baghelkhand–Bundelkhand–Malwa"], ans: 2 },
+            { id: 77, q: "What is characteristic of winter in northern India?", options: ["A) Cold days and warm nights", "B) Warm days and cold nights", "C) Warm days and warm nights", "D) Cool days and warm nights"], ans: 1 },
+            { id: 78, q: "What type of pressure belt is the ITCZ?", options: ["A) High pressure", "B) Low pressure", "C) Polar high pressure", "D) Subtropical high pressure"], ans: 1 },
+            { id: 79, q: "What is a dry spell during the monsoon after several rainy days called?", options: ["A) Monsoon burst", "B) Monsoon break", "C) Retreating monsoon", "D) Rain shadow"], ans: 1 },
+            { id: 80, q: "Which of the following contributes to excessive cold in northern India?", options: ["A) Distance from sea", "B) Himalayan snowfall", "C) Cold winds from Central Asia", "D) All of the above"], ans: 3 },
+            { id: 81, q: "What is the maximum amount of moisture air can hold at a given temperature called?", options: ["A) Absolute humidity", "B) Relative humidity", "C) Humidity capacity", "D) Specific humidity"], ans: 2 },
+            { id: 82, q: "Convectional rainfall is most common in which region?", options: ["A) Equatorial region", "B) Polar region", "C) Tundra region", "D) Desert region"], ans: 0 },
+            { id: 83, q: "Why does Tamil Nadu remain relatively dry during the southwest monsoon?", options: ["A) It is parallel to the Bay of Bengal branch and lies in the rain-shadow of the Arabian Sea branch", "B) It receives excessive snowfall", "C) It lies near the equator", "D) It is affected only by western disturbances"], ans: 0 },
+            { id: 84, q: "What is precipitation falling as thin ice flakes below freezing point called?", options: ["A) Hail", "B) Sleet", "C) Snow", "D) Drizzle"], ans: 2 },
+            { id: 85, q: "Which factor determines India's climate?", options: ["A) Latitude", "B) Himalayan Mountains", "C) Altitude", "D) All of the above"], ans: 3 },
+            { id: 86, q: "What is a monsoon?", options: ["A) Permanent wind", "B) Seasonal wind reversing direction with seasons", "C) Local wind only", "D) Polar wind"], ans: 1 },
+            { id: 87, q: "Winter rainfall in northern India is especially beneficial to:", options: ["A) Kharif crops", "B) Rabi crops", "C) Plantation crops", "D) Zaid crops"], ans: 1 },
+            { id: 88, q: "Indian monsoonal rainfall is largely:", options: ["A) Convectional", "B) Orographic", "C) Cyclonic only", "D) Frontal only"], ans: 1 },
+            { id: 89, q: "What Koppen climate type is found along coastal Tamil Nadu?", options: ["A) As", "B) Amw", "C) Aw", "D) Cwg"], ans: 0 },
+            { id: 90, q: "Which wind is hot and dry over the plains of India and Pakistan?", options: ["A) Mistral", "B) Loo", "C) Harmattan", "D) Chinook"], ans: 1 },
+            { id: 91, q: "What is the direct conversion of a solid into a gas called?", options: ["A) Evaporation", "B) Condensation", "C) Sublimation", "D) Transpiration"], ans: 2 },
+            { id: 92, q: "Which are prerequisite conditions for rainfall?", options: ["A) Warm, moist, unstable air and hygroscopic nuclei", "B) Mist and maximum temperature range", "C) Dry air only", "D) Cloudless atmosphere"], ans: 0 },
+            { id: 93, q: "Which line joins places having equal atmospheric pressure?", options: ["A) Isohyet", "B) Isotherm", "C) Isobar", "D) Isoneph"], ans: 2 },
+            { id: 94, q: "Which cloud is associated with thunderstorms?", options: ["A) Stratus", "B) Nimbostratus", "C) Cumulonimbus", "D) Cirrus"], ans: 2 },
+            { id: 95, q: "Which region generally has the highest relative humidity?", options: ["A) Equatorial region", "B) Temperate region", "C) Polar region", "D) Desert region"], ans: 0 },
+            { id: 96, q: "Why do the Himalayas protect India from cold Central Asian air masses?", options: ["A) They act as a climatic barrier", "B) They increase ocean currents", "C) They create deserts", "D) They absorb sunlight"], ans: 0 },
+            { id: 97, q: "Why does land heat faster than water?", options: ["A) Water has lower specific heat capacity", "B) Water has higher specific heat capacity", "C) Land has higher specific heat capacity", "D) Both have equal specific heat"], ans: 1 },
+            { id: 98, q: "In which atmospheric layer do all weather phenomena mainly occur?", options: ["A) Stratosphere", "B) Mesosphere", "C) Troposphere", "D) Thermosphere"], ans: 2 },
+            { id: 99, q: "Which factor causes variation in insolation?", options: ["A) Earth's rotation", "B) Angle of solar rays", "C) Length of day", "D) All of the above"], ans: 3 },
+            { id: 100, q: "What mainly heats the atmosphere?", options: ["A) Shortwave solar radiation", "B) Longwave terrestrial radiation", "C) Reflected solar radiation", "D) Scattered solar radiation"], ans: 1 },
+            { id: 101, q: "How do tropical cyclones generally move?", options: ["A) West to east", "B) East to west", "C) North to south only", "D) South to north only"], ans: 1 },
+            { id: 102, q: "In which region are cyclones called typhoons?", options: ["A) Indian Ocean", "B) Atlantic Ocean", "C) Western Pacific and South China Sea", "D) Western Australia"], ans: 2 },
+            { id: 103, q: "In the Northern Hemisphere, winds around a high-pressure system move:", options: ["A) Anticlockwise", "B) Clockwise", "C) Vertically upward", "D) Randomly"], ans: 1 },
+            { id: 104, q: "Which condition favours tropical cyclone formation?", options: ["A) Sea-surface temperature above 27°C", "B) Strong vertical wind shear", "C) Absence of Coriolis force", "D) Cold ocean surface"], ans: 0 },
+            { id: 105, q: "When a warm air mass moves towards a cold air mass, the boundary is called:", options: ["A) Cold front", "B) Warm front", "C) Occluded front", "D) Stationary front"], ans: 1 },
+            { id: 106, q: "Which surface has the lowest albedo?", options: ["A) Fresh snow", "B) Desert sand", "C) Grassland", "D) Ocean"], ans: 3 },
+            { id: 107, q: "Which is the hottest heat zone of Earth?", options: ["A) Temperate Zone", "B) Torrid Zone", "C) Polar Zone", "D) Frigid Zone"], ans: 1 },
+            { id: 108, q: "What are tornadoes over the sea called?", options: ["A) Water spouts", "B) Typhoons", "C) Willy-willies", "D) Loo"], ans: 0 },
+            { id: 109, q: "What happens to atmospheric pressure with increasing altitude?", options: ["A) It increases", "B) It decreases", "C) It remains constant", "D) It fluctuates continuously"], ans: 1 },
+            { id: 110, q: "What is the calm central region of a tropical cyclone called?", options: ["A) Wall", "B) Eye", "C) Front", "D) Core"], ans: 1 },
+            { id: 111, q: "Which gas is transparent to incoming solar radiation but opaque to outgoing terrestrial radiation?", options: ["A) Oxygen", "B) Nitrogen", "C) Helium", "D) Carbon dioxide"], ans: 3 },
+            { id: 112, q: "Which areas of India are highly vulnerable to sea-level rise?", options: ["A) Mountain areas", "B) Coastal areas", "C) Desert areas", "D) Plateau interiors"], ans: 1 },
+            { id: 113, q: "Pollutants directly released into the environment are called:", options: ["A) Secondary pollutants", "B) Primary pollutants", "C) Tertiary pollutants", "D) Residual pollutants"], ans: 1 },
+            { id: 114, q: "Where is the headquarters of the Geological Survey of India?", options: ["A) Delhi", "B) Kolkata", "C) Chennai", "D) Mumbai"], ans: 1 },
+            { id: 115, q: "According to the source, which state is a leading producer of iron ore?", options: ["A) Andhra Pradesh", "B) Odisha", "C) Madhya Pradesh", "D) Jharkhand"], ans: 1 },
+            { id: 116, q: "Which is the correct order of coal from high to low grade?", options: ["A) Bituminous–Peat–Anthracite–Lignite", "B) Anthracite–Lignite–Bituminous–Peat", "C) Anthracite–Bituminous–Lignite–Peat", "D) Bituminous–Anthracite–Lignite–Peat"], ans: 2 },
+            { id: 117, q: "Which alloy is formed when copper is alloyed with tin?", options: ["A) Brass", "B) Bronze", "C) Steel", "D) Solder"], ans: 1 },
+            { id: 118, q: "Which of the following is a ferrous metallic mineral?", options: ["A) Bauxite", "B) Manganese", "C) Copper", "D) Lead"], ans: 1 },
+            { id: 119, q: "Which type of mica is considered good quality?", options: ["A) Muscovite", "B) Abhrak", "C) Biotite", "D) Lepidolite"], ans: 1 },
+            { id: 120, q: "Where was the first paper mill of India established?", options: ["A) Serampore, West Bengal", "B) Mumbai, Maharashtra", "C) Chennai, Tamil Nadu", "D) Ahmedabad, Gujarat"], ans: 0 },
+            { id: 121, q: "Where was India's first hydroelectric power station established?", options: ["A) Darjeeling", "B) Mumbai", "C) Chennai", "D) Shimla"], ans: 0 },
+            { id: 122, q: "Why is jute called the “golden fibre”?", options: ["A) It is golden in colour", "B) It is renewable, biodegradable and eco-friendly", "C) It is the most expensive fibre", "D) It is used only for gold packing"], ans: 1 },
+            { id: 123, q: "Where is Pichavaram mangrove forest located?", options: ["A) Kancheepuram", "B) Cuddalore", "C) Chennai", "D) Nagapattinam"], ans: 1 },
+            { id: 124, q: "Grizzled Squirrel Wildlife Sanctuary lies mostly in which district?", options: ["A) Tirunelveli", "B) Theni", "C) Virudhunagar", "D) Ramanathapuram"], ans: 2 },
+            { id: 125, q: "Which statement correctly describes Tamil Nadu's forests?", options: ["A) They consist only of dry forests", "B) They range from wet evergreen to scrub forests", "C) They consist only of mangroves", "D) They consist only of thorn forests"], ans: 1 },
+            { id: 126, q: "Sholas are a type of:", options: ["A) Tropical deciduous forest", "B) Tropical evergreen forest", "C) Montane temperate forest", "D) Mangrove forest"], ans: 2 },
+            { id: 127, q: "Which is the most densely populated district of Tamil Nadu according to the 2011 Census?", options: ["A) Coimbatore", "B) Kancheepuram", "C) Tiruchirappalli", "D) Chennai"], ans: 3 },
+            { id: 128, q: "Which district had the highest sex ratio in Tamil Nadu according to the source?", options: ["A) Chennai", "B) Nilgiris", "C) Madurai", "D) Coimbatore"], ans: 1 },
+            { id: 129, q: "What causes auroras?", options: ["A) Ocean currents", "B) Charged solar particles interacting with Earth's atmosphere", "C) Volcanic eruptions", "D) Earth's rotation alone"], ans: 1 },
+            { id: 130, q: "Through which of the following states does the Tropic of Cancer pass?", options: ["A) West Bengal, Mizoram and Madhya Pradesh", "B) Bihar, Manipur and Mizoram", "C) Bihar, Odisha and Kerala", "D) Punjab, Haryana and Bihar"], ans: 0 },
+            { id: 131, q: "Which wastewater is classified as greywater?", options: ["A) Toilet wastewater", "B) Hand-wash, washing machine, bathtub and shower wastewater", "C) Sewage only", "D) Industrial wastewater"], ans: 1 },
+            { id: 132, q: "What is a rapid in a river?", options: ["A) A slow-flowing river section", "B) A section where water flows very fast over rocks", "C) A river delta", "D) A river estuary"], ans: 1 },
+            { id: 133, q: "Which river is called “Singi Khamban” in Tibet?", options: ["A) Ganga", "B) Brahmaputra", "C) Mekong", "D) Indus"], ans: 3 },
+            { id: 134, q: "Which is the northernmost among the following Indus tributaries?", options: ["A) Chenab", "B) Jhelum", "C) Ravi", "D) Sutlej"], ans: 1 },
+            { id: 135, q: "Which is India's only crater lake?", options: ["A) Wular", "B) Chilika", "C) Lonar", "D) Sambhar"], ans: 2 },
+            { id: 136, q: "Which river was historically known as the “Sorrow of Bengal”?", options: ["A) Kosi", "B) Luni", "C) Damodar", "D) Teesta"], ans: 2 },
+            { id: 137, q: "What is the Tibetan name of the Brahmaputra?", options: ["A) Singi Khamban", "B) Tsangpo", "C) Sutlej", "D) Dihang"], ans: 1 },
+            { id: 138, q: "Which two rivers are tributaries of the Yamuna and form the basis of the Ken-Betwa project?", options: ["A) Ken and Betwa", "B) Ravi and Beas", "C) Ganga and Yamuna", "D) Godavari and Krishna"], ans: 0 },
+            { id: 139, q: "Where does the Amaravathi River originate according to the source?", options: ["A) Karnataka", "B) Kerala", "C) Tamil Nadu", "D) Andhra Pradesh"], ans: 1 },
+            { id: 140, q: "Which country is partnering with India for the Pancheshwar Multipurpose Project?", options: ["A) Bhutan", "B) China", "C) Bangladesh", "D) Nepal"], ans: 3 },
+            { id: 141, q: "What is “bombogenesis”?", options: ["A) Pressure drop of 20 millibars or more within 24 hours", "B) Pressure increase of 20 millibars within 24 hours", "C) Formation of methane bombs", "D) Natural hydrogen-bomb formation"], ans: 0 },
+            { id: 142, q: "Tropical cyclones generally have:", options: ["A) A cold core", "B) A warm core", "C) No central pressure", "D) A permanent high-pressure centre"], ans: 1 },
+            { id: 143, q: "What is the Fujiwhara Effect?", options: ["A) Interaction between two cyclones spinning in the same direction", "B) Mixing of ocean currents", "C) Formation of tsunamis", "D) Movement of monsoon winds"], ans: 0 },
+            { id: 144, q: "What is the correct order of maritime zones from the coast towards the high seas?", options: ["A) Territorial Sea → Contiguous Zone → EEZ → High Seas", "B) Contiguous Zone → Territorial Sea → EEZ → High Seas", "C) Territorial Sea → EEZ → Contiguous Zone → High Seas", "D) EEZ → Territorial Sea → Contiguous Zone → High Seas"], ans: 0 },
+            { id: 145, q: "Where do ocean trenches generally form?", options: ["A) Divergent plate boundaries", "B) Convergent plate boundaries", "C) Transform boundaries only", "D) Stable continental interiors"], ans: 1 },
+            { id: 146, q: "Which weather phenomenon is associated with Kerala and Karnataka?", options: ["A) Mango Showers", "B) Kalbaisakhi", "C) Western Disturbance", "D) Loo"], ans: 0 },
+            { id: 147, q: "Which Indian city is called the “Athens of the East”?", options: ["A) Kochi", "B) Madurai", "C) Vijayawada", "D) Shimoga"], ans: 1 },
+            { id: 148, q: "“Kayals” are characteristic of which coast?", options: ["A) Konkan Coast", "B) Malabar Coast", "C) Kanara Coast", "D) Coromandel Coast"], ans: 1 },
+            { id: 149, q: "Who released the Global Assessment of Soil Carbon in Grasslands?", options: ["A) FAO", "B) WMO", "C) IEA", "D) Wetlands International"], ans: 0 },
+            { id: 150, q: "Where is the Coriolis force zero?", options: ["A) Equator", "B) Poles", "C) Tropic of Cancer", "D) Tropic of Capricorn"], ans: 0 },
+            { id: 151, q: "Which wind did a fisherman experience while returning to the coast during a hot afternoon?", options: ["A) Westerlies", "B) Sea breeze", "C) Land breeze", "D) Loo"], ans: 1 },
+            { id: 152, q: "Which condition favours temperature inversion?", options: ["A) Long winter nights", "B) Cloudless sky", "C) Dry air near the surface", "D) All of the above"], ans: 3 },
+            { id: 153, q: "Who developed the Miyawaki forest method?", options: ["A) Akira Miyawaki", "B) Norman Borlaug", "C) E.O. Wilson", "D) M.S. Swaminathan"], ans: 0 },
+            { id: 154, q: "Why does seawater freeze below 0°C?", options: ["A) High pressure", "B) Dissolved salts lower its freezing point", "C) Ocean currents", "D) High oxygen content"], ans: 1 },
+            { id: 155, q: "Why does ice float on seawater?", options: ["A) Ice is denser than water", "B) Ice has lower density than liquid water", "C) Salt increases ice density", "D) Pressure makes ice float"], ans: 1 },
+            { id: 156, q: "Which of the following is a renewable resource?", options: ["A) Coal", "B) Petroleum", "C) Solar energy", "D) Natural gas"], ans: 2 },
+            { id: 157, q: "Which is the most abundant element in the universe?", options: ["A) Oxygen", "B) Carbon", "C) Hydrogen", "D) Nitrogen"], ans: 2 },
+            { id: 158, q: "Which type of hydrogen is produced using renewable energy?", options: ["A) Grey hydrogen", "B) Pink hydrogen", "C) Green hydrogen", "D) Black hydrogen"], ans: 2 },
+            { id: 159, q: "Which country is the world's largest copper producer according to the source?", options: ["A) India", "B) Chile", "C) China", "D) Australia"], ans: 1 },
+            { id: 160, q: "What is “Fool's Gold”?", options: ["A) Hydrogen sulphide", "B) Iron sulphide", "C) Calcium sulphate hemihydrate", "D) Silver bromide"], ans: 1 },
+            { id: 161, q: "Where was OPEC founded in 1960?", options: ["A) Vienna", "B) Baghdad", "C) Geneva", "D) Riyadh"], ans: 1 },
+            { id: 162, q: "What is the correct sequence in cotton textile processing?", options: ["A) Carding → Ginning → Spinning → Weaving", "B) Ginning → Carding → Spinning → Weaving", "C) Spinning → Ginning → Carding → Weaving", "D) Weaving → Spinning → Carding → Ginning"], ans: 1 },
+            { id: 163, q: "Which state had the largest share of India's value of mineral production in 2021–22?", options: ["A) Odisha", "B) Chhattisgarh", "C) Jharkhand", "D) Karnataka"], ans: 0 },
+            { id: 164, q: "Which state reported almost the entire chromite production of India?", options: ["A) Rajasthan", "B) Odisha", "C) Jharkhand", "D) Karnataka"], ans: 1 },
+            { id: 165, q: "Which mineral is used as a retarder in Portland cement?", options: ["A) Mica", "B) Limestone", "C) Gypsum", "D) Bauxite"], ans: 2 },
+            { id: 166, q: "Which statement about the National Mineral Policy, 2019 is correct?", options: ["A) It proposes industry status for mining", "B) It abolished private-sector mining", "C) It stopped mineral corridors", "D) It replaced the 2019 policy with the 2009 policy"], ans: 0 },
+            { id: 167, q: "Where is the headquarters of the Central Water Commission?", options: ["A) Mumbai", "B) Chennai", "C) New Delhi", "D) Hyderabad"], ans: 2 },
+            { id: 168, q: "Where was the First All India Annual State Ministers’ Conference on Water held?", options: ["A) New Delhi", "B) Patna", "C) Bhopal", "D) Lucknow"], ans: 2 },
+            { id: 169, q: "Which is the largest store of Earth's water?", options: ["A) Groundwater", "B) Glaciers", "C) Oceans", "D) Swamps"], ans: 2 },
+            { id: 170, q: "The Polavaram Irrigation Project is constructed on which river?", options: ["A) Krishna", "B) Godavari", "C) Ravi", "D) Vamsadhara"], ans: 1 },
+            { id: 171, q: "Which projects receive World Bank support according to the source?", options: ["A) Hirakud and NMCG", "B) NHP and DRIP", "C) Hirakud and DRIP", "D) NMCG and Hirakud"], ans: 1 },
+            { id: 172, q: "The Cauvery Water Management Authority covers which riparian states?", options: ["A) Karnataka, Tamil Nadu, Kerala and Puducherry", "B) Karnataka and Tamil Nadu only", "C) Tamil Nadu and Kerala only", "D) Karnataka, Andhra Pradesh and Tamil Nadu"], ans: 0 },
+            { id: 173, q: "Where is the headquarters of NBSS&LUP?", options: ["A) New Delhi", "B) Nagpur", "C) Mumbai", "D) Hyderabad"], ans: 1 },
+            { id: 174, q: "Which are the two major types of alluvial soils in the Ganga Plain?", options: ["A) Red and Black", "B) Khadar and Bhangar", "C) Laterite and Red", "D) Desert and Mountain"], ans: 1 },
+            { id: 175, q: "Black soil is mainly formed by weathering of:", options: ["A) Sedimentary rocks", "B) Igneous rocks", "C) Limestone", "D) Sandstone"], ans: 1 },
+            { id: 176, q: "Which soil is generally found in semi-arid regions and is suitable for millet cultivation?", options: ["A) Alluvial soil", "B) Black soil", "C) Red soil", "D) Laterite soil"], ans: 2 },
+            { id: 177, q: "Which soil is formed mainly by leaching?", options: ["A) Black soil", "B) Laterite soil", "C) Mountain soil", "D) Desert soil"], ans: 1 },
+            { id: 178, q: "Which type of soil is porous and saline?", options: ["A) Peaty soil", "B) Desert soil", "C) Alluvial soil", "D) Mountain soil"], ans: 1 },
+            { id: 179, q: "Which of the following contributes to the formation of arid soils?", options: ["A) Dry climate", "B) High temperature", "C) Accelerated evaporation", "D) All of the above"], ans: 3 },
+            { id: 180, q: "Which is a method of soil conservation?", options: ["A) Contour bunding", "B) Crop rotation", "C) Planting shelterbelts", "D) All of the above"], ans: 3 },
+            { id: 181, q: "Why is Coimbatore called the “Manchester of South India”?", options: ["A) It has a major textile industry", "B) It is a major cotton-growing region", "C) It has a long history of textile production", "D) All of the above"], ans: 3 },
+            { id: 182, q: "Which is the most densely populated state of India according to the 2011 Census?", options: ["A) Bihar", "B) Arunachal Pradesh", "C) Uttar Pradesh", "D) Maharashtra"], ans: 0 },
+            { id: 183, q: "Which is a major problem associated with urbanisation in India?", options: ["A) Urban sprawl", "B) Slum formation", "C) Traffic congestion", "D) All of the above"], ans: 3 },
+            { id: 184, q: "Population composition includes:", options: ["A) Age and sex", "B) Religion and language", "C) Education and occupation", "D) All of the above"], ans: 3 },
+            { id: 185, q: "Which soil is generally light, sandy, rich in humus and varies according to parent rock?", options: ["A) Forest and mountain soil", "B) Desert soil", "C) Red soil", "D) Laterite soil"], ans: 0 },
+            { id: 186, q: "In which year did the global urban population first exceed the rural population?", options: ["A) 1997", "B) 2007", "C) 2017", "D) 2022"], ans: 1 },
+            { id: 187, q: "Which of the following is a primary pollutant?", options: ["A) Sulphur oxides", "B) Ground-level ozone", "C) Smog", "D) PAN"], ans: 0 },
+            { id: 188, q: "Which city is NOT part of the Golden Quadrilateral?", options: ["A) Delhi", "B) Mumbai", "C) Trivandrum", "D) Chennai"], ans: 2 },
+            { id: 189, q: "Which is the correct National Waterway 4 route?", options: ["A) Allahabad–Haldia", "B) Sadiya–Dhubri", "C) Kottapuram–Kollam", "D) Kakinada–Pondicherry"], ans: 3 },
+            { id: 190, q: "Which racial group was traditionally described as having black woolly hair, dark eyes, wide nose and black skin?", options: ["A) Mongoloid", "B) Negroid", "C) Australoid", "D) Caucasoid"], ans: 1 },
+            { id: 191, q: "What is the place of worship associated with Jainism?", options: ["A) Temple", "B) Church", "C) Vihara", "D) Basadi"], ans: 3 },
+            { id: 192, q: "When is World Day for Cultural Diversity for Dialogue and Development observed?", options: ["A) May 21", "B) June 21", "C) July 21", "D) April 21"], ans: 0 },
+            { id: 193, q: "Which of the following belongs to the Dravidian language family?", options: ["A) Malayalam", "B) Brahui", "C) Kannada", "D) All of the above"], ans: 3 },
+            { id: 194, q: "Which tribe is associated with the monsoon region?", options: ["A) Eskimos", "B) Bushmen", "C) Santhals", "D) Pygmies"], ans: 2 },
+            { id: 195, q: "Which race do Eskimos belong to according to the source?", options: ["A) Negroid", "B) Mongoloid", "C) Caucasoid", "D) Australoid"], ans: 1 },
+            { id: 196, q: "What are the historical works written by the Ahom people called?", options: ["A) Kadaku", "B) Buranjis", "C) Chaurasi", "D) Puranas"], ans: 1 },
+            { id: 197, q: "Which of the following had no notified Scheduled Tribes according to the 2011 Census?", options: ["A) Punjab", "B) Haryana", "C) Chandigarh", "D) All of the above"], ans: 3 },
+            { id: 198, q: "Which festival is associated with Nagaland?", options: ["A) Tusu Festival", "B) Sangai Festival", "C) Hornbill Festival", "D) Bastar Dussehra"], ans: 2 },
+            { id: 199, q: "Which tribes were recently included in the Scheduled Tribe list according to the source?", options: ["A) Hatti only", "B) Betta-Kuruba only", "C) Kuruvikaran, Betta-Kuruba, Hatti and Binjhia", "D) Binjhia only"], ans: 2 },
+            { id: 200, q: "Which are the major ports located on the west coast of India among the given options?", options: ["A) Paradip and Haldia", "B) Kandla and Jawaharlal Nehru Port", "C) Paradip and Jawaharlal Nehru Port", "D) Haldia and Kandla"], ans: 1 }
+        ];
+
+        let activeQuiz = [];
+        let currentIndex = 0;
+        let userAnswers = {};
+        let markedForReview = {};
+        let timerInterval = null;
+        let totalTimeSeconds = 0;
+        let timeRemaining = 0;
+
+        const setupScreen = document.getElementById("setup-screen");
+        const quizScreen = document.getElementById("quiz-screen");
+        const resultScreen = document.getElementById("result-screen");
+        const reviewScreen = document.getElementById("review-screen");
+
+        const modeSelect = document.getElementById("mode-select");
+        const countSelect = document.getElementById("count-select");
+        const customCountWrapper = document.getElementById("custom-count-wrapper");
+        const customCountInput = document.getElementById("custom-count-input");
+        const timePreviewPill = document.getElementById("time-preview-pill");
+        const startBtn = document.getElementById("start-btn");
+
+        const qCounterVal = document.getElementById("q-counter-val");
+        const timerVal = document.getElementById("timer-val");
+        const qBadgeVal = document.getElementById("q-badge-val");
+        const qTextVal = document.getElementById("q-text-val");
+        const optionsContainer = document.getElementById("options-container");
+
+        const prevBtn = document.getElementById("prev-btn");
+        const markBtn = document.getElementById("mark-btn");
+        const nextBtn = document.getElementById("next-btn");
+        const submitBtn = document.getElementById("submit-btn");
+
+        const resScorePct = document.getElementById("res-score-pct");
+        const resPerformanceMsg = document.getElementById("res-performance-msg");
+        const resTotal = document.getElementById("res-total");
+        const resCorrect = document.getElementById("res-correct");
+        const resWrong = document.getElementById("res-wrong");
+        const resUnanswered = document.getElementById("res-unanswered");
+
+        const reviewAnswersBtn = document.getElementById("review-answers-btn");
+        const restartBtn = document.getElementById("restart-btn");
+        const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+        const reviewListContainer = document.getElementById("review-list-container");
+
+        function computeSelectedCount() {
+            if (countSelect.value === "custom") {
+                return Math.max(1, Math.min(200, parseInt(customCountInput.value) || 50));
+            }
+            return parseInt(countSelect.value);
+        }
+
+        function updatePillTime() {
+            const qCount = computeSelectedCount();
+            const totalSec = qCount * 60; // 1 minute per question
+            const mins = Math.floor(totalSec / 60);
+            const secs = totalSec % 60;
+            timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+        }
+
+        countSelect.addEventListener("change", () => {
+            if (countSelect.value === "custom") {
+                customCountWrapper.classList.remove("hidden");
+            } else {
+                customCountWrapper.classList.add("hidden");
+            }
+            updatePillTime();
+        });
+
+        customCountInput.addEventListener("input", updatePillTime);
+
+        startBtn.addEventListener("click", () => {
+            const mode = modeSelect.value;
+            const count = computeSelectedCount();
+
+            if (mode === "practice" || count < 200) {
+                let pool = [...questionBank];
+                for (let i = pool.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [pool[i], pool[j]] = [pool[j], pool[i]];
+                }
+                activeQuiz = pool.slice(0, count);
+            } else {
+                activeQuiz = [...questionBank];
+            }
+
+            totalTimeSeconds = count * 60; // 1 minute per question
+            timeRemaining = totalTimeSeconds;
+
+            userAnswers = {};
+            markedForReview = {};
+            currentIndex = 0;
+
+            setupScreen.classList.add("hidden");
+            resultScreen.classList.add("hidden");
+            reviewScreen.classList.add("hidden");
+            quizScreen.classList.remove("hidden");
+
+            renderQuestion();
+            startTimer();
+        });
+
+        function formatTime(secs) {
+            const h = Math.floor(secs / 3600);
+            const m = Math.floor((secs % 3600) / 60);
+            const s = secs % 60;
+            if (h > 0) {
+                return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+            }
+            return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }
+
+        function startTimer() {
+            if (timerInterval) clearInterval(timerInterval);
+            timerVal.textContent = formatTime(timeRemaining);
+
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    alert("Time's up! Submitting your examination automatically.");
+                    evaluateAndShowResults();
+                }
+            }, 1000);
+        }
+
+        function renderQuestion() {
+            const qData = activeQuiz[currentIndex];
+            const total = activeQuiz.length;
+
+            qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+            qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+            qTextVal.textContent = qData.q;
+
+            if (markedForReview[currentIndex]) {
+                markBtn.classList.add("marked");
+                markBtn.innerHTML = `&#10004; Marked for Review`;
+            } else {
+                markBtn.classList.remove("marked");
+                markBtn.innerHTML = `&#128278; Mark for Review`;
+            }
+
+            optionsContainer.innerHTML = "";
+            qData.options.forEach((optStr, optIdx) => {
+                const itemBtn = document.createElement("button");
+                itemBtn.className = "option-item";
+                if (userAnswers[currentIndex] === optIdx) {
+                    itemBtn.classList.add("selected");
+                }
+
+                const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+                const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+                const content = letterMatch ? letterMatch[2] : optStr;
+
+                itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+                itemBtn.addEventListener("click", () => {
+                    userAnswers[currentIndex] = optIdx;
+                    renderQuestion();
+                });
+
+                optionsContainer.appendChild(itemBtn);
+            });
+
+            prevBtn.disabled = currentIndex === 0;
+
+            if (currentIndex === total - 1) {
+                nextBtn.classList.add("hidden");
+                submitBtn.classList.remove("hidden");
+            } else {
+                nextBtn.classList.remove("hidden");
+                submitBtn.classList.add("hidden");
+            }
+        }
+
+        prevBtn.addEventListener("click", () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderQuestion();
+            }
+        });
+
+        nextBtn.addEventListener("click", () => {
+            if (currentIndex < activeQuiz.length - 1) {
+                currentIndex++;
+                renderQuestion();
+            }
+        });
+
+        markBtn.addEventListener("click", () => {
+            markedForReview[currentIndex] = !markedForReview[currentIndex];
+            renderQuestion();
+        });
+
+        submitBtn.addEventListener("click", () => {
+            if (confirm("Are you sure you want to submit your examination?")) {
+                clearInterval(timerInterval);
+                evaluateAndShowResults();
+            }
+        });
+
+        function evaluateAndShowResults() {
+            let correct = 0;
+            let wrong = 0;
+            let unanswered = 0;
+
+            activeQuiz.forEach((q, idx) => {
+                const selected = userAnswers[idx];
+                if (selected === undefined) {
+                    unanswered++;
+                } else if (selected === q.ans) {
+                    correct++;
+                } else {
+                    wrong++;
+                }
+            });
+
+            const total = activeQuiz.length;
+            const percentage = Math.round((correct / total) * 100);
+
+            resScorePct.textContent = `${percentage}%`;
+            resTotal.textContent = total;
+            resCorrect.textContent = correct;
+            resWrong.textContent = wrong;
+            resUnanswered.textContent = unanswered;
+
+            if (percentage >= 80) {
+                resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Indian Geography Master Exam.";
+                resPerformanceMsg.style.color = "var(--success)";
+            } else if (percentage >= 60) {
+                resPerformanceMsg.textContent = "Good Result! Review specific physical, climatological, and economic geography concepts.";
+                resPerformanceMsg.style.color = "var(--primary)";
+            } else {
+                resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Indian Geography recommended.";
+                resPerformanceMsg.style.color = "var(--danger)";
+            }
+
+            quizScreen.classList.add("hidden");
+            resultScreen.classList.remove("hidden");
+        }
+
+        reviewAnswersBtn.addEventListener("click", () => {
+            buildReviewList();
+            resultScreen.classList.add("hidden");
+            reviewScreen.classList.remove("hidden");
+        });
+
+        backToSummaryBtn.addEventListener("click", () => {
+            reviewScreen.classList.add("hidden");
+            resultScreen.classList.remove("hidden");
+        });
+
+        restartBtn.addEventListener("click", () => {
+            resultScreen.classList.add("hidden");
+            setupScreen.classList.remove("hidden");
+        });
+
+        function buildReviewList() {
+            reviewListContainer.innerHTML = "";
+
+            activeQuiz.forEach((q, idx) => {
+                const selected = userAnswers[idx];
+                const isAnswered = selected !== undefined;
+                const isCorrect = selected === q.ans;
+
+                const item = document.createElement("div");
+                item.className = "review-item";
+
+                let badgeClass = "unanswered";
+                let statusText = "Unanswered";
+
+                if (isAnswered) {
+                    if (isCorrect) {
+                        badgeClass = "correct";
+                        statusText = "Correct";
+                        item.classList.add("is-correct");
+                    } else {
+                        badgeClass = "wrong";
+                        statusText = "Wrong";
+                        item.classList.add("is-wrong");
+                    }
+                } else {
+                    item.classList.add("is-unanswered");
+                }
+
+                const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+                const correctText = q.options[q.ans];
+
+                item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+                reviewListContainer.appendChild(item);
+            });
+        }
+
+        updatePillTime();
+    </script>
+</body>
+
+</html>

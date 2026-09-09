@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ancient & Medieval Indian History Master Exam (220 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select, .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Ancient & Medieval Indian History Master Exam (220 MCQs)</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Ancient & Medieval Indian History Master Exam (220 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–220)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="220">All Questions (220 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 220)</label>
+          <input type="number" id="custom-count-input" min="1" max="220" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">220 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#128214;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Ancient & Med. History</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#9873;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Batch 10 (220 MCQs)</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 220</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">03:40:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "Which among the following is not correctly matched?\n(A) Tree-ring counting — A.E Douglas\n(B) Varve dating — Baron Gerar de Geer\n(C) Glacial varve sequence — W.F. Libby\n(D) Carbon 14 method — W.F. Libby", options: ["A) (A)", "B) (B)", "C) (C)", "D) (D)"], ans: 2 },
+      { id: 2, q: "Palaeolithic stone tool was first discovered in India in 1863 by:", options: ["A) Le Mesurier", "B) Miles Burkitt", "C) Subba Rao", "D) Robert Bruce"], ans: 3 },
+      { id: 3, q: "Palaeolithic stone tool was discovered first in India in 1863 by whom?", options: ["A) Le Mesurier", "B) Robert Bruce", "C) Miles Burkitt", "D) Subba Rao"], ans: 1 },
+      { id: 4, q: "Which one of the statement is incorrect regarding the mesolithic period?\n1. It is the Stone age between Palaeolithic period and mesolithic period.\n2. They used tools of made up of Keny Small Stones.\n3. The Theri Kadugal of Thirunelveli region belonged to this period.\n4. This people burned their Dead bodies.", options: ["A) 1 only", "B) 2 only", "C) 3 only", "D) 4 only"], ans: 0 },
+      { id: 5, q: "Match the discovery with their corresponding period:\n1. Discovery of iron — (a) Mesolithic\n2. Discovery of Bronze — (b) Neolithic\n3. Beginning of agriculture — (c) Indus civilization\n4. Discovery of fire — (d) Aryans", options: ["A) (a)-4, (b)-3, (c)-2, (d)-1", "B) (a)-3, (b)-2, (c)-1, (d)-4", "C) (a)-2, (b)-3, (c)-4, (d)-1", "D) (a)-1, (b)-2, (c)-3, (d)-4"], ans: 0 },
+      { id: 6, q: "Which one of the following is not a palaeolithic site?", options: ["A) Salem", "B) Madurai", "C) Vallam", "D) Pallavaram"], ans: 0 },
+      { id: 7, q: "The stone tools found at Athirapakkam belongs to:", options: ["A) Paleolithic Age", "B) Neolithic Age", "C) Mesolithic Age", "D) Megalithic Age"], ans: 2 },
+      { id: 8, q: "Primitive stone tools are:\n1. Spears\n2. Round stones with sharp ends\n3. Knives with sharp edge\n4. Egg shaped sharp tools", options: ["A) 1 only", "B) 2 only", "C) 1, 2 and 3 only", "D) 1, 2, 3 and 4"], ans: 3 },
+      { id: 9, q: "Which one of the statement is incorrect regarding the Neolithic culture?\n(i) They engaged in hunting, fishing and domestication of animals.\n(ii) Their houses were mostly in square shape with conical roofs.\n(iii) The Neolithic women wears beads as a ornaments.\n(iv) The important craft of the period was pottery making.", options: ["A) (i) is correct (ii), (iii), (iv) is incorrect.", "B) (i) and (ii) are correct (iii) and (iv) are incorrect.", "C) (i), (ii), (iii) are correct (iv) only incorrect.", "D) (i), (iii) and (iv) are correct (ii) only incorrect."], ans: 3 },
+      { id: 10, q: "Which is the first metal that prehistoric man has started using for many purposes?", options: ["A) Iron Ore", "B) Gold", "C) Silver", "D) Copper"], ans: 3 },
+      { id: 11, q: "The first Old Stone Age tool was discovered at Pallavaram in Tamil Nadu by:", options: ["A) Robert Bruce Foote", "B) Alexander Flemming", "C) Joseph Prestwich", "D) Henry Geoghegan"], ans: 0 },
+      { id: 12, q: "Where a large number of polished stone cults are found in Tamil Nadu:", options: ["A) Paiyampalli", "B) Pudukkottai", "C) Tirunelveli", "D) Tiruvannamalai"], ans: 0 },
+      { id: 13, q: "The alternate name for 'God - particle' is:", options: ["A) Electron neutrino", "B) Quark", "C) Higgs boson", "D) Pi-meson"], ans: 2 },
+      { id: 14, q: "Van Mahotsav involves:", options: ["A) Protecting wild life", "B) Protecting trees", "C) Protecting birds", "D) Act as carbon sink"], ans: 1 },
+      { id: 15, q: "Arrange the following with reference to different stages of human development:\n1. The Nomadic stage\n2. The pastoral stage\n3. The hunting stage\n4. The agricultural stage", options: ["A) 2, 3, 1, 4", "B) 1, 4, 3, 2", "C) 3, 1, 2, 4", "D) 4, 1, 2, 3"], ans: 2 },
+      { id: 16, q: "Which one of the following is not correct about the extent of the Indus valley culture and civilization?", options: ["A) Whole of Sind", "B) South Punjab", "C) Baluchistan", "D) Ganges Valley"], ans: 3 },
+      { id: 17, q: "The primary profession of the Indus valley Civilization was:", options: ["A) Domestication of animals", "B) Internal trade", "C) External trade", "D) Agriculture"], ans: 3 },
+      { id: 18, q: "The Indus Valley Civilization, people had a trade contact with:\n1. Central Asia Mesopotamia\n2. North Eastern Afghanistan\n3. Gujarat and Baluchiston\n4. Persia", options: ["A) (1) only", "B) (2) only", "C) (3) only", "D) (1), (2), (3), (4)"], ans: 3 },
+      { id: 19, q: "Who was the first scholar to use the term \"Indus Civilization\"?", options: ["A) Mortimer Wheeler", "B) Dr. Pran Nath", "C) Morris J. Spivack", "D) Sir John Marshal"], ans: 3 },
+      { id: 20, q: "______ was an important source of subsistence of the Harappans.", options: ["A) Fishing", "B) Agriculture", "C) Pottery", "D) Craft production"], ans: 1 },
+      { id: 21, q: "The seals found in Mohenjadaro was not made of:", options: ["A) Ivory", "B) Conch", "C) Faience", "D) Steatite"], ans: 1 },
+      { id: 22, q: "The script of Indus valley people was:", options: ["A) Brahmi script", "B) Vattelluthu", "C) Grantha script", "D) Pictographic script"], ans: 3 },
+      { id: 23, q: "The tools of Harappa were made of:", options: ["A) Copper and Iron", "B) Steel and Iron", "C) Bronze and Silver", "D) Copper and Bronze"], ans: 3 },
+      { id: 24, q: "Who was the Director General of Archaeological survey of India at the time of Indus Valley excavation?", options: ["A) Dr. R.D. Banerjee", "B) Sir John Marshall", "C) D.R. Sahani", "D) Max Muller"], ans: 1 },
+      { id: 25, q: "More than 500 seals have been discovered in Indus Valley civilization which are all:", options: ["A) Gold", "B) Silver", "C) Terracottas", "D) Copper"], ans: 2 },
+      { id: 26, q: "Which one of the following statement(s) is not correct about the Indus Valley People?\n(i) The Indus Valley People worshipped trees and animals\n(ii) The principal deity of Indus Valley People was Krishna\n(iii) The Indus Valley People worshipped fire and water\n(iv) The principal deity of Indus Valley People was mother goddess", options: ["A) (i) and (iii) only", "B) (ii) only", "C) (i) and (ii) only", "D) (ii) and (iii) only"], ans: 1 },
+      { id: 27, q: "Match List-I with List-II and select the correct answer:\n(a) Chanhudharo — 1. Aurel Stein\n(b) Kulli — 2. J.P. Joshi\n(c) Rakhigarhi — 3. Majumdar\n(d) Dholavira — 4. Amrendranath", options: ["A) (a)-2, (b)-1, (c)-3, (d)-4", "B) (a)-3, (b)-1, (c)-2, (d)-4", "C) (a)-3, (b)-1, (c)-4, (d)-2", "D) (a)-4, (b)-3, (c)-1, (d)-2"], ans: 2 },
+      { id: 28, q: "The first surveyor of the Archaeological Survey of India (ASI) was:", options: ["A) Charles Mason", "B) Alexander Burnes", "C) Alexander Cunningham", "D) Sir John Marshal"], ans: 2 },
+      { id: 29, q: "Harappa is situated in the Montgomery District of:", options: ["A) Persia", "B) Pakistan", "C) India", "D) Iran"], ans: 1 },
+      { id: 30, q: "Which one of the following was not cultivated by the Harappan people?", options: ["A) Barley", "B) Wheat", "C) Cotton", "D) Sugarcane"], ans: 3 },
+      { id: 31, q: "Match List I with List II and select your answer using the codes given below:\n(a) Mohenjadaro — 1. Measurement scale\n(b) Harappa — 2. Lord Shiva\n(c) Trimukha Pose — 3. Great Bath\n(d) Bronze bar — 4. D.R. Sahani", options: ["A) (a)-3, (b)-4, (c)-2, (d)-1", "B) (a)-2, (b)-3, (c)-1, (d)-4", "C) (a)-4, (b)-3, (c)-2, (d)-1", "D) (a)-1, (b)-2, (c)-3, (d)-4"], ans: 0 },
+      { id: 32, q: "Which one of the statement is correct regarding the Indus Valley Civilization?\n1. In Harappa and Mohenjodaro the houses were made of Kiln burnt bricks.\n2. On Kalibangan and Lothal mud bricks were used for the residential houses.\n3. The kiln-burnt bricks used in large quantities in the construction drains, wells and bathing platform.\n4. An average house consist of courtyard and four to six living room.", options: ["A) 1 only", "B) 1, 2 only", "C) 1, 2, 3 only", "D) 1, 2, 3, 4"], ans: 3 },
+      { id: 33, q: "Name the only Indus site with an artificial brick dockyard:", options: ["A) Lothal", "B) Kalibangan", "C) Chanhudaro", "D) Surkotoda"], ans: 0 },
+      { id: 34, q: "In which sites of the Indus Valley had no citadel?", options: ["A) Chanhudaro", "B) Lothal", "C) Kalibangan", "D) Rangpur"], ans: 0 },
+      { id: 35, q: "Which factor caused the end of Indus Valley Civilization?", options: ["A) Climatic change", "B) Earthquake", "C) Flood", "D) Invasion"], ans: 1 },
+      { id: 36, q: "Which one of the statement is correct regarding the Indus Valley Civilization?\n(1) There was a strong centralized Government\n(2) Each lane had a lamp post at intervals\n(3) Dust-bin were also provided in the streets\n(4) Quarters of rich and poor were found", options: ["A) (1), (2) is correct (3), (4) are incorrect", "B) (1), (3) is correct (2), (4) are incorrect", "C) (1), (2), (3) are correct (4) is incorrect", "D) All are correct"], ans: 3 },
+      { id: 37, q: "The main occupation of the people of the Indus valley civilization was:", options: ["A) Agriculture", "B) Warfare", "C) Hunting", "D) Fishing"], ans: 0 },
+      { id: 38, q: "'Dholavira' is an ancient ______ city.", options: ["A) Harappan", "B) Mohenjadaro", "C) Keeladi", "D) Lothal"], ans: 0 },
+      { id: 39, q: "Which one of the statement is correct regarding Architecture of Indus Valley?\n1. In Mohenjodaro nine structure of building have been reveals\n2. Minor variation found in the ground plan in Mohanjadaro\n3. Script of the Indus Valley totally unchanged throughout their history\n4. In Mohenjadaro and Harappa stone building are found", options: ["A) 1, 2, 3, 4 are correct", "B) 1, 2 are correct 3, 4 are incorrect", "C) 1, 3, 4 are correct 2 only incorrect", "D) 4 only incorrect"], ans: 3 },
+      { id: 40, q: "Assertion (A) : The Indus traders resided in Mesopotamia.\nReason (R) : They took cotton for sale.", options: ["A) (A) is right (R) is wrong", "B) Both (A) and (R) are right", "C) (A) is wrong (R) is right", "D) (A) is right but (R) is not the correct explanation of (A)"], ans: 1 },
+      { id: 41, q: "Match correctly the excavated things with the corresponding places:\n(a) Copper — 1. Khetri\n(b) Gold — 2. Kolar\n(c) Lapis Lazuli — 3. Badakhshan\n(d) Cloth — 4. Umma", options: ["A) (a)-3, (b)-4, (c)-1, (d)-2", "B) (a)-1, (b)-2, (c)-3, (d)-4", "C) (a)-4, (b)-2, (c)-1, (d)-3", "D) (a)-1, (b)-4, (c)-3, (d)-2"], ans: 1 },
+      { id: 42, q: "Which is the northern most settlement of Indus Valley civilization?", options: ["A) Sutkagendor", "B) Shortugai", "C) Alamgirpur", "D) Daimabad"], ans: 1 },
+      { id: 43, q: "Which of the following was the Port City of Indus Valley Civilisation?", options: ["A) Lothal", "B) Harappa", "C) Kalibangan", "D) Larkana"], ans: 0 },
+      { id: 44, q: "Which of the following statements are true about the Harappan People?\n(i) The Harappans were the Phallus Worshippers.\n(ii) They worshipped gods in the form of human beings.\n(iii) They placed their gods in temples.", options: ["A) (i) only", "B) (i) and (iii) only", "C) (i) and (ii) only", "D) (ii) and (iii) only"], ans: 2 },
+      { id: 45, q: "Which is the correct chronology of the excavation sites in the Indus civilization?\n(1) Mohenjo-Daro\n(2) Chanhudaro\n(3) Harappa\n(4) Lothal", options: ["A) (3), (1), (2), (4)", "B) (1), (3), (2), (4)", "C) (2), (1), (3), (4)", "D) (3), (4), (2), (1)"], ans: 0 },
+      { id: 46, q: "Who stated Indus script is related to Old Tamil?", options: ["A) I. Mahadevan", "B) R. Nagasamy", "C) Yu. Knorozov", "D) A. Veluppillai"], ans: 0 },
+      { id: 47, q: "Name the Indus Site where workmen's quarters have been found:", options: ["A) Harappa", "B) Lothal", "C) Kalibangan", "D) Chanhudaro"], ans: 0 },
+      { id: 48, q: "The Archaeological survey of India headquarters is located in:", options: ["A) New Delhi", "B) Mumbai", "C) Chennai", "D) Kolkatta"], ans: 0 },
+      { id: 49, q: "Match correctly the following Indus Valley Civilization sites with its locations:\n(a) Harappa — 1. Sindh\n(b) Mohenjadaro — 2. Gujarath\n(c) Kalibangan — 3. Punjab\n(d) Lothal — 4. Rajasthan", options: ["A) (a)-2, (b)-4, (c)-1, (d)-3", "B) (a)-3, (b)-1, (c)-4, (d)-2", "C) (a)-3, (b)-4, (c)-2, (d)-1", "D) (a)-2, (b)-1, (c)-4, (d)-3"], ans: 1 },
+      { id: 50, q: "Pick the odd one out:", options: ["A) Horse and iron were unknown to the Indus people", "B) Indus people used the red quartz stone to design jewellery", "C) Silk dresses were in common use in Indus Culture", "D) Ornaments were popular among men and women of Indus Culture"], ans: 2 },
+      { id: 51, q: "The mention of the word 'Meluhha' in the ______ script is considered to refer to the Indus region.", options: ["A) Pictographic", "B) Cuneiform", "C) Brahmi", "D) Hieroglyphic"], ans: 1 },
+      { id: 52, q: "Harappa was first visited by ______ in 1826 CE (AD).", options: ["A) Amri", "B) Charles Mason", "C) Alexander Burnes", "D) Sir John Marshal"], ans: 1 },
+      { id: 53, q: "What is the meaning of 'Loth' in Lothal in Gujarati language?", options: ["A) Mound", "B) Black Bangles", "C) Dead", "D) Articles"], ans: 2 },
+      { id: 54, q: "In connection with Indus valley civilization which of the following is incorrect?\n(i) Shell — Nageshwar\n(ii) Lapis Lazuli — Shortughai\n(iii) Carnelian — Oman\n(iv) Steatite — Rajasthan", options: ["A) (i) only", "B) (i) and (ii)", "C) (iii) only", "D) (i), (ii) and (iii) only"], ans: 2 },
+      { id: 55, q: "Who was the Author of Book \"Indo-Sumerian Seals Deciphered\"?", options: ["A) Sir John Marshall", "B) Dr. A.P. Agarwal", "C) Robert H. Brunswig", "D) Laurence Waddell"], ans: 3 },
+      { id: 56, q: "Harappan seals show the picture of:\n1. Rhinoceroses\n2. Elephants\n3. Tigers\n4. Camel", options: ["A) 1 only", "B) 1, 2 only", "C) 1, 2, 3 only", "D) 1, 2, 3, 4"], ans: 3 },
+      { id: 57, q: "According to whom, the Harappan script is not alphabetical but mainly pictographic in nature:", options: ["A) J.P. Joshi", "B) S.R. Rao", "C) R.S. Sharma", "D) N.G. Majumdar"], ans: 2 },
+      { id: 58, q: "Kalibangan is situated on the banks of River:", options: ["A) Ravi", "B) Sutlej", "C) Beas", "D) Ghaggar"], ans: 3 },
+      { id: 59, q: "Choose the wrong statement:\nSurvival of Indus cultural features on modern Indian society", options: ["A) Models of cart as toys remains in India", "B) Foot-wheel pottery remains in North-west India", "C) The Indus technology of making beads from semi-precious stones remains today", "D) The citadel system of town planning remains today"], ans: 3 },
+      { id: 60, q: "The most important evidence of trade with Afghanistan comes from an isolated Harappan trading outpost at:", options: ["A) Hajjar", "B) Shortughai", "C) Oman Peninsula", "D) Hissar"], ans: 1 },
+      { id: 61, q: "______ had a planned town, built on a platform.", options: ["A) Lothal", "B) Harappa", "C) Mohenjo daro", "D) Kalibangan"], ans: 2 },
+      { id: 62, q: "Assertion [A] : The Indus people did not use coins.\nReason [R] : They did not have the technology to make metallic coins.", options: ["A) [A] is true but [R] is false", "B) Both [A] and [R] are true and [R] is the correct explanation of [A]", "C) [A] is false but [R] is true", "D) Both [A] and [R] are true but [R] is not the correct explanation of [A]"], ans: 0 },
+      { id: 63, q: "The evidence of the disposal of the dead at Harappa was named as:", options: ["A) Cemetery R - 37", "B) Cemetery S - 77", "C) Cemetery T - 67", "D) Cemetery U - 87"], ans: 0 },
+      { id: 64, q: "Point out the wrong statement of the following:\nI. The Indus Seals have not been deciphered so far.\nII. Indus civilization was a notable urban culture.\nIII. Indus people used large number of weights.\nIV. Indus people knew the art of using the metal iron.", options: ["A) I", "B) II", "C) III", "D) IV"], ans: 3 },
+      { id: 65, q: "Which one of the Statement is incorrect regarding Lothal, the Indus city?\n1. It is found at Gulf of Cambay.\n2. It is found with a dock yard 216 meter wide and 37 metre long.\n3. The dock yard connected with Bhogava river.\n4. It was a port city and where foreign trade was carried on.", options: ["A) 1 only", "B) 2 only", "C) 3 only", "D) 4 only"], ans: 1 },
+      { id: 66, q: "Match the Harappan sites with their archaeological remains:\n(a) Mohenjodaro — 1. Cemetery H\n(b) Harappa — 2. Bronze statue of dancing girl\n(c) Lothal — 3. Terracotta plough\n(d) Banawali — 4. Ivory scale", options: ["A) (a)-1, (b)-2, (c)-4, (d)-3", "B) (a)-3, (b)-1, (c)-2, (d)-4", "C) (a)-2, (b)-1, (c)-4, (d)-3", "D) (a)-4, (b)-3, (c)-2, (d)-1"], ans: 2 },
+      { id: 67, q: "Which tree was considered as supreme deity during the Indus Valley Civilization?", options: ["A) Banyan", "B) Neem", "C) Palm", "D) Pipal"], ans: 3 },
+      { id: 68, q: "Which of the following statements are true about original inhabitants and their culture?\n(i) Indus civilisation had more than one group of people.\n(ii) Several groups including farmers, pastoralists and hunter-gatherers lived in the Indus region.\n(iii) Indus civilisation had more than five group of people.", options: ["A) (i) only", "B) (i) and (ii) only", "C) (i) and (iii) only", "D) (ii) and (iii) only"], ans: 1 },
+      { id: 69, q: "Name the four animals found in the Pasupati Seal of Mohenjodaro:", options: ["A) Lion, Tiger, Hippopotamus, Elephant", "B) Rhinoceros, Bull, Horse, Tiger", "C) Lion, Deer, Buffalo, Cat", "D) Elephant, Tiger, Rhinoceros, Buffalo"], ans: 3 },
+      { id: 70, q: "It was used by the Harappans for making stone blades and tools:", options: ["A) Rohri chert", "B) Steatite", "C) Lapis lazuli", "D) Carnelian"], ans: 0 },
+      { id: 71, q: "Which animal was not known to the Harappans?", options: ["A) Pig", "B) Elephant", "C) Horse", "D) Buffalo"], ans: 2 },
+      { id: 72, q: "Which among the following inscriptions mention the trade contacts between Mesopotamia and Harappan civilisation?", options: ["A) Devanagiri", "B) Kharoshti", "C) Cuneiform", "D) Hieroglyphics"], ans: 2 },
+      { id: 73, q: "Which one of the following is not correct about Harappan culture?", options: ["A) All Harappan sites are urban character", "B) The Harappan cities depended on villages for food and labourers", "C) Harappan remains discovered even at small village sites", "D) The most distinctive feature of Lothal is dockyard"], ans: 0 },
+      { id: 74, q: "Which of the following Harappan sites are not in India?", options: ["A) Mohenjodara and Harappa", "B) Lothal and Kalibangan", "C) Bhanwali and Ropar", "D) Surkotada and Dholavira"], ans: 0 },
+      { id: 75, q: "______-type of Indus pottery is the earliest example of its kind in the ancient world:", options: ["A) Incised", "B) Glazed", "C) Knobbed", "D) Perforated"], ans: 1 },
+      { id: 76, q: "Which of the following statements about the Harappan Civilisation is not correct?", options: ["A) Pipal and Acacia trees were regarded as celestial plants", "B) Terracotta female figures are considered to be representation of mother goddess", "C) The people of Harappan Civilisation never disposed of their dead by the method of cremation", "D) Indus people worshipped the prototype of siva"], ans: 2 },
+      { id: 77, q: "Who has done the Excavation work at Mohenjodaro?", options: ["A) Sir John Marshall", "B) M.S. Watts", "C) Sir Mortimer wheeler", "D) B.B. Lal"], ans: 2 },
+      { id: 78, q: "In which language described Mohenjadaro means \"mount of the dead\"?", options: ["A) Pali", "B) Sindhi", "C) Sanskrit", "D) Prakritham"], ans: 1 },
+      { id: 79, q: "The Indus civilisation and the contemporary cultures covered nearly how many million sq.km area in India and Pakistan?", options: ["A) 1.4 million sq.km", "B) 1.5 million sq.km", "C) 1.3 million sq.km", "D) 1.2 million sq.km"], ans: 1 },
+      { id: 80, q: "The site of Indus valley civilization discovered with stone rubble fortification is:", options: ["A) Surkotada", "B) Lothal", "C) Mohenjo-Daro", "D) Harappa"], ans: 0 },
+      { id: 81, q: "Which fertile region is known as the garden of Sindh?", options: ["A) Mohenjadaro", "B) Harappa", "C) Punjab", "D) Lahore"], ans: 0 },
+      { id: 82, q: "The Harappans mainly settled on the banks of rivers. Match the following settlements with the banks of rivers on which they are located:\n(a) Lothal — 1. Indus\n(b) Kalibangan — 2. Sutlej\n(c) Ropar — 3. Ravi\n(d) Harappa — 4. Ghaggar\n(e) Mohenja-daro — 5. Bhogawa", options: ["A) (a)-5, (b)-4, (c)-2, (d)-3, (e)-1", "B) (a)-2, (b)-5, (c)-1, (d)-4, (e)-3", "C) (a)-4, (b)-5, (c)-2, (d)-3, (e)-1", "D) (a)-5, (b)-4, (c)-3, (d)-2, (e)-1"], ans: 0 },
+      { id: 83, q: "______ is located on Khadir Island in the Rann of Kutch at Gujarat.", options: ["A) Dholavira", "B) Lothal", "C) Kalibangan", "D) Rakhigarhi"], ans: 0 },
+      { id: 84, q: "The weapons of the Indus valley people were mostly made of:", options: ["A) Copper and bronze", "B) Gold and silver", "C) Iron and copper", "D) Stone and Bricks"], ans: 0 },
+      { id: 85, q: "The Great Public Bath was located in which place?", options: ["A) Mohenjadaro", "B) Harappa", "C) Lothal", "D) Chanhudaro"], ans: 0 },
+      { id: 86, q: "The bronze image of dancing girl obtained from:", options: ["A) Harappa", "B) Dholavira", "C) Kalibangan", "D) Mohenjo-Daro"], ans: 3 },
+      { id: 87, q: "In the Indus Valley civilization the major commodities in Internal trade consist of:\n1. Cotton\n2. Lumber\n3. Grain and food stuffs\n4. Livestock", options: ["A) (1), (2), (3) only correct", "B) (1), (2), (4) only correct", "C) (1), (2), (3), (4) correct", "D) (1), (4) only correct"], ans: 2 },
+      { id: 88, q: "Which of the following statements are true about the Houses at Mohenjo-daro?\n(i) It was discovered in Montgomery District of Punjab.\n(ii) In Mohenjo-daro the houses were made of Kiln-burnt bricks.\n(iii) Kiln-burnt bricks in large quantities were used for drains.", options: ["A) (i) and (iii) only", "B) (i) only", "C) (ii) and (iii) only", "D) (ii) only"], ans: 2 },
+      { id: 89, q: "Match correctly:\n(a) Kolliporai coins — 1. Pandya Kings\n(b) Peruvaluthi coins — 2. Chera Kings\n(c) Bead Making Industry — 3. Kangayam\n(d) Textile Industry — 4. Mohenjodaro", options: ["A) (a)-2, (b)-1, (c)-3, (d)-4", "B) (a)-3, (b)-2, (c)-1, (d)-4", "C) (a)-2, (b)-1, (c)-4, (d)-3", "D) (a)-4, (b)-2, (c)-1, (d)-3"], ans: 0 },
+      { id: 90, q: "Which of the following statements are true about the Indus Civilisation?\n(i) In the 1920s Mortimer Wheeler excavated the Harappan sites.\n(ii) The longest text has about twenty six signs.\n(iii) The term \"Meluhha\" in the Prakrit inscriptions refers to the Indus region.\n(iv) The \"Priest King\" of steatite was discovered in Mohenjo-Daro.", options: ["A) (i) and (ii) only", "B) (i) and (iii) only", "C) (ii) and (iii) only", "D) (ii) and (iv) only"], ans: 3 },
+      { id: 91, q: "Assertion [A] : Indus Civilization was the aforesaid seals of Indian origin found in Western Asia.\nReason [R] : Indus civilization not represented a perfect Bronze Age.", options: ["A) [A] is false, but [R] is true", "B) Both [A] and [R] are true; and [R] is the correct explanation of [A]", "C) [A] is true but [R] is false", "D) Both [A] and [R] are true, but [R] is not the correct explanation of [A]"], ans: 2 },
+      { id: 92, q: "Among the following writer who stated, \"The Indus Valley people were peace loving and unwarlike\"?", options: ["A) Mackey", "B) A.D. Pusalker", "C) R.C. Majumdar", "D) Vincent Smith"], ans: 0 },
+      { id: 93, q: "Match the following Indus Valley sites:\n(a) Daimabad — 1. Gujarat\n(b) Bhagatray — 2. Rajasthan\n(c) Ropar — 3. Maharashtra\n(d) Kalibangan — 4. Punjab", options: ["A) (a)-4, (b)-2, (c)-1, (d)-3", "B) (a)-3, (b)-1, (c)-4, (d)-2", "C) (a)-3, (b)-2, (c)-1, (d)-4", "D) (a)-2, (b)-4, (c)-3, (d)-1"], ans: 1 },
+      { id: 94, q: "Match the following Indus Valley sites with the states they are located:\n(a) Daimabad — 1. Uttar Pradesh\n(b) Alamgirpur — 2. Haryana\n(c) Dholavira — 3. Maharashtra\n(d) Rakhigarhi — 4. Gujarat", options: ["A) (a)-3, (b)-2, (c)-1, (d)-4", "B) (a)-3, (b)-1, (c)-4, (d)-2", "C) (a)-4, (b)-1, (c)-2, (d)-3", "D) (a)-2, (b)-4, (c)-3, (d)-1"], ans: 1 },
+      { id: 95, q: "Arrange the following excavated sites in Chronological Order:\n1. Mohenjodaro\n2. Nippoor\n3. Harappa\n4. Ur", options: ["A) 4, 2, 3, 1", "B) 2, 3, 1, 4", "C) 1, 2, 4, 3", "D) 3, 1, 4, 2"], ans: 0 },
+      { id: 96, q: "Which factor was closely responsible for the decline of the mauryan empire?", options: ["A) Asoka's pacific policies", "B) Pro-Jain policies of Asoka's successors", "C) Revolt of Pusyamitra", "D) Asoka's policy of non-violence because it weakened the military and it led to weak administration"], ans: 2 },
+      { id: 97, q: "This Philosophy was purportedly founded in the 5th Century BC by Makkhali Gosala. It was a major rival of vedic religion. It reached the height of its popularity during the rule of the Mauryan Emperor Bindusara around 4th century BC. This School of thought was followed for nearly 2000 years through the 14th century CE in the southern states of Karnataka and Tamilnadu.\nWhich school of thought is described above?", options: ["A) Carvaka", "B) Ajivika", "C) Lokayata", "D) Mimamsa"], ans: 1 },
+      { id: 98, q: "Assertion [A] : Paninian Sanskrit though simpler than vedic is still a very complicated language.\nReason [R] : Every beginner finds great difficulty in surmounting Panini's rules of euphonic combination (Sandhi) the elaboration of tendencies present in the language even in vedic times.", options: ["A) [A] is true but [R] is false", "B) Both [A] and [R] are true; and [R] is the correct explanation of [A]", "C) [A] is false; [R] is true", "D) Both [A] and [R] are true; but [R] is not the correct explanation of [A]"], ans: 1 },
+      { id: 99, q: "What was the name given to the Rural officials during the Mauryan administration?", options: ["A) Astonomai", "B) Agronomoi", "C) Amatyas", "D) Nagarikas"], ans: 1 },
+      { id: 100, q: "Which one of the statement is incorrect regarding the Guptas?", options: ["A) Coins depicts the figures of Chandragupta and Kumara devi", "B) Harisena was one of the important officers of Chandragupta", "C) Samudragupta inscription found in Ashoka Pillar at Allahabad", "D) Inscription from Iran reveals the information of Samudragupta"], ans: 1 },
+      { id: 101, q: "Which of the Vedic Gods is described as the \"Destroyer of cities\"?", options: ["A) Agni", "B) Indra", "C) Rudra", "D) Vishnu"], ans: 1 },
+      { id: 102, q: "Choose the right matches among the following :\n(1) Vedanta — Fountain Head of Indian philosophy\n(2) Brahmanas — Musical Hymns\n(3) Rigveda — Gayatri mantra\n(4) Puranas — Upanishad", options: ["A) (1) and (4) are correct", "B) (3) and (4) are correct", "C) (2) and (1) are correct", "D) (1) and (3) are correct"], ans: 3 },
+      { id: 103, q: "Which of the following is incorrectly matched?\n1. Philosophy — anvikshiki\n2. Veda — trayi\n3. Economics — dandanitti\n4. Politics — vartta", options: ["A) 1 and 2 are incorrect", "B) 2 and 3 are incorrect", "C) 1 and 3 are incorrect", "D) 3 and 4 are incorrect"], ans: 3 },
+      { id: 104, q: "(i) Shambhu is another title of this god.\n(ii) Vedic god Rudra is identified with him.\nWhich god is described in the above statements?", options: ["A) Brahma", "B) Muruga", "C) Shiva", "D) Vishnu"], ans: 2 },
+      { id: 105, q: "What was the key note of the vinayapitaka of Buddhism?", options: ["A) Sacrifice", "B) Discipline", "C) Ahimsa", "D) Truth"], ans: 1 },
+      { id: 106, q: "Which was the primary factor for Buddhism to become popular?", options: ["A) It boosted cattle wealth", "B) It emphasisal non - violence", "C) It created the field of intellect and culture", "D) It was inclusive of women and lower section of society"], ans: 3 },
+      { id: 107, q: "Who studied comparatively Buddha legends at the life of the Jesus through Bible and Buddha Jataka stories?", options: ["A) Arthur A. MacDonnell", "B) A. Berriedale Keith", "C) C.M. Bowra", "D) M. Maurice Winterwitz"], ans: 3 },
+      { id: 108, q: "The Lankavatara Sutra deals with:", options: ["A) Life of Mahavira", "B) Teachings of Mahayana Buddhism", "C) Teachings of Hinduism", "D) Vedas"], ans: 1 },
+      { id: 109, q: "Identify the model Vaishnava theologians in South India invested Hindu framework?", options: ["A) Buddhism", "B) Jainism", "C) Brahminism", "D) Sainism"], ans: 0 },
+      { id: 110, q: "Which book explains the four noble truths of Buddhism?", options: ["A) Nettiprakarana", "B) Petakopadesa", "C) Buddhadatta", "D) Ananda"], ans: 1 },
+      { id: 111, q: "Which of the following statements are true about Buddhism?\n1. Buddhism denied the authority of Vedas\n2. Buddha's teachings were largely based on Brahmanic ideas of Punarjanma, Karma and Moksha\n3. Buddhism was not practical and ethical\n4. Buddhism accepts God as creator", options: ["A) 1, 2, 3 are correct", "B) 1 and 2 are correct", "C) Only 2 is correct", "D) 3 and 4 are correct"], ans: 1 },
+      { id: 112, q: "Buddhist poet Asvaghosa wrote 'Buddha Charita' in ______ language.", options: ["A) Prakrit", "B) Pali", "C) Urdu", "D) Sanskrit"], ans: 3 },
+      { id: 113, q: "Pallavan Kovil plates explains about:", options: ["A) Svetambara Jaina order", "B) Digambara Jaina order", "C) Buddhist principles", "D) Geneology of the Pallavas"], ans: 1 },
+      { id: 114, q: "Which religious leader bound social harmony Jainism and Brahmanism?", options: ["A) Appar", "B) Hemachandra", "C) Ramanujar", "D) Sampandar"], ans: 1 },
+      { id: 115, q: "______ was the Jain name of Appar.", options: ["A) Dharmasena", "B) Harisena", "C) Theerthankara", "D) Sivagnana Sithiyar"], ans: 0 },
+      { id: 116, q: "A copper statue of the Buddha about ______ feet high at Nalanda in Bihar.", options: ["A) 16 feet", "B) 23 feet", "C) 50 feet", "D) 18 feet"], ans: 3 },
+      { id: 117, q: "Assertion [A] : The Gandhara School of Art bears the mark of Hellenistic.\nReason [R] : Hinayana form was influenced by that art.", options: ["A) Both [A] and [R] are true and [R] is the correct explanation of [A]", "B) Both [A] and [R] are true and [R] is not correct explanation of [A]", "C) [A] is true, but [R] is false", "D) [A] is false, but [R] is true"], ans: 2 },
+      { id: 118, q: "Which one of the following is not correct about Guru Nanak?", options: ["A) Nanak laid emphasis on the unity of God", "B) Nanak believed in Vedas and Quran", "C) Nanak believed in the Doctrine of Karma", "D) Nanak attacked caste system"], ans: 1 },
+      { id: 119, q: "A Buddhist Monastery, dating back to 2nd and 4th century A.D. was excavated at ______ city of Gujarat State by the Archaeology department:", options: ["A) Vadodra", "B) Ahmedabad", "C) Surat", "D) Vadnagar"], ans: 3 },
+      { id: 120, q: "Which of the following statement/s is/are true?\n(1) Appar, a jaina in his early life called Darmasena.\n(2) Chaitanya opposed the separation of Hindu and Muslim.\n(3) Sur Das lived at the court of Akbar and was known as the blind bard of Agra.", options: ["A) (1) only correct", "B) (1) and (2) are correct", "C) (1) and (3) are correct", "D) (2) and (3) are correct"], ans: 2 },
+      { id: 121, q: "Arrange the following places of Buddhist Councils in Chronological Order:\n1. Pataliputra\n2. Rajagriha\n3. Kashmir\n4. Vaishali", options: ["A) 4, 2, 1, 3", "B) 2, 3, 4, 1", "C) 3, 1, 2, 4", "D) 2, 4, 1, 3"], ans: 3 },
+      { id: 122, q: "Which factor was closely responsible for the decline of the mauryan empire?", options: ["A) Asoka's pacific policies", "B) Pro-Jain policies of Asoka's successors", "C) Revolt of Pusyamitra", "D) Asoka's policy of non-violence because it weakened the military and it led to weak administration"], ans: 2 },
+      { id: 123, q: "This Philosophy was purportedly founded in the 5th Century BC by Makkhali Gosala. It was a major rival of vedic religion. It reached the height of its popularity during the rule of the Mauryan Emperor Bindusara around 4th century BC. This School of thought was followed for nearly 2000 years through the 14th century CE in the southern states of Karnataka and Tamilnadu.\nWhich school of thought is described above?", options: ["A) Carvaka", "B) Ajivika", "C) Lokayata", "D) Mimamsa"], ans: 1 },
+      { id: 124, q: "Assertion [A] : Paninian Sanskrit though simpler than vedic is still a very complicated language.\nReason [R] : Every beginner finds great difficulty in surmounting Panini's rules of euphonic combination (Sandhi) the elaboration of tendencies present in the language even in vedic times.", options: ["A) [A] is true but [R] is false", "B) Both [A] and [R] are true; and [R] is the correct explanation of [A]", "C) [A] is false; [R] is true", "D) Both [A] and [R] are true; but [R] is not the correct explanation of [A]"], ans: 1 },
+      { id: 125, q: "What was the name given to the Rural officials during the Mauryan administration?", options: ["A) Astonomai", "B) Agronomoi", "C) Amatyas", "D) Nagarikas"], ans: 1 },
+      { id: 126, q: "Which one of the statement is incorrect regarding the Guptas?", options: ["A) Coins depicts the figures of Chandragupta and Kumara devi", "B) Harisena was one of the important officers of Chandragupta", "C) Samudragupta inscription found in Ashoka Pillar at Allahabad", "D) Inscription from Iran reveals the information of Samudragupta"], ans: 1 },
+      { id: 127, q: "During which rule of dynasty first self-immolation of widow took place in India?", options: ["A) Chalukyas", "B) Cholas", "C) Guptas", "D) Mauryas"], ans: 2 },
+      { id: 128, q: "Match the List I with List II and choose your answer from codes given below:\n(a) Arya Bhatta — 1. Newton of India\n(b) Skanda Gupta — 2. Hero of Asia and Europe\n(c) Chandra Gupta II — 3. Destroyer of the Sakas\n(d) Kalidasa — 4. Shakespeare of India", options: ["A) (a)-1, (b)-2, (c)-3, (d)-4", "B) (a)-3, (b)-4, (c)-1, (d)-2", "C) (a)-4, (b)-3, (c)-2, (d)-1", "D) (a)-1, (b)-3, (c)-2, (d)-4"], ans: 0 },
+      { id: 129, q: "Which one of the following was as an important port of the eastern coast during the Gupta period?", options: ["A) Broach", "B) Japara", "C) Tamralipti", "D) Kalyan"], ans: 2 },
+      { id: 130, q: "Which of the following statements about the Gupta society is true?\n1. The Gupta emperors called themselves as Parama Bhagavatas.\n2. Trade with Rome and China flourished.\n3. Women were debarred from exercising public rights.\n4. The custom of Sati was practiced by them.", options: ["A) 1 and 3 are correct", "B) 3 and 4 are correct", "C) Only 4 is correct", "D) 1, 2 and 4 are correct"], ans: 3 },
+      { id: 131, q: "Match the correct classification of land during the Gupta period:\n(a) Kshetra — 1. Waste land\n(b) Khila — 2. Cultivable land\n(c) Aprakata — 3. Habitable land\n(d) Vasti — 4. Jungle land", options: ["A) (a)-1, (b)-2, (c)-3, (d)-4", "B) (a)-4, (b)-2, (c)-1, (d)-3", "C) (a)-2, (b)-1, (c)-4, (d)-3", "D) (a)-3, (b)-4, (c)-1, (d)-2"], ans: 2 },
+      { id: 132, q: "Match the following:\n(a) Varahamihira — 1. Physician\n(b) Kalidasa — 2. Lexicographer\n(c) Amarasimha — 3. Sanskrit Poet\n(d) Dhanvantri — 4. Astronomer", options: ["A) (a)-4, (b)-3, (c)-1, (d)-2", "B) (a)-4, (b)-2, (c)-1, (d)-3", "C) (a)-4, (b)-3, (c)-2, (d)-1", "D) (a)-3, (b)-4, (c)-1, (d)-2"], ans: 2 },
+      { id: 133, q: "Huns invaded India during the reign of:", options: ["A) Kumara Gupta", "B) Rama Gupta", "C) Skanda Gupta", "D) Vishnu Gupta"], ans: 2 },
+      { id: 134, q: "Hindu culture reached its Zenith in India under the reign of the:", options: ["A) Mauryas", "B) Guptas", "C) Kushanas", "D) Harshas"], ans: 1 },
+      { id: 135, q: "Name the world's oldest university founded in the 5th Century A.D.", options: ["A) Nalanda", "B) Vatabhi", "C) Takshashila", "D) Vikramashila"], ans: 0 },
+      { id: 136, q: "During which Gupta king reign, the Huns invaded India for the first time?", options: ["A) Kumara Gupta I", "B) Puru Gupta", "C) Skanta Gupta", "D) Budha Gupta"], ans: 0 },
+      { id: 137, q: "In which year, Fa-hien visited the court of Gupta Emperor, Chandragupta II?", options: ["A) 401-410 A.D.", "B) 401-420 A.D.", "C) 401-425 A.D.", "D) 400-405 A.D."], ans: 0 },
+      { id: 138, q: "Who was not the contemporary of Samudragupta?", options: ["A) Pushyavarman", "B) Bhaskarvarman", "C) Vishnugopa", "D) Sri Meghavarman"], ans: 1 },
+      { id: 139, q: "Harisena was the court poet of:", options: ["A) Samudra Gupta", "B) Skanda Gupta", "C) Chandra Gupta II", "D) Kumara Gupta"], ans: 0 },
+      { id: 140, q: "Chandra Gupta II was succeeded by whom?", options: ["A) Skanda Gupta", "B) Puru Gupta", "C) Katothkaja Gupta", "D) Kumara Gupta I"], ans: 3 },
+      { id: 141, q: "Name the author of Brihat Samhita :", options: ["A) Varahamihira", "B) Dandin", "C) Buddha Gupta", "D) Amar Singh"], ans: 0 },
+      { id: 142, q: "Name the type of government existed during the Gupta period:", options: ["A) Polyarchy", "B) Monarchy", "C) Anarchy", "D) Autarchy"], ans: 1 },
+      { id: 143, q: "Match List I with List II and select the correct answer:\n(a) Vishakhadatta — 1. Nitisastra\n(b) Kamandaka — 2. Niyaya Bhashya\n(c) Asanga — 3. Mudrarakshasa\n(d) Vatsyayana — 4. Bhumi Sastra", options: ["A) (a)-4, (b)-2, (c)-1, (d)-3", "B) (a)-3, (b)-1, (c)-4, (d)-2", "C) (a)-3, (b)-2, (c)-1, (d)-4", "D) (a)-1, (b)-3, (c)-2, (d)-4"], ans: 1 },
+      { id: 144, q: "Arrange the Gupta rulers in chronological order:\n1. Samudra Gupta\n2. Sri Gupta\n3. Kumara Gupta – II\n4. Rama Gupta", options: ["A) 2, 1, 4, 3", "B) 2, 3, 4, 1", "C) 4, 2, 3, 1", "D) 4, 3, 1, 2"], ans: 0 },
+      { id: 145, q: "Devi Chandra Guptam deals with the life history of:", options: ["A) Chandra Gupta I", "B) Chandra Gupta II", "C) Samudra Gupta", "D) Skanda Gupta"], ans: 1 },
+      { id: 146, q: "Who among the following rulers was called Kaviraja?", options: ["A) Kumaragupta – I", "B) Chandragupta – I", "C) Chandragupta Vikramadhitya", "D) Samudragupta"], ans: 3 },
+      { id: 147, q: "Harisena engraved an inscription on the stone pillar of:", options: ["A) Samudra Gupta", "B) Asoka", "C) Bindusara", "D) Chandra Gupta-I"], ans: 0 },
+      { id: 148, q: "Choose and Match the correct answer:\n(a) Dhanvantri — 1. Surya Siddantha\n(b) Varahamihira — 2. Amara Kosha\n(c) Aryabhatta — 3. Brihad Samhita\n(d) Amarasimha — 4. Ayurveda", options: ["A) (a)-4, (b)-3, (c)-1, (d)-2", "B) (a)-4, (b)-1, (c)-2, (d)-3", "C) (a)-4, (b)-2, (c)-1, (d)-3", "D) (a)-4, (b)-3, (c)-2, (d)-1"], ans: 0 },
+      { id: 149, q: "The Gupta Era was founded by:", options: ["A) Chandra Gupta-II", "B) Samudra Gupta", "C) Skanda Gupta", "D) Chandra Gupta-I"], ans: 3 },
+      { id: 150, q: "______ founded the Nalanda University.", options: ["A) Samudragupta", "B) Kumara Gupta I", "C) Skanda Gupta", "D) Chandragupta II"], ans: 1 },
+      { id: 151, q: "Which one of the statement is incorrect regarding Samudragupta?\n(i) He was the third ruler of the Gupta dynasty\n(ii) His territory extended from Himalayas to river Narmada\n(iii) He assumed the title of Maharajadhiraja\n(iv) He printed six different type of coins.", options: ["A) (i), (iv) only", "B) (i), (iii) only", "C) (i), (ii) only", "D) (i), (ii), (iii) only"], ans: 0 },
+      { id: 152, q: "Match the following Gupta Inscriptions:\n(a) Samudragupta — 1. Paharpur Copper Plate\n(b) Chandragupta II — 2. Eran Stone Pillar\n(c) Buddhagupta — 3. Udayagiri Caves\n(d) Skandagupta — 4. Junagarh Rock", options: ["A) (a)-3, (b)-2, (c)-1, (d)-4", "B) (a)-2, (b)-3, (c)-1, (d)-4", "C) (a)-3, (b)-1, (c)-2, (d)-4", "D) (a)-2, (b)-1, (c)-4, (d)-3"], ans: 1 },
+      { id: 153, q: "Name the King, who introduced the Asvamedha types of Gold Coins bearing the figures of Lakshmi and Ganga:", options: ["A) Samudra Gupta", "B) Chandra Gupta II", "C) Kumara Gupta", "D) Skanda Gupta"], ans: 0 },
+      { id: 154, q: "Select the order which gives the correct chronological order of the Gupta Emperors:\n1. Kumaragupta\n2. Samudragupta\n3. Ghatotkachagupta\n4. Skandagupta", options: ["A) 3, 2, 1, 4", "B) 1, 3, 2, 4", "C) 1, 2, 3, 4", "D) 4, 3, 2, 1"], ans: 0 },
+      { id: 155, q: "Find out the False Statement regarding Gupta Art:\n1. Gupta Artists were normal and natural\n2. There was a keen sense of aesthetic culture\n3. Nudity is entirely eliminated\n4. Not based on religious and spiritual ideals", options: ["A) (1), (2) and (3) are True, (4) is False", "B) (2) is True, (1), (3) and (4) are False", "C) (3) is True, (1) (2) and (4) are False", "D) (4) is True, (1), (2) and (3) are False"], ans: 0 },
+      { id: 156, q: "Assertion (A) : The Gupta period is rightly called the 'Golden Age' of literature and art.\nReason (R) : There was deterioration in the position of women, decline of the urban centres, increase in social disorder and subinfeudation in the later Gupta times.", options: ["A) Both (A) and (R) are correct and (R) Explains (A)", "B) Both (A) and (R) are correct but (R) does not explains (A)", "C) Only (A) is correct", "D) Only (R) is correct"], ans: 1 },
+      { id: 157, q: "Among the Gupta rulers who adopted the title \"Maharajadhiraja\"?", options: ["A) Sree Gupta", "B) Chandra Gupta – I", "C) Samudra Gupta", "D) Kumara Gupta"], ans: 1 },
+      { id: 158, q: "The Mehrauli Iron pillar is currently located in:", options: ["A) Delhi", "B) Allahabad", "C) Mehrauli", "D) Saranath"], ans: 0 },
+      { id: 159, q: "Name the noted Mathematician, Astronomer of the Gupta period:", options: ["A) Vatsyayana", "B) Aryabhata", "C) Varahamitra", "D) Kalidasa"], ans: 1 },
+      { id: 160, q: "Which of the following inscriptions belong to Samudragupta?\nI. Allahabad Pillar Inscription\nII. Nalanda Copper Plate\nIII. Eran Stone Inscription\nIV. Mehrauli Pillar Inscription", options: ["A) I, II, III and IV", "B) I, II and IV", "C) I, II and III", "D) I, III and IV"], ans: 2 },
+      { id: 161, q: "______ was given the title \"Kaviraja\".", options: ["A) Chandra Gupta", "B) Vishnu Gupta", "C) Samudra Gupta", "D) Sri Gupta"], ans: 2 },
+      { id: 162, q: "Who among the following ruler married the Lichchavi princess Kumaradevi?", options: ["A) Chandra Gupta – I", "B) Samudra Gupta – II", "C) Kumara Gupta", "D) Skanda Gupta"], ans: 0 },
+      { id: 163, q: "Which one of the following is the wrong option for the rock-cut cave temple of Gupta period?", options: ["A) Udayagiri Cave (Odisha)", "B) Ajanta and Ellora Caves (Maharashtra)", "C) Elephanta Cave (Maharashtra)", "D) Bagh Cave (Madhya Pradesh)"], ans: 2 },
+      { id: 164, q: "The Gupta emperors before Chandragupta-II issued only ______ coins.", options: ["A) Gold", "B) Silver", "C) Tin", "D) Copper"], ans: 0 },
+      { id: 165, q: "Choose the right matches among the following :\n(1) Aryabhatta — Aryabhatiyam\n(2) Varahamihira — Hast yayu veda\n(3) Brahma Gupta — Brihat Samhita\n(4) Vagbhatta — Ashtanga Sangrah", options: ["A) (1) and (4) are correct", "B) (1) and (2) are correct", "C) (2) and (4) are correct", "D) (2) and (3) are correct"], ans: 0 },
+      { id: 166, q: "Name the Historian who described Samudra Gupta as the 'Indian Napoleon'?", options: ["A) V.A. Smith", "B) R.K. Mukherjee", "C) H.C. Raychaudhuri", "D) R.C. Majumdar"], ans: 0 },
+      { id: 167, q: "Which of the following is incorrectly paired?\n(1) Chandragupta II — Udayagiri cave Inscription\n(2) Skandagupta — Sanchi stone Inscription\n(3) Nalanda — Copper plate\n(4) Mehrauli — Iron pillar Inscription", options: ["A) (1) and (3) only", "B) (2) and (3) only", "C) (3) and (4) only", "D) (1) and (2) only"], ans: 1 },
+      { id: 168, q: "Who postulated that the shadow of the earth falling on the moon caused eclipse?", options: ["A) Aryabhatta", "B) Varahamihira", "C) Panini", "D) Nagarjuna"], ans: 0 },
+      { id: 169, q: "Which of the following pairs is not correctly matched?", options: ["A) Aparhata — Forest land", "B) Khila — Waste land", "C) Vasti — Dry land", "D) Kshetra — Cultivated land or Crown land"], ans: 2 },
+      { id: 170, q: "The supremacy of Guptas was challenged by the unexpected invasion of:", options: ["A) Huns", "B) Mlecchas", "C) Vakatakas", "D) Pahlavas"], ans: 0 },
+      { id: 171, q: "Match the following Gupta Inscriptions:\n(a) Allahabad Pillar — 1. Chandra Gupta II\n(b) Iron Pillar — 2. Skanda Gupta\n(c) Eran Stone — 3. Samudra Gupta\n(d) Bhitari pillar — 4. Vikramaditya", options: ["A) (a)-4, (b)-2, (c)-1, (d)-3", "B) (a)-3, (b)-1, (c)-4, (d)-2", "C) (a)-2, (b)-3, (c)-1, (d)-4", "D) (a)-1, (b)-4, (c)-3, (d)-2"], ans: 1 },
+      { id: 172, q: "Which of the following are correctly paired?\n(1) Kshetra — Pastoral land\n(2) Vasti — Forest land\n(3) Khila — Waste land\n(4) Gapata saraha — Cultivable land", options: ["A) (1) and (2) are correct", "B) (2) and (3) are correct", "C) (3) only correct", "D) (1), (3) and (4) are correct"], ans: 2 },
+      { id: 173, q: "Choose the right answer among type which of the following statements are true about Brihat-Samhita:\n(i) Describe twenty varieties of precious stones and their colour\n(ii) Economic prosperity which prevailed during the Gupta period\n(iii) It helped the study about agriculture and Animal husbandry", options: ["A) (iii) correct", "B) (i) and (ii) are correct", "C) (ii) and (iii) are correct", "D) (i) and (iii) are correct"], ans: 3 },
+      { id: 174, q: "Match correctly the Gupta Ministers of Central Administration:\n(a) Mahadandanayaka — 1. Minister for Foreign Affairs\n(b) Dandopashika — 2. Chief record keeper\n(c) Mahasandhivigrahika — 3. Chief Justice\n(d) Mahakshapatalika — 4. Head of Police Department", options: ["A) (a)-3, (b)-4, (c)-2, (d)-1", "B) (a)-3, (b)-4, (c)-1, (d)-2", "C) (a)-2, (b)-3, (c)-1, (d)-4", "D) (a)-2, (b)-1, (c)-4, (d)-3"], ans: 1 },
+      { id: 175, q: "Which one of the book tells us the clear distinction between Amatyas and Ministers in Gupta Empire?", options: ["A) Kamandaka Niti Shastra", "B) Katyayana Smriti", "C) Narasingha Purana", "D) Markandeya Purana"], ans: 0 },
+      { id: 176, q: "Who was the first muslim invader of India?", options: ["A) Muhammad of Ghur", "B) Muhammad-bin-Qasim", "C) Muhammad-bin-suri", "D) Muhammad of Ghazni"], ans: 1 },
+      { id: 177, q: "______ the Moorish traveller wrote about the condition of Tamilnadu during Muhammed bin Tughlak.", options: ["A) Ibn-Batuta", "B) Marcopolo", "C) Ptolemy", "D) Livy"], ans: 0 },
+      { id: 178, q: "How was Sultans of Delhi called?", options: ["A) Ashvapati (lord of horses)", "B) Gajapati (lord of elephants)", "C) Ganapati (lord of class)", "D) Narapati (lord of men)"], ans: 0 },
+      { id: 179, q: "Amirkhusrau hailed which city as the \"Second Heaven and a great centre of Justice\"?", options: ["A) Mathura", "B) Agra", "C) Kashmir", "D) Delhi"], ans: 3 },
+      { id: 180, q: "In the First battle of Tarain in 1191 A.D. Prithviraj Chauhan, the ruler of Ajmer:", options: ["A) defeated Muhammed Ghori", "B) was defeated by Muhammed Ghori", "C) first battle of Tarain was not fought in 1191 A.D.", "D) none of these"], ans: 0 },
+      { id: 181, q: "The custom of female infanticide was very much prevalent among the:", options: ["A) Jats", "B) Marathas", "C) Rajputs", "D) Konds"], ans: 2 },
+      { id: 182, q: "Which land distribution system adopted by sultans of Delhi?", options: ["A) Iqtadari", "B) Mansapdhari", "C) Subhadhari", "D) Zamindhari"], ans: 0 },
+      { id: 183, q: "Match the following:\n(a) Mahabaladhi Krita — 1. Commander of the Cavalry\n(b) Mahashvapati — 2. Commander in Chief\n(c) Mahapilupati — 3. Chief Justice\n(d) Mahadanda Nayak — 4. Commander of the elephant force", options: ["A) (a)-4, (b)-3, (c)-2, (d)-1", "B) (a)-2, (b)-1, (c)-4, (d)-3", "C) (a)-1, (b)-2, (c)-3, (d)-4", "D) (a)-3, (b)-2, (c)-4, (d)-1"], ans: 1 },
+      { id: 184, q: "Why Ulama's had great influence in Muslim society, politics, administration and religion?", options: ["A) They were in great numbers during the Delhi Sultanate", "B) Due to their holy living and high thinking", "C) They were well-versed in Muslim theology and Fiqh.", "D) They controlled trade and industry"], ans: 2 },
+      { id: 185, q: "Sikandar Lodi was responsible for the foundation of the ______ city in 1504 A.D.", options: ["A) Dholpur", "B) Gwalior", "C) Etawah", "D) Agra"], ans: 3 },
+      { id: 186, q: "Arrange the following territorial conquests of Alauddin Khilji in the correct chronological order :\nI. Ranthambor\nII. Malwa\nIII. Chittor\nIV. Gujarat", options: ["A) IV, I, III, II", "B) I, III, IV, II", "C) I, II, III, IV", "D) IV, III, II, I"], ans: 0 },
+      { id: 187, q: "Mubarak Shah was the ablest ruler of the Sayyid Dynasty:\n(a) He freed the Delhi Sultanate from the Suzerainty of a foreign power.\n(b) He succeeded in suppressing the revolts of his nobles and Jagirdars.\nWhich of the above statement is correct?", options: ["A) (a)", "B) (b)", "C) (a) and (b)"], ans: 2 },
+      { id: 188, q: "Who among the following was first ruler to propound the Divine Right Theory of Kingship?", options: ["A) Alauddin Khilji", "B) Balban", "C) Iltumish", "D) Raziya"], ans: 1 },
+      { id: 189, q: "Name the Sultan of Delhi Sultanate at the time of Timur invasion:", options: ["A) Daulat Khan Lodi", "B) Ghiyasuddin Tughlaq", "C) Firoz Shah Tughlaq", "D) Nasiruddin Mohammad Shah Tughlaq"], ans: 3 },
+      { id: 190, q: "\"Some rulers may have one or two children's; For me, I have thousands of my childrens, they are none other than my Turkic slaves. They are the rulers of my conquered provinces. The will certainly reverberate my name during Kutba's\". Who said the above statement?", options: ["A) Baha-ud-Din Gurshasp", "B) Mahmud of Ghazani", "C) Shihabu-d-Din Muhammad", "D) Qutbu-d-Din Aybak"], ans: 2 },
+      { id: 191, q: "Which Delhi Ruler got himself free from \"Khalifas\"?", options: ["A) Qutb-ud-Din-Aibak", "B) Iltutmish", "C) Balban", "D) Razia Begum"], ans: 1 },
+      { id: 192, q: "The first architectural construction made by Qutb-ud-Din-Aibak was the:", options: ["A) Qutb Minar", "B) Arhai-Din-Ka-Jhompra", "C) Quwwat-ul-Islam mosque", "D) Jamaat Khana Masjid"], ans: 2 },
+      { id: 193, q: "The last dynasty of Delhi sultanate was:", options: ["A) Khalji Dynasty", "B) Lodi Dynasty", "C) Sayyid Dynasty", "D) Tughluq Dynasty"], ans: 1 },
+      { id: 194, q: "The greatest of Indo-Islamic poets lived during the reign of seven monarchs, and associated in the royal court of Alauddin for a long period. Who was he?", options: ["A) Amir Khusrau", "B) Barani", "C) Kabir", "D) Hanifa Deen"], ans: 0 },
+      { id: 195, q: "Who lead out the South expedition of Alauddin Khilji against Warangal by way of Bengal in 1303?", options: ["A) Bir Dhul", "B) Jalaluddin Firuz", "C) Malikafur", "D) Shihabuddin Omar"], ans: 2 },
+      { id: 196, q: "Who narrated the tortures and execution committed by Muhammad-bin-Tuglaq?", options: ["A) Ferishta", "B) Ferdausi", "C) Ibn-Batuta", "D) Irfan Habib"], ans: 2 },
+      { id: 197, q: "Who was Qazi-I-Mumalik during rule of Delhi Sultanate?", options: ["A) Account General", "B) Chief Justice", "C) Deputy Minister", "D) Chief Minister"], ans: 1 },
+      { id: 198, q: "Assertion (A) : Zafar Khan the right wing commander of Ala-ud-din was killed by Mongols.\nReason (R) : Ulugh Khan, the left wing commander deserted him.", options: ["A) (A) is right (R) is wrong", "B) Both (A) and (R) are right", "C) (A) is wrong (R) is right", "D) Both (A) and (R) are right, (R) is the correct explanation of (A)"], ans: 3 },
+      { id: 199, q: "Khwaja Jahan was the Wazir of the following Sultan:", options: ["A) Mohamed Bin Tuglaq", "B) Firoz Tughlaq", "C) Mohamed I", "D) Tuglaq Shah II"], ans: 0 },
+      { id: 200, q: "In whose reign did the Sultanate reach its maximum geographical limit?", options: ["A) Ala-Ud-Din Khilji", "B) Mubarak Shah Khilji", "C) Muhammed-Bin-Tughlak", "D) Ghiyasuddin Tugalak"], ans: 2 },
+      { id: 201, q: "Which Sultan of Delhi imposed Jizya on the Brahmins?", options: ["A) Balban", "B) Firoz Tughlaq", "C) Allauddin Khilji", "D) Mohammad-bin-Tughlaq"], ans: 1 },
+      { id: 202, q: "The price of a first grade horse fixed by Ala-ud-din was:", options: ["A) 100 – 120 tankas", "B) 120 – 140 tankas", "C) 140 – 160 tankas", "D) 160 – 180 tankas"], ans: 0 },
+      { id: 203, q: "\"The King was freed from his people and they from their King\". On whose death did Badauni comment thus?", options: ["A) Mohamed-bin-Tuqlaq", "B) Ghiya Sudin Tuqlaq", "C) Rajab", "D) Zafar Khan"], ans: 0 },
+      { id: 204, q: "Which one of the following mosque is best known for its tower of victory?", options: ["A) Begumpuri Mosque", "B) Quwwat-ul-Islam Mosque", "C) Moti Ki Masjid", "D) Jamali Kamali Mosque"], ans: 1 },
+      { id: 205, q: "Name the Iltutmish's vizier who rebelled against Raziyya:", options: ["A) Nizamul-mulk Junaydi", "B) Muhazzabuddin", "C) Jamalud din Yaqut", "D) Altunia"], ans: 0 },
+      { id: 206, q: "Timur invaded India during the year:", options: ["A) 1396", "B) 1398", "C) 1414", "D) 1451"], ans: 1 },
+      { id: 207, q: "Iltutmish administered by a governing class of nobility known as:", options: ["A) Naib-i-mamlakat", "B) Diwani-i-ariz", "C) Niyabat-i-khudai", "D) Turkan-i-chahalgani"], ans: 3 },
+      { id: 208, q: "Amir Hasan Dehlvi was the Sufi Poet in the ______ king's court.", options: ["A) Muhammad-Bin-Tughlaq", "B) Firoz Shah Tughlaq", "C) Nasir-ud-din Muhammad Tughlaq", "D) Ghiyas-ud-din Tughlaq"], ans: 0 },
+      { id: 209, q: "Read the following passage and answer the item that follow:\n\"Amir Khusrau's in his advice to his daughter asks her not to leave the thread of the spinning wheel and always to keep her face towards the wall of the house and her back towards the door so that nobody might be able to look at her.\"\nWhich one of the following is best implied in the passage?", options: ["A) Poet's inadequate appreciation of women's dignity", "B) Poet as a Protector of female chastity", "C) Looking at women's face was considered as inauspicious", "D) Women were treated with great respect"], ans: 1 },
+      { id: 210, q: "The province of Mohammed Bin Tughlaq's empire in the valley of the Tapti river was:", options: ["A) Daulatabad", "B) Khandesh", "C) Kashmir", "D) Nanderbar"], ans: 1 },
+      { id: 211, q: "What was the original name of Alauddin Khilji?", options: ["A) Jamaluddin", "B) Jainulabdin", "C) Jalaluddin", "D) Ali Gurshap"], ans: 3 },
+      { id: 212, q: "Assertion [A] : Firoz Shah Tughlaq did not levy Jizya tax.\nReason [R] : His influential Minister Khan-i-Jahan Maqbul was a converted Hindu.", options: ["A) Both [A] and [R] are true, and [R] is the correct explanation of [A]", "B) Both [A] and [R] are true but [R] is not a correct explanation of [A]", "C) [A] is true but [R] is false", "D) [A] is false but [R] is true"], ans: 3 },
+      { id: 213, q: "Which policy weakened the central authority of the Delhi Sultanate?", options: ["A) Jagir system", "B) Blundering policy", "C) Plundering policy", "D) Murdering policy"], ans: 0 },
+      { id: 214, q: "Name the ruler who was called as 'Akbar of Kashmir' among Delhi Sultanate rulers:", options: ["A) Zain-ud-Abidin", "B) Husain Shah", "C) Shah Mirza", "D) Jalol-ud-din"], ans: 0 },
+      { id: 215, q: "Match the following:\n(a) Alberuni — 1. Qiran-Us-Sa'Dain\n(b) Minhaj Siraj — 2. Tarikh-I-Firoshahi\n(c) Amir Khusrau — 3. Tabaqat-I-Nasiri\n(d) Barani — 4. Tarikh-I-Hind", options: ["A) (a)-4, (b)-2, (c)-3, (d)-1", "B) (a)-1, (b)-2, (c)-3, (d)-4", "C) (a)-2, (b)-4, (c)-3, (d)-1", "D) (a)-4, (b)-3, (c)-1, (d)-2"], ans: 3 },
+      { id: 216, q: "Choose the right matches among the following :\n(1) The Forty — The Chalisa\n(2) Razia Begum — Ruknuddin\n(3) Diwan-i-ariz — Finance Minister\n(4) Balban — Barids", options: ["A) (4) and (3) are correct", "B) (2), (3) and (4) are correct", "C) (1) and (3) are correct", "D) (1), (2) and (4) are correct"], ans: 3 },
+      { id: 217, q: "The agriculture department Diwan-i-Kohi was constituted by:", options: ["A) Ghiyas-ud-din Tughlak", "B) Muhammad-bin Tughlak", "C) Firoz Tughlak", "D) Ghazi Mohammad"], ans: 1 },
+      { id: 218, q: "Choose the right answer:\nWhich of the following statements are true about Qutub-ud-din?\n(i) He was the real founder of the Turkish dominion in India.\n(ii) He organised the 'Group of Forty'.\n(iii) He started the construction of Qutub Minar.", options: ["A) (i) only", "B) (i) and (ii) only", "C) (ii) and (iii) only", "D) (i) and (iii) only"], ans: 3 },
+      { id: 219, q: "Choose the wrong matches type:\nWhich of the following is incorrectly paired?\n1. Qutbuddin Aibak — Lakh Baksh\n2. Iltutmish — Malik Kafur\n3. Muhammad bin Tughlaq — Token currency\n4. Firoz Tughlaq — The forty system", options: ["A) (2) and (4)", "B) (2) and (3)", "C) (1) and (2)", "D) (1) and (3)"], ans: 0 },
+      { id: 220, q: "Assertion [A] : In 1299, Ala-ud-din Khalji decided to capture Malwa and Gujarat and sent a large army under two of his generals.\nReason [R] : He had strong reasons for this expedition, as not only were these areas fertile and populous, but also controlled the Western Sea-Ports and Trade-Routes connecting them with Ganga valley.", options: ["A) Both [A] and [R] are true and [R] explains [A]", "B) Both [A] and [R] are true but [R] does not explain [A]"], ans: 0 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(220, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 220) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Ancient & Medieval History Master Exam.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific historical eras, dynasties, and concepts.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of History recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+</html>

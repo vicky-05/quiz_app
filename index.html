@@ -13,20 +13,23 @@
     <style>
         :root {
             --bg-header: #02231c;
-            --bg-body: #f8fafc;
+            --bg-body: #f4f7f6;
             --card-bg: #ffffff;
             --primary: #044e3e;
             --primary-hover: #033c30;
-            --text-dark: #0f172a;
-            --text-muted: #64748b;
-            --border: #e2e8f0;
+            --primary-soft: #e8f4f0;
+            --text-dark: #10201b;
+            --text-muted: #64746e;
+            --border: #dfe8e4;
             --accent-badge: #facc15;
-            --radius-sm: 8px;
-            --radius-md: 14px;
-            --radius-lg: 18px;
-            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-            --shadow-lg: 0 10px 20px -3px rgba(0, 0, 0, 0.08);
+            --accent-gold: #eab308;
+            --success: #059669;
+            --radius-sm: 10px;
+            --radius-md: 16px;
+            --radius-lg: 22px;
+            --shadow-sm: 0 2px 7px rgba(2, 35, 28, .05);
+            --shadow-md: 0 8px 24px rgba(2, 35, 28, .08);
+            --shadow-lg: 0 16px 36px rgba(2, 35, 28, .12);
         }
 
         * {
@@ -36,8 +39,14 @@
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
-            background-color: var(--bg-body);
+            background:
+                radial-gradient(circle at 10% 0%, rgba(5, 150, 105, .055), transparent 28%),
+                var(--bg-body);
             color: var(--text-dark);
             min-height: 100vh;
             display: flex;
@@ -45,59 +54,234 @@
         }
 
         .banner {
-            background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
-            color: #ffffff;
-            padding: 2.25rem 1rem 1.75rem;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(250, 204, 21, .10), transparent 24%),
+                linear-gradient(135deg, #011b15 0%, #064e3b 52%, #02231c 100%);
+            color: #fff;
+            padding: 2.15rem 1rem 1.9rem;
             text-align: center;
             position: relative;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, .16);
+        }
+
+        .banner::after {
+            content: "";
+            position: absolute;
+            inset: auto 0 0;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent-badge), transparent);
+            opacity: .85;
         }
 
         .banner h1 {
-            font-size: 2rem;
+            font-size: clamp(1.55rem, 4vw, 2.15rem);
             font-weight: 800;
-            letter-spacing: 0.08em;
+            letter-spacing: .075em;
             color: var(--accent-badge);
             text-transform: uppercase;
-            margin-bottom: 0.35rem;
+            margin-bottom: .35rem;
+            position: relative;
+            z-index: 1;
         }
 
         .banner .sub-title {
-            font-size: 1.05rem;
+            font-size: clamp(.86rem, 2vw, 1.05rem);
             font-weight: 700;
-            letter-spacing: 0.15em;
-            color: #ffffff;
+            letter-spacing: .12em;
+            color: #fff;
             text-transform: uppercase;
-            margin-bottom: 0.45rem;
+            margin-bottom: .45rem;
+            position: relative;
+            z-index: 1;
         }
 
         .banner .tagline {
             font-family: 'Caveat', cursive;
-            font-size: 1.35rem;
-            color: #e2e8f0;
+            font-size: 1.38rem;
+            color: #dbe9e4;
+            position: relative;
+            z-index: 1;
         }
 
         .container {
-            max-width: 1050px;
+            max-width: 1120px;
             width: 100%;
-            margin: 2rem auto;
+            margin: 1.65rem auto 2.2rem;
             padding: 0 1rem;
             flex: 1;
         }
 
-        /* Top Breadcrumb & Back Bar */
+        .portal-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: .8rem;
+            margin-bottom: 1.45rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, .9);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: .85rem 1rem;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .stat-number {
+            display: block;
+            color: var(--primary);
+            font-size: 1.2rem;
+            font-weight: 800;
+        }
+
+        .stat-label {
+            display: block;
+            color: var(--text-muted);
+            font-size: .72rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .07em;
+            margin-top: .15rem;
+        }
+
+        .search-panel {
+            background: linear-gradient(135deg, #fff, #f9fcfb);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 1rem;
+            margin-bottom: 1.65rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .search-label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: .75rem;
+            margin-bottom: .65rem;
+        }
+
+        .search-label strong {
+            font-size: .95rem;
+            color: var(--text-dark);
+        }
+
+        .search-label span {
+            font-size: .75rem;
+            color: var(--text-muted);
+        }
+
+        .search-wrap {
+            position: relative;
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.1rem;
+            color: var(--primary);
+            pointer-events: none;
+        }
+
+        #topic-search {
+            width: 100%;
+            border: 1.5px solid var(--border);
+            border-radius: 13px;
+            padding: .9rem 3rem .9rem 2.8rem;
+            background: #fff;
+            color: var(--text-dark);
+            font-size: .94rem;
+            font-weight: 600;
+            outline: none;
+            transition: .18s ease;
+        }
+
+        #topic-search:focus {
+            border-color: #68a999;
+            box-shadow: 0 0 0 4px rgba(5, 150, 105, .08);
+        }
+
+        .search-clear {
+            position: absolute;
+            right: .7rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 30px;
+            border: 0;
+            border-radius: 50%;
+            background: #edf4f1;
+            color: var(--primary);
+            cursor: pointer;
+            font-weight: 800;
+            display: none;
+        }
+
+        .search-results {
+            margin-top: .75rem;
+            display: none;
+            max-height: 310px;
+            overflow-y: auto;
+            border-top: 1px solid var(--border);
+            padding-top: .55rem;
+        }
+
+        .search-result {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: .8rem;
+            padding: .75rem .7rem;
+            border-radius: 11px;
+            text-decoration: none;
+            color: var(--text-dark);
+            transition: .15s ease;
+        }
+
+        .search-result:hover {
+            background: var(--primary-soft);
+        }
+
+        .search-result-title {
+            font-size: .88rem;
+            font-weight: 750;
+        }
+
+        .search-result-meta {
+            display: block;
+            color: var(--text-muted);
+            font-size: .72rem;
+            margin-top: .15rem;
+        }
+
+        .search-result-arrow {
+            color: var(--primary);
+            font-weight: 800;
+            white-space: nowrap;
+        }
+
+        .search-empty {
+            color: var(--text-muted);
+            font-size: .85rem;
+            padding: .8rem .5rem;
+            text-align: center;
+        }
+
         .nav-breadcrumb {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.25rem;
             flex-wrap: wrap;
-            gap: 0.75rem;
+            gap: .75rem;
         }
 
         .breadcrumb-trail {
-            font-size: 0.95rem;
-            font-weight: 600;
+            font-size: .9rem;
+            font-weight: 650;
             color: var(--text-muted);
         }
 
@@ -109,75 +293,94 @@
         .btn-back {
             display: inline-flex;
             align-items: center;
-            gap: 0.4rem;
-            padding: 0.55rem 1.1rem;
-            background: #ffffff;
-            border: 1.5px solid var(--primary);
+            gap: .4rem;
+            padding: .62rem 1rem;
+            background: #fff;
+            border: 1.5px solid #9bc7ba;
             color: var(--primary);
             border-radius: var(--radius-sm);
-            font-weight: 700;
-            font-size: 0.88rem;
+            font-weight: 750;
+            font-size: .84rem;
             cursor: pointer;
-            transition: all 0.15s ease;
+            transition: all .16s ease;
         }
 
         .btn-back:hover {
-            background: #e6f3ef;
+            background: var(--primary-soft);
+            border-color: var(--primary);
             transform: translateX(-2px);
         }
 
         .section-header {
-            margin-bottom: 1.75rem;
+            margin-bottom: 1.15rem;
         }
 
         .section-title {
-            font-size: 1.45rem;
+            font-size: clamp(1.2rem, 3vw, 1.5rem);
             font-weight: 800;
             color: #022c22;
-            margin-bottom: 0.35rem;
+            margin-bottom: .35rem;
         }
 
         .section-desc {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: .9rem;
+            line-height: 1.55;
         }
 
-        /* Level 1: Category Hub Cards */
         .categories-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 1.4rem;
+            grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+            gap: 1rem;
         }
 
         .hub-card {
-            background: var(--card-bg);
+            background: rgba(255, 255, 255, .96);
             border-radius: var(--radius-md);
-            padding: 1.6rem 1.4rem;
-            border: 1.5px solid var(--border);
-            box-shadow: var(--shadow-md);
+            padding: 1.25rem 1.15rem;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
             cursor: pointer;
-            transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+            transition: all .2s cubic-bezier(.16, 1, .3, 1);
             display: flex;
             align-items: center;
-            gap: 1.1rem;
+            gap: 1rem;
             position: relative;
+            overflow: hidden;
+        }
+
+        .hub-card::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: var(--primary);
+            transform: scaleY(0);
+            transform-origin: bottom;
+            transition: transform .2s ease;
         }
 
         .hub-card:hover {
             transform: translateY(-4px);
             box-shadow: var(--shadow-lg);
-            border-color: #79baaa;
-            background: #fbfdfc;
+            border-color: #8dc2b4;
+            background: #fbfefd;
+        }
+
+        .hub-card:hover::before {
+            transform: scaleY(1);
         }
 
         .hub-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 12px;
+            width: 54px;
+            height: 54px;
+            border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.6rem;
+            font-size: 1.55rem;
             flex-shrink: 0;
         }
 
@@ -216,31 +419,52 @@
             color: #be123c;
         }
 
+        .icon-gold {
+            background: #fef3c7;
+            color: #a16207;
+        }
+
+        .icon-earth {
+            background: #ede9d5;
+            color: #57534e;
+        }
+
+        .icon-cyan {
+            background: #cffafe;
+            color: #0e7490;
+        }
+
+        .icon-afo {
+            background: #dbeafe;
+            color: #1d4ed8;
+        }
+
         .hub-info {
             flex: 1;
+            min-width: 0;
         }
 
         .hub-title {
-            font-size: 1.12rem;
+            font-size: 1rem;
             font-weight: 800;
             color: var(--text-dark);
-            margin-bottom: 0.25rem;
-            line-height: 1.3;
+            margin-bottom: .3rem;
+            line-height: 1.35;
         }
 
         .hub-count {
-            font-size: 0.8rem;
-            font-weight: 700;
+            font-size: .72rem;
+            font-weight: 800;
             color: var(--primary);
             text-transform: uppercase;
-            letter-spacing: 0.04em;
+            letter-spacing: .035em;
         }
 
         .hub-arrow {
-            font-size: 1.3rem;
-            color: #94a3b8;
+            font-size: 1.4rem;
+            color: #9aa9a4;
             font-weight: 800;
-            transition: transform 0.15s ease, color 0.15s ease;
+            transition: transform .16s ease, color .16s ease;
         }
 
         .hub-card:hover .hub-arrow {
@@ -248,30 +472,30 @@
             color: var(--primary);
         }
 
-        /* Level 2: Sub-Category Test List */
         .tests-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 0.9rem;
+            gap: .75rem;
         }
 
         .test-card {
-            background: var(--card-bg);
+            background: #fff;
             border-radius: var(--radius-md);
-            padding: 1.15rem 1.4rem;
-            border: 1.5px solid var(--border);
+            padding: 1rem 1.15rem;
+            border: 1px solid var(--border);
             box-shadow: var(--shadow-sm);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 1rem;
             text-decoration: none;
             color: var(--text-dark);
-            transition: all 0.15s ease;
+            transition: all .17s ease;
         }
 
         .test-card:hover {
-            background: #e6f3ef;
-            border-color: #79baaa;
+            background: #f1f9f6;
+            border-color: #86bdae;
             transform: translateX(4px);
             box-shadow: var(--shadow-md);
         }
@@ -279,41 +503,45 @@
         .test-left {
             display: flex;
             align-items: center;
-            gap: 0.9rem;
+            gap: .85rem;
+            min-width: 0;
         }
 
         .test-number-badge {
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
+            width: 38px;
+            height: 38px;
+            border-radius: 12px;
             background: #022c22;
-            color: #ffffff;
+            color: #fff;
             font-weight: 800;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 0.9rem;
+            font-size: .84rem;
             flex-shrink: 0;
         }
 
         .test-name {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: var(--text-dark);
+            font-size: .94rem;
+            font-weight: 750;
+            line-height: 1.4;
         }
 
         .test-right {
             display: flex;
             align-items: center;
-            gap: 0.75rem;
+            justify-content: flex-end;
+            gap: .65rem;
+            flex-shrink: 0;
         }
 
         .test-pill {
-            font-size: 0.8rem;
+            font-size: .7rem;
             font-weight: 800;
             color: #044e3e;
-            background: #c5e6dc;
-            padding: 0.3rem 0.75rem;
+            background: #d9eee7;
+            border: 1px solid #c1e1d7;
+            padding: .34rem .65rem;
             border-radius: 999px;
             white-space: nowrap;
         }
@@ -321,7 +549,8 @@
         .test-enter {
             font-weight: 800;
             color: var(--primary);
-            font-size: 1.1rem;
+            font-size: .92rem;
+            white-space: nowrap;
         }
 
         .hidden {
@@ -330,8 +559,8 @@
 
         .footer-motivate {
             background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
-            color: #ffffff;
-            padding: 1.75rem 1rem;
+            color: #fff;
+            padding: 1.45rem 1rem;
             text-align: center;
             margin-top: auto;
             border-top: 3px solid #059669;
@@ -339,22 +568,54 @@
 
         .footer-motivate .quote {
             font-family: 'Caveat', cursive;
-            font-size: 1.45rem;
+            font-size: 1.4rem;
             color: #f8fafc;
-            margin-bottom: 0.35rem;
+            margin-bottom: .3rem;
         }
 
         .footer-motivate .author-sub {
-            font-size: 0.8rem;
-            letter-spacing: 0.12em;
+            font-size: .72rem;
+            letter-spacing: .12em;
             color: #94a3b8;
             text-transform: uppercase;
-            font-weight: 600;
+            font-weight: 650;
         }
 
-        @media (max-width: 650px) {
-            .banner h1 {
-                font-size: 1.55rem;
+        /* Unit – 8 Icon */
+        .icon-history {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .icon-history {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .icon-economy {
+            background: #dcfce7;
+            color: #166534;
+        }
+
+        @media (max-width: 700px) {
+            .container {
+                margin-top: 1.1rem;
+            }
+
+            .portal-stats {
+                gap: .55rem;
+            }
+
+            .stat-card {
+                padding: .7rem .5rem;
+            }
+
+            .stat-number {
+                font-size: 1rem;
+            }
+
+            .stat-label {
+                font-size: .62rem;
             }
 
             .categories-grid {
@@ -362,11 +623,74 @@
             }
 
             .test-card {
-                padding: 1rem;
+                align-items: flex-start;
+                padding: .9rem;
+            }
+
+            .test-right {
+                flex-direction: column;
+                align-items: flex-end;
+                gap: .35rem;
+            }
+
+            .test-pill {
+                white-space: normal;
+                text-align: right;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .banner {
+                padding: 1.7rem .75rem 1.5rem;
+            }
+
+            .banner .tagline {
+                font-size: 1.2rem;
+            }
+
+            .portal-stats {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .hub-card {
+                padding: 1rem .9rem;
+            }
+
+            .hub-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 1.35rem;
+            }
+
+            .hub-title {
+                font-size: .92rem;
+            }
+
+            .test-left {
+                gap: .65rem;
             }
 
             .test-name {
-                font-size: 0.95rem;
+                font-size: .86rem;
+            }
+
+            .test-number-badge {
+                width: 34px;
+                height: 34px;
+                border-radius: 10px;
+            }
+
+            .test-enter {
+                font-size: .8rem;
+            }
+
+            .search-label span {
+                display: none;
+            }
+
+            .icon-geography {
+                background: #e0f2fe;
+                color: #0369a1;
             }
         }
     </style>
@@ -381,6 +705,36 @@
     </header>
 
     <div class="container">
+
+        <div class="portal-stats" id="portal-stats">
+            <div class="stat-card">
+                <span class="stat-number" id="subject-count">0</span>
+                <span class="stat-label">Subjects</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="module-count">0</span>
+                <span class="stat-label">Test Modules</span>
+            </div>
+            <div class="stat-card">
+                <span class="stat-number" id="mcq-count">0+</span>
+                <span class="stat-label">MCQs Available</span>
+            </div>
+        </div>
+
+        <div class="search-panel" id="search-panel">
+            <div class="search-label">
+                <strong>🔎 Search Tests & Topics</strong>
+                <span>Search subject names, test titles or tags</span>
+            </div>
+            <div class="search-wrap">
+                <span class="search-icon">⌕</span>
+                <input id="topic-search" type="search"
+                    placeholder="Search e.g. Polity, Soil, Entomology, Horticulture..." autocomplete="off"
+                    aria-label="Search tests and topics">
+                <button class="search-clear" id="search-clear" type="button" aria-label="Clear search">×</button>
+            </div>
+            <div class="search-results" id="search-results" aria-live="polite"></div>
+        </div>
 
         <!-- LEVEL 1: Clean Main Categories -->
         <div id="category-view">
@@ -412,6 +766,52 @@
                     <div class="hub-arrow">&rsaquo;</div>
                 </div>
 
+                <!-- Indian History -->
+                <div class="hub-card" onclick="openCategory('indian_history')">
+                    <div class="hub-icon icon-history">&#127963;</div>
+                    <div class="hub-info">
+                        <div class="hub-title">Indian History</div>
+                        <div class="hub-count">
+                            Indian History Test Modules Available &rarr;
+                        </div>
+                    </div>
+                    <div class="hub-arrow">&rsaquo;</div>
+                </div>
+
+                <div class="hub-card" onclick="openCategory('geography')">
+                    <div class="hub-icon icon-geography">&#127758;</div>
+                    <div class="hub-info">
+                        <div class="hub-title">Indian Geography</div>
+                        <div class="hub-count">Geography Test Modules Available &rarr;</div>
+                    </div>
+                    <div class="hub-arrow">&rsaquo;</div>
+                </div>
+
+                <!-- Unit – 8: History, Culture, Heritage, and Socio-Political Movements of Tamil Nadu -->
+
+                <div class="hub-card" onclick="openCategory('tn_unit8')">
+                    <div class="hub-icon icon-history">&#127963;</div>
+                    <div class="hub-info">
+                        <div class="hub-title">Unit – 8</div>
+                        <div class="hub-count">
+                            History, Culture, Heritage &amp; Socio-Political Movements of Tamil Nadu &rarr;
+                        </div>
+                    </div>
+                    <div class="hub-arrow">&rsaquo;</div>
+                </div>
+
+                <!-- Indian Economy -->
+                <div class="hub-card" onclick="openCategory('indian_economy')">
+                    <div class="hub-icon icon-economy">&#8377;</div>
+                    <div class="hub-info">
+                        <div class="hub-title">Indian Economy</div>
+                        <div class="hub-count">
+                            Indian Economy Test Modules Available &rarr;
+                        </div>
+                    </div>
+                    <div class="hub-arrow">&rsaquo;</div>
+                </div>
+
                 <!-- 3. GS Full Mocks -->
                 <div class="hub-card" onclick="openCategory('mocks')">
                     <div class="hub-icon icon-rose">&#128221;</div>
@@ -421,6 +821,8 @@
                     </div>
                     <div class="hub-arrow">&rsaquo;</div>
                 </div>
+
+
 
                 <div class="hub-card" onclick="openCategory('agri_mocks')">
                     <div class="hub-icon icon-gold">&#127942;</div>
@@ -553,33 +955,112 @@
     </footer>
 
     <script>
+        // Visual/search enhancement layer. Existing quiz navigation and URLs remain untouched.
+        function collectPortalStats() {
+            const categories = Object.values(categoryData);
+            const tests = categories.flatMap(c => c.tests || []);
+            const mcqs = tests.reduce((sum, t) => {
+                const m = String(t.tag || '').match(/([\d,]+)\s*MCQs/i);
+                return sum + (m ? parseInt(m[1].replace(/,/g, ''), 10) : 0);
+            }, 0);
+
+            document.getElementById('subject-count').textContent = categories.length;
+            document.getElementById('module-count').textContent = tests.length;
+            document.getElementById('mcq-count').textContent = mcqs ? mcqs.toLocaleString() + '+' : '—';
+        }
+
+        function setupTopicSearch() {
+            const input = document.getElementById('topic-search');
+            const clear = document.getElementById('search-clear');
+            const results = document.getElementById('search-results');
+
+            const index = Object.entries(categoryData).flatMap(([key, category]) =>
+                (category.tests || []).map((test, index) => ({
+                    key,
+                    category: category.name,
+                    testIndex: index,
+                    name: test.name,
+                    tag: test.tag || '',
+                    url: test.url
+                }))
+            );
+
+            function render(query) {
+                const q = query.trim().toLowerCase();
+                results.innerHTML = '';
+
+                if (!q) {
+                    results.style.display = 'none';
+                    clear.style.display = 'none';
+                    return;
+                }
+
+                clear.style.display = 'block';
+
+                const matches = index.filter(item =>
+                    item.name.toLowerCase().includes(q) ||
+                    item.category.toLowerCase().includes(q) ||
+                    item.tag.toLowerCase().includes(q)
+                ).slice(0, 30);
+
+                results.style.display = 'block';
+
+                if (!matches.length) {
+                    results.innerHTML = '<div class="search-empty">No matching test or topic found. Try another keyword.</div>';
+                    return;
+                }
+
+                matches.forEach(item => {
+                    const link = document.createElement('a');
+                    link.className = 'search-result';
+                    link.href = item.url;
+                    link.innerHTML = `
+                        <div>
+                            <div class="search-result-title">${item.name}</div>
+                            <span class="search-result-meta">${item.category} • ${item.tag || 'Test Module'}</span>
+                        </div>
+                        <span class="search-result-arrow">Start →</span>
+                    `;
+                    results.appendChild(link);
+                });
+            }
+
+            input.addEventListener('input', () => render(input.value));
+            clear.addEventListener('click', () => {
+                input.value = '';
+                input.focus();
+                render('');
+            });
+        }
+    </script>
+    <script>
         // Organized Data Hierarchy
         const categoryData = {
             ibps_afo: {
-        name: "IBPS AFO Exam Hub (Professional Knowledge)",
-        tests: [
-          { name: "IBPS AFO Test 1: Livestock & Poultry Management", tag: "261 MCQs • 261 Mins", url: "AGRI_QUIZ/ibps_afo_test_1.html" },
-          { name: "OPSC AAO 2026 Paper-I: Agriculture & Allied Sciences", tag: "100 MCQs • 100 Mins", url: "AGRI_QUIZ/opsc_afo_2026_test_1.html" },
-          { name: "Overall Questions Test 1: Agriculture & Agronomy Master Revision", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_1.html" },
-          { name: "Overall Questions Test 2: Cereals, Pulses, Oilseeds & Commercial Crops", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_2.html" },
-          { name: "Overall Questions Test 3: Sugarcane, Potato, Cropping Systems & Irrigation", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_3.html" },
-          { name: "Overall Questions Test 4: Fertilizers, Soil Fertility & Biochemistry", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_4.html" },
-          { name: "Overall Questions Test 5: Nutrition, Biotechnology, Genetics & Plant Breeding", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_5.html" },
-          { name: "Overall Questions Test 6: Seed Science, Biotechnology, Physiology & Pests", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_6.html" },
-          { name: "Overall Questions Test 7: Major Pests, Crop Diseases & Horticulture", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_7.html" },
-          { name: "Overall Questions Test 8: Fruit Crops, Vegetables & Horticulture Master Exam", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_8.html" },
-          { name: "Overall Questions Test 9: Master Exam", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_9.html" },
-          { name: "Soil and Science", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/SAC_OVERALL.html" },
-          { name: "Horticulture MCQ Master Exam: Questions 1–200", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/horticulture_mcq_1_200.html" },
-          { name: "Horticulture MCQ Master Exam: Questions 201–400", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/horticulture_mcq_201_400.html" },
-          { name: "Horticulture MCQ Master Exam: Questions 401–600", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/horticulture_mcq_401_600.html" },
-          { name: "Horticulture MCQ Master Exam: Questions 601–800", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/horticulture_mcq_401_800.html" },
-          { name: "Horticulture MCQ Master Exam: Questions 801–1000", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/horticulture_mcq_801_1000.html" },
+                name: "IBPS AFO Exam Hub (Professional Knowledge)",
+                tests: [
+                    { name: "IBPS AFO Test 1: Livestock & Poultry Management", tag: "261 MCQs • 261 Mins", url: "AGRI_QUIZ/ibps_afo_test_1.html" },
+                    { name: "OPSC AAO 2026 Paper-I: Agriculture & Allied Sciences", tag: "100 MCQs • 100 Mins", url: "AGRI_QUIZ/opsc_afo_2026_test_1.html" },
+                    { name: "Overall Questions Test 1: Agriculture & Agronomy Master Revision", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_1.html" },
+                    { name: "Overall Questions Test 2: Cereals, Pulses, Oilseeds & Commercial Crops", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_2.html" },
+                    { name: "Overall Questions Test 3: Sugarcane, Potato, Cropping Systems & Irrigation", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_3.html" },
+                    { name: "Overall Questions Test 4: Fertilizers, Soil Fertility & Biochemistry", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_4.html" },
+                    { name: "Overall Questions Test 5: Nutrition, Biotechnology, Genetics & Plant Breeding", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_5.html" },
+                    { name: "Overall Questions Test 6: Seed Science, Biotechnology, Physiology & Pests", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_6.html" },
+                    { name: "Overall Questions Test 7: Major Pests, Crop Diseases & Horticulture", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_7.html" },
+                    { name: "Overall Questions Test 8: Fruit Crops, Vegetables & Horticulture Master Exam", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_8.html" },
+                    { name: "Overall Questions Test 9: Master Exam", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_9.html" },
+                    { name: "Soil and Science", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/SAC_OVERALL.html" },
+                    { name: "Horticulture MCQ Master Exam: Questions 1–200", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/horticulture_mcq_1_200.html" },
+                    { name: "Horticulture MCQ Master Exam: Questions 201–400", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/horticulture_mcq_201_400.html" },
+                    { name: "Horticulture MCQ Master Exam: Questions 401–600", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/horticulture_mcq_401_600.html" },
+                    { name: "Horticulture MCQ Master Exam: Questions 601–800", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/horticulture_mcq_601_800.html" },
+                    { name: "Horticulture MCQ Master Exam: Questions 801–1000", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/horticulture_mcq_801_1000.html" },
 
 
 
-        ]
-      },
+                ]
+            },
             polity: {
                 name: "Indian Polity & Constitution",
                 tests: [
@@ -596,7 +1077,14 @@
                     { name: "Polity Test 11: Citizenship, Rights, DPSP & Duties", tag: "100 MCQs", url: "general_quiz/POLITY_TEST_11.html" },
                     { name: "Polity Test 12: Elections, Human Rights & RTI", tag: "100 MCQs", url: "general_quiz/POLITY_TEST_12.html" },
                     { name: "Polity Test 13: Direct Practice Set (Rights & History)", tag: "72 MCQs", url: "general_quiz/POLITY_TEST_13.html" },
-                    { name: "Polity Test 14: Local Govt, State Govt & President", tag: "69 MCQs", url: "general_quiz/POLITY_TEST_14.html" }
+                    { name: "Polity Test 14: Local Govt, State Govt & President", tag: "69 MCQs", url: "general_quiz/POLITY_TEST_14.html" },
+                    { name: "Indian Polity, Governance & INM Master Exam (163 MCQs)", tag: "163 MCQs • 163 Mins", url: "general_quiz/indian_polity_inm_test_163.html" },
+                    { name: "Indian Polity, Administration & INM Master Exam (214 MCQs)", tag: "214 MCQs • 214 Mins", url: "general_quiz/indian_polity_inm_test_214.html" },
+                    { name: "Indian Polity, Governance & INM Master Exam: (183 MCQs)", tag: "183 MCQs • 183 Mins", url: "general_quiz/indian_polity_inm_test_183.html" },
+                    { name: "Indian Polity, Governance & INM Master Exam: (196 MCQs)", tag: "196 MCQs • 196 Mins", url: "general_quiz/indian_polity_inm_test_196.html" },
+                    { name: "Indian Polity, Administration & INM Master Exam: (198 MCQs)", tag: "198 MCQs • 198 Mins", url: "general_quiz/indian_polity_inm_test_198.html" },
+                    { name: "Indian Polity, Administration & Revenue Administration Master Exam (163 MCQs)", tag: "163 MCQs • 163 Mins", url: "general_quiz/indian_polity_revenue_test_198.html" },
+                    { name: "Indian Polity, Administration & INM Master Exam: (236 MCQs)", tag: "236 MCQs • 236 Mins", url: "general_quiz/indian_polity_inm_test_236.html" },
 
 
                 ]
@@ -613,6 +1101,51 @@
 
                 ]
             },
+            geography: {
+                name: "Indian & General Geography",
+                tests: [
+                    { name: "Indian Geography Master Exam: Questions 1–200", tag: "200 MCQs • 200 Mins", url: "general_quiz/indian_geography_test_1.html" },
+                    { name: "Indian Geography & Environment Master Exam (55 MCQs)", tag: "55 MCQs • 55 Mins", url: "general_quiz/indian_geography_test_55.html" },
+                    { name: "Indian Geography, Wildlife & Environment Master Exam (100 MCQs)", tag: "100 MCQs • 100 Mins", url: "general_quiz/indian_geography_test_100.html" },
+
+                ]
+            },
+            tn_unit8: {
+                name: "Unit – 8",
+                subtitle: "History, Culture, Heritage, and Socio-Political Movements of Tamil Nadu",
+                tests: [
+                    { name: "Unit-8 Full Test: Tamil Nadu History, Society & Culture", tag: "100 MCQs • 100 Mins", url: "general_quiz/unit_8_full_test_1.html" },
+                    { name: "Tamil Nadu History, Society & Tamil Literature Master Exam: Questions 1–200", tag: "200 MCQs • 200 Mins", url: "general_quiz/tamil_literature_history_test_1.html" },
+                    { name: "Tamil Literature & Social Reform Master Exam: Questions 201–485", tag: "285 MCQs • 285 Mins", url: "general_quiz/modern_history_tamil_nadu_test_285.html" },
+                    { name: "Unit-8 : First 100 Questions (Tamil Nadu History & Society)", tag: "100 MCQs • 100 Mins", url: "general_quiz/tamil_nadu_history_unit_8_100.html" },
+                    { name: "Unit-8 : Second 100 Questions (Tamil Nadu History & Society)", tag: "100 MCQs • 100 Mins", url: "general_quiz/tamil_nadu_history_unit_8_200.html" },
+                    { name: "Tamil Literature & Social Reform Master Exam: Questions ", tag: "62 MCQs • 62 Mins", url: "general_quiz/modern_history_tamil_nadu_test_62.html" },
+                    { name: "Tamil Literature & Social Reform Master Exam: Batch 3 (50 MCQs)", tag: "50 MCQs • 50 Mins", url: "general_quiz/modern_history_tamil_nadu_test_50.html" },
+                    { name: "Tamil Literature & Social Reform Master Exam: Batch 4 (59 MCQs)", tag: "59 MCQs • 59 Mins", url: "general_quiz/modern_history_tamil_nadu_test_59.html" },
+                    { name: "TNPSC Unit-8 Comprehensive Master Exam: Batch 5 (125 MCQs)", tag: "125 MCQs • 125 Mins", url: "general_quiz/tamil_nadu_history_unit_8_125.html" },
+                    { name: "TNPSC Unit-8 Comprehensive Test: 71 MCQs (Batch 6)", tag: "71 MCQs • 71 Mins", url: "general_quiz/tamil_nadu_history_unit_8_71.html" },
+                    { name: "TNPSC Unit-8 Comprehensive Test: 76 MCQs (Batch 7)", tag: "76 MCQs • 76 Mins", url: "general_quiz/tamil_nadu_history_unit_8_76.html" },
+
+                ]
+            },
+
+            indian_history: {
+                name: "Indian History",
+                subtitle: "Ancient, Medieval & Modern Indian History",
+                tests: [
+                    { name: "Ancient & Medieval Indian History Master Exam: (220 MCQs)", tag: "220 MCQs • 220 Mins", url: "general_quiz/INDIAN_HISTORY_MCQ_220.html" },
+                    { name: "Medieval India & South Indian History Master Exam: (263 MCQs)", tag: "263 MCQs • 263 Mins", url: "general_quiz/medieval_south_indian_history.html" },
+                ]
+            },
+
+            indian_economy: {
+                name: "Indian Economy",
+                subtitle: "Indian Economy, Economic Development, Banking, Finance & Planning",
+                tests: [
+
+                ]
+            },
+
             mocks: {
                 name: "General Studies Full Mocks",
                 tests: [
@@ -713,6 +1246,26 @@
                 ]
             }
         };
+
+
+        function updateCategoryCounts() {
+            document.querySelectorAll('.hub-card').forEach(card => {
+                const onclick = card.getAttribute('onclick') || '';
+                const match = onclick.match(/openCategory\('([^']+)'\)/);
+                if (!match || !categoryData[match[1]]) return;
+
+                const countEl = card.querySelector('.hub-count');
+                if (!countEl) return;
+
+                const tests = categoryData[match[1]].tests || [];
+                const label = tests.length === 1 ? '1 Test Module Available' : `${tests.length} Test Modules Available`;
+                countEl.textContent = label + ' →';
+            });
+        }
+
+        collectPortalStats();
+        setupTopicSearch();
+        updateCategoryCounts();
 
         function openCategory(catKey) {
             const data = categoryData[catKey];

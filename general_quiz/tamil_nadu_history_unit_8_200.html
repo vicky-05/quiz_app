@@ -1,0 +1,2357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TNPSC Unit-8: Tamil Nadu History, Society & Culture Master Exam — Questions 101–200</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next,
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select,
+    .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* ===== MOBILE-FIRST QUIZ LAYOUT ===== */
+    @media (max-width: 680px) {
+      body {
+        font-size: 14px;
+        overflow-x: hidden;
+      }
+
+      .banner {
+        padding: 1.15rem 0.9rem 1rem;
+        border-radius: 0 0 18px 18px;
+      }
+
+      .banner h1 {
+        font-size: clamp(1.35rem, 7vw, 1.8rem);
+        line-height: 1.15;
+      }
+
+      .banner .sub-title {
+        font-size: 0.82rem;
+        line-height: 1.4;
+        margin-top: 0.35rem;
+      }
+
+      .banner .tagline {
+        font-size: 0.72rem;
+        margin-top: 0.45rem;
+      }
+
+      .container {
+        width: 100%;
+        max-width: 100%;
+        padding: 0.75rem;
+      }
+
+      .status-ribbon {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 0.55rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .status-tile {
+        min-width: 0;
+        padding: 0.7rem 0.55rem;
+        border-radius: 12px;
+      }
+
+      .status-icon {
+        font-size: 1rem;
+        margin-bottom: 0.2rem;
+      }
+
+      .status-tile .label {
+        font-size: 0.65rem;
+      }
+
+      .status-tile .value {
+        font-size: 0.82rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+      .card {
+        padding: 0.9rem;
+        border-radius: 15px;
+        margin-bottom: 0.8rem;
+      }
+
+      .card-topbar {
+        gap: 0.45rem;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+
+      .q-badge,
+      .mark-badge {
+        font-size: 0.68rem;
+        padding: 0.35rem 0.55rem;
+      }
+
+      .q-text {
+        font-size: 1rem;
+        line-height: 1.55;
+        margin-top: 0.7rem;
+      }
+
+      .options-grid {
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+        margin-top: 0.8rem;
+      }
+
+      .option-item {
+        width: 100%;
+        min-height: 48px;
+        padding: 0.7rem 0.65rem;
+        border-radius: 11px;
+        align-items: flex-start;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .option-letter {
+        width: 30px;
+        height: 30px;
+        min-width: 30px;
+        font-size: 0.78rem;
+      }
+
+      .option-content {
+        font-size: 0.86rem;
+        line-height: 1.45;
+        word-break: break-word;
+      }
+
+      .actions-bar {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.55rem;
+        margin-top: 0.8rem;
+      }
+
+      .actions-bar .btn {
+        width: 100%;
+        min-height: 46px;
+        padding: 0.7rem 0.5rem;
+        font-size: 0.78rem;
+        border-radius: 11px;
+      }
+
+      .actions-bar .btn-review {
+        order: initial;
+        grid-column: 1 / -1;
+      }
+
+      .setup-grid {
+        grid-template-columns: 1fr !important;
+        gap: 0.75rem;
+      }
+
+      .setup-card,
+      .result-card,
+      .review-card {
+        padding: 1rem;
+      }
+
+      input,
+      select {
+        min-height: 44px;
+        font-size: 16px;
+        /* prevents iOS zoom */
+      }
+
+      .result-score {
+        width: 120px;
+        height: 120px;
+      }
+
+      .stats-matrix {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 0.55rem;
+      }
+
+      .stats-matrix>* {
+        min-width: 0;
+      }
+
+      footer {
+        padding: 1rem 0.75rem;
+        font-size: 0.72rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .container {
+        padding: 0.55rem;
+      }
+
+      .banner {
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+      }
+
+      .status-ribbon {
+        gap: 0.4rem;
+      }
+
+      .status-tile {
+        padding: 0.6rem 0.4rem;
+      }
+
+      .card {
+        padding: 0.75rem;
+      }
+
+      .q-text {
+        font-size: 0.95rem;
+      }
+
+      .option-item {
+        padding: 0.62rem 0.55rem;
+      }
+
+      .option-content {
+        font-size: 0.82rem;
+      }
+
+      .actions-bar {
+        grid-template-columns: 1fr;
+      }
+
+      .actions-bar .btn-review {
+        grid-column: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — TNPSC Unit-8 Master Exam (Questions 101–200)</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">TNPSC Unit-8: Tamil Nadu
+        History, Society & Culture Master Exam: Questions 101–200</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 101–200)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="100">All Questions ( Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 100)</label>
+          <input type="number" id="custom-count-input" min="1" max="100" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">100 minutes 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#127758;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Tamil Nadu History, Society & Culture</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#128205;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Questions 101–200</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 200</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">03:20:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      {
+        "id": 101,
+        "q": "Traditionally, the land of Tamil is presented as containing five major physiographic divisions. Match the following:\n\nKurinji\n\nMullai\n\nMarutham\n\nNeithal\n\na. Fertile region\n\nb. Forest region\n\nc. Coastal region\n\nd. Mountainous region",
+        "options": [
+          "A) 3, 2, 1, 4",
+          "B) 1, 3, 2, 4",
+          "C) 3, 1, 4, 2",
+          "D) 4, 2, 1, 3"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 102,
+        "q": "The combined programme of Self-Respectors and communists came to be called as:",
+        "options": [
+          "A) Chengalpattu Plan",
+          "B) Erode Plan",
+          "C) Virudhunagar Plan",
+          "D) Salem Plan"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 103,
+        "q": "Name the first Tamil newspaper which published political cartoons during the colonial rule.",
+        "options": [
+          "A) The Mirror",
+          "B) Sudhantira Sangu",
+          "C) The Indian",
+          "D) Swadesamitran"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 104,
+        "q": "“One's knowledge depends on how much he learns.” What is the simile used by Thiruvalluvar?",
+        "options": [
+          "A) When water flows like a flood",
+          "B) In sandy soil, when deep you delve, you reach the springs below",
+          "C) When flowers in barren soil and sapless trees shall blow",
+          "D) Like staff in hand of him in slippery ground"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 105,
+        "q": "According to Thiruvalluvar, which is considered the primary virtue of life?",
+        "options": [
+          "A) Helping others",
+          "B) Loving others",
+          "C) Sharing food with others",
+          "D) Speaking lovingly to others"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 106,
+        "q": "Who pronounced the words “Sangamazhi Tamil”?",
+        "options": [
+          "A) Thirupan Azhvar",
+          "B) Kulasekhara Azhvar",
+          "C) Andal",
+          "D) Thirumangai Azhvar"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 107,
+        "q": "Which of the following was used for protecting one's homeland during war?",
+        "options": [
+          "A) Vetnchi",
+          "B) Karanthai",
+          "C) Vanji",
+          "D) Kaanji"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 108,
+        "q": "Who established, after a careful study of Roman coins, that commercial contacts existed between Rome and South India during the reign of Emperor Augustus?",
+        "options": [
+          "A) Father Heras",
+          "B) Mr. R. Sewell",
+          "C) D.D. Kosambi",
+          "D) Dr. U.V. Swaminatha Iyer"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 109,
+        "q": "Hindu Religious Endowment Act was passed for the first time by the Government of:",
+        "options": [
+          "A) Justice Party",
+          "B) Congress Party",
+          "C) DMK Party",
+          "D) AIADMK Party"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 110,
+        "q": "Which of the following statements is incorrect regarding Velunachiyar?\n\nShe was born as a princess of Ramanathapuram.\n\nThe British troops killed her husband Muthu Vaduga Udayadeva in the battle of Kalayar Kovil.\n\nPeriya Marudu was a commander of the army under Queen Velunachiyar.\n\nMarudu brothers declared the Trichy Proclamation.",
+        "options": [
+          "A) I only",
+          "B) II only",
+          "C) I and II only",
+          "D) IV only"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 111,
+        "q": "Assertion (A): South Indian Rebellion failed miserably.\n\nReason (R): There was no coordination between the leaders.",
+        "options": [
+          "A) A is true, R is false",
+          "B) A is true, R is true but R is not the correct explanation",
+          "C) Both A and R are false",
+          "D) A is false, R is true"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 112,
+        "q": "What does the word “Thuppakki” mean for Thiruvalluvar in this Kural?\n\n“Thupparkku Thuppaya Thuppakki Thuppaya\n\nThupparkku Thuppaya Mazhai”",
+        "options": [
+          "A) Mazhai Neer — Rain water",
+          "B) Pandhukathal — Safety",
+          "C) Undaakuthal — Produce",
+          "D) Unavu — Food"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 113,
+        "q": "Thiruvalluvar compares those who cannot express what they have learnt to others to:",
+        "options": [
+          "A) Flowers without fragrance",
+          "B) Flowers without a good shape",
+          "C) Flowers without colour",
+          "D) Flowers without freshness"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 114,
+        "q": "Sukiranidhi, Manunool has been followed by Thirukkural, say some, but this is refused and ______ says that Thirukkural is the first book.",
+        "options": [
+          "A) Nakkiranar",
+          "B) Avaiyar",
+          "C) Manakuvar",
+          "D) Parimelazakar"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 115,
+        "q": "Elaborate survey of land was carried out by the Imperial Cholas for:\n\nTo assess land under cultivation\n\nTo classify land into different grades\n\nTo minimize arbitrariness in the holding of land\n\nTo encourage guild system",
+        "options": [
+          "A) (i), (ii) and (iii) are true",
+          "B) (i) and (ii) are true",
+          "C) (ii) and (iii) are true",
+          "D) (i), (ii), (iii) and (iv) are true"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 116,
+        "q": "Identify the great woman writer among the following:",
+        "options": [
+          "A) Suratha",
+          "B) Sujatha",
+          "C) Mowni",
+          "D) Ambai"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 117,
+        "q": "The first Conference of the Justice Party was held at:",
+        "options": [
+          "A) Coimbatore",
+          "B) Salem",
+          "C) Trichy",
+          "D) Madurai"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 118,
+        "q": "Ayothi Das founded:",
+        "options": [
+          "A) Satyashodhak Samaj",
+          "B) Samaj Veda Samaj Sangam",
+          "C) Advaidananda Sabha",
+          "D) Aryavaj"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 119,
+        "q": "Which of the following statements regarding Vanchinathan are correct?\n\nHe belonged to Travancore state at that time.\n\nHe was employed as a forest guard at Punalur.\n\nHe was one of the members of Bharata Mata Association.\n\nHe was trained in the use of revolver by Subramania Siva at Pondicherry.",
+        "options": [
+          "A) (i), (ii) and (iv) are correct",
+          "B) (ii), (iii) and (iv) are correct",
+          "C) (i), (iii) and (iv) are correct",
+          "D) (ii), (iii) and (iv) are correct"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 120,
+        "q": "The meaning of the chapter “Not Coveting” is:",
+        "options": [
+          "A) Not feeling shy",
+          "B) Not belittling others",
+          "C) Not begging from others",
+          "D) Not desiring others' things"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 121,
+        "q": "“Sire greatest boon on son confer… to fill the highest seat” — What is the best deed of a father to his son according to this Thirukkural?",
+        "options": [
+          "A) To amass wealth",
+          "B) To make him a brave person",
+          "C) To precede in the assembly of the learned",
+          "D) To give charity"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 122,
+        "q": "Which book describes the marriage manners of the Sangam Age people?",
+        "options": [
+          "A) Purananuru",
+          "B) Natrinai",
+          "C) Akananuru",
+          "D) Kurunthogai"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 123,
+        "q": "Assertion (A): Justice Party demanded communal representation for non-Brahmins.\n\nReason (R): Periyar came out of the Congress Party since his demand for communal representation was rejected.",
+        "options": [
+          "A) Both A and R are true and R is the correct explanation of A",
+          "B) Both A and R are true but R is not the correct explanation",
+          "C) A is true but R is false",
+          "D) A is false but R is true"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 124,
+        "q": "Name the Chief Minister of Madras Presidency when India got independence in 1947.",
+        "options": [
+          "A) Tanguturi Prakasam",
+          "B) O.P. Ramasami",
+          "C) C. Rajagopalachari",
+          "D) P.S. Kumaraswamy Raja"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 125,
+        "q": "Identify the correct statement regarding Queen Velunachiyar:\n\nThandavarayan Pillai served as Dalavay and Pradhani under Queen Velunachiyar.\n\nBritish troops killed her husband Muthu Vaduga Udayadeva at Kalayar Kovil.\n\nPeriya Marudu was a commander under Queen Velunachiyar.\n\nMarudu brothers declared the Trichy Proclamation.",
+        "options": [
+          "A) I only is correct",
+          "B) I and II are correct",
+          "C) I, II and III are correct",
+          "D) I, II, III and IV are correct"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 126,
+        "q": "Who grieves confront with meek, ungrieving heart?",
+        "options": [
+          "A) The one who makes sorrow suffer",
+          "B) The one who gets dejected in sorrow",
+          "C) The one who escapes sorrow",
+          "D) The one who laughs onlooking sorrow"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 127,
+        "q": "Sukiranidhi, Manunool has been followed by Thirukkural, say some, but this is refused and ______ says that Thirukkural is the first book.",
+        "options": [
+          "A) Nakkiranar",
+          "B) Avaiyar",
+          "C) Manakuvar",
+          "D) Parimelazakar"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 128,
+        "q": "Name the work that says “Wealth changes its position like a cart-wheel.”",
+        "options": [
+          "A) Thirukkural",
+          "B) Naaladiyar",
+          "C) Naanmanikadigai",
+          "D) Aasarakkovai"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 129,
+        "q": "Which of the following statements is correct regarding Rukmani Lakshmipathi?\n\nShe participated in the Vedaranyam Salt Satyagraha.\n\nShe participated in the Civil Disobedience Movement.\n\nShe was the Deputy Speaker under Rajaji's ministry.\n\nShe participated in the International Women's Suffrage Alliance Congress in Paris in 1926.",
+        "options": [
+          "A) 1, 2, 3 and 4 are correct",
+          "B) 1 and 2 are correct; 3 and 4 are incorrect",
+          "C) 1, 3 and 4 are correct; 2 only is incorrect",
+          "D) 1, 2 and 3 are correct; 4 only is incorrect"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 130,
+        "q": "Namakkal Kavinger's song “Without sword, without blood, one war has come” was first sung during:",
+        "options": [
+          "A) Non-Cooperation Movement",
+          "B) Vedaranyam Salt Satyagraha",
+          "C) Gandhi's visit to Madurai in 1936",
+          "D) Quit India Movement"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 131,
+        "q": "Which of the following statements regarding the Queen Velunachiyar is/are correct?\n\nThandavarayan Pillai served under Queen Velunachiyar.\n\nHer husband was killed by British troops at Kalayar Kovil.\n\nPeriya Marudu was her army commander.\n\nMarudu brothers issued the Trichy Proclamation.",
+        "options": [
+          "A) (i) only",
+          "B) (i) and (ii) only",
+          "C) (i), (ii) and (iii) only",
+          "D) (i), (ii), (iii) and (iv)"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 132,
+        "q": "Which of the following leaders was not related to the Dindugal League?\n\nI. Gopal Nayakkar\n\nII. Manaparai Lakshmi Nayakkar\n\nIII. Deni Yadul Nayakkar\n\nIV. Singam Chetty",
+        "options": [
+          "A) II only",
+          "B) III only",
+          "C) II and III only",
+          "D) IV only"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 133,
+        "q": "“Call that a gift to needy men thou dost dispense, all else is void of good, seeking for recompense.” What does “seeking for recompense” mean?",
+        "options": [
+          "A) To pity poor people",
+          "B) To follow virtuous path",
+          "C) To return the measured goods borrowed from neighbours",
+          "D) Feeling of greatness"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 134,
+        "q": "Who is the founder of “Koothupattarai Nadaga Iyakam”?",
+        "options": [
+          "A) N. Muthusamy",
+          "B) Indira Parthasarathy",
+          "C) Sahul Hameed",
+          "D) M. Ramasamy"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 135,
+        "q": "“Found the skill of hands there and the power of foot here” — What is the meaning of this line in Kambaramayanam?\n\nBreaking of Bow by Raman\n\nLiberating Agaligai from curse\n\nKilling of Thadagai\n\nVictory over Ravanan",
+        "options": [
+          "A) 1 only",
+          "B) 1, 2 only",
+          "C) 2, 4 only",
+          "D) 1, 2, 3 only"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 136,
+        "q": "“Kallathin Utchum Suramenbar Kadalar Ullam Padarntha Neri” — These lines are from:",
+        "options": [
+          "A) Kalavazhi Narpathu",
+          "B) Thirukkural",
+          "C) Aynthinai Aymbathu",
+          "D) Kar Narpathu"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 137,
+        "q": "“Periyar Viyathulam Ilame; Siriyorai igalthal athaninum Ilame” — What is the first line of this Purananuru poem?",
+        "options": [
+          "A) Yandu Palavaka Naraiyila Aaguthal",
+          "B) Thenkadal Valagam Podumai Indri",
+          "C) Yadum Ure; Yaavarum Kelir",
+          "D) Ee yena irathal ilinthandru; Athan yethir"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 138,
+        "q": "What is the message of the Thirukkural “That is a land that yields increase”?",
+        "options": [
+          "A) Policies of a best country",
+          "B) A country's resources",
+          "C) Problems in a country",
+          "D) Policies of a bad country"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 139,
+        "q": "“Those who've helped you in distress” — What kind of friendship does Thiruvalluvar mention?",
+        "options": [
+          "A) Friendship of a learned person",
+          "B) Friendship of a cruel person",
+          "C) Friendship of a wise person",
+          "D) Friendship of a person who helped you in your troubles"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 140,
+        "q": "The book called “The Veda of the Tamils” is:",
+        "options": [
+          "A) Devaram",
+          "B) Thiruvasagam",
+          "C) Thirukkural",
+          "D) Naladiyar"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 141,
+        "q": "“O! honey bee with beautiful wings…” What is the second line of this Kurunthogai poem?",
+        "options": [
+          "A) Maipattana Mamuga Musukalai",
+          "B) Kaamam Seppaadhu Kandadhu Mozhimo",
+          "C) Varaiizhi Aruviel Thondrum Nadan",
+          "D) Punakili Kadium Poongan Pethai"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 142,
+        "q": "In the rise and growth of the Self-Respect Movement, there are two phases. Which are they?\n\n(i) Rationalism\n\n(ii) Atheism",
+        "options": [
+          "A) (i) only",
+          "B) (ii) only",
+          "C) (i) and (ii)",
+          "D) None of the above"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 143,
+        "q": "Which one of the statements is not correct regarding the Trichy Proclamation?\n\nThe Proclamation was published by Marudu Pandiyar.\n\nIt created confidence among the people.\n\nIt did not reveal national feelings.\n\nIt condemned the political activities of Carnatic Nawab and Muhammad Ali.",
+        "options": [
+          "A) (i) only",
+          "B) (ii) only",
+          "C) (iii) only",
+          "D) (iv) only"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 144,
+        "q": "Who wrote about Devadasi in a novel?",
+        "options": [
+          "A) Bala Saraswathi",
+          "B) Ramamirtham Ammayar",
+          "C) Nagarathinamma",
+          "D) M.S. Subbulakshmi"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 145,
+        "q": "Assertion (A): Moovalur Ramamirtham was the founder of an orphanage “Avvai Illam”.\n\nReason (R): She was a strong follower of Periyar.",
+        "options": [
+          "A) Both A and R are true and R is the correct explanation",
+          "B) Both A and R are true but R is not the correct explanation",
+          "C) A is true but R is false",
+          "D) A is false but R is true"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 146,
+        "q": "“That is a land that yields increase…” What is the message in this Thirukkural?",
+        "options": [
+          "A) Policies of a best country",
+          "B) A country's resources",
+          "C) Problems in a country",
+          "D) Policies of a bad country"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 147,
+        "q": "“Those who've helped you in distress” — What kind of friendship does Thiruvalluvar mention?",
+        "options": [
+          "A) Friendship of a learned person",
+          "B) Friendship of a cruel person",
+          "C) Friendship of a wise person",
+          "D) Friendship of a person who helped you in your troubles"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 148,
+        "q": "Match the following:\n\n(a) Manram — 1. Common place\n\n(b) Saptanga — 2. Administrative unit\n\n(c) Enperayam — 3. Meeting hall\n\n(d) Podiyil — 4. Seven limbs",
+        "options": [
+          "A) 3, 4, 2, 1",
+          "B) 3, 2, 1, 4",
+          "C) 4, 3, 2, 1",
+          "D) 4, 2, 1, 3"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 149,
+        "q": "The book called “The Veda of the Tamils” is:",
+        "options": [
+          "A) Devaram",
+          "B) Thiruvasagam",
+          "C) Thirukkural",
+          "D) Naladiyar"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 150,
+        "q": "What is the second line of the Kurunthogai poem beginning “Kongu ther vaazhkai anjirai-th thumbi”?",
+        "options": [
+          "A) Maipattana Mamuga Musukalai",
+          "B) Kaamam Seppaadhu Kandadhu Mozhimo",
+          "C) Varaiizhi Aruviel Thondrum Nadan",
+          "D) Punakili Kadium Poongan Pethai"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 151,
+        "q": "Find the text not written by Nammalvar.",
+        "options": [
+          "A) Thiruvirutham",
+          "B) Naanmugan Thiruvanthathi",
+          "C) Periya Thiruvanthathi",
+          "D) Thiruvaimozhi"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 152,
+        "q": "Who is the author of the book “Marainthupona Tamil Noolgal”?",
+        "options": [
+          "A) Mayilai Seeni Venkatasamy",
+          "B) Thirumeni Rathina Kavirayar",
+          "C) M. Ragava Iyengar",
+          "D) M.V. Aravindhan"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 153,
+        "q": "Which of the following statements about the Self-Respect Movement is correct?\n\n(i) Rationalism\n\n(ii) Atheism",
+        "options": [
+          "A) (i) only",
+          "B) (ii) only",
+          "C) (i) and (ii)",
+          "D) None of the above"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 154,
+        "q": "Which woman wrote about Transgenders (Thirunangai) in Puthukavithai/free verse?",
+        "options": [
+          "A) M. Rajendran",
+          "B) N. Kamarajan",
+          "C) M. Mehta",
+          "D) Abdul Rahman"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 155,
+        "q": "Who gave the “Atchayapathra” (Perennial Vessel) to Aaputhiran?",
+        "options": [
+          "A) Sindha Devi",
+          "B) Manimekala Deivam",
+          "C) Kannaki",
+          "D) Madhavi"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 156,
+        "q": "Find the text not written by Nammalvar.",
+        "options": [
+          "A) Thiruvirutham",
+          "B) Naanmugan Thiruvanthathi",
+          "C) Periya Thiruvanthathi",
+          "D) Thiruvaimozhi"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 157,
+        "q": "Who is the author of “Marainthupona Tamil Noolgal”?",
+        "options": [
+          "A) Mayilai Seeni Venkatasamy",
+          "B) Thirumeni Rathina Kavirayar",
+          "C) M. Ragava Iyengar",
+          "D) M.V. Aravindhan"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 158,
+        "q": "The main aim of the Self-Respect Movement in Tamil Nadu was to:",
+        "options": [
+          "A) Abolish untouchability",
+          "B) Encourage self-respect marriages",
+          "C) Abolish the Devadasi system",
+          "D) All the above"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 159,
+        "q": "Who implemented the Poondi Drinking Water Reservoir?",
+        "options": [
+          "A) Kamaraj",
+          "B) Sathyamoorthy",
+          "C) Rajagopalachari",
+          "D) Annadurai"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 160,
+        "q": "“A crow will conquer owl in broad daylight; the king that foes would crush needs fitting time to fight.” What is the main idea?",
+        "options": [
+          "A) Importance of time",
+          "B) Victory of crow",
+          "C) Owl's failure",
+          "D) Victory of kings"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 161,
+        "q": "Who is the Gnanaguru of Bharathiar?",
+        "options": [
+          "A) Thilagar",
+          "B) Nivethitha",
+          "C) Shelly",
+          "D) Gandhi"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 162,
+        "q": "In Sangam Society, the term “Ambanam” was used for:",
+        "options": [
+          "A) To measure the liquid",
+          "B) To measure the paddy",
+          "C) Name of the village officer",
+          "D) Military camp"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 163,
+        "q": "Who is the Kodaiezhu Vallal referred to in the Siru Paanatrupadai verse “Nalimalai Naadan…”?",
+        "options": [
+          "A) Paari",
+          "B) Kaari",
+          "C) Nalli",
+          "D) Aai"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 164,
+        "q": "Arikkamedu is located in:",
+        "options": [
+          "A) Tirunelveli",
+          "B) Dindugal",
+          "C) Pondicherry",
+          "D) Goa"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 165,
+        "q": "The third Sangam at Madurai was founded by:",
+        "options": [
+          "A) Ilamperuvazhuthi",
+          "B) Mudathirumaran",
+          "C) Muthukkudumi Peruvazhuthi",
+          "D) Nedunchezhiyan"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 166,
+        "q": "Match the following:\n\nA. Buddhimitra — 1. Thirumanthiram\n\nB. Amirtasagaranar — 2. Kalingathupparani\n\nC. Jayankondar — 3. Veerasoliyam\n\nD. Thirumoolar — 4. Yapparungalam",
+        "options": [
+          "A) 1, 3, 2, 4",
+          "B) 2, 3, 4, 1",
+          "C) 1, 2, 4, 3",
+          "D) 3, 4, 2, 1"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 167,
+        "q": "Gurukula Ashram was run with the funds contributed by the Congress Party for promoting national unity at:",
+        "options": [
+          "A) Seramadevi",
+          "B) Kanchipuram",
+          "C) Erode",
+          "D) Chengalpattu"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 168,
+        "q": "Which one of the following leaders was not related to the Dindugal League?\n\nI. Gopal Nayakkar\n\nII. Manaparai Lakshmi Nayakkar\n\nIII. Deni Yadul Nayakkar\n\nIV. Singam Chetty",
+        "options": [
+          "A) II only",
+          "B) III only",
+          "C) II and III only",
+          "D) IV only"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 169,
+        "q": "What is the meaning of “seeking for recompense” according to Thiruvalluvar?",
+        "options": [
+          "A) To pity poor people",
+          "B) To follow virtuous path",
+          "C) To return the measured goods borrowed from neighbours",
+          "D) Feeling of greatness"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 170,
+        "q": "Who is the founder of “Koothupattarai Nadaga Iyakam”?",
+        "options": [
+          "A) N. Muthusamy",
+          "B) Indira Parthasarathy",
+          "C) Sahul Hameed",
+          "D) M. Ramasamy"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 171,
+        "q": "“Found the skill of hands there and the power of foot here” refers to:\n\nBreaking of Bow by Raman\n\nLiberating Agaligai from curse\n\nKilling of Thadagai\n\nVictory over Ravanan",
+        "options": [
+          "A) 1 only",
+          "B) 1, 2 only",
+          "C) 2, 4 only",
+          "D) 1, 2, 3 only"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 172,
+        "q": "“Kallathin Utchum Suramenbar Kadalar Ullam Padarntha Neri” is from:",
+        "options": [
+          "A) Kalavazhi Narpathu",
+          "B) Thirukkural",
+          "C) Aynthinai Aymbathu",
+          "D) Kar Narpathu"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 173,
+        "q": "“Periyar Viyathulam Ilame; Siriyorai igalthal athaninum Ilame” — The first line is:",
+        "options": [
+          "A) Yandu Palavaka Naraiyila Aaguthal",
+          "B) Thenkadal Valagam Podumai Indri",
+          "C) Yadum Ure; Yaavarum Kelir",
+          "D) Ee yena irathal ilinthandru; Athan yethir"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 174,
+        "q": "Who wrote a novel about Devadasi?",
+        "options": [
+          "A) Bala Saraswathi",
+          "B) Ramamirtham Ammayar",
+          "C) Nagarathinamma",
+          "D) M.S. Subbulakshmi"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 175,
+        "q": "Assertion (A): Moovalur Ramamirtham was the founder of an orphanage “Avvai Illam”.\n\nReason (R): She was a strong follower of Periyar.",
+        "options": [
+          "A) Both A and R are true and R is the correct explanation",
+          "B) Both A and R are true but R is not the correct explanation",
+          "C) A is true but R is false",
+          "D) A is false but R is true"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 176,
+        "q": "“That is a land that yields increase…” What is the message?",
+        "options": [
+          "A) Policies of a best country",
+          "B) A country's resources",
+          "C) Problems in a country",
+          "D) Policies of a bad country"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 177,
+        "q": "“Those who’ve helped you in distress” refers to which kind of friendship?",
+        "options": [
+          "A) Friendship of learned person",
+          "B) Friendship of cruel person",
+          "C) Friendship of wise person",
+          "D) Friendship of a person who helped you in your troubles"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 178,
+        "q": "Match the following:\n\n(a) Manram — 1. Common place\n\n(b) Saptanga — 2. Administrative unit\n\n(c) Enperayam — 3. Meeting hall\n\n(d) Podiyil — 4. Seven limbs",
+        "options": [
+          "A) 3, 4, 2, 1",
+          "B) 3, 2, 1, 4",
+          "C) 4, 3, 2, 1",
+          "D) 4, 2, 1, 3"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 179,
+        "q": "The book called “The Veda of the Tamils” is:",
+        "options": [
+          "A) Devaram",
+          "B) Thiruvasagam",
+          "C) Thirukkural",
+          "D) Naladiyar"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 180,
+        "q": "The second line of the Kurunthogai poem beginning “Kongu ther vaazhkai anjirai-th thumbi” is:",
+        "options": [
+          "A) Maipattana Mamuga Musukalai",
+          "B) Kaamam Seppaadhu Kandadhu Mozhimo",
+          "C) Varaiizhi Aruviel Thondrum Nadan",
+          "D) Punakili Kadium Poongan Pethai"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 181,
+        "q": "Find the text not written by Nammalvar.",
+        "options": [
+          "A) Thiruvirutham",
+          "B) Naanmugan Thiruvanthathi",
+          "C) Periya Thiruvanthathi",
+          "D) Thiruvaimozhi"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 182,
+        "q": "Who is the author of “Marainthupona Tamil Noolgal”?",
+        "options": [
+          "A) Mayilai Seeni Venkatasamy",
+          "B) Thirumeni Rathina Kavirayar",
+          "C) M. Ragava Iyengar",
+          "D) M.V. Aravindhan"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 183,
+        "q": "Sir Mortimer Wheeler discovered a Roman factory at:",
+        "options": [
+          "A) Adichanallur",
+          "B) Arikamedu",
+          "C) Kaliyur",
+          "D) Kanchi"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 184,
+        "q": "The oldest Dravidian language is:",
+        "options": [
+          "A) Kannada",
+          "B) Malayalam",
+          "C) Tamil",
+          "D) Telugu"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 185,
+        "q": "Who gave the Atchayapathra (Perennial Vessel) to Aaputhiran?",
+        "options": [
+          "A) Sindha Devi",
+          "B) Manimekala Deivam",
+          "C) Kannaki",
+          "D) Madhavi"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 186,
+        "q": "Which text was not written by Nammalvar?",
+        "options": [
+          "A) Thiruvirutham",
+          "B) Naanmugan Thiruvanthathi",
+          "C) Periya Thiruvanthathi",
+          "D) Thiruvaimozhi"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 187,
+        "q": "Who is the author of “Marainthupona Tamil Noolgal”?",
+        "options": [
+          "A) Mayilai Seeni Venkatasamy",
+          "B) Thirumeni Rathina Kavirayar",
+          "C) M. Ragava Iyengar",
+          "D) M.V. Aravindhan"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 188,
+        "q": "Who is the author of the book “Marainthupona Tamil Noolgal”?",
+        "options": [
+          "A) Mayilai Seeni Venkatasamy",
+          "B) Thirumeni Rathina Kavirayar",
+          "C) M. Ragava Iyengar",
+          "D) M.V. Aravindhan"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 189,
+        "q": "Which group called themselves “Varnashrama Dharmangal Anupalitha” in Tamil Nadu history?",
+        "options": [
+          "A) Pallavas",
+          "B) Pandyas",
+          "C) Nayaks",
+          "D) Tondaimans of Pudukkottai"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 190,
+        "q": "“A carpenter who makes eight chariots a day. How strong a chariot's wheel if he takes one month to make that one.” What is the implied meaning?",
+        "options": [
+          "A) A strong person",
+          "B) A victorious person",
+          "C) A charitable person",
+          "D) One who supports poets"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 191,
+        "q": "“Last full moon we had our father, we had our hill.” In which division does the Purananuru poem express this?",
+        "options": [
+          "A) Helpless state in distress — Kayaru Nilai",
+          "B) Mazhapula Vanji",
+          "C) Porunmozhi Kanji",
+          "D) Perumkanji"
+        ],
+        "ans": 0
+      },
+      {
+        "id": 192,
+        "q": "Who said, “All lives are alike at birth”?",
+        "options": [
+          "A) Kambar",
+          "B) Ilangovadigal",
+          "C) Thirumoolar",
+          "D) Thiruvalluvar"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 193,
+        "q": "Who wrote Puthukavithai (free verse) under the pen name “Pasuvayya”?",
+        "options": [
+          "A) Nagulan",
+          "B) Sundara Ramasamy",
+          "C) Kala Priya",
+          "D) Vikramadithan"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 194,
+        "q": "The text which praises the victories of Lord Vishnu belongs to which genre?",
+        "options": [
+          "A) Puranilai Valthu",
+          "B) Vaal Mangalam",
+          "C) Kandazhi",
+          "D) Vaayurai Valthu"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 195,
+        "q": "Name the Nayanar who built a Siva temple in his mind.",
+        "options": [
+          "A) Nesa Nayanar",
+          "B) Sadaya Nayanar",
+          "C) Isai Nayanar",
+          "D) Poosalar Nayanar"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 196,
+        "q": "To which prehistoric time is the antiquity of terracotta art traced back?",
+        "options": [
+          "A) Chalcolithic Age",
+          "B) Megalithic Age",
+          "C) Neolithic Age",
+          "D) Iron Age"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 197,
+        "q": "Kapadapuram was engulfed by the sea during the reign of which Pandyan king?",
+        "options": [
+          "A) Kadungon",
+          "B) Kaichinavazhuthi",
+          "C) Mudathirumaran",
+          "D) Nedunchezhian"
+        ],
+        "ans": 2
+      },
+      {
+        "id": 198,
+        "q": "Who founded the third Sangam at Madurai?",
+        "options": [
+          "A) Ilamperuvazhuthi",
+          "B) Mudathirumaran",
+          "C) Muthukkudumi Peruvazhuthi",
+          "D) Nedunchezhiyan"
+        ],
+        "ans": 1
+      },
+      {
+        "id": 199,
+        "q": "In Arikamedu, the excavation was conducted by:",
+        "options": [
+          "A) Dr. Jagor",
+          "B) Stuart",
+          "C) Robert Bruce Foote",
+          "D) Mortimer Wheeler"
+        ],
+        "ans": 3
+      },
+      {
+        "id": 200,
+        "q": "The South Indian Liberal Federation was renamed as:",
+        "options": [
+          "A) Justice Movement",
+          "B) Justice Party",
+          "C) Dravidian Party",
+          "D) Self-Respect Movement"
+        ],
+        "ans": 1
+      }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(100, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 200) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Tamil Nadu History, Society & Culture Master Exam.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific physical, climatological, and economic geography concepts.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Tamil Nadu History, Society & Culture recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+
+</html>
