@@ -1,0 +1,1166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Soil Science Test 2 — Chemistry, Organic Matter & Problem Soils (200 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next,
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select,
+    .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Soil Science Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Soil Science Test 2:
+        Chemistry, Organic Matter & Problem Soils (200 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–200)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="200">All Questions (200 Questions)</option>
+            <option value="25">25 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 200)</label>
+          <input type="number" id="custom-count-input" min="1" max="200" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">200 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#127757;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Soil Science</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#9874;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Soil Chemistry</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 200</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">03:20:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 141, q: "Conversion of organic nitrogen into inorganic nitrogen is called:", options: ["A) Mineralization", "B) Immobilization", "C) Denitrification", "D) Nitrification"], ans: 0 },
+      { id: 142, q: "Which soil layer generally experiences a higher temperature fluctuation than deeper subsoil layers?", options: ["A) Surface soil (0–15 cm)", "B) Deep parent rock", "C) Water table", "D) Bedrock"], ans: 0 },
+      { id: 143, q: "Upper limit of plant-available soil water storage is known as:", options: ["A) Field capacity", "B) Permanent wilting point", "C) Hygroscopic coefficient", "D) Saturation point"], ans: 0 },
+      { id: 144, q: "The international pipette method of soil textural determination is fundamentally based on:", options: ["A) Stokes’ law", "B) Darcy's law", "C) Ohm's law", "D) Fick's law"], ans: 0 },
+      { id: 145, q: "Tea crop thrives and grows well in which soil pH range?", options: ["A) 4.0–6.0 (acidic soil)", "B) 7.5–8.5", "C) 8.5–9.5", "D) 10.0"], ans: 0 },
+      { id: 146, q: "Why is loamy soil considered ideal for general crop growth? (Considered via both constituent statements)", options: ["A) It contains a balanced mixture of sand, silt and clay and retains water and nutrients effectively", "B) It is pure sand", "C) It is pure clay", "D) It lacks organic matter"], ans: 0 },
+      { id: 147, q: "The fully weathered and well-developed soil layer depth commonly referenced in profile studies is:", options: ["A) 30–45 cm", "B) 1000 cm", "C) 0 cm", "D) 5000 cm"], ans: 0 },
+      { id: 148, q: "Correct matching of particle-size classes (Clay < 0.002mm, Fine sand 0.02-0.2mm, Coarse sand 0.2-2mm, Stones > 2mm):", options: ["A) Option A", "B) Option B (Clay–3, Fine sand–4, Coarse sand–1, Stones & gravel–2)", "C) Option C", "D) Option D"], ans: 1 },
+      { id: 149, q: "Which amendment material is added to reclaim strongly acid soils?", options: ["A) CaCO₃ (agricultural lime)", "B) Gypsum", "C) Sodium chloride", "D) Urea"], ans: 0 },
+      { id: 150, q: "Which soil type exhibits a characteristic self-mulching / self-turning property due to shrinking and swelling?", options: ["A) Black soil (Vertisol)", "B) Red sandy soil", "C) Laterite soil", "D) Desert sand"], ans: 0 },
+      { id: 151, q: "Soil colours are standardized and determined by direct visual comparison with the:", options: ["A) Munsell colour chart", "B) pH strip scale", "C) Secchi disc", "D) Beaufort scale"], ans: 0 },
+      { id: 152, q: "What is the approximate percentage of sand in coarse sandy soil textural classes?", options: ["A) >75% sand", "B) 10%", "C) 30%", "D) 5%"], ans: 0 },
+      { id: 153, q: "Which standardized color chart is universally used in pedology for determining soil colour?", options: ["A) Munsell colour chart", "B) Pantone chart", "C) RGB chart", "D) Spectrum scale"], ans: 0 },
+      { id: 154, q: "The biochemical microbial oxidation of ammonia into nitrites and nitrates is called:", options: ["A) Nitrification", "B) Denitrification", "C) Ammonification", "D) Fixation"], ans: 0 },
+      { id: 155, q: "As per Fertilizer Control Order (FCO) standards, what should be the maximum C:N ratio of mature compost?", options: ["A) Less than 20:1 (< 20:1)", "B) 100:1", "C) 50:1", "D) 200:1"], ans: 0 },
+      { id: 156, q: "In the Munsell colour chart notation, a value of 10 represents maximum lightness towards:", options: ["A) White", "B) Jet black", "C) Bright red", "D) Deep blue"], ans: 0 },
+      { id: 157, q: "Who originally proposed the classical “Law of Minimum” in plant nutrition?", options: ["A) Justus von Liebig", "B) Dokuchaev", "C) Mitscherlich", "D) Sørensen"], ans: 0 },
+      { id: 158, q: "What is the stable ultimate dark product resulting from the humification of organic matter?", options: ["A) Humus", "B) Raw lignin", "C) Cellulose fibre", "D) Charcoal"], ans: 0 },
+      { id: 159, q: "Which 2:1 expanding layer silicate clay mineral is dominant in Indian black soils (Vertisols)?", options: ["A) Montmorillonite (smectite)", "B) Kaolinite", "C) Illite", "D) Chlorite"], ans: 0 },
+      { id: 160, q: "Insoluble rock phosphate fertilizer is particularly effective and suitable when applied to:", options: ["A) Acid soils", "B) Sodic soils", "C) Saline soils", "D) Calcareous soils"], ans: 0 },
+      { id: 161, q: "The chemical concept and scale of pH was introduced and given by:", options: ["A) S.P.L. Sørensen", "B) Liebig", "C) Arrhenius", "D) Brønsted"], ans: 0 },
+      { id: 162, q: "Saline soils develop and occur predominantly in which climatic regions?", options: ["A) Arid and semi-arid regions", "B) High rainfall humid tropics", "C) Cold tundra", "D) Dense evergreen forests"], ans: 0 },
+      { id: 163, q: "The English word “soil” is etymologically derived from the Latin word:", options: ["A) Solum (meaning floor or ground)", "B) Terra", "C) Pedon", "D) Regolith"], ans: 0 },
+      { id: 164, q: "Regarding soil porosity at lower depths (Assertion & Reason): Both Assertion and Reason are true, with the Reason explaining the Assertion.", options: ["A) Both Assertion and Reason are true, and Reason is the correct explanation", "B) A is true, R is false", "C) A is false, R is true", "D) Both are false"], ans: 0 },
+      { id: 165, q: "What is the most preferred chemical form of sulphur absorbed by plant roots?", options: ["A) Sulphate ion (SO₄²⁻)", "B) Elemental sulphur", "C) Sulphur dioxide gas", "D) Sulphide"], ans: 0 },
+      { id: 166, q: "Subsoil air contains lower concentration of which vital gas compared to surface soil air?", options: ["A) Oxygen (O₂)", "B) Nitrogen", "C) Argon", "D) Neon"], ans: 0 },
+      { id: 167, q: "How many official basic soil textural classes are recognized in the USDA textural triangle?", options: ["A) 12 textural classes", "B) 3", "C) 6", "D) 20"], ans: 0 },
+      { id: 168, q: "Which soil textural class has nearly equal, balanced proportions of sand, silt and clay?", options: ["A) Loam", "B) Clay", "C) Sand", "D) Silt"], ans: 0 },
+      { id: 169, q: "Which swelling hydrous phyllosilicate mineral is composed of magnesium-aluminium-iron silicates?", options: ["A) Vermiculite", "B) Quartz", "C) Calcite", "D) Feldspar"], ans: 0 },
+      { id: 170, q: "At field capacity soil moisture status:", options: ["A) Macropores contain air and micropores contain capillary water", "B) All pores are completely dry", "C) All pores are waterlogged", "D) Plants wilt instantly"], ans: 0 },
+      { id: 171, q: "Which fraction of soil is chemically and physically the most active and reactive?", options: ["A) Clay fraction (<0.002 mm)", "B) Coarse sand", "C) Gravel", "D) Silt"], ans: 0 },
+      { id: 172, q: "What is considered the most suitable and balanced soil textural class for general crop growth?", options: ["A) Loam", "B) Heavy clay", "C) Coarse sand", "D) Fine silt"], ans: 0 },
+      { id: 173, q: "Soils having which type of structure (e.g. granular/crumb) warm up more quickly in spring?", options: ["A) Spheroidal (granular/crumb)", "B) Platy", "C) Massive", "D) Prismatic"], ans: 0 },
+      { id: 174, q: "Bulk density is characteristically higher in which poorly structured soil type?", options: ["A) Platy structured soil", "B) Granular soil", "C) Crumb soil", "D) Porous organic soil"], ans: 0 },
+      { id: 175, q: "The branch of soil science focusing specifically on soil in relation to plant growth is:", options: ["A) Edaphology", "B) Pedology", "C) Petrology", "D) Stratigraphy"], ans: 0 },
+      { id: 176, q: "Which mineral serves as a natural geological source of zinc in soils?", options: ["A) Sphalerite (zinc blende)", "B) Hematite", "C) Gypsum", "D) Galena"], ans: 0 },
+      { id: 177, q: "The downward washing of soluble minerals/nutrients from upper horizons and deposition below is:", options: ["A) Illuviation (zone of accumulation; eluviation is removal)", "B) Weathering", "C) Erosion", "D) Volatilization"], ans: 0 },
+      { id: 178, q: "What is the standard operating pressure range of an irrigation tensiometer (Irrometer)?", options: ["A) 0 to 0.85 bar (0 to −0.85 bar)", "B) 0 to 100 bars", "C) 15 to 30 bars", "D) 100 to 500 bars"], ans: 0 },
+      { id: 179, q: "Which fraction of soil humus is soluble in both acid and alkali media?", options: ["A) Fulvic acid", "B) Humic acid", "C) Humin", "D) Lignin"], ans: 0 },
+      { id: 180, q: "Which metal ions/minerals become dangerously more soluble and toxic in strongly acid soils?", options: ["A) Aluminium (Al), Iron (Fe) and Manganese (Mn)", "B) Calcium and Magnesium", "C) Sodium and Potassium", "D) Nitrogen and Phosphorus"], ans: 0 },
+      { id: 181, q: "What is the optimum soil pH range for the maximum survival and activity of most beneficial soil microbes?", options: ["A) 6.0–7.5", "B) 3.0–4.0", "C) 9.0–10.0", "D) 2.0–3.0"], ans: 0 },
+      { id: 182, q: "Most essential plant nutrients reach their peak availability in mineral soils around pH:", options: ["A) 6.0–7.5", "B) 4.0", "C) 9.5", "D) 3.0"], ans: 0 },
+      { id: 183, q: "Which crops perform well and tolerate acidic soil conditions?", options: ["A) Tea, potato and rice (all of these)", "B) Alfalfa", "C) Barley", "D) Cotton"], ans: 0 },
+      { id: 184, q: "Acid sulphate soils (cat clays) are more prevalent in coastal regions of which Indian state?", options: ["A) Kerala (Kuttanad tract)", "B) Punjab", "C) Haryana", "D) Rajasthan"], ans: 0 },
+      { id: 185, q: "Which crop is noted for absorbing large quantities of basic cations, thereby creating residual soil acidity?", options: ["A) Sugarcane", "B) Tea", "C) Potato", "D) Blueberries"], ans: 0 },
+      { id: 186, q: "Saline soils can be successfully reclaimed and managed by:", options: ["A) Flooding and leaching, scraping surface crusts, and using salt-free irrigation water (all of these)", "B) Adding sodium carbonate", "C) Compacting surface", "D) Burning"], ans: 0 },
+      { id: 187, q: "Problem soil characteristics matching (Saline: pH<8.5, ESP<15, EC>4; Alkali: pH>8.5, ESP>15, EC<4; Saline-Alkali: pH<8.5, ESP>15, EC>4):", options: ["A) Option A", "B) Option B (Standard soil chemistry parameter pairing)", "C) Option C", "D) Option D"], ans: 1 },
+      { id: 188, q: "Soil water held at a suction tension of −15 bars is definitively associated with:", options: ["A) Permanent wilting point (PWP)", "B) Field capacity", "C) Saturation", "D) Gravitational flow"], ans: 0 },
+      { id: 189, q: "Which soil master horizon represents the zone of maximum eluviation (washing out of clay/oxides)?", options: ["A) E horizon (or A horizon)", "B) B horizon", "C) C horizon", "D) R horizon"], ans: 0 },
+      { id: 190, q: "Which soil horizon features the absolute minimum biological activity and root penetration?", options: ["A) C horizon (or R bedrock)", "B) A horizon", "C) Ap horizon", "D) O horizon"], ans: 0 },
+      { id: 191, q: "Which two genera of chemoautotrophic soil bacteria drive biological nitrification?", options: ["A) Nitrosomonas and Nitrobacter", "B) Rhizobium and Azotobacter", "C) Bacillus and Clostridium", "D) Pseudomonas and Xanthomonas"], ans: 0 },
+      { id: 192, q: "G gaseous volatilization loss of soil nitrogen as ammonia is heavily favoured under:", options: ["A) Alkaline soil conditions (high pH)", "B) Strongly acidic soils", "C) Waterlogged cold soils", "D) Dry sterile sand"], ans: 0 },
+      { id: 193, q: "A soil organic C:N ratio below 20:1 strongly favours which biological process?", options: ["A) Mineralization (net release of inorganic N)", "B) Immobilization", "C) Denitrification", "D) Volatilization"], ans: 0 },
+      { id: 194, q: "Which chemical form of nitrogen fertilizer is instantly soluble and highly prone to nitrate leaching?", options: ["A) Nitrate (NO₃⁻)", "B) Ammonium (NH₄⁺)", "C) Urea granules", "D) Organic protein"], ans: 0 },
+      { id: 195, q: "Who is universally revered as the Father of Soil Science and modern pedology?", options: ["A) V.V. Dokuchaev", "B) Justus von Liebig", "C) Jethro Tull", "D) Charles Darwin"], ans: 0 },
+      { id: 196, q: "What is the approximate volumetric concentration of carbon dioxide in soil air?", options: ["A) 0.3%", "B) 21%", "C) 78%", "D) 0.001%"], ans: 0 },
+      { id: 197, q: "The detailed petrological description and microscopic study of rocks and minerals is called:", options: ["A) Petrography", "B) Pedology", "C) Stratigraphy", "D) Palynology"], ans: 0 },
+      { id: 198, q: "Unconsolidated geological parent material (Regolith) consists of which master horizons?", options: ["A) A + B + C horizons", "B) O only", "C) R only", "D) B only"], ans: 0 },
+      { id: 199, q: "The pedogenic process of Laterization involves the residual accumulation of:", options: ["A) Sesquioxides (Iron and Aluminium oxides)", "B) Calcium carbonate", "C) Pure silica sand", "D) Organic peat"], ans: 0 },
+      { id: 200, q: "The pedogenic process of Podzolization involves the intensive leaching and removal of:", options: ["A) Sesquioxides and silica from upper horizons", "B) Calcium only", "C) Organic matter", "D) Clay minerals"], ans: 0 }
+    ];
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(200, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 200) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Soil Chemistry, Organic Matter, and Problem Soils.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific soil pH ranges, nitrogen mineralization, and problem soil reclamation.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Soil Chemistry recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+
+</html>

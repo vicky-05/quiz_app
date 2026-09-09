@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agricultural Entomology Test 2 — Chemical Control, Apiculture & Sericulture (184 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next,
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select,
+    .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Agricultural Entomology Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Agricultural Entomology
+        Test 2: Chemical Control, Apiculture & Sericulture (184 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–184)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="184">All Questions (184 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 184)</label>
+          <input type="number" id="custom-count-input" min="1" max="184" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">184 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#128030;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Entomology</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#128029;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Chemical & Apiculture</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 184</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">03:04:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "Insecticidal properties of DDT were discovered by", options: ["A) Paul Müller", "B) Charles Darwin", "C) Louis Pasteur", "D) Alexander Fleming"], ans: 0 },
+      { id: 2, q: "An insecticide that acts in the digestive system after ingestion is called", options: ["A) Stomach poison", "B) Contact poison", "C) Fumigant", "D) Systemic poison"], ans: 0 },
+      { id: 3, q: "Insecticidal properties of DDT were discovered in the year", options: ["A) 1939", "B) 1945", "C) 1928", "D) 1960"], ans: 0 },
+      { id: 4, q: "In which crop is a GM variety available in India?", options: ["A) Cotton", "B) Rice", "C) Wheat", "D) Sugarcane"], ans: 0 },
+      { id: 5, q: "Physical poison is represented by", options: ["A) Diatomaceous earth / Silica", "B) Arsenicals", "C) HCN gas", "D) Profenophos"], ans: 0 },
+      { id: 6, q: "An insecticide that kills insects by contact with the wax monolayer of the cuticle is called", options: ["A) Contact insecticide", "B) Stomach poison", "C) Systemic poison", "D) Fumigant"], ans: 0 },
+      { id: 7, q: "Compounds volatile at normal temperature are known as", options: ["A) Fumigants", "B) Dusts", "C) Granules", "D) Baits"], ans: 0 },
+      { id: 8, q: "A toxicant that penetrates insects in gaseous state through the tracheal system is called", options: ["A) Fumigant", "B) Contact poison", "C) Stomach poison", "D) Repellent"], ans: 0 },
+      { id: 9, q: "Which of the following belongs to the organophosphate group?", options: ["A) Malathion, Dimethoate and Phorate — All of these", "B) Carbofuran", "C) Imidacloprid", "D) Permethrin"], ans: 0 },
+      { id: 10, q: "Which of the following belongs to the carbamate group?", options: ["A) Methomyl, Carbofuran and Sevidol — All of these", "B) Malathion", "C) Thiamethoxam", "D) DDT"], ans: 0 },
+      { id: 11, q: "Which of the following belongs to the neonicotinoid group?", options: ["A) Thiamethoxam, Imidacloprid and Acetamiprid — All of these", "B) Phorate", "C) Carbofuran", "D) Malathion"], ans: 0 },
+      { id: 12, q: "An extremely toxic pesticide is associated with", options: ["A) Skull and crossbones + Poison", "B) Caution warning", "C) Safe label", "D) Green band"], ans: 0 },
+      { id: 13, q: "Which operation should be done only when there is a very light air stream?", options: ["A) Dusting", "B) High volume spraying", "C) Drenching", "D) Fumigation"], ans: 0 },
+      { id: 14, q: "The colour code for an extremely toxic pesticide is", options: ["A) Bright red", "B) Bright yellow", "C) Bright blue", "D) Bright green"], ans: 0 },
+      { id: 15, q: "Pairing and pralinage is done in", options: ["A) Banana", "B) Paddy", "C) Cotton", "D) Sugarcane"], ans: 0 },
+      { id: 16, q: "Pairing and pralinage is done for the control of", options: ["A) Nematodes", "B) Stem borers", "C) Aphids", "D) Mites"], ans: 0 },
+      { id: 17, q: "High-volume spraying uses approximately", options: ["A) 400–1000 L/ha", "B) 10–50 L/ha", "C) Below 5 L/ha", "D) 2000 L/ha"], ans: 0 },
+      { id: 18, q: "The sprayer component that breaks liquid into fine droplets is", options: ["A) Nozzle", "B) Tank", "C) Pump", "D) Agitator"], ans: 0 },
+      { id: 19, q: "An insecticide used as seed treatment for sucking-pest management is", options: ["A) Imidacloprid", "B) Malathion", "C) DDT", "D) Aluminium phosphide"], ans: 0 },
+      { id: 20, q: "An acaricide widely recommended for mite management is", options: ["A) Kelthane (Dicofol)", "B) Urea", "C) 2,4-D", "D) Butachlor"], ans: 0 },
+      { id: 21, q: "The insecticide used in mosquito mats is", options: ["A) Allethrin", "B) Malathion", "C) Phorate", "D) Carbofuran"], ans: 0 },
+      { id: 22, q: "An anticoagulant used for rat control is", options: ["A) Warfarin", "B) Zinc phosphide", "C) Aluminum phosphide", "D) DDT"], ans: 0 },
+      { id: 23, q: "Aphids and whiteflies are effectively controlled by", options: ["A) Systemic insecticides", "B) Contact dusts", "C) Soil physical barriers", "D) Herbicides"], ans: 0 },
+      { id: 24, q: "An example of a high-volume sprayer is", options: ["A) Foot sprayer / Rocker sprayer", "B) ULV sprayer", "C) Electrodyne", "D) Aerosol bomb"], ans: 0 },
+      { id: 25, q: "A higher LD₅₀ value indicates", options: ["A) Less toxicity", "B) Higher toxicity", "C) Extreme poison", "D) Rapid action"], ans: 0 },
+      { id: 26, q: "Celphos tablets are used for management of", options: ["A) Storage pests", "B) Field weeds", "C) Root grubs", "D) Plant diseases"], ans: 0 },
+      { id: 27, q: "IPM relies heavily on", options: ["A) Economic Threshold Level (ETL)", "B) Zero pests", "C) Daily spraying", "D) Chemical monopoly"], ans: 0 },
+      { id: 28, q: "The first virus-vector nematode reported was", options: ["A) Xiphinema index", "B) Meloidogyne incognita", "C) Heterodera avenae", "D) Radopholus similis"], ans: 0 },
+      { id: 29, q: "Which mango insect has quarantine importance?", options: ["A) Stone or nut weevil (Sternochetus mangiferae)", "B) Mango hopper", "C) Mealybug", "D) Fruit fly"], ans: 0 },
+      { id: 30, q: "More area can be sprayed within a short time using a", options: ["A) Power sprayer", "B) Hand atomizer", "C) Knapsack sprayer", "D) Duster"], ans: 0 },
+      { id: 31, q: "Spinosad insecticide is derived from the actinomycete", options: ["A) Saccharopolyspora spinosa", "B) Streptomyces griseus", "C) Bacillus thuringiensis", "D) Pseudomonas fluorescens"], ans: 0 },
+      { id: 32, q: "Phosphine gas is produced from", options: ["A) Aluminium phosphide", "B) Zinc phosphide", "C) Calcium carbide", "D) Sulphur dust"], ans: 0 },
+      { id: 33, q: "Spread of pests from one field to another is largely determined by", options: ["A) Wind", "B) Soil color", "C) Moon phase", "D) Tractor brand"], ans: 0 },
+      { id: 34, q: "IRM stands for", options: ["A) Insecticide Resistance Management", "B) Integrated Resource Method", "C) Insect Repellent Mixture", "D) International Residue Monitoring"], ans: 0 },
+      { id: 35, q: "Which is a physical poison?", options: ["A) Silica / Diatomaceous earth", "B) Arsenic", "C) Pyrethrum", "D) HCN"], ans: 0 },
+      { id: 36, q: "Which pesticide is grouped under fumigants?", options: ["A) Aluminium phosphide", "B) Malathion", "C) Carbofuran", "D) Mancozeb"], ans: 0 },
+      { id: 37, q: "Directorate of Plant Protection, Quarantine and Storage is located at", options: ["A) Faridabad", "B) New Delhi", "C) Bangalore", "D) Hyderabad"], ans: 0 },
+      { id: 38, q: "Which pesticide is available in granular form?", options: ["A) Carbofuran (Furadan)", "B) Wettable powder", "C) EC formulation", "D) Dust"], ans: 0 },
+      { id: 39, q: "Which sprayer has a capacity of about 500–750 litres? (or general tractor sprayer context)", options: ["A) Power / Orchard sprayer / high capacity rig", "B) Hand sprayer", "C) Knapsack", "D) Atomizer"], ans: 0 },
+      { id: 40, q: "Flat-fan nozzle is commonly used for spraying", options: ["A) Herbicides", "B) Insecticides on trees", "C) Fungicide dust", "D) Fumigants"], ans: 0 },
+      { id: 41, q: "Bt cotton provides tolerance/resistance against", options: ["A) Lepidopteran caterpillars (bollworms)", "B) Sucking bugs", "C) Mites", "D) Nematodes"], ans: 0 },
+      { id: 42, q: "Universal antidote is a mixture of", options: ["A) Activated charcoal + tannic acid + MgO", "B) Salt and water", "C) Acid and base", "D) Soap and oil"], ans: 0 },
+      { id: 43, q: "Synthetic pyrethroids are effective against cotton bollworms.", options: ["A) True", "B) False"], ans: 0 },
+      { id: 44, q: "High-volume spraying requires approximately", options: ["A) 200–300 L/acre (approx 500-1000 L/ha)", "B) 10 L/acre", "C) 2 L/acre", "D) 5000 L/acre"], ans: 0 },
+      { id: 45, q: "The Insecticides Act, 1968 regulates what aspects of pesticides?", options: ["A) Import, manufacture and transport", "B) Export only", "C) Household cleaning", "D) Fertilizer pricing"], ans: 0 },
+      { id: 46, q: "MRL stands for", options: ["A) Maximum Residue Level", "B) Minimum Required Limit", "C) Mean Resistance Length", "D) Microbial Reduction Level"], ans: 0 },
+      { id: 47, q: "Sprayable pesticide formulations include", options: ["A) Emulsifiable concentrates and wettable powders", "B) Granules and dusts", "C) Fumigant tablets", "D) Baits"], ans: 0 },
+      { id: 48, q: "A sprayer with the fluid container carried on the operator's back is", options: ["A) Knapsack sprayer", "B) Rocker sprayer", "C) Pedal pump", "D) Tractor boom"], ans: 0 },
+      { id: 49, q: "Which are rodenticides?", options: ["A) Warfarin and zinc phosphide", "B) Malathion and parathion", "C) Carbofuran and phorate", "D) Maneb and zineb"], ans: 0 },
+      { id: 50, q: "Aphids and scale insects can be effectively managed by releasing", options: ["A) Chrysoperla carnea", "B) Trichogramma", "C) NPV", "D) Bacillus thuringiensis"], ans: 0 },
+      { id: 51, q: "Which sprayer works on the same general pumping principle as a rocker sprayer?", options: ["A) Pedal pump sprayer", "B) ULV", "C) Aerosol", "D) Dust gun"], ans: 0 },
+      { id: 52, q: "The standard proportion of bait material to zinc phosphide in rodent baiting is", options: ["A) 49 : 1", "B) 10 : 1", "C) 1 : 1", "D) 99 : 1"], ans: 0 },
+      { id: 53, q: "Activated clay / silica produces a ______ effect on insect cuticular wax.", options: ["A) Physical abrasive / desiccant effect", "B) Systemic poisoning", "C) Hormonal disruption", "D) Nutritional deficiency"], ans: 0 },
+      { id: 54, q: "Thiamethoxam belongs to which chemical insecticide group?", options: ["A) Neonicotinoid group", "B) Organophosphate", "C) Pyrethroid", "D) Carbamate"], ans: 0 },
+      { id: 55, q: "Termites in soil and buildings are controlled using", options: ["A) Chlorpyriphos", "B) Malathion", "C) Dichlorvos", "D) Sulphur"], ans: 0 },
+      { id: 56, q: "DDVP (Dichlorvos) acts as a versatile", options: ["A) Contact, stomach and vapour poison", "B) Systemic soil herbicide", "C) Fungicide", "D) Rodenticide"], ans: 0 },
+      { id: 57, q: "The sprayer requiring significantly less water volume for chemical application is", options: ["A) Electrodyne / ULV sprayer", "B) High volume rocker", "C) Foot sprayer", "D) Knapsack"], ans: 0 },
+      { id: 58, q: "Quantity of Fenvalerate 20 EC required at 0.04% concentration using a high-volume sprayer is", options: ["A) 1.0 L/ha", "B) 500 ml/ha", "C) 5 L/ha", "D) 10 L/ha"], ans: 0 },
+      { id: 59, q: "Phosalone is effective against mites and also acts as an ovicide.", options: ["A) Both statements are correct", "B) False", "C) Only acaricide", "D) Only ovicide"], ans: 0 },
+      { id: 60, q: "Petroleum oil is classified as a", options: ["A) Natural organic pesticide", "B) Synthetic pyrethroid", "C) Organophosphate", "D) Inorganic salt"], ans: 0 },
+      { id: 61, q: "Volume of spray fluid when Dimethoate 30 EC is used at 500 ml/ha at 0.05% concentration is", options: ["A) 300 L/ha", "B) 500 L/ha", "C) 1000 L/ha", "D) 100 L/ha"], ans: 0 },
+      { id: 62, q: "Carbofuran 3 G required for 20 acres of banana at 300 g a.i./ha is approximately", options: ["A) 80 kg", "B) 10 kg", "C) 200 kg", "D) 5 kg"], ans: 0 },
+      { id: 63, q: "Examples of specialized acaricides include Dimethoate, Dicofol and Diafenthiuron.", options: ["A) All of these", "B) None", "C) Only Dicofol", "D) Only Dimethoate"], ans: 0 },
+      { id: 64, q: "The Nobel Prize in Physiology or Medicine in 1948 for discovering DDT insecticidal properties was awarded to", options: ["A) Paul Müller", "B) Fleming", "C) Koch", "D) Darwin"], ans: 0 },
+      { id: 65, q: "An anticoagulant rodenticide used against rats is", options: ["A) Warfarin", "B) Zinc phosphide", "C) Aluminium phosphide", "D) Strychnine"], ans: 0 },
+      { id: 66, q: "Chlorpyriphos is primarily used for controlling", options: ["A) Termites", "B) Leaf folders", "C) Stem borers", "D) Mites"], ans: 0 },
+      { id: 67, q: "Apis cerana indica is commonly known as the", options: ["A) Indian bee", "B) Italian bee", "C) Little bee", "D) Rock bee"], ans: 0 },
+      { id: 68, q: "Which honeybees construct a single comb in open exposed spaces?", options: ["A) Rock bee and Little bee", "B) Italian bee only", "C) European bee", "D) Dammer bee"], ans: 0 },
+      { id: 69, q: "The exotic/introduced honeybee species reared in India is", options: ["A) Apis mellifera", "B) Apis florea", "C) Apis dorsata", "D) Apis cerana"], ans: 0 },
+      { id: 70, q: "The highest honey-yielding honeybee species are", options: ["A) Rock bee (Apis dorsata) and Italian bee (Apis mellifera)", "B) Little bee", "C) Indian bee", "D) Stingless bee"], ans: 0 },
+      { id: 71, q: "The stingless bee is scientifically called", options: ["A) Melipona iridipennis", "B) Apis florea", "C) Apis cerana", "D) Bombus"], ans: 0 },
+      { id: 72, q: "Which caste in a honeybee colony can lay fertile eggs?", options: ["A) Queen", "B) Worker", "C) Drone", "D) All castes"], ans: 0 },
+      { id: 73, q: "Essential duties of the queen bee include", options: ["A) Laying eggs, maintaining colony cohesion and preventing laying workers — All of these", "B) Foraging nectar", "C) Guarding hive", "D) Building comb"], ans: 0 },
+      { id: 74, q: "Specialized glands in worker bees that secrete royal jelly are the", options: ["A) Hypopharyngeal glands", "B) Wax glands", "C) Salivary glands", "D) Mandibular glands"], ans: 0 },
+      { id: 75, q: "Honeybees belong taxonomically to the superfamily/family", options: ["A) Apidae", "B) Formicidae", "C) Vespidae", "D) Ichneumonidae"], ans: 0 },
+      { id: 76, q: "The stinging apparatus of a female honeybee is biologically a", options: ["A) Modified ovipositor", "B) Modified leg", "C) Mouthpart", "D) Mandible"], ans: 0 },
+      { id: 77, q: "The modern movable-frame beehive featuring precise bee space was invented by", options: ["A) L.L. Langstroth", "B) Huber", "C) Dzierzon", "D) Von Frisch"], ans: 0 },
+      { id: 78, q: "The convenient crawl space required by bees inside a hive is called", options: ["A) Bee space", "B) Brood space", "C) Super gap", "D) Air channel"], ans: 0 },
+      { id: 79, q: "Natural colony multiplication where part of the colony leaves with the old queen to form a new colony is called", options: ["A) Swarming", "B) Absconding", "C) Supersedure", "D) Migrating"], ans: 0 },
+      { id: 80, q: "Complete desertion/migration of all bees from a colony to a new location due to stress is called", options: ["A) Absconding", "B) Swarming", "C) Robbing", "D) Drift"], ans: 0 },
+      { id: 81, q: "Which honeybee species is notoriously more prone to frequent absconding?", options: ["A) Indian bees (Apis cerana indica)", "B) Italian bee", "C) Stingless bee", "D) Bumble bee"], ans: 0 },
+      { id: 82, q: "The hypopharyngeal gland is anatomically located in the", options: ["A) Head region of worker bee", "B) Thorax", "C) Abdomen", "D) Legs"], ans: 0 },
+      { id: 83, q: "Flowering plants serving as natural sources of pollen and nectar are called", options: ["A) Bee pasturage / flora", "B) Weed hosts", "C) Trap crops", "D) Cover crops"], ans: 0 },
+      { id: 84, q: "A rich agricultural source of pollen for honeybees is", options: ["A) Lucerne (Alfalfa)", "B) Rice", "C) Wheat", "D) Sugarcane"], ans: 0 },
+      { id: 85, q: "A rich source of both pollen and nectar is", options: ["A) Cotton", "B) Maize", "C) Sorghum", "D) Ferns"], ans: 0 },
+      { id: 86, q: "Black faecal pellets on the bottom board of a beehive indicate attack by", options: ["A) Greater wax moth (Galleria mellonella)", "B) Ants", "C) Wasps", "D) Mites"], ans: 0 },
+      { id: 87, q: "Serious insect pests of honeybee colonies include", options: ["A) Greater wax moth, lesser wax moth and bee-hunter wasp — All of these", "B) Aphids", "C) Whiteflies", "D) Stem borers"], ans: 0 },
+      { id: 88, q: "A viral brood disease affecting honeybee larvae is", options: ["A) Thai sac brood disease", "B) American foulbrood", "C) Chalkbrood", "D) Nosema"], ans: 0 },
+      { id: 89, q: "Wag-tail and round dance communication in honeybees was discovered by", options: ["A) Karl Ritter von Frisch", "B) Langstroth", "C) Darwin", "D) Mendel"], ans: 0 },
+      { id: 90, q: "Scout bees perform the ______ dance when discovered food is within 50 metres.", options: ["A) Round dance", "B) Wag-tail dance", "C) Tremble dance", "D) Spiral dance"], ans: 0 },
+      { id: 91, q: "A worker honeybee is biologically a", options: ["A) Sterile female", "B) Fertile queen", "C) Male drone", "D) Hermaphrodite"], ans: 0 },
+      { id: 92, q: "A recommended ornamental floral host plant to grow near an apiary is", options: ["A) Rangoon creeper", "B) Parthenium", "C) Lantana", "D) Calotropis"], ans: 0 },
+      { id: 93, q: "A major insect enemy and predator of honeybees is", options: ["A) Bee-hunter wasp / Greater wax moth", "B) Ladybird beetle", "C) Syrphid fly", "D) Lacewing"], ans: 0 },
+      { id: 94, q: "Nosema disease of adult bees is caused by a", options: ["A) Microsporidian Protozoa", "B) Virus", "C) Bacterium", "D) Nematode"], ans: 0 },
+      { id: 95, q: "Apitherapy utilizes bee venom traditionally for", options: ["A) Curing joint pains and arthritis", "B) Treating colds", "C) Eye drops", "D) Hair growth"], ans: 0 },
+      { id: 96, q: "Honeybee mouthparts are functionally specialized as", options: ["A) Chewing and lapping type", "B) Piercing and sucking", "C) Sponging", "D) Chewing and biting"], ans: 0 },
+      { id: 97, q: "Natural beeswax produced specifically by Apis dorsata is commercially called", options: ["A) Ghedda wax", "B) Paraffin", "C) Carnauba", "D) Lanolin"], ans: 0 },
+      { id: 98, q: "What does the round dance of a scout bee communicate?", options: ["A) A food source within about 50 m of the hive", "B) Water source 5 km away", "C) Danger of swarm", "D) Queen death"], ans: 0 },
+      { id: 99, q: "Active medicinal components present in bee venom include", options: ["A) Histamine and apamine", "B) Sucrose and glucose", "C) Chitin", "D) Cellulose"], ans: 0 },
+      { id: 100, q: "A notorious external parasitic mite pest of honeybees is", options: ["A) Varroa destructor (Varroa mite)", "B) Red spider mite", "C) Citrus rust mite", "D) Eriophyid mite"], ans: 0 },
+      { id: 101, q: "Apiculture provides vital supplementary financial income particularly to", options: ["A) Small, marginal and landless rural labourers", "B) Large industrialists", "C) Urban software engineers", "D) Fishermen"], ans: 0 },
+      { id: 102, q: "The correct bottom-to-top structural arrangement of a standard Langstroth beehive is", options: ["A) Bottom board → brood chamber → super chamber → roof", "B) Roof → super → brood → floor", "C) Super → roof → brood", "D) Brood → roof → floor"], ans: 0 },
+      { id: 103, q: "The principal enzyme secreted by bees to convert floral sucrose into invert sugars is", options: ["A) Invertase", "B) Amylase", "C) Lipase", "D) Protease"], ans: 0 },
+      { id: 104, q: "“Bee bread” fed to larvae is a nutritious mixture of", options: ["A) Honey + partially digested pollen", "B) Pure royal jelly", "C) Nectar only", "D) Water and wax"], ans: 0 },
+      { id: 105, q: "The Central Honey Bee Research and Training Institute in India is located at", options: ["A) Pune, Maharashtra", "B) New Delhi", "C) Bangalore", "D) Karnal"], ans: 0 },
+      { id: 106, q: "A male drone honeybee develops parthenogenetically from an", options: ["A) Unfertilized egg", "B) Fertilized egg", "C) Royal jelly cell", "D) Worker cell"], ans: 0 },
+      { id: 107, q: "Stone brood disease of bee larvae is caused by a", options: ["A) Entomopathogenic fungus (Aspergillus spp.)", "B) Virus", "C) Bacterium", "D) Protozoan"], ans: 0 },
+      { id: 108, q: "Natural raw silk filament is chemically composed of approximately", options: ["A) 75% fibroin and 25% sericin", "B) 50% chitin and 50% protein", "C) 90% cellulose", "D) 100% starch"], ans: 0 },
+      { id: 109, q: "The gum-like gelatinous protein that holds twin silk brins together in a cocoon is", options: ["A) Sericin", "B) Fibroin", "C) Keratin", "D) Collagen"], ans: 0 },
+      { id: 110, q: "A silkworm race completing one complete life cycle generation per year is termed", options: ["A) Univoltine", "B) Bivoltine", "C) Multivoltine", "D) Polyvoltine"], ans: 0 },
+      { id: 111, q: "The biological classification of silkworm races according to annual generations is called", options: ["A) Voltinism", "B) Metamorphosis", "C) Diapause", "D) Instar"], ans: 0 },
+      { id: 112, q: "Approximately 95% of commercial silkworms reared globally are hybrid crosses of", options: ["A) Multivoltine ♀ × Bivoltine ♂", "B) Univoltine × Univoltine", "C) Bivoltine × Bivoltine", "D) Wild strains"], ans: 0 },
+      { id: 113, q: "The scientific agricultural cultivation of mulberry plants to feed silkworms is called", options: ["A) Moriculture", "B) Sericulture", "C) Apiculture", "D) Viticulture"], ans: 0 },
+      { id: 114, q: "Which country holds the distinction of producing all four commercial varieties of natural silk?", options: ["A) India", "B) China", "C) Japan", "D) Thailand"], ans: 0 },
+      { id: 115, q: "In global raw silk output volume, India ranks proudly as the ______ largest producer.", options: ["A) Second (II)", "B) First", "C) Third", "D) Tenth"], ans: 0 },
+      { id: 116, q: "Finest-quality raw silk thread is commercially reeled from cocoons of", options: ["A) Univoltine / Bivoltine races", "B) Wild multivoltine races", "C) Eri worms", "D) Tasar worms"], ans: 0 },
+      { id: 117, q: "The cultivated mulberry silkworm (Bombyx mori) feeds exclusively on foliage of", options: ["A) Morus alba and Morus indica", "B) Ricinus communis", "C) Terminalia", "D) Som"], ans: 0 },
+      { id: 118, q: "Mulberry plantations are predominantly propagated commercially through", options: ["A) Stem cuttings", "B) True seeds", "C) Air layering", "D) Budding"], ans: 0 },
+      { id: 119, q: "Standard agronomic planting systems adopted for mulberry cultivation include", options: ["A) Kolar system, pit system and paired-row system — All of these", "B) Broad bed furrow only", "C) Check basin", "D) Ridge and furrow only"], ans: 0 },
+      { id: 120, q: "Tukra or “bushy-top” malformation disease of mulberry plants is caused by", options: ["A) Pink mealybug (Maconellicoccus hirsutus)", "B) Aphids", "C) Whitefly", "D) Thrips"], ans: 0 },
+      { id: 121, q: "The specialized dry structural device provided to mature ripe silkworms for spinning cocoons is a", options: ["A) Mountage (Chandrikah)", "B) Rearing tray", "C) Feeding bed", "D) Egg sheet"], ans: 0 },
+      { id: 122, q: "The critical sericultural management practice of keeping silkworm eggs in darkness at head pigmentation stage is", options: ["A) Black boxing", "B) Brushing", "C) Mounting", "D) Stifling"], ans: 0 },
+      { id: 123, q: "Standard chemical disinfectants utilized for sanitizing silkworm rearing houses include", options: ["A) Formalin, bleaching powder and slaked lime — All of these", "B) Copper sulphate", "C) Common salt", "D) Vinegar"], ans: 0 },
+      { id: 124, q: "The transfer of newly hatched silkworm larvae from an egg card to rearing trays is called", options: ["A) Brushing", "B) Mounting", "C) Spinning", "D) Harvesting"], ans: 0 },
+      { id: 125, q: "The management and feeding of 4th and 5th instar silkworms in spacious bamboo trays or nylon beds is termed", options: ["A) Late-age worm rearing", "B) Chawki rearing", "C) Incubation", "D) Hatching"], ans: 0 },
+      { id: 126, q: "Which substance acts as a physical contact poison in insect control?", options: ["A) Diatomaceous earth / Silica aerogel", "B) Arsenic trioxide", "C) Hydrocyanic acid", "D) Dichlorvos"], ans: 0 },
+      { id: 127, q: "Which chemical acts as a protoplasmic protein-precipitating poison?", options: ["A) Inorganic Arsenicals", "B) Pyrethrins", "C) Nicotine", "D) Malathion"], ans: 0 },
+      { id: 128, q: "Which fumigant acts primarily as a cellular respiratory poison by inhibiting cytochrome oxidase?", options: ["A) Hydrogen cyanide (HCN) gas", "B) Pyrethroid", "C) Malathion", "D) Carbofuran"], ans: 0 },
+      { id: 129, q: "Which synthetic insecticide class acts as a powerful neurotoxic nerve poison affecting axonal sodium channels?", options: ["A) Synthetic pyrethroids / Organophosphates", "B) Copper fungicides", "C) Sulphur dust", "D) Urea"], ans: 0 },
+      { id: 130, q: "What warning word is statutorily printed on extremely toxic pesticide containers?", options: ["A) POISON", "B) Caution", "C) Danger", "D) Safe"], ans: 0 },
+      { id: 131, q: "Which pesticide toxicity category displays the prominent skull-and-crossbones symbol?", options: ["A) Extremely toxic (Class Ia)", "B) Slightly toxic", "C) Non-toxic", "D) Organic bio-pesticides"], ans: 0 },
+      { id: 132, q: "What statutory warning word is printed on moderately toxic pesticide containers?", options: ["A) Caution", "B) Danger", "C) Poison", "D) Warning"], ans: 0 },
+      { id: 133, q: "What is the statutory colored triangle band for extremely toxic pesticides?", options: ["A) Bright red", "B) Bright yellow", "C) Bright blue", "D) Bright green"], ans: 0 },
+      { id: 134, q: "What is the statutory colored triangle band for highly toxic pesticides?", options: ["A) Bright yellow", "B) Bright red", "C) Bright blue", "D) Bright green"], ans: 0 },
+      { id: 135, q: "What is the statutory colored triangle band for moderately toxic pesticides?", options: ["A) Bright blue", "B) Bright red", "C) Bright yellow", "D) Bright green"], ans: 0 },
+      { id: 136, q: "What is the statutory colored triangle band for slightly toxic pesticides?", options: ["A) Bright green", "B) Bright blue", "C) Bright red", "D) Bright yellow"], ans: 0 },
+      { id: 137, q: "What liquid spray volume range defines high-volume spraying?", options: ["A) 400–1000 L/ha", "B) 10–50 L/ha", "C) Below 5 L/ha", "D) 2000 L/ha"], ans: 0 },
+      { id: 138, q: "What spray volume range defines low-volume spraying?", options: ["A) 12–125 L/ha", "B) 500–1000 L/ha", "C) Below 5 L/ha", "D) 3000 L/ha"], ans: 0 },
+      { id: 139, q: "What spray volume defines ultra-low-volume (ULV) spraying?", options: ["A) Less than 5 L/ha (< 5 L/ha)", "B) 500 L/ha", "C) 1000 L/ha", "D) 50 L/ha"], ans: 0 },
+      { id: 140, q: "What spray volume range is typically used in large tractor-mounted orchard boom sprayers?", options: ["A) 250–2000 L/ha", "B) 1 L/ha", "C) 5 L/ha", "D) 10 L/ha"], ans: 0 },
+      { id: 141, q: "Silica / Diatomaceous earth is classified as what type of toxicant?", options: ["A) Physical poison", "B) Stomach poison", "C) Systemic poison", "D) Nerve poison"], ans: 0 },
+      { id: 142, q: "Nitrophenols are classified as what type of toxicant?", options: ["A) Protoplasmic poison", "B) Physical poison", "C) Fumigant", "D) Repellent"], ans: 0 },
+      { id: 143, q: "Hydrogen sulphide (H₂S) acts physiologically as a", options: ["A) Respiratory poison", "B) Contact poison", "C) Growth hormone", "D) Herbicide"], ans: 0 },
+      { id: 144, q: "Pyrethrum botanical extract acts primarily as an insect", options: ["A) Nerve poison", "B) Physical desiccant", "C) Stomach poison", "D) Fungicide"], ans: 0 },
+      { id: 145, q: "Are synthetic pyrethroids highly effective against cotton bollworms?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 146, q: "Can intensive overuse of synthetic pyrethroids induce biological resurgence of whiteflies?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 147, q: "Are both standard statements regarding synthetic pyrethroids and pest resurgence correct?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 148, q: "Does the Indian Insecticides Act, 1968 legally regulate pesticide import?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 149, q: "Does the Insecticides Act legally regulate commercial pesticide manufacture?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 150, q: "Does the Insecticides Act legally regulate safe transport of pesticides?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 151, q: "Are Emulsifiable Concentrates (EC) standard sprayable liquid pesticide formulations?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 152, q: "Are Wettable Powders (WP) standard sprayable suspension formulations?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 153, q: "Are dry agricultural dusts generally classified as direct liquid sprayable formulations?", options: ["A) No (they are dry powder formulations applied via dusters)", "B) Yes"], ans: 0 },
+      { id: 154, q: "Are solid granules classified as direct liquid sprayable formulations?", options: ["A) No (applied directly to soil/whorls)", "B) Yes"], ans: 0 },
+      { id: 155, q: "Is warfarin classified as an effective anticoagulant rodenticide?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 156, q: "Is zinc phosphide classified as an acute metallic rodenticide?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 157, q: "Is phosalone classified as a rodenticide?", options: ["A) No (it is an organophosphate insecticide/acaricide)", "B) Yes"], ans: 0 },
+      { id: 158, q: "Is imidacloprid classified as a rodenticide?", options: ["A) No (it is a neonicotinoid insecticide)", "B) Yes"], ans: 0 },
+      { id: 159, q: "Does Dichlorvos (DDVP) act as a contact insecticide?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 160, q: "Does Dichlorvos (DDVP) act as a stomach poison?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 161, q: "Does Dichlorvos (DDVP) act as a systemic plant-translocated poison?", options: ["A) No (it acts via contact, stomach and vapour action)", "B) Yes"], ans: 0 },
+      { id: 162, q: "Does Dichlorvos (DDVP) act as a vapour action poison?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 163, q: "Is phosalone effective for controlling agricultural phytophagous mites?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 164, q: "Does phosalone exhibit strong ovicidal action against mite eggs?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 165, q: "Petroleum spray oils belong chemically to which pesticide classification?", options: ["A) Natural organic pesticides / hydrocarbon oils", "B) Synthetic pyrethroids", "C) Organophosphates", "D) Inorganic salts"], ans: 0 },
+      { id: 166, q: "Avermectins belong chemically to which pesticide group?", options: ["A) Microbial insecticides (derived from Streptomyces)", "B) Synthetic pyrethroids", "C) Organochlorines", "D) Botanicals"], ans: 0 },
+      { id: 167, q: "Nereistoxin analogues (like cartap hydrochloride) belong to which pesticide group?", options: ["A) Animal-derived / marine-toxin derivative insecticides", "B) Organophosphates", "C) Fumigants", "D) Inorganic poisons"], ans: 0 },
+      { id: 168, q: "Rotenone belongs chemically to which pesticide group?", options: ["A) Botanical insecticides (extracted from roots)", "B) Synthetic carbamates", "C) Synthetic pyrethroids", "D) Fumigants"], ans: 0 },
+      { id: 169, q: "Apis cerana indica is commonly referred to in apiculture as the", options: ["A) Indian bee", "B) Italian bee", "C) Little bee", "D) Rock bee"], ans: 0 },
+      { id: 170, q: "Apis mellifera is commonly referred to in apiculture as the", options: ["A) European / Italian bee", "B) Indian bee", "C) Dammer bee", "D) Little bee"], ans: 0 },
+      { id: 171, q: "Apis florea is commonly referred to in apiculture as the", options: ["A) Little bee", "B) Rock bee", "C) Indian bee", "D) Italian bee"], ans: 0 },
+      { id: 172, q: "Apis dorsata is commonly referred to in apiculture as the", options: ["A) Giant rock bee", "B) Little bee", "C) Indian bee", "D) Stingless bee"], ans: 0 },
+      { id: 173, q: "Melipona iridipennis is commonly referred to in apiculture as the", options: ["A) Stingless / dammer bee", "B) Italian bee", "C) Rock bee", "D) Giant bee"], ans: 0 },
+      { id: 174, q: "Which secretory gland is anatomically situated in the head region of worker honeybees?", options: ["A) Hypopharyngeal gland", "B) Wax gland", "C) Poison gland", "D) Scent gland"], ans: 0 },
+      { id: 175, q: "Which secretory gland is located in the head region of a queen honeybee?", options: ["A) Mandibular gland (producing queen substance)", "B) Hypopharyngeal gland", "C) Wax gland", "D) Silk gland"], ans: 0 },
+      { id: 176, q: "Where are the active wax-secreting glands of worker honeybees located?", options: ["A) Ventral abdominal sternites (segments 4 to 7)", "B) Head", "C) Thorax", "D) Legs"], ans: 0 },
+      { id: 177, q: "Which anatomical gland is directly associated with the stinging apparatus of bees?", options: ["A) Acid / venom gland (sting gland)", "B) Hypopharyngeal gland", "C) Salivary gland", "D) Mandibular gland"], ans: 0 },
+      { id: 178, q: "What type of honeybee dance communicates a food source located within 50 metres?", options: ["A) Round dance", "B) Wag-tail dance", "C) Tremble dance", "D) Spiral dance"], ans: 0 },
+      { id: 179, q: "What type of honeybee dance communicates food sources situated at greater distances?", options: ["A) Wag-tail dance", "B) Round dance", "C) Static dance", "D) Rest dance"], ans: 0 },
+      { id: 180, q: "Who was the legendary entomologist awarded the Nobel Prize for decoding honeybee communication dances?", options: ["A) Karl von Frisch", "B) Langstroth", "C) Dzierzon", "D) Darwin"], ans: 0 },
+      { id: 181, q: "What are the primary host plant species associated with the cultivated mulberry silkworm?", options: ["A) Morus alba and Morus indica", "B) Ricinus communis", "C) Terminalia arjuna", "D) Machilus bombycina"], ans: 0 },
+      { id: 182, q: "What is the principal food plant associated with rearing eri silkworms?", options: ["A) Castor (Ricinus communis)", "B) Mulberry", "C) Oak", "D) Som"], ans: 0 },
+      { id: 183, q: "Which host trees are associated with rearing tropical tasar silkworms?", options: ["A) Terminalia tomentosa and Zizyphus mauritiana", "B) Mulberry", "C) Castor", "D) Som"], ans: 0 },
+      { id: 184, q: "Which specific host plants are associated with muga silkworm culture in Assam?", options: ["A) Som (Machilus bombycina) and Soalu (Litsea monopetala)", "B) Mulberry", "C) Castor", "D) Terminalia"], ans: 0 }
+    ];
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(184, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 184) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Chemical Control, Apiculture, and Sericulture.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific insecticide groups, honeybee biology, and silkworm rearing practices.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Agricultural Entomology recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+
+</html>

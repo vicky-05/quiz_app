@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AMP One-Liners Test 2 — Advanced Livestock, Breeding & Anatomy (184 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next,
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select,
+    .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — AMP One-Liners & Livestock Series 2</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">AMP One-Liners 2:
+        Advanced Livestock, Breeding & Anatomy (184 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–184)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="184">All Questions (184 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 184)</label>
+          <input type="number" id="custom-count-input" min="1" max="184" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">184 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#128004;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Animal Husbandry</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#129383;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">AMP One-Liners Part 2</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 184</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">03:04:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "What is the scientific binomial name of sheep?", options: ["A) Ovis aries", "B) Capra hircus", "C) Sus scrofa", "D) Bos taurus"], ans: 0 },
+      { id: 2, q: "What is the scientific binomial name of pig?", options: ["A) Sus scrofa", "B) Ovis aries", "C) Capra hircus", "D) Equus caballus"], ans: 0 },
+      { id: 3, q: "What is the scientific binomial name of the single-humped camel?", options: ["A) Camelus dromedarianus", "B) Camelus bacterianus", "C) Equus asinus", "D) Llama glama"], ans: 0 },
+      { id: 4, q: "What is the scientific binomial name of the double-humped camel?", options: ["A) Camelus bacterianus", "B) Camelus dromedarianus", "C) Bos grunniens", "D) Equus caballus"], ans: 0 },
+      { id: 5, q: "What is the scientific binomial name of the horse?", options: ["A) Equus caballus", "B) Equus asinus", "C) Sus scrofa", "D) Ovis aries"], ans: 0 },
+      { id: 6, q: "What is the scientific binomial name of the chicken?", options: ["A) Gallus domesticus", "B) Anas platyrhynchos", "C) Meleagris gallopavo", "D) Coturnix coturnix"], ans: 0 },
+      { id: 7, q: "To which genus do cattle belong?", options: ["A) Bos", "B) Bubalus", "C) Capra", "D) Ovis"], ans: 0 },
+      { id: 8, q: "To which genus does the water buffalo belong?", options: ["A) Bubalus", "B) Bos", "C) Capra", "D) Ovis"], ans: 0 },
+      { id: 9, q: "To which genus do goats belong?", options: ["A) Capra", "B) Ovis", "C) Bos", "D) Sus"], ans: 0 },
+      { id: 10, q: "To which genus do sheep belong?", options: ["A) Ovis", "B) Capra", "C) Bos", "D) Sus"], ans: 0 },
+      { id: 11, q: "To which genus do pigs belong?", options: ["A) Sus", "B) Equus", "C) Bos", "D) Ovis"], ans: 0 },
+      { id: 12, q: "How many functional compartments/chambers does the stomach of cattle have?", options: ["A) Four", "B) Three", "C) Two", "D) One"], ans: 0 },
+      { id: 13, q: "How many functional compartments/chambers does the stomach of a buffalo have?", options: ["A) Four", "B) Three", "C) Two", "D) One"], ans: 0 },
+      { id: 14, q: "How many functional compartments/chambers does the stomach of a goat have?", options: ["A) Four", "B) Three", "C) Two", "D) One"], ans: 0 },
+      { id: 15, q: "How many functional compartments/chambers does the stomach of a sheep have?", options: ["A) Four", "B) Three", "C) Two", "D) One"], ans: 0 },
+      { id: 16, q: "How many functional compartments/chambers does the stomach of a pig have?", options: ["A) One or two (as listed in source table for simple stomach structure)", "B) Four", "C) Three", "D) Six"], ans: 0 },
+      { id: 17, q: "How many functional compartments/chambers does the stomach of a camel have?", options: ["A) Three", "B) Four", "C) Two", "D) One"], ans: 0 },
+      { id: 18, q: "What is the general species term associated with cattle?", options: ["A) Bovine", "B) Ovine", "C) Caprine", "D) Equine"], ans: 0 },
+      { id: 19, q: "What is the general species term associated with buffalo?", options: ["A) Bovine", "B) Ovine", "C) Caprine", "D) Swine"], ans: 0 },
+      { id: 20, q: "What is the general species term associated with sheep?", options: ["A) Ovine", "B) Bovine", "C) Caprine", "D) Swine"], ans: 0 },
+      { id: 21, q: "What is the general species term associated with goat?", options: ["A) Caprine", "B) Ovine", "C) Bovine", "D) Equine"], ans: 0 },
+      { id: 22, q: "What is the general species term associated with pigs?", options: ["A) Swine (Porcine)", "B) Bovine", "C) Equine", "D) Caprine"], ans: 0 },
+      { id: 23, q: "What is the general species term associated with horses?", options: ["A) Equine", "B) Bovine", "C) Ovine", "D) Swine"], ans: 0 },
+      { id: 24, q: "What is a group of cattle called?", options: ["A) Herd", "B) Flock", "C) Pack", "D) Swarm"], ans: 0 },
+      { id: 25, q: "What is a group of sheep called?", options: ["A) Flock", "B) Herd", "C) Drove", "D) Gaggle"], ans: 0 },
+      { id: 26, q: "What is a group of goats called?", options: ["A) Flock / Band", "B) Herd", "C) Pack", "D) Pride"], ans: 0 },
+      { id: 27, q: "What is an adult male sheep called?", options: ["A) Ram", "B) Buck", "C) Bull", "D) Boar"], ans: 0 },
+      { id: 28, q: "What is an adult male goat called?", options: ["A) Buck", "B) Ram", "C) Stallion", "D) Boar"], ans: 0 },
+      { id: 29, q: "What is an adult male poultry bird called?", options: ["A) Cock (Rooster)", "B) Drake", "C) Tom", "D) Gander"], ans: 0 },
+      { id: 30, q: "What is an adult male pig called?", options: ["A) Boar", "B) Ram", "C) Buck", "D) Barrow"], ans: 0 },
+      { id: 31, q: "What is an adult male horse called?", options: ["A) Stallion", "B) Gelding", "C) Mare", "D) Jack"], ans: 0 },
+      { id: 32, q: "What is an adult female cattle called?", options: ["A) Cow", "B) Heifer", "C) Ewe", "D) Doe"], ans: 0 },
+      { id: 33, q: "What is an adult female sheep called?", options: ["A) Ewe", "B) Doe", "C) Cow", "D) Sow"], ans: 0 },
+      { id: 34, q: "What is an adult female goat called?", options: ["A) Doe", "B) Ewe", "C) Sow", "D) Mare"], ans: 0 },
+      { id: 35, q: "What is an adult female poultry bird called?", options: ["A) Hen", "B) Pullet", "C) Chick", "D) Duck"], ans: 0 },
+      { id: 36, q: "What is an adult female pig called?", options: ["A) Sow", "B) Gilt", "C) Ewe", "D) Doe"], ans: 0 },
+      { id: 37, q: "What is an adult female horse called?", options: ["A) Mare", "B) Filly", "C) Sow", "D) Ewe"], ans: 0 },
+      { id: 38, q: "What is a newborn sheep called?", options: ["A) Lamb", "B) Kid", "C) Calf", "D) Foal"], ans: 0 },
+      { id: 39, q: "What is a newborn goat called?", options: ["A) Kid", "B) Lamb", "C) Calf", "D) Piglet"], ans: 0 },
+      { id: 40, q: "What is a newborn poultry bird called?", options: ["A) Chick", "B) Pullet", "C) Cockerel", "D) Poult"], ans: 0 },
+      { id: 41, q: "What is a newborn pig called?", options: ["A) Pigling / Piglet", "B) Kid", "C) Lamb", "D) Foal"], ans: 0 },
+      { id: 42, q: "What is a newborn horse called?", options: ["A) Foal", "B) Calf", "C) Kid", "D) Lamb"], ans: 0 },
+      { id: 43, q: "What is a young female sheep called?", options: ["A) Gimmer", "B) Ewe", "C) Heifer", "D) Gilt"], ans: 0 },
+      { id: 44, q: "What is a young female poultry bird called?", options: ["A) Pullet", "B) Hen", "C) Chick", "D) Cockerel"], ans: 0 },
+      { id: 45, q: "What is a young female pig called?", options: ["A) Gilt", "B) Sow", "C) Heifer", "D) Gimmer"], ans: 0 },
+      { id: 46, q: "What is a young female horse called?", options: ["A) Filly", "B) Mare", "C) Colt", "D) Foal"], ans: 0 },
+      { id: 47, q: "What is a castrated male poultry bird called?", options: ["A) Capon", "B) Cockerel", "C) Rooster", "D) Barrow"], ans: 0 },
+      { id: 48, q: "What is a castrated male horse called?", options: ["A) Gelding", "B) Stallion", "C) Steer", "D) Wedder"], ans: 0 },
+      { id: 49, q: "What is a castrated male sheep called?", options: ["A) Wedder / Weather", "B) Ram", "C) Steer", "D) Barrow"], ans: 0 },
+      { id: 50, q: "What is a castrated male pig called?", options: ["A) Barrow", "B) Boar", "C) Steer", "D) Gelding"], ans: 0 },
+      { id: 51, q: "What is the act of giving birth (parturition) in cattle called?", options: ["A) Calving", "B) Lambing", "C) Kidding", "D) Farrowing"], ans: 0 },
+      { id: 52, q: "What is the act of giving birth in sheep called?", options: ["A) Lambing", "B) Calving", "C) Kidding", "D) Farrowing"], ans: 0 },
+      { id: 53, q: "What is the act of giving birth in goats called?", options: ["A) Kidding", "B) Lambing", "C) Calving", "D) Farrowing"], ans: 0 },
+      { id: 54, q: "What is the act of giving birth in pigs called?", options: ["A) Farrowing", "B) Kidding", "C) Lambing", "D) Foaling"], ans: 0 },
+      { id: 55, q: "What is the act of giving birth in horses called?", options: ["A) Foaling", "B) Farrowing", "C) Calving", "D) Lambing"], ans: 0 },
+      { id: 56, q: "What is the act of mating in cattle called?", options: ["A) Serving", "B) Tupping", "C) Coupling", "D) Covering"], ans: 0 },
+      { id: 57, q: "What is the act of mating in sheep called?", options: ["A) Tupping", "B) Serving", "C) Coupling", "D) Covering"], ans: 0 },
+      { id: 58, q: "What is the act of mating in pigs called?", options: ["A) Coupling", "B) Serving", "C) Tupping", "D) Covering"], ans: 0 },
+      { id: 59, q: "What is the act of mating in horses called?", options: ["A) Covering", "B) Serving", "C) Tupping", "D) Coupling"], ans: 0 },
+      { id: 60, q: "At what age do cows generally reach puberty?", options: ["A) 24–30 months", "B) 10–12 months", "C) 3–6 months", "D) 48 months"], ans: 0 },
+      { id: 61, q: "What is the average age at first calving for dairy cows?", options: ["A) 25–30 months", "B) 15–20 months", "C) 36–48 months", "D) 10 months"], ans: 0 },
+      { id: 62, q: "What is the normal length of the oestrous cycle in cows?", options: ["A) 21 days", "B) 14 days", "C) 28 days", "D) 35 days"], ans: 0 },
+      { id: 63, q: "What is the average gestation period of cows?", options: ["A) 282 days", "B) 310 days", "C) 150 days", "D) 114 days"], ans: 0 },
+      { id: 64, q: "How long does the active heat (oestrus) period usually last in cows?", options: ["A) 12–18 hours", "B) 3 days", "C) 1 week", "D) 1 hour"], ans: 0 },
+      { id: 65, q: "At what age do buffaloes generally reach puberty?", options: ["A) 28–30 months", "B) 15–20 months", "C) 10–12 months", "D) 40–50 months"], ans: 0 },
+      { id: 66, q: "What is the average age at first calving for buffaloes?", options: ["A) 30–35 months", "B) 20–24 months", "C) 15–18 months", "D) 45–50 months"], ans: 0 },
+      { id: 67, q: "What is the normal length of the oestrous cycle in buffaloes?", options: ["A) 21 days", "B) 14 days", "C) 28 days", "D) 30 days"], ans: 0 },
+      { id: 68, q: "What is the average gestation period of buffaloes?", options: ["A) 310 days", "B) 282 days", "C) 336 days", "D) 150 days"], ans: 0 },
+      { id: 69, q: "How long does the active heat (oestrus) period usually last in buffaloes?", options: ["A) 24 hours", "B) 12 hours", "C) 48 hours", "D) 3 days"], ans: 0 },
+      { id: 70, q: "At what age do sheep generally reach puberty?", options: ["A) 9–14 months", "B) 4–6 months", "C) 18–24 months", "D) 2 years"], ans: 0 },
+      { id: 71, q: "What is the average gestation period of sheep?", options: ["A) 148 days", "B) 114 days", "C) 150 days", "D) 282 days"], ans: 0 },
+      { id: 72, q: "At what age do goats generally reach puberty?", options: ["A) 8–10 months", "B) 4–6 months", "C) 12–15 months", "D) 18–24 months"], ans: 0 },
+      { id: 73, q: "What is the average gestation period of goats?", options: ["A) 150 days", "B) 148 days", "C) 114 days", "D) 282 days"], ans: 0 },
+      { id: 74, q: "What is the average gestation period of a sow (pig)?", options: ["A) 114 days", "B) 150 days", "C) 282 days", "D) 310 days"], ans: 0 },
+      { id: 75, q: "What is the average gestation period of a camel?", options: ["A) 391 days", "B) 336 days", "C) 310 days", "D) 282 days"], ans: 0 },
+      { id: 76, q: "What is the average gestation period of a horse?", options: ["A) 336 ± 5 days", "B) 282 days", "C) 310 days", "D) 391 days"], ans: 0 },
+      { id: 77, q: "What is the diploid chromosome number of a pig?", options: ["A) 38", "B) 48", "C) 60", "D) 78"], ans: 0 },
+      { id: 78, q: "What is the diploid chromosome number of a swamp buffalo?", options: ["A) 48", "B) 50", "C) 60", "D) 38"], ans: 0 },
+      { id: 79, q: "What is the diploid chromosome number of a river/water buffalo?", options: ["A) 50", "B) 48", "C) 60", "D) 54"], ans: 0 },
+      { id: 80, q: "What is the diploid chromosome number of sheep?", options: ["A) 54", "B) 60", "C) 48", "D) 64"], ans: 0 },
+      { id: 81, q: "What is the diploid chromosome number of goats?", options: ["A) 60", "B) 54", "C) 50", "D) 64"], ans: 0 },
+      { id: 82, q: "What is the diploid chromosome number of cattle?", options: ["A) 60", "B) 50", "C) 54", "D) 64"], ans: 0 },
+      { id: 83, q: "What is the diploid chromosome number of a donkey?", options: ["A) 62", "B) 64", "C) 60", "D) 63"], ans: 0 },
+      { id: 84, q: "What is the diploid chromosome number of mules and hinnies?", options: ["A) 63", "B) 62", "C) 64", "D) 60"], ans: 0 },
+      { id: 85, q: "What is the diploid chromosome number of a horse?", options: ["A) 64", "B) 62", "C) 60", "D) 63"], ans: 0 },
+      { id: 86, q: "What is the diploid chromosome number of a camel?", options: ["A) 74", "B) 64", "C) 78", "D) 60"], ans: 0 },
+      { id: 87, q: "What is the diploid chromosome number of a chicken?", options: ["A) 78", "B) 82", "C) 60", "D) 48"], ans: 0 },
+      { id: 88, q: "What is the diploid chromosome number of a turkey?", options: ["A) 82", "B) 78", "C) 64", "D) 60"], ans: 0 },
+      { id: 89, q: "In animal breeding, what is defined as the mating of related individuals?", options: ["A) Inbreeding", "B) Outbreeding", "C) Crossbreeding", "D) Grading up"], ans: 0 },
+      { id: 90, q: "What is the mating of closely related animals such as sire × daughter, or full brother × sister called?", options: ["A) Close breeding", "B) Line breeding", "C) Outcrossing", "D) Crossbreeding"], ans: 0 },
+      { id: 91, q: "What is a primary genetic advantage of close breeding?", options: ["A) Progeny are more uniform than outbred progeny", "B) Progeny are less susceptible to disease", "C) Progeny are larger", "D) Increases heterozygosity"], ans: 0 },
+      { id: 92, q: "What is a primary genetic disadvantage of close breeding?", options: ["A) Progeny become more susceptible to diseases and show inbreeding depression", "B) Decreased homozygosity", "C) Increased hybrid vigour", "D) Progeny are too diverse"], ans: 0 },
+      { id: 93, q: "What is the mating of animals with a wider degree of relationship than close breeding called?", options: ["A) Line breeding", "B) Close breeding", "C) Outcrossing", "D) Crossbreeding"], ans: 0 },
+      { id: 94, q: "Which of the following is a classic example of line breeding?", options: ["A) Half-brother × half-sister or cousin mating", "B) Sire × daughter", "C) Full brother × sister", "D) Unrelated sire × dam"], ans: 0 },
+      { id: 95, q: "What is the mating between completely unrelated animals called?", options: ["A) Outbreeding", "B) Inbreeding", "C) Line breeding", "D) Close breeding"], ans: 0 },
+      { id: 96, q: "What is the mating of unrelated purebred animals within the same breed called?", options: ["A) Outcrossing", "B) Crossbreeding", "C) Inbreeding", "D) Grading up"], ans: 0 },
+      { id: 97, q: "For which quantitative traits is outcrossing highly effective in cattle?", options: ["A) Milk production and growth rate", "B) Coat colour", "C) Horn shape", "D) Blood type"], ans: 0 },
+      { id: 98, q: "What is the mating of animals belonging to different breeds called?", options: ["A) Crossbreeding", "B) Outcrossing", "C) Inbreeding", "D) Grading up"], ans: 0 },
+      { id: 99, q: "What is the practice of alternately crossing two breeds to continually utilize heterosis called?", options: ["A) Criss crossing", "B) Triple crossing", "C) Top crossing", "D) Back crossing"], ans: 0 },
+      { id: 100, q: "What is the practice of crossing three breeds in a sequential rotational manner called?", options: ["A) Triple crossing / Rotational crossing", "B) Criss crossing", "C) Grading up", "D) Back crossing"], ans: 0 },
+      { id: 101, q: "What is another common term for triple crossing?", options: ["A) Rotational crossing", "B) Criss crossing", "C) Back crossing", "D) Top crossing"], ans: 0 },
+      { id: 102, q: "What is the mating of a crossbred animal back to one of its purebred parents called?", options: ["A) Back crossing", "B) Criss crossing", "C) Outcrossing", "D) Grading up"], ans: 0 },
+      { id: 103, q: "What is the breeding of non-descript females with sires of a superior breed over successive generations called?", options: ["A) Grading-up", "B) Crossbreeding", "C) Line breeding", "D) Inbreeding"], ans: 0 },
+      { id: 104, q: "What is the mating of highly inbred males with females that are not inbred called?", options: ["A) Top crossing", "B) Back crossing", "C) Grading up", "D) Criss crossing"], ans: 0 },
+      { id: 105, q: "What is the mating of animals belonging to different species called?", options: ["A) Species hybridization", "B) Crossbreeding", "C) Outcrossing", "D) Grading up"], ans: 0 },
+      { id: 106, q: "What is considered the most extreme and extensive form of outbreeding?", options: ["A) Species hybridization", "B) Crossbreeding", "C) Outcrossing", "D) Grading up"], ans: 0 },
+      { id: 107, q: "A mule is a sterile interspecific hybrid produced by crossing which animals?", options: ["A) Mare (female horse) × Jack (male donkey)", "B) Stallion × Jennet", "C) Cow × Yak", "D) Buffalo × Cow"], ans: 0 },
+      { id: 108, q: "A hinny is an interspecific hybrid produced by crossing which animals?", options: ["A) Stallion (male horse) × Jennet (female donkey)", "B) Mare × Jack", "C) Cow × Yak", "D) Buffalo × Cow"], ans: 0 },
+      { id: 109, q: "A cattalo is an interspecific hybrid produced by crossing which animals?", options: ["A) American buffalo bull (Bison) × exotic cattle cow", "B) Cattle × Yak", "C) Mare × Jack", "D) Stallion × Jennet"], ans: 0 },
+      { id: 110, q: "A pien-niu is an interspecific hybrid produced by crossing which animals?", options: ["A) Cattle × Yak", "B) American buffalo × Cattle", "C) Mare × Jack", "D) Stallion × Jennet"], ans: 0 },
+      { id: 111, q: "How long does the proestrum (pre-heat) phase typically last in cattle?", options: ["A) 2 days", "B) 1 day", "C) 4 days", "D) 14 days"], ans: 0 },
+      { id: 112, q: "What primary physiological event happens during proestrum?", options: ["A) The Graafian follicle grows rapidly due to increased follicular fluid secretion", "B) Corpus luteum develops", "C) Ovulation occurs", "D) Uterus shrinks"], ans: 0 },
+      { id: 113, q: "How long does the active oestrum (heat) phase typically last in cows?", options: ["A) Approx 1 day (12–18 hours)", "B) 4 days", "C) 14 days", "D) 2 days"], ans: 0 },
+      { id: 114, q: "During which phase of the oestrous cycle can a cow be successfully bred?", options: ["A) Oestrum phase (standing heat)", "B) Proestrum", "C) Metoestrum", "D) Diestrum"], ans: 0 },
+      { id: 115, q: "According to standard breeding guides, how long does the exact heat period of a cow last?", options: ["A) 12–14 hours (or up to 18 hours)", "B) 1–2 days", "C) 4–5 days", "D) 2–3 days"], ans: 0 },
+      { id: 116, q: "How long does the heat period typically last in a ewe (sheep)?", options: ["A) 1–2 days", "B) 12–14 hours", "C) 4–5 days", "D) 2–3 days"], ans: 0 },
+      { id: 117, q: "How long does the heat period typically last in a mare (horse)?", options: ["A) 4–5 days", "B) 1–2 days", "C) 12–14 hours", "D) 2–3 days"], ans: 0 },
+      { id: 118, q: "How long does the heat period typically last in a sow (pig)?", options: ["A) 2–3 days", "B) 4–5 days", "C) 1–2 days", "D) 12–14 hours"], ans: 0 },
+      { id: 119, q: "What primary physiological event happens during metoestrum?", options: ["A) Corpus luteum develops from the ruptured Graafian follicle", "B) Graafian follicle grows", "C) Ovulation occurs", "D) Uterus shrinks"], ans: 0 },
+      { id: 120, q: "Which essential reproductive hormone is secreted by the corpus luteum?", options: ["A) Progesterone", "B) Oestrogen", "C) Prolactin", "D) Oxytocin"], ans: 0 },
+      { id: 121, q: "What is the biological role of progesterone during early pregnancy?", options: ["A) It maintains the uterine lining, supports implantation and development of pregnancy", "B) It causes ovulation", "C) It stimulates milk let-down", "D) It brings the animal into heat"], ans: 0 },
+      { id: 122, q: "How long does the metoestrum phase typically last?", options: ["A) 4 days", "B) 2 days", "C) 1 day", "D) 14 days"], ans: 0 },
+      { id: 123, q: "How long does the diestrum (luteal) phase typically last in a cow's 21-day cycle?", options: ["A) 14 days", "B) 4 days", "C) 2 days", "D) 1 day"], ans: 0 },
+      { id: 124, q: "Which is the longest phase of the normal oestrous cycle in cattle?", options: ["A) Diestrum", "B) Proestrum", "C) Oestrum", "D) Metoestrum"], ans: 0 },
+      { id: 125, q: "What are monoestrous animals?", options: ["A) Animals exhibiting only one oestrous cycle in a season/year", "B) Animals cycling all year round", "C) Animals with two cycles a year", "D) Animals that never cycle"], ans: 0 },
+      { id: 126, q: "Give examples of typical monoestrous animals.", options: ["A) Wolf and fox", "B) Cow and buffalo", "C) Sheep and goat", "D) Bitch and cat"], ans: 0 },
+      { id: 127, q: "What are dioestrous animals?", options: ["A) Animals exhibiting two oestrous cycles in a year", "B) Animals cycling all year round", "C) Animals with one cycle a year", "D) Animals that never cycle"], ans: 0 },
+      { id: 128, q: "Give an example of a dioestrous animal.", options: ["A) Bitch (Dog)", "B) Cow", "C) Sheep", "D) Wolf"], ans: 0 },
+      { id: 129, q: "What are polyestrous animals?", options: ["A) Animals showing periodic continuous oestrous cycles throughout the year (except during pregnancy)", "B) Animals with one cycle a year", "C) Animals with two cycles a year", "D) Animals that cycle only in spring"], ans: 0 },
+      { id: 130, q: "Give examples of polyestrous animals.", options: ["A) Cow, buffalo, sheep, goat and sow (though some sheep/goats are seasonal)", "B) Wolf and fox", "C) Bitch", "D) Deer"], ans: 0 },
+      { id: 131, q: "What are seasonal polyestrous animals?", options: ["A) Animals showing multiple oestrous cycles but only during a particular breeding season", "B) Animals cycling all year round", "C) Animals with one cycle a year", "D) Animals with two cycles a year"], ans: 0 },
+      { id: 132, q: "During which season does the mare generally exhibit oestrus (long-day breeder)?", options: ["A) Spring", "B) Fall", "C) Winter", "D) All year"], ans: 0 },
+      { id: 133, q: "During which season does the ewe generally exhibit oestrus (short-day breeder)?", options: ["A) Fall (Autumn)", "B) Spring", "C) Summer", "D) All year"], ans: 0 },
+      { id: 134, q: "What is the recommended floor space requirement for cows in standard housing?", options: ["A) 20–30 sq ft per cow", "B) 5–10 sq ft", "C) 100–120 sq ft", "D) 150 sq ft"], ans: 0 },
+      { id: 135, q: "What is the recommended floor space requirement for buffaloes?", options: ["A) 25–35 sq ft per buffalo", "B) 10–15 sq ft", "C) 50–60 sq ft", "D) 150 sq ft"], ans: 0 },
+      { id: 136, q: "What is the recommended floor space requirement for young livestock?", options: ["A) 15–20 sq ft", "B) 5–10 sq ft", "C) 20–30 sq ft", "D) 50 sq ft"], ans: 0 },
+      { id: 137, q: "What is the recommended floor space requirement for pregnant animals?", options: ["A) 100–120 sq ft", "B) 20–30 sq ft", "C) 50–60 sq ft", "D) 150 sq ft"], ans: 0 },
+      { id: 138, q: "What is the recommended floor space requirement for bull pens?", options: ["A) 120–140 sq ft", "B) 50–60 sq ft", "C) 200–250 sq ft", "D) 20–30 sq ft"], ans: 0 },
+      { id: 139, q: "In a loose housing system, how much total floor space per adult cow is generally considered sufficient?", options: ["A) 65–70 sq ft", "B) 20–30 sq ft", "C) 120 sq ft", "D) 150 sq ft"], ans: 0 },
+      { id: 140, q: "What is the recommended area size of an isolation box for sick animals?", options: ["A) 150 sq ft", "B) 50 sq ft", "C) 100 sq ft", "D) 200 sq ft"], ans: 0 },
+      { id: 141, q: "According to ICMR nutritional guidelines, how much milk is recommended per person per day?", options: ["A) 300 mL/day", "B) 100 mL/day", "C) 500 mL/day", "D) 1 Litre/day"], ans: 0 },
+      { id: 142, q: "According to ICMR nutritional guidelines, how many eggs are recommended per person per annum?", options: ["A) 180 eggs/annum", "B) 50 eggs/annum", "C) 365 eggs/annum", "D) 100 eggs/annum"], ans: 0 },
+      { id: 143, q: "According to ICMR nutritional guidelines, how much meat is recommended per person per annum?", options: ["A) 10.95 kg/annum", "B) 5 kg/annum", "C) 20 kg/annum", "D) 30 kg/annum"], ans: 0 },
+      { id: 144, q: "How long does it take for fast-growing commercial broilers to double their biomass?", options: ["A) 2–4 weeks", "B) 4–6 weeks", "C) 1–2 months", "D) 1 week"], ans: 0 },
+      { id: 145, q: "How long does it take for growing pigs to double their biomass?", options: ["A) 4–6 weeks", "B) 2–4 weeks", "C) 1–2 months", "D) 6 months"], ans: 0 },
+      { id: 146, q: "How long does it take for growing cattle to double their biomass?", options: ["A) 1–2 months", "B) 4–6 weeks", "C) 2–4 weeks", "D) 6 months"], ans: 0 },
+      { id: 147, q: "Among domestic livestock species, which animal's milk/meat generally has a higher fat percentage and total solids according to the source?", options: ["A) Pig", "B) Cow", "C) Goat", "D) Sheep"], ans: 0 },
+      { id: 148, q: "Among domestic livestock species, which animal's milk has the highest protein percentage according to the source?", options: ["A) Pig (5.8%)", "B) Buffalo", "C) Cow", "D) Sheep"], ans: 0 },
+      { id: 149, q: "Which is the largest compartment of the multi-chambered ruminant stomach?", options: ["A) Rumen", "B) Reticulum", "C) Omasum", "D) Abomasum"], ans: 0 },
+      { id: 150, q: "Where is the rumen physically located inside the cow's abdomen?", options: ["A) On the left side", "B) On the right side", "C) In the center", "D) In the pelvic cavity"], ans: 0 },
+      { id: 151, q: "What is the largest sac of the rumen?", options: ["A) Dorsal sac", "B) Ventral sac", "C) Cranial sac", "D) Caudal sac"], ans: 0 },
+      { id: 152, q: "What type of epithelium lines the inner surface of the rumen?", options: ["A) Glandless stratified squamous epithelium", "B) Simple columnar epithelium", "C) Glandular epithelium", "D) Ciliated epithelium"], ans: 0 },
+      { id: 153, q: "What is the normal healthy pH range of rumen liquor?", options: ["A) 5.8–6.8", "B) 2.0–3.0", "C) 7.5–8.5", "D) 4.0–5.0"], ans: 0 },
+      { id: 154, q: "What is another common anatomical name for the rumen?", options: ["A) Paunch", "B) Honeycomb", "C) Manyplies", "D) True stomach"], ans: 0 },
+      { id: 155, q: "What is the constant core temperature inside the active rumen?", options: ["A) 39°C", "B) 37°C", "C) 41°C", "D) 35°C"], ans: 0 },
+      { id: 156, q: "What is another common anatomical name for the reticulum?", options: ["A) Honeycomb", "B) Paunch", "C) Manyplies", "D) True stomach"], ans: 0 },
+      { id: 157, q: "What type of epithelium lines the inner surface of the reticulum?", options: ["A) Stratified squamous epithelium", "B) Simple columnar epithelium", "C) Glandular epithelium", "D) Ciliated epithelium"], ans: 0 },
+      { id: 158, q: "Where is the reticulum physically located inside the cow's abdomen?", options: ["A) Immediately behind the diaphragm near the heart", "B) On the far right side", "C) In the pelvic cavity", "D) Above the rumen"], ans: 0 },
+      { id: 159, q: "What is the constant core temperature inside the reticulum?", options: ["A) 39°C", "B) 37°C", "C) 41°C", "D) 35°C"], ans: 0 },
+      { id: 160, q: "What is the primary physiological function of the omasum?", options: ["A) Removal of water and absorption of volatile fatty acids (VFAs)", "B) Enzymatic digestion of proteins", "C) Fermentation of cellulose", "D) Secretion of acid"], ans: 0 },
+      { id: 161, q: "Approximately what percentage of water does the omasum remove from the digesta?", options: ["A) 50%", "B) 10%", "C) 90%", "D) 100%"], ans: 0 },
+      { id: 162, q: "Which ruminant species notably lacks the omasum compartment according to the source?", options: ["A) Camel (pseudoruminant)", "B) Sheep", "C) Goat", "D) Buffalo"], ans: 0 },
+      { id: 163, q: "What is the abomasum?", options: ["A) The true stomach and first glandular portion of the ruminant digestive system", "B) The fermentation vat", "C) The honeycomb", "D) The water absorber"], ans: 0 },
+      { id: 164, q: "What is the highly acidic pH of the abomasum?", options: ["A) 2.0", "B) 5.8", "C) 7.0", "D) 8.5"], ans: 0 },
+      { id: 165, q: "Where does true enzymatic digestion (acid and pepsin) occur in the ruminant stomach?", options: ["A) Abomasum", "B) Rumen", "C) Reticulum", "D) Omasum"], ans: 0 },
+      { id: 166, q: "What is the hardest biological substance found in an animal's body?", options: ["A) Enamel (covering the teeth)", "B) Bone", "C) Dentin", "D) Cartilage"], ans: 0 },
+      { id: 167, q: "How many types of functional teeth are present in mammals?", options: ["A) Three (Incisors, canines, and premolars/molars)", "B) Two", "C) Four", "D) Five"], ans: 0 },
+      { id: 168, q: "What are the three types of mammalian teeth?", options: ["A) Incisors, canines, and premolars/molars", "B) Incisors, molars, and tusks", "C) Canines, bicuspids, and tricuspids", "D) Fangs, incisors, and molars"], ans: 0 },
+      { id: 169, q: "Where are incisors located in the mouth?", options: ["A) At the front of the mouth", "B) At the back of the mouth", "C) On the sides", "D) Only on the upper jaw"], ans: 0 },
+      { id: 170, q: "What is the primary mechanical function of incisors?", options: ["A) Cutting and cropping forage", "B) Grinding", "C) Tearing meat", "D) Crushing bones"], ans: 0 },
+      { id: 171, q: "In cattle, sheep, goats, and buffaloes, where are incisor teeth present?", options: ["A) Only in the lower jaw (they have a hard dental pad on the upper jaw)", "B) Only in the upper jaw", "C) In both jaws", "D) They have no incisors"], ans: 0 },
+      { id: 172, q: "What is the primary function of canine teeth?", options: ["A) Gripping and ripping", "B) Grinding", "C) Chewing cud", "D) Cutting grass"], ans: 0 },
+      { id: 173, q: "What is the primary function of premolars and molars?", options: ["A) Grinding and crushing", "B) Cutting", "C) Ripping", "D) Gripping"], ans: 0 },
+      { id: 174, q: "What is the physiological importance of grinding by premolars and molars?", options: ["A) It physically breaks down food and mixes saliva and digestive juices with chewed food", "B) It sharpens the teeth", "C) It creates vocal sounds", "D) It produces acid"], ans: 0 },
+      { id: 175, q: "When does the fourth pair of permanent incisors (corner incisors) appear in cattle, indicating a “full mouth”?", options: ["A) At about 3½ to 4 years", "B) At 1 year", "C) At 5 years", "D) At 2 years"], ans: 0 },
+      { id: 176, q: "When does the fourth pair of permanent incisors appear in sheep, indicating a “full mouth”?", options: ["A) At 3 to 4 years", "B) At 1 year", "C) At 2 years", "D) At 5 years"], ans: 0 },
+      { id: 177, q: "How many temporary deciduous (milk) teeth are present in cattle, buffalo, goats, and sheep?", options: ["A) 20", "B) 32", "C) 24", "D) 28"], ans: 0 },
+      { id: 178, q: "How many permanent teeth are present in mature cattle, buffalo, goats, and sheep?", options: ["A) 32", "B) 40", "C) 44", "D) 20"], ans: 0 },
+      { id: 179, q: "How many permanent teeth does a mature horse have according to the source?", options: ["A) 40 in males and 36 in females (due to canine presence/absence)", "B) 32 in both", "C) 44 in both", "D) 20 in males and 24 in females"], ans: 0 },
+      { id: 180, q: "How many permanent teeth does a mature pig have?", options: ["A) 44", "B) 32", "C) 40", "D) 36"], ans: 0 },
+      { id: 181, q: "How many temporary deciduous teeth does a young piglet have?", options: ["A) 28", "B) 20", "C) 32", "D) 44"], ans: 0 },
+      { id: 182, q: "How many temporary deciduous teeth does a young camel have?", options: ["A) 26", "B) 20", "C) 32", "D) 34"], ans: 0 },
+      { id: 183, q: "How many permanent teeth does a mature camel have?", options: ["A) 34", "B) 32", "C) 40", "D) 44"], ans: 0 },
+      { id: 184, q: "Which animal has the highest number of permanent teeth among common livestock?", options: ["A) Pig (44)", "B) Horse", "C) Cattle", "D) Camel"], ans: 0 }
+    ];
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(184, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 184) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Advanced Livestock, Breeding & Anatomy.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific gestation periods, breeding systems, and ruminant anatomy.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Animal Husbandry recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+
+</html>

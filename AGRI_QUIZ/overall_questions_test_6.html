@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overall Questions Test 6 — Seed Science, Biotechnology, Physiology & Pests (200 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next,
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select,
+    .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Overall Questions Test 6 Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Overall Questions Test 6:
+        Seed Science, Biotechnology, Physiology & Pests (200 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–200)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="200">All Questions (200 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 200)</label>
+          <input type="number" id="custom-count-input" min="1" max="200" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">200 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#128300;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Overall Part 6</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#127793;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Seed Science & Pests</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 200</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">03:20:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1001, q: "The crop variety seed produced directly by the plant breeder in small quantities is called:", options: ["A) Nucleus seed", "B) Breeder seed", "C) Foundation seed", "D) Certified seed"], ans: 0 },
+      { id: 1002, q: "What is the direct source of breeder seed production plots?", options: ["A) Foundation seed", "B) Nucleus seed", "C) Certified seed", "D) Registered seed"], ans: 1 },
+      { id: 1003, q: "What is the direct progeny produced from breeder seed called?", options: ["A) Nucleus seed", "B) Certified seed", "C) Foundation seed", "D) Truthful label seed"], ans: 2 },
+      { id: 1004, q: "What is the official certification tag colour associated with breeder seed?", options: ["A) White", "B) Azure blue", "C) Purple", "D) Golden yellow / golden brown"], ans: 3 },
+      { id: 1005, q: "What type of seed class is predominantly produced and supplied by the National Seeds Corporation (NSC)?", options: ["A) Foundation seed (and certified seed)", "B) Nucleus seed only", "C) Breeder seed only", "D) F2 seed"], ans: 0 },
+      { id: 1006, q: "What is the official certification tag colour associated with foundation seed bags?", options: ["A) Golden yellow", "B) White", "C) Azure blue", "D) Red"], ans: 1 },
+      { id: 1007, q: "What is the direct progeny produced from foundation or registered seed called?", options: ["A) Breeder seed", "B) Nucleus seed", "C) Breeder stock", "D) Certified seed"], ans: 3 },
+      { id: 1008, q: "Certified seed is generally produced and multiplied commercially by agencies such as:", options: ["A) Breeder scientists", "B) State Seeds Corporations (SSCs) / progressive growers", "C) Central ICAR labs", "D) Import agents"], ans: 1 },
+      { id: 1009, q: "What is the official certification tag colour associated with certified seed bags?", options: ["A) White", "B) Golden yellow", "C) Green", "D) Azure blue"], ans: 3 },
+      { id: 1010, q: "The emergence and visible development of normal seedlings from the seed embryo under favorable conditions is:", options: ["A) Dormancy", "B) Germination", "C) Viability", "D) Vigour"], ans: 1 },
+      { id: 1011, q: "In which plant group is hypogeal seed germination characteristically found?", options: ["A) Mustard, sunflower, castor and onion", "B) Cucurbits", "C) Cereals, gram, arhar and lentil", "D) Radish"], ans: 2 },
+      { id: 1012, q: "In which plant group is epigeal seed germination characteristically found?", options: ["A) Mustard, sunflower, castor and onion", "B) Cereals, gram and arhar", "C) Maize", "D) Wheat"], ans: 0 },
+      { id: 1013, q: "Genetic purity and true-to-type status of seed lots are standardly tested using the:", options: ["A) Tetrazolium test", "B) Moisture meter", "C) Grow-Out Test (GOT)", "D) Purity blower"], ans: 2 },
+      { id: 1014, q: "What is the percentage of inert matter and physical impurities present in a seed lot called?", options: ["A) Germination percentage", "B) Dockage / impurity percentage", "C) Real value", "D) Viability"], ans: 1 },
+      { id: 1015, q: "What is the mathematical formula for calculating the Real Value of Seed?", options: ["A) (Pure Seed + Germination) / 2", "B) Moisture % × Purity %", "C) 100 − Dockage", "D) (Pure Seed % × Germination %) / 100"], ans: 3 },
+      { id: 1016, q: "The inherent physiological capacity of a seed to germinate and grow is termed:", options: ["A) Seed viability / vigour", "B) Dormancy", "C) Hardness", "D) Inertness"], ans: 0 },
+      { id: 1017, q: "Seed viability and live embryo respiring tissue are biochemically tested using:", options: ["A) Grow-out test", "B) Alkali test", "C) 2,3,5-Triphenyl Tetrazolium Chloride (TZ test)", "D) Float test"], ans: 2 },
+      { id: 1018, q: "What is the mathematical formula for calculating Pure Live Seed (PLS)?", options: ["A) Germination % − Impurity %", "B) (Pure Seed % × Germination %) / 100", "C) Pure seed weight", "D) Test weight"], ans: 1 },
+      { id: 1019, q: "What is the primary agronomic aim of maintaining strict isolation distances around seed production plots?", options: ["A) To increase water holding", "B) To stop weeds", "C) To prevent genetic contamination, outcrossing, and mechanical mixing", "D) To increase height"], ans: 2 },
+      { id: 1020, q: "What is the prescribed isolation distance for certified self-pollinated crops like rice and wheat?", options: ["A) 3 metres", "B) 200 metres", "C) 500 metres", "D) 1000 metres"], ans: 0 },
+      { id: 1021, q: "What is the prescribed isolation distance for certified maize hybrid seed production?", options: ["A) 3 metres", "B) 50 metres", "C) 200 metres", "D) 1000 metres"], ans: 2 },
+      { id: 1022, q: "What is the prescribed isolation distance for certified pigeonpea (arhar) seed production?", options: ["A) 3 metres", "B) 50 metres", "C) 200 metres", "D) 500 metres"], ans: 1 },
+      { id: 1023, q: "What is the prescribed isolation distance for certified sunflower seed production?", options: ["A) 3 metres", "B) 50 metres", "C) 10 metres", "D) 500 metres"], ans: 3 },
+      { id: 1024, q: "What is the standard seed weight of 1,000 pure seeds called?", options: ["A) Test weight (1000-seed weight)", "B) Seed index", "C) Specific gravity", "D) Bulk density"], ans: 0 },
+      { id: 1025, q: "What is the standard seed weight of 100 pure seeds called?", options: ["A) Test weight", "B) Volume weight", "C) Seed index (100-seed weight)", "D) Porosity"], ans: 2 },
+      { id: 1026, q: "What does official “seed testing” encompass in seed technology laboratories?", options: ["A) Yield testing", "B) Testing of physical purity, moisture content and germination percentage", "C) Fertilizer testing", "D) Soil testing"], ans: 1 },
+      { id: 1027, q: "What is the standard international baseline method for estimating seed moisture content?", options: ["A) Moisture meter probe", "B) Constant temperature oven-dry method", "C) Microwave oven", "D) Feel method"], ans: 1 },
+      { id: 1028, q: "Which rice variety is widely noted for having virtually no post-harvest seed dormancy?", options: ["A) ADT 36", "B) Ponni", "C) IR 50", "D) Basmati"], ans: 2 },
+      { id: 1029, q: "How is seed dormancy caused by a hard, impermeable seed coat mechanically broken?", options: ["A) Chilling stratification", "B) Scarification (mechanical or acid scarification)", "C) Boiling", "D) Freezing"], ans: 1 },
+      { id: 1030, q: "How is seed dormancy caused by low-temperature and moisture requirement broken?", options: ["A) Stratification (chilling pre-treatment)", "B) Scarification", "C) Drying", "D) Salting"], ans: 0 },
+      { id: 1031, q: "Which Plant Growth Regulator (PGR) is standardly used to artificially break seed dormancy and initiate germination?", options: ["A) Auxin", "B) Gibberellic acid (GA₃)", "C) Abscisic acid", "D) Ethylene"], ans: 1 },
+      { id: 1032, q: "How is post-harvest seed dormancy in potato tubers broken before planting?", options: ["A) Freezing", "B) Water washing", "C) Treating with 1% Thiourea + 1 ppm GA₃", "D) Salt spray"], ans: 2 },
+      { id: 1033, q: "What is the primary objective of conducting official field inspections during seed crop growth?", options: ["A) To measure soil pH", "B) To examine disease incidence, isolation distance, rogue plants and off-types", "C) To weigh grains", "D) To count weeds"], ans: 1 },
+      { id: 1034, q: "What is cleaning, grading, and preparing raw harvested seed lots known as in seed technology?", options: ["A) Threshing", "B) Milling", "C) Seed processing (conditioning)", "D) Milling"], ans: 2 },
+      { id: 1035, q: "In what historical calendar year was the National Seeds Corporation (NSC) registered in India?", options: ["A) 1950", "B) 1963", "C) 1972", "D) 1986"], ans: 1 },
+      { id: 1036, q: "In what historical year was India's foundational “Seed Act” passed by Parliament?", options: ["A) 1955", "B) 1966", "C) 1972", "D) 1988"], ans: 1 },
+      { id: 1037, q: "In what historical year were the statutory “Seed Rules” enacted in India?", options: ["A) 1966", "B) 1968", "C) 1975", "D) 1990"], ans: 1 },
+      { id: 1038, q: "When was the major National Seeds Project (NSP) launched to build seed infrastructure?", options: ["A) 1960", "B) 1970", "C) 1988 (NSP phase II / III framework)", "D) 2000"], ans: 2 },
+      { id: 1039, q: "What is plant biotechnology defined as?", options: ["A) Organic farming", "B) Traditional breeding", "C) Plowing", "D) The applied use of molecular biology and recombinant DNA technology to modify living organisms"], ans: 3 },
+      { id: 1040, q: "Who coined and introduced the scientific term “Biotechnology” in 1919?", options: ["A) Watson", "B) Karl Ereky (1919)", "C) Berg", "D) Mendel"], ans: 1 },
+      { id: 1041, q: "The sterile in vitro multiplication of plant cells and tissues in nutrient media is called:", options: ["A) Plant tissue culture / in vitro culture", "B) Field sowing", "C) Hydroponics", "D) Aeroponics"], ans: 0 },
+      { id: 1042, q: "What is a plant or plant tissue fragment excised for initiating in vitro culture called?", options: ["A) Callus", "B) Explant", "C) Clone", "D) Zygote"], ans: 1 },
+      { id: 1043, q: "What is an exact genetic replica of a specific gene or entire organism called?", options: ["A) Mutant", "B) Hybrid", "C) Clone", "D) Polyploid"], ans: 2 },
+      { id: 1044, q: "Which are the two most commonly used basal nutrient media formulations in plant tissue culture?", options: ["A) Nutrient agar", "B) Murashige & Skoog (MS) medium and B-5 medium", "C) PDA", "D) Blood agar"], ans: 1 },
+      { id: 1045, q: "What is an in vitro culture initiated using isolated mature or immature plant embryos called?", options: ["A) Anther culture", "B) Embryo culture", "C) Meristem culture", "D) Callus culture"], ans: 1 },
+      { id: 1046, q: "What type of in vitro culture utilizes excised young zygotic embryos to rescue wide crosses?", options: ["A) Protoplast", "B) Embryo culture", "C) Pollen", "D) Root"], ans: 1 },
+      { id: 1047, q: "Anther or isolated microspore culture is standardly utilized for producing:", options: ["A) Polyploids", "B) Haploid plants (doubled haploids)", "C) Clones", "D) Mutants"], ans: 1 },
+      { id: 1048, q: "What is the aseptic in vitro culture of isolated plant organs (roots/shoots/flowers) called?", options: ["A) Callus culture", "B) Organ culture", "C) Suspension", "D) Protoplast"], ans: 1 },
+      { id: 1049, q: "What biological term describes the innate capability of a single plant cell to divide and differentiate into a whole organism?", options: ["A) Pluripotency", "B) Totipotency", "C) Regeneration", "D) Mitosis"], ans: 1 },
+      { id: 1050, q: "What does the biochemical research abbreviation “in vitro” literally mean?", options: ["A) In the field", "B) Taking place in glass (test tube / lab vessel)", "C) In living body", "D) In soil"], ans: 1 },
+      { id: 1051, q: "What are alternative functional forms of the same gene located at a specific locus called?", options: ["A) Mutons", "B) Recons", "C) Codons", "D) Alleles"], ans: 3 },
+      { id: 1052, q: "Which transformation method uses high-voltage electrical pulses to introduce DNA into plant cells?", options: ["A) Biolistics", "B) Agrobacterium", "C) Electroporation", "D) Lipofection"], ans: 2 },
+      { id: 1053, q: "Who first synthesized artificial DNA molecules in vitro?", options: ["A) Watson and Crick", "B) Arthur Kornberg (1953)", "C) Berg", "D) Khorana"], ans: 1 },
+      { id: 1054, q: "What is a functional DNA sequence segment that codes for a specific polypeptide chain called?", options: ["A) Muton", "B) Recon", "C) Cistron", "D) Intron"], ans: 2 },
+      { id: 1055, q: "What is a DNA library composed of complementary DNA copies synthesized from cellular mRNA called?", options: ["A) Genomic library", "B) cDNA library", "C) Plasmid", "D) Cosmid"], ans: 1 },
+      { id: 1056, q: "Which core biological macromolecule encodes hereditary genetic information?", options: ["A) RNA", "B) Protein", "C) DNA (Deoxyribonucleic acid)", "D) Lipid"], ans: 2 },
+      { id: 1057, q: "Which nucleic acid molecule primarily helps decode genetic information to synthesize proteins?", options: ["A) DNA", "B) RNA (Ribonucleic acid)", "C) Glycogen", "D) Starch"], ans: 1 },
+      { id: 1058, q: "The developmental process of producing somatic embryos directly from an unorganized callus is:", options: ["A) Organogenesis", "B) Somatic embryogenesis", "C) Mitosis", "D) Meiosis"], ans: 1 },
+      { id: 1059, q: "What is producing novel hybrid plants via the artificial fusion of isolated somatic protoplasts called?", options: ["A) Sexual cross", "B) Somatic hybridization (cybrids / somatic hybrids)", "C) Backcross", "D) Selfing"], ans: 1 },
+      { id: 1060, q: "What is a specific segment of chromosomal DNA that codes for a phenotypic character called?", options: ["A) Allele", "B) Gene", "C) Codon", "D) Exon"], ans: 1 },
+      { id: 1061, q: "What is a transposable DNA element capable of moving from one chromosomal site to another called?", options: ["A) Plasmid", "B) Transposon (“jumping gene”)", "C) Cosmid", "D) Intron"], ans: 1 },
+      { id: 1062, q: "Who is universally acclaimed and known as the Founding Father of Genetic Engineering?", options: ["A) Boyer", "B) Cohen", "C) Paul Berg", "D) Watson"], ans: 2 },
+      { id: 1063, q: "Which soil bacterium is widely utilized as a natural vector in genetic engineering for transforming plants?", options: ["A) E. coli", "B) Agrobacterium tumefaciens (and A. rhizogenes)", "C) Rhizobium", "D) Azotobacter"], ans: 1 },
+      { id: 1064, q: "Which mutant gene is utilized in breeding programs to elevate lysine and tryptophan in maize?", options: ["A) Norin 10", "B) Rht1", "C) Opaque-2 gene", "D) Dgw-g"], ans: 2 },
+      { id: 1065, q: "What does the biotechnology amplification acronym PCR stand for?", options: ["A) Plasmid Cloning Region", "B) Polymerase Chain Reaction", "C) Protein Coding Reaction", "D) Polymer Cleavage Rate"], ans: 1 },
+      { id: 1066, q: "What does the molecular marker acronym RFLP stand for?", options: ["A) Random Fragment Locus Protein", "B) Restriction Fragment Length Polymorphism", "C) Recombinant Gene Frequency Linkage", "D) Rapid Fermentation Lysis Protocol"], ans: 1 },
+      { id: 1067, q: "What does the molecular marker acronym RAPD stand for?", options: ["A) Recombinant Amplified Plasmid DNA", "B) Random Amplified Polymorphic DNA", "C) Rapid Amplification of Protein Domains", "D) Ribosomal Amplified Polymorphic DNA"], ans: 1 },
+      { id: 1068, q: "What is a hybrid cell produced by fusing the nucleus of one parent cell with the cytoplasm of both parents called?", options: ["A) Somatic hybrid", "B) Cybrid (cytoplasmic hybrid)", "C) Mutant", "D) Chimera"], ans: 1 },
+      { id: 1069, q: "What are molecular “scissors” used by genetic engineers to cleave DNA at specific sites called?", options: ["A) DNA ligase", "B) Restriction endonucleases", "C) Polymerase", "D) Helicase"], ans: 1 },
+      { id: 1070, q: "What is a physical chromosome map showing relative loci distances of genetic markers called?", options: ["A) Physical map", "B) Genetic map / linkage map", "C) Restriction map", "D) Cytological map"], ans: 1 },
+      { id: 1071, q: "What is a single genomic DNA molecule tightly condensed with histone proteins called?", options: ["A) Plasmid", "B) Chromatid", "C) Chromosome", "D) Gene"], ans: 2 },
+      { id: 1072, q: "What is the laboratory process of synthesizing millions of copies of a targeted DNA sequence called?", options: ["A) Transcription", "B) Gene cloning / DNA amplification", "C) Translation", "D) Splicing"], ans: 1 },
+      { id: 1073, q: "What is the biological process of synthesizing functional proteins from DNA and mRNA coding sequences?", options: ["A) Replication", "B) Gene expression", "C) Mutation", "D) Cleavage"], ans: 1 },
+      { id: 1074, q: "In what specialized automated laboratory instrument is PCR DNA amplification carried out?", options: ["A) Autoclave", "B) Thermocycler", "C) Incubator", "D) Centrifuge"], ans: 1 },
+      { id: 1075, q: "What is Francis Crick's foundational biological concept defining information flow as DNA → RNA → Protein called?", options: ["A) Cell Theory", "B) Central Dogma of Molecular Biology", "C) Chromosomal Theory", "D) Law of Segregation"], ans: 1 },
+      { id: 1076, q: "The periodic transfer of growing plant cells, tissues, or organs to fresh nutrient medium is called:", options: ["A) Inoculation", "B) Hardening", "C) Subculture", "D) Sterilization"], ans: 2 },
+      { id: 1077, q: "What was the very first genetically engineered biotech plant successfully produced?", options: ["A) Cotton", "B) Tobacco", "C) Brinjal", "D) Rice"], ans: 1 },
+      { id: 1078, q: "Transgenic Bt genes were introduced into commercial cotton varieties for protection against:", options: ["A) Sucking aphids", "B) Lepidopteran cotton bollworms", "C) Mites", "D) Nematodes"], ans: 1 },
+      { id: 1079, q: "Which vegetable crop underwent advanced regulatory trials for Bt insect-resistance technology in India?", options: ["A) Tomato", "B) Brinjal (Bt Brinjal)", "C) Potato", "D) Cabbage"], ans: 1 },
+      { id: 1080, q: "What controversial genetic trait intended to produce sterile seeds preventing farmer saved seed is termed:", options: ["A) Golden technology", "B) Terminator technology (Genetic Use Restriction Technology - GURT)", "C) Marker technology", "D) Hybrid technology"], ans: 1 },
+      { id: 1081, q: "What is the pure scientific discipline concerned with plant physiological life processes, functions, and growth?", options: ["A) Plant Pathology", "B) Plant Physiology", "C) Agronomy", "D) Morphology"], ans: 1 },
+      { id: 1082, q: "Who is universally celebrated and known as the Founding Father of Plant Physiology?", options: ["A) Liebig", "B) Stephen Hales", "C) Sachs", "D) Calvin"], ans: 1 },
+      { id: 1083, q: "Through what primary biophysical mechanism does most gaseous interchange occur in soils?", options: ["A) Osmosis", "B) Diffusion", "C) Imbibition", "D) Active transport"], ans: 1 },
+      { id: 1084, q: "In physical diffusion, molecules or particles spontaneously move from a region of:", options: ["A) Lower to higher concentration", "B) Higher concentration to lower concentration", "C) Zero pressure", "D) Bottom to top"], ans: 1 },
+      { id: 1085, q: "Who originally proposed and formulated the classical biophysical concept of osmosis?", options: ["A) Hales", "B) Jean-Antoine Nollet (Abbé Nollet)", "C) Dutrochet", "D) Pfeffer"], ans: 1 },
+      { id: 1086, q: "What type of biological barrier is a living plant cell plasma membrane?", options: ["A) Impermeable", "B) Freely permeable", "C) Semi-permeable (selectively permeable) membrane", "D) Dead"], ans: 2 },
+      { id: 1087, q: "The net inward diffusion of solvent water molecules across a membrane into a living cell is called:", options: ["A) Exosmosis", "B) Endosmosis", "C) Imbibition", "D) Plasmolysis"], ans: 1 },
+      { id: 1088, q: "What is an external solution with a higher solute concentration and osmotic pressure called?", options: ["A) Hypotonic", "B) Hypertonic solution", "C) Isotonic", "D) Pure water"], ans: 1 },
+      { id: 1089, q: "Who coined and introduced the scientific term “imbibition” in plant physics?", options: ["A) Hales", "B) Sachs (or relevant source author Sachs/Such)", "C) Nollet", "D) Darwin"], ans: 1 },
+      { id: 1090, q: "What component of total water potential is determined by physical attraction between water and colloids?", options: ["A) Osmotic potential", "B) Matric potential (Ψm)", "C) Pressure potential", "D) Gravitational potential"], ans: 1 },
+      { id: 1091, q: "The physical shrinkage and pulling away of plant cell protoplasm due to outward water loss is:", options: ["A) Turgor", "B) Endosmosis", "C) Plasmolysis", "D) Imbibition"], ans: 2 },
+      { id: 1092, q: "According to source anatomical notes, where is the waxy Casparian strip prominently present?", options: ["A) Leaf epidermis", "B) In root endodermal cell radial/transverse walls", "C) Stem pith", "D) Root hairs"], ans: 1 },
+      { id: 1093, q: "What is the positive hydrostatic pressure physically developed inside a cell due to water entry called?", options: ["A) Osmotic pressure", "B) Turgor pressure (Pressure potential)", "C) Wall pressure", "D) Negative tension"], ans: 1 },
+      { id: 1094, q: "During cellular osmosis, net water movement occurs from a region of:", options: ["A) Higher to lower water", "B) Lower solution concentration (higher water potential) to higher concentration", "C) High pressure to low pressure", "D) Zero water"], ans: 1 },
+      { id: 1095, q: "Through which specialized plant root structures do higher plants primarily absorb soil water?", options: ["A) Root cap", "B) Root hairs", "C) Stem base", "D) Leaves"], ans: 1 },
+      { id: 1096, q: "What is universally recognized as the absolute first initial physical step in plant water absorption?", options: ["A) Active transport", "B) Imbibition", "C) Transpiration pull", "D) Respiration"], ans: 1 },
+      { id: 1097, q: "What type of water absorption occurs against a concentration gradient utilizing metabolic energy from respiration?", options: ["A) Passive absorption", "B) Active absorption of water", "C) Imbibition", "D) Evaporation"], ans: 1 },
+      { id: 1098, q: "Mineral ion uptake driven directly by transpiration pull and mass flow is classified as a:", options: ["A) Active process", "B) Passive ion uptake process", "C) Respiration-dependent", "D) Metabolic process"], ans: 1 },
+      { id: 1099, q: "Through which complex vascular tissue are mineral nutrients absorbed from soil translocated upward?", options: ["A) Phloem sieve tubes", "B) Xylem vessels and tracheids", "C) Cortex", "D) Epidermis"], ans: 1 },
+      { id: 1100, q: "Through which vascular tissue does the downward translocation of synthesized food take place?", options: ["A) Xylem", "B) Phloem tissue", "C) Cambium", "D) Cork"], ans: 1 },
+      { id: 1101, q: "What is the bulk movement of nutrient ions dissolved in moving water stream called?", options: ["A) Diffusion", "B) Mass flow (mass transfer)", "C) Osmosis", "D) Active transport"], ans: 1 },
+      { id: 1102, q: "Who originally proposed the classical “Mass Flow / Pressure Flow” hypothesis of translocation?", options: ["A) J.C. Bose", "B) E. Godlewski (1884) / Münch pressure flow concept", "C) Hales", "D) Darwin"], ans: 1 },
+      { id: 1103, q: "Who proposed the historical “Pulsation Theory” of ascent of sap in 1923?", options: ["A) Godlewski", "B) Sir Jagadish Chandra Bose (1923)", "C) Dixon and Joly", "D) Hales"], ans: 1 },
+      { id: 1104, q: "What is the positive hydrostatic pressure developed inside roots due to active salt accumulation called?", options: ["A) Turgor pressure", "B) Root pressure", "C) Osmotic pressure", "D) Wall pressure"], ans: 1 },
+      { id: 1105, q: "With which scientific instrument is root pressure measured in excised plant stumps?", options: ["A) Barometer", "B) Manometer", "C) Tensiometer", "D) Potometer"], ans: 1 },
+      { id: 1106, q: "The primary driving force responsible for upward sap translocation in tall trees is the:", options: ["A) Root pressure", "B) Pull of the transpiration stream (Cohesion-tension theory)", "C) Pulsation theory", "D) Gravity"], ans: 1 },
+      { id: 1107, q: "What is the most widely accepted scientific theory explaining water absorption and ascent of sap?", options: ["A) Root pressure theory", "B) Transpiration Pull / Cohesion-Tension Theory (Dixon and Joly)", "C) Imbibition theory", "D) Pulsation theory"], ans: 1 },
+      { id: 1108, q: "What is the physical permeability nature of normal living plant cell walls?", options: ["A) Impermeable", "B) Fully permeable to water and solutes", "C) Semi-permeable", "D) Dead"], ans: 1 },
+      { id: 1109, q: "In what chemical forms are mineral nutrient elements translocated within plants?", options: ["A) Inorganic ions only", "B) Both organic compounds and inorganic ions", "C) Organic molecules only", "D) Pure gases"], ans: 1 },
+      { id: 1110, q: "How do green land plants primarily meet their structural carbon nutritional requirement?", options: ["A) Soil organic matter", "B) Absorbing Carbon dioxide (CO₂) gas from the atmosphere", "C) Water", "D) Roots"], ans: 1 },
+      { id: 1111, q: "What is the fundamental biochemical process of converting light energy into stored chemical energy called?", options: ["A) Respiration", "B) Photosynthesis", "C) Transpiration", "D) Fermentation"], ans: 1 },
+      { id: 1112, q: "Photosynthesis is fundamentally classified as what type of chemical reaction?", options: ["A) Pure reduction", "B) Oxidation-reduction (redox) process", "C) Pure oxidation", "D) Hydrolysis"], ans: 1 },
+      { id: 1113, q: "What is the specific wavelength range of Photosynthetically Active Radiation (PAR)?", options: ["A) 100 to 200 nm", "B) 400 to 700 nanometres (nm)", "C) 1000 to 2000 nm", "D) X-rays"], ans: 1 },
+      { id: 1114, q: "What is the primary green pigment molecule responsible for driving plant photosynthesis?", options: ["A) Carotenoid", "B) Chlorophyll (Chlorophyll a and b)", "C) Anthocyanin", "D) Xanthophyll"], ans: 1 },
+      { id: 1115, q: "Which metallic coordination ion is present at the centre of the chlorophyll porphyrin ring?", options: ["A) Iron", "B) Magnesium (Mg²⁺)", "C) Calcium", "D) Zinc"], ans: 1 },
+      { id: 1116, q: "What are the two major photosynthetic pigment forms present in higher green plants?", options: ["A) Carotene only", "B) Chlorophyll a and Chlorophyll b", "C) Anthocyanin", "D) Phycobilin"], ans: 1 },
+      { id: 1117, q: "What is the characteristic visible color of pure Chlorophyll a?", options: ["A) Yellow-green", "B) Bright blue-green", "C) Orange-red", "D) Purple"], ans: 1 },
+      { id: 1118, q: "What is the characteristic visible color of pure Chlorophyll b?", options: ["A) Blue-green", "B) Yellow-green", "C) Red", "D) Brown"], ans: 1 },
+      { id: 1119, q: "Where does the molecular oxygen released during photosynthesis originate from?", options: ["A) Carbon dioxide", "B) Photolysis of water (H₂O splitting)", "C) Glucose", "D) Soil air"], ans: 1 },
+      { id: 1120, q: "What is the primary organic carbohydrate product of photosynthesis utilized for plant growth?", options: ["A) Cellulose", "B) Glucose (hexose sugar)", "C) Starch", "D) Protein"], ans: 1 },
+      { id: 1121, q: "How can net photosynthetic rates be experimentally measured in plants?", options: ["A) Weighing roots", "B) Measuring O₂ gas released or CO₂ gas uptake", "C) Measuring height", "D) Counting leaves"], ans: 1 },
+      { id: 1122, q: "What are chemical compounds sprayed on crops to physically retard and reduce transpiration losses called?", options: ["A) Herbicides", "B) Antitranspirants", "C) Fertilizers", "D) Growth promoters"], ans: 1 },
+      { id: 1123, q: "Which major biological group of organisms completely lacks photosynthetic capability?", options: ["A) Algae", "B) Fungi", "C) Higher plants", "D) Cyanobacteria"], ans: 1 },
+      { id: 1124, q: "What is the absolute first biological process that initiates inside a dry seed immediately after water imbibition?", options: ["A) Photosynthesis", "B) Respiration (and enzymatic activation)", "C) Flowering", "D) Senescence"], ans: 1 },
+      { id: 1125, q: "Where do the light-dependent reactions (Hill reactions / C4 reactions) take place inside chloroplasts?", options: ["A) Stroma matrix", "B) Grana thylakoids", "C) Outer membrane", "D) Cytoplasm"], ans: 1 },
+      { id: 1126, q: "Where do the light-independent dark reactions (Calvin cycle / C3 cycle) take place inside chloroplasts?", options: ["A) Grana", "B) Stroma matrix", "C) Ribosomes", "D) Nucleus"], ans: 1 },
+      { id: 1127, q: "Inside which specialized eukaryotic organelle are grana and stroma housed?", options: ["A) Mitochondria", "B) Chloroplast", "C) Vacuole", "D) Lysosome"], ans: 1 },
+      { id: 1128, q: "What is the C₃ carbon fixation cycle also universally known as?", options: ["A) Hatch and Slack pathway", "B) Blackman reaction / Calvin cycle", "C) Krebs cycle", "D) Glycolysis"], ans: 1 },
+      { id: 1129, q: "What is the stable initial 3-carbon organic product formed in the C₃ photosynthetic pathway?", options: ["A) Oxaloacetic acid", "B) 3-Phosphoglyceric acid (3-PGA)", "C) Pyruvate", "D) Glucose"], ans: 1 },
+      { id: 1130, q: "Which of the following major food crops are classic C₃ pathway plants?", options: ["A) Maize and sorghum", "B) Rice, wheat, pea and soybean", "C) Sugarcane", "D) Pineapple"], ans: 1 },
+      { id: 1131, q: "What is the most critical and abundant enzyme responsible for CO₂ fixation in C₃ plants?", options: ["A) PEP carboxylase", "B) Rubisco (Ribulose-1,5-bisphosphate carboxylase-oxygenase)", "C) Amylase", "D) Nitrogenase"], ans: 1 },
+      { id: 1132, q: "What is the C₄ carbon fixation cycle also universally known as?", options: ["A) Calvin cycle", "B) Hatch and Slack pathway", "C) Krebs cycle", "D) Blackman reaction"], ans: 1 },
+      { id: 1133, q: "What is the initial 4-carbon organic acid product formed in the C₄ photosynthetic pathway?", options: ["A) 3-PGA", "B) Oxaloacetic acid (OAA)", "C) Glucose", "D) Citrate"], ans: 1 },
+      { id: 1134, q: "Which major agronomic crops are classic C₄ pathway plants?", options: ["A) Rice and wheat", "B) Maize, sorghum, sugarcane and millets", "C) Pea and gram", "D) Potato"], ans: 1 },
+      { id: 1135, q: "What is the primary enzyme responsible for initial CO₂ fixation in C₄ mesophyll cells?", options: ["A) Rubisco", "B) PEP carboxylase (Phosphoenolpyruvate carboxylase)", "C) Catalase", "D) Lipase"], ans: 1 },
+      { id: 1136, q: "What is the distinctive internal leaf anatomical structure characteristic of C₄ plants called?", options: ["A) Palisade mesophyll", "B) Kranz anatomy (bundle sheath chloroplast arrangement)", "C) Spongy parenchyma", "D) Epidermis"], ans: 1 },
+      { id: 1137, q: "What does the biochemical acronym CAM stand for in plant metabolism?", options: ["A) Carbon Assimilation Molecule", "B) Crassulacean Acid Metabolism", "C) Cellular Active Metabolism", "D) Cyclic Acid Mechanism"], ans: 1 },
+      { id: 1138, q: "Which plant species operate via Crassulacean Acid Metabolism (CAM)?", options: ["A) Rice and wheat", "B) Pineapple and Opuntia (cactus)", "C) Maize", "D) Soybean"], ans: 1 },
+      { id: 1139, q: "How does the water-use efficiency (WUE) of C₄ plants compare with C₃ plants?", options: ["A) Lower", "B) Significantly higher water-use efficiency in C₄ plants", "C) Equal", "D) Zero"], ans: 1 },
+      { id: 1140, q: "How does the photosynthetic carbon assimilation rate of C₄ plants compare with C₃ plants under high light?", options: ["A) Lower", "B) Significantly higher photosynthetic rate in C₄ plants", "C) Equal", "D) Zero"], ans: 1 },
+      { id: 1141, q: "Why do C₄ plants typically produce higher dry biomass yields than C₃ plants?", options: ["A) Faster water loss", "B) Because they exhibit little to no wasteful photorespiration", "C) Larger seeds", "D) Taller stems"], ans: 1 },
+      { id: 1142, q: "How many ATP equivalent molecules are generated from the complete oxidation of one NADH₂ molecule?", options: ["A) 2 ATP", "B) 3 ATP molecules", "C) 36 ATP", "D) 1 ATP"], ans: 1 },
+      { id: 1143, q: "Why do living plant cells require molecular oxygen (O₂) during respiration?", options: ["A) For photosynthesis", "B) To act as the final terminal electron acceptor in the electron transport chain", "C) To make water", "D) To build cell walls"], ans: 1 },
+      { id: 1144, q: "Where does the biochemical pathway of cellular glycolysis take place inside cells?", options: ["A) Mitochondrial matrix", "B) Cytoplasm (cytosol)", "C) Chloroplast stroma", "D) Nucleus"], ans: 1 },
+      { id: 1145, q: "What is the final organic carbon product of glycolysis?", options: ["A) Glucose", "B) Pyruvate (pyruvic acid)", "C) Citrate", "D) Ethanol"], ans: 1 },
+      { id: 1146, q: "What is the net gain of ATP molecules produced directly per glucose molecule during glycolysis?", options: ["A) 36 ATP", "B) Net gain of 2 ATP molecules (4 gross − 2 invested)", "C) 38 ATP", "D) Zero"], ans: 1 },
+      { id: 1147, q: "Where do the Krebs citric acid cycle and Electron Transport Chain (ETC) take place inside cells?", options: ["A) Cytoplasm", "B) Mitochondria", "C) Ribosomes", "D) Vacuole"], ans: 1 },
+      { id: 1148, q: "What is the maximum net total ATP synthesis yield from complete aerobic respiration of one glucose molecule?", options: ["A) 2 ATP", "B) Approx 36 to 38 ATP molecules", "C) 100 ATP", "D) Zero"], ans: 1 },
+      { id: 1149, q: "How much usable biochemical energy is released by the hydrolysis of one mole of ATP?", options: ["A) 50 kcal", "B) Approx 7.3 to 7.6 kcal per mole", "C) 1 kcal", "D) 500 kcal"], ans: 1 },
+      { id: 1150, q: "Which biological pathway is characterized as an energy-consuming (ATP-spending) wasteful process in plants?", options: ["A) Glycolysis", "B) Photorespiration (C2 cycle)", "C) Krebs cycle", "D) Fermentation"], ans: 1 },
+      { id: 1151, q: "According to specific early source notes referenced in certain keys, when does photorespiration occur?", options: ["A) Noon", "B) During night-time dark periods (note: physiological science states light-dependent, but key lists night context)", "C) Midday", "D) Morning"], ans: 1 },
+      { id: 1152, q: "According to source notes, photorespiration occurs exclusively inside which specialized cells?", options: ["A) Root cells", "B) Chlorophyllous green cells", "C) Xylem vessels", "D) Seed coat"], ans: 1 },
+      { id: 1153, q: "What is the physiological loss of water in the form of water vapour from living aerial plant parts called?", options: ["A) Evaporation", "B) Transpiration", "C) Guttation", "D) Leaching"], ans: 1 },
+      { id: 1154, q: "What is recognized as the principal anatomical plant organ responsible for transpiration?", options: ["A) Root hairs", "B) Stomata of leaves", "C) Bark", "D) Seeds"], ans: 1 },
+      { id: 1155, q: "In what physical state is water lost from plants during active transpiration?", options: ["A) Liquid droplets", "B) As invisible water vapour", "C) Ice crystals", "D) Solid gel"], ans: 1 },
+      { id: 1156, q: "On which leaf surface are stomatal pores predominantly and densely located in most dicot plants?", options: ["A) Upper surface", "B) Lower epidermis (surface) of leaves", "C) Stem", "D) Roots"], ans: 1 },
+      { id: 1157, q: "The physical opening and closing movements of stomata are driven by changes in cellular:", options: ["A) Temperature", "B) Turgidity and flaccidity of guard cells", "C) Gravity", "D) Soil color"], ans: 1 },
+      { id: 1158, q: "What type of stomatal distribution (stomata on both surfaces) is typical of potato and many crop plants?", options: ["A) Apple type", "B) Potato type (amphistomatous)", "C) Water lily type", "D) Bare type"], ans: 1 },
+      { id: 1159, q: "What is a stomatal distribution pattern where stomata occur exclusively on the lower leaf surface called?", options: ["A) Potato type", "B) Apple and Mulberry type (hypostomatous)", "C) Open type", "D) Zero type"], ans: 1 },
+      { id: 1160, q: "The loss of liquid water droplets through specialized leaf margin hydathodes at night, driven by root pressure, is:", options: ["A) Transpiration", "B) Guttation", "C) Evaporation", "D) Bleeding"], ans: 1 },
+      { id: 1161, q: "What is defined as an irreversible permanent increase in plant size, form, weight, and volume?", options: ["A) Development", "B) Growth", "C) Respiration", "D) Transpiration"], ans: 1 },
+      { id: 1162, q: "What is the complex orderly progression of cellular differentiation into tissues, organs, and mature organisms called?", options: ["A) Growth", "B) Development", "C) Germination", "D) Senescence"], ans: 1 },
+      { id: 1163, q: "With which specialized scientific instruments is plant linear growth rate measured?", options: ["A) Tensiometer", "B) Auxanometer and crescograph", "C) Barometer", "D) Pyranometer"], ans: 1 },
+      { id: 1164, q: "What are the chemical elements required for normal plant growth, metabolism, and development called?", options: ["A) Hormones", "B) Plant nutrient elements", "C) Vitamins", "D) Toxins"], ans: 1 },
+      { id: 1165, q: "What are naturally occurring organic chemical messenger compounds that modify physiological processes called?", options: ["A) Fertilizers", "B) Plant Growth Regulators (PGRs) / phytohormones", "C) Minerals", "D) Vitamins"], ans: 1 },
+      { id: 1166, q: "Which class of Plant Growth Regulators includes classical growth promoters?", options: ["A) Abscisic acid and ethylene", "B) Auxins, gibberellins and cytokinins", "C) Herbicides", "D) Fungicides"], ans: 1 },
+      { id: 1167, q: "Which Plant Growth Regulators are classified as natural plant growth inhibitors?", options: ["A) Auxin", "B) Abscisic acid (ABA) and ethylene", "C) Gibberellin", "D) Cytokinin"], ans: 1 },
+      { id: 1168, q: "Which phytohormone is primarily responsible for inducing apical dominance in shoot tips?", options: ["A) Cytokinin", "B) Auxins (e.g., IAA)", "C) Gibberellin", "D) Ethylene"], ans: 1 },
+      { id: 1169, q: "Which plant hormone is known to effectively delay leaf senescence and aging?", options: ["A) Abscisic acid", "B) Cytokinin", "C) Ethylene", "D) Auxin"], ans: 1 },
+      { id: 1170, q: "Which plant hormone breaks seed dormancy and stimulates early germination?", options: ["A) Abscisic acid", "B) Cytokinin (and Gibberellins)", "C) Ethylene", "D) Malic acid"], ans: 1 },
+      { id: 1171, q: "Which plant hormone induces and enforces seed and bud dormancy?", options: ["A) Auxin", "B) Abscisic acid (ABA)", "C) Gibberellin", "D) Cytokinin"], ans: 1 },
+      { id: 1172, q: "Which plant hormone is commercially utilized to accelerate artificial fruit ripening?", options: ["A) Auxin", "B) Ethylene (or ethephon)", "C) Gibberellin", "D) ABA"], ans: 1 },
+      { id: 1173, q: "According to source physiological notes, where is abscisic acid (ABA) synthesized in plants?", options: ["A) Root tips exclusively", "B) Actively growing points and mature leaves", "C) Stem xylem", "D) Seed coat"], ans: 1 },
+      { id: 1174, q: "Where are cytokinins predominantly synthesized within plant root systems?", options: ["A) Leaves", "B) Root tips (meristematic root zones)", "C) Flowers", "D) Seeds"], ans: 1 },
+      { id: 1175, q: "Which plant hormone is critically related to drought tolerance and environmental stress hardiness?", options: ["A) Auxin", "B) Abscisic acid (ABA)", "C) Gibberellin", "D) Cytokinin"], ans: 1 },
+      { id: 1176, q: "What is the physiological response of plants to relative day/night lengths called?", options: ["A) Vernalisation", "B) Photoperiodism", "C) Thermoperiodism", "D) Gravitropism"], ans: 1 },
+      { id: 1177, q: "What day-length duration defines short-day plants (SDP)?", options: ["A) >14 hours", "B) Less than 10 to 12 hours of light (<10 hours)", "C) 24 hours", "D) Zero light"], ans: 1 },
+      { id: 1178, q: "What photoperiod requirement do Kharif season tropical crops generally exhibit?", options: ["A) Long day", "B) Shorter day length (Short-day plants)", "C) Day-neutral", "D) Alpine"], ans: 1 },
+      { id: 1179, q: "What photoperiod classification do Rabi season winter crops generally belong to?", options: ["A) Short-day plants", "B) Long-day plants (LDP)", "C) Day-neutral", "D) Aquatic"], ans: 1 },
+      { id: 1180, q: "What day-length duration defines long-day plants (LDP)?", options: ["A) <10 hours", "B) Greater than 14 hours of light (>14 hours)", "C) 0 hours", "D) Constant dark"], ans: 1 },
+      { id: 1181, q: "What are the anatomical perception sites for cold-temperature vernalisation in plants?", options: ["A) Root tips", "B) Apical buds / growing shoot meristems", "C) Mature seeds", "D) Leaves"], ans: 1 },
+      { id: 1182, q: "For successful seed germination, what external moisture source does a dry seed depend on?", options: ["A) Internal fat", "B) External water absorption (imbibition from soil)", "C) Sunlight", "D) Air"], ans: 1 },
+      { id: 1183, q: "What is the cardinal temperature at which the highest percentage of seed germination occurs rapidly called?", options: ["A) Minimum temperature", "B) Optimum temperature", "C) Maximum", "D) Zero"], ans: 1 },
+      { id: 1184, q: "Which essential nutrient element is structurally crucial for plant cell wall middle lamella formation?", options: ["A) Nitrogen", "B) Calcium (Ca)", "C) Potassium", "D) Iron"], ans: 1 },
+      { id: 1185, q: "What is the plant tissue region where photosynthetically translocated food originates called?", options: ["A) Sink", "B) Source (e.g., mature leaves)", "C) Root", "D) Flower"], ans: 1 },
+      { id: 1186, q: "What is the plant tissue region where translocated food is consumed, metabolized, or stored called?", options: ["A) Source", "B) Sink (e.g., roots, tubers, developing fruits)", "C) Leaf", "D) Stem"], ans: 1 },
+      { id: 1187, q: "What is the threshold nutrient concentration in plant tissue below which growth rate sharply declines called?", options: ["A) Lethal level", "B) Critical concentration", "C) Optimal level", "D) Zero"], ans: 1 },
+      { id: 1188, q: "What is the scientific binomial name of the Rice Yellow Stem Borer?", options: ["A) Orseolia oryzae", "B) Scirpophaga incertulas", "C) Cnaphalocrocis medinalis", "D) Nilaparvata lugens"], ans: 1 },
+      { id: 1189, q: "What is the scientific binomial name of the Rice Gall Midge?", options: ["A) Scirpophaga incertulas", "B) Orseolia oryzae", "C) Nephotettix", "D) Leptocorisa"], ans: 1 },
+      { id: 1190, q: "What is the scientific binomial name of the Green Leaf Hopper (GLH) vector in rice?", options: ["A) Nilaparvata lugens", "B) Nephotettix nigropictus (and N. virescens)", "C) Sogatella furcifera", "D) Scirpophaga"], ans: 1 },
+      { id: 1191, q: "What is the scientific binomial name of the White-backed Plant Hopper (WBPH) in rice?", options: ["A) Nilaparvata lugens", "B) Sogatella furcifera", "C) Nephotettix", "D) Orseolia"], ans: 1 },
+      { id: 1192, q: "What is the scientific binomial name of the Brown Plant Hopper (BPH) in rice?", options: ["A) Sogatella furcifera", "B) Nilaparvata lugens", "C) Nephotettix", "D) Scirpophaga"], ans: 1 },
+      { id: 1193, q: "Which destructive insect pest causes severe damage by cutting developing rice panicles at night (“ear-cutting caterpillar”)?", options: ["A) Stem borer", "B) Rice Armyworm (Mythimna separata)", "C) BPH", "D) Gall midge"], ans: 1 },
+      { id: 1194, q: "Chaffy, empty rice grains marked with dark black feeding spots indicate infestation by:", options: ["A) Stem borer", "B) Gundhi bug (Leptocorisa acuta)", "C) Leaf folder", "D) Case worm"], ans: 1 },
+      { id: 1195, q: "What cultural nursery practice of clipping seedling tips before transplanting eliminates egg masses of:", options: ["A) Stem borer", "B) Rice Hispa (Dicladispa armigera)", "C) BPH", "D) Gall midge"], ans: 1 },
+      { id: 1196, q: "What is the scientific binomial name of the Pink Stem Borer attacking cereals?", options: ["A) Chilo partellus", "B) Sesamia inferens", "C) Scirpophaga", "D) Helicoverpa"], ans: 1 },
+      { id: 1197, q: "During what daily time period does the Pink Stem Borer actively attack and bore into cereal stems?", options: ["A) Midday sun", "B) At night (nocturnal activity)", "C) Dawn", "D) Dusk"], ans: 1 },
+      { id: 1198, q: "What is the scientific binomial name of the wheat termite pest?", options: ["A) Microtermes", "B) Odontotermes obesus", "C) Agrotis ipsilon", "D) Helicoverpa"], ans: 1 },
+      { id: 1199, q: "What is the scientific binomial name of the agricultural cutworm pest?", options: ["A) Helicoverpa armigera", "B) Agrotis ipsilon", "C) Spodoptera litura", "D) Sesamia inferens"], ans: 1 },
+      { id: 1200, q: "Which destructive agricultural insect pest is notorious for attacking and damaging all vegetative and root parts of plants?", options: ["A) Aphids", "B) Mites", "C) Termites (Odontotermes obesus)", "D) Thrips"], ans: 2 }
+    ];
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(200, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 200) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Overall Questions Test 6 Master Revision.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific seed science, plant physiology, biotechnology, and pest concepts.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Seed Science & Physiology recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+
+</html>

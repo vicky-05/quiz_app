@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Overall Questions Test 11 — Soil Science, Soil Physics & Plant Nutrition Master Exam (200 MCQs)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-header: #022c22;
+            --bg-body: #f1f5f9;
+            --card-bg: #ffffff;
+            --primary: #044e3e;
+            --primary-hover: #033c30;
+            --accent-badge: #022c22;
+            --option-bg: #e6f3ef;
+            --option-border: #bcdcd3;
+            --option-hover-bg: #d7ede6;
+            --option-selected-bg: #c5e6dc;
+            --option-selected-border: #044e3e;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --timer-bg: #ffe4e6;
+            --timer-text: #e11d48;
+            --timer-border: #fecdd3;
+            --success: #15803d;
+            --success-light: #dcfce7;
+            --danger: #b91c1c;
+            --danger-light: #fee2e2;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .banner {
+            background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+            color: #ffffff;
+            padding: 1.5rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .banner h1 {
+            font-size: 1.85rem;
+            font-weight: 800;
+            letter-spacing: 0.08em;
+            color: #facc15;
+            text-transform: uppercase;
+            margin-bottom: 0.25rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .banner .sub-title {
+            font-size: 1rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            color: #ffffff;
+            text-transform: uppercase;
+            margin-bottom: 0.4rem;
+        }
+
+        .banner .tagline {
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            color: #e2e8f0;
+            letter-spacing: 0.02em;
+        }
+
+        .container {
+            max-width: 880px;
+            width: 100%;
+            margin: 1.5rem auto;
+            padding: 0 1rem;
+            flex: 1;
+        }
+
+        .status-ribbon {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 0.75rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .status-tile {
+            background: #ffffff;
+            border-radius: var(--radius-md);
+            padding: 0.7rem 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.65rem;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid #e2e8f0;
+        }
+
+        .status-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+        }
+
+        .tile-green .status-icon {
+            background: #dcfce7;
+            color: #15803d;
+        }
+
+        .tile-blue .status-icon {
+            background: #e0f2fe;
+            color: #0284c7;
+        }
+
+        .tile-amber .status-icon {
+            background: #fef3c7;
+            color: #d97706;
+        }
+
+        .tile-rose .status-icon {
+            background: var(--timer-bg);
+            color: var(--timer-text);
+            border: 1px solid var(--timer-border);
+        }
+
+        .status-label {
+            font-size: 0.72rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            line-height: 1.1;
+        }
+
+        .status-val {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-top: 0.15rem;
+        }
+
+        .tile-rose .status-val {
+            color: var(--timer-text);
+            font-family: 'Plus Jakarta Sans', monospace;
+            font-size: 1.15rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius-lg);
+            padding: 1.75rem 2rem;
+            box-shadow: var(--shadow-md);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 1.25rem;
+            position: relative;
+        }
+
+        .card-topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .q-badge {
+            background: var(--accent-badge);
+            color: #ffffff;
+            padding: 0.45rem 1rem;
+            border-radius: 10px;
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+        }
+
+        .mark-badge {
+            background: #ffe4e6;
+            color: #be123c;
+            padding: 0.35rem 0.85rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border: 1px solid #fecdd3;
+        }
+
+        .q-text {
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.55;
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            white-space: pre-line;
+        }
+
+        .options-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 0.85rem;
+            margin-bottom: 1.75rem;
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.85rem 1.1rem;
+            background: var(--option-bg);
+            border: 1.5px solid var(--option-border);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all 0.15s ease-in-out;
+            text-align: left;
+            width: 100%;
+        }
+
+        .option-item:hover {
+            background: var(--option-hover-bg);
+            border-color: #79baaa;
+        }
+
+        .option-item.selected {
+            background: var(--option-selected-bg);
+            border-color: var(--option-selected-border);
+            box-shadow: 0 0 0 1px var(--option-selected-border);
+        }
+
+        .option-letter {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: #022c22;
+            color: #ffffff;
+            font-weight: 800;
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: background 0.15s ease;
+        }
+
+        .option-item.selected .option-letter {
+            background: #044e3e;
+        }
+
+        .option-content {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            line-height: 1.4;
+        }
+
+        .actions-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.75rem;
+            padding-top: 1rem;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.7rem 1.4rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: all 0.15s ease;
+        }
+
+        .btn-prev {
+            background: #ffffff;
+            color: #0f172a;
+            border: 1.5px solid #cbd5e1;
+        }
+
+        .btn-prev:hover:not(:disabled) {
+            background: #f8fafc;
+            border-color: #94a3b8;
+        }
+
+        .btn-review {
+            background: #ffffff;
+            color: #044e3e;
+            border: 1.5px solid #044e3e;
+        }
+
+        .btn-review.marked {
+            background: #fef3c7;
+            color: #92400e;
+            border-color: #f59e0b;
+        }
+
+        .btn-next,
+        .btn-submit {
+            background: var(--primary);
+            color: #ffffff;
+        }
+
+        .btn-next:hover,
+        .btn-submit:hover {
+            background: var(--primary-hover);
+        }
+
+        .btn-submit {
+            background: #059669;
+        }
+
+        .btn-submit:hover {
+            background: #047857;
+        }
+
+        .btn:disabled {
+            opacity: 0.45;
+            cursor: not-allowed;
+        }
+
+        .footer-motivate {
+            background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+            color: #ffffff;
+            padding: 1.75rem 1rem;
+            text-align: center;
+            margin-top: auto;
+            border-top: 3px solid #059669;
+        }
+
+        .footer-motivate .quote {
+            font-family: 'Caveat', cursive;
+            font-size: 1.45rem;
+            color: #f8fafc;
+            margin-bottom: 0.4rem;
+        }
+
+        .footer-motivate .author-sub {
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            color: #94a3b8;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .setup-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.2rem;
+            margin-top: 1.25rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .form-group label {
+            font-weight: 700;
+            font-size: 0.95rem;
+            color: #334155;
+        }
+
+        .form-group select,
+        .form-group input {
+            padding: 0.75rem 0.9rem;
+            border-radius: var(--radius-sm);
+            border: 1.5px solid #cbd5e1;
+            font-size: 1rem;
+            background: #ffffff;
+            outline: none;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus {
+            border-color: var(--primary);
+        }
+
+        .time-preview-badge {
+            display: inline-block;
+            background: #dcfce7;
+            color: #166534;
+            padding: 0.35rem 0.75rem;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-top: 0.25rem;
+        }
+
+        .results-center {
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        .score-circle {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            background: #e6f3ef;
+            color: #044e3e;
+            border: 4px solid #044e3e;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 1rem auto 1.5rem auto;
+        }
+
+        .score-circle .pct {
+            font-size: 2.1rem;
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .score-circle .lbl {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-top: 0.25rem;
+        }
+
+        .stats-matrix {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 0.85rem;
+            margin: 1.5rem 0;
+        }
+
+        .matrix-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .matrix-card .val {
+            font-size: 1.6rem;
+            font-weight: 800;
+        }
+
+        .matrix-card.c-green .val {
+            color: var(--success);
+        }
+
+        .matrix-card.c-red .val {
+            color: var(--danger);
+        }
+
+        .matrix-card.c-slate .val {
+            color: var(--text-muted);
+        }
+
+        .matrix-card .desc {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-top: 0.25rem;
+        }
+
+        .review-item {
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 1rem;
+            border: 1.5px solid #e2e8f0;
+            background: #ffffff;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .review-item.is-correct {
+            border-left: 6px solid var(--success);
+            background: #fcfdfc;
+        }
+
+        .review-item.is-wrong {
+            border-left: 6px solid var(--danger);
+            background: #fffcfc;
+        }
+
+        .review-item.is-unanswered {
+            border-left: 6px solid var(--neutral);
+            background: #f8fafc;
+        }
+
+        .rev-badge {
+            display: inline-block;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 0.6rem;
+        }
+
+        .rev-badge.correct {
+            background: var(--success-light);
+            color: var(--success);
+        }
+
+        .rev-badge.wrong {
+            background: var(--danger-light);
+            color: var(--danger);
+        }
+
+        .rev-badge.unanswered {
+            background: #e2e8f0;
+            color: var(--neutral);
+        }
+
+        .rev-q-text {
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 0.75rem;
+            white-space: pre-line;
+        }
+
+        .rev-detail-line {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin: 0.35rem 0;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+
+        @media (max-width: 680px) {
+            .status-ribbon {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .card {
+                padding: 1.25rem;
+            }
+
+            .actions-bar {
+                flex-wrap: wrap;
+            }
+
+            .actions-bar .btn {
+                flex: 1 1 calc(50% - 0.5rem);
+            }
+
+            .actions-bar .btn-review {
+                order: 3;
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="banner">
+        <h1>Competitive Exam</h1>
+        <div class="sub-title">Practice Quiz — Overall Questions Test 11 Series</div>
+        <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!
+        </div>
+    </header>
+
+    <div class="container">
+
+        <div id="setup-screen" class="card">
+            <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Overall Questions
+                Test 11: Soil Science, Soil Physics & Plant Nutrition Master Exam (200 MCQs)</h2>
+            <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+                    question</strong> applies automatically to your chosen question count.</p>
+
+            <div class="setup-grid">
+                <div class="form-group">
+                    <label for="mode-select">Exam Mode</label>
+                    <select id="mode-select">
+                        <option value="exam">Standard Exam Mode (Sequential 1–200)</option>
+                        <option value="practice">Practice Mode (Randomized Subset)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="count-select">Number of Questions</label>
+                    <select id="count-select">
+                        <option value="200">All Questions (200 Questions)</option>
+                        <option value="50">50 Questions</option>
+                        <option value="100">100 Questions</option>
+                        <option value="150">150 Questions</option>
+                        <option value="custom">Custom Count</option>
+                    </select>
+                </div>
+
+                <div class="form-group hidden" id="custom-count-wrapper">
+                    <label for="custom-count-input">Enter count (1 to 200)</label>
+                    <input type="number" id="custom-count-input" min="1" max="200" value="50" />
+                </div>
+
+                <div class="form-group">
+                    <label>Total Time Allotted</label>
+                    <div>
+                        <span class="time-preview-badge" id="time-preview-pill">200 min 0 sec (1 min / question)</span>
+                    </div>
+                </div>
+
+                <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+                    Now</button>
+            </div>
+        </div>
+
+        <div id="quiz-screen" class="hidden">
+            <div class="status-ribbon">
+                <div class="status-tile tile-green">
+                    <div class="status-icon">&#127757;</div>
+                    <div>
+                        <div class="status-label">Subject</div>
+                        <div class="status-val">Overall Part 11</div>
+                    </div>
+                </div>
+                <div class="status-tile tile-blue">
+                    <div class="status-icon">&#9874;</div>
+                    <div>
+                        <div class="status-label">Topic</div>
+                        <div class="status-val">Soil Science Master</div>
+                    </div>
+                </div>
+                <div class="status-tile tile-amber">
+                    <div class="status-icon">&#128202;</div>
+                    <div>
+                        <div class="status-label">Question</div>
+                        <div class="status-val" id="q-counter-val">1 / 200</div>
+                    </div>
+                </div>
+                <div class="status-tile tile-rose">
+                    <div class="status-icon">&#9201;</div>
+                    <div>
+                        <div class="status-label">Time Left</div>
+                        <div class="status-val" id="timer-val">03:20:00</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-topbar">
+                    <div class="q-badge" id="q-badge-val">Q.1</div>
+                    <div class="mark-badge">1 Mark</div>
+                </div>
+
+                <div class="q-text" id="q-text-val"></div>
+
+                <div class="options-grid" id="options-container"></div>
+
+                <div class="actions-bar">
+                    <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+                    <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+                    <div style="display: flex; gap: 0.6rem;">
+                        <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+                        <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="result-screen" class="card hidden">
+            <div class="results-center">
+                <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+                <div class="score-circle">
+                    <div class="pct" id="res-score-pct">0%</div>
+                    <div class="lbl">Total Score</div>
+                </div>
+                <p id="res-performance-msg"
+                    style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+            </div>
+
+            <div class="stats-matrix">
+                <div class="matrix-card">
+                    <div class="val" id="res-total">0</div>
+                    <div class="desc">Questions</div>
+                </div>
+                <div class="matrix-card c-green">
+                    <div class="val" id="res-correct">0</div>
+                    <div class="desc">Correct</div>
+                </div>
+                <div class="matrix-card c-red">
+                    <div class="val" id="res-wrong">0</div>
+                    <div class="desc">Wrong</div>
+                </div>
+                <div class="matrix-card c-slate">
+                    <div class="val" id="res-unanswered">0</div>
+                    <div class="desc">Unanswered</div>
+                </div>
+            </div>
+
+            <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+                <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+                <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+            </div>
+        </div>
+
+        <div id="review-screen" class="hidden">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+                <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+            </div>
+            <div id="review-list-container"></div>
+        </div>
+
+    </div>
+
+    <footer class="footer-motivate">
+        <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+        <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+    </footer>
+
+    <script>
+        const questionBank = [
+            { id: 1, q: "Items needed for photosynthesis in green leaves are:", options: ["A) Sunlight and water only", "B) Chlorophyll and plant nutrients only", "C) Sunlight, chlorophyll, water & plant nutrients", "D) Carbon dioxide only"], ans: 2 },
+            { id: 2, q: "Yellowing of lower leaves, stunted growth and leaf/fruit shedding indicate:", options: ["A) Phosphorus deficiency", "B) Nitrogen deficiency", "C) Potassium deficiency", "D) Iron deficiency"], ans: 1 },
+            { id: 3, q: "Sources of C, H, O and soil N include:", options: ["A) CO₂ and water only", "B) Air and organic matter only", "C) CO₂, water, air/water and organic matter", "D) Mineral fertilizers only"], ans: 2 },
+            { id: 4, q: "Ammonium sulphate (21% N, 24% S) is best for top dressing in:", options: ["A) Rice", "B) Wheat", "C) Cotton", "D) Sugarcane"], ans: 0 },
+            { id: 5, q: "Immobile nutrient in soil:", options: ["A) Nitrogen", "B) Potassium", "C) Phosphorus (P)", "D) Nitrate"], ans: 2 },
+            { id: 6, q: "Irregular rock masses formed in pre-existing cracks and crevices:", options: ["A) Dikes", "B) Sills", "C) Batholiths", "D) Laccoliths"], ans: 0 },
+            { id: 7, q: "When saline-alkaline soil is leached with water:", options: ["A) pH increases and EC increases", "B) pH decreases and EC decreases", "C) pH remains constant", "D) EC increases only"], ans: 1 },
+            { id: 8, q: "Azotobacter fixes atmospheric nitrogen:", options: ["A) Symbiotically", "B) Non-symbiotically", "C) Parasitically", "D) Mutually"], ans: 1 },
+            { id: 9, q: "Maximum K fixation occurs in:", options: ["A) 1:1 clay minerals", "B) 2:1 clay minerals", "C) Amorphous colloids", "D) Organic matter"], ans: 1 },
+            { id: 10, q: "Conversion of inorganic P into organic P is called:", options: ["A) Mineralization", "B) Immobilization", "C) Fixation", "D) Leaching"], ans: 1 },
+            { id: 11, q: "Foliar application of N and P at flowering results in:", options: ["A) Increased fruit yield and protein", "B) Stunted growth", "C) Leaf necrosis", "D) Root decay"], ans: 0 },
+            { id: 12, q: "Number of types of soil colloids:", options: ["A) 1", "B) 2", "C) 3", "D) 4"], ans: 1 },
+            { id: 13, q: "Auxin is:", options: ["A) An enzyme", "B) A hormone", "C) A vitamin", "D) A mineral"], ans: 1 },
+            { id: 14, q: "Drawbacks of erosion are divided into:", options: ["A) On-site and off-site damages", "B) Primary and secondary costs", "C) Direct and indirect losses", "D) Natural and man-made"], ans: 0 },
+            { id: 15, q: "Shallow channels corrected by routine tillage are:", options: ["A) Gullies", "B) Ephemeral gullies", "C) Rills", "D) Streams"], ans: 1 },
+            { id: 16, q: "System crucial for increasing soil organic C storage and reducing GHG emissions:", options: ["A) Monoculture", "B) Agroforestry", "C) Clean cultivation", "D) Fallowing"], ans: 1 },
+            { id: 17, q: "Charcoal, an important component of soil C, is also called:", options: ["A) Biochar / Black C", "B) Humus", "C) Lignin", "D) Peat"], ans: 0 },
+            { id: 18, q: "Main cause of desertification:", options: ["A) Reforestation", "B) Overgrazing", "C) Drip irrigation", "D) Terracing"], ans: 1 },
+            { id: 19, q: "Deforestation may decrease the chances of:", options: ["A) Soil erosion", "B) Rainfall", "C) Floods", "D) Landslides"], ans: 1 },
+            { id: 20, q: "Extrusive rocks with very fine crystalline structure are called:", options: ["A) Plutonic rocks", "B) Volcanic/Aphanitic rocks", "C) Intrusive rocks", "D) Metamorphic rocks"], ans: 1 },
+            { id: 21, q: "Civil engineers commonly call soil:", options: ["A) Earth", "B) Regolith", "C) Sediments", "D) Dirt"], ans: 0 },
+            { id: 22, q: "Main phosphorus form absorbed in alkaline soil:", options: ["A) H₂PO₄⁻", "B) HPO₄²⁻ (secondary orthophosphate)", "C) PO₄³⁻", "D) H₃PO₄"], ans: 1 },
+            { id: 23, q: "Main phosphorus form absorbed in acidic soil:", options: ["A) H₂PO₄⁻ (primary orthophosphate)", "B) HPO₄²⁻", "C) PO₄³⁻", "D) P₂O₅"], ans: 0 },
+            { id: 24, q: "Plants take up phosphorus mainly as:", options: ["A) H₂PO₄⁻ and HPO₄²⁻", "B) Organic P only", "C) Rock phosphate", "D) Phosphine"], ans: 0 },
+            { id: 25, q: "Forest soils have lower bulk density because of:", options: ["A) High mineral content", "B) High organic matter", "C) Heavy compaction", "D) Low porosity"], ans: 1 },
+            { id: 26, q: "Soil additive improving stability, permeability and soil quality:", options: ["A) Soil conditioner", "B) Herbicide", "C) Pesticide", "D) Fungicide"], ans: 0 },
+            { id: 27, q: "Material spread on soil surface to protect soil and roots:", options: ["A) Mulch", "B) Compost", "C) Manure", "D) Sludge"], ans: 0 },
+            { id: 28, q: "Nutritive elements required in large quantities include:", options: ["A) N, P, K, S, Mg and Ca", "B) Fe, Zn, Cu", "C) B, Mo, Cl", "D) Ni, Co"], ans: 0 },
+            { id: 29, q: "Essentiality criteria of an element:", options: ["A) Direct role in plant metabolism", "B) Cannot be substituted by another element", "C) Required for complete life cycle", "D) All of the above"], ans: 3 },
+            { id: 30, q: "Land capability Classes I–IV are suitable for:", options: ["A) Cultivated farming", "B) Forestry only", "C) Wildlife conservation", "D) Recreation only"], ans: 0 },
+            { id: 31, q: "Metamorphic rocks are classified into:", options: ["A) Foliated and non-foliated rocks", "B) Intrusive and extrusive", "C) Clastic and non-clastic", "D) Primary and secondary"], ans: 0 },
+            { id: 32, q: "Rocks formed by transportation and cementation of primary rocks:", options: ["A) Igneous rocks", "B) Sedimentary/secondary/aqueous rocks", "C) Metamorphic rocks", "D) Volcanic rocks"], ans: 1 },
+            { id: 33, q: "Igneous rocks are called:", options: ["A) Primary rocks", "B) Secondary rocks", "C) Sedimentary rocks", "D) Metamorphic rocks"], ans: 0 },
+            { id: 34, q: "Soil air contains:", options: ["A) N₂, O₂, CO₂ and water vapour", "B) Pure oxygen", "C) Nitrogen only", "D) Carbon dioxide only"], ans: 0 },
+            { id: 35, q: "Major components of soil:", options: ["A) Solids, liquids and gases", "B) Minerals and water only", "C) Organic matter only", "D) Gases only"], ans: 0 },
+            { id: 36, q: "Minerals without water exposed to humid conditions undergo:", options: ["A) Hydration", "B) Oxidation", "C) Carbonation", "D) Solution"], ans: 0 },
+            { id: 37, q: "Volcanic soils are:", options: ["A) Andisols", "B) Entisols", "C) Vertisols", "D) Histosols"], ans: 0 },
+            { id: 38, q: "Inceptisols are:", options: ["A) Young soils with few horizons", "B) Highly weathered tropical soils", "C) Organic peat soils", "D) Dry desert soils"], ans: 0 },
+            { id: 39, q: "New soils with little or no profile development:", options: ["A) Entisols", "B) Alfisols", "C) Ultisols", "D) Spodosols"], ans: 0 },
+            { id: 40, q: "Soil quality is deteriorated by:", options: ["A) Erosion and pollution", "B) Waterlogging and salinization", "C) Nutrient mining", "D) All of the above"], ans: 3 },
+            { id: 41, q: "Rapid decomposition of organic matter in Pakistani soils is due to:", options: ["A) High temperature and alkaline conditions", "B) Low temperature", "C) Waterlogging", "D) Acidic reaction"], ans: 0 },
+            { id: 42, q: "Soil's capacity to function sustainably and promote plant/animal health:", options: ["A) Soil quality", "B) Soil texture", "C) Soil structure", "D) Soil consistency"], ans: 0 },
+            { id: 43, q: "Soil is rapidly polluted by:", options: ["A) Industrial, agricultural and household wastes", "B) Pure rainwater", "C) Natural leaf fall", "D) Earthworm castings"], ans: 0 },
+            { id: 44, q: "A mixture of silt, clay and sand considered a perfect soil:", options: ["A) Loam", "B) Clay", "C) Sand", "D) Silt"], ans: 0 },
+            { id: 45, q: "Scale measuring acidity/alkalinity:", options: ["A) pH scale", "B) Richter scale", "C) Mohs scale", "D) Beaufort scale"], ans: 0 },
+            { id: 46, q: "Types of check dams tried in Pakistan:", options: ["A) Brushwood, loose stone/wire-bound and cement-stone check dams", "B) Earth dams only", "C) Plastic sheets", "D) Wooden planks only"], ans: 0 },
+            { id: 47, q: "Tillage/planting maintaining ≥30% residue cover to reduce erosion:", options: ["A) Clean tillage", "B) Conservation tillage", "C) Zero tillage", "D) Deep ploughing"], ans: 1 },
+            { id: 48, q: "Removal of ice/snow by melting, sublimation or calving:", options: ["A) Ablation", "B) Erosion", "C) Weathering", "D) Leaching"], ans: 0 },
+            { id: 49, q: "Clay particles are <0.002 mm and gravel/rock particles are >2 mm:", options: ["A) <0.002 to >2 mm", "B) 0.05 to 2 mm", "C) 0.002 to 0.05 mm", "D) >5 mm"], ans: 0 },
+            { id: 50, q: "Organic soils are classified as:", options: ["A) Histosols; peat and muck soils", "B) Vertisols", "C) Entisols", "D) Aridisols"], ans: 0 },
+            { id: 51, q: "Suitable species for reclamation of saline and sodic soils:", options: ["A) Casuarina equisetifolia and Albizia lebbeck", "B) Tea and coffee", "C) Potato and tomato", "D) Rice only"], ans: 0 },
+            { id: 52, q: "Alternating erosion-permitting and erosion-resisting crops across the slope:", options: ["A) Strip planting", "B) Monoculture", "C) Clean cropping", "D) Fallowing"], ans: 0 },
+            { id: 53, q: "Suitable species for reclamation of sandy soils:", options: ["A) Casuarina equisetifolia, Acacia spp. and Azadirachta indica", "B) Aquatic plants", "C) Mosses", "D) Ferns"], ans: 0 },
+            { id: 54, q: "Land rich in soluble salts and exchangeable sodium:", options: ["A) Saline-alkaline soil", "B) Acid soil", "C) Peat soil", "D) Laterite soil"], ans: 0 },
+            { id: 55, q: "Woody plants in rows with annual crops between hedges:", options: ["A) Hedgerow intercropping", "B) Strip cropping", "C) Mixed cropping", "D) Sole cropping"], ans: 0 },
+            { id: 56, q: "Afforestation of shifting sand dunes requires:", options: ["A) Barrier treatment plus protection against biotic interference", "B) Fertilizer application only", "C) Frequent irrigation", "D) Heavy harrowing"], ans: 0 },
+            { id: 57, q: "Desertification causes reduction in:", options: ["A) Carbon storage and biodiversity; contributes to global warming", "B) Soil erosion", "C) Rainfall", "D) Vegetation cover only"], ans: 0 },
+            { id: 58, q: "World Biodiversity Day:", options: ["A) 22 May", "B) 21 March", "C) 5 June", "D) 16 July"], ans: 0 },
+            { id: 59, q: "Water erosion can be controlled by:", options: ["A) Surface cover and reducing runoff through infiltration", "B) Removal of vegetation", "C) Clean tilled farming", "D) Overgrazing"], ans: 0 },
+            { id: 60, q: "Soil erosion occurs mainly in:", options: ["A) Alfisols and Entisols", "B) Histosols", "C) Vertisols", "D) Mollisols"], ans: 0 },
+            { id: 61, q: "Sustainable technologies for soil fertility improvement:", options: ["A) Balanced NPK, crop rotation and organic amendments", "B) Chemical overdose", "C) Monoculture", "D) Intensive tillage"], ans: 0 },
+            { id: 62, q: "Irrigated land affected by salinization in Pakistan:", options: ["A) 12.6 million ha", "B) 1.5 million ha", "C) 50 million ha", "D) 0.5 million ha"], ans: 0 },
+            { id: 63, q: "Technologies to control waterlogging:", options: ["A) Tube wells, proper canal planning and eucalyptus planting", "B) Damming rivers", "C) Heavy irrigation", "D) Deforestation"], ans: 0 },
+            { id: 64, q: "Total waterlogged summer-rain area according to source:", options: ["A) 4.11 million ha", "B) 1.2 million ha", "C) 15 million ha", "D) 0.1 million ha"], ans: 0 },
+            { id: 65, q: "International Day of Forests:", options: ["A) 21 March", "B) 22 May", "C) 5 June", "D) 16 July"], ans: 0 },
+            { id: 66, q: "Tunnel erosion is a form of:", options: ["A) Gully erosion", "B) Sheet erosion", "C) Splash erosion", "D) Wind erosion"], ans: 0 },
+            { id: 67, q: "IUFRO is located in:", options: ["A) Austria", "B) USA", "C) India", "D) Italy"], ans: 0 },
+            { id: 68, q: "Soil fertility evaluation techniques include:", options: ["A) Soil testing, plant tissue testing and Aspergillus niger test", "B) Visual inspection only", "C) Crop height measurement", "D) Yield estimation only"], ans: 0 },
+            { id: 69, q: "Increase in soil density due to applied load/pressure:", options: ["A) Compaction", "B) Weathering", "C) Erosion", "D) Leaching"], ans: 0 },
+            { id: 70, q: "Evolution of new species:", options: ["A) Speciation", "B) Mutation", "C) Adaptation", "D) Selection"], ans: 0 },
+            { id: 71, q: "Chemical used to prevent evaporation from water bodies:", options: ["A) Cetyl alcohol", "B) Ethanol", "C) Urea", "D) Gypsum"], ans: 0 },
+            { id: 72, q: "Causes of soil degradation include:", options: ["A) Indiscriminate tree felling, overgrazing and irrigation mismanagement", "B) Reforestation", "C) Terracing", "D) Mulching"], ans: 0 },
+            { id: 73, q: "Soil conservation principle that does NOT belong:", options: ["A) Leaving barren lands uncultivable to support desertification", "B) Contour bunding", "C) Terracing", "D) Strip cropping"], ans: 0 },
+            { id: 74, q: "Types of erosion include:", options: ["A) Splash, sheet, rill, gully, geological and accelerated erosion", "B) Wind only", "C) Water only", "D) Chemical only"], ans: 0 },
+            { id: 75, q: "Small finger-like channels levelled by tillage:", options: ["A) Rill erosion", "B) Gully erosion", "C) Sheet erosion", "D) Splash erosion"], ans: 0 },
+            { id: 76, q: "Deserts in Balochistan supporting wind erosion:", options: ["A) Kharan and Noshki", "B) Thar and Cholistan", "C) Sahara", "D) Gobi"], ans: 0 },
+            { id: 77, q: "Ca, Mg and S are:", options: ["A) Secondary nutrients", "B) Micronutrients", "C) Primary nutrients", "D) Trace elements"], ans: 0 },
+            { id: 78, q: "Fe, Zn, Mn, Mo, Co, Ni and Cu are:", options: ["A) Micronutrients/trace elements", "B) Macronutrients", "C) Primary nutrients", "D) Secondary nutrients"], ans: 0 },
+            { id: 79, q: "Soil erosion involves:", options: ["A) Detachment and transportation of soil", "B) Soil formation", "C) Mineral deposition", "D) Organic decomposition"], ans: 0 },
+            { id: 80, q: "Fossils are mainly found in:", options: ["A) Sedimentary rocks", "B) Igneous rocks", "C) Metamorphic rocks", "D) Volcanic rocks"], ans: 0 },
+            { id: 81, q: "Word “soil” is derived from:", options: ["A) Latin", "B) Greek", "C) French", "D) Sanskrit"], ans: 0 },
+            { id: 82, q: "Clay mineral with highest CEC:", options: ["A) Vermiculite", "B) Kaolinite", "C) Illite", "D) Quartz"], ans: 0 },
+            { id: 83, q: "Nitrogen fixation is accomplished by:", options: ["A) Bacteria", "B) Fungi", "C) Viruses", "D) Algae alone"], ans: 0 },
+            { id: 84, q: "Silica tetrahedron is a:", options: ["A) Four-sided arrangement", "B) Six-sided", "C) Eight-sided", "D) Two-sided"], ans: 0 },
+            { id: 85, q: "Acidity-induced toxicity is mainly due to:", options: ["A) Aluminium (Al)", "B) Calcium", "C) Magnesium", "D) Sodium"], ans: 0 },
+            { id: 86, q: "Father of soil conservation and father of Pedology:", options: ["A) Hugh Hammond Bennett and V. V. Dokuchaev", "B) Jethro Tull and Liebig", "C) Darwin and Wallace", "D) Hilgard and Jenny"], ans: 0 },
+            { id: 87, q: "Crop most tolerant to salty soils among options:", options: ["A) Cotton", "B) Rice", "C) Bean", "D) Citrus"], ans: 0 },
+            { id: 88, q: "Soil pores created by earthworms and plant roots:", options: ["A) Biopores", "B) Micropores", "C) Macropores", "D) Capillary pores"], ans: 0 },
+            { id: 89, q: "Aridisols cover the largest area in Pakistan:", options: ["A) 259,710 km²", "B) 100,000 km²", "C) 500,000 km²", "D) 10,000 km²"], ans: 0 },
+            { id: 90, q: "Soils whose weathered material has been transported elsewhere are:", options: ["A) Transported soils", "B) Residual soils", "C) Cumulose soils", "D) Organic soils"], ans: 0 },
+            { id: 91, q: "International Union of Soil Sciences was founded in:", options: ["A) 1924", "B) 1950", "C) 1900", "D) 1980"], ans: 0 },
+            { id: 92, q: "Nitrosomonas and Nitrobacter together are involved in:", options: ["A) Nitrification", "B) Denitrification", "C) Ammonification", "D) Nitrogen fixation"], ans: 0 },
+            { id: 93, q: "Soil with highest water-holding capacity among listed options:", options: ["A) Silt soil", "B) Sandy soil", "C) Loamy soil", "D) Gravelly soil"], ans: 0 },
+            { id: 94, q: "Element responsible for pollen grain development:", options: ["A) Boron (B)", "B) Zinc", "C) Copper", "D) Molybdenum"], ans: 0 },
+            { id: 95, q: "Specific heat of organic matter:", options: ["A) 0.44", "B) 0.20", "C) 1.00", "D) 0.80"], ans: 0 },
+            { id: 96, q: "Soil horizon means:", options: ["A) A soil layer", "B) Soil depth", "C) Soil color", "D) Soil texture"], ans: 0 },
+            { id: 97, q: "Accumulation of soluble salts in soil:", options: ["A) Salinization", "B) Sodic soils", "C) Leaching", "D) Calcification"], ans: 0 },
+            { id: 98, q: "Largest soil order in Pakistan:", options: ["A) Aridisols", "B) Entisols", "C) Inceptisols", "D) Vertisols"], ans: 0 },
+            { id: 99, q: "Marble is a:", options: ["A) Thermal/contact metamorphic rock", "B) Sedimentary rock", "C) Igneous rock", "D) Volcanic rock"], ans: 0 },
+            { id: 100, q: "Soil commonly found near canal banks:", options: ["A) Calcareous soil", "B) Acid soil", "C) Peat soil", "D) Laterite soil"], ans: 0 },
+            { id: 101, q: "A and B horizons together are called:", options: ["A) Solum", "B) Regolith", "C) Profile", "D) Bedrock"], ans: 0 },
+            { id: 102, q: "Scientist who studies soil properties in relation to plant production:", options: ["A) Edaphologist", "B) Pedologist", "C) Geologist", "D) Agronomist"], ans: 0 },
+            { id: 103, q: "Dissolution and downward movement of nutrients/contaminants by water:", options: ["A) Leaching", "B) Percolation", "C) Seepage", "D) Infiltration"], ans: 0 },
+            { id: 104, q: "Available soil water is held between:", options: ["A) Field capacity and wilting point", "B) Saturation and field capacity", "C) Wilting point and oven dry", "D) Hygroscopic and gravitational"], ans: 0 },
+            { id: 105, q: "Rock that is not metamorphic:", options: ["A) Granite", "B) Marble", "C) Slate", "D) Quartzite"], ans: 0 },
+            { id: 106, q: "Immobile nutrients in plants:", options: ["A) Ca and B", "B) N, P, K", "C) Mg, K", "D) N, Mg"], ans: 0 },
+            { id: 107, q: "Element occurring in highest proportion in Earth's crust among options:", options: ["A) Silicon", "B) Iron", "C) Aluminium", "D) Calcium"], ans: 0 },
+            { id: 108, q: "Specific heat is higher in:", options: ["A) Humus", "B) Sand", "C) Clay", "D) Silt"], ans: 0 },
+            { id: 109, q: "Blue-green algae as a nitrogen fixer in paddy fields was discovered by:", options: ["A) P. K. Dey (1939)", "B) Subba Rao", "C) Waksman", "D) Winogradsky"], ans: 0 },
+            { id: 110, q: "Organic matter decomposition in submerged soil is mainly carried out by:", options: ["A) Anaerobic microorganisms", "B) Aerobic bacteria", "C) Earthworms", "D) Fungi alone"], ans: 0 },
+            { id: 111, q: "“Chemical policeman” of plants:", options: ["A) Potassium", "B) Nitrogen", "C) Phosphorus", "D) Calcium"], ans: 0 },
+            { id: 112, q: "Nutrient elements regarded as energy exchangers:", options: ["A) Hydrogen and oxygen", "B) Nitrogen and phosphorus", "C) Potassium and calcium", "D) Iron and copper"], ans: 0 },
+            { id: 113, q: "Mineral horizon too thin/light/low in organic matter:", options: ["A) Ochric epipedon", "B) Mollic epipedon", "C) Histic epipedon", "D) Umbric epipedon"], ans: 0 },
+            { id: 114, q: "SOM contains approximately:", options: ["A) 58% organic carbon", "B) 20% carbon", "C) 90% carbon", "D) 10% carbon"], ans: 0 },
+            { id: 115, q: "Each phyllosilicate layer consists of:", options: ["A) Tetrahedral and octahedral sheets", "B) Tetrahedral sheets only", "C) Octahedral sheets only", "D) Oxide layers"], ans: 0 },
+            { id: 116, q: "Dominant charge on soil colloids:", options: ["A) Negative", "B) Positive", "C) Neutral", "D) Variable positive"], ans: 0 },
+            { id: 117, q: "Soil order not prevalent in Pakistan:", options: ["A) Mollisols", "B) Aridisols", "C) Entisols", "D) Inceptisols"], ans: 0 },
+            { id: 118, q: "Wrong statement about soil:", options: ["A) Sandy soils have higher water-holding capacity", "B) Clay soils have high CEC", "C) Loam is ideal for farming", "D) Organic matter improves structure"], ans: 0 },
+            { id: 119, q: "Nutrient availability is controlled mainly by:", options: ["A) Physical and chemical soil properties", "B) Plant height", "C) Solar radiation", "D) Wind speed"], ans: 0 },
+            { id: 120, q: "Components of conservation agriculture:", options: ["A) Reduced tillage, residue retention and crop rotation", "B) Intensive tillage only", "C) Burning residues", "D) Monoculture"], ans: 0 },
+            { id: 121, q: "Planned development, distribution and use of water resources:", options: ["A) Water management", "B) Irrigation", "C) Drainage", "D) Harvesting"], ans: 0 },
+            { id: 122, q: "Water content of plant biomass:", options: ["A) 65–75%", "B) 10–20%", "C) 90–95%", "D) 40–50%"], ans: 0 },
+            { id: 123, q: "Soil pores based on diameter are divided into:", options: ["A) Macro, meso and micropores", "B) Large and small", "C) Primary and secondary", "D) Open and closed"], ans: 0 },
+            { id: 124, q: "Number of soil textural classes:", options: ["A) 12", "B) 3", "C) 6", "D) 9"], ans: 0 },
+            { id: 125, q: "Particles of 0.02–0.002 mm diameter:", options: ["A) Silt", "B) Sand", "C) Clay", "D) Gravel"], ans: 0 },
+            { id: 126, q: "Systematic examination, description and classification of soils:", options: ["A) Soil survey", "B) Soil testing", "C) Soil mapping", "D) Soil classification"], ans: 0 },
+            { id: 127, q: "Swelling clay soils that develop wide cracks:", options: ["A) Vertisols", "B) Alfisols", "C) Spodosols", "D) Oxisols"], ans: 0 },
+            { id: 128, q: "Six recognized soil orders listed in the source:", options: ["A) Entisols, Inceptisols, Aridisols, Alfisols, Mollisols and Vertisols", "B) Ultisols, Oxisols", "C) Histosols, Andisols", "D) Spodosols, Gelisols"], ans: 0 },
+            { id: 129, q: "Major growth-limiting factor in strongly acid soils:", options: ["A) Aluminium", "B) Calcium", "C) Magnesium", "D) Sodium"], ans: 0 },
+            { id: 130, q: "Removal of excess water from the ground surface:", options: ["A) Drainage", "B) Irrigation", "C) Infiltration", "D) Percolation"], ans: 0 },
+            { id: 131, q: "P₂O₅ applied to green manure increases P availability because:", options: ["A) P is taken up, converted to organic form and released during decomposition", "B) P evaporates", "C) P leaches out", "D) P fixes permanently"], ans: 0 },
+            { id: 132, q: "Groundwater refers to:", options: ["A) Water stored in aquifers", "B) Rainwater", "C) River water", "D) Ocean water"], ans: 0 },
+            { id: 133, q: "Calcium content of single superphosphate:", options: ["A) 19.5%", "B) 10%", "C) 30%", "D) 40%"], ans: 0 },
+            { id: 134, q: "pF value at upper plastic limit:", options: ["A) 2.5–3.5", "B) 0–1", "C) 4–5", "D) 6–7"], ans: 0 },
+            { id: 135, q: "Soil colloids have:", options: ["A) Extremely high surface area", "B) Low surface area", "C) Zero surface area", "D) Smooth surfaces"], ans: 0 },
+            { id: 136, q: "Soil samples should NOT be collected from:", options: ["A) Field with immediate fertilizer application, salt crusts or boundaries", "B) Middle of field", "C) Random spots", "D) Root zone"], ans: 0 },
+            { id: 137, q: "Removal of a thin soil layer over the whole surface by water:", options: ["A) Sheet erosion", "B) Rill erosion", "C) Gully erosion", "D) Splash erosion"], ans: 0 },
+            { id: 138, q: "Rainfall in Kharan desert may be:", options: ["A) <50 mm annually", "B) >500 mm", "C) >1000 mm", "D) 2000 mm"], ans: 0 },
+            { id: 139, q: "Loss of soil water does NOT include:", options: ["A) Hydroponics loss", "B) Evaporation", "C) Transpiration", "D) Drainage"], ans: 0 },
+            { id: 140, q: "Relative abundance of igneous–metamorphic–sedimentary rocks in Earth's crust:", options: ["A) 7.9% – 27.7% – 64.4%", "B) 50% – 30% – 20%", "C) 33% – 33% – 34%", "D) 10% – 40% – 50%"], ans: 0 },
+            { id: 141, q: "Oxygen and silicon comprise approximately:", options: ["A) 73%", "B) 50%", "C) 90%", "D) 25%"], ans: 0 },
+            { id: 142, q: "Potassium in Earth's crust:", options: ["A) 2.3%", "B) 5%", "C) 10%", "D) 0.5%"], ans: 0 },
+            { id: 143, q: "Nitrophos is manufactured in Pakistan at:", options: ["A) Multan", "B) Lahore", "C) Karachi", "D) Faisalabad"], ans: 0 },
+            { id: 144, q: "SSP manufactured locally by NFC at:", options: ["A) Faisalabad, Jaranwala and Haripur", "B) Lahore and Multan", "C) Rawalpindi", "D) Peshawar"], ans: 0 },
+            { id: 145, q: "Major phosphatic fertilizers in Pakistan:", options: ["A) DAP, SSP and Nitrophos", "B) Urea only", "C) MOP only", "D) Ammonium sulphate"], ans: 0 },
+            { id: 146, q: "Functions of SOM include:", options: ["A) Providing microbial energy, maintaining productivity and improving structure", "B) Decreasing fertility", "C) Increasing bulk density", "D) Promoting erosion"], ans: 0 },
+            { id: 147, q: "Major humic substances include:", options: ["A) Humic acid, fulvic acid, hymatomelanic acid and humin", "B) Sugars and starches", "C) Amino acids only", "D) Mineral salts"], ans: 0 },
+            { id: 148, q: "Component of nucleic acids and proteins:", options: ["A) Nitrogen", "B) Potassium", "C) Phosphorus", "D) Calcium"], ans: 0 },
+            { id: 149, q: "Rhizoplane is:", options: ["A) The root surface", "B) Root interior", "C) Soil surrounding roots", "D) Leaf surface"], ans: 0 },
+            { id: 150, q: "Chemical used to prevent evaporation from water bodies:", options: ["A) Cetyl alcohol", "B) Ethanol", "C) Urea", "D) Gypsum"], ans: 0 },
+            { id: 151, q: "Composition of an igneous rock is determined by:", options: ["A) Composition of molten magma", "B) Weathering rate", "C) Plant cover", "D) Rainfall"], ans: 0 },
+            { id: 152, q: "Microorganisms that generally decompose easily available organic matter first:", options: ["A) Bacteria", "B) Fungi", "C) Actinomycetes", "D) Algae"], ans: 0 },
+            { id: 153, q: "Process of mixing of soils:", options: ["A) Pedoturbation", "B) Eluviation", "C) Illuviation", "D) Leaching"], ans: 0 },
+            { id: 154, q: "Walkley–Black method recovers approximately:", options: ["A) 74% of organic carbon", "B) 44% of organic carbon", "C) 100% of carbon", "D) 10% of carbon"], ans: 0 },
+            { id: 155, q: "Soil samples for gravimetric analysis are dried at:", options: ["A) 105°C", "B) 50°C", "C) 200°C", "D) Room temperature"], ans: 0 },
+            { id: 156, q: "Appropriate method for applying phosphatic fertilizers:", options: ["A) Basal placement", "B) Broadcast on surface", "C) Foliar spray", "D) Flood irrigation"], ans: 0 },
+            { id: 157, q: "INM is an approach for sustainable management of:", options: ["A) Soil productivity and crop production", "B) Pest control", "C) Irrigation water", "D) Weed eradication"], ans: 0 },
+            { id: 158, q: "Organic (O) horizon is generally absent in:", options: ["A) Arable soils", "B) Forest soils", "C) Grasslands", "D) Tundra soils"], ans: 0 },
+            { id: 159, q: "Association where one microorganism benefits and the other is unaffected:", options: ["A) Commensalism", "B) Mutualism", "C) Parasitism", "D) Symbiosis"], ans: 0 },
+            { id: 160, q: "Vesicular Arbuscular Mycorrhiza (VAM) is:", options: ["A) Fungi", "B) Bacteria", "C) Algae", "D) Virus"], ans: 0 },
+            { id: 161, q: "Very high temperature required for ICP-AES is attained by:", options: ["A) Plasma", "B) Electric coil", "C) Gas flame", "D) Solar heater"], ans: 0 },
+            { id: 162, q: "Exposure of manure to rain causes greatest loss of:", options: ["A) Nitrogen", "B) Phosphorus", "C) Potassium", "D) Calcium"], ans: 0 },
+            { id: 163, q: "Zn deficiency in cotton is known as:", options: ["A) Mottle leaf", "B) Khaira", "C) Yellow bud", "D) Little leaf"], ans: 0 },
+            { id: 164, q: "1 mg H⁺ is equivalent to:", options: ["A) 20 mg Ca²⁺, 12 mg Mg²⁺ and 9 mg Al³⁺", "B) 10 mg Ca", "C) 5 mg Mg", "D) 1 mg Al"], ans: 0 },
+            { id: 165, q: "Term “rhizosphere” was given by:", options: ["A) Hiltner", "B) Waksman", "C) Winogradsky", "D) Dokuchaev"], ans: 0 },
+            { id: 166, q: "Credit for identifying essentiality of K, Ca, Mg and P:", options: ["A) C. Sprengel", "B) Liebig", "C) Arnon", "D) De Saussure"], ans: 0 },
+            { id: 167, q: "Rate of entry of water into soil:", options: ["A) Infiltration", "B) Percolation", "C) Permeability", "D) Leaching"], ans: 0 },
+            { id: 168, q: "Rice leaf sampled for tissue nutrient analysis:", options: ["A) Mature leaf", "B) Youngest leaf", "C) Oldest leaf", "D) Root"], ans: 0 },
+            { id: 169, q: "Initial decomposition of organic matter is dominated by:", options: ["A) Bacteria and fungi", "B) Earthworms", "C) Nematodes", "D) Protozoa"], ans: 0 },
+            { id: 170, q: "Instrument for measuring photosynthetically active radiation (PAR):", options: ["A) Quantum sensor", "B) Lux meter", "C) Pyranometer", "D) Barometer"], ans: 0 },
+            { id: 171, q: "Credit for identifying essentiality of nitrogen to plants:", options: ["A) Theodore de Saussure", "B) Liebig", "C) Sprengel", "D) Arnon"], ans: 0 },
+            { id: 172, q: "Nitrogen fertilizers that should not be used for flooded soil:", options: ["A) Nitrate fertilizers", "B) Ammoniacal fertilizers", "C) Amide fertilizers", "D) Urea"], ans: 0 },
+            { id: 173, q: "1 mEq of HCl is equal to:", options: ["A) 1.4 mg N", "B) 10 mg N", "C) 14 mg N", "D) 0.1 mg N"], ans: 0 },
+            { id: 174, q: "Organisms obtaining carbon from CO₂ and energy from oxidation of inorganic compounds:", options: ["A) Chemoautotrophs", "B) Photoautotrophs", "C) Chemoheterotrophs", "D) Photoheterotrophs"], ans: 0 },
+            { id: 175, q: "Loss of N as NH₃ in alkaline medium:", options: ["A) Volatilization", "B) Denitrification", "C) Leaching", "D) Fixation"], ans: 0 },
+            { id: 176, q: "Browning disease of rice is a:", options: ["A) Physiological disease", "B) Fungal disease", "C) Bacterial disease", "D) Viral disease"], ans: 0 },
+            { id: 177, q: "Nutrient most lost when manure is exposed to rain:", options: ["A) Nitrogen", "B) Phosphorus", "C) Potassium", "D) Calcium"], ans: 0 },
+            { id: 178, q: "Optimum temperature and pH for nitrifying bacteria:", options: ["A) 25–40°C and pH 8–8.5", "B) 10–15°C and pH 4", "C) 50°C and pH 10", "D) 0°C and pH 7"], ans: 0 },
+            { id: 179, q: "First mechanism to start in wind erosion:", options: ["A) Saltation", "B) Suspension", "C) Surface creep", "D) Rolling"], ans: 0 },
+            { id: 180, q: "Indicator used for estimating available soil boron:", options: ["A) Azomethine-H", "B) Olsen reagent", "C) Bray reagent", "D) Walkley-Black acid"], ans: 0 },
+            { id: 181, q: "Sources of negative charge on silicate clays:", options: ["A) Isomorphous substitution and exposed crystal edges", "B) Organic matter only", "C) Hydrogen ions", "D) Carbonate ions"], ans: 0 },
+            { id: 182, q: "Soil order with intense weathering and dominant Fe/Al oxides in tropics:", options: ["A) Oxisols", "B) Entisols", "C) Inceptisols", "D) Aridisols"], ans: 0 },
+            { id: 183, q: "1 bar is approximately equal to:", options: ["A) 0.9869 atm", "B) 1.5 atm", "C) 2.0 atm", "D) 0.5 atm"], ans: 0 },
+            { id: 184, q: "Water-soluble phosphatic fertilizers:", options: ["A) TSP and SSP", "B) Rock phosphate", "C) Bone meal", "D) Basic slag"], ans: 0 },
+            { id: 185, q: "Journal Plant and Soil is published from:", options: ["A) The Netherlands", "B) USA", "C) UK", "D) Germany"], ans: 0 },
+            { id: 186, q: "Most outstanding green manure crop:", options: ["A) Both Sunhemp and Dhaincha", "B) Cowpea", "C) Soybean", "D) Berseem"], ans: 0 },
+            { id: 187, q: "Walkley–Black method recovers approximately:", options: ["A) 44% organic carbon", "B) 74% organic carbon", "C) 100% organic carbon", "D) 10% organic carbon"], ans: 0 },
+            { id: 188, q: "One hectare-centimetre of water equals:", options: ["A) 100 tonnes = 100,000 litres", "B) 10 tonnes", "C) 1,000 litres", "D) 1,000,000 litres"], ans: 0 },
+            { id: 189, q: "In cation exchange, 18 mg NH₄⁺ can be exchanged for:", options: ["A) 46 mg Na⁺", "B) 10 mg Na⁺", "C) 100 mg Na⁺", "D) 1 mg Na⁺"], ans: 0 },
+            { id: 190, q: "Maximum water held after free drainage ceases:", options: ["A) Water-holding capacity / field capacity", "B) Wilting point", "C) Hygroscopic coefficient", "D) Saturation"], ans: 0 },
+            { id: 191, q: "Igneous rocks found over considerable areas in Pakistan:", options: ["A) Basic volcanic rocks / granites", "B) Sandstone", "C) Limestone", "D) Shale"], ans: 0 },
+            { id: 192, q: "Particles produced by disintegration of pre-existing rocks:", options: ["A) Clastics", "B) Magma", "C) Precipitates", "D) Organics"], ans: 0 },
+            { id: 193, q: "Basalt is:", options: ["A) Fine-grained and dark-coloured", "B) Coarse-grained and light", "C) Sedimentary", "D) Organic"], ans: 0 },
+            { id: 194, q: "A horizon is also designated as:", options: ["A) Eluvial horizon", "B) Illuvial horizon", "C) Bedrock", "D) Parent material"], ans: 0 },
+            { id: 195, q: "Physical, chemical and biological weathering processes:", options: ["A) Disintegrate and decompose rocks/minerals", "B) Create rocks", "C) Melt rocks", "D) Prevent soil formation"], ans: 0 },
+            { id: 196, q: "Rocks and weathered materials transported by:", options: ["A) Water, wind and glaciers", "B) Sunlight alone", "C) Earthworms only", "D) Roots alone"], ans: 0 },
+            { id: 197, q: "From crop-production perspective, soil testing refers to:", options: ["A) Laboratory assessment of plant-available nutrient status", "B) Soil color analysis", "C) Measuring soil temperature", "D) Counting soil microbes"], ans: 0 },
+            { id: 198, q: "Diagnostic techniques for evaluating soil nutrient status include:", options: ["A) Nutrient deficiency symptoms, field/greenhouse experiments, soil testing and plant analysis", "B) Visual assessment only", "C) Yield weighing only", "D) pH test only"], ans: 0 },
+            { id: 199, q: "Soil compaction leads to:", options: ["A) Reduced aeration and root penetration", "B) Increased water infiltration", "C) Higher permeability", "D) Enhanced microbial activity"], ans: 0 },
+            { id: 200, q: "The study of origin, classification, morphology and description of soils is called:", options: ["A) Pedology", "B) Edaphology", "C) Agronomy", "D) Geology"], ans: 0 }
+        ];
+
+        // Distribute correct answers equally among A, B, C and D
+        questionBank.forEach((question, index) => {
+            const correctAnswer = question.options[question.ans];
+
+            const targetIndex = index % 4;
+
+            const wrongAnswers = question.options.filter(
+                (_, i) => i !== question.ans
+            );
+
+            // Shuffle wrong answers
+            for (let i = wrongAnswers.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [wrongAnswers[i], wrongAnswers[j]] =
+                    [wrongAnswers[j], wrongAnswers[i]];
+            }
+
+            // Build new option order
+            const newOptions = [];
+            let wrongIndex = 0;
+
+            for (let i = 0; i < 4; i++) {
+                if (i === targetIndex) {
+                    newOptions.push(correctAnswer);
+                } else {
+                    newOptions.push(wrongAnswers[wrongIndex++]);
+                }
+            }
+
+            // Re-label options
+            question.options = newOptions.map((option, i) => {
+                return option.replace(
+                    /^[A-D]\)\s*/,
+                    `${String.fromCharCode(65 + i)}) `
+                );
+            });
+
+            // Update correct answer
+            question.ans = targetIndex;
+        });
+
+        let activeQuiz = [];
+        let currentIndex = 0;
+        let userAnswers = {};
+        let markedForReview = {};
+        let timerInterval = null;
+        let totalTimeSeconds = 0;
+        let timeRemaining = 0;
+
+        const setupScreen = document.getElementById("setup-screen");
+        const quizScreen = document.getElementById("quiz-screen");
+        const resultScreen = document.getElementById("result-screen");
+        const reviewScreen = document.getElementById("review-screen");
+
+        const modeSelect = document.getElementById("mode-select");
+        const countSelect = document.getElementById("count-select");
+        const customCountWrapper = document.getElementById("custom-count-wrapper");
+        const customCountInput = document.getElementById("custom-count-input");
+        const timePreviewPill = document.getElementById("time-preview-pill");
+        const startBtn = document.getElementById("start-btn");
+
+        const qCounterVal = document.getElementById("q-counter-val");
+        const timerVal = document.getElementById("timer-val");
+        const qBadgeVal = document.getElementById("q-badge-val");
+        const qTextVal = document.getElementById("q-text-val");
+        const optionsContainer = document.getElementById("options-container");
+
+        const prevBtn = document.getElementById("prev-btn");
+        const markBtn = document.getElementById("mark-btn");
+        const nextBtn = document.getElementById("next-btn");
+        const submitBtn = document.getElementById("submit-btn");
+
+        const resScorePct = document.getElementById("res-score-pct");
+        const resPerformanceMsg = document.getElementById("res-performance-msg");
+        const resTotal = document.getElementById("res-total");
+        const resCorrect = document.getElementById("res-correct");
+        const resWrong = document.getElementById("res-wrong");
+        const resUnanswered = document.getElementById("res-unanswered");
+
+        const reviewAnswersBtn = document.getElementById("review-answers-btn");
+        const restartBtn = document.getElementById("restart-btn");
+        const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+        const reviewListContainer = document.getElementById("review-list-container");
+
+        function computeSelectedCount() {
+            if (countSelect.value === "custom") {
+                return Math.max(1, Math.min(200, parseInt(customCountInput.value) || 50));
+            }
+            return parseInt(countSelect.value);
+        }
+
+        function updatePillTime() {
+            const qCount = computeSelectedCount();
+            const totalSec = qCount * 60; // 1 minute per question
+            const mins = Math.floor(totalSec / 60);
+            const secs = totalSec % 60;
+            timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+        }
+
+        countSelect.addEventListener("change", () => {
+            if (countSelect.value === "custom") {
+                customCountWrapper.classList.remove("hidden");
+            } else {
+                customCountWrapper.classList.add("hidden");
+            }
+            updatePillTime();
+        });
+
+        customCountInput.addEventListener("input", updatePillTime);
+
+        startBtn.addEventListener("click", () => {
+            const mode = modeSelect.value;
+            const count = computeSelectedCount();
+
+            if (mode === "practice" || count < 200) {
+                let pool = [...questionBank];
+                for (let i = pool.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [pool[i], pool[j]] = [pool[j], pool[i]];
+                }
+                activeQuiz = pool.slice(0, count);
+            } else {
+                activeQuiz = [...questionBank];
+            }
+
+            totalTimeSeconds = count * 60; // 1 minute per question
+            timeRemaining = totalTimeSeconds;
+
+            userAnswers = {};
+            markedForReview = {};
+            currentIndex = 0;
+
+            setupScreen.classList.add("hidden");
+            resultScreen.classList.add("hidden");
+            reviewScreen.classList.add("hidden");
+            quizScreen.classList.remove("hidden");
+
+            renderQuestion();
+            startTimer();
+        });
+
+        function formatTime(secs) {
+            const h = Math.floor(secs / 3600);
+            const m = Math.floor((secs % 3600) / 60);
+            const s = secs % 60;
+            if (h > 0) {
+                return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+            }
+            return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }
+
+        function startTimer() {
+            if (timerInterval) clearInterval(timerInterval);
+            timerVal.textContent = formatTime(timeRemaining);
+
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+                if (timeRemaining <= 0) {
+                    clearInterval(timerInterval);
+                    alert("Time's up! Submitting your examination automatically.");
+                    evaluateAndShowResults();
+                }
+            }, 1000);
+        }
+
+        function renderQuestion() {
+            const qData = activeQuiz[currentIndex];
+            const total = activeQuiz.length;
+
+            qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+            qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+            qTextVal.textContent = qData.q;
+
+            if (markedForReview[currentIndex]) {
+                markBtn.classList.add("marked");
+                markBtn.innerHTML = `&#10004; Marked for Review`;
+            } else {
+                markBtn.classList.remove("marked");
+                markBtn.innerHTML = `&#128278; Mark for Review`;
+            }
+
+            optionsContainer.innerHTML = "";
+            qData.options.forEach((optStr, optIdx) => {
+                const itemBtn = document.createElement("button");
+                itemBtn.className = "option-item";
+                if (userAnswers[currentIndex] === optIdx) {
+                    itemBtn.classList.add("selected");
+                }
+
+                const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+                const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+                const content = letterMatch ? letterMatch[2] : optStr;
+
+                itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+                itemBtn.addEventListener("click", () => {
+                    userAnswers[currentIndex] = optIdx;
+                    renderQuestion();
+                });
+
+                optionsContainer.appendChild(itemBtn);
+            });
+
+            prevBtn.disabled = currentIndex === 0;
+
+            if (currentIndex === total - 1) {
+                nextBtn.classList.add("hidden");
+                submitBtn.classList.remove("hidden");
+            } else {
+                nextBtn.classList.remove("hidden");
+                submitBtn.classList.add("hidden");
+            }
+        }
+
+        prevBtn.addEventListener("click", () => {
+            if (currentIndex > 0) {
+                currentIndex--;
+                renderQuestion();
+            }
+        });
+
+        nextBtn.addEventListener("click", () => {
+            if (currentIndex < activeQuiz.length - 1) {
+                currentIndex++;
+                renderQuestion();
+            }
+        });
+
+        markBtn.addEventListener("click", () => {
+            markedForReview[currentIndex] = !markedForReview[currentIndex];
+            renderQuestion();
+        });
+
+        submitBtn.addEventListener("click", () => {
+            if (confirm("Are you sure you want to submit your examination?")) {
+                clearInterval(timerInterval);
+                evaluateAndShowResults();
+            }
+        });
+
+        function evaluateAndShowResults() {
+            let correct = 0;
+            let wrong = 0;
+            let unanswered = 0;
+
+            activeQuiz.forEach((q, idx) => {
+                const selected = userAnswers[idx];
+                if (selected === undefined) {
+                    unanswered++;
+                } else if (selected === q.ans) {
+                    correct++;
+                } else {
+                    wrong++;
+                }
+            });
+
+            const total = activeQuiz.length;
+            const percentage = Math.round((correct / total) * 100);
+
+            resScorePct.textContent = `${percentage}%`;
+            resTotal.textContent = total;
+            resCorrect.textContent = correct;
+            resWrong.textContent = wrong;
+            resUnanswered.textContent = unanswered;
+
+            if (percentage >= 80) {
+                resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Overall Questions Test 11 Master Revision.";
+                resPerformanceMsg.style.color = "var(--success)";
+            } else if (percentage >= 60) {
+                resPerformanceMsg.textContent = "Good Result! Review specific soil science, rock weathering, and plant nutrition concepts.";
+                resPerformanceMsg.style.color = "var(--primary)";
+            } else {
+                resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Soil Science recommended.";
+                resPerformanceMsg.style.color = "var(--danger)";
+            }
+
+            quizScreen.classList.add("hidden");
+            resultScreen.classList.remove("hidden");
+        }
+
+        reviewAnswersBtn.addEventListener("click", () => {
+            buildReviewList();
+            resultScreen.classList.add("hidden");
+            reviewScreen.classList.remove("hidden");
+        });
+
+        backToSummaryBtn.addEventListener("click", () => {
+            reviewScreen.classList.add("hidden");
+            resultScreen.classList.remove("hidden");
+        });
+
+        restartBtn.addEventListener("click", () => {
+            resultScreen.classList.add("hidden");
+            setupScreen.classList.remove("hidden");
+        });
+
+        function buildReviewList() {
+            reviewListContainer.innerHTML = "";
+
+            activeQuiz.forEach((q, idx) => {
+                const selected = userAnswers[idx];
+                const isAnswered = selected !== undefined;
+                const isCorrect = selected === q.ans;
+
+                const item = document.createElement("div");
+                item.className = "review-item";
+
+                let badgeClass = "unanswered";
+                let statusText = "Unanswered";
+
+                if (isAnswered) {
+                    if (isCorrect) {
+                        badgeClass = "correct";
+                        statusText = "Correct";
+                        item.classList.add("is-correct");
+                    } else {
+                        badgeClass = "wrong";
+                        statusText = "Wrong";
+                        item.classList.add("is-wrong");
+                    }
+                } else {
+                    item.classList.add("is-unanswered");
+                }
+
+                const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+                const correctText = q.options[q.ans];
+
+                item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+                reviewListContainer.appendChild(item);
+            });
+        }
+
+        updatePillTime();
+    </script>
+</body>
+
+</html>

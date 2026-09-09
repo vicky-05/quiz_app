@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OPSC AAO 2026 Paper-I — Agriculture & Allied Sciences (100 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next,
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select,
+    .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — OPSC AAO 2026 Paper-I</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">OPSC AAO 2026 Paper-I:
+        Agriculture & Allied Sciences (100 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–100)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="100">All Questions (100 Questions)</option>
+            <option value="25">25 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 100)</label>
+          <input type="number" id="custom-count-input" min="1" max="100" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">100 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#127942;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">OPSC AAO</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#127806;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Paper-I 2026</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 100</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">01:40:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "Forests regenerated from seeds are called:", options: ["A) High forests", "B) Coppice forests", "C) Normal forests", "D) Production forests"], ans: 0 },
+      { id: 2, q: "Fusarium sp., Diplodia natalensis and Macrophomina phaseolina cause dry root rot of:", options: ["A) Mango", "B) Citrus", "C) Guava", "D) Pineapple"], ans: 0 },
+      { id: 3, q: "Which species is heavily tapped for resin in India?", options: ["A) Pinus roxburghii", "B) Pinus wallichiana", "C) Pinus kesiya", "D) Pinus sylvestris"], ans: 0 },
+      { id: 4, q: "Which species is restricted to the Eastern Himalaya?", options: ["A) Pinus merkusii", "B) Cedrus deodara", "C) Abies pindrow", "D) Pinus gerardiana"], ans: 0 },
+      { id: 5, q: "Which timber species is highly refractory?", options: ["A) Sterculia villosa", "B) Trewia nudiflora", "C) Mangifera indica", "D) Syzygium cumini"], ans: 0 },
+      { id: 6, q: "Fog formed by condensation of warm moist air is called:", options: ["A) Advectional fog", "B) Frontal fog", "C) Radiation fog", "D) Precipitation fog"], ans: 0 },
+      { id: 7, q: "Frankincense or olibanum is obtained from:", options: ["A) Boswellia serrata", "B) Boswellia carterii", "C) Callitris quadrivalvis", "D) Ferula assafoetida"], ans: 0 },
+      { id: 8, q: "Which layer of Earth's atmosphere contains most satellites?", options: ["A) Exosphere", "B) Mesosphere", "C) Stratosphere", "D) Troposphere"], ans: 0 },
+      { id: 9, q: "What is the pit size for propagation of vermicompost?", options: ["A) 10 m × 1 m × 0.3 m", "B) 10 m × 2 m × 0.6 m", "C) 10 m × 1.5 m × 0.5 m", "D) 10 m × 3 m × 1 m"], ans: 0 },
+      { id: 10, q: "Progressive death of shoots, branches and roots starting at the tip is called:", options: ["A) Dieback", "B) Fleck", "C) Necrosis", "D) Pitting"], ans: 0 },
+      { id: 11, q: "Which fruit drop is known as “June drop”?", options: ["A) Second drop", "B) Pre harvest drop", "C) First drop", "D) Third drop"], ans: 0 },
+      { id: 12, q: "Avocado belongs to which family?", options: ["A) Lauraceae", "B) Phyllanthaceae", "C) Myrtaceae", "D) Arecaceae"], ans: 0 },
+      { id: 13, q: "Peronospora pisi causes downy mildew of:", options: ["A) Pea", "B) Apple", "C) Cucurbits", "D) Bajra"], ans: 0 },
+      { id: 14, q: "Puff drying method is used for drying fruits of:", options: ["A) Banana", "B) Apple", "C) Citrus", "D) Mango"], ans: 0 },
+      { id: 15, q: "Crown gall is a bacterial disease of:", options: ["A) Rose", "B) Orchid", "C) Aster", "D) Jasmine"], ans: 0 },
+      { id: 16, q: "What was used as a replacement for naturally released ethylene to enhance ripening?", options: ["A) Calcium carbide", "B) Carbon dioxide", "C) Acetylene gas", "D) Carbon disulphide"], ans: 0 },
+      { id: 17, q: "Triticum durum is known as:", options: ["A) Macaroni wheat", "B) Emmer wheat", "C) Dwarf wheat", "D) Bread wheat"], ans: 0 },
+      { id: 18, q: "Myrobalans yield what type of tan?", options: ["A) Fruit tan", "B) Leaf tan", "C) Bark tan", "D) Wood tan"], ans: 0 },
+      { id: 19, q: "What is the normal size of a herbarium sheet?", options: ["A) 28 × 42 cm", "B) 27 × 42 cm", "C) 28 × 40 cm", "D) 27 × 50 cm"], ans: 0 },
+      { id: 20, q: "Which Rhizobium species is suitable for soybean?", options: ["A) Rhizobium japonicum", "B) Rhizobium tripoli", "C) Rhizobium phaseoli", "D) Rhizobium meliloti"], ans: 0 },
+      { id: 21, q: "Annatto dye is obtained from which plant part?", options: ["A) Fruits", "B) Leaves", "C) Wood", "D) Flowers"], ans: 0 },
+      { id: 22, q: "Kamela powder dye is obtained from:", options: ["A) Mallotus philippensis", "B) Bixa orellana", "C) Acacia catechu", "D) Berberis aristata"], ans: 0 },
+      { id: 23, q: "Which silk is specific to Assam?", options: ["A) Muga silk", "B) Mulberry silk", "C) Eri silk", "D) Tasar silk"], ans: 0 },
+      { id: 24, q: "Gelatinous fibres are present in:", options: ["A) Tension wood", "B) Compression wood", "C) Normal wood", "D) Heartwood"], ans: 0 },
+      { id: 25, q: "Hypobaric storage means storage under:", options: ["A) Reduced atmospheric pressure", "B) High temperature", "C) Zero humidity", "D) Excess oxygen"], ans: 0 },
+      { id: 26, q: "Aril is the edible portion of which fruit?", options: ["A) Mangosteen", "B) Apple", "C) Banana", "D) Mango"], ans: 0 },
+      { id: 27, q: "Many fungi causing post-harvest diseases belong to which phylum?", options: ["A) Ascomycota", "B) Basidiomycota", "C) Zygomycota", "D) Chytridiomycota"], ans: 0 },
+      { id: 28, q: "T-3, Tarai-4, Kalpi-6, Bhagya and B-1 are varieties of:", options: ["A) Niger", "B) Sesame", "C) Groundnut", "D) Mustard"], ans: 0 },
+      { id: 29, q: "Devine is a:", options: ["A) Bio-herbicide", "B) Bio-insecticide", "C) Bio-fungicide", "D) Chemical fertilizer"], ans: 0 },
+      { id: 30, q: "Kalipatti, Vanjeet and Dhola Diwani are cultivars of:", options: ["A) Sapota", "B) Mango", "C) Guava", "D) Papaya"], ans: 0 },
+      { id: 31, q: "APEDA was established under an Act passed by Parliament in:", options: ["A) December 1985", "B) January 1980", "C) March 1990", "D) July 1975"], ans: 0 },
+      { id: 32, q: "Yellow Stem Borer (Scirpophaga incertulas) damages:", options: ["A) Rice", "B) Wheat", "C) Sugarcane", "D) Cotton"], ans: 0 },
+      { id: 33, q: "Which fruit is referred to as a false fruit?", options: ["A) Apple", "B) Mango", "C) Banana", "D) Papaya"], ans: 0 },
+      { id: 34, q: "Plasmodiophora brassicae causes:", options: ["A) Finger and toe disease of crucifers (Club root)", "B) Black rot", "C) Downy mildew", "D) White rust"], ans: 0 },
+      { id: 35, q: "Which crop grows best at 15–20°C with less water requirement?", options: ["A) Barley", "B) Rice", "C) Sugarcane", "D) Jute"], ans: 0 },
+      { id: 36, q: "Crops sown a few days/weeks before harvesting of the standing crop are called:", options: ["A) Paira crops", "B) Catch crops", "C) Trap crops", "D) Cover crops"], ans: 0 },
+      { id: 37, q: "A line joining places receiving the same rainfall is called:", options: ["A) Isohyet", "B) Isotherm", "C) Isobar", "D) Contour"], ans: 0 },
+      { id: 38, q: "Zabo rainwater-harvesting farming system is practiced in:", options: ["A) Nagaland", "B) Meghalaya", "C) Assam", "D) Manipur"], ans: 0 },
+      { id: 39, q: "Cut flowers are harvested:", options: ["A) With stalk", "B) Without stalk", "C) As bare petals", "D) Only roots"], ans: 0 },
+      { id: 40, q: "Grafting in which tongue-shaped cuts are made on stock and scion is called:", options: ["A) Whip or splice grafting", "B) Wedge grafting", "C) Approach grafting", "D) Budding"], ans: 0 },
+      { id: 41, q: "Instrument used to estimate cloud amount and height:", options: ["A) Ceilometer", "B) Anemometer", "C) Barometer", "D) Pyranometer"], ans: 0 },
+      { id: 42, q: "Land with tree canopy density of 10–40% is classified as:", options: ["A) Open forest", "B) Dense forest", "C) Scrub", "D) Mangrove"], ans: 0 },
+      { id: 43, q: "Transfer of an explant into culture medium is called:", options: ["A) Inoculation", "B) Sterilization", "C) Subculturing", "D) Hardening"], ans: 0 },
+      { id: 44, q: "Species important in determining the presence of many other species in an ecosystem are:", options: ["A) Keystone species", "B) Endemic species", "C) Exotic species", "D) Indicator species"], ans: 0 },
+      { id: 45, q: "What is an offset?", options: ["A) Lateral shoot that develops from the main stem", "B) Underground stem", "C) Root tuber", "D) Aerial bulb"], ans: 0 },
+      { id: 46, q: "Red rust of tea is a:", options: ["A) Algal disease", "B) Fungal disease", "C) Bacterial disease", "D) Viral disease"], ans: 0 },
+      { id: 47, q: "National Research Centre for Agroforestry is located at:", options: ["A) Jhansi", "B) Dehradun", "C) New Delhi", "D) Hyderabad"], ans: 0 },
+      { id: 48, q: "Which silk is called “peace silk”?", options: ["A) Eri silk", "B) Mulberry silk", "C) Muga silk", "D) Tasar silk"], ans: 0 },
+      { id: 49, q: "Bird of Paradise is a:", options: ["A) Herbaceous perennial", "B) Annual flower", "C) Woody shrub", "D) Bulbous plant"], ans: 0 },
+      { id: 50, q: "What is the rotation period of Mangifera indica?", options: ["A) 26–60 years", "B) 5–10 years", "C) 100–200 years", "D) 1–2 years"], ans: 0 },
+      { id: 51, q: "Which is used as green manure before transplanting rice?", options: ["A) Azolla", "B) Sunhemp", "C) Dhaincha", "D) Cowpea"], ans: 0 },
+      { id: 52, q: "July Elberta is a promising variety of:", options: ["A) Peach", "B) Plum", "C) Apple", "D) Pear"], ans: 0 },
+      { id: 53, q: "Vase life of cut carnations can be increased using:", options: ["A) 10% sucrose + 200 ppm 8-HQC", "B) Pure water only", "C) Salt solution", "D) Urea"], ans: 0 },
+      { id: 54, q: "Which is a monopodial orchid?", options: ["A) Arachnis", "B) Cattleya", "C) Dendrobium", "D) Vanda"], ans: 0 },
+      { id: 55, q: "Chemically, silk is made of:", options: ["A) Proteins", "B) Cellulose", "C) Starch", "D) Lipids"], ans: 0 },
+      { id: 56, q: "Diversity within a particular area/ecosystem expressed by number of species is called:", options: ["A) Alpha diversity", "B) Beta diversity", "C) Gamma diversity", "D) Genetic diversity"], ans: 0 },
+      { id: 57, q: "Pinching is important for successful production of:", options: ["A) Carnation", "B) Rose", "C) Gladiolus", "D) Orchid"], ans: 0 },
+      { id: 58, q: "Root and tuber preservation using straw and dry soil/sand is called:", options: ["A) Clamp storage", "B) Cold storage", "C) MAP", "D) Hypobaric"], ans: 0 },
+      { id: 59, q: "Which gas mixture is used in Modified Atmospheric Packaging (MAP)?", options: ["A) Carbon dioxide + oxygen + nitrogen", "B) Pure oxygen", "C) Pure carbon dioxide", "D) Hydrogen + Helium"], ans: 0 },
+      { id: 60, q: "Isothiocyanates are aroma compounds present in:", options: ["A) Radish", "B) Onion", "C) Garlic", "D) Tomato"], ans: 0 },
+      { id: 61, q: "How much nitrogen may be fixed in a Rhizobium-legume association?", options: ["A) 50–100 kg N/ha", "B) 10 kg N/ha", "C) 500 kg N/ha", "D) Zero"], ans: 0 },
+      { id: 62, q: "Which fruit is non-climacteric?", options: ["A) Cherry", "B) Mango", "C) Banana", "D) Apple"], ans: 0 },
+      { id: 63, q: "Katha is produced from the heartwood of:", options: ["A) Acacia catechu", "B) Dalbergia sissoo", "C) Tectona grandis", "D) Shorea robusta"], ans: 0 },
+      { id: 64, q: "Kharif crops are harvested during:", options: ["A) September–October", "B) June–July", "C) January–February", "D) March–April"], ans: 0 },
+      { id: 65, q: "Crop plants grown on a small scale with intensive care in a kitchen garden are called:", options: ["A) Kitchen garden crops", "B) Field crops", "C) Plantation crops", "D) Commercial crops"], ans: 0 },
+      { id: 66, q: "National Programme for Organic Production comes under:", options: ["A) Ministry of Commerce", "B) Ministry of Agriculture", "C) Ministry of Environment", "D) Ministry of Finance"], ans: 0 },
+      { id: 67, q: "The branch of horticulture dealing with vegetables is:", options: ["A) Olericulture", "B) Pomology", "C) Floriculture", "D) Arboriculture"], ans: 0 },
+      { id: 68, q: "Rasaunt is obtained from:", options: ["A) Berberis aristata", "B) Acacia catechu", "C) Azadirachta indica", "D) Terminalia chebula"], ans: 0 },
+      { id: 69, q: "Aleurolobus barodensis and Neomaskellia bergii damage which crop?", options: ["A) Sugarcane", "B) Rice", "C) Wheat", "D) Cotton"], ans: 0 },
+      { id: 70, q: "Which is the largest chilli-growing state in India?", options: ["A) Andhra Pradesh", "B) Punjab", "C) Haryana", "D) Uttar Pradesh"], ans: 0 },
+      { id: 71, q: "Which chemical is banned for fruit ripening under the PFA Act?", options: ["A) Calcium carbide", "B) Ethylene", "C) Ethephon", "D) GA₃"], ans: 0 },
+      { id: 72, q: "Mrug-1, Purva-1, M-3-1, M-2,3, Vinayka, Kalika and Kanak are varieties of:", options: ["A) Sesame", "B) Groundnut", "C) Mustard", "D) Sunflower"], ans: 0 },
+      { id: 73, q: "NPOP stands for:", options: ["A) National Programme for Organic Production", "B) National Pesticide Organization Policy", "C) National Plant Protection Program", "D) National Produce Processing"], ans: 0 },
+      { id: 74, q: "Avocado originated in:", options: ["A) Central America (Guatemala)", "B) China", "C) India", "D) Africa"], ans: 0 },
+      { id: 75, q: "Bombyx mori feeds on:", options: ["A) Morus alba (mulberry)", "B) Ricinus communis", "C) Terminalia", "D) Som"], ans: 0 },
+      { id: 76, q: "Why is angiosperm wood called porous wood?", options: ["A) Because of the presence of vessels", "B) Because of tracheids", "C) Because of fibers", "D) Because of parenchyma"], ans: 0 },
+      { id: 77, q: "Which timber is extremely durable?", options: ["A) Tectona grandis (Teak)", "B) Mangifera indica", "C) Bombax ceiba", "D) Trewia nudiflora"], ans: 0 },
+      { id: 78, q: "What is the rice grain yield when panicle density is 260/m², grains/panicle 136 and test weight 20 g?", options: ["A) 7.08 t/ha", "B) 5.12 t/ha", "C) 10.5 t/ha", "D) 3.2 t/ha"], ans: 0 },
+      { id: 79, q: "Setaria italica is commonly known as:", options: ["A) Foxtail millet", "B) Pearl millet", "C) Finger millet", "D) Barnyard millet"], ans: 0 },
+      { id: 80, q: "Who introduced the Taungya system to India in 1890?", options: ["A) Dietrich Brandis", "B) Sir Albert Howard", "C) Jethro Tull", "D) Norman Borlaug"], ans: 0 },
+      { id: 81, q: "Fresh fruits with a storage life of 4–8 weeks are classified as:", options: ["A) Semi-perishable", "B) Perishable", "C) Non-perishable", "D) Durable"], ans: 0 },
+      { id: 82, q: "Stem/foot rot of papaya is caused by:", options: ["A) Pythium myriotylum", "B) Fusarium", "C) Phytophthora", "D) Rhizoctonia"], ans: 0 },
+      { id: 83, q: "Which ornamental plant is propagated by tubers?", options: ["A) Begonia", "B) Rose", "C) Carnation", "D) Orchid"], ans: 0 },
+      { id: 84, q: "Conversion of organic wastes into organic fertilizer through biological activity is called:", options: ["A) Composting", "B) Incineration", "C) Pyrolysis", "D) Stifling"], ans: 0 },
+      { id: 85, q: "Which fruit was introduced into India by Captain Lee in 1865?", options: ["A) Apple", "B) Mango", "C) Banana", "D) Citrus"], ans: 0 },
+      { id: 86, q: "Who is widely considered the Father of Organic Farming?", options: ["A) Sir Albert Howard", "B) Jethro Tull", "C) Norman Borlaug", "D) M.S. Swaminathan"], ans: 0 },
+      { id: 87, q: "Where is the headquarters of the Silk Board of India located?", options: ["A) Bengaluru", "B) New Delhi", "C) Kolkata", "D) Guwahati"], ans: 0 },
+      { id: 88, q: "Which is a non-refractory timber?", options: ["A) Abies pindrow", "B) Tectona grandis", "C) Shorea robusta", "D) Dalbergia sissoo"], ans: 0 },
+      { id: 89, q: "Dammars are obtained from which plant family?", options: ["A) Dipterocarpaceae", "B) Lauraceae", "C) Myrtaceae", "D) Anacardiaceae"], ans: 0 },
+      { id: 90, q: "Which indigenous Indian silkworm race is bivoltine?", options: ["A) Kashmir race", "B) Mysore race", "C) Nali", "D) Pat"], ans: 0 },
+      { id: 91, q: "What is the usual spacing between rows in alley cropping?", options: ["A) 4–8 m", "B) 1–2 m", "C) 10–15 m", "D) 0.5 m"], ans: 0 },
+      { id: 92, q: "Alternaria crassa is evaluated as a mycoherbicide for:", options: ["A) Datura stramonium", "B) Parthenium", "C) Cyperus", "D) Phalaris"], ans: 0 },
+      { id: 93, q: "Which is NOT required for storage of fruits in ECCs (Energy Efficient Cool Chambers)?", options: ["A) Electricity", "B) Water", "C) Bricks", "D) Sand"], ans: 0 },
+      { id: 94, q: "Mango seeds lose viability if not sown within:", options: ["A) 4–5 weeks", "B) 1 year", "C) 2 days", "D) 6 months"], ans: 0 },
+      { id: 95, q: "Which fruit takes almost one year for fruiting after flowering?", options: ["A) Mango", "B) Banana", "C) Papaya", "D) Citrus"], ans: 0 },
+      { id: 96, q: "Which can be used as seed treatment against soil-borne fungal diseases in organic farming?", options: ["A) Trichoderma", "B) Malathion", "C) Urea", "D) 2,4-D"], ans: 0 },
+      { id: 97, q: "Relative land area under sole crops required to produce yields achieved in intercropping is called:", options: ["A) Land Equivalent Ratio (LER)", "B) Area Yield Ratio", "C) Relative Crop Index", "D) Cropping Intensity"], ans: 0 },
+      { id: 98, q: "“Hortus,” meaning garden, is a ______ word.", options: ["A) Latin", "B) Greek", "C) Sanskrit", "D) English"], ans: 0 },
+      { id: 99, q: "Which fruit is exceptionally rich in Vitamin A?", options: ["A) Mango", "B) Apple", "C) Banana", "D) Guava"], ans: 0 },
+      { id: 100, q: "Silkworm disease “muscardine” is caused by:", options: ["A) Fungi (Beauveria bassiana)", "B) Bacteria", "C) Virus", "D) Protozoa"], ans: 0 }
+    ];
+
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(100, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 100) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over OPSC AAO 2026 Paper-I.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific forestry, plant pathology, and horticulture concepts.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Agriculture recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+
+</html>

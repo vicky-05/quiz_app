@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Agricultural Meteorology Test 2 — Climatology & Weather Forecasting (236 MCQs)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --bg-header: #022c22;
@@ -65,9 +68,12 @@
     .banner::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
       background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
-                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
       pointer-events: none;
     }
 
@@ -134,10 +140,26 @@
       flex-shrink: 0;
     }
 
-    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
-    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
-    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
-    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
 
     .status-label {
       font-size: 0.72rem;
@@ -311,12 +333,14 @@
       border-color: #f59e0b;
     }
 
-    .btn-next, .btn-submit {
+    .btn-next,
+    .btn-submit {
       background: var(--primary);
       color: #ffffff;
     }
 
-    .btn-next:hover, .btn-submit:hover {
+    .btn-next:hover,
+    .btn-submit:hover {
       background: var(--primary-hover);
     }
 
@@ -376,7 +400,8 @@
       color: #334155;
     }
 
-    .form-group select, .form-group input {
+    .form-group select,
+    .form-group input {
       padding: 0.75rem 0.9rem;
       border-radius: var(--radius-sm);
       border: 1.5px solid #cbd5e1;
@@ -385,7 +410,8 @@
       outline: none;
     }
 
-    .form-group select:focus, .form-group input:focus {
+    .form-group select:focus,
+    .form-group input:focus {
       border-color: var(--primary);
     }
 
@@ -453,9 +479,17 @@
       font-weight: 800;
     }
 
-    .matrix-card.c-green .val { color: var(--success); }
-    .matrix-card.c-red .val { color: var(--danger); }
-    .matrix-card.c-slate .val { color: var(--text-muted); }
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
 
     .matrix-card .desc {
       font-size: 0.8rem;
@@ -499,9 +533,20 @@
       margin-bottom: 0.6rem;
     }
 
-    .rev-badge.correct { background: var(--success-light); color: var(--success); }
-    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
-    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
 
     .rev-q-text {
       font-size: 1rem;
@@ -525,15 +570,19 @@
       .status-ribbon {
         grid-template-columns: repeat(2, 1fr);
       }
+
       .card {
         padding: 1.25rem;
       }
+
       .actions-bar {
         flex-wrap: wrap;
       }
+
       .actions-bar .btn {
         flex: 1 1 calc(50% - 0.5rem);
       }
+
       .actions-bar .btn-review {
         order: 3;
         flex: 1 1 100%;
@@ -541,6 +590,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <header class="banner">
@@ -552,8 +602,10 @@
   <div class="container">
 
     <div id="setup-screen" class="card">
-      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Agricultural Meteorology Test 2: Climatology & Weather Forecasting (236 MCQs)</h2>
-      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per question</strong> applies automatically to your chosen question count.</p>
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Agricultural Meteorology
+        Test 2: Climatology & Weather Forecasting (236 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
 
       <div class="setup-grid">
         <div class="form-group">
@@ -587,7 +639,8 @@
           </div>
         </div>
 
-        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
       </div>
     </div>
 
@@ -651,7 +704,8 @@
           <div class="pct" id="res-score-pct">0%</div>
           <div class="lbl">Total Score</div>
         </div>
-        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
       </div>
 
       <div class="stats-matrix">
@@ -833,6 +887,47 @@
       { id: 235, q: "What approximate percentage of nitrogen gas is present in Earth's clean dry lower atmosphere?", options: ["A) 21%", "B) 78%", "C) 50%", "D) 90%"], ans: 1 },
       { id: 236, q: "Is the stratosphere known in meteorology as the “seat of active weather phenomena”?", options: ["A) Yes", "B) No (troposphere is the seat of weather phenomena; stratosphere is stable)"], ans: 1 }
     ];
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
 
     let activeQuiz = [];
     let currentIndex = 0;
@@ -1143,4 +1238,5 @@
     updatePillTime();
   </script>
 </body>
+
 </html>

@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horticulture Master Exam — Questions 201–400 (Complete Series)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select, .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Horticulture MCQ Series (201–400)</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Horticulture Master Exam: Questions 201–400 (Complete Series)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 201–400)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="200">All Questions (200 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 200)</label>
+          <input type="number" id="custom-count-input" min="1" max="200" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">200 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#127815;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Horticulture MCQ</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#127812;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Questions 201–400</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 200</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">03:20:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 201, q: "Where are growth regulators typically found in naturally parthenocarpic fruits?", options: ["A) Intermediate", "B) High", "C) Low", "D) None of the above"], ans: 2 },
+      { id: 202, q: "Which factors contribute to the formation of auxins?", options: ["A) Light", "B) Zinc", "C) Age of apex", "D) All of the above"], ans: 3 },
+      { id: 203, q: "From which source are cytokinins derived?", options: ["A) Alar", "B) Jasminoides", "C) Adenine", "D) Kinin"], ans: 2 },
+      { id: 204, q: "What role do auxins play in plant growth and development?", options: ["A) Reduction of preharvest fruit drop", "B) Cell division", "C) Delay in flower opening", "D) All of the above"], ans: 3 },
+      { id: 205, q: "Which growth regulator possesses the ability to alter flower sex?", options: ["A) Kinins", "B) Gibberellins", "C) Auxins", "D) None of the above"], ans: 2 },
+      { id: 206, q: "Which growth regulator can release lateral buds from apical dominance?", options: ["A) Kinins", "B) Auxins", "C) Gibberellins", "D) None of the above"], ans: 0 },
+      { id: 207, q: "Which growth regulator can retard leaf senescence?", options: ["A) Abscisic acid", "B) Kinins", "C) Gibberellins", "D) Auxins"], ans: 2 },
+      { id: 208, q: "What do growth retardants primarily affect?", options: ["A) Cell division", "B) Cell elongation", "C) Both cell division and cell elongation", "D) None of the above"], ans: 2 },
+      { id: 209, q: "What is the primary cause of the first and heaviest flower drop in fruit plants?", options: ["A) Nonfertilization", "B) Lack of pollination", "C) Structural defects in the flowers", "D) All of the above"], ans: 3 },
+      { id: 210, q: "Which factors contribute significantly to fruit drop?", options: ["A) Seed number of fruit", "B) Moisture supply", "C) Embryo abortion", "D) All of the above"], ans: 3 },
+      { id: 211, q: "How can dormancy in seeds be broken?", options: ["A) Thiourea", "B) Ethylene acetylene", "C) Ethylene chlorohydrin", "D) All of the above"], ans: 3 },
+      { id: 212, q: "What are auxins as herbicides known for?", options: ["A) Broad-spectrum action", "B) High toxicity to animals and humans", "C) Exerting their effects at high concentrations", "D) All of the above"], ans: 3 },
+      { id: 213, q: "What is Solanum melongena commonly known as?", options: ["A) Tomato", "B) Potato", "C) Eggplant", "D) Chillies"], ans: 2 },
+      { id: 214, q: "Why is hardening practiced in vegetables?", options: ["A) To increase yield", "B) To enhance fruit color", "C) To boost plant resistance", "D) All of the above"], ans: 2 },
+      { id: 215, q: "During fruit bud differentiation, the nitrogen content in plants is:", options: ["A) Medium", "B) Low", "C) High", "D) Very high"], ans: 2 },
+      { id: 216, q: "What does the botanical term “pomum” refer to?", options: ["A) Vegetable", "B) Flower", "C) Fruit", "D) None of these"], ans: 2 },
+      { id: 217, q: "How many chromosomes does citrus typically have?", options: ["A) 10", "B) 11", "C) 9", "D) 8"], ans: 2 },
+      { id: 218, q: "What does parthenocarpy refer to?", options: ["A) Seedless fruits", "B) Fruit without pollination", "C) Development of seeds without pollination", "D) None of the above"], ans: 1 },
+      { id: 219, q: "Which term refers to the flower of grapes?", options: ["A) Umbel", "B) Racemose", "C) Clyptra", "D) None"], ans: 2 },
+      { id: 220, q: "When does anthesis of grapes complete?", options: ["A) Calyx drop", "B) Pedicel fall", "C) Cap fall", "D) None"], ans: 2 },
+      { id: 221, q: "What is a date palm leaf called?", options: ["A) Pinna", "B) Long leaf", "C) Frond", "D) Simple leaf"], ans: 2 },
+      { id: 222, q: "Which fruit tree is dioecious and monocotyledonous?", options: ["A) Banana", "B) Papaya", "C) Date palm", "D) Pomegranate"], ans: 2 },
+      { id: 223, q: "Which fruit tree is dicotyledonous and dioecious?", options: ["A) Mango", "B) Papaya", "C) Banana", "D) Date palm"], ans: 1 },
+      { id: 224, q: "Which fruit plant is both monocotyledonous and monoecious?", options: ["A) Papaya", "B) Date palm", "C) Banana", "D) None"], ans: 2 },
+      { id: 225, q: "What soil pH range can tree fruits tolerate?", options: ["A) 5.0–8.0", "B) 4.5–8.5", "C) 5.5–8.0", "D) 5.5–8.5"], ans: 2 },
+      { id: 226, q: "How is water potential in the rhizosphere measured?", options: ["A) pH meter", "B) Hygrometer", "C) Tensiometer", "D) Thermometer"], ans: 2 },
+      { id: 227, q: "What is the technical term for a grape plant?", options: ["A) Creeper", "B) Bush", "C) Liana", "D) Vine"], ans: 3 },
+      { id: 228, q: "What category does a guava plant fall under?", options: ["A) Herb", "B) Bush", "C) Tree", "D) None"], ans: 2 },
+      { id: 229, q: "Which subfamily does citrus belong to?", options: ["A) Citrea", "B) Clausena", "C) Aurantioideae", "D) Citrae"], ans: 2 },
+      { id: 230, q: "What is the botanical classification of citrus fruit?", options: ["A) Climacteric fruit", "B) Pome fruit", "C) Hesperidium berry", "D) None"], ans: 2 },
+      { id: 231, q: "From which part of the flower does apple fruit develop?", options: ["A) Ovule", "B) Pedicel", "C) Ovary", "D) Thalamus"], ans: 3 },
+      { id: 232, q: "How many whorls does a complete flower have?", options: ["A) 2 whorls", "B) 3 whorls", "C) 5 whorls", "D) 4 whorls"], ans: 3 },
+      { id: 233, q: "What type of seed is a Kinnow seed?", options: ["A) Multiembryonic", "B) Monoembryonic", "C) Polyembryonic", "D) None"], ans: 2 },
+      { id: 234, q: "What are apomictic seedlings also known as?", options: ["A) Embryonic seedlings", "B) Sexual seedlings", "C) Nucellar seedlings", "D) None"], ans: 2 },
+      { id: 235, q: "What type of fruit is a cherry?", options: ["A) Berry fruit", "B) Pome fruit", "C) Stone fruit", "D) Drupe"], ans: 3 },
+      { id: 236, q: "What type of seed does a strawberry fruit contain?", options: ["A) Viable seed", "B) Aborted seed", "C) True seed", "D) Achene"], ans: 3 },
+      { id: 237, q: "How is a mulberry fruit classified?", options: ["A) Peppo", "B) Berry", "C) Multiple", "D) Aggregate"], ans: 2 },
+      { id: 238, q: "Which family contains the largest number of fruit plants?", options: ["A) Vitaceae", "B) Leguminoseae", "C) Citrea", "D) Rosaceae"], ans: 3 },
+      { id: 239, q: "At what temperature does chilling injury occur in plants?", options: ["A) <9°C", "B) <4°C", "C) <5°C", "D) <8°C"], ans: 3 },
+      { id: 240, q: "Which family includes both mango and pistachio?", options: ["A) Gramineae", "B) Mangifera", "C) Anacardiaceae", "D) None"], ans: 2 },
+      { id: 243, q: "What is another common name for date palm?", options: ["A) Wild palm", "B) Domestic palm", "C) Century palm", "D) Feather palm"], ans: 3 },
+      { id: 244, q: "At what stage is the date fruit harvested for curing?", options: ["A) Doka stage", "B) Dung stage", "C) Rutab stage", "D) None"], ans: 2 },
+      { id: 245, q: "What is a single unit of a banana fruit called?", options: ["A) Heart", "B) Hand", "C) Finger", "D) None"], ans: 2 },
+      { id: 246, q: "To which family does peach belong?", options: ["A) Palmaceae", "B) Rutaceae", "C) Rosaceae", "D) None"], ans: 2 },
+      { id: 247, q: "Is the kumquat fruit edible as a whole?", options: ["A) With seed", "B) Without peel", "C) Yes, whole fruit", "D) None"], ans: 2 },
+      { id: 248, q: "Guava is a rich source of:", options: ["A) Pectin", "B) Sugar", "C) Vitamin C", "D) Both vitamin C and pectin"], ans: 3 },
+      { id: 249, q: "Which is a common rootstock for citrus trees in Punjab?", options: ["A) Sweet lime", "B) Sour orange", "C) Sweet orange", "D) Rough lemon"], ans: 1 },
+      { id: 250, q: "In which variety of date palm is pruning a regular practice?", options: ["A) Hillini", "B) Deglet Noor", "C) Khudrawi", "D) Hillawi"], ans: 3 },
+      { id: 251, q: "What problem may excessive nitrogen in citrus plants cause?", options: ["A) Flower drop", "B) Leaf drop", "C) Lodging", "D) Fruit drop"], ans: 3 },
+      { id: 252, q: "Which fruit crops commonly experience alternate bearing?", options: ["A) Apple", "B) Citrus", "C) Mango", "D) All of the above"], ans: 3 },
+      { id: 253, q: "Up to what pH level can citrus tolerate salinity according to the source?", options: ["A) pH 4.5", "B) pH 8.5", "C) pH 9.0", "D) pH 7.5"], ans: 3 },
+      { id: 254, q: "What is the male inflorescence of cashew nut and walnut called?", options: ["A) Cyme", "B) Rachis", "C) None", "D) Catkins"], ans: 3 },
+      { id: 255, q: "“Hari” is commonly used as a rootstock for which fruit tree?", options: ["A) Mulberry", "B) Apricot", "C) Walnut", "D) None"], ans: 2 },
+      { id: 256, q: "Where do apples typically bear fruit?", options: ["A) Twigs", "B) Sprigs", "C) Shoots", "D) Spurs"], ans: 3 },
+      { id: 257, q: "What is the bearing habit of mango trees?", options: ["A) Axillary", "B) Basal", "C) Lateral", "D) Terminal"], ans: 3 },
+      { id: 258, q: "What does polyembryony refer to?", options: ["A) More than two embryos", "B) One embryo", "C) More than three embryos", "D) Two embryos"], ans: 0 },
+      { id: 259, q: "Which fruit tree does the proverb “Head in fire, foot in water” refer to?", options: ["A) Coconut", "B) Olive", "C) Date palm", "D) None"], ans: 2 },
+      { id: 260, q: "Are pears universally self-compatible or self-incompatible?", options: ["A) Gross compatible", "B) None", "C) Universally self-compatible", "D) Universally self-incompatible"], ans: 3 },
+      { id: 261, q: "Quince is commonly used as a rootstock for:", options: ["A) Pomegranate", "B) Peach", "C) Plum", "D) Pear"], ans: 3 },
+      { id: 262, q: "What is the function of perianth?", options: ["A) Stamen and stigma", "B) Style and ovary", "C) Pedicel and thalamus", "D) Calyx and corolla"], ans: 3 },
+      { id: 263, q: "How is a spur defined?", options: ["A) Mature wood with rosette head", "B) Both mature and immature wood", "C) Immature juvenile wood", "D) Mature productive wood"], ans: 3 },
+      { id: 264, q: "What does the term “chimera” refer to according to the source?", options: ["A) Gametic cell fusion", "B) None", "C) Undifferentiated cell", "D) Somatic cell fusion"], ans: 3 },
+      { id: 265, q: "Metaxenia refers to the impact of pollen on the:", options: ["A) Ovule", "B) Ovary", "C) Seed", "D) Fruit"], ans: 3 },
+      { id: 266, q: "At what stage of development does senescence occur?", options: ["A) Tissue vigor", "B) Tissue ripening", "C) Tissue multiplication", "D) Tissue decay"], ans: 3 },
+      { id: 267, q: "Where is rest observed as a natural process?", options: ["A) Tropical plant", "B) Seed", "C) Seed and plant", "D) Plant"], ans: 3 },
+      { id: 268, q: "What is the main cause of dormancy in plants and seeds?", options: ["A) Physiological factor", "B) Environmental factor", "C) None", "D) Both environmental and physiological factors"], ans: 3 },
+      { id: 269, q: "The petiole is a part of the:", options: ["A) Twig", "B) Flower", "C) Inflorescence", "D) Leaf"], ans: 3 },
+      { id: 270, q: "Where is the micropyle located?", options: ["A) Flower", "B) Stomata", "C) Ovary", "D) Seed"], ans: 3 },
+      { id: 271, q: "What part of the date palm fruit is referred to as the skirt?", options: ["A) Mesocarp", "B) Seed", "C) Endocarp", "D) Exocarp"], ans: 3 },
+      { id: 272, q: "What is the recommended matrix height in citrus cultivation?", options: ["A) 9 inches", "B) 12 inches", "C) 4 inches", "D) 6 inches"], ans: 3 },
+      { id: 273, q: "Which rootstock is commonly used for sweet orange in NWFP?", options: ["A) Citrumello", "B) None", "C) Rough lemon", "D) Sour orange"], ans: 3 },
+      { id: 274, q: "What causes berry splitting in citrus and strawberry according to the source?", options: ["A) High sunlight", "B) High air pressure", "C) High temperature", "D) Low moisture"], ans: 3 },
+      { id: 275, q: "What type of embryonic development do most mango varieties in India exhibit?", options: ["A) Monoembryonic", "B) None", "C) Mono to polyembryonic", "D) Polyembryonic"], ans: 3 },
+      { id: 276, q: "How are apple rootstocks commonly propagated asexually?", options: ["A) Stooling", "B) Layering", "C) Budding", "D) Grafting"], ans: 0 },
+      { id: 277, q: "In addition to seeds, how else can lemons and limes be propagated?", options: ["A) Cuttings", "B) None", "C) Layering", "D) Both layering and cuttings"], ans: 3 },
+      { id: 278, q: "Which are common rootstocks used for apple cultivation in India?", options: ["A) Crab apple", "B) M9", "C) M7", "D) All three"], ans: 3 },
+      { id: 279, q: "What does systematic pomology primarily focus on?", options: ["A) Export production", "B) Domestic production", "C) Commercial fruit production", "D) Nomenclature"], ans: 3 },
+      { id: 280, q: "How many species are included in the genus Fortunella?", options: ["A) 6 species", "B) 4 species", "C) 7 species", "D) 5 species"], ans: 3 },
+      { id: 281, q: "How many species are there in the genus Poncirus?", options: ["A) 6 species", "B) 16 species", "C) 3 species", "D) 1 species"], ans: 3 },
+      { id: 282, q: "What is the best time for propagating fruit plants in subtropical regions?", options: ["A) Summer season", "B) Summer and winter seasons", "C) Spring season", "D) Spring and autumn seasons"], ans: 3 },
+      { id: 283, q: "During the summer crop of guava, which insect is a major pest?", options: ["A) Firefly", "B) Drosophila fly", "C) White fly", "D) Fruit fly"], ans: 3 },
+      { id: 284, q: "What type of pruning does a grapevine typically require?", options: ["A) No pruning", "B) Light pruning", "C) Bulk pruning", "D) Moderate pruning"], ans: 3 },
+      { id: 285, q: "What is a self-supporting vine-type stem called?", options: ["A) Liana", "B) Herb", "C) Vine", "D) Shrub"], ans: 3 },
+      { id: 286, q: "What is the edible part of a pomegranate?", options: ["A) Mesocarp", "B) Seed", "C) Vesicles", "D) Aril"], ans: 2 },
+      { id: 287, q: "How are apples and pears classified in terms of fruit type?", options: ["A) Hesperidium", "B) Drupe", "C) Berry", "D) Pome"], ans: 3 },
+      { id: 288, q: "Nut fruits are derived from which type of flower?", options: ["A) Perigynous flower", "B) Hypogynous flower", "C) Hypo and perigynous flower", "D) Epigynous flower"], ans: 3 },
+      { id: 289, q: "What type of fruit is a strawberry?", options: ["A) Multiple", "B) Berry", "C) Achene", "D) Aggregate"], ans: 3 },
+      { id: 290, q: "In which region is the coldest climate suitable for growing citrus according to the source?", options: ["A) Australia", "B) India", "C) U.S.A.", "D) New Zealand"], ans: 3 },
+      { id: 291, q: "Which three genera are important in the Anacardiaceae family?", options: ["A) Eugenia, Anacardium and Pistacia", "B) Psidium, Aurantium and Mangifera", "C) Mangifera, Pistacia and Cocos", "D) Pistacia, Mangifera and Anacardium"], ans: 3 },
+      { id: 292, q: "What is the chromosome number of mango?", options: ["A) n=8", "B) n=11", "C) n=20", "D) n=17"], ans: 3 },
+      { id: 293, q: "What are the unfertile stamens of mango called?", options: ["A) Pistilloids", "B) Sterile", "C) Indehiscent", "D) Staminoides"], ans: 3 },
+      { id: 294, q: "How many fertile stamens does a mango flower typically carry?", options: ["A) Three", "B) One", "C) One or two", "D) One or three"], ans: 3 },
+      { id: 295, q: "At what low temperature regime in summer does mango growth stop according to the source?", options: ["A) 18°F", "B) 35°F", "C) 30°F", "D) 20°F"], ans: 3 },
+      { id: 296, q: "How does the Canary date differ from cultivated date?", options: ["A) Arrangement of pinnules", "B) Area of origin", "C) Thickness of stem", "D) Length of fronds"], ans: 3 },
+      { id: 297, q: "Why are wild dates (P. sylvestris) important?", options: ["A) Sweetness of fruit", "B) Nutritious fruit", "C) Sugar production", "D) Medicinal value"], ans: 3 },
+      { id: 298, q: "In which country is the maximum production of date palm recorded according to the source?", options: ["A) Iran", "B) U.S.A.", "C) Algeria", "D) Iraq"], ans: 3 },
+      { id: 299, q: "What family does apple belong to?", options: ["A) Rutaceae", "B) Palmaea", "C) Anacardiaceae", "D) Rosaceae"], ans: 3 },
+      { id: 300, q: "Which region is apple primarily a fruit of?", options: ["A) Tropical", "B) Temperate and subtropical", "C) Subtropical", "D) Temperate region"], ans: 3 },
+      { id: 301, q: "How many carpels does an apple flower typically have according to the source?", options: ["A) Seven", "B) Five", "C) Six", "D) One"], ans: 3 },
+      { id: 302, q: "Date growth does not cease if the temperature does not fall below:", options: ["A) 20°C", "B) 0°C", "C) 10°C", "D) 18°C"], ans: 3 },
+      { id: 303, q: "What is the name of the seedless date palm variety?", options: ["A) Ajwa", "B) Hillai", "C) Hassaku", "D) None"], ans: 3 },
+      { id: 304, q: "In which date palm variety is pruning carried out?", options: ["A) Khudrawi", "B) Ajwa", "C) Deglet Noor", "D) Hillawi"], ans: 3 },
+      { id: 305, q: "How is date palm primarily propagated?", options: ["A) Seeds", "B) None", "C) Suckers", "D) Offshoots"], ans: 3 },
+      { id: 306, q: "What is the seed of a mushroom called?", options: ["A) Button", "B) None", "C) Seed", "D) Spawn"], ans: 3 },
+      { id: 307, q: "Where are mushrooms typically cultivated?", options: ["A) On trees", "B) Hydroponic", "C) On soil", "D) Dead mass"], ans: 3 },
+      { id: 308, q: "Which disease commonly infects banana plants?", options: ["A) Rhizome wilt", "B) None", "C) Anthracnose of stem", "D) Banana bunchy top"], ans: 3 },
+      { id: 309, q: "What is a cluster of banana fruit called?", options: ["A) Finger", "B) Heart", "C) Hand", "D) All of the above"], ans: 2 },
+      { id: 310, q: "How many times does a banana plant typically bear fruit in its lifetime?", options: ["A) Once in life", "B) All of the above", "C) Twice in life", "D) Multiple times"], ans: 3 },
+      { id: 311, q: "How is banana propagation primarily carried out according to the source?", options: ["A) Aerial suckers", "B) Water suckers", "C) Sword suckers", "D) All of the above"], ans: 3 },
+      { id: 312, q: "What type of fruit is a banana?", options: ["A) Recurrent climacteric", "B) Nonclimacteric", "C) All of the above", "D) Climacteric"], ans: 3 },
+      { id: 313, q: "Are apple and pear part of the same classification?", options: ["A) Same genus", "B) All of the above", "C) Different subgenus", "D) Different genera"], ans: 3 },
+      { id: 314, q: "Which mineral is apple a rich source of according to the source?", options: ["A) Proteins", "B) Carbohydrates", "C) Vitamin A", "D) Iron"], ans: 3 },
+      { id: 315, q: "How many flowers typically form a cluster on apple spurs?", options: ["A) 4 flowers", "B) 3 flowers", "C) 5 flowers", "D) More than all above"], ans: 3 },
+      { id: 316, q: "How can an apple flower be distinguished from a pear flower according to the source?", options: ["A) Due to its size", "B) Due to its color", "C) None", "D) Both color and size"], ans: 3 },
+      { id: 317, q: "Why is honey extracted from almond flowers considered inedible according to the source?", options: ["A) None", "B) Oxalic acid", "C) Both Amygdalus factor and oxalic acid", "D) Amygdalus factor"], ans: 3 },
+      { id: 318, q: "Are almond and peach part of the same classification according to the source?", options: ["A) All of the above", "B) Same genus and species", "C) Some genera and different species", "D) Different genus and different species"], ans: 3 },
+      { id: 319, q: "Different mango varieties can be distinguished based on:", options: ["A) Panicle length", "B) New leaf colour", "C) Number of male flowers", "D) All of the above"], ans: 3 },
+      { id: 320, q: "Salt-tolerant fruit plants include:", options: ["A) Ber and Guava", "B) None", "C) Date and Ber", "D) Date, Ber and Guava"], ans: 3 },
+      { id: 321, q: "The adopted planting system of orchards in India is:", options: ["A) Hexagonal system", "B) Rectangular system", "C) Square system", "D) All of the above"], ans: 3 },
+      { id: 322, q: "RCBD stands for:", options: ["A) Reported Complete Block Design", "B) Repeated Control Block Design", "C) All of the above", "D) Randomized Complete Block Design"], ans: 3 },
+      { id: 323, q: "Nitrogen in a plant sample is estimated by:", options: ["A) Spectrophotometer", "B) All of the above", "C) Refreshrometer", "D) Kjeldahl’s apparatus"], ans: 3 },
+      { id: 324, q: "Jaman has medicinal value against:", options: ["A) Blindness", "B) Cancer", "C) Diabetes", "D) All of the above"], ans: 3 },
+      { id: 325, q: "Chinese layering is practiced in:", options: ["A) Strawberry", "B) Mulberry", "C) Litchi", "D) All of the above"], ans: 2 },
+      { id: 326, q: "Abscission in fruit occurs due to:", options: ["A) Excessive lactic acid", "B) Excessive citric acid", "C) Excessive glutamic acid", "D) Excessive abscisic acid"], ans: 3 },
+      { id: 327, q: "Button in citrus fruit is:", options: ["A) Calyx at apex", "B) Calyx at base", "C) All of the above", "D) Both calyx at base and apex"], ans: 3 },
+      { id: 328, q: "Pomology is the study of:", options: ["A) Deciduous plants", "B) Medicinal plants", "C) Pome fruit", "D) Fruit plants"], ans: 3 },
+      { id: 329, q: "Microsporogenesis is the formation of:", options: ["A) Female gamete", "B) None of these", "C) Female and male gametes", "D) Male gamete"], ans: 3 },
+      { id: 330, q: "What is the term for physiological aging in which plant tissues degenerate and ultimately die?", options: ["A) Degeneration", "B) Ripening", "C) Climacteric", "D) Senescence"], ans: 3 },
+      { id: 331, q: "What is the term for a plant's response to the relative length of daylight or darkness?", options: ["A) Neutral", "B) Long day", "C) Short day", "D) Photoperiodism"], ans: 3 },
+      { id: 332, q: "Which function is associated with abscisic acid (ABA)?", options: ["A) Induces fruit maturity", "B) Promotes growth", "C) Initiates ripening", "D) Retards growth"], ans: 3 },
+      { id: 333, q: "What is the development of fruit without fertilization or seed called?", options: ["A) Pseudogamy", "B) Pollination", "C) Polyembryony", "D) Parthenocarpy"], ans: 3 },
+      { id: 334, q: "In which regions do citrus orchards commonly have 50% lower commercial yield according to the source?", options: ["A) Tropical than subtropical regions", "B) Equal", "C) All wrong", "D) Tropical than subtropical regions have 50% more"], ans: 0 },
+      { id: 335, q: "High nitrate supply helps to ______ maximum carbohydrates.", options: ["A) Increase", "B) Store", "C) Utilize", "D) Synthesize"], ans: 3 },
+      { id: 336, q: "What are nucellar seedlings also known as according to the source?", options: ["A) None of them", "B) Zygotic seedlings", "C) Monoembryony", "D) Polyembryony"], ans: 3 },
+      { id: 337, q: "What is a sudden change in genetic constitution unrelated to sexual reproduction called?", options: ["A) Bud variation", "B) Hybridization", "C) None of them", "D) Mutation"], ans: 3 },
+      { id: 338, q: "Spongy tissue in mango is primarily due to:", options: ["A) Viral disease", "B) Fungal disease", "C) Bacterial disease", "D) Physiological disorder"], ans: 3 },
+      { id: 339, q: "What is the soil moisture conservation technique under covered ground areas called?", options: ["A) Microjet irrigation", "B) Hydraulic", "C) Fertigation", "D) Mulching"], ans: 3 },
+      { id: 340, q: "What is the main portion of a banana plant above the ground called?", options: ["A) Crown", "B) Stem", "C) Rhizome", "D) Pseudostem"], ans: 3 },
+      { id: 341, q: "What effect does low temperature typically have on growth inhibitors in plants according to the source?", options: ["A) Produce", "B) Store", "C) Increase", "D) Decrease"], ans: 3 },
+      { id: 342, q: "Gross Michel is a variety of:", options: ["A) Litchi", "B) Grapes", "C) Papaya", "D) Banana"], ans: 3 },
+      { id: 343, q: "Which grapefruit type has pigmented pulp but is seeded?", options: ["A) White and seeded", "B) White and seedless", "C) Pigmented and seedless", "D) Pigmented but seeded"], ans: 3 },
+      { id: 344, q: "The Foster is a variety of:", options: ["A) Mandarin", "B) Pummelos", "C) Sweet orange", "D) Grapefruit"], ans: 3 },
+      { id: 345, q: "Which type of fruit is typically nonclimacteric?", options: ["A) Mango", "B) Banana", "C) Apple", "D) Citrus"], ans: 3 },
+      { id: 346, q: "What causes bunchy top disease in bananas?", options: ["A) Fungus", "B) Insects", "C) Improper storage", "D) Virus"], ans: 3 },
+      { id: 347, q: "When is severe pruning in grapes recommended?", options: ["A) After three years", "B) Every year", "C) None of them", "D) After two years"], ans: 3 },
+      { id: 348, q: "Which fruit is often referred to as the king of temperate fruits?", options: ["A) Mango", "B) Banana", "C) Citrus", "D) Apple"], ans: 3 },
+      { id: 349, q: "What is plant reproduction through seeds called?", options: ["A) Tissue culture", "B) Vegetative propagation", "C) Asexual propagation", "D) Sexual propagation"], ans: 3 },
+      { id: 350, q: "What are plants called that shed their leaves during autumn?", options: ["A) Hardy plants", "B) Evergreen", "C) None of them", "D) Deciduous"], ans: 3 },
+      { id: 351, q: "What is a ripened ovary called?", options: ["A) Embryo", "B) Seed", "C) Flower", "D) Fruit"], ans: 3 },
+      { id: 352, q: "What term describes pollination between two flowers located on the same plant?", options: ["A) Cross-pollination", "B) None of these", "C) Allogamy", "D) Autogamy"], ans: 3 },
+      { id: 353, q: "Which plant is a good example of a dioecious reproductive system?", options: ["A) Plum", "B) Pear", "C) Apricot", "D) Papaya"], ans: 3 },
+      { id: 354, q: "“Sensation” is a variety of:", options: ["A) Mandarin", "B) Grapefruit", "C) Sweet orange", "D) Mango"], ans: 3 },
+      { id: 355, q: "A tomato nursery established in September is typically transplanted into the field in:", options: ["A) November", "B) October", "C) November/December", "D) January/February"], ans: 0 },
+      { id: 356, q: "Which variety originated from a cross of King × Willow Leaf?", options: ["A) Clementine", "B) Feutrell’s Early", "C) Fairchild", "D) Kinnow"], ans: 3 },
+      { id: 357, q: "What causes misshapen and angular cucumber fruits under tunnel conditions?", options: ["A) Proper pollination", "B) Poor fertilization", "C) None", "D) Poor pollination"], ans: 3 },
+      { id: 358, q: "In citrus, 80–90% of active roots are typically located within:", options: ["A) 75 cm", "B) 100 cm", "C) 50 cm", "D) 25 cm"], ans: 3 },
+      { id: 359, q: "What term describes a fleshy fruit with thin skin that is not formed from the ovary but from another plant part?", options: ["A) Berry", "B) Stone fruit", "C) Drupe", "D) Pome"], ans: 3 },
+      { id: 360, q: "What are fruits called that do not naturally open to shed seeds?", options: ["A) Dry fruit", "B) Dehiscent fruit", "C) Fleshy fruit", "D) Indehiscent fruit"], ans: 3 },
+      { id: 361, q: "Which is an example of an aboveground modified stem?", options: ["A) Tubers", "B) Rhizomes", "C) Corms", "D) Stolons"], ans: 3 },
+      { id: 362, q: "What are the edges of a leaf called?", options: ["A) Petiole", "B) Veins", "C) Midrib", "D) Margin"], ans: 3 },
+      { id: 363, q: "What is the chromosome number (2n) in citrus?", options: ["A) 20", "B) 33", "C) 22", "D) 18"], ans: 3 },
+      { id: 364, q: "What is the scientific name of sweet orange?", options: ["A) C. chinensis", "B) None of the above", "C) C. citrii", "D) C. sinensis"], ans: 3 },
+      { id: 365, q: "Sweet orange thrives best under:", options: ["A) Wet and subhumid conditions", "B) None of the above", "C) Dry and semiarid conditions", "D) Dry and subhumid conditions"], ans: 3 },
+      { id: 366, q: "What does zinc deficiency in sweet orange typically cause?", options: ["A) Increased sweetness of fruit", "B) Streaks on leaves", "C) Chlorosis in fruit", "D) Chlorosis in leaves"], ans: 3 },
+      { id: 367, q: "The antagonistic effect of Fe on Zn availability in sweet orange leads to:", options: ["A) Reduced fruit weight", "B) Leaf drop", "C) Fruit drop", "D) Zn deficiency"], ans: 0 },
+      { id: 368, q: "During which period does blooming typically occur in mango?", options: ["A) May–June", "B) September–October", "C) January to first week of February", "D) February to mid-April"], ans: 3 },
+      { id: 369, q: "What is the term for the whole inflorescence in mango?", options: ["A) Spath", "B) Spike", "C) None of the above", "D) Panicle"], ans: 3 },
+      { id: 370, q: "What is the optimal temperature range for cucumber seed germination according to the source?", options: ["A) 25–30°C", "B) None of the above", "C) 20–25°C", "D) 15–25°C"], ans: 3 },
+      { id: 371, q: "During which flush does mango typically bear the maximum number of flowers?", options: ["A) April flush", "B) June flush", "C) August flush", "D) May flush"], ans: 1 },
+      { id: 372, q: "What type of fruit is a mango?", options: ["A) False fruit", "B) Stone fruit", "C) Pome fruit", "D) Drupe fruit"], ans: 3 },
+      { id: 373, q: "What is another term for inarching?", options: ["A) Budding", "B) None of the above", "C) Cutting", "D) Approach grafting"], ans: 3 },
+      { id: 374, q: "Anthracnose of mango is a:", options: ["A) Physiological disorder", "B) None of these", "C) Viral disease", "D) Fungal disease"], ans: 3 },
+      { id: 375, q: "A one-year-old branch of a plant is called:", options: ["A) Mature branch", "B) None of these", "C) Sprigs", "D) Twigs"], ans: 3 },
+      { id: 376, q: "Guava is grown on a large scale in:", options: ["A) Bahawalpur area", "B) Quetta", "C) Multan area", "D) Sheikhupura area"], ans: 3 },
+      { id: 377, q: "All commercial date palm orchards in India are pollinated by:", options: ["A) Natural pollination", "B) Insects", "C) Wind", "D) Manual pollination"], ans: 3 },
+      { id: 378, q: "Umran No. 9 and 13 are varieties of:", options: ["A) Banana", "B) Loquat", "C) Grapes", "D) Ber"], ans: 3 },
+      { id: 379, q: "Flower bearing in ber occurs during:", options: ["A) Summer", "B) Autumn", "C) Spring", "D) Winter"], ans: 0 },
+      { id: 380, q: "East Malling is a rootstock for:", options: ["A) Pineapple", "B) Musambi", "C) Loquat", "D) Apple"], ans: 3 },
+      { id: 381, q: "Low-chilling varieties of apple include:", options: ["A) None of these", "B) Enna", "C) Tropical Beauty", "D) All of these"], ans: 3 },
+      { id: 382, q: "Stooling is also called:", options: ["A) Cutting", "B) Gooti layering", "C) Sexual propagation", "D) Mound layering"], ans: 3 },
+      { id: 383, q: "Good soil management ensures:", options: ["A) Preservation of moisture", "B) Prevention of soil erosion", "C) Good supply of organic matter", "D) All of the above"], ans: 3 },
+      { id: 384, q: "Apple requires relatively:", options: ["A) High P and low K", "B) No K and P", "C) Equal K and P", "D) High K and low P"], ans: 3 },
+      { id: 385, q: "A full-grown apple tree requires:", options: ["A) 40–50 kg FYM", "B) No FYM", "C) Very low FYM", "D) 80–100 kg FYM"], ans: 3 },
+      { id: 386, q: "Irrigation during blooming in apple:", options: ["A) Shows no response", "B) Reduces fruit development", "C) Is harmful to fruit set", "D) Helps to increase fruit set"], ans: 3 },
+      { id: 387, q: "Cross-pollinated apples generally produce:", options: ["A) Same results as self-pollinated", "B) None of these", "C) Worse results than self-pollinated", "D) Better results than self-pollinated"], ans: 3 },
+      { id: 388, q: "In sweet orange, preharvest fruit drop is:", options: ["A) Never experienced", "B) A problem of the area", "C) Seldom experienced", "D) Commonly experienced"], ans: 3 },
+      { id: 389, q: "The sweet orange is a:", options: ["A) Both loose-skinned and tight-skinned", "B) Loose-skinned", "C) None of these", "D) Tight-skinned"], ans: 3 },
+      { id: 390, q: "Sweet orange belongs to the family:", options: ["A) Both Malvaceae and Rutaceae", "B) None of these", "C) Malvaceae", "D) Rutaceae"], ans: 3 },
+      { id: 391, q: "Citrus reticulata Blanco is the botanical name for:", options: ["A) Both sour lime and mandarin", "B) None of these", "C) Sour lime", "D) Mandarin"], ans: 3 },
+      { id: 392, q: "Tap roots of plants are also called:", options: ["A) Tertiary roots", "B) Secondary roots", "C) Adventitious roots", "D) Primary roots"], ans: 3 },
+      { id: 393, q: "The part of the stem from which a leaf arises is called:", options: ["A) Bud", "B) Apex", "C) Internode", "D) Node"], ans: 3 },
+      { id: 394, q: "Plants which live for only a single season are called:", options: ["A) Biennials", "B) Perennials", "C) Herbs", "D) Annuals"], ans: 3 },
+      { id: 395, q: "Plants that are soft, green and can be easily bent are known as:", options: ["A) Shrubs", "B) None of these", "C) Woody", "D) Herbaceous"], ans: 3 },
+      { id: 396, q: "The bud which develops in the axil of a leaf is called:", options: ["A) Naked bud", "B) Adventitious bud", "C) Terminal bud", "D) Axillary bud"], ans: 3 },
+      { id: 397, q: "Buds containing both leaves and flowers are known as:", options: ["A) Scaly buds", "B) Leaf buds", "C) Flower buds", "D) Mixed buds"], ans: 3 },
+      { id: 398, q: "A slender trailing stem taking roots at the nodes is called:", options: ["A) Tuber", "B) Bulb", "C) Rhizome", "D) Runner"], ans: 3 },
+      { id: 399, q: "The stamens, which are the male organs of a flower, are collectively called:", options: ["A) Carpel", "B) Gynoecium", "C) Pistil", "D) Androecium"], ans: 3 },
+      { id: 400, q: "A special leaf which bears a flower or cluster of flowers in its axil is called:", options: ["A) Simple leaf", "B) Compound leaf", "C) None of these", "D) Bract"], ans: 3 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(200, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 200) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Horticulture Master Exam (201–400).";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific fruit crop physiology, orchard management, and botany.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Horticulture recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+</html>

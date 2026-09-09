@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Floriculture & Landscaping Test 1 — Cut Flowers, Loose Flowers & Garden Design (269 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next,
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select,
+    .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Floriculture & Landscaping Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Floriculture &
+        Landscaping Test 1 (269 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–269)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="269">All Questions (269 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 269)</label>
+          <input type="number" id="custom-count-input" min="1" max="269" value="100" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">269 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#127801;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Floriculture</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#127969;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Landscaping</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 269</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">04:29:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "Arka Surabhi is a variety of:", options: ["A) Jasminum auriculatum", "B) Jasminum sambac", "C) Jasminum officinale", "D) Jasminum grandiflorum"], ans: 0 },
+      { id: 2, q: "Which of the following varieties of Tuberose is suitable for cut flower?", options: ["A) Prajwal", "B) Srinagar", "C) Vaibhav", "D) Suvasini"], ans: 0 },
+      { id: 3, q: "The world famous Lilium mackliniae (Siroy lily) is native to:", options: ["A) Manipur", "B) Mizoram", "C) Nagaland", "D) Meghalaya"], ans: 0 },
+      { id: 4, q: "The chromosome number of triploid Crossandra is:", options: ["A) 2n = 30", "B) 2n = 40", "C) 2n = 50", "D) 2n = 60"], ans: 0 },
+      { id: 5, q: "“Slabside” is a physiological disorder of:", options: ["A) Carnation", "B) Tuberose", "C) Jasmine", "D) Rose"], ans: 0 },
+      { id: 6, q: "Anti-petal blackening film is used in polyhouse to overcome the physiological disorder in:", options: ["A) Carnation", "B) Cut rose", "C) Cut chrysanthemum", "D) Gerbera"], ans: 0 },
+      { id: 7, q: "Foliar application of Cycocel @ 1000 ppm increases the production of flowers in Jasminum sp. because Cycocel application stimulates more shoots and induces more flowers:", options: ["A) Both (A) and (R) are true and (R) is the correct explanation of (A)", "B) Both true, R not correct explanation", "C) A true, R false", "D) Both false"], ans: 0 },
+      { id: 8, q: "Calyx splitting in carnation is caused due to the deficiency of:", options: ["A) Boron", "B) Calcium", "C) Magnesium", "D) Zinc"], ans: 0 },
+      { id: 9, q: "Roses are commercially propagated by:", options: ["A) T-budding", "B) Cutting", "C) Layering", "D) Seed"], ans: 0 },
+      { id: 10, q: "The percentage of concrete recovery is high in which of the following species?", options: ["A) Jasminum auriculatum", "B) Jasminum grandiflorum", "C) Jasminum sambac", "D) Jasminum multiflorum"], ans: 0 },
+      { id: 11, q: "National Botanical Research Institute is located at:", options: ["A) Lucknow, U.P.", "B) Bangalore, Karnataka", "C) Thrissur, Kerala", "D) Kolkata, West Bengal"], ans: 0 },
+      { id: 12, q: "Artificial coloration of flowers is called:", options: ["A) Tinting", "B) Painting", "C) Coloring", "D) Dipping"], ans: 0 },
+      { id: 13, q: "Centre of Excellence for cut flowers, a joint venture of GOI and Govt of Israel is being operated at:", options: ["A) Thally, Krishnagiri District", "B) Arur, Dharmapuri District", "C) Thenkanikottai, Krishnagiri District", "D) Pappireddipatti, Dharmapuri District"], ans: 0 },
+      { id: 14, q: "Aeroponics is the process of growing plants in:", options: ["A) Air or mist environment without soil or aggregate medium", "B) Water or soil", "C) Nutrient solution", "D) Soil or water"], ans: 0 },
+      { id: 15, q: "The primary horticulture co-operative society under TN co-operative societies act 1983 is:", options: ["A) TANHOPE Ltd.", "B) TANHODA", "C) TNHDA", "D) TBM"], ans: 0 },
+      { id: 16, q: "The maximum area under hydroponics is in ______ country.", options: ["A) Netherlands", "B) Israel", "C) Egypt", "D) Italy"], ans: 0 },
+      { id: 17, q: "The vernalization involves the formation of a floral hormone called:", options: ["A) Vernalin", "B) Florigen", "C) Auxin", "D) Abscisic acid"], ans: 0 },
+      { id: 18, q: "The concrete recovery from Jasminum grandiflorum is:", options: ["A) 0.27%", "B) 0.33%", "C) 0.19%", "D) 0.50%"], ans: 0 },
+      { id: 19, q: "The divisions of Horticulture which impact the environment aesthetically or functionally are:", options: ["A) Ornamental Horticulture and landscape architecture", "B) Ornamental Horticulture and fruits", "C) Landscape architecture and vegetables", "D) Fruits and vegetables"], ans: 0 },
+      { id: 20, q: "Damping off disease is common in:", options: ["A) Tuberose", "B) Rose", "C) Marigold", "D) Jasmine"], ans: 0 },
+      { id: 21, q: "Pruning is an important practice for flower production in:", options: ["A) Jasmine", "B) Gladiolus", "C) Gerbera", "D) Orchids"], ans: 0 },
+      { id: 22, q: "Interveinal chlorosis on older leaves of gerbera is due to deficiency of:", options: ["A) Magnesium", "B) Nitrogen", "C) Calcium", "D) Phosphorus"], ans: 0 },
+      { id: 23, q: "The gall mite resistant variety of mullai is:", options: ["A) Arka Surabhi", "B) Co 1", "C) Co 2", "D) Parimullai"], ans: 0 },
+      { id: 24, q: "The Jasminum species producing yellow coloured flowers is:", options: ["A) Jasminum humile", "B) Jasminum auriculatum", "C) Jasminum grandiflorum", "D) Jasminum nitidum"], ans: 0 },
+      { id: 25, q: "Which structure is used for rooting of cuttings?", options: ["A) Mist chamber", "B) Net house", "C) Poly houses", "D) Hot beds"], ans: 0 },
+      { id: 26, q: "Developing a mixture of dry flowers parts with fragrance for keeping in room is called as:", options: ["A) Pot Pourri", "B) Wreath", "C) Bouquet", "D) Wall Hanger"], ans: 0 },
+      { id: 27, q: "Prajwal is a variety of:", options: ["A) Tuberose", "B) Gerbera", "C) Nerium", "D) Rose"], ans: 0 },
+      { id: 28, q: "Friendship is a variety in:", options: ["A) Carnation", "B) Anthurium", "C) Rose", "D) Gladiolus"], ans: 0 },
+      { id: 29, q: "Immature Jasmine buds with bore holes symptom is caused by:", options: ["A) Bud worm", "B) Leaf Webber", "C) Mite", "D) Aphid"], ans: 0 },
+      { id: 30, q: "Choose crop in which Arka Surabhi variety belongs:", options: ["A) Mullai", "B) Pitchi", "C) Gundumalli", "D) Marigold"], ans: 0 },
+      { id: 31, q: "Jasmine sp. with less shelf life is:", options: ["A) Kakattan", "B) Pitchi", "C) Gundu malli", "D) Mullai"], ans: 0 },
+      { id: 32, q: "First red is the variety of:", options: ["A) Crossandra", "B) Jasmine", "C) Marigold", "D) Chrysanthemum"], ans: 0 },
+      { id: 33, q: "The major cut flower grown in India:", options: ["A) Rose", "B) Carnation", "C) Chrysanthemum", "D) Orchid"], ans: 0 },
+      { id: 34, q: "The rooting of cuttings enhanced with mist chamber due to:", options: ["A) Intermittent mist with high humidity and low temperature", "B) Continuous misting with high temp", "C) Continuous misting with low temp", "D) Intermittent mist with high humidity and high temp"], ans: 0 },
+      { id: 35, q: "‘Kakada’ jasmine is botanically known as:", options: ["A) Jasminum multiflorum", "B) Jasminum grandiflorum", "C) Jasminum sambac", "D) Jasminum auriculatum"], ans: 0 },
+      { id: 36, q: "Flowering period in marigold is prolonged by:", options: ["A) CCC at 3000 ppm", "B) Ethrel at 500 ppm", "C) GA₃ at 1000 ppm", "D) None"], ans: 0 },
+      { id: 37, q: "Origin of African marigold is:", options: ["A) Mexico", "B) Africa", "C) India", "D) America"], ans: 0 },
+      { id: 38, q: "______ is a wax like substance containing essential oil together with plant waxes and pigments.", options: ["A) Concrete", "B) Attar", "C) Absolute", "D) Extract"], ans: 0 },
+      { id: 39, q: "The solvent used for the extraction of Jasmine concrete is:", options: ["A) Food grade Hexane", "B) Sodium benzoate", "C) Ascorbic acid", "D) Silver nitrate"], ans: 0 },
+      { id: 40, q: "Which of the following statement carnation differed from chrysanthemum?", options: ["A) Carnation is a long day plant", "B) Requires pinching", "C) Produces cut flowers", "D) Commercially cultivated in India"], ans: 0 },
+      { id: 41, q: "Tuberose variety tolerant to Meloidogyne incognita nematode is:", options: ["A) Vaibhav", "B) Shrinagar", "C) Rajat Rekha", "D) Prajwal"], ans: 0 },
+      { id: 42, q: "The concrete recovery percent from Jasminum auriculatum is:", options: ["A) 0.33%", "B) 0.27%", "C) 0.19%", "D) 0.15%"], ans: 0 },
+      { id: 43, q: "The optimum spacing recommended for Mullai is:", options: ["A) 1.5 × 1.5 m", "B) 1.25 × 1.25 m", "C) 2.0 × 1.5 m", "D) 2.0 × 2.0 m"], ans: 0 },
+      { id: 44, q: "Crossandra (Crossandra infundibuliformis) belongs to the family:", options: ["A) Acanthaceae", "B) Asteraceae", "C) Malvaceae", "D) Iridaceae"], ans: 0 },
+      { id: 45, q: "Pinching off the two to three top florets before storage reduces stem curvature and forces upper florets to open in:", options: ["A) Gladiolus", "B) Liliums", "C) Chrysanthemum", "D) Tuberose"], ans: 0 },
+      { id: 46, q: "Commercially exploited species for jasmine oil extraction:", options: ["A) J. grandiflorum", "B) J. auriculatum", "C) J. multiflorum", "D) J. flexile"], ans: 0 },
+      { id: 47, q: "The varieties of tuberose are named on the basis of:", options: ["A) Number of petals of flowers", "B) Length of flowers", "C) Colour of petals", "D) Fragrance"], ans: 0 },
+      { id: 48, q: "Which one of the following is the state flower of Tamilnadu?", options: ["A) Glory Lilly", "B) Lotus", "C) Jasmine", "D) Crossandra"], ans: 0 },
+      { id: 49, q: "Increased concentration of ______ in greenhouse improves flowering in gerbera.", options: ["A) CO₂", "B) N₂", "C) O₂", "D) CO"], ans: 0 },
+      { id: 50, q: "Jasmine species which has highest oil content:", options: ["A) Jasminum grandiflorum", "B) Jasminum auriculatum", "C) Jasminum sambac", "D) Jasminum multiflorum"], ans: 0 },
+      { id: 51, q: "Match: Bulb–Narcissus; Corm–Iris; Tuber–Dahlia; Rhizome–Crocus.", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 52, q: "Botanical name for Spanish Jasmine is:", options: ["A) Jasminum grandiflorum", "B) J. sambac", "C) J. multiflorum", "D) J. nitidum"], ans: 0 },
+      { id: 53, q: "Delhi Crossandra is propagated by:", options: ["A) Stem cuttings", "B) Seeds", "C) Layering", "D) Budding"], ans: 0 },
+      { id: 54, q: "Pruning of Jasminum sambac is done during:", options: ["A) Last week of November", "B) Last week of December", "C) First week of January", "D) Last week of January"], ans: 0 },
+      { id: 55, q: "Scientific name of French Marigold is:", options: ["A) Tagetes patula", "B) T. erecta", "C) T. tenuifolia", "D) T. lucida"], ans: 0 },
+      { id: 56, q: "Point out the correct statement with regard to carnation harvest for long distance market:", options: ["A) Tight bud stage / paintbrush stage", "B) Fully open", "C) Semi open", "D) None"], ans: 0 },
+      { id: 57, q: "______ is the jasmine available in the market, when all other species are not available.", options: ["A) Jasminum grandiflorum", "B) Jasminum multiflorum", "C) Jasminum sambac", "D) Jasminum auriculatum"], ans: 0 },
+      { id: 58, q: "______ is the physiological disorder in carnation causes more losses.", options: ["A) Calyx splitting", "B) Petals rotting", "C) Splitting", "D) Slab side"], ans: 0 },
+      { id: 59, q: "The optimal harvesting stage of standard Chrysanthemum for local market is:", options: ["A) Centre of oldest flower is fully open", "B) Disc floret start elongating", "C) Outer petals fully elongated", "D) Half florets open"], ans: 0 },
+      { id: 60, q: "Example for a fungal-nematode complex disease in flower crops:", options: ["A) Tuberose root rot", "B) Carnation wilt", "C) Crossandra wilt", "D) Chrysanthemum aspermy"], ans: 0 },
+      { id: 61, q: "How much flower yield can be obtained from one hectare of pitchi?", options: ["A) 11,000 kg", "B) 10,000 kg", "C) 9,000 kg", "D) 8,000 kg"], ans: 0 },
+      { id: 62, q: "How long gundumalli flowers remain fresh when treated with sucrose, boric acid, CuSO₄ and Al(NO₃)₃?", options: ["A) 72 hours", "B) 48 hours", "C) 60 hours", "D) 84 hours"], ans: 0 },
+      { id: 63, q: "What is the plant growth regulator recommended as corm dipping in tuberose?", options: ["A) KNO₃ (or CCC @ 3000 ppm)", "B) Gibberellic acid", "C) Thio urea", "D) None"], ans: 0 },
+      { id: 64, q: "Calyx splitting disorder in carnation is due to:", options: ["A) Boron deficiency", "B) Zinc deficiency", "C) Cu deficiency", "D) Mo deficiency"], ans: 0 },
+      { id: 65, q: "A marginal farmer has 30 cents land and wants to raise pitchi. How many plants is he recommended?", options: ["A) 1080 plants", "B) 1000", "C) 400", "D) 1200"], ans: 0 },
+      { id: 66, q: "Choose pruning period of mullai:", options: ["A) Last week of November", "B) Last week of December", "C) First week of November", "D) Last week of January"], ans: 0 },
+      { id: 67, q: "What is the propagation material used in tuberose?", options: ["A) Bulb / Corm", "B) Tubers", "C) Seed", "D) Stem"], ans: 0 },
+      { id: 68, q: "The popular red colored rose variety produced for export in India is:", options: ["A) Tropical Amazon", "B) B.P. Pal", "C) Taj Mahal", "D) Confetti"], ans: 0 },
+      { id: 69, q: "Crossandra–Attar, Chrysanthemum–Non-fragmented, Rose–Concrete, Jasmine–Netting:", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 70, q: "Ratooning is possible in:", options: ["A) Chrysanthemum", "B) Edward Rose", "C) Jasmine", "D) Marigold"], ans: 0 },
+      { id: 71, q: "Which of the following on Crossandra is true? (Orange is Tetraploid, Delhi is triploid):", options: ["A) I and III", "B) I and II", "C) II and III", "D) All"], ans: 0 },
+      { id: 72, q: "Fragrant oil can be extracted from:", options: ["A) Jasmine", "B) Crossandra", "C) Zinnia", "D) Gomphrena"], ans: 0 },
+      { id: 73, q: "Carnation is propagated by:", options: ["A) Terminal cuttings", "B) Rhizomes", "C) Bulbs", "D) Tubers"], ans: 0 },
+      { id: 74, q: "Chrysanthemum is a ______ plant.", options: ["A) Short day", "B) Long day", "C) Day neutral", "D) Photo insensitive"], ans: 0 },
+      { id: 75, q: "Jasmine belongs to the family:", options: ["A) Oleaceae", "B) Acanthaceae", "C) Apocynaceae", "D) Malvaceae"], ans: 0 },
+      { id: 76, q: "______ is the national flower of India.", options: ["A) Lotus", "B) Gladiolus", "C) Glory lily", "D) Jasmine"], ans: 0 },
+      { id: 77, q: "Double variety of tuberose is:", options: ["A) Calcutta Double", "B) Super Star", "C) Rakthagandha", "D) Friendship"], ans: 0 },
+      { id: 78, q: "Bud netting is done in:", options: ["A) Rose", "B) Orchids", "C) Jasmine", "D) Gerbera"], ans: 0 },
+      { id: 79, q: "Jasmine–Mogra; Tuberose–Vaibhav; Gerbera–Sunset; Marigold–Pusa Narangi:", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 80, q: "At which height rose plants are pruned?", options: ["A) 45 cm", "B) 20 cm", "C) 90 cm", "D) 120 cm"], ans: 0 },
+      { id: 81, q: "Pinching is followed in which plant?", options: ["A) Chrysanthemum", "B) Gladiolus", "C) Rose", "D) Jasmine"], ans: 0 },
+      { id: 82, q: "Corm dipping for increased yield in tuberose is done using CCC at:", options: ["A) 3000 ppm", "B) 2000 ppm", "C) 4000 ppm", "D) 5000 ppm"], ans: 0 },
+      { id: 83, q: "Identify the family of gladiolus:", options: ["A) Iridaceae", "B) Acanthaceae", "C) Euphoriaceae", "D) Rubiaceae"], ans: 0 },
+      { id: 84, q: "Yellow Reagan is an important variety of:", options: ["A) Cut Chrysanthemum", "B) Gerbera", "C) Anthurium", "D) Gladiolus"], ans: 0 },
+      { id: 85, q: "Flower yield per hectare of Jathi malli (J. grandiflorum) is:", options: ["A) 9–11 t/ha", "B) 2–4 t/ha", "C) 4–6 t/ha", "D) 15–17 t/ha"], ans: 0 },
+      { id: 86, q: "Cut flowers and varieties matching (Anthurium–American Beauty, Chrysanthemum–Passion, Rose–Taj Mahal, Gladiolus–Red Gold):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 87, q: "Crops and botanical names matching (Jasmine–J. sambac, Tuberose–Polianthes tuberosa, Rose–Rosa sp., Chrysanthemum–Dendranthema grandiflora):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 88, q: "Rose oil is primarily extracted from Rosa species:", options: ["A) Rosa damascena", "B) R. odorata", "C) R. indica", "D) R. gallica"], ans: 0 },
+      { id: 89, q: "Bull head is a common physiological disorder in:", options: ["A) Carnation", "B) Rose", "C) Gerbera", "D) Anthurium"], ans: 0 },
+      { id: 90, q: "Arka Ravi is a variety of:", options: ["A) Gladiolus", "B) Chrysanthemum", "C) Gerbera", "D) Marigold"], ans: 0 },
+      { id: 91, q: "Vase life of cut gladiolus spikes can be increased with:", options: ["A) 8-HQC (8-Hydroxyquinoline citrate)", "B) NaCl", "C) Ethanol", "D) Calcium"], ans: 0 },
+      { id: 92, q: "Which Crossandra statements are correct? (Nematodes vs Carbofuran, Triploids vs Terminal cuttings):", options: ["A) I and II", "B) I only", "C) II only", "D) III and IV"], ans: 0 },
+      { id: 93, q: "Limp neck is a disorder in:", options: ["A) Rose", "B) Carnation", "C) Tuberose", "D) Crossandra"], ans: 0 },
+      { id: 94, q: "Consider statements: Netherlands largest exporter, J. sambac limb cuttings, Suvasini tuberose variety:", options: ["A) 1, 2, 3 correct", "B) 1 only", "C) 3 and 4", "D) All"], ans: 0 },
+      { id: 95, q: "The most critical factor in protected cultivation of cut chrysanthemum is:", options: ["A) Light (photoperiod control)", "B) Growing medium", "C) Ventilation", "D) CO₂"], ans: 0 },
+      { id: 96, q: "Black spot is a common disease in:", options: ["A) Rose", "B) Anthurium", "C) Gladiolus", "D) Gerbera"], ans: 0 },
+      { id: 97, q: "The term “spoon” is related to:", options: ["A) Chrysanthemum", "B) Gerbera", "C) Ipomoea", "D) Carnation"], ans: 0 },
+      { id: 98, q: "Sebaculis Red is a cultivar of:", options: ["A) Crossandra", "B) Rose", "C) Gerbera", "D) Anthurium"], ans: 0 },
+      { id: 99, q: "Orchid seeds are devoid of:", options: ["A) Endosperm", "B) Seed coat", "C) Cotyledon", "D) Embryo"], ans: 0 },
+      { id: 100, q: "Rose hips are a potential source of:", options: ["A) Vitamin C", "B) Vitamin A", "C) Essential oil", "D) Biocolourants"], ans: 0 },
+      { id: 101, q: "Which is not a cultivar of Jasminum auriculatum?", options: ["A) Motia", "B) Large Round", "C) Long Point", "D) Pari Mullai"], ans: 0 },
+      { id: 102, q: "Pyrethrum is extracted from which Chrysanthemum species?", options: ["A) Chrysanthemum cinerariifolium", "B) C. morifolium", "C) C. indicum", "D) None"], ans: 0 },
+      { id: 103, q: "Which of the following crops is associated with natural dyes?", options: ["A) Marigold", "B) Tuberose", "C) Tulip", "D) Rose"], ans: 0 },
+      { id: 104, q: "Which of the state stands first in loose flower production in India?", options: ["A) Tamil Nadu", "B) Karnataka", "C) West Bengal", "D) AP"], ans: 0 },
+      { id: 105, q: "Where is the National Research Centre for orchids situated?", options: ["A) Sikkim", "B) Bangalore", "C) Andaman", "D) Trivandrum"], ans: 0 },
+      { id: 106, q: "Pusa Narangi Gainda is a variety of:", options: ["A) Marigold", "B) Chrysanthemum", "C) Tuberose", "D) Jasmine"], ans: 0 },
+      { id: 107, q: "Tuberose is native of:", options: ["A) Mexico", "B) India", "C) USA", "D) South Africa"], ans: 0 },
+      { id: 108, q: "Arka Arpan is a variety of:", options: ["A) Jasminum auriculatum", "B) J. sambac", "C) J. multiflorum", "D) J. nitidum"], ans: 0 },
+      { id: 109, q: "Yield of tuberose concrete is:", options: ["A) 0.11–0.22%", "B) 0.08–0.11%", "C) 0.22–0.35%", "D) 0.35–1.10%"], ans: 0 },
+      { id: 110, q: "This plant is called as fire cracker plant:", options: ["A) Crossandra", "B) Chrysanthemum", "C) Jasmine", "D) Tuberose"], ans: 0 },
+      { id: 111, q: "Vitamin C content in rose fruit (hip) is:", options: ["A) 250 mg/100g", "B) 100 mg/100g", "C) 150 mg/100g", "D) 200 mg/100g"], ans: 0 },
+      { id: 112, q: "Netting, a special horticultural practice followed in:", options: ["A) Carnation", "B) Rose", "C) Gladiolus", "D) Gerbera"], ans: 0 },
+      { id: 113, q: "Grey mould in chrysanthemum is caused by:", options: ["A) Botrytis", "B) Fusarium", "C) Alternaria", "D) Septoria"], ans: 0 },
+      { id: 114, q: "Gulkhand was prepared by mixing of rose petals and sugar in the ratio of:", options: ["A) 1:1", "B) 1:2", "C) 1:3", "D) 2:1"], ans: 0 },
+      { id: 115, q: "Arka Ambara and Arka Kanaka are hybrids of:", options: ["A) Tuberose", "B) Gaillardia", "C) Jasmine", "D) Crossandra"], ans: 0 },
+      { id: 116, q: "CO₂ concentration required for rose growing in greenhouse should be:", options: ["A) 1000–3000 ppm", "B) Upto 300 ppm", "C) 700–800 ppm", "D) Above 3000 ppm"], ans: 0 },
+      { id: 117, q: "Single type varieties of tuberose are:", options: ["A) Prajwal and Shringar", "B) Phule Rajani and Shringar", "C) Suvasini and Shringar", "D) Phule Rajani and Suvasini"], ans: 0 },
+      { id: 118, q: "Which of the following pigments extracted from marigold is widely used in poultry industry?", options: ["A) Carotenoids", "B) Chlorophyll", "C) Anthocyanin", "D) Xanthophyll"], ans: 0 },
+      { id: 119, q: "The famous flower market Thovalai is located at:", options: ["A) Kanyakumari District", "B) Madurai District", "C) Chennai", "D) Salem"], ans: 0 },
+      { id: 120, q: "Quilling of florets is common disorder in:", options: ["A) Dahlia / Chrysanthemum", "B) Carnation", "C) Rose", "D) Gerbera"], ans: 0 },
+      { id: 121, q: "Blue colour of rose is due to:", options: ["A) Delphinidin", "B) Pelargonidine", "C) Cyanidine", "D) Chalcones"], ans: 0 },
+      { id: 122, q: "Non-fragrant spp. of jasmine is:", options: ["A) J. multiflorum", "B) J. auriculatum", "C) J. sambac", "D) J. primulum"], ans: 0 },
+      { id: 123, q: "The flower crop which possesses nematicide properties is:", options: ["A) Marigold", "B) Rose", "C) Carnation", "D) Tuberose"], ans: 0 },
+      { id: 124, q: "Match Japanese gardens (Hill garden–Kaiyu-shiki, Flat garden–Hiraniwa, Tea garden–Roji):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 125, q: "Synthetic lawn is known as:", options: ["A) Astro Turf", "B) Mulch", "C) Blue Turf", "D) Arches"], ans: 0 },
+      { id: 126, q: "What is the optimum temperature range required for indoor plants?", options: ["A) 21–32°C", "B) 10–12°C", "C) 10–14°C", "D) 5–10°C"], ans: 0 },
+      { id: 127, q: "An ornamental plant suitable for boundary or tall hedge is:", options: ["A) Tecoma stans", "B) Barleria sp", "C) Lantana camera", "D) Alternanthera"], ans: 0 },
+      { id: 128, q: "Orange flower producing tree is:", options: ["A) Spathodea campanulata", "B) Cassia grandis", "C) Jacaranda", "D) Acacia"], ans: 0 },
+      { id: 129, q: "In landscape design, appearance of objects and their surface is referred to as:", options: ["A) Texture", "B) Scale", "C) Surface", "D) Space"], ans: 0 },
+      { id: 130, q: "Lal Bagh garden is located at:", options: ["A) Bangalore", "B) Kashmir", "C) Delhi", "D) Pune"], ans: 0 },
+      { id: 131, q: "Botanical name for copper shield tree is:", options: ["A) Peltophorum ferrugineum", "B) Spathodea", "C) Jacaranda", "D) Michelia"], ans: 0 },
+      { id: 132, q: "Which of the following lawn grass is not suitable for open sunny situation?", options: ["A) Stenotaphrum secundatum (St. Augustine grass / shade tolerant)", "B) Cynodon dactylon", "C) Zoysia japonica", "D) Sporobolus"], ans: 0 },
+      { id: 133, q: "Parkia biglandulosa is commonly known as:", options: ["A) Badminton ball tree", "B) Indian tulip tree", "C) Bottle brush", "D) Gulmohar"], ans: 0 },
+      { id: 134, q: "The botanical name of umbrella plant grown in water garden is:", options: ["A) Cyperus alternifolius", "B) Sagittaria", "C) Acorus", "D) Calla"], ans: 0 },
+      { id: 135, q: "Which of the following is a non plant component in a garden?", options: ["A) Trophy / ornamentals (as non-plant structure)", "B) Topiary", "C) Rockery", "D) Fountain"], ans: 0 },
+      { id: 136, q: "Which of the following statement is incorrect?", options: ["A) Pothos prefers open sun (incorrect, pothos prefers shade)", "B) Ficus repens is foliage", "C) Trachelospermum has scented flowers", "D) Hedera helix prefers partial shade"], ans: 0 },
+      { id: 137, q: "‘Fairy ring’ problem in lawn is caused by:", options: ["A) Fungus", "B) Bacteria", "C) Insects", "D) Reptiles"], ans: 0 },
+      { id: 138, q: "Match climbing/foliage plants (Ficus repens, Clematis, Thunbergia, Wisteria):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 139, q: "Which of the following statement about British Garden is incorrect?", options: ["A) Element of surprise was missing", "B) Informal style", "C) Smooth curvaceous lines", "D) Asymmetric plan"], ans: 0 },
+      { id: 140, q: "The serially connected arches are called:", options: ["A) Pergolas", "B) Trellis", "C) Arbour", "D) Pillars"], ans: 0 },
+      { id: 141, q: "The lawn grass which is suitable for saline soil conditions is:", options: ["A) Sporobolus tremulus", "B) Cynodon intermedius", "C) Stenotaphrum", "D) Poa annua"], ans: 0 },
+      { id: 142, q: "Gazania splendens is classified into which of the following groups?", options: ["A) Herbaceous perennials / annuals", "B) Biennials", "C) Climbers", "D) Shrubs"], ans: 0 },
+      { id: 143, q: "The arrangement of potted plants around a tree or central object is called:", options: ["A) Trophy", "B) Topiary", "C) Rockery", "D) Border"], ans: 0 },
+      { id: 144, q: "Running water is the life and soul of ______ garden style.", options: ["A) Moghul", "B) Japanese", "C) English", "D) Italian"], ans: 0 },
+      { id: 145, q: "Name the plants suitable for boundary planting:", options: ["A) Agave americana", "B) Eranthemum", "C) Pisonia", "D) Allamanda"], ans: 0 },
+      { id: 146, q: "Developing a mixture of dry flower parts with fragrance for keeping in room is called as:", options: ["A) Pot Pourri", "B) Wreath", "C) Bouquet", "D) Wall Hanger"], ans: 0 },
+      { id: 147, q: "Group of plants that complete its life cycle within one year is:", options: ["A) Annuals", "B) Biennials", "C) Shrubs", "D) Herbaceous"], ans: 0 },
+      { id: 148, q: "Plant suitable for boundary planting:", options: ["A) Allamanda / Nerium", "B) Bougainvillea", "C) Agave", "D) All"], ans: 3 },
+      { id: 149, q: "Choose the correct combination of primary colours in gardening:", options: ["A) Blue, Yellow, Red", "B) Yellow, Orange, Violet", "C) Red, Yellow, Violet", "D) Blue, Yellow, Violet"], ans: 0 },
+      { id: 150, q: "Who is the architect of Chandigarh?", options: ["A) Le Corbusier (Lancelot Hogben / G.S. Randhawa in options)", "B) M.S. Randhawa", "C) Le Notre", "D) Lancelot"], ans: 0 },
+      { id: 151, q: "In Rose after pruning, the cut ends should be protected with:", options: ["A) Bordeaux paste", "B) Carbendazim", "C) Neem oil", "D) Dimethoate"], ans: 0 },
+      { id: 152, q: "Lawn is propagated by:", options: ["A) Turf plastering / roots / turfing", "B) Seeds only", "C) Grafting", "D) Budding"], ans: 0 },
+      { id: 153, q: "Which is a succulent?", options: ["A) Aloe abyssinica", "B) Helianthus", "C) Dianthus", "D) Celosia"], ans: 0 },
+      { id: 154, q: "Choose the garden component that helps to divide the garden into a number of parts:", options: ["A) Hedges", "B) Edges", "C) Topiary", "D) Shrubbery"], ans: 0 },
+      { id: 155, q: "Veni is a:", options: ["A) Flower by-product / garland ornament", "B) Dry flower", "C) Floral beverage", "D) Arrangement"], ans: 0 },
+      { id: 156, q: "Which of the following species is suitable for making tall hedge?", options: ["A) Polyalthia / Saraca indica", "B) Pithecellobium", "C) Terminalia", "D) Samanea"], ans: 0 },
+      { id: 157, q: "Confetti is a long stem variety of:", options: ["A) Carnation", "B) Rose", "C) Gerbera", "D) Chrysanthemum"], ans: 0 },
+      { id: 158, q: "In which crop, root production of stem cutting is difficult?", options: ["A) Bougainvillea", "B) Rose", "C) Crotons", "D) Chrysanthemum"], ans: 0 },
+      { id: 159, q: "Indicate the incorrect statement with regard to edge:", options: ["A) Edge plants are tall growing (incorrect, edges are low growing)", "B) Dividing borders", "C) Handsome foliage", "D) Amenable to trimming"], ans: 0 },
+      { id: 160, q: "Which of the following is queen of flowering trees?", options: ["A) Amherstia nobilis", "B) Cassia fistula", "C) Bauhinia", "D) Delonix regia"], ans: 0 },
+      { id: 161, q: "Which of the following cactus is popularly known as nipple cactus?", options: ["A) Mammillaria", "B) Echinocereus", "C) Echinocactus", "D) Cephalocereus"], ans: 0 },
+      { id: 162, q: "Among the following, find out the incorrect statement with regard to the qualities of indoor plants:", options: ["A) No need to withstand shade (incorrect, indoor plants must tolerate shade)", "B) Compact habit", "C) Evergreen", "D) Attractive shape/colour"], ans: 0 },
+      { id: 163, q: "Which of the following pair is incorrect?", options: ["A) Buddha Jayanthi park – New Delhi", "B) Bryant park – Ooty", "C) Sims park – Coonoor", "D) Lalbagh – Bangalore"], ans: 3 },
+      { id: 164, q: "Which of the following statement is non correct with regard to lawn establishment:", options: ["A) Lawn is not established through seed (incorrect, lawns are often seeded)", "B) Dibbling", "C) Turfing", "D) Turf plastering"], ans: 0 },
+      { id: 165, q: "The ideal pH for establishing a good lawn is:", options: ["A) 5.5 to 7.0", "B) 6.5 to 8.0", "C) 8.0 to 8.5", "D) 8.25 to 8.5"], ans: 0 },
+      { id: 166, q: "Climber suitable for screening is:", options: ["A) Vernonia elaeagnifolia", "B) Monstera", "C) Aristolochia", "D) Allamanda"], ans: 0 },
+      { id: 167, q: "Botanical name of Rangoon creeper is:", options: ["A) Quisqualis indica", "B) Ficus repens", "C) Adenocalymma", "D) Allamanda cathartica"], ans: 0 },
+      { id: 168, q: "Which of the following is incorrectly matched in landscape principles?", options: ["A) Rhythm – Divisional lines (incorrect, rhythm implies flow/movement)", "B) Balance – Visual equilibrium", "C) Harmony – Pleasing effect", "D) Proportion – Relative composition"], ans: 0 },
+      { id: 169, q: "Which of the following statement on Mughal garden is incorrect?", options: ["A) They did not follow symmetry (incorrect, Mughal gardens strictly followed bilateral symmetry)", "B) Charbagh design", "C) Running water essential", "D) Pleasure gardens"], ans: 0 },
+      { id: 170, q: "The technique used to grow house plants in big sized bottles with narrow mouth is known as:", options: ["A) Terrarium", "B) Water garden", "C) Indoor garden", "D) Sunken garden"], ans: 0 },
+      { id: 171, q: "Peak flowering season of Golden shower tree (Cassia fistula) is:", options: ["A) April–May", "B) December–January", "C) September–October", "D) June–July"], ans: 0 },
+      { id: 172, q: "Which one of the following is not an ornamental foliage plant?", options: ["A) Viola (flower plant)", "B) Asparagus", "C) Dracaena", "D) Mammillaria"], ans: 3 },
+      { id: 173, q: "Among the following, point out the incorrect statement about Cactaceae/Succulents:", options: ["A) Succulents originate from hot and arid regions of Asia (many are from Americas/Africa)", "B) 6 tribes", "C) Fleshy leaves", "D) Globular/columnar"], ans: 0 },
+      { id: 174, q: "Which of the following is incorrectly paired in garden art styles?", options: ["A) Miniature Garden – Bonsai (paired correctly)", "B) Vertical gardening – Green wall", "C) Terrarium – Glass container", "D) Gardening in dishes – Cacti"], ans: 3 },
+      { id: 175, q: "Which of the following are incorrectly paired (annual/foliage/flower/tree)?", options: ["A) Flowering tree – Acalypha hispida (Acalypha is a shrub)", "B) Annual – Petunia", "C) Cut foliage – Asparagus", "D) Cut flower – Gerbera"], ans: 0 },
+      { id: 176, q: "Pick out the tree with distinct growth habit (e.g., column/bottle brush/etc.):", options: ["A) Bottle brush (Callistemon)", "B) Gulmohar", "C) Rain tree", "D) Pride of India"], ans: 0 },
+      { id: 177, q: "Match historical gardens (Sikandar Bagh, Ram Bagh, Shalimar, Mandor):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 178, q: "Which is called natural depression garden?", options: ["A) Sunken garden", "B) Green house", "C) Trophy", "D) Topiary"], ans: 0 },
+      { id: 179, q: "Which component is called as garden adornments?", options: ["A) Statues / ornaments / bird baths", "B) Flowers", "C) Creepers", "D) Shrubs"], ans: 0 },
+      { id: 180, q: "Trimming of plants to shapes of animals, birds, seats etc. is called:", options: ["A) Topiary", "B) Shrubbery", "C) Trophy", "D) Statues"], ans: 0 },
+      { id: 181, q: "The grass used for making lawn in shady situation and requiring frequent watering is:", options: ["A) Blue grass (Poa annua / Kentucky bluegrass)", "B) Chain grass", "C) Buffalo grass", "D) Bermuda grass"], ans: 0 },
+      { id: 182, q: "Match components (Hanging basket, Rockery, Dry flower, Edging):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 183, q: "Name the plant which is planted as specimen shrubs in Lawn:", options: ["A) Thuja orientalis", "B) Jasmine", "C) Marigold", "D) Crossandra"], ans: 0 },
+      { id: 184, q: "Assertion: Concrete is costlier than absolute. Reason: Concrete is the purest form. (Evaluate A and R):", options: ["A) A is true R is false (Absolute is purer/more concentrated than concrete)", "B) Both true", "C) Both false", "D) R true"], ans: 0 },
+      { id: 185, q: "Assertion A: Pergolas and arches are erected to have separation and privacy. Reason R: Casuarina and Vernonia are more suitable for erecting arches/pergolas:", options: ["A) A is true and R is false", "B) Both true", "C) Both false", "D) R true"], ans: 0 },
+      { id: 186, q: "Fern suitable for indoor gardening:", options: ["A) Nephrolepis exaltata", "B) Pilea muscosa", "C) Iresine sp", "D) Coleus sp"], ans: 0 },
+      { id: 187, q: "Antigonon leptopus is classified botanically as a:", options: ["A) Climber / rambler", "B) Shrub", "C) Trailer", "D) Creeper"], ans: 0 },
+      { id: 188, q: "Which one of the following is correctly matched?", options: ["A) Lagerstroemia – Pride of India", "B) Dieffenbachia – Shrub", "C) Bryophyllum – Tree", "D) Tabernaemontana – Indoor"], ans: 0 },
+      { id: 189, q: "Which one of the following Lawn grass is correctly matched?", options: ["A) Poa annua – Blue grass", "B) Sporobolus – Japan", "C) Zoysia – Hariyali", "D) Cynodon – Chain"], ans: 0 },
+      { id: 190, q: "Which one of the following is correctly matched?", options: ["A) Shrub – Duranta", "B) Climber – Tecoma", "C) Tree – Rosa", "D) Herb – Ficus"], ans: 0 },
+      { id: 191, q: "Which one of the following is correctly matched?", options: ["A) Cedrela toona – Indian mahogany", "B) Ficus benghalensis – Pipal", "C) Ficus religiosa – Banyan", "D) Delonix – Neem"], ans: 0 },
+      { id: 192, q: "Which one of the following is the quickest method in lawn making?", options: ["A) Turfing (sodding)", "B) Seeding", "C) Dibbling", "D) Plastering"], ans: 0 },
+      { id: 193, q: "The memorable gift to Indian gardens by the Britishers is:", options: ["A) Herbaceous border and lawn", "B) Tree and shrubs", "C) Non plant components", "D) Roads"], ans: 0 },
+      { id: 194, q: "Japanese art of growing miniature potted trees and shrubs is called:", options: ["A) Bonsai", "B) Terrarium", "C) Arboretum", "D) Pot Pourri"], ans: 2 },
+      { id: 195, q: "Example for a foliage tree is:", options: ["A) Polyalthia longifolia (Mast tree)", "B) Cassia fistula", "C) Delonix regia", "D) Bauhinia"], ans: 0 },
+      { id: 196, q: "Example for herbaceous perennial is:", options: ["A) Golden rod (Solidago)", "B) Zinnia", "C) Cosmos", "D) Marigold"], ans: 0 },
+      { id: 197, q: "A non-flowering climber grown for attractive foliage is:", options: ["A) Hedera helix (English ivy)", "B) Quisqualis indica", "C) Allamanda grandiflora", "D) Petrea volubilis"], ans: 3 },
+      { id: 198, q: "Suitable irrigation system for maintaining a pristine lawn is:", options: ["A) Sprinkler irrigation", "B) Drip", "C) Flood", "D) Pitcher"], ans: 0 },
+      { id: 199, q: "Botanical name for Bermuda grass is:", options: ["A) Cynodon dactylon", "B) Cyprus rotundus", "C) Cyprus deformis", "D) Lolium"], ans: 0 },
+      { id: 200, q: "Plant suitable for boundary / tall hedge is:", options: ["A) Bougainvillea / Thevetia", "B) Gerbera", "C) Coleus", "D) Iresine"], ans: 3 },
+      { id: 201, q: "Yellow coloured flowering annual is:", options: ["A) Marigold", "B) Rose", "C) Bougainvillea", "D) Aster"], ans: 2 },
+      { id: 202, q: "Hill garden, Tea garden and flat garden are components of ______ garden style.", options: ["A) Japanese garden", "B) Moghul garden", "C) English garden", "D) Italian garden"], ans: 0 },
+      { id: 203, q: "Which tree is most suitable for roadside avenue planting?", options: ["A) Delonix regia (Gulmohar)", "B) Ficus", "C) Coconut", "D) Banana"], ans: 0 },
+      { id: 204, q: "Ikebana is the traditional Japanese art of:", options: ["A) Flower arrangement", "B) Bonsai", "C) Cut green", "D) Topiary"], ans: 0 },
+      { id: 205, q: "Tree flowering seasons matching (Peltophorum–Feb-May, Delonix–May-June, Lagerstroemia–June-July):", options: ["A) All are correct", "B) 1 and 2 only", "C) 1 and 3 only", "D) None"], ans: 0 },
+      { id: 206, q: "Consider climber statements (Ficus repens foliage, Bignonia venusta screen, Allamanda on trees):", options: ["A) 1 and 2 are correct", "B) 1 alone", "C) 1, 2 and 3", "D) All"], ans: 0 },
+      { id: 207, q: "Match succulents and cacti (Mammillaria–Cactus, Agave–Succulent, Iris–Bulbous, Star jasmine–Climber):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 208, q: "Which one of the following succulents is correctly matched with its family?", options: ["A) Lithops – Crassulaceae (or Agave/Aloe families)", "B) Agave – Aizoaceae", "C) Aloe – Lilliaceae", "D) Cotyledon – Amaryllidaceae"], ans: 0 },
+      { id: 209, q: "Leaf cutting is successfully used as propagation material in:", options: ["A) Rex Begonia", "B) Chrysanthemum", "C) Jasmine", "D) Coleus"], ans: 0 },
+      { id: 210, q: "Replacement of dead or unhealthy patches of grass in a lawn is referred to as:", options: ["A) Patching / plugging (bricking)", "B) Racking", "C) Mowing", "D) Rolling"], ans: 0 },
+      { id: 211, q: "Match lawn grasses with characteristics (Sporobolus–Drought resistant, Zoysia–Saline soil, Poa–Shady cool):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 212, q: "What is the true geographical origin of the cultivated lawn grass concept?", options: ["A) Europe / England (Britain)", "B) Tropical America", "C) South East Asia", "D) Egypt"], ans: 3 },
+      { id: 213, q: "Baradari is an important architectural feature characteristic of:", options: ["A) Mughal garden", "B) French garden", "C) English garden", "D) Japanese garden"], ans: 0 },
+      { id: 214, q: "Stone lanterns and pagodas are important feature elements of:", options: ["A) Japanese garden", "B) English garden", "C) Persian garden", "D) Mughal garden"], ans: 2 },
+      { id: 215, q: "Which of the following is a fundamental principle of landscape design?", options: ["A) Scale / Proportion / Balance / Rhythm / Focal point", "B) Shape alone", "C) Texture alone", "D) Pattern alone"], ans: 1 },
+      { id: 216, q: "Low-growing shrubs having similar dense qualities to hedges, planted to control foot traffic, are called:", options: ["A) Edges", "B) Topiary", "C) Shrubbery", "D) Arches"], ans: 0 },
+      { id: 217, q: "Which plant is commonly planted as a tall ornamental barrier hedge?", options: ["A) Thevetia peruviana (Yellow oleander)", "B) Acalypha", "C) Lantana", "D) Karonda"], ans: 0 },
+      { id: 218, q: "What is the standard prescribed height range for a formal garden edge?", options: ["A) 15–20 cm (low growing)", "B) 30–45 cm", "C) 100 cm", "D) 2 metres"], ans: 0 },
+      { id: 219, q: "Which colourful foliage plant is highly suitable for formal garden edging?", options: ["A) Iresine sp. (Bloodleaf)", "B) Gazania", "C) Lobelia", "D) Alyssum"], ans: 3 },
+      { id: 220, q: "Which climbing plant is universally acclaimed as the “Queen of climbers”?", options: ["A) Wisteria sinensis (or Clematis paniculata)", "B) Petrea", "C) Pyrostegia", "D) Antigonon"], ans: 0 },
+      { id: 221, q: "Which flowering annual is suitable for vertical screening purposes?", options: ["A) Sweet pea (Lathyrus odoratus)", "B) Verbena", "C) Iceplant", "D) Phlox"], ans: 1 },
+      { id: 222, q: "Which of the following is classified as a dedicated foliage annual?", options: ["A) Kochia (Bassia scoparia)", "B) Pisonia alba", "C) Hamelia", "D) Aralia"], ans: 0 },
+      { id: 223, q: "Choose the incorrect statement regarding seedling pricking:", options: ["A) Pricking is transplanting young seedlings into main field directly (incorrect, pricking moves seedlings to intermediate nursery pots/beds)", "B) Done at 2–4 leaves", "C) Increases fibrous roots", "D) Develops vigor"], ans: 0 },
+      { id: 224, q: "Which annual flowers are traditionally grown and harvested for dried flower arrangements?", options: ["A) Statice and Helichrysum (Everlastings)", "B) Marigold", "C) Zinnia", "D) Petunia"], ans: 3 },
+      { id: 225, q: "Choose the incorrect statement regarding Cactaceae:", options: ["A) All cacti bear leaves throughout their life (incorrect, most cacti lack true leaves, replacing them with spines)", "B) Areoles present", "C) Succulents", "D) Bloom annually"], ans: 2 },
+      { id: 226, q: "Match cacti species (Rat tail cactus–Aporocactus, Nipple cactus–Mammillaria, Barrel cactus–Echinocactus):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 227, q: "What is the common botanical name of the Century plant?", options: ["A) Agave americana", "B) Lithops", "C) Portulaca afra", "D) Euphorbia splendens"], ans: 0 },
+      { id: 228, q: "Which of the following palms belongs to the clumping (clustering) palm group?", options: ["A) Areca lutescens (Yellow butterfly palm)", "B) Elaeis", "C) Nipa", "D) Phoenix"], ans: 3 },
+      { id: 229, q: "What is the scientific binomial name of the Fiji fan palm?", options: ["A) Pritchardia filifera (or palm species in options)", "B) Cycas revoluta", "C) Dypsis leptocheilos", "D) Caryota urens"], ans: 3 },
+      { id: 230, q: "What does the landscape term “Xeriscaping” refer to?", options: ["A) Water-wise landscaping in arid/dry areas using drought-tolerant plants", "B) Indoor decoration", "C) Soil conservation", "D) Lawn mowing"], ans: 1 },
+      { id: 231, q: "Which of the following is a classic shade-loving potted indoor plant?", options: ["A) Anthurium (and Dieffenbachia)", "B) Viola", "C) Rose", "D) Marigold"], ans: 0 },
+      { id: 232, q: "Which lawn grass is NOT suitable for cooler temperate regions?", options: ["A) Korean grass (Zoysia matrella - tropical)", "B) Kentucky bluegrass", "C) Red top grass", "D) Ryegrass"], ans: 3 },
+      { id: 233, q: "What is the geometric layout characteristic of a formal style garden?", options: ["A) Bilaterally symmetrical / geometric lines", "B) Completely asymmetrical", "C) Natural winding", "D) Random"], ans: 1 },
+      { id: 234, q: "A terrarium is defined as the art of growing delicate plants inside a:", options: ["A) Sealed or open glass container", "B) Terraced hill", "C) Rock pool", "D) Open water pond"], ans: 3 },
+      { id: 235, q: "“Cascade” is a specialized training and display style associated with:", options: ["A) Bonsai (and Chrysanthemums)", "B) Topiary", "C) Ikebana", "D) Pergolas"], ans: 1 },
+      { id: 236, q: "An International Flower Auction Center has been set up near Hosur in Krishnagiri district on behalf of:", options: ["A) Tamil Nadu State Agricultural Marketing Board", "B) Thovalai", "C) Madurai", "D) Chennai"], ans: 1 },
+      { id: 237, q: "A garden involving the cultivation of moisture-loving plants in naturally acidic wet soil is called a:", options: ["A) Bog garden", "B) Sunken garden", "C) Floating garden", "D) Rain garden"], ans: 1 },
+      { id: 238, q: "A dish garden is defined as a miniature landscape created using small plants growing in a:", options: ["A) Shallow dish or bowl container", "B) Deep glass bottle", "C) Hanging basket", "D) Pandal"], ans: 1 },
+      { id: 239, q: "The cultivation of aquatic, marsh, and water-loving plants in artificial ponds or pools is known as a:", options: ["A) Water garden", "B) Terrarium", "C) Vertical garden", "D) Sunken garden"], ans: 1 },
+      { id: 240, q: "Vertical gardening is a specialized modern urban technique suitable for small spaces to decorate:", options: ["A) Walls and roofs", "B) Deep underground soil", "C) Ponds", "D) Lawns"], ans: 3 },
+      { id: 241, q: "What is the specialized horticultural technique of transplanting large established plants or trees from one site to another called?", options: ["A) Burlapping / Tree transplanting", "B) Terrarium", "C) Vertical gardening", "D) Topiary"], ans: 1 },
+      { id: 242, q: "Which plant group is popularly acclaimed in ornamental horticulture as the “Prince of Plants”?", options: ["A) Palms", "B) Ferns", "C) Annuals", "D) Trees"], ans: 3 },
+      { id: 243, q: "Who is historically celebrated as the Father of French formal garden design?", options: ["A) Le Nôtre (André Le Nôtre)", "B) William Robinson", "C) Nek Chand", "D) G.S. Randhawa"], ans: 0 },
+      { id: 244, q: "In traditional Japanese landscape gardening style, which type of garden is completely devoid of live plants and water?", options: ["A) Sand garden / Zen rock garden (Karesansui)", "B) Hill garden", "C) Flat garden", "D) Passage garden"], ans: 3 },
+      { id: 245, q: "A ground cover of perennial turfgrass that persists under regular, continuous mowing is called a:", options: ["A) Lawn", "B) Turf", "C) Paving", "D) Shrubbery"], ans: 2 },
+      { id: 246, q: "What is the standard grass seed rate required for establishing a standard lawn?", options: ["A) Approx 25–30 kg/ha (or 30 kg/acre depending on seed source)", "B) 12 kg/ha", "C) 30 g/ha", "D) 500 kg/ha"], ans: 1 },
+      { id: 247, q: "In carpet bedding, close-growing dwarf plants like Alternanthera are used to form intricate designs or:", options: ["A) Letters of the alphabet / geometric crests", "B) Tall hedges", "C) Arches", "D) Fences"], ans: 0 },
+      { id: 248, q: "Which landscape feature is considered mandatory and incomplete without its presence in any formal or informal garden?", options: ["A) Lawn", "B) Shrubbery", "C) Large trees", "D) Flower beds"], ans: 0 },
+      { id: 249, q: "Which ancient Indian ruler or king is historically praised as the “Father of roadside avenue planting”?", options: ["A) Emperor Ashoka", "B) Babar", "C) Jahangir", "D) Humayun"], ans: 0 },
+      { id: 250, q: "What was the initial style of gardening introduced and developed early by the British in India?", options: ["A) Wild / informal style (transitioning from formal Moghul)", "B) Formal", "C) Strict Italian", "D) Japanese Zen"], ans: 2 }
+    ];
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(269, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 269) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Floriculture, Landscaping, and Ornamental Horticulture.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific flower varieties, garden styles, and landscaping principles.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Floriculture recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+
+</html>

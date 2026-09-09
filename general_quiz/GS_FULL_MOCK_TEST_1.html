@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GS Full Mock Examination (200 MCQs — 3 Hours)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --bg-header: #022c22;
@@ -123,10 +126,26 @@
       flex-shrink: 0;
     }
 
-    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
-    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
-    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
-    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
 
     .status-label {
       font-size: 0.72rem;
@@ -300,12 +319,14 @@
       border-color: #f59e0b;
     }
 
-    .btn-next, .btn-submit {
+    .btn-next,
+    .btn-submit {
       background: var(--primary);
       color: #ffffff;
     }
 
-    .btn-next:hover, .btn-submit:hover {
+    .btn-next:hover,
+    .btn-submit:hover {
       background: var(--primary-hover);
     }
 
@@ -414,9 +435,17 @@
       font-weight: 800;
     }
 
-    .matrix-card.c-green .val { color: var(--success); }
-    .matrix-card.c-red .val { color: var(--danger); }
-    .matrix-card.c-slate .val { color: var(--text-muted); }
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
 
     .matrix-card .desc {
       font-size: 0.8rem;
@@ -460,9 +489,20 @@
       margin-bottom: 0.6rem;
     }
 
-    .rev-badge.correct { background: var(--success-light); color: var(--success); }
-    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
-    .rev-badge.unanswered { background: #e2e8f0; color: var(--text-muted); }
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--text-muted);
+    }
 
     .rev-q-text {
       font-size: 1rem;
@@ -510,15 +550,19 @@
       .status-ribbon {
         grid-template-columns: repeat(2, 1fr);
       }
+
       .card {
         padding: 1.25rem;
       }
+
       .actions-bar {
         flex-wrap: wrap;
       }
+
       .actions-bar .btn {
         flex: 1 1 calc(50% - 0.5rem);
       }
+
       .actions-bar .btn-review {
         order: 3;
         flex: 1 1 100%;
@@ -526,6 +570,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <header class="banner">
@@ -537,8 +582,10 @@
   <div class="container">
 
     <div id="setup-screen" class="card">
-      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">General Studies Full Mock Examination</h2>
-      <p style="color: var(--text-muted); font-size: 0.9rem;">Comprehensive Test: 200 Questions covering Tamil Grammar, Polity, History, Tamil Nadu Admin, Economy, and Aptitude.</p>
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">General Studies Full Mock
+        Examination</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Comprehensive Test: 200 Questions covering Tamil Grammar,
+        Polity, History, Tamil Nadu Admin, Economy, and Aptitude.</p>
 
       <div class="setup-grid">
         <div class="form-group">
@@ -556,7 +603,8 @@
           </div>
         </div>
 
-        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start 3-Hour Exam Now</button>
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start 3-Hour Exam
+          Now</button>
       </div>
     </div>
 
@@ -620,7 +668,8 @@
           <div class="pct" id="res-score-pct">0%</div>
           <div class="lbl">Final Score</div>
         </div>
-        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
       </div>
 
       <div class="stats-matrix">
@@ -866,6 +915,47 @@
       { id: 199, q: "Find missing number in sequence: 3, 12, 27, 48, 75, 108, ______.", options: ["A) 135", "B) 147", "C) 162", "D) 192"], ans: 1 },
       { id: 200, q: "The value of x if 20% of x = 50 is:", options: ["A) 200", "B) 250", "C) 300", "D) 500"], ans: 1 }
     ];
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
 
     let currentIndex = 0;
     let userAnswers = {};
@@ -1133,4 +1223,5 @@
     }
   </script>
 </body>
+
 </html>

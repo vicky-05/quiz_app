@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agricultural Entomology Test 3 — Sericulture, Stored Pests & IPM (144 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next,
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select,
+    .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Agricultural Entomology Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Agricultural Entomology
+        Test 3: Sericulture, Stored Pests & IPM (144 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–144)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="144">All Questions (144 Questions)</option>
+            <option value="25">25 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 144)</label>
+          <input type="number" id="custom-count-input" min="1" max="144" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">144 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#128030;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Entomology</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#128029;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Sericulture & Stored Pests</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 144</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">02:24:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 126, q: "Rearing late-age silkworms on 1 m shoots of mulberry along with leaves is called", options: ["A) Shoot rearing", "B) Chawki rearing", "C) Tray rearing", "D) Floor rearing"], ans: 0 },
+      { id: 127, q: "Optimum relative humidity required by silkworms for spinning cocoons is", options: ["A) 70–90%", "B) 30–40%", "C) 10–20%", "D) 95–100%"], ans: 0 },
+      { id: 128, q: "Cocoons should be harvested ______ days after spinning.", options: ["A) 5th day", "B) 1st day", "C) 15th day", "D) 30th day"], ans: 0 },
+      { id: 129, q: "Presence of a black scar on larval skin is a symptom of", options: ["A) Uzi fly infestation", "B) Grasserie", "C) Pebrine", "D) Muscardine"], ans: 0 },
+      { id: 130, q: "Entry-proof nets are used in rearing houses for the management of", options: ["A) Uzi fly", "B) Ants", "C) Thrips", "D) Mites"], ans: 0 },
+      { id: 131, q: "Hyperparasite released for biological management of Uzi fly is", options: ["A) Nesolynx thymus", "B) Trichogramma", "C) Apanteles", "D) Bracon"], ans: 0 },
+      { id: 132, q: "Protozoan disease of mulberry silkworm is caused by", options: ["A) Nosema bombycis", "B) Beauveria bassiana", "C) Nuclear polyhedrosis virus", "D) Bacillus"], ans: 0 },
+      { id: 133, q: "Tiny pepper-like black spots on the silkworm body are characteristic symptoms of", options: ["A) Pebrine disease", "B) Grasserie", "C) Flacherie", "D) Muscardine"], ans: 0 },
+      { id: 134, q: "White muscardine disease in silkworms is caused by the fungus", options: ["A) Beauveria bassiana", "B) Metarhizium", "C) Nosema", "D) Aspergillus"], ans: 0 },
+      { id: 135, q: "Killing the enclosed pupa inside the cocoon to prevent moth emergence is called", options: ["A) Stifling", "B) Reeling", "C) Brushing", "D) Degumming"], ans: 0 },
+      { id: 136, q: "Combining several raw cocoon filaments to form a single continuous thread of desired denier is called", options: ["A) Reeling", "B) Stifling", "C) Throstling", "D) Spinning"], ans: 0 },
+      { id: 137, q: "______ is popularly known as the poor man's silk.", options: ["A) Eri silk", "B) Mulberry silk", "C) Muga silk", "D) Tasar silk"], ans: 0 },
+      { id: 138, q: "Host plants commonly fed upon by eri silkworms include", options: ["A) Castor, tapioca and papaya", "B) Mulberry only", "C) Terminalia", "D) Som and Soalu"], ans: 0 },
+      { id: 139, q: "Non-reelable natural silk variety is", options: ["A) Eri silk", "B) Mulberry silk", "C) Muga silk", "D) Tropical tasar"], ans: 0 },
+      { id: 140, q: "Silk obtained after moths emerge naturally without killing the pupa inside is", options: ["A) Eri silk (Ahimsa silk)", "B) Mulberry silk", "C) Muga silk", "D) Katan silk"], ans: 0 },
+      { id: 141, q: "Silkworms that are predominantly reared outdoors on forest trees are", options: ["A) Tasar and Muga silkworms", "B) Mulberry silkworm", "C) Eri silkworm", "D) Hybrid silkworm"], ans: 0 },
+      { id: 142, q: "Silkworm culture particularly restricted to North-Eastern India, especially Assam, is", options: ["A) Muga culture", "B) Tasar culture", "C) Eri culture", "D) Mulberry sericulture"], ans: 0 },
+      { id: 143, q: "Which natural silk variety is commercially referred to as “Ahimsa silk”?", options: ["A) Eri silk", "B) Mulberry silk", "C) Muga silk", "D) Tasar"], ans: 0 },
+      { id: 144, q: "Newly hatched silkworm larvae are commonly known as", options: ["A) Chawaki (ants)", "B) Pupae", "C) Moths", "D) Instars"], ans: 0 },
+      { id: 145, q: "Which pair is NOT correctly matched?", options: ["A) Mulberry silkworm – Antheraea spp. (Incorrect, Bombyx mori)", "B) Eri – Philosomia ricini", "C) Muga – Antheraea assamensis", "D) Tasar – Antheraea mylitta"], ans: 0 },
+      { id: 146, q: "Scientific name of the temperate tasar silkworm is", options: ["A) Antheraea pernyi", "B) A. mylitta", "C) A. assamensis", "D) Bombyx mori"], ans: 0 },
+      { id: 147, q: "Central Sericultural Germplasm Resource Centre (CSGRC) is located at", options: ["A) Hosur", "B) Mysore", "C) Bangalore", "D) Berhampore"], ans: 0 },
+      { id: 148, q: "Spacing followed in the paired-row system of mulberry cultivation is", options: ["A) 150 × 90 × 60 cm", "B) 30 × 30 cm", "C) 2 × 2 m", "D) 10 × 10 cm"], ans: 0 },
+      { id: 149, q: "One DFL (Disease Free Laying) contains approximately", options: ["A) 400–500 eggs", "B) 50 eggs", "C) 1000 eggs", "D) 5000 eggs"], ans: 0 },
+      { id: 150, q: "Central Muga & Eri Research and Training Institute is located in", options: ["A) Assam (Jorhat)", "B) West Bengal", "C) Karnataka", "D) Tamil Nadu"], ans: 0 },
+      { id: 151, q: "An example of a broad-spectrum silkworm bed disinfectant is", options: ["A) Ankush / Vijetha", "B) Malathion", "C) Carbofuran", "D) Urea"], ans: 0 },
+      { id: 152, q: "The ideal mulberry variety best suited for chawki rearing is", options: ["A) V1", "B) S36", "C) Kanva-2", "D) M5"], ans: 0 },
+      { id: 153, q: "The mulberry silkworm (Bombyx mori) belongs taxonomically to the family", options: ["A) Bombycidae", "B) Noctuidae", "C) Saturniidae", "D) Gelechiidae"], ans: 0 },
+      { id: 154, q: "Uzi fly is a destructive endoparasitic pest of", options: ["A) Silkworm", "B) Honeybee", "C) Lac insect", "D) Bumble bee"], ans: 0 },
+      { id: 155, q: "What does the sericultural acronym DFL stand for?", options: ["A) Disease Free Layings", "B) Daily Feeding Leaf", "C) Dry Fibre Length", "D) Direct Filament Lot"], ans: 0 },
+      { id: 156, q: "Which of the following is a viral disease of silkworms?", options: ["A) Grasserie (Nuclear Polyhedrosis)", "B) Pebrine", "C) Muscardine", "D) Flacherie bacterial"], ans: 0 },
+      { id: 157, q: "The specialized powder material used for dusting silkworms for uniform spinning is", options: ["A) Vijetha / Resham King", "B) Lime dust", "C) DDT", "D) Sulphur"], ans: 0 },
+      { id: 158, q: "Which silkworm is proudly referred to as the “Pride of India” due to golden yellow silk?", options: ["A) Muga silkworm", "B) Eri", "C) Tasar", "D) Mulberry"], ans: 0 },
+      { id: 159, q: "What is the correct chronological sequence of silkworm rearing activities?", options: ["A) Brushing → Chawki rearing → Late-age rearing → Mounting", "B) Mounting → Brushing → Reeling", "C) Reeling → Brushing → Mounting", "D) Hatching → Reeling"], ans: 0 },
+      { id: 160, q: "Are four distinct commercial types of natural silkworms reared in India?", options: ["A) Yes (Mulberry, Tasar, Eri, Muga)", "B) No, only one", "C) Only two", "D) Ten types"], ans: 0 },
+      { id: 161, q: "The cultivated silkworm belongs entomologically to the insect order", options: ["A) Lepidoptera", "B) Coleoptera", "C) Hemiptera", "D) Diptera"], ans: 0 },
+      { id: 162, q: "Eri silkworm is commonly reared commercially on", options: ["A) Cassava and castor", "B) Mulberry exclusively", "C) Mango leaves", "D) Grass"], ans: 0 },
+      { id: 163, q: "What is the ideal chopped-leaf size recommended for feeding silkworms during the 3rd instar?", options: ["A) 1–2 cm square pieces", "B) Whole leaves", "C) Powder", "D) Juice"], ans: 0 },
+      { id: 164, q: "What standard percentage concentration of formalin is used for routine disinfection of rearing houses?", options: ["A) 2% formalin solution", "B) 10%", "C) 50%", "D) 0.01%"], ans: 0 },
+      { id: 165, q: "What is the optimum age/maturity of mulberry saplings suitable for main field planting?", options: ["A) 70–90 days old saplings", "B) 10 days", "C) 1 year", "D) 5 years"], ans: 0 },
+      { id: 166, q: "Activated clay / silica exerts a ______ mode of action against stored pests.", options: ["A) Physical abrasive desiccant effect", "B) Systemic poisoning", "C) Hormonal blockage", "D) Nutritional deficiency"], ans: 0 },
+      { id: 167, q: "The cigarette beetle (Lasioderma serricorne) is a serious stored-product pest of", options: ["A) Turmeric (and stored tobacco/spices)", "B) Fresh leaves", "C) Roots", "D) Water"], ans: 0 },
+      { id: 168, q: "What is the standard recommended fumigation exposure period for aluminium phosphide in storage godowns?", options: ["A) 7 days", "B) 1 day", "C) 30 days", "D) 3 months"], ans: 0 },
+      { id: 169, q: "What is the scientific binomial name of the rice weevil?", options: ["A) Sitophilus oryzae", "B) Tribolium castaneum", "C) Rhyzopertha dominica", "D) Trogoderma granarium"], ans: 0 },
+      { id: 170, q: "Phosphine gas used for godown fumigation is chemically generated from", options: ["A) Aluminium phosphide tablets", "B) Zinc powder", "C) Sulphur sticks", "D) Calcium carbonate"], ans: 0 },
+      { id: 171, q: "The Angoumois grain moth belongs taxonomically to the family", options: ["A) Gelechiidae", "B) Noctuidae", "C) Pyralidae", "D) Tineidae"], ans: 0 },
+      { id: 172, q: "What is recognized as the most destructive insect pest of stored dry tobacco leaves?", options: ["A) Cigarette beetle (Lasioderma serricorne)", "B) Red flour beetle", "C) Khapra beetle", "D) Rice weevil"], ans: 0 },
+      { id: 173, q: "A pre-harvest sanitation spray of malathion 0.005% is effective against", options: ["A) Pod bug", "B) Stem borer", "C) Weevil", "D) Aphid"], ans: 0 },
+      { id: 174, q: "Which pesticide classification groups aluminium phosphide?", options: ["A) Fumigants", "B) Contact dusts", "C) Liquid sprays", "D) Systemic granules"], ans: 0 },
+      { id: 175, q: "How do rice weevil larvae feed on cereal grains during development?", options: ["A) Internally (boring and feeding inside the kernel)", "B) Externally only", "C) On roots", "D) On leaves"], ans: 0 },
+      { id: 176, q: "Neem oil treatment against bruchid beetle infestation in stored pulses is applied at a ratio of", options: ["A) 1 : 100 (1 ml oil per 100 g seeds)", "B) 1 : 10", "C) 50 : 50", "D) 1 : 1000"], ans: 0 },
+      { id: 177, q: "The open-air temporary storage of bagged food grains covered with polythene sheets is called", options: ["A) CAP storage (Cover and Plinth)", "B) Silo storage", "C) Airtight hermetic", "D) Cold storage"], ans: 0 },
+      { id: 178, q: "Bruchid beetles can cause severe pod and seed damage in stored groundnuts up to", options: ["A) 80–90%", "B) 5%", "C) 10%", "D) 0%"], ans: 0 },
+      { id: 179, q: "Hermetic storage scientific principles are primarily related to", options: ["A) Managing stored grain insect pests via oxygen depletion / carbon dioxide build-up", "B) Fertilizer mixing", "C) Weed control", "D) Irrigation"], ans: 0 },
+      { id: 180, q: "A classic field-to-store carryover insect pest of pulses is", options: ["A) Pulse beetle (Callosobruchus spp.)", "B) Rice weevil", "C) Khapra beetle", "D) Red flour beetle"], ans: 0 },
+      { id: 181, q: "Sitotroga cerealella is the scientific binomial name of the", options: ["A) Angoumois grain moth (grain moth)", "B) Rice moth", "C) Potato tuber moth", "D) Indian meal moth"], ans: 0 },
+      { id: 182, q: "Hidden internal insect infestation inside stored grain kernels can be detected using", options: ["A) Staining, ninhydrin and KOH biochemical test methods — All of these", "B) Visual inspection only", "C) Weighing", "D) Water floatation"], ans: 0 },
+      { id: 183, q: "An internal primary seed feeder of legume grain is", options: ["A) Pulse beetle (Callosobruchus chinensis)", "B) Red flour beetle", "C) Saw-toothed grain beetle", "D) Flat grain beetle"], ans: 0 },
+      { id: 184, q: "Match storage pests (Rice weevil–Sitophilus oryzae, Lesser grain borer–Rhyzopertha dominica, Pulse beetle–Callosobruchus chinensis, Moth–Sitotroga):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 185, q: "Which insect larva completely hollows out and feeds on the internal starchy contents of grains?", options: ["A) Rice weevil grub", "B) Red flour beetle", "C) Saw-toothed beetle", "D) Tribolium"], ans: 0 },
+      { id: 186, q: "Which synthetic pyrethroid is safely used for surface treatment in storage pest management?", options: ["A) Deltamethrin", "B) Permethrin", "C) Cypermethrin", "D) All of these"], ans: 3 },
+      { id: 187, q: "Which storage insect pests are classified as external grain feeders?", options: ["A) Red flour beetle, Indian meal moth and rice moth — All of these", "B) Rice weevil", "C) Lesser grain borer", "D) Pulse beetle"], ans: 0 },
+      { id: 188, q: "Match storage pests and binomial names (Khapra–Trogoderma granarium, Rice moth–Corcyra, Red flour–Tribolium, Meal moth–Plodia):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 189, q: "Which storage insect is considered a superficial surface feeder?", options: ["A) Cigarette beetle", "B) Rice weevil", "C) Khapra beetle", "D) Lesser grain borer"], ans: 0 },
+      { id: 190, q: "Insect eggs that are exceptionally sensitive to low oxygen concentrations include those of", options: ["A) Rice weevil", "B) Grasshopper", "C) Aphid", "D) Whitefly"], ans: 0 },
+      { id: 191, q: "What was the very first chemical fumigant discovered and utilized as a nematicide?", options: ["A) Carbon disulphide (CS₂)", "B) Phosphine", "C) Methyl bromide", "D) HCN"], ans: 0 },
+      { id: 192, q: "Field-carried storage insect pests include", options: ["A) Potato tuber moth, sweet potato weevil and pulse beetle — All of these", "B) Rice weevil", "C) Khapra beetle", "D) Red flour beetle"], ans: 0 },
+      { id: 193, q: "Mechanical splitting of dried pulse grains prior to storage is an indigenous practice against", options: ["A) Pulse beetle", "B) Weevil", "C) Moth", "D) Termite"], ans: 0 },
+      { id: 194, q: "A positively thigmostatic storage insect that loves squeezing into tight cracks is", options: ["A) Khapra beetle (Trogoderma granarium)", "B) Rice moth", "C) Aphid", "D) Fruit fly"], ans: 0 },
+      { id: 195, q: "The highly toxic suffocating gas released from aluminium phosphide tablets is", options: ["A) Phosphine (PH₃)", "B) Carbon monoxide", "C) Sulphur dioxide", "D) Nitrogen"], ans: 0 },
+      { id: 196, q: "What is the standard recommended dosage of aluminium phosphide tablets for fumigating 1 tonne of grain?", options: ["A) 3 tablets of 3 g each per tonne", "B) 10 tablets", "C) 1 tablet", "D) 50 tablets"], ans: 0 },
+      { id: 197, q: "Which of the following is NOT a coleopteran (beetle) storage pest?", options: ["A) Angoumois grain moth (Lepidoptera)", "B) Rice weevil", "C) Lesser grain borer", "D) Red flour beetle"], ans: 0 },
+      { id: 198, q: "Lepidopteran (moth) storage pests include", options: ["A) Angoumois grain moth, potato tuber moth and almond moth — All of these", "B) Rice weevil", "C) Khapra beetle", "D) Flat grain beetle"], ans: 0 },
+      { id: 199, q: "Where is the headquarters of the Indian Grain Storage Institute (IGSI) located?", options: ["A) Hapur, Uttar Pradesh", "B) New Delhi", "C) Hyderabad", "D) Karnal"], ans: 0 },
+      { id: 200, q: "Which pair is NOT correctly matched regarding storage pests?", options: ["A) Pulse beetle – Helicoverpa armigera (Incorrect, Callosobruchus)", "B) Weevil – Sitophilus", "C) Rhyzopertha – Lesser borer", "D) Tribolium – Flour beetle"], ans: 0 },
+      { id: 201, q: "Which species are categorized as secondary storage pests (feeding on damaged grain/flour)?", options: ["A) Long-headed flour beetle, flat grain beetle and saw-toothed grain beetle — All of these", "B) Rice weevil", "C) Khapra", "D) Lesser borer"], ans: 0 },
+      { id: 202, q: "Stored food grains can be safely protected against insect damage using approved protectants like", options: ["A) Deltamethrin, dichlorvos and Malathion WP — All of these", "B) Urea", "C) Common salt", "D) Copper sulphate"], ans: 0 },
+      { id: 203, q: "Which storage insect pests are classified specifically as internal grain feeders?", options: ["A) Rice weevil, lesser grain borer and pulse beetle — All of these", "B) Red flour beetle", "C) Rice moth", "D) Meal moth"], ans: 0 },
+      { id: 204, q: "What does the storage acronym CAP stand for in warehousing?", options: ["A) Cover and Plinth storage", "B) Controlled Air Pressure", "C) Chemical Agent Protection", "D) Central Agricultural Produce"], ans: 0 },
+      { id: 205, q: "The parasitic root-knot/cyst nematode causing severe infestation in potato tubers is", options: ["A) Golden cyst nematode (Globodera rostochiensis)", "B) Meloidogyne", "C) Radopholus", "D) Ditylenchus"], ans: 0 },
+      { id: 206, q: "Which trap crop can be grown between banana suckers and soil-incorporated for nematode management?", options: ["A) Marigold (Tagetes spp.)", "B) Mustard", "C) Sunflower", "D) Castor"], ans: 0 },
+      { id: 207, q: "Which chemical compound is placed inside rural bird scarers to react with water and produce acetylene gas?", options: ["A) Calcium carbide (CaC₂)", "B) Calcium carbonate", "C) Sodium chloride", "D) Aluminium phosphide"], ans: 0 },
+      { id: 208, q: "What quarantine post-harvest treatment kills insect eggs and larvae inside fresh fruits prior to export?", options: ["A) Vapour Heat Treatment (VHT)", "B) Freezing", "C) Sun drying", "D) Salting"], ans: 0 },
+      { id: 209, q: "Tomato Yellow Leaf Curl Virus (TYLCV Begomovirus) is transmitted efficiently by", options: ["A) Whitefly (Bemisia tabaci)", "B) Aphid", "C) Thrips", "D) Jassid"], ans: 0 },
+      { id: 210, q: "The vector transmitting Yellow Vein Mosaic Virus (YVMV) of bhendi is", options: ["A) Whitefly", "B) Aphid", "C) Jassid", "D) Mite"], ans: 0 },
+      { id: 211, q: "What is recognized as the most destructive insect pest of grapevine in India?", options: ["A) Grapevine flea beetle (Scelodonta strigicollis)", "B) Thrips", "C) Mealybug", "D) Mites"], ans: 0 },
+      { id: 212, q: "A characteristic V-shaped or diamond-shaped chewing cut on emerging coconut fronds is caused by", options: ["A) Red palm weevil / Rhinoceros beetle", "B) Aphids", "C) Caterpillars", "D) Mites"], ans: 0 },
+      { id: 213, q: "Diamondback moth (Plutella xylostella) is a notorious oligophagous pest of", options: ["A) Cole crops (cabbage and cauliflower)", "B) Cucurbits", "C) Solanaceous crops", "D) Pulses"], ans: 0 },
+      { id: 214, q: "What is the scientific zoological name of the mango stone/nut weevil?", options: ["A) Sternochetus mangiferae", "B) Idioscopus niveosparsus", "C) Drosicha mangiferae", "D) Bactrocera dorsalis"], ans: 0 },
+      { id: 215, q: "Woolly aphid is a serious sucking pest affecting", options: ["A) Apple orchards", "B) Mango", "C) Citrus", "D) Banana"], ans: 0 },
+      { id: 216, q: "Banana Bunchy Top Virus (BBTV) is transmitted exclusively by the vector", options: ["A) Banana aphid (Pentalonia nigronervosa)", "B) Whitefly", "C) Thrips", "D) Mealybug"], ans: 0 },
+      { id: 217, q: "Which of the following is NOT a recommended IPM practice for diamondback moth?", options: ["A) Fish meal trap (fish meal attracts sorghum shoot fly, not DBM)", "B) Neem soap", "C) Bt spray", "D) Parasitoid release"], ans: 0 },
+      { id: 218, q: "Red palm weevil in coconut palms can be effectively managed by systemic insecticide", options: ["A) Root feeding (or stem injection / pheromone trapping)", "B) Leaf dusting", "C) Soil flooding", "D) Pruning fronds"], ans: 0 },
+      { id: 219, q: "Trunk gummosis and eventual crown toppling in coconut palms is frequently induced by attack of", options: ["A) Red palm weevil / Rhinoceros beetle", "B) Aphids", "C) Mites", "D) Termites"], ans: 0 },
+      { id: 220, q: "White insects found at the base of the stalk and ripe nut accompanied by watery exudation and black spots in arecanut indicate attack by", options: ["A) Arecanut spindle bug (Carneades / Carvalhoia)", "B) Aphids", "C) Mites", "D) Stem borer"], ans: 0 },
+      { id: 221, q: "A yellow network of prominent veins on bhendi leaves indicates infection by", options: ["A) Yellow Vein Mosaic Virus (Vein clearing / vein banding)", "B) Iron deficiency", "C) Nitrogen deficiency", "D) Drought"], ans: 0 },
+      { id: 222, q: "The internal borer grub that feeds directly inside the cotyledon of developing mango fruits is the", options: ["A) Mango nut weevil", "B) Fruit fly", "C) Hopper", "D) Mealybug"], ans: 0 },
+      { id: 223, q: "Marginal roll galls on black pepper leaves are caused by infestation of", options: ["A) Marginal gall thrips (Liothrips karnyi)", "B) Aphids", "C) Mites", "D) Beetles"], ans: 0 },
+      { id: 224, q: "Severe upward leaf curling and stunted terminal growth in chilli plants is caused by", options: ["A) Chilli thrips (Scirtothrips dorsalis)", "B) Aphids", "C) Whitefly", "D) Mites"], ans: 0 },
+      { id: 225, q: "Silvery white patches and speckling on onion leaves followed by tip wilting is caused by", options: ["A) Onion thrips (Thrips tabaci)", "B) Aphids", "C) Mites", "D) Leaf miner"], ans: 0 },
+      { id: 226, q: "The insect vector transmitting little-leaf phytoplasma disease of brinjal is", options: ["A) Leafhopper (Cestius phycitis)", "B) Aphid", "C) Whitefly", "D) Thrips"], ans: 0 },
+      { id: 227, q: "Little-leaf phytoplasma disease of gingelly (sesame) is transmitted by the leafhopper vector", options: ["A) Orosius albicinctus", "B) Cestius phycitis", "C) Nephotettix", "D) Nilaparvata"], ans: 0 },
+      { id: 228, q: "Match crop pests and damage symptoms (Stem borer–Dead heart, GLH–Yellow dwarf, Coreid bug–Black spot, Gall fly–Silver shoot, BPH–Hopper burn):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 229, q: "The foundational core components of integrated pest management (IPM) include", options: ["A) Cultural, mechanical and biological methods — All of these", "B) Chemical pesticides exclusively", "C) Doing nothing", "D) Burning fields"], ans: 0 },
+      { id: 230, q: "Rice varieties noted for built-in field resistance against Rice Tungro Virus (RTV) include", options: ["A) ADT 32 and IR 50", "B) IR 8", "C) Basmati", "D) Ponni"], ans: 0 },
+      { id: 231, q: "The brinjal lace bug is categorized ecologically as an", options: ["A) Oligophagous pest", "B) Polyphagous pest", "C) Monophagous pest", "D) Omnivore"], ans: 0 },
+      { id: 232, q: "Trash-mulching or detrashing in sugarcane is a cultural practice used primarily to manage", options: ["A) Sugarcane top shoot borer / scale insects / mealybugs", "B) Termites", "C) White grubs", "D) Rats"], ans: 0 },
+      { id: 233, q: "Which plant species is notably known as a non-host plant against the coconut rhinoceros beetle?", options: ["A) Pineapple (intercropped to deter beetles)", "B) Banana", "C) Palm", "D) Sugarcane"], ans: 0 },
+      { id: 234, q: "Coffee green scale can be successfully managed using the entomopathogenic fungus", options: ["A) Lecanicillium lecanii (Verticillium lecanii)", "B) Beauveria bassiana", "C) Metarhizium", "D) Trichoderma"], ans: 0 },
+      { id: 235, q: "Rosetting of flowers and failure of boll opening in cotton is classically caused by", options: ["A) Pink bollworm (Pectinophora gossypiella)", "B) American bollworm", "C) Spotted bollworm", "D) Jassid"], ans: 0 },
+      { id: 236, q: "Late-stage piercing of ripening citrus fruits followed by premature fruit drop is caused by", options: ["A) Fruit-sucking moths (Eudocima spp.)", "B) Aphids", "C) Scales", "D) Mites"], ans: 0 },
+      { id: 237, q: "Severe leaf crinkling and downward curling in crops is commonly induced by sucking insects like", options: ["A) Aphids and thrips", "B) Stem borers", "C) Cutworms", "D) Beetles"], ans: 0 },
+      { id: 238, q: "The characteristic “silver-shoot” (onion leaf gall) symptom in paddy is caused by", options: ["A) Rice gall fly (Orseolia oryzae)", "B) Stem borer", "C) Leaf folder", "D) Thrips"], ans: 0 },
+      { id: 239, q: "Plant-sucking aphids serve as efficient insect vectors transmitting plant viruses such as", options: ["A) Banana bunchy top, cardamom mosaic and cowpea mosaic", "B) Rice tungro", "C) YVMV", "D) Tomato leaf curl"], ans: 0 },
+      { id: 240, q: "Rice Tungro Virus (RTV) is transmitted in a semi-persistent manner by the vector", options: ["A) Green Leafhopper (Nephotettix virescens)", "B) Brown planthopper", "C) Stem borer", "D) Gall midge"], ans: 0 },
+      { id: 241, q: "Elongation of the rice leaf sheath into a silver shoot by gall fly larvae is caused by a salivary chemical called", options: ["A) Cecidogen", "B) Auxin", "C) Ethylene", "D) Chitinase"], ans: 0 },
+      { id: 242, q: "American bollworm (Helicoverpa armigera) populations in fields can be managed by releasing predators like", options: ["A) Chrysoperla carnea", "B) Silkworm", "C) Honeybee", "D) Housefly"], ans: 0 },
+      { id: 243, q: "A bunchy-top broom-like appearance in mature sugarcane due to lateral side-shoot proliferation is caused by", options: ["A) Sugarcane top shoot borer (Scirpophaga excerptalis)", "B) Termites", "C) Pyrilla", "D) Whitefly"], ans: 0 },
+      { id: 244, q: "Stripping of dried lower leaves in sugarcane effectively minimizes attack and population build-up of", options: ["A) Sugarcane pyrilla", "B) Root grub", "C) Termites", "D) Borers"], ans: 0 },
+      { id: 245, q: "Match crop diseases and insect vectors (Sesamum phyllody–Leafhopper, Groundnut rosette–Aphid, YVMV–Whitefly, RTV–GLH):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 246, q: "What recommended trap crop is grown around cabbage fields in IPM against diamondback moth?", options: ["A) Indian mustard (Brassica juncea)", "B) Marigold", "C) Castor", "D) Tomato"], ans: 0 },
+      { id: 247, q: "Hopper burn drying out rice fields in expanding circular patches is caused by outbreaks of", options: ["A) Brown Planthopper (BPH)", "B) Green Leafhopper", "C) Stem borer", "D) Case worm"], ans: 0 },
+      { id: 248, q: "“Soorai” disease / chaffy grain damage in rice fields is caused by heavy feeding of", options: ["A) Rice earhead bug (Leptocorisa oratorius)", "B) Stem borer", "C) Leaf folder", "D) Gall midge"], ans: 0 },
+      { id: 249, q: "Dead heart and white earhead symptoms in ragi (finger millet) are caused by attack of", options: ["A) Pink stem borer / ragi pink borer", "B) Aphids", "C) Mites", "D) Thrips"], ans: 0 },
+      { id: 250, q: "When can the very first commercial leaf harvest be taken in newly established mulberry plantations?", options: ["A) Approx 6 months after planting", "B) 1 month", "C) 2 years", "D) 5 years"], ans: 0 },
+      { id: 251, q: "What is the correct binomial scientific name of the rice weevil?", options: ["A) Sitophilus oryzae", "B) Tribolium castaneum", "C) Rhyzopertha dominica", "D) Callosobruchus chinensis"], ans: 0 },
+      { id: 252, q: "What is the correct binomial scientific name of the lesser grain borer?", options: ["A) Rhyzopertha dominica", "B) Sitophilus oryzae", "C) Trogoderma granarium", "D) Sitotroga cerealella"], ans: 0 },
+      { id: 253, q: "What is the correct binomial scientific name of the pulse beetle?", options: ["A) Callosobruchus chinensis", "B) Sitophilus oryzae", "C) Tribolium castaneum", "D) Plodia interpunctella"], ans: 0 },
+      { id: 254, q: "What is the correct binomial scientific name of the Angoumois grain moth?", options: ["A) Sitotroga cerealella", "B) Corcyra cephalonica", "C) Rhyzopertha dominica", "D) Cylas formicarius"], ans: 0 },
+      { id: 255, q: "What is the correct binomial scientific name of the sweet potato weevil?", options: ["A) Cylas formicarius", "B) Sitophilus oryzae", "C) Trogoderma granarium", "D) Callosobruchus"], ans: 0 },
+      { id: 256, q: "What is the correct binomial scientific name of the Khapra beetle?", options: ["A) Trogoderma granarium", "B) Tribolium castaneum", "C) Sitophilus oryzae", "D) Rhyzopertha dominica"], ans: 0 },
+      { id: 257, q: "What is the correct binomial scientific name of the rice moth?", options: ["A) Corcyra cephalonica", "B) Sitotroga cerealella", "C) Plodia interpunctella", "D) Trogoderma granarium"], ans: 0 },
+      { id: 258, q: "What is the correct binomial scientific name of the red flour beetle?", options: ["A) Tribolium castaneum", "B) Trogoderma granarium", "C) Sitophilus oryzae", "D) Cryptolestes minutus"], ans: 0 },
+      { id: 259, q: "What is the correct binomial scientific name of the Indian meal moth?", options: ["A) Plodia interpunctella", "B) Corcyra cephalonica", "C) Sitotroga cerealella", "D) Tribolium castaneum"], ans: 0 },
+      { id: 260, q: "What is the correct binomial scientific name of the flat grain beetle?", options: ["A) Cryptolestes minutus", "B) Tribolium castaneum", "C) Trogoderma granarium", "D) Sitophilus oryzae"], ans: 0 },
+      { id: 261, q: "Which insect pest is responsible for causing “dead heart” symptoms in rice plants?", options: ["A) Rice stem borer (Scirpophaga incertulas)", "B) Leaf folder", "C) BPH", "D) Gall midge"], ans: 0 },
+      { id: 262, q: "Which insect pest acts as the primary vector transmitting yellow dwarf disease in rice?", options: ["A) Green Leafhopper (GLH)", "B) Brown Planthopper", "C) Stem borer", "D) Thrips"], ans: 0 },
+      { id: 263, q: "Which insect pest causes dark black specking and pecky damage spots on developing rice grains?", options: ["A) Rice coreid bug / earhead bug", "B) Stem borer", "C) Case worm", "D) Leaf folder"], ans: 0 },
+      { id: 264, q: "Which insect pest causes the characteristic “silver shoot” gall in rice paddy?", options: ["A) Rice gall fly (Orseolia oryzae)", "B) Stem borer", "C) BPH", "D) Thrips"], ans: 0 },
+      { id: 265, q: "Which insect pest causes severe “hopper burn” drying out rice crops in circular patches?", options: ["A) Brown Planthopper (BPH - Nilaparvata lugens)", "B) Green Leafhopper", "C) Stem borer", "D) Earhead bug"], ans: 0 },
+      { id: 266, q: "What is the insect vector responsible for transmitting sesamum phyllody phytoplasma disease?", options: ["A) Leafhopper (Orosius albicinctus)", "B) Aphid", "C) Whitefly", "D) Thrips"], ans: 0 },
+      { id: 267, q: "What is the insect vector transmitting groundnut rosette viral disease?", options: ["A) Aphid (Aphis craccivora)", "B) Whitefly", "C) Thrips", "D) Leafhopper"], ans: 0 },
+      { id: 268, q: "What is the insect vector transmitting Yellow Mosaic Virus (YMV) in pulses/legumes?", options: ["A) Whitefly (Bemisia tabaci)", "B) Aphid", "C) Thrips", "D) Leafhopper"], ans: 0 },
+      { id: 269, q: "What is the insect vector transmitting Rice Tungro Virus (RTV)?", options: ["A) Green Leafhopper (Nephotettix virescens)", "B) Brown Planthopper", "C) Stem borer", "D) Gall midge"], ans: 0 }
+    ];
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(144, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 144) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Sericulture, Stored Pests, and Crop Protection IPM.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific storage insect vectors, silkworm diseases, and IPM strategies.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Agricultural Entomology recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+
+</html>

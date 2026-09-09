@@ -1,0 +1,1205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horticulture Master Exam — Questions 401–600 (Complete Series)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select, .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Horticulture MCQ Series (401–600)</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Horticulture Master Exam: Questions 401–600 (Complete Series)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 401–600)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="200">All Questions (200 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 200)</label>
+          <input type="number" id="custom-count-input" min="1" max="200" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">200 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#127815;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Horticulture MCQ</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#127812;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Questions 401–600</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 200</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">03:20:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 401, q: "The terminal part of the pedicel bearing the sepals, petals, stamens, and carpels is called:", options: ["A) Inflorescence", "B) Thalamus", "C) Pedicel", "D) None of these"], ans: 1 },
+      { id: 402, q: "Peduncle is the main axis of the:", options: ["A) Bud", "B) Leaf", "C) Inflorescence", "D) Flower"], ans: 2 },
+      { id: 403, q: "An inflorescence in which the pedicels of the flowers arise from the same point is called:", options: ["A) Catkin", "B) Umbel", "C) Spike", "D) Uninate"], ans: 1 },
+      { id: 404, q: "A group of flowers on an axis is called:", options: ["A) Inflorescence", "B) Solitary terminal flower", "C) Modified flower", "D) Solitary axillary flower"], ans: 0 },
+      { id: 405, q: "The nutritive tissue around the embryo in a seed is:", options: ["A) Embryosac", "B) Endosperm", "C) Endodermis", "D) Endosmosis"], ans: 1 },
+      { id: 406, q: "Bracts situated outside the calyx in certain flowers are called:", options: ["A) Epicarp", "B) Epicalyx", "C) Epidermis", "D) Epibasal"], ans: 1 },
+      { id: 407, q: "Germination in which cotyledons come above the ground is termed:", options: ["A) Hypogeal", "B) Epigeal", "C) Epipetalous", "D) Epigynous"], ans: 1 },
+      { id: 408, q: "What is the term for a sexual cell in plants?", options: ["A) Gamosepalous", "B) Gamete", "C) Gametophyte", "D) Gamopetalous"], ans: 1 },
+      { id: 409, q: "A flower having sepals, petals, stamens, and carpels is called:", options: ["A) Pistillate", "B) Incomplete", "C) Complete", "D) Hermaphrodite"], ans: 2 },
+      { id: 410, q: "The situation in which a plant grows wild is called:", options: ["A) Habitat", "B) Haustorium", "C) Helicoid", "D) Halophytes"], ans: 0 },
+      { id: 411, q: "Proteins are composed of:", options: ["A) Oxygen and nitrogen", "B) Hydrogen", "C) Carbon", "D) All of these"], ans: 3 },
+      { id: 412, q: "Which vitamin is sourced from pineapple?", options: ["A) Vitamin B", "B) Vitamin C", "C) All of these", "D) Vitamin A"], ans: 1 },
+      { id: 413, q: "The method commonly used for commercial propagation of papaya is:", options: ["A) Grafting", "B) Seeds", "C) Suckers", "D) Cutting"], ans: 1 },
+      { id: 414, q: "The percentage of male plants required for good pollination in a papaya orchard is:", options: ["A) 50–55%", "B) 70–75%", "C) 5–10%", "D) 40–45%"], ans: 0 },
+      { id: 415, q: "Silver Oak belongs to the family:", options: ["A) Oleaceae", "B) Proteaceae", "C) Rosaceae", "D) Palmae"], ans: 1 },
+      { id: 416, q: "Tomatoes in tunnel production are pollinated by:", options: ["A) Vibration", "B) Bumble bees", "C) House flies", "D) Honey bees"], ans: 0 },
+      { id: 417, q: "Which rootstock is suitable for apple cultivation in heavy soils?", options: ["A) Crab apple", "B) M9", "C) M7", "D) M11"], ans: 2 },
+      { id: 418, q: "The rate of ethylene production in citrus is comparatively ______ than in mango:", options: ["A) Equal", "B) Lower", "C) Higher", "D) Unknown"], ans: 1 },
+      { id: 419, q: "Lemons are usually degreened at:", options: ["A) 26°C", "B) 6°C", "C) 30°C", "D) 16°C"], ans: 2 },
+      { id: 420, q: "Postharvest fungicidal treatment of mango fruit is done with:", options: ["A) Both TBZ and EDB", "B) None of the above", "C) Thiobendazole (TBZ)", "D) Ethylene Dibromide (EDB)"], ans: 2 },
+      { id: 421, q: "Which variety of apple is reported to perform well at lower altitudes?", options: ["A) Amri", "B) Golden Delicious", "C) Diana", "D) Enna"], ans: 1 },
+      { id: 422, q: "Dhaki variety of date palm originated in:", options: ["A) Punjab", "B) Balochistan", "C) Sindh", "D) NWFP"], ans: 2 },
+      { id: 423, q: "Which vegetable crop is a relative of cotton?", options: ["A) Brinjal", "B) Mustard", "C) Okra", "D) Onion"], ans: 2 },
+      { id: 424, q: "In pineapple sweet orange, fruit drop in June is up to:", options: ["A) 76%", "B) 96%", "C) 86%", "D) 66%"], ans: 2 },
+      { id: 425, q: "Hodgson divided the genus Citrus into:", options: ["A) 36 species", "B) More than 36 species", "C) 26 species", "D) 16 species"], ans: 1 },
+      { id: 426, q: "In India, the yield of potato ranges between:", options: ["A) 25–30 tons", "B) 10–15 tons", "C) 15–20 tons", "D) 20–25 tons"], ans: 3 },
+      { id: 427, q: "Motia belongs to the family:", options: ["A) Rosaceae", "B) Oleaceae", "C) Nyctaginaceae", "D) Moraceae"], ans: 1 },
+      { id: 428, q: "Rubber plant belongs to the family:", options: ["A) Nyctaginaceae", "B) Rosaceae", "C) Moraceae", "D) Oleaceae"], ans: 2 },
+      { id: 429, q: "Bougainvillea belongs to the family:", options: ["A) Nyctaginaceae", "B) Moraceae", "C) Oleaceae", "D) Rosaceae"], ans: 0 },
+      { id: 430, q: "Germination percentage in sour orange rootstock is:", options: ["A) 71–80%", "B) 50–60%", "C) 81–90%", "D) 61–70%"], ans: 3 },
+      { id: 431, q: "In Kinnow mandarin, fruit drop in June is up to:", options: ["A) 85%", "B) 75%", "C) 80%", "D) 70%"], ans: 2 },
+      { id: 432, q: "Which species of citrus can be propagated through cutting according to the source?", options: ["A) Kaghzi lime", "B) Sweet orange", "C) Sweet lime", "D) None of the above"], ans: 3 },
+      { id: 433, q: "Which species of citrus can be propagated through layering according to the source?", options: ["A) Sweet lime", "B) None of the above", "C) Kaghzi lime", "D) Sweet orange"], ans: 1 },
+      { id: 434, q: "In Punjab, most fresh vegetable production is carried out:", options: ["A) Near canals", "B) Near rivers", "C) Near cities", "D) All of the above"], ans: 2 },
+      { id: 435, q: "Which crop has high sulfur content?", options: ["A) Radish", "B) Garlic", "C) Onion", "D) None"], ans: 1 },
+      { id: 436, q: "Which hormone is used for root promotion during propagation through cuttings according to the source?", options: ["A) NAA", "B) ABA", "C) Seradix", "D) All of the above"], ans: 2 },
+      { id: 437, q: "Araucaria originated from:", options: ["A) Far East", "B) South Pacific", "C) South Asia", "D) Middle East"], ans: 1 },
+      { id: 438, q: "Rubber plant can be propagated through:", options: ["A) Cutting", "B) Aerial layering", "C) All of the above", "D) None of the above"], ans: 2 },
+      { id: 439, q: "Silver Oak produces seeds after the age of:", options: ["A) 15 years", "B) 1 year", "C) 10 years", "D) 5 years"], ans: 2 },
+      { id: 440, q: "Which plants are used for extraction of scent?", options: ["A) Citrus", "B) Rose", "C) All of the above", "D) Murva"], ans: 2 },
+      { id: 441, q: "The first auxin discovered was:", options: ["A) IAA", "B) IBA", "C) None of the above", "D) IPA"], ans: 0 },
+      { id: 442, q: "Mowing of grasses in winter is recommended after:", options: ["A) 40–50 days", "B) 20–30 days", "C) Both 30–40 and 40–50 days", "D) 30–40 days"], ans: 2 },
+      { id: 443, q: "Major types of greenhouse are:", options: ["A) Lean-to", "B) Odd span", "C) Even span", "D) Even span and Lean-to"], ans: 3 },
+      { id: 444, q: "At transplanting, the weight of a date palm sucker should be:", options: ["A) 20–30 kg", "B) Less than 5 kg", "C) 10–20 kg", "D) 5–10 kg"], ans: 2 },
+      { id: 445, q: "Which plants are propagated through seed?", options: ["A) Bottle palm only", "B) Murva only", "C) Both Murva and Bottle palm", "D) None of the above"], ans: 2 },
+      { id: 446, q: "Citrus seeds can be stored with charcoal under dry conditions at:", options: ["A) Above 15°C", "B) 3–10°C", "C) 10–15°C", "D) 0–3°C"], ans: 2 },
+      { id: 447, q: "Seed germination percentage of rough lemon is:", options: ["A) 80–90%", "B) 50–60%", "C) 60–70%", "D) 70–80%"], ans: 2 },
+      { id: 448, q: "The most serious insect/pests of apple are:", options: ["A) Fruit fly only", "B) Codling moth only", "C) None of the above", "D) Codling moth and fruit fly"], ans: 3 },
+      { id: 449, q: "Postharvest fumigation of citrus used to be done with:", options: ["A) EDB only", "B) Both TBZ and EDB", "C) None of the above", "D) TBZ only"], ans: 1 },
+      { id: 450, q: "Soil compaction ______ potato yield:", options: ["A) Does not affect", "B) Decreases", "C) Increases", "D) Unknown"], ans: 1 },
+      { id: 451, q: "Cost-benefit ratio in potato production should range between:", options: ["A) 10:1", "B) 1:10", "C) Both 1:5 and 1:10", "D) 1:5"], ans: 2 },
+      { id: 452, q: "“Thalsa” is a variety of potato suitable for:", options: ["A) Sahiwal", "B) Mir Pur Khas", "C) Peshawar", "D) Tandojam"], ans: 1 },
+      { id: 453, q: "Yield of carrot is maximum at pH:", options: ["A) Below 6.5", "B) 8.5", "C) 6.5", "D) 7.5"], ans: 2 },
+      { id: 454, q: "Temperate varieties of carrot have a ______ life cycle:", options: ["A) Perennial", "B) Annual", "C) Biennial", "D) Unknown"], ans: 2 },
+      { id: 455, q: "Which vegetable is called “poor man's food”?", options: ["A) Onion", "B) Potato", "C) Radish", "D) Carrot"], ans: 1 },
+      { id: 456, q: "Which factors are suitable for good onion production?", options: ["A) Long photoperiod only", "B) High temperature only", "C) Both high temperature and long photoperiod", "D) None of the above"], ans: 2 },
+      { id: 457, q: "Green potato tuber is inedible due to being:", options: ["A) Hard", "B) Carcinogenic", "C) Hollow", "D) None of the above"], ans: 1 },
+      { id: 458, q: "CRD is a statistical approach for:", options: ["A) Laboratory experiments only", "B) Both field and laboratory experiments", "C) Field experiments only", "D) None"], ans: 1 },
+      { id: 459, q: "Soft nose is a disorder of:", options: ["A) Apple fruit", "B) Citrus fruit", "C) Mango fruit", "D) Date fruit"], ans: 2 },
+      { id: 460, q: "Guava seed before germination requires:", options: ["A) Chemical treatment", "B) Commercial-grade H₂SO₄ treatment", "C) Fungicide treatment", "D) All of the above"], ans: 3 },
+      { id: 461, q: "Fruit splitting in pomegranate and litchi is mainly due to:", options: ["A) Nutritional defects", "B) Water pressure", "C) All of the above", "D) Dryness of air"], ans: 2 },
+      { id: 462, q: "Production of vegetables outside their normal outdoor season is known as:", options: ["A) Vegetable forcing", "B) Tissue culture", "C) Crop production", "D) Out of season"], ans: 0 },
+      { id: 463, q: "Yellow wasp is a major pest of:", options: ["A) Citrus fruit", "B) Grapefruit", "C) Mango fruit", "D) Peach fruit"], ans: 1 },
+      { id: 464, q: "The only pest of date fruit at the green hard stage is:", options: ["A) Sparrow", "B) Parrot", "C) All of the above", "D) Nightingale"], ans: 1 },
+      { id: 465, q: "Study dealing with the microscopic structure of tissue is called:", options: ["A) Ecology", "B) Histology", "C) Anatomy", "D) Taxonomy"], ans: 1 },
+      { id: 466, q: "Study of plant species in relation to environmental history is called:", options: ["A) Ontogeny", "B) None of these", "C) Phylogeny", "D) Histology"], ans: 1 },
+      { id: 467, q: "Elevation of temperate regions from sea level ranges:", options: ["A) 1000–2000 m", "B) 3500–4000 m", "C) 2500–3000 m", "D) Both 2500–3000 and 3500–4000 m"], ans: 3 },
+      { id: 468, q: "Banana belongs to the type of fruit in which the edible portion is:", options: ["A) Drupe", "B) Berry", "C) Mesocarp", "D) Syconus"], ans: 1 },
+      { id: 469, q: "Almond is a drupe fruit in which the edible portion is:", options: ["A) Mesocarp", "B) Seed", "C) Pericarp", "D) Thalamus"], ans: 1 },
+      { id: 470, q: "Frond length of cultivated date ranges:", options: ["A) 2–3 m", "B) 1–2 m", "C) 3–4 m", "D) 3–5 m"], ans: 2 },
+      { id: 471, q: "The most important characteristic of the tropical region is:", options: ["A) Frost", "B) High temperature", "C) Winds", "D) Snowfall"], ans: 1 },
+      { id: 472, q: "Addition of ______ hastens fruit bud differentiation in fruit plants:", options: ["A) Nitrites", "B) Nitrates", "C) Nitrides", "D) All of these"], ans: 1 },
+      { id: 473, q: "More hormones are accumulated in plants due to accumulation of:", options: ["A) Vitamins", "B) Starch", "C) Protein", "D) Nitrate"], ans: 1 },
+      { id: 474, q: "The reproductive phase of fruit plants is improved by accumulation of:", options: ["A) Cellulose", "B) Proteins", "C) Starch", "D) Nitrogen"], ans: 2 },
+      { id: 475, q: "Pruning in old fruit trees increases fruit bud formation by increasing:", options: ["A) Hormonal contents", "B) Carbohydrates", "C) Cell sap", "D) New vegetative growth"], ans: 1 },
+      { id: 476, q: "At a temperature slightly above optimum, carbohydrates are:", options: ["A) Utilized", "B) Increased", "C) Stored", "D) Produced"], ans: 0 },
+      { id: 477, q: "Apical bud becomes ______ in mango at fruit bud differentiation:", options: ["A) Dome shaped", "B) Flattened", "C) Elongated", "D) Rounded"], ans: 0 },
+      { id: 478, q: "The phase of fruit bud formation continues until:", options: ["A) Pollination", "B) Differentiation", "C) Anthesis", "D) Petal formation"], ans: 1 },
+      { id: 479, q: "Development of flower buds in tuberose is:", options: ["A) Acropetal", "B) Endopetal", "C) Basipetal", "D) Exipetal"], ans: 2 },
+      { id: 480, q: "Rate of bud development up to the winter season is:", options: ["A) Constant", "B) Rapid", "C) Slow", "D) Medium"], ans: 2 },
+      { id: 481, q: "Dormancy is a function of growth promoters like GA and growth inhibitor like:", options: ["A) ABA", "B) Alar", "C) Paclobutrazole", "D) Cycocel"], ans: 0 },
+      { id: 482, q: "Seed dormancy provides protection against:", options: ["A) Embryo abortion", "B) Premature germination", "C) Dehydration", "D) Seed spoilage"], ans: 1 },
+      { id: 483, q: "The major metabolic process in harvested produce is:", options: ["A) Senescence", "B) Respiration", "C) Softening", "D) Ripening"], ans: 1 },
+      { id: 484, q: "At fruit bud differentiation in mango, C/N ratio is:", options: ["A) Medium", "B) Very high", "C) High", "D) Low"], ans: 2 },
+      { id: 485, q: "Annual-bearing apples differentiate a greater proportion of their flowers on:", options: ["A) Main stem", "B) Leaf axils", "C) Spurs", "D) Shoots"], ans: 2 },
+      { id: 486, q: "Self-fertility refers to the ability of a variety to produce fruits with viable:", options: ["A) Seeds", "B) Ovaries", "C) Pollens", "D) Ovules"], ans: 2 },
+      { id: 487, q: "Flowers having stigma below the highest anthers are called:", options: ["A) Exostigmatic", "B) Hypostigmatic", "C) Apistigmatic", "D) Peristigmatic"], ans: 1 },
+      { id: 488, q: "Failure of viable pollen to grow down the style of a flower of the same variety is called:", options: ["A) Self incompatibility", "B) Sterility", "C) Self unfruitfulness", "D) Self sterility"], ans: 0 },
+      { id: 489, q: "Piping is carried out in:", options: ["A) Carnation", "B) Gladiolus", "C) Rose", "D) Chrysanthemum"], ans: 2 },
+      { id: 490, q: "Chlorophyll formation takes place within a light wavelength of:", options: ["A) 700–900 nm", "B) 300–675 nm", "C) 150–200 nm", "D) 200–300 nm"], ans: 1 },
+      { id: 491, q: "Root formation is promoted in softwood cuttings under light intensity of:", options: ["A) 250–350 footcandles", "B) 100–150 footcandles", "C) 150–200 footcandles", "D) 200–250 footcandles"], ans: 2 },
+      { id: 492, q: "Fruiting body of roses is called:", options: ["A) Slip", "B) Hips", "C) Button", "D) None of the above"], ans: 1 },
+      { id: 493, q: "Apple and pear form their flower buds in:", options: ["A) September–October", "B) July–August", "C) November–December", "D) May–June"], ans: 0 },
+      { id: 494, q: "Volatile oils are those oils which can evaporate at:", options: ["A) 65°C", "B) 40°C", "C) 25°C", "D) 50°C"], ans: 3 },
+      { id: 495, q: "Renewal of NO₃ involves release of ______ from the organic fraction of soil and its rapid nitrification:", options: ["A) NO", "B) NH₄", "C) NO₂", "D) N"], ans: 1 },
+      { id: 496, q: "Most nitrogen is used in the decomposition of ______ and thus plants show deficiency symptoms:", options: ["A) Organic matter", "B) Cellulose", "C) Carbon compounds", "D) Amino acids"], ans: 0 },
+      { id: 497, q: "Toxicity of Mg can be modified by adding:", options: ["A) K₂O", "B) Ca", "C) N", "D) PO₄"], ans: 1 },
+      { id: 498, q: "Injurious effects of sulphates can be replaced with the addition of:", options: ["A) Phosphates", "B) Ca & Mg", "C) Nitrates", "D) Ammonia"], ans: 1 },
+      { id: 499, q: "Internal browning in apples takes place due to:", options: ["A) Bacteria", "B) High temperature", "C) Fungus", "D) Hailstorm"], ans: 1 },
+      { id: 500, q: "Onion seeds can germinate at a temperature of:", options: ["A) 15–20°C", "B) 0–1°C", "C) 5–11°C", "D) 15°C"], ans: 2 },
+      { id: 506, q: "Removal of young flower buds to allow maximum development of the remainder is termed:", options: ["A) Dead heading", "B) Disbudding", "C) Die back", "D) None of these"], ans: 1 },
+      { id: 507, q: "A small, hairlike outgrowth at the base of the leaf stalk is termed:", options: ["A) Ligule", "B) Bract", "C) Stipule", "D) Bud"], ans: 2 },
+      { id: 508, q: "Pruning in narrow-leaved evergreens should be done during:", options: ["A) Early spring", "B) Winter", "C) Early fall", "D) Summer"], ans: 1 },
+      { id: 509, q: "Which plant requires severe pruning?", options: ["A) Thuja orientalis", "B) Jasminum sambac", "C) Nerium oleander", "D) Lagerstroemia purpurea"], ans: 2 },
+      { id: 510, q: "Which climber is important for its hardiness and flowers throughout the year?", options: ["A) Quisqualis indica", "B) Vitis vinifera", "C) Bougainvillea glabra", "D) Tecoma grandiflora"], ans: 2 },
+      { id: 511, q: "Which shrub bears yellow flowers?", options: ["A) Hibiscus rosa-sinensis", "B) Thevetia peruviana", "C) Jasminum sambac", "D) Tabernaemontana divaricata"], ans: 1 },
+      { id: 512, q: "Which ground cover is highly salt tolerant?", options: ["A) Alternanthera", "B) Vinca rosea", "C) Mesembryanthemum", "D) Bermuda grass"], ans: 2 },
+      { id: 513, q: "Which shrub is used as a fruit beauty?", options: ["A) Hibiscus rosa-sinensis", "B) Citrus mitis", "C) Nerium oleander", "D) Cassia glauca"], ans: 1 },
+      { id: 514, q: "Which trees have stem beauty?", options: ["A) Royal palm", "B) Eucalyptus", "C) Sterculia", "D) All of the above"], ans: 3 },
+      { id: 515, q: "English Ivy (Hedera helix) is:", options: ["A) Deciduous shrub", "B) Evergreen ground cover", "C) Evergreen shrub", "D) Deciduous ground cover"], ans: 1 },
+      { id: 516, q: "Jacaranda mimosifolia has:", options: ["A) Yellow flowers", "B) Purple flowers", "C) White flowers", "D) Red flowers"], ans: 1 },
+      { id: 517, q: "Which is an evergreen shrub?", options: ["A) Caesalpinia pulcherrima", "B) Pittosporum tobira", "C) Lagerstroemia indica", "D) None of the above"], ans: 1 },
+      { id: 518, q: "Lawn grasses can be established by:", options: ["A) Plugging", "B) Seeding", "C) Sodding", "D) All of the above"], ans: 3 },
+      { id: 519, q: "Tifdwarf is a:", options: ["A) Shrub", "B) Turfgrass", "C) Weed", "D) None of these"], ans: 1 },
+      { id: 520, q: "Gladiolus is propagated through:", options: ["A) Rhizomes", "B) Corms", "C) Tubers", "D) Bulbs"], ans: 1 },
+      { id: 521, q: "A rose budded at 3½ feet height is called:", options: ["A) Half standard rose", "B) Standard rose", "C) Miniature rose", "D) Climbing rose"], ans: 0 },
+      { id: 522, q: "Most house plants, except cacti, prefer a highly organic and:", options: ["A) Acidic growing medium", "B) Neutral growing medium", "C) Alkaline growing medium", "D) None of the above"], ans: 1 },
+      { id: 523, q: "Ficus pumila is a:", options: ["A) Annual", "B) Tree", "C) Creeper", "D) Shrub"], ans: 2 },
+      { id: 524, q: "Which tree is commonly used in the landscape of arid zones?", options: ["A) Pinus longifolia", "B) Prosopis juliflora", "C) Ficus benjamina", "D) Pithecellobium dulce"], ans: 1 },
+      { id: 525, q: "Which shrub has white fragrant flowers?", options: ["A) Lantana camara", "B) Gardenia florida", "C) Thevetia neriifolia", "D) Tabernaemontana divaricata"], ans: 1 },
+      { id: 526, q: "Watering commercial flower crops to cause leaching means:", options: ["A) Watering to remove excess soluble salts", "B) Watering only the top one-third", "C) Watering to distribute fertilizer nutrients", "D) Watering by subsurface methods"], ans: 0 },
+      { id: 527, q: "Most grass species used for turf are characterized by:", options: ["A) Short basal nodes", "B) Fine to medium texture", "C) Prostrate creeping growth", "D) All of the above"], ans: 3 },
+      { id: 528, q: "Which tree changes foliage color during winter according to the source?", options: ["A) Thuja orientalis", "B) Albizzia lebbek", "C) Sapium sebiferum", "D) Delonix regia"], ans: 0 },
+      { id: 529, q: "Which plant is known as desert saroo?", options: ["A) Casuarina equisetifolia", "B) Sapium seveferum", "C) Populus nigra", "D) Bauhinia variegata"], ans: 1 },
+      { id: 530, q: "Which climber belongs to the family Oleaceae?", options: ["A) Bougainvillea glabra", "B) Jasminum grandiflora", "C) Lonicera japonica", "D) Tecoma grandiflora"], ans: 1 },
+      { id: 531, q: "Tecoma stans is a:", options: ["A) Creeper", "B) Shrub", "C) Tree", "D) None of the above"], ans: 1 },
+      { id: 532, q: "Light intensity is expressed as:", options: ["A) Candlelights", "B) Footcandles", "C) Micrometers", "D) All of the above"], ans: 1 },
+      { id: 533, q: "The purpose of staking is to:", options: ["A) Prevent damage due to frost", "B) Prevent root damage due to wind", "C) Prevent wind injury to branches", "D) Protect the trunk"], ans: 2 },
+      { id: 534, q: "Japanese style of floral arrangement is known as:", options: ["A) Ikebana", "B) Ikenobo", "C) Ying", "D) Yen"], ans: 0 },
+      { id: 535, q: "Dacca is a selected variety of:", options: ["A) Shrub", "B) Turfgrass", "C) Herb", "D) None of these"], ans: 1 },
+      { id: 536, q: "Growing medium kept too wet will deprive the plant of:", options: ["A) Fertilizer", "B) Oxygen", "C) Soluble salts", "D) Water"], ans: 1 },
+      { id: 537, q: "The interrelationship of size with floral arrangement and its surroundings is:", options: ["A) Balance", "B) Scale", "C) Harmony", "D) Rhythm"], ans: 1 },
+      { id: 538, q: "A climbing plant with a woody stem is called:", options: ["A) Hedge", "B) Vine", "C) Liana", "D) All of the above"], ans: 2 },
+      { id: 539, q: "Hard, thorny structures protecting the buds of woody plants during winter are called:", options: ["A) Scales", "B) Bracts", "C) Nodes", "D) None of the above"], ans: 0 },
+      { id: 540, q: "A common example of an incomplete flower is:", options: ["A) Pistillate flower", "B) Staminate flower", "C) Apetalous flower", "D) All of the above"], ans: 3 },
+      { id: 541, q: "To preserve germination ability of most seeds, store them in a:", options: ["A) Warm, moist environment", "B) Cool, dry environment", "C) Warm, dry environment", "D) Cool environment after scarification"], ans: 1 },
+      { id: 542, q: "Soil pH primarily controls:", options: ["A) Availability of essential plant nutrients", "B) Soil temperature", "C) Moisture absorption by roots", "D) Activity of soilborne diseases"], ans: 0 },
+      { id: 543, q: "Which is a shade-loving flower?", options: ["A) Chrysanthemum", "B) Impatiens", "C) Snapdragon", "D) Marigold"], ans: 1 },
+      { id: 544, q: "Plants which flower on previous-season growth:", options: ["A) Should be cut back heavily in late summer", "B) Should be pruned after flowering", "C) Do not need pruning", "D) Should be pruned in dormant stage"], ans: 1 },
+      { id: 545, q: "The most common summer cooling system in greenhouses is:", options: ["A) Fog evaporative cooling", "B) Fan-and-pad evaporative cooling", "C) Package evaporative coolers", "D) Fan-tube cooling system"], ans: 1 },
+      { id: 546, q: "All of the following are bulbous and tuberous-rooted plants except:", options: ["A) Caladiums", "B) Snapdragons", "C) Dahlias", "D) Dutch iris"], ans: 1 },
+      { id: 547, q: "Incorporating water-soluble fertilizer into irrigation systems is called:", options: ["A) Fertigation", "B) Broadcasting", "C) Perforation", "D) Fertilization"], ans: 0 },
+      { id: 548, q: "Which tree bears red-colored flowers?", options: ["A) Thuja orientalis", "B) Erythrina suberosa", "C) Sapium sebiferum", "D) Albizia lebbek"], ans: 1 },
+      { id: 549, q: "Which of the following plants is evergreen?", options: ["A) Eucalyptus rostrata", "B) Populus nigra", "C) Bauhinia variegata", "D) None of the above"], ans: 0 },
+      { id: 550, q: "Lack of early spring flowering from tulip bulbs planted outdoors is due to:", options: ["A) Excessive moisture", "B) Magnesium and calcium deficiency", "C) Lack of winter cooling", "D) Bright sunlight"], ans: 2 },
+      { id: 551, q: "A leaf with parallel venation:", options: ["A) Has crossing veins", "B) Is a monocot", "C) Has leaflets", "D) Is a compound leaf"], ans: 1 },
+      { id: 552, q: "In hand-tied bouquets, the stems should be positioned:", options: ["A) Parallel to each other", "B) Perpendicular to each other", "C) In a spiraling manner", "D) Any way that looks nice"], ans: 2 },
+      { id: 553, q: "Which is NOT a method for sterilizing plant growing medium?", options: ["A) Baking", "B) Keeping the growing medium moist for 6–7 days", "C) Steaming", "D) Using chemical fumigants"], ans: 1 },
+      { id: 554, q: "Which is NOT among the major principles of design?", options: ["A) Emphasis", "B) Price", "C) Balance", "D) Scale"], ans: 1 },
+      { id: 555, q: "The showy red, pink, or white portions of poinsettia are:", options: ["A) Petals", "B) Sepals", "C) Bracts", "D) Flowers"], ans: 2 },
+      { id: 556, q: "A technique used to produce well-branched, compact plants with many flowers is:", options: ["A) Potting", "B) Pinching", "C) Compacting", "D) Stunting"], ans: 1 },
+      { id: 557, q: "Which is a member of the Dianthus family?", options: ["A) Carnation", "B) Sedum", "C) Chrysanthemum", "D) Phlox"], ans: 0 },
+      { id: 558, q: "Which shrub bears red-colored flowers?", options: ["A) Jasminum sambac", "B) Atriplex halimus", "C) Jatropha multifida", "D) Tecoma stans"], ans: 2 },
+      { id: 559, q: "Acceleration of flowering by manipulating environmental conditions is known as:", options: ["A) After-ripening", "B) Forcing", "C) Pulsing", "D) Leaching"], ans: 1 },
+      { id: 560, q: "Which shrub has white-colored fragrant flowers?", options: ["A) Jasminum sambac", "B) Hibiscus rosa-sinensis", "C) Tabernaemontana divaricata", "D) Thevetia peruviana"], ans: 2 },
+      { id: 561, q: "Peat is mixed into container growing medium because it:", options: ["A) Has a high pH", "B) Absorbs excessive soluble salts", "C) Has good air and water-holding capacities", "D) Is inexpensive"], ans: 2 },
+      { id: 562, q: "The two most practical means for homeowners to control insects and diseases are:", options: ["A) Chemical and biological", "B) Mechanical and chemical", "C) Biological and natural", "D) Mechanical and biological"], ans: 1 },
+      { id: 563, q: "In temperate climates, pruning should not be done near the end of summer because:", options: ["A) It may increase foliage disease", "B) Plants will not recover in time", "C) New growth will not harden before winter", "D) Severe bleeding will kill the plant"], ans: 2 },
+      { id: 564, q: "A plant hardy in a tropical zone will also be hardy in:", options: ["A) Arid zone", "B) Subtropical zone", "C) Temperate zone", "D) Semiarid zone"], ans: 1 },
+      { id: 565, q: "A person who designs, establishes, and maintains small-scale landscape projects is a:", options: ["A) Landscape architect", "B) Garden center manager", "C) Garden superintendent", "D) Landscape nurseryman"], ans: 0 },
+      { id: 566, q: "During dry periods, landscape plants should be:", options: ["A) Watered lightly every day", "B) Watered only after darkness", "C) Watered heavily once every 7–10 days", "D) Watered and fertilized heavily each week"], ans: 2 },
+      { id: 567, q: "Which statement is true for asphalt used in driveways?", options: ["A) Asphalt is crowned to promote drainage", "B) Asphalt does not need a porous base", "C) Asphalt should never be pitched", "D) Asphalt requires greater thickness than concrete"], ans: 0 },
+      { id: 568, q: "Pinus halepensis is very healthy growing in:", options: ["A) Tropical zone", "B) None of the above zones", "C) Subtropical zone", "D) All of the above zones"], ans: 1 },
+      { id: 569, q: "The design principle of total compatibility of all parts of an arrangement is:", options: ["A) Texture", "B) Harmony", "C) Proportion", "D) Transition"], ans: 1 },
+      { id: 570, q: "For optimum vase life, most cut flowers should be stored close to:", options: ["A) 50°F", "B) 30°F", "C) 45°F", "D) 40°F"], ans: 3 },
+      { id: 571, q: "Which statement about perennials is true?", options: ["A) Perennials are good plants for gardens with low maintenance costs", "B) Perennials are only for foliage beauty", "C) Perennials are used for one season", "D) Perennials are not easy to establish"], ans: 0 },
+      { id: 572, q: "Which perennial is known for a low, spreading growth habit?", options: ["A) Gaillardia", "B) Vinca", "C) Coreopsis", "D) Cimicifuga"], ans: 1 },
+      { id: 573, q: "Which perennial boasts the most diverse array of varieties?", options: ["A) Helenium", "B) Geranium", "C) Ghazania", "D) Verbena"], ans: 1 },
+      { id: 574, q: "Which perennial is recognized for hardiness and blooms in shades of blue and lavender according to the source?", options: ["A) Calendula", "B) Dianthus", "C) Alyssum", "D) Verbena"], ans: 1 },
+      { id: 575, q: "The primary auxin produced in plants is:", options: ["A) NAA", "B) IBA", "C) IAA", "D) Ethylene"], ans: 2 },
+      { id: 576, q: "When plant cells are turgid, they are:", options: ["A) Deflated", "B) Inflated", "C) Ruptured", "D) Joined with other cells"], ans: 1 },
+      { id: 577, q: "Which statement about annual plants is true according to the source?", options: ["A) Annuals are only planted in spring", "B) Annuals can survive severe winter without protection", "C) Annuals usually bloom only once each season", "D) Annuals are only used for foliage beauty"], ans: 2 },
+      { id: 578, q: "Annual plants are used as:", options: ["A) Ground covers only", "B) Border plants only", "C) Surface material only", "D) All of the above"], ans: 3 },
+      { id: 579, q: "Verbena is commonly used for:", options: ["A) Bedding purpose", "B) Climbing purpose", "C) Hedge purpose", "D) Border purpose"], ans: 0 },
+      { id: 580, q: "Pansy is a popular annual because it is sought after for:", options: ["A) Stem and foliage beauty", "B) Its hardiness as a ground cover", "C) Its colorful flowers in bedding displays", "D) Shade tolerance"], ans: 2 },
+      { id: 581, q: "Which annual is commonly grown as a vine?", options: ["A) Salvia", "B) Ipomoea", "C) Verbena", "D) Marigold"], ans: 1 },
+      { id: 582, q: "Which annual plant is frequently used as ground cover according to the source?", options: ["A) Calendula", "B) Viola", "C) Stock", "D) Mesembryanthemum"], ans: 0 },
+      { id: 583, q: "Which annual is typically utilized in rock gardens?", options: ["A) Clarkia", "B) Cosmos", "C) Dianthus", "D) Morning glory"], ans: 2 },
+      { id: 584, q: "Which annual is primarily valued for its foliage?", options: ["A) Portulaca", "B) Kochia", "C) Phlox", "D) Antirrhinum"], ans: 1 },
+      { id: 585, q: "Recommended average humidity for interior plants is:", options: ["A) 10–20%", "B) 40–70%", "C) 70–100%", "D) 20–30%"], ans: 1 },
+      { id: 586, q: "The bract that encloses a flower cluster is known as:", options: ["A) Spike", "B) Quill", "C) Spathe", "D) Petal"], ans: 2 },
+      { id: 587, q: "Broadleaf evergreens such as Ficus bengalensis and Alstonia scholaris should be fertilized in:", options: ["A) Early spring", "B) Late summer", "C) Early summer", "D) Late fall"], ans: 0 },
+      { id: 588, q: "A major problem in standard carnation production resulting in asymmetrical flowers is:", options: ["A) High-density spacing", "B) Calyx splitting", "C) Improper fertilization", "D) Lack of pinching"], ans: 1 },
+      { id: 589, q: "What is generally added to water when processing flowers in a retail floral shop?", options: ["A) Algicide", "B) Herbicide", "C) Biocide", "D) Insecticide"], ans: 2 },
+      { id: 590, q: "The genus and species name of ponytail palm is:", options: ["A) Brassaia actinophylla", "B) Beaucarnea recurvata", "C) Cordyline terminalis", "D) Moluccella laevis"], ans: 1 },
+      { id: 591, q: "Training plants into three-dimensional ornamental forms such as animals is called:", options: ["A) Espalier", "B) Heading back", "C) Topiary", "D) Bonsai"], ans: 2 },
+      { id: 592, q: "Compared with sandy soils, clay soils require:", options: ["A) A shorter time for irrigation-water absorption", "B) About the same time", "C) A longer time for irrigation-water absorption", "D) More or less time depending only on pH"], ans: 2 },
+      { id: 593, q: "Plants clipped or pruned into two-dimensional forms are called:", options: ["A) Espalier", "B) Dynamic", "C) Balanced", "D) Topiary"], ans: 0 },
+      { id: 594, q: "A transplanted tree or shrub should be set into the ground:", options: ["A) 50% deeper than originally planted", "B) At the same depth at which it was originally growing", "C) With the top roots exposed", "D) With the top of the container slightly covered"], ans: 1 },
+      { id: 595, q: "The main commercial method for propagating African violets is:", options: ["A) Seeds", "B) Leaf petioles", "C) Tubers", "D) Crowns"], ans: 1 },
+      { id: 596, q: "Damping off in plants is caused by:", options: ["A) Bacteria", "B) Fungi", "C) Nematodes", "D) Virus"], ans: 1 },
+      { id: 597, q: "Which group contains terms related to landscape design principles?", options: ["A) Stratify, random, curvature", "B) Hogarth, symmetrical, curvature", "C) Focalization, proportion, simplicity", "D) Thresh, rounding, complexity"], ans: 2 },
+      { id: 598, q: "Plants usually do not grow well in poorly drained soils because:", options: ["A) Organic matter is too high", "B) Roots become engorged with water", "C) Oxygen content is low", "D) Soil warms too quickly"], ans: 2 },
+      { id: 599, q: "To make a living area of a landscape appear larger, a designer should include:", options: ["A) Warm-colored flowers", "B) All white flowers", "C) Cool-colored flowers such as blues, purples and lavenders", "D) A combination of warm and cool colors"], ans: 2 },
+      { id: 600, q: "Which turf area is typically mowed to the lowest height?", options: ["A) Home lawn", "B) Golf fairway", "C) Golf green", "D) Commercial lawn"], ans: 2 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(200, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 200) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Horticulture Master Exam (401–600).";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific fruit tree physiology, landscape design, and vegetable crop practices.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Horticulture recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+</html>

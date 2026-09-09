@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horticulture & Olericulture Master Exam — Questions 1–200</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+                  radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon { background: #dcfce7; color: #15803d; }
+    .tile-blue .status-icon { background: #e0f2fe; color: #0284c7; }
+    .tile-amber .status-icon { background: #fef3c7; color: #d97706; }
+    .tile-rose .status-icon { background: var(--timer-bg); color: var(--timer-text); border: 1px solid var(--timer-border); }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next, .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover, .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select, .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus, .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val { color: var(--success); }
+    .matrix-card.c-red .val { color: var(--danger); }
+    .matrix-card.c-slate .val { color: var(--text-muted); }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct { background: var(--success-light); color: var(--success); }
+    .rev-badge.wrong { background: var(--danger-light); color: var(--danger); }
+    .rev-badge.unanswered { background: #e2e8f0; color: var(--neutral); }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .card {
+        padding: 1.25rem;
+      }
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Horticulture MCQ Series (200 Questions)</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Horticulture Master Exam: Questions 1–200 (Complete Series)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–200)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="200">All Questions (200 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 200)</label>
+          <input type="number" id="custom-count-input" min="1" max="200" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">200 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#127815;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Horticulture MCQ</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#127812;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Questions 1–200</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 200</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">03:20:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg" style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "What is the edible part of a potato?", options: ["A) Bulb", "B) Tuber", "C) Root", "D) Corm"], ans: 1 },
+      { id: 2, q: "What is the term for vegetable production aimed at local consumption?", options: ["A) Truck gardening", "B) Market gardening", "C) Kitchen gardening", "D) Commercial farming"], ans: 1 },
+      { id: 3, q: "Which type of foliage plants have extremely tender and watery stems?", options: ["A) Woody plants", "B) Succulents", "C) Climbers", "D) Shrubs"], ans: 1 },
+      { id: 4, q: "What is the typical life cycle of most summer vegetables?", options: ["A) Biennial", "B) Annual", "C) Perennial", "D) Triennial"], ans: 1 },
+      { id: 5, q: "In which climatic region can summer vegetables be grown out of season?", options: ["A) Hilly area", "B) Lower Sindh", "C) Alpine region", "D) Tundra"], ans: 1 },
+      { id: 6, q: "What does the inner integument develop into during seed formation?", options: ["A) Testa", "B) Tegmen", "C) Hilum", "D) Micropyle"], ans: 1 },
+      { id: 7, q: "What is the term for the scar left by the funiculus during seed formation?", options: ["A) Micropyle", "B) Hilum", "C) Raphe", "D) Chalaza"], ans: 1 },
+      { id: 8, q: "What causes cracking in tomato fruit?", options: ["A) Boron deficiency", "B) Moisture fluctuation", "C) High temperature", "D) All of these"], ans: 3 },
+      { id: 9, q: "What is the endosperm-like tissue (2n) in a seed developing from the nucellus called?", options: ["A) Endosperm", "B) Perisperm", "C) Embryo", "D) Testa"], ans: 1 },
+      { id: 10, q: "What may orthodox seeds be after dissemination?", options: ["A) Desiccation tolerant", "B) Long living in dry cold storage", "C) Viable at low moisture", "D) All of the above"], ans: 3 },
+      { id: 11, q: "What leads to the reduction or elimination of dormancy in crop plants?", options: ["A) Acclimatization", "B) Breeding selection", "C) Storage aging", "D) All of the above"], ans: 0 },
+      { id: 12, q: "What is dormancy due to factors within the embryo called?", options: ["A) Exogenous dormancy", "B) Endogenous dormancy", "C) Secondary dormancy", "D) Induced dormancy"], ans: 1 },
+      { id: 13, q: "Secondary dormancy in nondormant seeds is due to what factor?", options: ["A) Moisture", "B) Temperature", "C) Light", "D) Oxygen"], ans: 1 },
+      { id: 14, q: "What favors the germination of undeveloped seeds?", options: ["A) Cold temperature", "B) Warm temperature (>20°C) and gibberellic acid", "C) Darkness", "D) Dry storage"], ans: 1 },
+      { id: 15, q: "What are the most important factors during stratification?", options: ["A) Light and humidity", "B) Temperature, duration and media", "C) Oxygen and soil type", "D) Nutrients and pH"], ans: 1 },
+      { id: 16, q: "At which stage does a seed achieve maximum dry weight, germination potential and vigor?", options: ["A) Anthesis", "B) Physiological maturity", "C) Harvest maturity", "D) Over-ripening"], ans: 1 },
+      { id: 17, q: "What factors affect seed vigor?", options: ["A) Time of storage", "B) Type of seed stored", "C) Storage environment", "D) All of the above"], ans: 3 },
+      { id: 18, q: "What type of test is the tetrazolium test used to check seed viability?", options: ["A) Physical test", "B) Chemical test and germination test", "C) Growth test", "D) Mechanical test"], ans: 1 },
+      { id: 19, q: "In terms of what can seed moisture content be described?", options: ["A) Dry weight only", "B) Wet weight only", "C) Dry weight and wet weight", "D) Volume basis"], ans: 2 },
+      { id: 20, q: "What is controlled inhibition of seed germination termed?", options: ["A) Scarification", "B) Priming", "C) Stratification", "D) Dormancy"], ans: 1 },
+      { id: 21, q: "What do celery and lettuce become at high temperature?", options: ["A) Dormant", "B) Thermodormant", "C) Non-viable", "D) Vigorously growing"], ans: 1 },
+      { id: 22, q: "What does excessive soil moisture late in the season cause?", options: ["A) Increase in TSS and decrease in dry matter", "B) Decrease in TSS and increase in dry matter", "C) Increase in both TSS and dry matter", "D) Decrease in both TSS and dry matter"], ans: 0 },
+      { id: 23, q: "Which category of crops are mostly shallow-rooted?", options: ["A) Summer, winter and offseason crops", "B) Deep forest trees", "C) Perennial vines", "D) Taproot trees"], ans: 0 },
+      { id: 24, q: "What do deep-rooted vegetables require?", options: ["A) Frequent light irrigation", "B) Less frequent irrigation and more water at each irrigation", "C) No irrigation", "D) Continuous flooding"], ans: 1 },
+      { id: 25, q: "In which categories of vegetables is the fruit edible?", options: ["A) Summer, winter and cruciferous vegetables", "B) Leafy greens only", "C) Root vegetables only", "D) Bulb crops only"], ans: 0 },
+      { id: 26, q: "What do mulches mainly reduce?", options: ["A) Soil aeration", "B) Transpiration, evaporation and evapotranspiration", "C) Soil temperature permanently", "D) Root growth"], ans: 1 },
+      { id: 27, q: "Which type of mulch reduces soil temperature?", options: ["A) Transparent polythene", "B) Black polythene", "C) Straw mulch", "D) Organic compost"], ans: 1 },
+      { id: 28, q: "Which flowers are completely suppressed on female plants for hybrid seed production?", options: ["A) Perfect flowers", "B) Pistillate flowers", "C) Staminate flowers", "D) Neutral flowers"], ans: 2 },
+      { id: 29, q: "Which cucumber cultivars are recommended under tunnel production technology?", options: ["A) Monoecious", "B) Andromonoecious", "C) Gynoecious", "D) Trimonoecious"], ans: 2 },
+      { id: 30, q: "Why is flowering in watermelon unaffected by light duration?", options: ["A) It is a short-day plant", "B) It is a long-day plant", "C) It is a day-neutral plant", "D) It is an obligate biennial"], ans: 2 },
+      { id: 31, q: "What is the nature of pollination in cucurbits?", options: ["A) Strictly self-pollinated", "B) Highly cross-pollinated", "C) Cleistogamous", "D) Apomictic"], ans: 1 },
+      { id: 32, q: "How is ginger commonly cultivated?", options: ["A) Annual", "B) Biennial", "C) Perennial", "D) Ephemeral"], ans: 2 },
+      { id: 33, q: "In which type of vegetables is cross-pollination essential?", options: ["A) Monoecious vegetables", "B) Dioecious vegetables", "C) Hermaphrodite", "D) Self-pollinated"], ans: 1 },
+      { id: 34, q: "What causes cross-pollination in plants bearing bisexual flowers?", options: ["A) Dichogamy, herkogamy and heterostyly", "B) Cleistogamy", "C) Homogamy", "D) Apomixis"], ans: 0 },
+      { id: 35, q: "By what means are pollen grains disseminated in anemophilous plants?", options: ["A) Insects", "B) Water", "C) Wind", "D) Animals"], ans: 2 },
+      { id: 36, q: "What problem is induced by gametocides in pollen development?", options: ["A) High germination", "B) Sterility", "C) Polyploidy", "D) Early flowering"], ans: 1 },
+      { id: 37, q: "What is the production of seeds without fertilization termed?", options: ["A) Parthenocarpy", "B) Parthenogenesis", "C) Apomixis", "D) Syngamy"], ans: 2 },
+      { id: 38, q: "What is the ploidy level of most hybrid watermelon and cucumber?", options: ["A) Diploid (2n)", "B) Triploid (3n)", "C) Tetraploid (4n)", "D) Haploid (n)"], ans: 1 },
+      { id: 39, q: "What is the removal of off-type plants from a seed field termed?", options: ["A) Thinning", "B) Rouging", "C) Weeding", "D) Pruning"], ans: 1 },
+      { id: 40, q: "What is the most important seed component affecting viability during storage?", options: ["A) Protein content", "B) Moisture", "C) Oil content", "D) Starch size"], ans: 1 },
+      { id: 41, q: "How is potato generally propagated?", options: ["A) True seed", "B) Seed potato", "C) Stem cutting", "D) Layering"], ans: 1 },
+      { id: 42, q: "By what methods is isolation during seed production done?", options: ["A) Types/varieties", "B) Plantation at a distance", "C) Zoning", "D) All of the above"], ans: 3 },
+      { id: 43, q: "What is the most common pollinator insect in India?", options: ["A) Butterflies", "B) Honey bees", "C) Wasps", "D) Houseflies"], ans: 1 },
+      { id: 44, q: "By which method is seed production in biennial vegetables mostly done?", options: ["A) Seed-to-seed method", "B) Root-to-seed method (steekling method)", "C) Direct sowing", "D) Tissue culture"], ans: 1 },
+      { id: 45, q: "Male sterility is not due to which factor?", options: ["A) Cytoplasmic genes", "B) Nuclear genes", "C) Nutritional factor", "D) Cytoplasmic-nuclear interaction"], ans: 2 },
+      { id: 46, q: "How is hybrid vigor manifested in vegetables?", options: ["A) High yield", "B) Uniformity in size", "C) Uniformity in maturity", "D) All of the above"], ans: 3 },
+      { id: 47, q: "When should watermelon for seed be harvested?", options: ["A) When fruit turns yellow", "B) When tendrils wither", "C) When seeds are soft", "D) Immediately after flowering"], ans: 1 },
+      { id: 48, q: "By what methods are vegetables for seed production harvested in India?", options: ["A) Manual method", "B) Machines", "C) Combine harvesters", "D) All of the above"], ans: 3 },
+      { id: 49, q: "What should be the moisture content of vegetable seeds during storage?", options: ["A) Less than 10%", "B) 15–20%", "C) 25%", "D) 30%"], ans: 0 },
+      { id: 50, q: "Which has the poorest seed storage capacity?", options: ["A) Cereals", "B) Cucurbits", "C) Legumes", "D) Crucifers"], ans: 1 },
+      { id: 51, q: "At what pH are nitrates absorbed?", options: ["A) Below 6", "B) Above 7", "C) Neutral pH 7", "D) Highly alkaline"], ans: 0 },
+      { id: 52, q: "Which hormones control apical dominance?", options: ["A) Gibberellins", "B) Auxins", "C) Cytokinins", "D) Ethylene"], ans: 1 },
+      { id: 53, q: "Tetraploid watermelon must be pollinated by which plants to produce seedless watermelon?", options: ["A) Diploid plants", "B) Triploid plants", "C) Tetraploid plants", "D) Haploid plants"], ans: 1 },
+      { id: 54, q: "Which vegetable cannot be grown as an offseason vegetable?", options: ["A) Potato", "B) Tomato", "C) Okra", "D) Bitter gourd"], ans: 0 },
+      { id: 55, q: "In which crop can lower temperature than normal convert male flowers into perfect flowers?", options: ["A) Tomato", "B) Papaya", "C) Cucumber", "D) Squash"], ans: 1 },
+      { id: 56, q: "What type of pollination occurs in tomato?", options: ["A) Strictly cross-pollinated", "B) Insect-pollinated (often cross/self)", "C) Wind-pollinated", "D) Water-pollinated"], ans: 1 },
+      { id: 57, q: "How is turmeric propagated?", options: ["A) True seed", "B) Rhizome", "C) Stem cutting", "D) Tuber"], ans: 1 },
+      { id: 58, q: "How is sweet potato propagated according to the source?", options: ["A) Stem cuttings and tubers", "B) True seed only", "C) Bulbs only", "D) Suckers"], ans: 0 },
+      { id: 59, q: "Self-pollination is a form of what?", options: ["A) Outbreeding", "B) Inbreeding", "C) Heterosis", "D) Hybridization"], ans: 1 },
+      { id: 60, q: "Cross-pollination is associated with what?", options: ["A) Cleistogamy", "B) Chasmogamy", "C) Apomixis", "D) Selfing"], ans: 1 },
+      { id: 61, q: "What is the completion of pollination and fertilization in an unopened flower bud termed?", options: ["A) Chasmogamy", "B) Cleistogamy", "C) Allogamy", "D) Dichogamy"], ans: 1 },
+      { id: 62, q: "What is the simultaneous maturation of anthers and stigma called?", options: ["A) Dichogamy", "B) Homogamy", "C) Protandry", "D) Protogyny"], ans: 1 },
+      { id: 63, q: "What does fertilization after the opening of the flower refer to?", options: ["A) Cleistogamy", "B) Chasmogamy", "C) Apomixis", "D) Parthenocarpy"], ans: 1 },
+      { id: 64, q: "What does male sterility promote?", options: ["A) Self-pollination", "B) Allogamy (cross-pollination)", "C) Cleistogamy", "D) Apomixis"], ans: 1 },
+      { id: 65, q: "What is exposure of seeds to low temperature before germination termed?", options: ["A) Vernalization", "B) Stratification", "C) Scarification", "D) Priming"], ans: 1 },
+      { id: 66, q: "What are imbibed or germinated seeds subjected to cold temperature termed?", options: ["A) Stratification", "B) Vernalization", "C) Hardening", "D) Priming"], ans: 1 },
+      { id: 67, q: "Which vegetable does not require specific low temperature before flowering?", options: ["A) Cabbage", "B) Cauliflower", "C) Onion", "D) Brinjal"], ans: 3 },
+      { id: 68, q: "What is the edible part of cauliflower?", options: ["A) Leaves", "B) Flower bud (curd)", "C) Root", "D) Stem"], ans: 1 },
+      { id: 69, q: "What is the edible portion of cabbage?", options: ["A) Flower bud", "B) Leaves and inflorescence (head)", "C) Root", "D) Tuber"], ans: 1 },
+      { id: 70, q: "What type of crops are cole crops?", options: ["A) Tender", "B) Hardy", "C) Semi-hardy", "D) Tropical"], ans: 1 },
+      { id: 71, q: "Which crop has the lowest water content among the given vegetables?", options: ["A) Tomato", "B) Cabbage", "C) Cauliflower", "D) Cucumber"], ans: 2 },
+      { id: 72, q: "What is the commercial variety of watermelon?", options: ["A) Pusa Bedana", "B) Sugar Baby", "C) Arka Manik", "D) Asahi Yamato"], ans: 1 },
+      { id: 73, q: "During which season is the vine of bottle gourd not staked?", options: ["A) Summer season", "B) Rainy season", "C) Spring season", "D) Autumn"], ans: 1 },
+      { id: 74, q: "Which is not the best source of protein among the given vegetables?", options: ["A) Peas", "B) Beans", "C) Potatoes", "D) Cowpea"], ans: 2 },
+      { id: 75, q: "What causes the hotness in chillies?", options: ["A) Capsanthin", "B) Capsicin", "C) Solanine", "D) Piperine"], ans: 1 },
+      { id: 76, q: "Which crop is most susceptible to viral infection?", options: ["A) Tomato", "B) Radish", "C) Pea", "D) Carrot"], ans: 0 },
+      { id: 77, q: "Which vegetable has dioecious behavior according to the source?", options: ["A) Tomato", "B) Bitter gourd", "C) Cucumber", "D) Pumpkin"], ans: 1 },
+      { id: 78, q: "Consecutive use of garlic reduces the level of what?", options: ["A) Hemoglobin", "B) Cholesterol", "C) Glucose", "D) Calcium"], ans: 1 },
+      { id: 79, q: "What factors does bulb production in onion depend upon?", options: ["A) Temperature", "B) Soil moisture", "C) Day length", "D) All of the above"], ans: 3 },
+      { id: 80, q: "What causes the red color of carrot?", options: ["A) Carotene", "B) Anthocyanin", "C) Lycopene", "D) Xanthophyll"], ans: 1 },
+      { id: 81, q: "What factors affect the color of carrot roots?", options: ["A) Soil temperature", "B) Soil moisture", "C) Soil texture", "D) All of the above"], ans: 3 },
+      { id: 82, q: "Which family does radish belong to?", options: ["A) Solanaceae", "B) Cruciferae (Brassicaceae)", "C) Cucurbitaceae", "D) Umbelliferae"], ans: 1 },
+      { id: 83, q: "On which type of soil are cucurbits grown for early harvest?", options: ["A) Heavy clay", "B) Sandy soils", "C) Sodic soil", "D) Laterite soil"], ans: 1 },
+      { id: 84, q: "What is the botanical classification of tomato fruit?", options: ["A) Pome", "B) Berry", "C) Drupe", "D) Capsule"], ans: 1 },
+      { id: 85, q: "What is the portion of the axis below the cotyledons in a seed called?", options: ["A) Epicotyl", "B) Hypocotyl", "C) Radicle", "D) Plumule"], ans: 1 },
+      { id: 86, q: "Which type of flower cannot produce seeds and/or fruit?", options: ["A) Perfect flower", "B) Staminate flower", "C) Bisexual flower", "D) Hermaphrodite"], ans: 1 },
+      { id: 87, q: "What causes degeneration of aboveground parts in ginger?", options: ["A) Senescence", "B) Flowering", "C) Frost", "D) Drought"], ans: 0 },
+      { id: 88, q: "By what means does pollination take place in spinach?", options: ["A) Insects", "B) Wind", "C) Water", "D) Self"], ans: 0 },
+      { id: 89, q: "What minimum temperatures cannot be tolerated by tender crops?", options: ["A) 2°C, 1°C and 0°C", "B) 10°C", "C) 15°C", "D) 20°C"], ans: 0 },
+      { id: 90, q: "What is the optimum temperature for cool-season vegetables?", options: ["A) 10–15°C", "B) 18–24°C", "C) 25–30°C", "D) 32–38°C"], ans: 1 },
+      { id: 91, q: "Which is not an appropriate approach to control frost?", options: ["A) Transmittance of control", "B) Heaters", "C) Wind machines", "D) Irrigation"], ans: 0 },
+      { id: 92, q: "What group do tomato, chillies and brinjal belong to?", options: ["A) Cole crops", "B) Solanaceous crops", "C) Cucurbits", "D) Root crops"], ans: 1 },
+      { id: 93, q: "What causes color development in tomato fruit?", options: ["A) Carotene", "B) Lycopene", "C) Anthocyanin", "D) Chlorophyll"], ans: 1 },
+      { id: 94, q: "Under which group are cucurbits consumed at the immature stage classified?", options: ["A) Summer squashes", "B) Winter squashes", "C) Root crops", "D) Leafy vegetables"], ans: 0 },
+      { id: 95, q: "Are almost all summer and winter vegetables dioecious with respect to flowers?", options: ["A) Yes", "B) No", "C) Mostly", "D) None of these"], ans: 3 },
+      { id: 96, q: "What is the term vineyard used for?", options: ["A) Apple orchard", "B) Grape plantation", "C) Citrus grove", "D) Mango garden"], ans: 1 },
+      { id: 97, q: "What is the term viticulture used for?", options: ["A) Grape cultivation", "B) Vegetable farming", "C) Floriculture", "D) Pomology"], ans: 0 },
+      { id: 98, q: "What does home gardening deal with in vegetable production?", options: ["A) Home consumption, local market and commercial production", "B) Export only", "C) Seed production only", "D) Processing only"], ans: 0 },
+      { id: 99, q: "What does truck gardening mean?", options: ["A) Vegetable production for local market", "B) Long-distance transport vegetable farming", "C) Greenhouse production", "D) Backyard gardening"], ans: 0 },
+      { id: 100, q: "Tip burn of lettuce occurs at high air temperature when the soil is what?", options: ["A) Dry", "B) Wet", "C) Frozen", "D) Compacted"], ans: 1 },
+      { id: 101, q: "Organic crop cultivation is:", options: ["A) Without fertilizers", "B) With organic manures", "C) With chemical fertilizers", "D) None of these"], ans: 1 },
+      { id: 102, q: "Thinning in vegetables is practiced to maintain:", options: ["A) Both plant × plant and line × line distance", "B) Line × line distance", "C) Plant × plant distance", "D) None of these"], ans: 0 },
+      { id: 103, q: "Transplanting means:", options: ["A) Shifting of potted plants", "B) Shifting of seedlings", "C) Shifting of large plants", "D) All of these"], ans: 3 },
+      { id: 104, q: "Shrubs generally fall in the category of:", options: ["A) More than 25 feet high", "B) 7–15 feet high", "C) 25 feet high", "D) None of these"], ans: 1 },
+      { id: 105, q: "Deciduous plants are mostly grown in:", options: ["A) Along rivers", "B) Hilly area", "C) In plains", "D) None of these"], ans: 1 },
+      { id: 106, q: "Vines are climbing or trailing plants with:", options: ["A) Woody stems", "B) Herbaceous stems", "C) Both herbaceous and woody stems", "D) None of these"], ans: 2 },
+      { id: 107, q: "Monoecious plants have male and female flowers on:", options: ["A) Different plants", "B) Same plant", "C) Both of these", "D) None of these"], ans: 1 },
+      { id: 108, q: "Hardy crops or plants are acclimatized against:", options: ["A) Both frost and extreme heat", "B) Extreme heat", "C) Frost", "D) None of these"], ans: 0 },
+      { id: 109, q: "True fruits develop from the:", options: ["A) Pericarp", "B) Thalamus", "C) Ovary", "D) All of these"], ans: 2 },
+      { id: 110, q: "In drupe fruits, all three ovarian layers are:", options: ["A) Mixed", "B) Fused", "C) Separated", "D) None of these"], ans: 1 },
+      { id: 111, q: "Creeping vegetable crops are grown on:", options: ["A) Flats", "B) Ridges", "C) Beds", "D) All of these"], ans: 3 },
+      { id: 112, q: "Mango is a:", options: ["A) Berry fruit", "B) Aggregate fruit", "C) Drupe fruit", "D) Pome fruit"], ans: 2 },
+      { id: 113, q: "Citrus is a special type of:", options: ["A) Drupe", "B) Berry", "C) Pome", "D) None of these"], ans: 1 },
+      { id: 114, q: "Dicots can be identified on the basis of:", options: ["A) No leaf venations", "B) Parallel venations", "C) Reticulate leaf venations", "D) None of these"], ans: 2 },
+      { id: 115, q: "In binomial nomenclature, the first name is the:", options: ["A) Family name", "B) Genus name", "C) Subfamily name", "D) Species name"], ans: 1 },
+      { id: 116, q: "Most summer vegetables belong to the family:", options: ["A) Malvaceae", "B) Poaceae", "C) Cucurbitaceae", "D) Solanaceae"], ans: 2 },
+      { id: 117, q: "Cultivar means:", options: ["A) Rejected variety", "B) Approved variety", "C) Some cultivated variety", "D) Discarded variety"], ans: 2 },
+      { id: 118, q: "Pears and beans are a rich source of:", options: ["A) Both carbohydrates and protein", "B) Protein", "C) Carbohydrates", "D) None of these"], ans: 0 },
+      { id: 119, q: "Potato and sweet potato are well known for:", options: ["A) Proteins", "B) Vitamins", "C) Carbohydrates", "D) All of these"], ans: 3 },
+      { id: 120, q: "Leafy vegetables provide:", options: ["A) Protein", "B) Iron", "C) Carbohydrates", "D) None of these"], ans: 1 },
+      { id: 121, q: "Iron is a carrier of:", options: ["A) Both oxygen and CO₂", "B) CO₂", "C) Oxygen", "D) None of these"], ans: 2 },
+      { id: 122, q: "Vitamin A is effective against:", options: ["A) Gum problems", "B) Night blindness", "C) Beriberi disease", "D) None of these"], ans: 1 },
+      { id: 123, q: "Carrot is a rich source of:", options: ["A) Vitamin D", "B) Vitamin A", "C) Vitamin E", "D) Vitamin C"], ans: 1 },
+      { id: 124, q: "Cole crops comprise:", options: ["A) Knol Khol", "B) Cabbage", "C) Cauliflower", "D) All of these"], ans: 3 },
+      { id: 125, q: "Salad crops include:", options: ["A) Cabbage", "B) Radish", "C) Lettuce", "D) All of these"], ans: 3 },
+      { id: 126, q: "Which of the following crops is grown sexually?", options: ["A) Turmeric", "B) Garlic", "C) Onion", "D) Potato"], ans: 2 },
+      { id: 127, q: "Tomato varieties are mainly:", options: ["A) Determinate type", "B) Indeterminate type", "C) Both determinate and indeterminate types", "D) None of these"], ans: 1 },
+      { id: 128, q: "Fertigation refers to the application of fertilizer with:", options: ["A) Rain", "B) Water", "C) Both water and rain", "D) None of these"], ans: 1 },
+      { id: 129, q: "In a hydroponic system, plants are grown in:", options: ["A) Gravels", "B) Water", "C) Sand", "D) Soil"], ans: 1 },
+      { id: 130, q: "Through drip irrigation we can provide:", options: ["A) Fertilizer only", "B) Water only", "C) Both water and fertilizer", "D) None of these"], ans: 2 },
+      { id: 131, q: "Nitrogen in vegetables is needed mainly for:", options: ["A) Reproductive growth", "B) Vegetative growth", "C) Ripening and maturity", "D) None of these"], ans: 1 },
+      { id: 132, q: "Seed potato seed has:", options: ["A) Rest period", "B) Dormancy", "C) Both dormancy and rest period", "D) None of these"], ans: 2 },
+      { id: 133, q: "Carrot and coriander belong to the family:", options: ["A) Cucurbitaceae", "B) Umbelliferae", "C) Crucifereae", "D) None of these"], ans: 1 },
+      { id: 134, q: "Potato belongs to the family:", options: ["A) Cruciferae", "B) Solanaceae", "C) Umbelliferae", "D) None of these"], ans: 1 },
+      { id: 135, q: "Melons belong to the family:", options: ["A) Cucurbitaceae", "B) Crucifereae", "C) Solanaceae", "D) None of these"], ans: 0 },
+      { id: 136, q: "Melons have seeds in the:", options: ["A) Scattered position", "B) Cavity or centre", "C) Both types may be", "D) None of these"], ans: 1 },
+      { id: 137, q: "Cantaloupe belongs to the group:", options: ["A) Gourds", "B) Squashes", "C) Melons", "D) Cucurbits"], ans: 2 },
+      { id: 138, q: "Hybrid varieties of cucumber grown in tunnels are:", options: ["A) Zygotic", "B) Parthenocarpic", "C) Both types", "D) None of these"], ans: 1 },
+      { id: 139, q: "Staking of vines in the rainy season is done to avoid:", options: ["A) Sunscald", "B) Disease attack", "C) Insect attack", "D) None of these"], ans: 1 },
+      { id: 140, q: "The optimum temperature for potato tuber formation is:", options: ["A) 25–30°C", "B) 22–25°C", "C) 20–22°C", "D) All of these"], ans: 1 },
+      { id: 141, q: "Tuber initiation in potato starts after:", options: ["A) 5th week", "B) 7th week", "C) 4th week", "D) 9th week"], ans: 0 },
+      { id: 142, q: "Color of carrot depends upon:", options: ["A) Season", "B) Variety", "C) Age", "D) All of these"], ans: 3 },
+      { id: 143, q: "Splitting of carrot is due to:", options: ["A) Less fertilizer", "B) Heavy fertilizer", "C) Fresh manure", "D) None of these"], ans: 1 },
+      { id: 144, q: "High temperature in chillies causes:", options: ["A) Fruit drop", "B) Flower drop", "C) Both flower drop and fruit drop", "D) None of these"], ans: 2 },
+      { id: 145, q: "Early blight and late blight of potato are:", options: ["A) Disorders", "B) Bacterial diseases", "C) Fungal diseases", "D) Viral diseases"], ans: 2 },
+      { id: 146, q: "Potato dormancy can be broken through:", options: ["A) Low temperature", "B) Chemical treatment", "C) Both chemical treatment and low temperature", "D) None of these"], ans: 2 },
+      { id: 147, q: "Dormancy period in potato is about:", options: ["A) 1 month", "B) ½ month", "C) 2 months", "D) 3 months"], ans: 3 },
+      { id: 148, q: "Seed rate per acre in potato for autumn crop is:", options: ["A) 400 kg", "B) 900–1100 kg", "C) 100 kg", "D) 500 kg"], ans: 1 },
+      { id: 149, q: "Potato cut tubers are used for planting during:", options: ["A) Spring crop", "B) Autumn crop", "C) Both autumn and spring crops", "D) None of these"], ans: 2 },
+      { id: 150, q: "Hollow heart of potato is a:", options: ["A) Deficiency", "B) Disease", "C) Disorder", "D) Insect attack"], ans: 2 },
+      { id: 151, q: "Potato tubers become green if they are:", options: ["A) Infected", "B) Exposed to light", "C) Attacked by insects", "D) None of these"], ans: 1 },
+      { id: 152, q: "Virus-free seeds of potato are produced in:", options: ["A) Autumn crop", "B) Hilly areas", "C) Plains", "D) Spring crop"], ans: 1 },
+      { id: 153, q: "Okra belongs to the family:", options: ["A) Chenopodiaceae", "B) Solanaceae", "C) Malvaceae", "D) Cucurbitaceae"], ans: 2 },
+      { id: 154, q: "Desiree and Cardinal are varieties of:", options: ["A) Peas", "B) Radish", "C) Potato", "D) Carrot"], ans: 2 },
+      { id: 155, q: "Which vegetable is directly seeded in the field?", options: ["A) Tomato", "B) Peas", "C) Chillies", "D) Brinjal"], ans: 1 },
+      { id: 156, q: "Buttoning is a disorder of:", options: ["A) Tomato", "B) Cauliflower", "C) Potato", "D) Peas"], ans: 1 },
+      { id: 157, q: "Production of very small-sized heads in cauliflower is called:", options: ["A) Buttoning", "B) Belting", "C) Both of these", "D) None of these"], ans: 0 },
+      { id: 158, q: "Development of seed stalks earlier in biennial crops is called:", options: ["A) Greening", "B) Bolting", "C) Buttoning", "D) None of these"], ans: 1 },
+      { id: 159, q: "Bolting in biennial crops is due to:", options: ["A) Low temperature exposure", "B) High temperature exposure", "C) Both low and high temperature exposure", "D) None of these"], ans: 0 },
+      { id: 160, q: "Quality seed carrot is produced through:", options: ["A) Steeklings", "B) Seed-to-seed method", "C) Toping in situ method", "D) None of these"], ans: 1 },
+      { id: 161, q: "Blossom end rot of tomato is due to:", options: ["A) Insect attack", "B) Boron/calcium deficiency", "C) Infection or disease", "D) Nutritional deficiency"], ans: 1 },
+      { id: 162, q: "Vegetables belonging to the cross-pollinated group are:", options: ["A) Cabbage", "B) Peas and tomato", "C) Tomato", "D) Peas"], ans: 0 },
+      { id: 163, q: "White brinjals are commonly grown for:", options: ["A) Salad purpose", "B) Ornamental purpose", "C) Both ornamental and salad purposes", "D) None of these"], ans: 3 },
+      { id: 164, q: "Tunnels for vegetable forcing are categorized as:", options: ["A) Low type", "B) Walk-in type", "C) High type", "D) All of these"], ans: 3 },
+      { id: 165, q: "Storage life of vegetables can be increased by GA spray at harvesting time at:", options: ["A) 200 ppm", "B) 50 ppm", "C) 100 ppm", "D) None of these"], ans: 2 },
+      { id: 166, q: "Dormancy of seeds is broken by:", options: ["A) Ethylene", "B) GA", "C) Water", "D) None of these"], ans: 1 },
+      { id: 167, q: "Femaleness in cucumber is induced by:", options: ["A) IBA", "B) GA", "C) ABA", "D) None of these"], ans: 2 },
+      { id: 168, q: "Maleness in cucumber is induced by:", options: ["A) IBA", "B) GA", "C) ABA", "D) None of the above"], ans: 3 },
+      { id: 169, q: "Plant protein, RNA and DNA contents are increased by:", options: ["A) Cytokinins", "B) Auxins", "C) Adenine", "D) None of the above"], ans: 0 },
+      { id: 170, q: "Most cucurbits are:", options: ["A) Salt sensitive", "B) Salt tolerant", "C) Both salt tolerant and sensitive", "D) None"], ans: 0 },
+      { id: 171, q: "The most commonly used growth retardant is:", options: ["A) Caumarin", "B) MH", "C) Phosphon", "D) None of the above"], ans: 1 },
+      { id: 172, q: "Alar significantly increased fruit:", options: ["A) Color", "B) Weight", "C) Size", "D) All of these"], ans: 3 },
+      { id: 173, q: "In green plants, light favors the formation of:", options: ["A) IBA", "B) GA", "C) ABA", "D) Auxin"], ans: 1 },
+      { id: 174, q: "Potato belongs to the family:", options: ["A) Alliaceae", "B) Solanaceae", "C) Cucurbitaceae", "D) Umbelliferae"], ans: 1 },
+      { id: 175, q: "Parthenocarpic cucumber develops:", options: ["A) After pollination", "B) Without pollination", "C) Both after and without pollination", "D) None of these"], ans: 1 },
+      { id: 176, q: "The Solanaceae family consists of:", options: ["A) Turnip, radish and carrot", "B) Potato, tomato, eggplant etc.", "C) Watermelon, muskmelon and cucumber", "D) None of these"], ans: 1 },
+      { id: 177, q: "Which crop is reproduced sexually?", options: ["A) Turmeric", "B) Onion", "C) Ginger", "D) None of the above"], ans: 1 },
+      { id: 178, q: "Which crop is propagated by asexual means?", options: ["A) Cauliflower", "B) Sweet potato", "C) Chillies", "D) None of the above"], ans: 1 },
+      { id: 179, q: "Which vegetables grow during summer?", options: ["A) Cauliflower and cabbage", "B) Cucumber and watermelon", "C) Turnip and radish", "D) None of the above"], ans: 1 },
+      { id: 180, q: "Which vegetables grow during winter?", options: ["A) Cucurbits", "B) Cole crops and root crops", "C) Root crops", "D) Cole crops"], ans: 1 },
+      { id: 181, q: "Which vegetables are mainly raised through nursery?", options: ["A) Cucumber and watermelon", "B) Radish and turnip", "C) Tomato and chillies", "D) None of the above"], ans: 2 },
+      { id: 182, q: "The viscosity of cytoplasm increases when temperature is:", options: ["A) Very high", "B) High", "C) Medium", "D) Low"], ans: 1 },
+      { id: 183, q: "Which vegetable is transplanted without an earthen ball?", options: ["A) Cauliflower", "B) Watermelon", "C) Cucumber", "D) None of the above"], ans: 0 },
+      { id: 184, q: "Which vegetables are cross-pollinated in nature?", options: ["A) Spinach and peas", "B) Cauliflower and cabbage", "C) Radish", "D) None of the above"], ans: 1 },
+      { id: 185, q: "Which vegetable is self-pollinated?", options: ["A) Watermelon", "B) Peas", "C) Sponge gourd", "D) Cucumber"], ans: 1 },
+      { id: 186, q: "The botanical name of sweet pepper is:", options: ["A) Capsicum grossum", "B) Capsicum annum", "C) Capsicum frutescens", "D) None of the above"], ans: 1 },
+      { id: 187, q: "The origin of peas is:", options: ["A) Europe", "B) Asia", "C) America", "D) Africa"], ans: 1 },
+      { id: 188, q: "New growth of plants needs ______ water for proper development:", options: ["A) Medium", "B) High", "C) Very high", "D) Low"], ans: 1 },
+      { id: 189, q: "Which vegetable has a higher concentration of Vitamin A?", options: ["A) Potato", "B) Carrot", "C) Peas", "D) Fenugreek"], ans: 1 },
+      { id: 190, q: "Which vegetable contains more Vitamin C?", options: ["A) Radish", "B) Tomato", "C) Cauliflower", "D) Turnip"], ans: 1 },
+      { id: 191, q: "Which of the following vegetables has a high concentration of fats?", options: ["A) Cabbage and cauliflower", "B) Sweet potato and potato", "C) Watermelon and muskmelon", "D) None of the above"], ans: 3 },
+      { id: 192, q: "Which family is also known as the Nightshade family?", options: ["A) Solanaceae", "B) Alliaceae", "C) Cucurbitaceae", "D) None of the above"], ans: 0 },
+      { id: 193, q: "Which one of the following is a bulb crop?", options: ["A) Ginger", "B) Arum", "C) Garlic", "D) Potato"], ans: 2 },
+      { id: 194, q: "The botanical name of watermelon is:", options: ["A) Citrullus fistulosus", "B) Citrullus lanatus", "C) Citrullus vulgaris", "D) None of the above"], ans: 1 },
+      { id: 195, q: "Auxin antagonist compounds interact with auxins by:", options: ["A) Increasing their activity", "B) Counteracting them", "C) Decreasing their concentration", "D) None of the above"], ans: 1 },
+      { id: 196, q: "Compounds that inhibit the activity of auxins are known as:", options: ["A) Epinostic agents", "B) Antiauxins", "C) Auxins antagonists", "D) All of the above"], ans: 1 },
+      { id: 197, q: "Compounds possessing hormone-like properties with a small molecular weight are termed as:", options: ["A) Cytokinins", "B) Auxins", "C) Gibberellins", "D) None of these"], ans: 3 },
+      { id: 198, q: "Which growth regulator, at superoptimal concentrations, may also act as a growth inhibitor?", options: ["A) Cytokinins", "B) Gibberellins", "C) Auxins", "D) None of the above"], ans: 0 },
+      { id: 199, q: "Auxins are primarily present in:", options: ["A) Leaf margins", "B) Root tips", "C) Shoot tips", "D) Stem end"], ans: 2 },
+      { id: 200, q: "What controls the direction of plant growth?", options: ["A) Kinins", "B) Auxins", "C) Gibberellins", "D) All of the above"], ans: 1 }
+    ];
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(200, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 200) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Horticulture MCQ Master Exam.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific olericulture and horticulture crop physiology concepts.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Horticulture recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+</html>

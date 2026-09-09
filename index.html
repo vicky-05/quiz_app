@@ -422,6 +422,15 @@
                     <div class="hub-arrow">&rsaquo;</div>
                 </div>
 
+                <div class="hub-card" onclick="openCategory('agri_mocks')">
+                    <div class="hub-icon icon-gold">&#127942;</div>
+                    <div class="hub-info">
+                        <div class="hub-title">Agriculture Full Mock Tests</div>
+                        <div class="hub-count">Comprehensive Master Exams &rarr;</div>
+                    </div>
+                    <div class="hub-arrow">&rsaquo;</div>
+                </div>
+
                 <!-- 4. Entomology & Pathology -->
                 <div class="hub-card" onclick="openCategory('crop_prot')">
                     <div class="hub-icon icon-purple">&#128030;</div>
@@ -461,6 +470,15 @@
                     <div class="hub-arrow">&rsaquo;</div>
                 </div>
 
+                <div class="hub-card" onclick="openCategory('soil_science')">
+                    <div class="hub-icon icon-earth">&#127757;</div>
+                    <div class="hub-info">
+                        <div class="hub-title">Soil Science & Agricultural Chemistry</div>
+                        <div class="hub-count">2 Test Modules Available &rarr;</div>
+                    </div>
+                    <div class="hub-arrow">&rsaquo;</div>
+                </div>
+
                 <!-- 7. Agri Economics -->
                 <div class="hub-card" onclick="openCategory('economics')">
                     <div class="hub-icon icon-emerald">&#128200;</div>
@@ -494,6 +512,14 @@
                         <div class="hub-count">1 Test Module Available &rarr;</div>
                     </div>
                     <div class="hub-arrow">&rsaquo;</div>
+                </div>
+                <div class="hub-card" onclick="openCategory('ibps_afo')">
+                    <div class="hub-icon icon-afo">&#127979;</div>
+                    <div class="hub-info">
+                        <div class="hub-title" style="color: #1e40af;">IBPS AFO Exam Hub</div>
+                        <div class="hub-count" style="color: #2563eb;">Professional Knowledge Series &rarr;</div>
+                    </div>
+                    <div class="hub-arrow" style="color: #2563eb;">&rsaquo;</div>
                 </div>
 
             </div>
@@ -529,6 +555,31 @@
     <script>
         // Organized Data Hierarchy
         const categoryData = {
+            ibps_afo: {
+        name: "IBPS AFO Exam Hub (Professional Knowledge)",
+        tests: [
+          { name: "IBPS AFO Test 1: Livestock & Poultry Management", tag: "261 MCQs • 261 Mins", url: "AGRI_QUIZ/ibps_afo_test_1.html" },
+          { name: "OPSC AAO 2026 Paper-I: Agriculture & Allied Sciences", tag: "100 MCQs • 100 Mins", url: "AGRI_QUIZ/opsc_afo_2026_test_1.html" },
+          { name: "Overall Questions Test 1: Agriculture & Agronomy Master Revision", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_1.html" },
+          { name: "Overall Questions Test 2: Cereals, Pulses, Oilseeds & Commercial Crops", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_2.html" },
+          { name: "Overall Questions Test 3: Sugarcane, Potato, Cropping Systems & Irrigation", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_3.html" },
+          { name: "Overall Questions Test 4: Fertilizers, Soil Fertility & Biochemistry", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_4.html" },
+          { name: "Overall Questions Test 5: Nutrition, Biotechnology, Genetics & Plant Breeding", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_5.html" },
+          { name: "Overall Questions Test 6: Seed Science, Biotechnology, Physiology & Pests", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_6.html" },
+          { name: "Overall Questions Test 7: Major Pests, Crop Diseases & Horticulture", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_7.html" },
+          { name: "Overall Questions Test 8: Fruit Crops, Vegetables & Horticulture Master Exam", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_8.html" },
+          { name: "Overall Questions Test 9: Master Exam", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/overall_questions_test_9.html" },
+          { name: "Soil and Science", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/SAC_OVERALL.html" },
+          { name: "Horticulture MCQ Master Exam: Questions 1–200", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/horticulture_mcq_1_200.html" },
+          { name: "Horticulture MCQ Master Exam: Questions 201–400", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/horticulture_mcq_201_400.html" },
+          { name: "Horticulture MCQ Master Exam: Questions 401–600", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/horticulture_mcq_401_600.html" },
+          { name: "Horticulture MCQ Master Exam: Questions 601–800", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/horticulture_mcq_401_800.html" },
+          { name: "Horticulture MCQ Master Exam: Questions 801–1000", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/horticulture_mcq_801_1000.html" },
+
+
+
+        ]
+      },
             polity: {
                 name: "Indian Polity & Constitution",
                 tests: [
@@ -568,24 +619,55 @@
                     { name: "GS Full Mock 1 (Tamil, Polity, History, Science & Math)", tag: "200 MCQs • 3 Hours", url: "general_quiz/GS_FULL_MOCK_TEST_1.html" }
                 ]
             },
+            agri_mocks: {
+                name: "Agriculture Full Mock Tests",
+                tests: [
+                    { name: "Agriculture Full Mock 1: Comprehensive Master Exam", tag: "272 MCQs • 272 Mins", url: "AGRI_QUIZ/agri_mock_test_1.html" },
+                    { name: "Agriculture Full Mock 2: Comprehensive Master Exam", tag: "280 MCQs • 280 Mins", url: "AGRI_QUIZ/agri_mock_test_2.html" },
+                    { name: "Agriculture Full Mock 3: Comprehensive Master Exam", tag: "308 MCQs • 308 Mins", url: "AGRI_QUIZ/agri_mock_test_3.html" },
+
+
+                ]
+            },
             crop_prot: {
                 name: "Crop Protection (Entomology & Pathology)",
                 tests: [
                     { name: "Agricultural Entomology (AEN 1 Test)", tag: "Entomology", url: "AGRI_QUIZ/AEN_1_TEST.html" },
-                    { name: "Plant Pathology Master Test", tag: "Pathology", url: "AGRI_QUIZ/PLANT_PATHOLOGY.html" }
+                    { name: "Agricultural Entomology Test 2: Chemical Control, Apiculture & Sericulture", tag: "184 MCQs • 184 Mins", url: "AGRI_QUIZ/AGRI_ENTOMOLOGY_TEST_2.html" },
+                    { name: "Agricultural Entomology Test 3: Sericulture, Stored Pests & IPM", tag: "144 MCQs • 144 Mins", url: "AGRI_QUIZ/AGRI_ENTOMOLOGY_TEST_3.html" },
+                    { name: "Plant Pathology Master Test", tag: "Pathology", url: "AGRI_QUIZ/PLANT_PATHOLOGY.html" },
+                    { name: "Mushroom Production Test 1: Cultivation & Varieties", tag: "73 MCQs • 73 Mins", url: "AGRI_QUIZ/MUSHROOM_TEST_1.html" }
+
                 ]
             },
             horti: {
                 name: "Horticulture & Crop Science",
                 tests: [
-                    { name: "Assistant Horticultural Officer (AHO 2025)", tag: "200 MCQs • 3 Hours", url: "AGRI_QUIZ/AHO_2025.html" }
+                    { name: "Assistant Horticultural Officer (AHO 2025)", tag: "200 MCQs • 3 Hours", url: "AGRI_QUIZ/AHO_2025.html" },
+                    { name: "Horticulture Test 1: Olericulture & Physiology", tag: "212 MCQs • 212 Mins", url: "AGRI_QUIZ/HORTI_TEST_1.html" },
+                    { name: "Spices Test 1: Pepper, Cardamom, Turmeric & Ginger", tag: "283 MCQs • 283 Mins", url: "AGRI_QUIZ/AGRI_SPICES_TEST_1.html" },
+                    { name: "Plantation Crops Test 1: Coconut, Cashew, Coffee & Tea", tag: "242 MCQs • 242 Mins", url: "AGRI_QUIZ/AGRI_PLANTATION_CROPS_TEST_1.html" },
+                    { name: "Floriculture & Landscaping Test 1", tag: "269 MCQs • 269 Mins", url: "AGRI_QUIZ/HORTI_FLORICULTURE_TEST_1.html" },
+                    { name: "Floriculture & Landscaping Test 2: Advanced Landscaping & Lawns", tag: "310 MCQs • 310 Mins", url: "AGRI_QUIZ/HORTI_FLORICULTURE_TEST_2.html" },
                 ]
             },
             agronomy: {
                 name: "Agronomy & Crop Production",
                 tests: [
                     { name: "Agronomy Test 1: Fundamentals & Irrigation", tag: "150 MCQs • 150 Mins", url: "AGRI_QUIZ/AGRI_AGRONOMY_TEST_1.html" },
-                    { name: "Agronomy Test 2: Advanced Cropping Systems", tag: "321 MCQs • 321 Mins", url: "AGRI_QUIZ/AGRI_AGRONOMY_TEST_2.html" }
+                    { name: "Agronomy Test 2: Advanced Cropping Systems", tag: "321 MCQs • 321 Mins", url: "AGRI_QUIZ/AGRI_AGRONOMY_TEST_2.html" },
+                    { name: "Agronomy Test 3: Dry Farming, Drought & Rice", tag: "150 MCQs • 150 Mins", url: "AGRI_QUIZ/AGRI_AGRONOMY_TEST_3.html" },
+                    { name: "Agronomy Test 4: Millets, Pulses, Sugarcane & Cotton", tag: "320 MCQs • 320 Mins", url: "AGRI_QUIZ/AGRI_AGRONOMY_TEST_4.html" }
+                ]
+            },
+            soil_science: {
+                name: "Soil Science & Agricultural Chemistry",
+                tests: [
+                    { name: "Soil Science Test 1: Physical Properties & Chemistry", tag: "100 MCQs • 100 Mins", url: "AGRI_QUIZ/AGRI_SOIL_SCIENCE_TEST_1.html" },
+                    { name: "Soil Science Test 2: Chemistry, Organic Matter & Problem Soils", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/AGRI_SOIL_SCIENCE_TEST_2.html" },
+                    { name: "Soil Science Test 3: Soil Fertility, Plant Nutrition & Fertilizers", tag: "100 MCQs • 100 Mins", url: "AGRI_QUIZ/AGRI_SOIL_SCIENCE_TEST_3.html" },
+                    { name: "Soil Science Test 4: Advanced Fertility, Microbiology & Problem Soils", tag: "200 MCQs • 200 Mins", url: "AGRI_QUIZ/AGRI_SOIL_SCIENCE_TEST_4.html" },
+                    { name: "Soil Science Test 5: Advanced Fertilizers & Soil Testing", tag: "140 MCQs • 140 Mins", url: "AGRI_QUIZ/AGRI_SOIL_SCIENCE_TEST_5.html" },
                 ]
             },
             extension: {
@@ -603,7 +685,9 @@
                     { name: "Animal Husbandry Test 1: Livestock Management", tag: "149 MCQs • 149 Mins", url: "AGRI_QUIZ/AGRI_ANIMAL_HUSBANDRY_TEST_1.html" },
                     { name: "Animal Husbandry Test 2: Dairy Science & Management", tag: "101 MCQs • 101 Mins", url: "AGRI_QUIZ/AGRI_ANIMAL_HUSBANDRY_TEST_2.html" },
                     { name: "Animal Husbandry Test 3: Fodder & Poultry Science", tag: "150 MCQs • 150 Mins", url: "AGRI_QUIZ/AGRI_ANIMAL_HUSBANDRY_TEST_3.html" },
-                    { name: "Animal Husbandry Test 4: Animal Health & Dairy Economics", tag: "115 MCQs • 115 Mins", url: "AGRI_QUIZ/AGRI_ANIMAL_HUSBANDRY_TEST_4.html" }
+                    { name: "Animal Husbandry Test 4: Animal Health & Dairy Economics", tag: "115 MCQs • 115 Mins", url: "AGRI_QUIZ/AGRI_ANIMAL_HUSBANDRY_TEST_4.html" },
+                    { name: "AMP One-Liners: Livestock & Dairy Revision", tag: "150 MCQs • 150 Mins", url: "AGRI_QUIZ/amp_one_liners_test_1.html" },
+                    { name: "AMP One-Liners Test 2: Advanced Livestock & Breeding", tag: "184 MCQs • 184 Mins", url: "AGRI_QUIZ/amp_one_liners_test_2.html" }
                 ]
             },
             meteorology: {

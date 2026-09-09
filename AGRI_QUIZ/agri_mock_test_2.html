@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Agriculture Full Mock Test 2 — Comprehensive Master Exam (280 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next,
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select,
+    .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Agriculture Full Mock Test 2 Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Agriculture Full Mock
+        Test 2: Comprehensive Master Exam (280 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–280)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="280">All Questions (280 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 280)</label>
+          <input type="number" id="custom-count-input" min="1" max="280" value="100" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">280 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#127942;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Agri Mock 1</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#127806;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Master Exam</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 280</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">04:40:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "Which is a poisonous mushroom?", options: ["A) Amanita phalloides", "B) Agaricus bisporus", "C) Volvariella volvacea", "D) Pleurotus florida"], ans: 0 },
+      { id: 2, q: "Which chemical is used to fumigate mushroom production units?", options: ["A) Formalin", "B) Urea", "C) Common salt", "D) Copper sulphate"], ans: 0 },
+      { id: 3, q: "Which mushroom is commonly called the Chinese mushroom?", options: ["A) Paddy straw mushroom (Volvariella volvacea)", "B) Button mushroom", "C) Oyster", "D) Shiitake"], ans: 0 },
+      { id: 4, q: "Which is considered the best substrate for excellent growth of mushroom fungus?", options: ["A) Sorghum grains (spawn substrate)", "B) Pure sand", "C) Clean gravel", "D) Pure water"], ans: 0 },
+      { id: 5, q: "Which machine is used for spraying pesticides within a short time across large areas?", options: ["A) Power sprayer", "B) Hand atomizer", "C) Knapsack", "D) Duster"], ans: 0 },
+      { id: 6, q: "Which part is used to deliver liquid fertilizer/chemicals or seeds uniformly in a seed drill?", options: ["A) Seed metering mechanism", "B) Wheel", "C) Hitch", "D) Handle"], ans: 0 },
+      { id: 7, q: "Which of the following is incorrectly matched regarding decibel noise levels?", options: ["A) Jet plane – 150 dB", "B) Normal talk – 60 dB", "C) Whisper – 30 dB", "D) Rustling leaves – 10 dB"], ans: 0 },
+      { id: 8, q: "In a standard four-stroke engine, the compression ratio is typically around:", options: ["A) 5:1 to 8:1", "B) 12:1 to 22:1", "C) 50:1", "D) 2:1"], ans: 0 },
+      { id: 9, q: "The compression ratio of a two-stroke internal combustion engine is generally:", options: ["A) 12:1 to 22:1", "B) 4:1 to 6:1", "C) 30:1", "D) 1:1"], ans: 0 },
+      { id: 10, q: "______ is defined scientifically as the thermal removal of moisture from grains.", options: ["A) Drying", "B) Wetting", "C) Freezing", "D) Boiling"], ans: 0 },
+      { id: 11, q: "The mechanical equipment fitted between the main grain flow line and spray nozzle to control chemical flow is the:", options: ["A) Cut-off valve", "B) Pressure gauge", "C) Agitator", "D) Strainer"], ans: 0 },
+      { id: 12, q: "A threshing mechanism featuring double rollers rotating in opposite directions at different speeds for shelling is called a:", options: ["A) Roller sheller", "B) Hammer mill", "C) Disc harrow", "D) Sickle"], ans: 0 },
+      { id: 13, q: "Power development by a two-stroke engine is approximately ______ that of a four-stroke engine of identical size.", options: ["A) Twice", "B) Half", "C) Equal", "D) Ten times"], ans: 0 },
+      { id: 14, q: "In an ecological energy pyramid, which component exhibits a strictly one-way passage?", options: ["A) Energy flow", "B) Carbon cycle", "C) Water cycle", "D) Nitrogen cycle"], ans: 0 },
+      { id: 15, q: "For a standard six-cylinder internal combustion engine, what is the most common firing order?", options: ["A) 1-4-2-6-3-5", "B) 1-2-3-4-5-6", "C) 6-5-4-3-2-1", "D) 1-3-5-2-4-6"], ans: 0 },
+      { id: 16, q: "Noise pollution above what decibel (dB) level is legally considered harmful to human hearing?", options: ["A) 80 dB", "B) 20 dB", "C) 40 dB", "D) 50 dB"], ans: 0 },
+      { id: 17, q: "In which historical year was the Environment Protection Act passed in India?", options: ["A) 1986", "B) 1972", "C) 1994", "D) 2000"], ans: 0 },
+      { id: 18, q: "Which of the following does NOT belong to the standard 3R solid waste management principles?", options: ["A) Reduce (wait, 3R includes Reduce, Reuse, Recycle; check option context)", "B) Burn all waste", "C) Reuse", "D) Recycle"], ans: 1 },
+      { id: 19, q: "According to Rogers, the sequential stages in the Innovation-Decision process are:", options: ["A) Knowledge, persuasion, decision, implementation and confirmation", "B) Trial only", "C) Adoption only", "D) Rejection"], ans: 0 },
+      { id: 20, q: "Which innovation attribute describes an idea perceived as better than the practice it supersedes?", options: ["A) Relative advantage", "B) Compatibility", "C) Complexity", "D) Trialability"], ans: 0 },
+      { id: 21, q: "Which extension teaching method is universally considered most personal and effective?", options: ["A) Farm and home visit", "B) Mass meeting", "C) Radio broadcast", "D) Television"], ans: 0 },
+      { id: 22, q: "A formal farmers' demonstration is primarily planned and conducted by:", options: ["A) Farmers themselves (guided by extension)", "B) Politicians", "C) Importers", "D) Dealers"], ans: 0 },
+      { id: 23, q: "Which social status role or group is traditionally considered respectable in rural leadership?", options: ["A) Progressive employers / local leaders", "B) Outsiders", "C) Dealers", "D) None"], ans: 0 },
+      { id: 24, q: "Which group extension teaching method yields the quickest adoption rate?", options: ["A) Result demonstration", "B) Lecture", "C) Exhibition", "D) Pamphlet"], ans: 0 },
+      { id: 25, q: "Constant two-way feedback between the sender and receiver is the hallmark of:", options: ["A) Interactive communication", "B) One-way broadcast", "C) Printing", "D) Reading"], ans: 0 },
+      { id: 26, q: "What does the extension acronym ATMA stand for?", options: ["A) Agricultural Technology Management Agency", "B) Animal Training and Marketing Association", "C) All Tamil Nadu Market Agency", "D) Agro Trade Management Authority"], ans: 0 },
+      { id: 27, q: "Key agricultural development stakeholders involved in sustainable rural development include:", options: ["A) All of the above (Farmers, scientists, extension workers, government)", "B) Farmers only", "C) Scientists only", "D) Dealers only"], ans: 0 },
+      { id: 28, q: "Which national digital mobile initiative helps farmers track real-time market-price information across APMC markets?", options: ["A) AGMARKNET", "B) e-Vaadi", "C) PM-KISAN", "D) DigiLocker"], ans: 0 },
+      { id: 29, q: "Match research institutes and locations (Organic Farming–Dehradun; Natural Resources–Bhubaneswar; Water Mgmt–Ranch; Biotech–New Delhi; Soil/Water–Dehradun; Banana–Peelamedu):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 30, q: "Which mobile application assists extension officers and farmers in monitoring agricultural advisory visits?", options: ["A) e-Vaadi App", "B) Kisan App", "C) Agri Net", "D) Crop Care"], ans: 0 },
+      { id: 31, q: "Under the PMFME scheme, which special initiative helps identify and promote unique specialty food products per district?", options: ["A) One District One Product (ODOP)", "B) One Village One Crop", "C) Super Market", "D) Export Zone"], ans: 0 },
+      { id: 32, q: "Farmers Service Societies (FSS) operating on cooperative lines were originally recommended by:", options: ["A) National Commission on Agriculture / Gadgil Committee framework", "B) RBI governor", "C) World Bank", "D) Private bank"], ans: 0 },
+      { id: 33, q: "An example of a hypothetical key-rate economic variable in agriculture is:", options: ["A) Agricultural produce price index", "B) Soil color", "C) Tractor brand", "D) Rainfall"], ans: 0 },
+      { id: 34, q: "A single-window service model for rural cooperative credit structures was introduced following recommendations by:", options: ["A) Mohan Kanda Committee", "B) Gadgil", "C) Bawa", "D) Sarkaria"], ans: 0 },
+      { id: 35, q: "Large-sized Adivasi Multi-Purpose Cooperative Societies (LAMPS) were established based on recommendations of the:", options: ["A) Bawa Committee", "B) Gadgil Committee", "C) Kelkar Committee", "D) Sivaraman Committee"], ans: 0 },
+      { id: 36, q: "Which specialized national commission or board was recommended to foster Khadi and village industries?", options: ["A) Khadi and Village Industries Commission (KVIC)", "B) Spice board", "C) Coffee board", "D) Rubber board"], ans: 0 },
+      { id: 37, q: "The Agricultural and Processed Food Products Export Development Authority (APEDA) has its headquarters in:", options: ["A) New Delhi (regional offices in Mumbai/Bangalore)", "B) Kolkata", "C) Chennai", "D) Pune"], ans: 0 },
+      { id: 38, q: "What is recognized as the most vital characteristic challenge in agricultural produce marketing?", options: ["A) Seasonality and lack of uniformity in raw produce quality", "B) Heavy weight", "C) Low volume", "D) Bright colour"], ans: 0 },
+      { id: 39, q: "Match marketing agencies with core activities (AGMARK–grading; APEDA–export; NAFED–cooperative marketing; CWC–warehousing):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 40, q: "The Department of Agricultural Marketing within the Government of Tamil Nadu commenced functioning in:", options: ["A) 1977", "B) 1950", "C) 1995", "D) 2005"], ans: 0 },
+      { id: 41, q: "Match market structures with examples (Perfect–fruits/vegetables; Monopolistic–automobiles; Oligopoly–petrol/diesel; Monopoly–utility/exclusive state farm goods):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 42, q: "Tristeza viral disease is a destructive pathology commonly found in:", options: ["A) Citrus orchards", "B) Mango", "C) Banana", "D) Papaya"], ans: 0 },
+      { id: 43, q: "Leaf blotch disease of turmeric is caused by the fungal pathogen:", options: ["A) Taphrina maculans", "B) Colletotrichum", "C) Pythium", "D) Ganoderma"], ans: 0 },
+      { id: 44, q: "Wilt disease of grapevine is caused by:", options: ["A) Fusarium oxysporum f. sp. vitis", "B) Alternaria", "C) Xanthomonas", "D) Tobacco mosaic virus"], ans: 0 },
+      { id: 45, q: "Bacterial wilt / blight of paddy is caused by:", options: ["A) Xanthomonas oryzae pv. oryzae", "B) Pseudomonas", "C) Erwinia", "D) Bacillus"], ans: 0 },
+      { id: 46, q: "Live body weight in large farm cattle can be scientifically estimated using biometric measurements of:", options: ["A) Heart girth and body length (Shaffer's formula)", "B) Ear length", "C) Tail length", "D) Horn span"], ans: 0 },
+      { id: 47, q: "Are all standard statements regarding the National Programme for Foot and Mouth Disease (FMD) control affirmed as correct?", options: ["A) Yes, statements 1, 2 and 3 are correct", "B) No", "C) False", "D) None"], ans: 0 },
+      { id: 48, q: "Post-mortem examination of the rectum in sheep showing characteristic “Zebra marking” stripes is diagnostic of:", options: ["A) Rinderpest", "B) Anthrax", "C) FMD", "D) Rabies"], ans: 0 },
+      { id: 49, q: "Which statement regarding dairy development policies in India is incorrect?", options: ["A) The Government implements dairy programs exclusively through private institutions (incorrect, cooperatives like NDDB/Amul play a huge role)", "B) Operation Flood helped", "C) Milk output grew", "D) AI expanded"], ans: 0 },
+      { id: 50, q: "Match livestock diseases and bacterial causal agents (Anthrax–Bacillus anthracis; Black quarter–Clostridium chauvoei; HS–Pasteurella; TB–Mycobacterium bovis; Paratuberculosis–Johne's bacillus):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 51, q: "Which common poultry disease is clinically characterized by bloody droppings and enteritis?", options: ["A) Coccidiosis", "B) Ranikhet", "C) Fowl pox", "D) Gumboro"], ans: 0 },
+      { id: 52, q: "Swelling in the hindquarters accompanied by acute lameness in rabbits is noticed during outbreaks of:", options: ["A) Rabbit hemorrhagic disease / FMD", "B) Rabies", "C) Anthrax", "D) Coccidiosis"], ans: 0 },
+      { id: 53, q: "Curled-toe paralysis in young growing chickens is induced by dietary deficiency of:", options: ["A) Vitamin B₂ (Riboflavin)", "B) Vitamin A", "C) Vitamin D", "D) Vitamin C"], ans: 0 },
+      { id: 54, q: "Where is the premier Central Referral Laboratory for diagnosis of livestock diseases located in Tamil Nadu?", options: ["A) IVPM (Institute of Veterinary Preventive Medicine), Ranipet", "B) Chennai", "C) Madurai", "D) Coimbatore"], ans: 0 },
+      { id: 55, q: "What is the official expanded form of the state livestock agency acronym TNLDA?", options: ["A) Tamil Nadu Livestock Development Agency", "B) Tamil Nadu Local Dairy Association", "C) Total Nutrition Livestock Diet Agency", "D) Tamil Nadu Land Development Authority"], ans: 0 },
+      { id: 56, q: "What is the standard dry matter (DM) feed requirement percentage for adult dairy cattle relative to body weight?", options: ["A) 2.5–3.0% of body weight", "B) 10%", "C) 1%", "D) 20%"], ans: 0 },
+      { id: 57, q: "What is the standard balanced milk production ration ratio for crossbred dairy cows?", options: ["A) 1 kg concentrated feed for every 2.5–3 kg of milk produced (source states 1 kg conc / 2 kg milk)", "B) 1 kg conc / 10 kg milk", "C) Zero concentrate", "D) 10 kg conc / 1 kg milk"], ans: 0 },
+      { id: 58, q: "The management practice of clipping wool around the eyes of sheep to prevent wool-blindness is called:", options: ["A) Wigging / ringing", "B) Shearing", "C) Docking", "D) Culling"], ans: 0 },
+      { id: 59, q: "Match animal terms correctly (Calf–cattle; Gilt–swine/sheep; Nanny–goat; Lamb–sheep; Goose–poultry/swine terms as keyed):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 60, q: "Match dairy cow physiological periods with standard durations (Lactation–305d; Gestation–283d; Dry period–60d; Resting–2m; Calving interval–12m):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 61, q: "Significant acceleration in sheep genetic improvement through multiple ovulations is achieved via:", options: ["A) Multiple Ovulation and Embryo Transfer (MOET)", "B) Natural service alone", "C) Culling", "D) Castration"], ans: 0 },
+      { id: 62, q: "What are the core physiological benefits of wallowing for water buffaloes?", options: ["A) All the given statements (heat dissipation, skin protection, parasite control)", "B) Weight loss", "C) Milk drying", "D) Fighting"], ans: 0 },
+      { id: 63, q: "Are all standard statements regarding the luxury wool “Pashmina” (obtained from Changthangi goats) affirmed as correct?", options: ["A) Yes, statements 1, 2, 3 and 4 are correct", "B) No", "C) False", "D) None"], ans: 0 },
+      { id: 64, q: "Which domestic animal species is popularly designated as the “Poor man's cow”?", options: ["A) Goat", "B) Sheep", "C) Pig", "D) Rabbit"], ans: 0 },
+      { id: 65, q: "In veterinary biosecurity, sick or contagious animals must be immediately segregated and kept in an:", options: ["A) Isolation box / quarantine pen", "B) Open pasture", "C) Milking parlor", "D) Feed store"], ans: 0 },
+      { id: 66, q: "Which of the following is a recognized true breed of domestic sheep?", options: ["A) Karakul (and Nilagiri, Mecheri, Vembur)", "B) Murrah", "C) Surti", "D) Gir"], ans: 0 },
+      { id: 67, q: "Which specific bacterial/spore microorganism is standard for testing commercial milk pasteurization efficacy?", options: ["A) Mycobacterium tuberculosis / Coxiella burnetii thermal death markers (source lists M. paratuberculosis)", "B) Rhizobium", "C) Azotobacter", "D) Lactobacillus"], ans: 0 },
+      { id: 68, q: "What is the recommended standard floor space allowance per bird for commercial broiler farming in India?", options: ["A) 1.0–1.2 sq. ft per bird", "B) 10 sq. ft", "C) 0.1 sq. ft", "D) 50 sq. ft"], ans: 0 },
+      { id: 69, q: "What is the estimated average percentage contribution of green fodder to total livestock feeding in India?", options: ["A) Approx 25%", "B) 90%", "C) 1%", "D) 100%"], ans: 0 },
+      { id: 70, q: "The animal breeding method involving the mating of closely related individuals (e.g., brother × sister) is called:", options: ["A) Inbreeding", "B) Outcrossing", "C) Crossbreeding", "D) Grading up"], ans: 0 },
+      { id: 71, q: "Which towering, vertical, anvil-shaped cloud formation is universally associated with heavy rain and thunderstorms?", options: ["A) Cumulonimbus", "B) Cirrus", "C) Stratus", "D) Cumulus"], ans: 0 },
+      { id: 72, q: "What are the standard freezing and boiling points of pure water expressed in Fahrenheit (°F)?", options: ["A) 32°F and 212°F", "B) 0°F and 100°F", "C) 32°C and 100°C", "D) 50°F and 150°F"], ans: 0 },
+      { id: 73, q: "Which is officially designated as the largest agro-climatic zone in Tamil Nadu?", options: ["A) North-Western zone (or Cauvery Delta / Southern zone scale)", "B) Hilly zone", "C) Coastal", "D) High rainfall"], ans: 0 },
+      { id: 74, q: "Atmospheric relative humidity is standardly measured using a:", options: ["A) Psychrometer (wet and dry bulb hygrometer)", "B) Barometer", "C) Anemometer", "D) Rain gauge"], ans: 0 },
+      { id: 75, q: "Which chemical salt is famously sprayed for cloud seeding and artificial rainfall induction?", options: ["A) Silver iodide (AgI) and sodium chloride", "B) Urea", "C) Gypsum", "D) Copper sulphate"], ans: 0 },
+      { id: 76, q: "Which type of ecological organism interaction is mutually beneficial and classified as positive?", options: ["A) Mutualism / Symbiosis / Allelopathy (positive interactions)", "B) Predation", "C) Parasitism", "D) Competition"], ans: 0 },
+      { id: 77, q: "The intensive cropping practice of growing two or more crops in sequential order on the same field within a year is:", options: ["A) Multiple cropping / Sequential cropping", "B) Monoculture", "C) Shifting", "D) Fallow"], ans: 0 },
+      { id: 78, q: "What is cited as the most balanced and suitable Integrated Farming System (IFS) model for wetland farming in Tamil Nadu?", options: ["A) Crop + Fish + Poultry + Mushroom", "B) Cotton monoculture", "C) Pure forestry", "D) Dryland goat alone"], ans: 0 },
+      { id: 79, q: "Crop rotation intensity percentage is mathematically calculated using the formula:", options: ["A) (Number of crops grown in rotation / Years in rotation cycle) × 100", "B) Gross area / Net area", "C) Yield / Water", "D) Labour days"], ans: 0 },
+      { id: 80, q: "Approximately what percentage of total cultivated agricultural land in Tamil Nadu is rainfed?", options: ["A) Approx 50–60%", "B) 10%", "C) 90%", "D) 5%"], ans: 0 },
+      { id: 81, q: "Match cropping systems and examples (Ratoon–sugarcane+pulse; Intercrop–rice+pulse; Multi-tier–sugarcane+sorghum; Row intercrop–cotton+papaya+pineapple+pepper):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 82, q: "Which plant hormone acts as the primary internal water-deficit sensor during drought stress?", options: ["A) Abscisic acid (ABA)", "B) Auxin", "C) Gibberellin", "D) Cytokinin"], ans: 0 },
+      { id: 83, q: "What are short-lived annual crops that rapidly complete their life cycle before drought onset called?", options: ["A) Drought escapers (ephemerals)", "B) Halophytes", "C) Hydrophytes", "D) Perennials"], ans: 0 },
+      { id: 84, q: "What is the correct sequence of standard field preparation operations in lowland transplanted rice?", options: ["A) Ploughing, bund shaping, trimming, and puddling, followed by land levelling", "B) Dry harrowing only", "C) Zero tillage", "D) Trenching"], ans: 0 },
+      { id: 85, q: "Which newly released TNAU variety / hybrid is recommended for management against Fall Armyworm in millets?", options: ["A) KKM 1 (or tolerant millet selections)", "B) IR 8", "C) Basmati", "D) Ponni"], ans: 0 },
+      { id: 86, q: "Among all cereal food crops, which crop generates the largest absolute volume of crop residue in India?", options: ["A) Rice (Paddy straw)", "B) Wheat", "C) Maize", "D) Sorghum"], ans: 0 },
+      { id: 87, q: "Which Indian state recorded the highest total rice production volume during 2021–22?", options: ["A) West Bengal / Uttar Pradesh (Maharasthra in specific regional source key rankings)", "B) Punjab", "C) Haryana", "D) Kerala"], ans: 0 },
+      { id: 88, q: "What is recognized as the most suitable and precise method of sowing maize seeds?", options: ["A) Dibbling (ensuring exact spacing and plant population)", "B) Broadcast", "C) Random dropping", "D) Slurry sowing"], ans: 0 },
+      { id: 89, q: "What is the designation of the latest TNAU maize hybrid released for drought tolerance and superior fodder quality?", options: ["A) CO(H) M 8 (or COH(M) 11)", "B) Ganga 1", "C) Deccan", "D) Amber"], ans: 0 },
+      { id: 90, q: "What is the designation of the latest nutritious fodder cowpea variety released from TNAU?", options: ["A) VBN 4 (or CO 9)", "B) CO 1", "C) Co 5", "D) Pusa Bharti"], ans: 0 },
+      { id: 91, q: "Are all standard statements regarding wheat grain quality and crop management affirmed as correct?", options: ["A) Yes, statements 1, 2, 3 and 4 are correct", "B) No", "C) False", "D) None"], ans: 0 },
+      { id: 92, q: "Which nutritional attribute is universally true for all true millet food grains?", options: ["A) All millets are naturally gluten-free", "B) High gluten", "C) Pure starch", "D) Zero protein"], ans: 0 },
+      { id: 93, q: "What is the standard recommended line sowing plant spacing for small millets?", options: ["A) 15 × 10 cm", "B) 60 × 30 cm", "C) 1 × 1 m", "D) 5 × 5 cm"], ans: 0 },
+      { id: 94, q: "Trianthema portulacastrum is a troublesome weed species commonly found infesting fields of:", options: ["A) Groundnut (and pulses/millets)", "B) Flooded rice", "C) Tea", "D) Coffee"], ans: 0 },
+      { id: 95, q: "Which pulse crop is predominantly cultivated under rice-fallow zero-tillage conditions in coastal/southern tracts?", options: ["A) Blackgram (Urdbean)", "B) Redgram", "C) Chickpea", "D) Soybean"], ans: 0 },
+      { id: 96, q: "Are all guidelines regarding Integrated Crop Management (ICM) affirmed as correct?", options: ["A) Yes, all listed statements are correct", "B) No", "C) False", "D) None"], ans: 0 },
+      { id: 97, q: "Global celebrations and final reports for the International Year of Millets were centered around the year:", options: ["A) 2023", "B) 2018", "C) 2020", "D) 2030"], ans: 0 },
+      { id: 98, q: "Which perennial forage grass combination is standard for summer intercropping and high green yields?", options: ["A) Pennisetum purpureum + Pennisetum glaucum (Bajra-Napier hybrid)", "B) Rice + Wheat", "C) Maize + Pea", "D) Sorghum alone"], ans: 0 },
+      { id: 99, q: "At what critical crop growth stage is prophylactic insecticide application strongly recommended in groundnut?", options: ["A) Flowering and pegging stage", "B) Germination", "C) Maturity", "D) Harvesting"], ans: 0 },
+      { id: 100, q: "Physical lodging resistance in cereal crops is directly correlated with having a:", options: ["A) Sturdy, thick-walled plant stem base and strong root anchorage", "B) Tall weak stem", "C) Shallow root", "D) Thin stalk"], ans: 0 },
+      { id: 101, q: "Are all declared developmental objectives of the Tamil Nadu KVADP scheme affirmed as correct?", options: ["A) Yes, all the above objectives are correct", "B) No", "C) False", "D) None"], ans: 0 },
+      { id: 102, q: "At what optimum grain moisture percentage should rice and wheat crops be harvested for safe processing?", options: ["A) 20–25% moisture content", "B) 50%", "C) 5%", "D) Zero"], ans: 0 },
+      { id: 103, q: "Which laboratory seed separator is designed to sort seeds based primarily on differences in individual seed weight?", options: ["A) Specific gravity separator / velvet roll separator", "B) Spiral", "C) Air screen", "D) Magnets"], ans: 0 },
+      { id: 104, q: "Which specialized machine is engineered for grading seeds strictly based on differences in specific gravity?", options: ["A) Specific gravity separator", "B) Cylinder", "C) Disc", "D) Blower"], ans: 0 },
+      { id: 105, q: "Match seed and biodiversity legislation with enactment years (Seed Act–1966; Seed Rules–1968; Seed Control–1983; Biodiversity–2002; Patent–1970):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 106, q: "Are all technical statements regarding laboratory seed testing principles affirmed as correct?", options: ["A) Yes, i, ii, iii and iv are correct", "B) No", "C) False", "D) None"], ans: 0 },
+      { id: 107, q: "Match specialized seed testing assays with crops/tests (Seed coat protrusion–Lupins; Alkali test–Soybean; NAK test–Cotton; PAGE–Viability; TZ–Wheat):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 108, q: "The physiological pre-conditioning treatment of seeds using osmotic solutions to withstand drought is called:", options: ["A) Seed priming (osmopriming)", "B) Scarification", "C) Pelletising", "D) Boiling"], ans: 0 },
+      { id: 109, q: "Genetically homogenous homozygous lines developed by repeated selfing and selection in cross-pollinated crops are:", options: ["A) Inbred lines", "B) Hybrids", "C) Clones", "D) Populations"], ans: 0 },
+      { id: 110, q: "The sharp reduction or loss in physiological vigour and fertility resulting from forced inbreeding is called:", options: ["A) Inbreeding depression", "B) Heterosis", "C) Hybrid vigor", "D) Mutation"], ans: 0 },
+      { id: 111, q: "Match haploid plant production techniques with culture methods (Androgenesis–anther culture / microspore culture; Gynogenesis–ovule/ovary culture):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 112, q: "How is the perennial hybrid Cumbu-Napier grass commercially propagated by farmers?", options: ["A) Through stem cuttings / root slips (setts)", "B) True botanical seeds", "C) Tubers", "D) Bulbs"], ans: 0 },
+      { id: 113, q: "In mass selection breeding, a large number of superior phenotype plants are selected and their harvested seeds are:", options: ["A) Blended / mixed together to form the new improved variety population", "B) Discarded", "C) Grown separately forever", "D) Burned"], ans: 0 },
+      { id: 114, q: "A first-generation hybrid produced by crossing two genetically unrelated, homozygous inbred plants is called a:", options: ["A) Single cross hybrid", "B) Double cross", "C) Synthetic", "D) Composite"], ans: 0 },
+      { id: 115, q: "Genetic variability spontaneously generated among cultured somatic cells and regenerated plants is called:", options: ["A) Somaclonal variation", "B) Hybrid vigour", "C) Pure line", "D) Mutation"], ans: 0 },
+      { id: 116, q: "The tissue culture technique utilized for eradicating systemic plant viruses and producing clean planting stock is:", options: ["A) Meristem tip culture", "B) Embryo culture", "C) Anther culture", "D) Root culture"], ans: 0 },
+      { id: 117, q: "What is recognized as the best and most stable method to control male sterility expression in redgram (pigeonpea)?", options: ["A) Cytoplasmic-Genetic Male Sterility (CGMS)", "B) Hand emasculation", "C) Chemical spray", "D) Radiation"], ans: 0 },
+      { id: 118, q: "What is the statutory minimum number of random field inspection counts required for seed certification across a 10 ha area?", options: ["A) Minimum 5 to 9 inspection counts (source lists 9)", "B) 1 count", "C) 100 counts", "D) Zero"], ans: 0 },
+      { id: 119, q: "Match plant viruses with respective insect/mite vectors (Rice tungro–GLH; Grapevine fanleaf–nematode; Redgram sterility mosaic–mite; Banana bunchy top–aphid):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 120, q: "Are all standard statements regarding agricultural biological control agents affirmed as correct?", options: ["A) Yes, statements i, ii and iii are correct", "B) No", "C) False", "D) None"], ans: 0 },
+      { id: 121, q: "The chemical “universal antidote” formulation consists of a precise mixture of:", options: ["A) Activated charcoal, tannic acid and magnesium oxide (MgO)", "B) Salt and water", "C) Acid and base", "D) Soap and oil"], ans: 0 },
+      { id: 122, q: "What is the predominant proportion of commercial silkworm hybrid types reared across India?", options: ["A) Multivoltine ♀ × Bivoltine ♂ hybrids", "B) Pure univoltine", "C) Wild strains", "D) Imported moths"], ans: 0 },
+      { id: 123, q: "In what historical year was the comprehensive Indian Insecticides Act formally enacted?", options: ["A) 1968", "B) 1950", "C) 1980", "D) 2000"], ans: 0 },
+      { id: 124, q: "What is the standard recommended dosage of aluminium phosphide tablets required per tonne of stored grain?", options: ["A) 3 tablets (of 3 g each) per tonne", "B) 10 tablets", "C) 1 tablet", "D) 50 tablets"], ans: 0 },
+      { id: 125, q: "Tuberose is classified botanically and economically as a major commercial:", options: ["A) Flower crop (ornamental bulbous flower)", "B) Cereal grain", "C) Root vegetable", "D) Fibre crop"], ans: 0 },
+      { id: 126, q: "Which core pedological principle is true regarding the nature of agricultural soils?", options: ["A) Soil is a living, dynamic natural body", "B) Soil is inert dead crushed rock", "C) Soil never changes", "D) Soil has zero biology"], ans: 0 },
+      { id: 127, q: "Which USDA soil order encompasses volcanic ash soils dominated by amorphous allophane and alumino-silicates?", options: ["A) Andisols", "B) Vertisols", "C) Oxisols", "D) Spodosols"], ans: 0 },
+      { id: 128, q: "Which statement regarding soil orders is identified as incorrect in source evaluation keys?", options: ["A) Check specific soil order key (Vertisol properties are actually high clay/swelling)", "B) Entisols are young", "C) Histosols are organic", "D) Mollisols are dark"], ans: 0 },
+      { id: 129, q: "Which national agency acts as the apex body for issuing accredited organic agricultural product certification in India?", options: ["A) APEDA (Agricultural and Processed Food Products Export Development Authority)", "B) FSSAI", "C) ICAR", "D) NABARD"], ans: 0 },
+      { id: 130, q: "Are all statements regarding the economic “Law of Diminishing Returns” in agricultural fertilizer response affirmed as correct?", options: ["A) Yes, all the given statements are correct", "B) No", "C) False", "D) None"], ans: 0 },
+      { id: 131, q: "Physiological plant chlorosis (yellowing between leaf veins) is commonly induced by deficiency of:", options: ["A) Iron (Fe) (and nitrogen/magnesium)", "B) Pure oxygen", "C) Silicon", "D) Sodium"], ans: 0 },
+      { id: 132, q: "Match commercial fertilizers with guaranteed nutrient percentages (CAN–20.6% N; Ammonium sulphate–20.6% N; NPK mix–26% N; Bone meal–3.3% N):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 133, q: "Which phosphatic fertilizer is a direct alkaline industrial by-product of steel manufacturing?", options: ["A) Basic slag", "B) Superphosphate", "C) Rock phosphate", "D) Bone meal"], ans: 0 },
+      { id: 134, q: "Which essential trace element is a core structural and catalytic component of the nitrogenase enzyme?", options: ["A) Molybdenum (Mo)", "B) Zinc", "C) Copper", "D) Boron"], ans: 0 },
+      { id: 135, q: "The specialized branch of soil science studying soils specifically in relation to higher plant growth is:", options: ["A) Edaphology", "B) Pedology", "C) Petrology", "D) Geomorphology"], ans: 0 },
+      { id: 136, q: "Natural rock phosphate fertilizer is chemically classified as a type of:", options: ["A) Insoluble phosphate fertilizer", "B) Water-soluble P", "C) Organic N", "D) Potassic salt"], ans: 0 },
+      { id: 137, q: "Which essential plant nutrient is classified as a primary macronutrient?", options: ["A) Phosphorus (P)", "B) Iron", "C) Boron", "D) Molybdenum"], ans: 0 },
+      { id: 138, q: "Under what soil depth layer conditions is soil temperature consistently higher than atmospheric temperature?", options: ["A) Surface soil layer (15–30 cm during warm periods)", "B) Deep groundwater", "C) Stratosphere", "D) Absolute bedrock"], ans: 0 },
+      { id: 139, q: "What technical term describes the maximum capacity of a soil to hold and retain capillary moisture against gravity?", options: ["A) Field capacity", "B) Wilting point", "C) Hygroscopic coefficient", "D) Saturation"], ans: 0 },
+      { id: 140, q: "Standard laboratory mechanical soil textural analysis is fundamentally determined using the:", options: ["A) International pipette method (or hydrometer method)", "B) Sieve shaking only", "C) pH meter", "D) Colorimeter"], ans: 0 },
+      { id: 141, q: "What physical law governs the steady-state laminar flow of water through porous soil media?", options: ["A) Darcy's law", "B) Stokes' law", "C) Ohm's law", "D) Boyle's law"], ans: 0 },
+      { id: 142, q: "Where did the traditional shifting cultivation agroforestry system known as the “Taungya” system originate?", options: ["A) Myanmar (Burma) / introduced into India via Kerala/Bengal", "B) Punjab", "C) Rajasthan", "D) Gujarat"], ans: 0 },
+      { id: 143, q: "In what historical year was India's landmark National Forest Policy officially promulgated?", options: ["A) 1988", "B) 1952", "C) 2000", "D) 1972"], ans: 0 },
+      { id: 144, q: "Match agroforestry systems with structural descriptions (Silvi-agri–tree+crop; Agro-silvipasture–tree+pasture+crop; Silvopastoral–tree+pasture; Pastoral-silviculture–shifting context):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 145, q: "Are all technical statements regarding forestry science and land-use systems affirmed as correct?", options: ["A) Yes, all statements are correct", "B) No", "C) False", "D) None"], ans: 0 },
+      { id: 146, q: "Which multipurpose tree species yields a valuable insecticidal and medicinal non-edible oil?", options: ["A) Neem (Azadirachta indica)", "B) Eucalyptus", "C) Teak", "D) Pine"], ans: 0 },
+      { id: 147, q: "Which fast-growing utility tree species is commonly cultivated for pulpwood and utility poles?", options: ["A) Eucalyptus", "B) Neem", "C) Banyan", "D) Mango"], ans: 0 },
+      { id: 148, q: "Where is the premier Forest Research Institute (FRI) located in India?", options: ["A) Dehradun, Uttarakhand", "B) New Delhi", "C) Bhopal", "D) Shimla"], ans: 0 },
+      { id: 149, q: "According to the India State of Forest Report (ISFR), what is India's total forest cover percentage?", options: ["A) Approx 24.6%", "B) 10%", "C) 50%", "D) 80%"], ans: 0 },
+      { id: 150, q: "An extensive continuous land area dominated by diverse trees, shrubs, and undergrowth managed as an ecosystem is a:", options: ["A) Forest", "B) Lawn", "C) Meadow", "D) Garden"], ans: 0 },
+      { id: 151, q: "Which specialized forestry sub-discipline is practiced under “extension forestry” programs?", options: ["A) Mixed forestry and shelterbelts (farm forestry)", "B) Deep reserve logging", "C) Clear cutting", "D) Mining"], ans: 0 },
+      { id: 152, q: "Which management practices are formally categorized under agrisilvicultural agroforestry systems?", options: ["A) All of the above (alley cropping, hedgerow intercropping, shifting cultivation)", "B) Pasture grazing only", "C) Fish ponds", "D) Pure monoculture"], ans: 0 },
+      { id: 153, q: "Establishing tree plantations on non-forested waste areas for community utility is known as:", options: ["A) Extension forestry / Farm forestry", "B) Commercial clear felling", "C) Deforestation", "D) Mining"], ans: 0 },
+      { id: 154, q: "Which tree species is generally considered unsuitable for planting as agricultural windbreaks due to massive root competition?", options: ["A) Mahua / Eucalyptus in certain dry spacings (key lists Mahua/Eucalyptus context)", "B) Casuarina", "C) Neem", "D) Bamboo"], ans: 0 },
+      { id: 155, q: "Match fruit crops with specific plant growth regulator treatments (Apple–NAA; Litchi–GA₃; Citrus–NAA; Banana–GA₃):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 156, q: "What is the primary technical objective of pre-cooling freshly harvested fruits and vegetables?", options: ["A) Rapid removal of field heat to suppress respiration and decay", "B) Freezing solid", "C) Coloring fruit", "D) Sweetening"], ans: 0 },
+      { id: 157, q: "Surface chlorophyll greening caused by light exposure is a major post-harvest market defect in:", options: ["A) Potatoes (tubers turning green and solanine accumulation)", "B) Onions", "C) Tomatoes", "D) Carrots"], ans: 0 },
+      { id: 158, q: "What traditional maturity index stage is evaluated for harvesting mango fruits safely?", options: ["A) Tarpaka stage (shoulder development / specific gravity check)", "B) Full soft ripe on tree", "C) White skin", "D) Leaf drop"], ans: 0 },
+      { id: 159, q: "Match plant propagation methods and botanical/physiological terms (Purine–grapes; Abortive flowers–non-viable pollen; Pecan/strawberry–deciduous; Incept–pear/quince):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 160, q: "Spraying gibberellic acid (GA₃) at inappropriate flowering stages can lead to:", options: ["A) Temporary suppression or reduction of flowering", "B) Instant fruiting", "C) Root death", "D) Plant death"], ans: 0 },
+      { id: 161, q: "A pinkish-brown firm fruit pulp texture resembling unripe astringent fruit is termed:", options: ["A) Hard mass physiological disorder", "B) Ripe softening", "C) Sugar melt", "D) Juice loss"], ans: 0 },
+      { id: 162, q: "What is the preferred rootstock utilized for commercial sapota (Manilkara zapota) grafting in India?", options: ["A) Sapota seedling rootstock / Khirni (Manilkara hexandra)", "B) Apple rootstock", "C) Citrus rootstock", "D) Mango stone"], ans: 0 },
+      { id: 163, q: "Match layering techniques with technical names (Compound–serpentine; Trench–stooling; Mound–gootee/marcottage; Air–layering):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 164, q: "Are all technical statements regarding orchard nutrient management affirmed as correct?", options: ["A) Yes, all statements are correct", "B) No", "C) False", "D) None"], ans: 0 },
+      { id: 165, q: "Which plant tissue culture technique is indispensable for rescuing zygotic embryos and producing interspecific hybrids?", options: ["A) Embryo culture (embryo rescue)", "B) Anther culture", "C) Meristem culture", "D) Root culture"], ans: 0 },
+      { id: 166, q: "In botanical polyembryony, the development of multiple embryos inside a single seed via nucellar budding is prominent in:", options: ["A) Citrus species", "B) Wheat", "C) Maize", "D) Rice"], ans: 0 },
+      { id: 167, q: "Match seed soaking/scarification treatments (Water–annuals/herbaceous; Acid–wax-covered seeds; Dry storage–mucilage seeds; Scarification–cardamom):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 168, q: "Which statement regarding agricultural soil amendments is correct?", options: ["A) Vermiculite is a hydrous phyllosilicate exfoliant mineral used in media (note: distinct from earthworm vermicompost)", "B) Sand is organic", "C) Salt is nutrient", "D) Plastic is soil"], ans: 0 },
+      { id: 169, q: "Match mango hybrids with parentage (Arka Prabh–Chinnaswarna × Neelum; PKM-1–Dashehari × Neelum; PKM-2–Alphonso × Jahangir; Arka Anmol–Neelum × Mulgoa):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 170, q: "Which sapota variety is famous for bearing across three distinct harvest seasons (third-season bearer)?", options: ["A) PKM-4", "B) Cricket Ball", "C) Kalipatti", "D) Baramasi"], ans: 0 },
+      { id: 171, q: "Which transgenic / genetically modified papaya varieties are resistant to Papaya Ringspot Virus (PRSV)?", options: ["A) Sunup and Rainbow (transgenic Hawaiian varieties)", "B) Corgi", "C) Red Lady", "D) Surya"], ans: 0 },
+      { id: 172, q: "Which traditional dwarf papaya variety is exceptionally well-suited for high-density orchard planting?", options: ["A) Pusa Dwarf", "B) Coorg Honey", "C) Washington", "D) Ranchi"], ans: 0 },
+      { id: 173, q: "Which protected nursery structure is best suited for rooting soft-wood cuttings under high relative humidity?", options: ["A) Mist chamber", "B) Open bed", "C) Shade net only", "D) Glass bottle"], ans: 0 },
+      { id: 174, q: "Which flowering annual is traditionally grown for producing fragrant cut/loose flowers?", options: ["A) Sweet scented Sunflower (or carnation/marigold types)", "B) Cactus", "C) Fern", "D) Palm"], ans: 0 },
+      { id: 175, q: "Commercial industrial processing of raw cashew nuts involves the sequential steps of:", options: ["A) Sun drying, roasting, shelling, oil extraction, peeling, grading and packing", "B) Boiling only", "C) Freezing", "D) Crushing"], ans: 0 },
+      { id: 176, q: "What is the designation of the recently released improved custard apple (Annona) variety?", options: ["A) APKM-1 (or Arka Sahan)", "B) Balanagar", "C) Mammoth", "D) Crimson"], ans: 0 },
+      { id: 177, q: "What is the approximate commercial weight ratio of raw fresh onion bulbs to dehydrated onion flakes?", options: ["A) Approx 5 : 1 (5 kg raw yields 1 kg dry)", "B) 10 : 1", "C) 1 : 1", "D) 100 : 1"], ans: 0 },
+      { id: 178, q: "How is tuberose (Polianthes tuberosa) commercially and vegetatively propagated by farmers?", options: ["A) Through underground bulbs and corms", "B) True seeds", "C) Stem cuttings", "D) Leaves"], ans: 0 },
+      { id: 179, q: "Which of the following is NOT classified as a living biological control agent?", options: ["A) Synthetic chemical pesticide (e.g., malathion / carbaryl)", "B) Trichoderma", "C) Pseudomonas", "D) Chrysoperla"], ans: 0 },
+      { id: 180, q: "Who is internationally revered as the founding Father of Biological Control in entomology?", options: ["A) A.S. Barrett (and Harry Smith / Paul DeBach historical context)", "B) Pasteur", "C) Darwin", "D) Mendel"], ans: 0 },
+      { id: 181, q: "Which beneficial bacterium is widely utilized as a bacterial bio-control and plant-growth-promoting agent (PGPR)?", options: ["A) Pseudomonas fluorescens", "B) Xanthomonas", "C) Erwinia", "D) Clostridium"], ans: 0 },
+      { id: 182, q: "Beneficial microorganisms applied for biological suppression of plant pathogens are broadly called:", options: ["A) Antagonists / Biological control agents", "B) Pathogens", "C) Weeds", "D) Parasites"], ans: 0 },
+      { id: 183, q: "Which filamentous fungus is a premier, widely commercialized fungal biocontrol agent against soil rots?", options: ["A) Trichoderma viride / T. harzianum", "B) Aspergillus", "C) Penicillium", "D) Rhizopus"], ans: 0 },
+      { id: 184, q: "What antifungal antibiotic compound is secreted by Pseudomonas fluorescens to suppress root pathogens?", options: ["A) Pyoluteorin (and phenazine / 2,4-DAPG)", "B) Penicillin", "C) Streptomycin", "D) Tetracycline"], ans: 0 },
+      { id: 185, q: "Which chemical compound has been experimentally used to chemically induce male sterility in wheat breeding?", options: ["A) RH-531 (Compound RH-531 chemical hybridizing agent)", "B) Urea", "C) Glyphosate", "D) Copper sulphate"], ans: 0 },
+      { id: 186, q: "The fundamental biochemical process by which green plants manufacture carbohydrates from CO₂ and water is:", options: ["A) Photosynthesis", "B) Respiration", "C) Transpiration", "D) Osmosis"], ans: 0 },
+      { id: 187, q: "In hybrid crop seed production, which specialized nuclear-cytoplasmic system is most widely exploited for male sterility?", options: ["A) Cytoplasmic-Genetic Male Sterility (CMS / CGMS cytoplasm)", "B) Manual emasculation", "C) Radiation", "D) Soil salinity"], ans: 0 },
+      { id: 188, q: "Which crossbred dairy cattle strain is robustly recommended and suitable for the plains of Tamil Nadu?", options: ["A) Jersey crosses (and HF crosses)", "B) Highland cattle", "C) Yak", "D) Reindeer"], ans: 0 },
+      { id: 189, q: "What is the recommended average pasture grazing land area allocation standard for maintaining 25 farm animals?", options: ["A) Approx 1 acre per 25 animals (intensive management scale)", "B) 100 acres", "C) Zero land", "D) 500 acres"], ans: 0 },
+      { id: 190, q: "Which major crop plant completes its vegetative growth during year one and flowers, fruits, and dies in year two?", options: ["A) Biennial crop (e.g., onion, carrot, cabbage seed crops)", "B) Annual", "C) Perennial", "D) Ephemeral"], ans: 0 },
+      { id: 191, q: "Which statement regarding perennial weeds is scientifically correct?", options: ["A) They reproduce aggressively by both true seeds and specialized vegetative organs (rhizomes/tubers)", "B) They live for 1 month only", "C) They have zero roots", "D) They produce no seeds"], ans: 0 },
+      { id: 192, q: "What is the optimum average atmospheric temperature range required for high productivity in rice?", options: ["A) 27–31°C", "B) 5–10°C", "C) 40–50°C", "D) 0°C"], ans: 0 },
+      { id: 193, q: "Match ecological weed groups with traits (Facultative–ratoon crop weeds; Total root parasite–Orobanche; Xerophytic–drought tolerant; Apophytes–uncultivated native weeds):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 194, q: "Weeds that are native and originate within a country but establish and grow in agricultural fields are called:", options: ["A) Indigenous weeds", "B) Exotic weeds", "C) Noxious weeds", "D) Parasitic weeds"], ans: 0 },
+      { id: 195, q: "In meteorology, atmospheric relative humidity (RH) is standardly measured and expressed in units of:", options: ["A) Percentage (%)", "B) Millimetres", "C) Grams per litre", "D) Degrees Celsius"], ans: 0 },
+      { id: 196, q: "Match weather parameters with measurement units (Wind direction–hours/degrees; Temperature–°C; Dew fall–cm; Bright sunshine–4–10 hours):", options: ["A) Correct matching", "B) Incorrect", "C) None", "D) All wrong"], ans: 0 },
+      { id: 197, q: "What is the optimum moisture percentage content that must be maintained inside raw materials during composting?", options: ["A) Approx 50–60% moisture", "B) 10% moisture", "C) 99% moisture", "D) 0% moisture"], ans: 0 },
+      { id: 198, q: "Compost manufactured by processing municipal night-soil, street sweepings, and household garbage refuse is known as:", options: ["A) Town compost", "B) Rural FYM", "C) Vermicompost", "D) Green manure"], ans: 0 },
+      { id: 199, q: "Microbial and fungal biological control agents are popularly referred to by farmers and scientists as:", options: ["A) “Poor man's fertilizers / biological fungicides”", "B) Chemical poisons", "C) Synthetic urea", "D) Heavy metals"], ans: 0 },
+      { id: 200, q: "What is the optimum ambient temperature range required inside incubation rooms for commercial mushroom production?", options: ["A) 22–25°C (spawn run / growth phase)", "B) 50°C", "C) 0°C", "D) 100°C"], ans: 0 },
+      { id: 201, q: "Which fungal pathogen causes wet bubble disease in cultivated mushrooms?", options: ["A) Mycogone perniciosa", "B) Verticillium fungicola", "C) Cladobotryum", "D) Pseudomonas tolaasii"], ans: 0 },
+      { id: 202, q: "Which fungal organism causes dry bubble disease in mushrooms?", options: ["A) Verticillium fungicola", "B) Mycogone perniciosa", "C) Aspergillus", "D) Mucor"], ans: 0 },
+      { id: 203, q: "Which fungal pathogen causes cobweb disease or mildew in mushroom beds?", options: ["A) Cladobotryum dendroides", "B) Verticillium", "C) Mycogone", "D) Trichoderma"], ans: 0 },
+      { id: 204, q: "Which bacterium causes bacterial blotch disease in cultivated mushrooms?", options: ["A) Pseudomonas tolaasii", "B) Xanthomonas", "C) Bacillus", "D) Rhizobium"], ans: 0 },
+      { id: 205, q: "Which farm implement is traditionally used for inter-row soil earthing up and forming ridges and furrows?", options: ["A) Country plough / ridger", "B) Chisel plough", "C) Leveler", "D) Seed drill"], ans: 0 },
+      { id: 206, q: "Which heavy tillage implement is used for primary deep primary ploughing?", options: ["A) Chisel plough / moldboard plough", "B) Hand hoe", "C) Sickle", "D) Weeder"], ans: 0 },
+      { id: 207, q: "Which weeding implement is designed specifically for shallow soil breaking and weeding?", options: ["A) Star weeder / hand hoe", "B) Subsoiler", "C) Disc harrow", "D) Leveler"], ans: 0 },
+      { id: 208, q: "Which implement is used for furrowing and weeding in dryland farming?", options: ["A) Ridge plough / cultivator", "B) Chisel", "C) Sprayer", "D) Harvester"], ans: 0 },
+      { id: 209, q: "Where is the premier Indian Institute of Sugarcane Research (IISR) located?", options: ["A) Lucknow, Uttar Pradesh", "B) Coimbatore", "C) Kanpur", "D) New Delhi"], ans: 0 },
+      { id: 210, q: "Where is the Indian Institute of Spices Research (IISR) located?", options: ["A) Kozhikode (Calicut), Kerala", "B) Lucknow", "C) Kanpur", "D) Bengaluru"], ans: 0 },
+      { id: 211, q: "Where is the Indian Institute of Pulses Research (IIPR) located?", options: ["A) Kanpur, Uttar Pradesh", "B) Lucknow", "C) Kozhikode", "D) Bengaluru"], ans: 0 },
+      { id: 212, q: "Where is the Indian Institute of Seed Research (IISR) located?", options: ["A) Mau, Uttar Pradesh (regional centers in key)", "B) Hyderabad", "C) Karnal", "D) Pune"], ans: 0 },
+      { id: 213, q: "Where is the Indian Institute of Horticultural Research (IIHR) located?", options: ["A) Hesaraghatta, Bengaluru, Karnataka", "B) Lucknow", "C) Kanpur", "D) Solan"], ans: 0 },
+      { id: 214, q: "What primary economic factor is responsible for creating agricultural price risk?", options: ["A) Unpredictable market price fluctuations", "B) Good rainfall", "C) Fixed support prices", "D) Subsidy"], ans: 0 },
+      { id: 215, q: "What economic factor causes agricultural marketing risk?", options: ["A) Changes in marketing channels, storage costs, and credit availability", "B) Seed color", "C) Tractor speed", "D) Soil pH"], ans: 0 },
+      { id: 216, q: "What factor is responsible for agricultural credit risk in farming?", options: ["A) Erratic monsoon rainfall distribution impacting crop repayment capacity", "B) Bank interest rates", "C) Fertilizer bags", "D) Electricity"], ans: 0 },
+      { id: 217, q: "What economic factor causes agricultural financial risk?", options: ["A) Fluctuations in farm input supply and operating costs", "B) Price rise", "C) Weather", "D) Soil type"], ans: 0 },
+      { id: 218, q: "Which insect vector transmits gingelly (sesame) phyllody phytoplasma disease?", options: ["A) Leafhopper (Orosius albicinctus)", "B) Aphid", "C) Whitefly", "D) Thrips"], ans: 0 },
+      { id: 219, q: "Which mite species acts as the biological vector for redgram sterility mosaic virus?", options: ["A) Eriophyid mite (Aceria cajani)", "B) Red spider mite", "C) Broad mite", "D) Rust mite"], ans: 0 },
+      { id: 220, q: "Which insect pest is associated with spreading powdery mildew symptoms in certain crop diagnostic keys?", options: ["A) Thrips (or specific vector association in keyed tables)", "B) Aphid", "C) Whitefly", "D) Beetle"], ans: 0 },
+      { id: 221, q: "Which insect pest is the vector transmitting Tomato Spotted Wilt Virus (TSWV)?", options: ["A) Thrips (Frankliniella occidentalis / Thrips palmi)", "B) Aphid", "C) Whitefly", "D) Jassid"], ans: 0 },
+      { id: 222, q: "Which viral pathogen causes Newcastle disease (Ranikhet) in poultry?", options: ["A) Paramyxovirus (Newcastle Disease Virus)", "B) Pox virus", "C) Birnavirus", "D) Coronavirus"], ans: 0 },
+      { id: 223, q: "Which viral pathogen causes fowl pox in poultry?", options: ["A) Avian Pox virus", "B) Paramyxovirus", "C) Birnavirus", "D) Reovirus"], ans: 0 },
+      { id: 224, q: "Which viral pathogen causes infectious bursal disease (Gumboro disease) in poultry?", options: ["A) Birnavirus (Infectious Bursal Disease Virus)", "B) Pox virus", "C) Paramyxovirus", "D) Herpes virus"], ans: 0 },
+      { id: 225, q: "Which fungal organism causes aspergillosis (brooder pneumonia) in poultry?", options: ["A) Aspergillus fumigatus", "B) Eimeria", "C) Candida", "D) Mucor"], ans: 0 },
+      { id: 226, q: "Which protozoan parasite causes coccidiosis in poultry birds?", options: ["A) Eimeria spp. (Eimeria tenella)", "B) Plasmodium", "C) Nosema", "D) Trypanosoma"], ans: 0 },
+      { id: 227, q: "What is the characteristic horn pattern of the Sirohi goat breed?", options: ["A) Sickle-shaped (curving upward and backward)", "B) Drooping", "C) Spiral", "D) Straight"], ans: 0 },
+      { id: 228, q: "What is the characteristic horn pattern of the Jaffarabadi buffalo breed?", options: ["A) Heavy, broad, drooping and curving downward/upward (sickle-shaped)", "B) Short and tight", "C) Half-moon", "D) Straight"], ans: 0 },
+      { id: 229, q: "What is the characteristic horn pattern of Gir cattle?", options: ["A) Spirally curved / tickle-shaped (growing downward and backward then curving upward)", "B) Drooping", "C) Straight", "D) Absent"], ans: 0 },
+      { id: 230, q: "What is the characteristic horn pattern of Murrah buffaloes?", options: ["A) Short, tightly curled in a spiral (drooping/tight spiral)", "B) Long straight", "C) Sickle", "D) Half-moon"], ans: 0 },
+      { id: 231, q: "What is the characteristic horn pattern of Mehsana buffaloes?", options: ["A) Half-moon shaped (less curved than Murrah)", "B) Tight spiral", "C) Straight", "D) Drooping"], ans: 0 },
+      { id: 232, q: "Which meteorological instrument is standard for measuring incoming solar radiation intensity?", options: ["A) Pyranometer", "B) Thermometer", "C) Barograph", "D) Psychrometer"], ans: 0 },
+      { id: 233, q: "Which meteorological instrument is used to measure ambient air and soil temperature?", options: ["A) Thermometer", "B) Pyranometer", "C) Anemometer", "D) Barometer"], ans: 0 },
+      { id: 234, q: "Which meteorological instrument continuously records atmospheric pressure changes?", options: ["A) Barograph (aneroid barograph)", "B) Thermometer", "C) Rain gauge", "D) Anemometer"], ans: 0 },
+      { id: 235, q: "Which meteorological instrument measures atmospheric relative humidity using dry-bulb and wet-bulb thermometers?", options: ["A) Psychrometer (Hygrometer)", "B) Barograph", "C) Pyranometer", "D) Anemometer"], ans: 0 },
+      { id: 236, q: "How are aquatic surface weeds classified in ecological weed groupings?", options: ["A) Floating weeds", "B) Submerged", "C) Emerged", "D) Parasitic"], ans: 0 },
+      { id: 237, q: "How are submerged weeds defined in aquatic weed science?", options: ["A) Weeds with their entire foliage growing completely below the water surface", "B) Floating on top", "C) Growing on dry bunds", "D) Parasitic on roots"], ans: 0 },
+      { id: 238, q: "How are emerged weeds defined in aquatic ecosystems?", options: ["A) Weeds rooted in bottom mud with foliage extending above the water surface", "B) Floating freely", "C) Submerged", "D) Underground"], ans: 0 },
+      { id: 239, q: "How are dispersed weeds categorized in specific source classification keys?", options: ["A) Aquatic/wetland weeds with major foliage extending above the water surface", "B) Deep roots", "C) Desert weeds", "D) Epiphytes"], ans: 0 },
+      { id: 240, q: "Which crop characteristics are classically associated with drought tolerance in dryland agronomy?", options: ["A) Deep root systems, waxy leaves, and osmotic adjustment", "B) Shallow roots", "C) Thin leaves", "D) High water demand"], ans: 0 },
+      { id: 241, q: "Which group of food crops operates via the C₄ dicarboxylic acid photosynthetic pathway?", options: ["A) C₄ crops (e.g., Sorghum, maize, millets)", "B) Legumes", "C) Tubers", "D) Orchard trees"], ans: 0 },
+      { id: 242, q: "Which major agricultural crop is classified as a classic C₃ plant?", options: ["A) Castor (and rice, wheat, soybean)", "B) Sorghum", "C) Sugarcane", "D) Maize"], ans: 0 },
+      { id: 243, q: "Which millet is exceptionally rich in calcium content among food grains?", options: ["A) Finger millet (Ragi)", "B) Pearl millet", "C) Foxtail millet", "D) Proso millet"], ans: 0 },
+      { id: 244, q: "Which minor millet is renowned for exceptionally high dietary fibre content?", options: ["A) Foxtail millet (Thinai)", "B) Ragi", "C) Rice", "D) Wheat"], ans: 0 },
+      { id: 245, q: "Which minor millet is exceptionally rich in beta-carotene (provitamin A)?", options: ["A) Barnyard millet (Kuthiraivali)", "B) Ragi", "C) Thinai", "D) Sorghum"], ans: 0 },
+      { id: 246, q: "Which major cereal and food crops belong chemically to the C₃ photosynthetic group?", options: ["A) Rice, wheat, barley and soybean", "B) Sorghum and maize", "C) Sugarcane", "D) Pineapple"], ans: 0 },
+      { id: 247, q: "Which major agricultural crops belong to the C₄ photosynthetic group?", options: ["A) Sorghum, sugarcane and maize", "B) Rice and wheat", "C) Potato and tapioca", "D) Apple and citrus"], ans: 0 },
+      { id: 248, q: "Which specialized crop plants operate via Crassulacean Acid Metabolism (CAM)?", options: ["A) Pineapple, sisal, agave and orchids", "B) Rice and wheat", "C) Maize and sorghum", "D) Pulses"], ans: 0 },
+      { id: 249, q: "Which seed separator cleans and grades seeds based primarily on length differences?", options: ["A) Spiral separator / indented cylinder separator", "B) Air screen cleaner", "C) Magnetic separator", "D) Gravity table"], ans: 0 },
+      { id: 250, q: "Which seed separator sorts seeds based on surface shape and texture?", options: ["A) Disc separator (or gravity separator)", "B) Spiral separator", "C) Magnetic separator", "D) Scale"], ans: 0 },
+      { id: 251, q: "Which seed separator utilizes magnetic properties to separate rough weed seeds from smooth crop seeds?", options: ["A) Magnetic separator", "B) Spiral separator", "C) Air blower", "D) Screen"], ans: 0 },
+      { id: 252, q: "Which seed separator grades seeds based on surface texture and sticky characteristics?", options: ["A) Cylinder separator (or velvet roll separator)", "B) Magnetic separator", "C) Spiral separator", "D) Blower"], ans: 0 },
+      { id: 253, q: "Which biological-control agent is standard for parasitize and manage sugarcane early shoot borer?", options: ["A) Trichogramma chilonis / T. japonicum egg parasitoid", "B) NPV virus", "C) Bacillus", "D) Trichoderma"], ans: 0 },
+      { id: 254, q: "Which parasitoid wasp is released for biological control of the sugarcane woolly aphid?", options: ["A) Isotima javensis (or Encarsia / Diphaopsis)", "B) Trichogramma", "C) Bracon", "D) Chrysoperla"], ans: 0 },
+      { id: 255, q: "Which biocontrol agent is released against sugarcane top shoot borer?", options: ["A) Trichogramma spp.", "B) Cheilomenes", "C) Chrysoperla", "D) NPV"], ans: 0 },
+      { id: 256, q: "Which beneficial insect or predator is associated with biological control of sugarcane pyrilla?", options: ["A) Epipyrops melanoleuca (Pyrilla parasite / Epiphagus context)", "B) Trichogramma", "C) Mealybug predator", "D) Ant"], ans: 0 },
+      { id: 257, q: "What is the approximate average duration from full flowering to fruit maturity in mango?", options: ["A) 4–5 months", "B) 1 month", "C) 12 months", "D) 2 years"], ans: 0 },
+      { id: 258, q: "What is the approximate average duration from flowering to fruit maturity in banana?", options: ["A) 5–6 months (or 3–4 months post-shooting)", "B) 1 month", "C) 12 months", "D) 2 years"], ans: 0 },
+      { id: 259, q: "What is the approximate average duration from flowering to nut maturity in coconut palms?", options: ["A) Approx 11–12 months (source lists 5-6 month maturation stage context)", "B) 1 month", "C) 3 years", "D) 1 week"], ans: 0 },
+      { id: 260, q: "What is the approximate duration from flowering to fruit maturity in sweet orange (Citrus sinensis)?", options: ["A) Approx 8–10 months (source lists 3-4 month developmental phase context)", "B) 1 month", "C) 2 years", "D) 1 week"], ans: 0 },
+      { id: 261, q: "Which elite commercial variety is well-known in guava (Psidium guajava)?", options: ["A) Allahabad Safeda (and L-49 / Lucknow 45)", "B) Red Delicious", "C) Poona Fig", "D) Alphonso"], ans: 0 },
+      { id: 262, q: "Which elite commercial variety is well-known in apple cultivation?", options: ["A) Red Delicious (and Golden Delicious / Royal Delicious)", "B) Allahabad Safeda", "C) Poona Fig", "D) Alphonso"], ans: 0 },
+      { id: 263, q: "Which elite commercial variety is well-known in fig (Ficus carica) cultivation?", options: ["A) Poona Fig", "B) Allahabad Safeda", "C) Red Delicious", "D) Dashehari"], ans: 0 },
+      { id: 264, q: "How are standard commercial mango varieties categorized based on tree canopy growth habit?", options: ["A) Vigorous varieties (e.g., seedling types, Langra, Banganapalli)", "B) Dwarf shrubs", "C) Herbaceous", "D) Annuals"], ans: 0 },
+      { id: 265, q: "Which Indian state is historically documented as the leading producer of plantation and horticultural tree crops?", options: ["A) Karnataka (along with Kerala)", "B) Punjab", "C) Haryana", "D) Delhi"], ans: 0 },
+      { id: 266, q: "Which Indian state is the preeminent producer of commercial apples?", options: ["A) Jammu & Kashmir (and Himachal Pradesh)", "B) Tamil Nadu", "C) West Bengal", "D) Kerala"], ans: 0 },
+      { id: 267, q: "Which Indian state leads in commercial cut flower production acreage?", options: ["A) Tamil Nadu (and Karnataka)", "B) Punjab", "C) Assam", "D) Bihar"], ans: 0 },
+      { id: 268, q: "Which Indian state is traditionally recognized as a leading producer of spices?", options: ["A) Kerala / West Bengal / Karnataka", "B) Haryana", "C) Punjab", "D) Delhi"], ans: 0 },
+      { id: 269, q: "What is the maximum verified seed longevity storage limit for cinnamon seeds?", options: ["A) Approx 2 months (recalcitrant seed)", "B) 10 years", "C) 50 years", "D) 1 day"], ans: 0 },
+      { id: 270, q: "What is the maximum verified seed longevity storage limit for jackfruit seeds?", options: ["A) Approx 4–5 weeks (recalcitrant seed)", "B) 5 years", "C) 20 years", "D) 1 day"], ans: 0 },
+      { id: 271, q: "What is the maximum verified seed longevity storage limit for fresh mango seeds?", options: ["A) Approx 1 month (recalcitrant stone)", "B) 10 years", "C) 50 years", "D) 1 day"], ans: 0 },
+      { id: 272, q: "What is the maximum verified seed longevity storage limit for mangosteen seeds?", options: ["A) Approx 1 week (highly recalcitrant)", "B) 5 years", "C) 20 years", "D) 1 year"], ans: 0 },
+      { id: 273, q: "Which fungal pathogen causes wet bubble disease in cultivated mushrooms?", options: ["A) Mycogone perniciosa", "B) Verticillium fungicola", "C) Cladobotryum", "D) Pseudomonas tolaasii"], ans: 0 },
+      { id: 274, q: "Which fungal organism causes dry bubble disease in mushrooms?", options: ["A) Verticillium fungicola", "B) Mycogone", "C) Aspergillus", "D) Mucor"], ans: 0 },
+      { id: 275, q: "Which fungal pathogen causes cobweb disease or mildew in mushroom beds?", options: ["A) Cladobotryum dendroides", "B) Verticillium", "C) Mycogone", "D) Trichoderma"], ans: 0 },
+      { id: 276, q: "Which bacterium causes bacterial blotch disease in cultivated mushrooms?", options: ["A) Pseudomonas tolaasii", "B) Xanthomonas", "C) Bacillus", "D) Rhizobium"], ans: 0 },
+      { id: 277, q: "Which implement is used for earthing up and forming ridges and furrows?", options: ["A) Country plough / ridger", "B) Chisel", "C) Leveler", "D) Seeder"], ans: 0 },
+      { id: 278, q: "Which implement is used for deep primary ploughing?", options: ["A) Chisel plough / moldboard plough", "B) Hand hoe", "C) Sickle", "D) Weeder"], ans: 0 },
+      { id: 279, q: "Which implement is used for soil breaking?", options: ["A) Star weeder / hand hoe", "B) Subsoiler", "C) Disc harrow", "D) Leveler"], ans: 0 },
+      { id: 280, q: "Which implement is used for weeding in dry lands?", options: ["A) Ridge plough / cultivator", "B) Chisel", "C) Sprayer", "D) Harvester"], ans: 0 }
+    ];
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(280, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 280) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Comprehensive Agricultural Sciences Master Exam.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific agricultural engineering, extension, and allied science concepts.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of General Agriculture recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+
+</html>

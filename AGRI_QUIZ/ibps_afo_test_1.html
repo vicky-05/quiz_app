@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>IBPS AFO Test 1 — Livestock & Poultry Management (261 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next,
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select,
+    .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — IBPS AFO Test 1 Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">IBPS AFO Test 1:
+        Livestock & Poultry Management (261 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–261)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="261">All Questions (261 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 261)</label>
+          <input type="number" id="custom-count-input" min="1" max="261" value="100" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">261 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#127979;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">IBPS AFO</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#128004;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Livestock Management</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 261</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">04:21:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "In which year was the 19th Livestock Census carried out in India?", options: ["A) 2012", "B) 2007", "C) 2017", "D) 2020"], ans: 0 },
+      { id: 2, q: "What was the per capita availability of eggs in India during 2015–16?", options: ["A) 33 eggs/year", "B) 65 eggs/year", "C) 100 eggs/year", "D) 10 eggs/year"], ans: 0 },
+      { id: 3, q: "Crossing of two closely related breeds or lines is called:", options: ["A) Inbreeding", "B) Outcrossing", "C) Crossbreeding", "D) Grading up"], ans: 0 },
+      { id: 4, q: "What is India's global ranking in terms of total buffalo population?", options: ["A) First", "B) Second", "C) Third", "D) Fifth"], ans: 0 },
+      { id: 5, q: "What was the total cattle population recorded according to the 19th Livestock Census?", options: ["A) 191 million", "B) 100 million", "C) 300 million", "D) 50 million"], ans: 0 },
+      { id: 6, q: "What is the traditional migratory system of livestock rearing called?", options: ["A) Nomadic system", "B) Intensive system", "C) Zero-grazing", "D) Battery cage"], ans: 0 },
+      { id: 7, q: "Which livestock rearing system is characterized as a high-input, high-output system?", options: ["A) Intensive system", "B) Extensive system", "C) Nomadic system", "D) Zero-input system"], ans: 0 },
+      { id: 8, q: "What is the distinct coat colour of a pure Kangayam calf at birth?", options: ["A) Red (turning grey/white as adult)", "B) Pure black", "C) Spotted brown", "D) Jet white"], ans: 0 },
+      { id: 9, q: "Which is recognized as the best indigenous dual-purpose cattle breed in India?", options: ["A) Tharparkar", "B) Hallikar", "C) Amritmahal", "D) Khillari"], ans: 0 },
+      { id: 10, q: "Which Indian cattle breed is characterized by distinctive lyre-shaped horns?", options: ["A) Kankrej", "B) Gir", "C) Sahiwal", "D) Red Sindhi"], ans: 0 },
+      { id: 11, q: "Which buffalo breed is famous for its characteristic walled-eye (glass-eye) appearance?", options: ["A) Nili-Ravi", "B) Murrah", "C) Surti", "D) Mehsana"], ans: 0 },
+      { id: 12, q: "Which buffalo breed is known for its distinct sickle-shaped horns?", options: ["A) Surti", "B) Murrah", "C) Nili-Ravi", "D) Toda"], ans: 0 },
+      { id: 13, q: "What is the time period from one calving to the subsequent calving called?", options: ["A) Inter-calving period", "B) Gestation period", "C) Dry period", "D) Lactation period"], ans: 0 },
+      { id: 14, q: "After 5–6 generations of grading up, what percentage of hereditary characters comes from the pure Jersey breed?", options: ["A) 98.3%", "B) 50%", "C) 75%", "D) 100%"], ans: 0 },
+      { id: 15, q: "What is the average age at sexual maturity of a well-reared crossbred cow?", options: ["A) 8–12 months", "B) 24 months", "C) 36 months", "D) 6 months"], ans: 0 },
+      { id: 16, q: "What is the standard recommended floor-space requirement for a dairy cow in a covered housing area?", options: ["A) 3.5 m² (approx 35–40 sq ft)", "B) 1 m²", "C) 10 m²", "D) 0.5 m²"], ans: 0 },
+      { id: 17, q: "What is the biological act of giving birth in cattle called?", options: ["A) Calving", "B) Lambing", "C) Kidding", "D) Farrowing"], ans: 0 },
+      { id: 18, q: "How much leguminous green fodder should ideally be fed daily to a growing heifer?", options: ["A) Approx 10 kg", "B) 1 kg", "C) 50 kg", "D) Zero"], ans: 0 },
+      { id: 19, q: "What is the normal standard lactation period of a crossbred dairy cow?", options: ["A) 300–305 days", "B) 100 days", "C) 500 days", "D) 60 days"], ans: 0 },
+      { id: 20, q: "Who is historically celebrated as the Father of Animal Nutrition?", options: ["A) Antoine Lavoisier", "B) Liebig", "C) Darwin", "D) Mendel"], ans: 0 },
+      { id: 21, q: "Which essential mineral is normal whole milk a notoriously poor source of?", options: ["A) Iron (Ferrum)", "B) Calcium", "C) Phosphorus", "D) Potassium"], ans: 0 },
+      { id: 22, q: "What is the specialized thick milk secreted during the first few days immediately after parturition called?", options: ["A) Colostrum", "B) Skim milk", "C) Whey", "D) Cream"], ans: 0 },
+      { id: 23, q: "What is the only recognized native dairy breed of buffalo originating from Tamil Nadu (Nilgiri hills)?", options: ["A) Toda buffalo", "B) Murrah", "C) Surti", "D) Nili-Ravi"], ans: 0 },
+      { id: 24, q: "What routine farm management practice effectively decreases extraneous lodging of ectoparasites on cattle?", options: ["A) Daily grooming and brushing", "B) Milking", "C) Weaning", "D) Dehorning"], ans: 0 },
+      { id: 25, q: "What is the ideal optimum time for artificial insemination (AI) in dairy cattle relative to estrus onset?", options: ["A) Approx 8–12 hours after onset of estrus (or mid-estrus)", "B) 72 hours later", "C) Before heat starts", "D) One week later"], ans: 0 },
+      { id: 26, q: "How much colostrum should newborn calves be fed immediately after birth?", options: ["A) 1/10th of body weight", "B) Half of body weight", "C) 1 kg total", "D) 10 litres"], ans: 0 },
+      { id: 27, q: "The pathological failure of a cow to expel the placenta beyond 24 hours postpartum is called:", options: ["A) Retained placenta", "B) Dystocia", "C) Prolapse", "D) Ketosis"], ans: 0 },
+      { id: 28, q: "The congenital embryonic defect characterized by the absence of an anal opening in newborn calves is called:", options: ["A) Atresia ani", "B) Hernia", "C) Freemartin", "D) Cleft palate"], ans: 0 },
+      { id: 29, q: "What specialized nutrient feed is provided to orphan or motherless dairy calves?", options: ["A) Milk replacers", "B) Straw mash", "C) Pure water", "D) Urea molasses"], ans: 0 },
+      { id: 30, q: "Which native Tamil Nadu cattle breed is famously associated with the traditional “Jallikattu” sport?", options: ["A) Pulikulam (Jallikattu breed)", "B) Kangayam", "C) Bargur", "D) Umblachery"], ans: 0 },
+      { id: 31, q: "Mating of animals having a 50% hereditary relationship (such as full siblings) is called:", options: ["A) Full-sib mating", "B) Outcrossing", "C) Back crossing", "D) Upgrading"], ans: 0 },
+      { id: 32, q: "Mating progeny back with either one of its direct parents is called:", options: ["A) Back crossing", "B) Full-sib mating", "C) Line breeding", "D) Outcrossing"], ans: 0 },
+      { id: 33, q: "The sanitary biosecurity practice of isolating newly introduced or sick animals from the main herd is called:", options: ["A) Quarantine", "B) Culling", "C) Weaning", "D) Branding"], ans: 0 },
+      { id: 34, q: "Ewe teasing using vasectomized teaser rams is performed to detect heat in which livestock species?", options: ["A) Sheep", "B) Cattle", "C) Swine", "D) Poultry"], ans: 0 },
+      { id: 35, q: "What is the average Digestible Crude Protein (DCP) percentage of non-leguminous roughage fodder?", options: ["A) Approx 2.5%", "B) 10%", "C) 20%", "D) 0%"], ans: 0 },
+      { id: 36, q: "What is the standard recommended average duration for completing one hand/machine milking session per cow?", options: ["A) 5–7 minutes", "B) 30 minutes", "C) 1 hour", "D) 10 seconds"], ans: 0 },
+      { id: 37, q: "Which bacterial pathogen is responsible for causing Haemorrhagic Septicemia (HS) in cattle?", options: ["A) Pasteurella multocida", "B) Bacillus anthracis", "C) Clostridium chauvoei", "D) Brucella abortus"], ans: 0 },
+      { id: 38, q: "Which diagnostic skin hypersensitivity test is standard for detecting bovine tuberculosis?", options: ["A) Tuberculin test", "B) Johnin test", "C) Ascoli test", "D) Ring test"], ans: 0 },
+      { id: 39, q: "Vesicular blisters and erosions on the tongue, gums, interdigital space, and teats are cardinal signs of:", options: ["A) Foot and Mouth Disease (FMD)", "B) Anthrax", "C) Rinderpest", "D) Rabies"], ans: 0 },
+      { id: 40, q: "A sweet, fruity acetone odour detected in dairy cow respiration and milk is symptomatic of:", options: ["A) Ketosis (acetonaemia)", "B) Milk fever", "C) Bloat", "D) Acidosis"], ans: 0 },
+      { id: 41, q: "Bovine hypocalcemia ( parturient paresis) is commonly known as:", options: ["A) Milk fever", "B) Ketosis", "C) Bloat", "D) Grass tetany"], ans: 0 },
+      { id: 42, q: "Low-Temperature Long-Time (LTLT) milk pasteurization is carried out at what precise temperature and time?", options: ["A) 63°C for 30 minutes", "B) 72°C for 15 seconds", "C) 100°C for 5 minutes", "D) 135°C for 2 seconds"], ans: 0 },
+      { id: 43, q: "High-Temperature Short-Time (HTST) milk pasteurization is carried out at what precise temperature and time?", options: ["A) 72°C for 15 seconds", "B) 63°C for 30 minutes", "C) 90°C for 1 minute", "D) 150°C for 1 second"], ans: 0 },
+      { id: 44, q: "What is the primary industrial purpose of milk homogenization?", options: ["A) To reduce fat globules to a uniform small size preventing cream separation", "B) To kill bacteria", "C) To add sugar", "D) To thicken milk"], ans: 0 },
+      { id: 45, q: "What is the approximate average percentage of milk fat present in heavy dairy cream?", options: ["A) Approx 18% (light cream) up to 25–40% (heavy cream)", "B) 1%", "C) 85%", "D) 50%"], ans: 0 },
+      { id: 46, q: "How many adult dairy animals can be comfortably accommodated in a standard single-row cow shed system?", options: ["A) 12–16 animals", "B) 50 animals", "C) 2 animals", "D) 100 animals"], ans: 0 },
+      { id: 47, q: "How many adult dairy animals can be accommodated in a double-row cow shed system (facing-in/out)?", options: ["A) Up to 50 animals", "B) 5 animals", "C) 10 animals", "D) 500 animals"], ans: 0 },
+      { id: 48, q: "What is the recommended longitudinal axis orientation for constructing modern dairy cattle sheds?", options: ["A) East–West orientation (to prevent direct solar glare)", "B) North–South", "C) Diagonal", "D) Random"], ans: 0 },
+      { id: 49, q: "What is the engineering purpose of building a sloppy, graded floor in a livestock shed?", options: ["A) To ensure quick urine/wastewater drainage and easy washing", "B) To increase humidity", "C) To warm feet", "D) To stop slipping"], ans: 0 },
+      { id: 50, q: "In veterinary medicine, Brucella infection is classically associated with what major reproductive condition?", options: ["A) Infectious abortion in late pregnancy", "B) Blindness", "C) Bloat", "D) Horn growth"], ans: 0 },
+      { id: 51, q: "Mycobacterium tuberculosis is identified microscopically as what specific type of bacterial organism?", options: ["A) Acid-fast bacillus", "B) Gram-negative coccus", "C) Spore-forming anaerobe", "D) Spirochaete"], ans: 0 },
+      { id: 52, q: "Bacillus anthracis bacteria form highly resistant dormant structures known as:", options: ["A) Endospores (Spores)", "B) Cysts", "C) Conidia", "D) Zoospores"], ans: 0 },
+      { id: 53, q: "Clostridium chauvoei bacteria are characterized biologically as:", options: ["A) Gram-positive, spore-forming anaerobes", "B) Gram-negative aerobes", "C) Viruses", "D) Fungi"], ans: 0 },
+      { id: 54, q: "Intermittent milking routines are typically practiced on dairy cows affected by:", options: ["A) Mastitis (udder inflammation)", "B) Milk fever", "C) Ketosis", "D) Bloat"], ans: 0 },
+      { id: 55, q: "Incomplete milking of high-yielding dairy cows is a predisposing management factor leading to:", options: ["A) Mastitis (udder infection)", "B) Weight gain", "C) High milk yield", "D) Easy calving"], ans: 0 },
+      { id: 56, q: "What is the approximate suction vacuum pressure measured inside a calf's mouth during natural suckling?", options: ["A) Approx 535 mm Hg", "B) 20 mm Hg", "C) 100 mm Hg", "D) 1000 mm Hg"], ans: 0 },
+      { id: 57, q: "What is the approximate suction pressure exerted at the teat end during manual hand milking?", options: ["A) Approx 310 mm Hg", "B) 20 mm Hg", "C) 500 mm Hg", "D) 1 mm Hg"], ans: 0 },
+      { id: 58, q: "What is veterinary “veal” meat?", options: ["A) Meat derived from a young calf", "B) Beef", "C) Mutton", "D) Pork"], ans: 0 },
+      { id: 59, q: "What is commercial “cara-beef”?", options: ["A) Buffalo meat", "B) Cattle beef", "C) Goat meat", "D) Sheep meat"], ans: 0 },
+      { id: 60, q: "What is commercial “chevon” meat?", options: ["A) Goat meat", "B) Sheep meat", "C) Buffalo meat", "D) Pork"], ans: 0 },
+      { id: 61, q: "What is commercial “mutton” meat?", options: ["A) Meat derived from sheep", "B) Goat meat", "C) Beef", "D) Pork"], ans: 0 },
+      { id: 62, q: "Luxurious “mohair” fiber is harvested commercially from which goat breed?", options: ["A) Angora goat", "B) Cashmere goat", "C) Jamnapari", "D) Boer"], ans: 0 },
+      { id: 63, q: "What is natural “fleece”?", options: ["A) Sheared sheep wool coat", "B) Goat hair", "C) Silk", "D) Feather"], ans: 0 },
+      { id: 64, q: "What is a managed sheep “flock”?", options: ["A) A group of sheep reared together", "B) Herd", "C) Pack", "D) Swarm"], ans: 0 },
+      { id: 65, q: "What is a bovine “steer”?", options: ["A) A castrated male bovine (cattle)", "B) Bull", "C) Bullock", "D) Heifer"], ans: 0 },
+      { id: 66, q: "Strain-19 is a live attenuated prophylactic vaccine utilized to control which disease?", options: ["A) Brucellosis", "B) Anthrax", "C) FMD", "D) Rabies"], ans: 0 },
+      { id: 67, q: "In standard regional vaccination calendars, the months of June–September are associated with annual vaccination drives against:", options: ["A) Foot and Mouth Disease (FMD) / Black Quarter", "B) Rabies", "C) Tuberculosis", "D) Paratuberculosis"], ans: 0 },
+      { id: 68, q: "Which fatal bacterial disease of cattle requires mandatory yearly booster vaccination before monsoon onset?", options: ["A) Black Quarter (BQ)", "B) FMD", "C) Brucellosis", "D) Johne's disease"], ans: 0 },
+      { id: 69, q: "What does a rigorous herd “culling programme” relate to in disease control contexts like TB?", options: ["A) Eliminating and slaughtering test-positive reactors to eradicate tuberculosis", "B) Feeding extra feed", "C) Breeding", "D) Milking"], ans: 0 },
+      { id: 70, q: "What does Bos indicus scientifically designate?", options: ["A) Humped Zebu domestic cattle", "B) European cattle", "C) Water buffalo", "D) Goat"], ans: 0 },
+      { id: 71, q: "What does Bos taurus scientifically designate?", options: ["A) Humpless exotic European cattle", "B) Zebu cattle", "C) Buffalo", "D) Sheep"], ans: 0 },
+      { id: 72, q: "What does Bubalus bubalis (or Bos bubalis) scientifically designate?", options: ["A) Domestic water buffalo", "B) Zebu cattle", "C) Goat", "D) Sheep"], ans: 0 },
+      { id: 73, q: "What does Capra hircus scientifically designate?", options: ["A) Domestic goat", "B) Sheep", "C) Cattle", "D) Pig"], ans: 0 },
+      { id: 74, q: "What is the primary traditional agricultural utility of Kangayam cattle?", options: ["A) Heavy draught purpose (cart and plough)", "B) High milk yield", "C) Meat", "D) Wool"], ans: 0 },
+      { id: 75, q: "In genetic improvement programs, animal “upgrading” involves breeding nondescript local cows with pure exotic sires like:", options: ["A) Jersey (or Holstein-Friesian)", "B) Hallikar", "C) Khillari", "D) Local scrub"], ans: 0 },
+      { id: 76, q: "What is “farrowing” in animal management?", options: ["A) Parturition in sows (pigs)", "B) Calving", "C) Lambing", "D) Kidding"], ans: 0 },
+      { id: 77, q: "Infertility and repeated breeding in dairy cows are clinical problems heavily linked to:", options: ["A) Brucellosis infection", "B) Milk fever", "C) Bloat", "D) Ketosis"], ans: 0 },
+      { id: 78, q: "Foot and Mouth Disease (FMD) is etiologically caused by a:", options: ["A) Aphthovirus (Picornaviridae virus)", "B) Bacterium", "C) Fungus", "D) Protozoan"], ans: 0 },
+      { id: 79, q: "Anthrax in cattle and sheep is caused by the spore-forming bacterium:", options: ["A) Bacillus anthracis", "B) Clostridium chauvoei", "C) Pasteurella multocida", "D) Brucella abortus"], ans: 0 },
+      { id: 80, q: "Haemorrhagic Septicemia (HS) in livestock is caused by:", options: ["A) Pasteurella multocida", "B) Bacillus anthracis", "C) Clostridium", "D) Brucella"], ans: 0 },
+      { id: 81, q: "Black Quarter (BQ) disease in cattle is caused by:", options: ["A) Clostridium chauvoei", "B) Bacillus anthracis", "C) Pasteurella", "D) Brucella"], ans: 0 },
+      { id: 82, q: "Mounting on herd mates is a prominent behavioral heat-detection sign observed in:", options: ["A) Cattle (cows in estrus)", "B) Sheep", "C) Poultry", "D) Swine"], ans: 0 },
+      { id: 83, q: "What is the “riding test” behaviour associated with heat detection in female:", options: ["A) Buffaloes (showing silent or subtle estrus)", "B) Cows", "C) Ewes", "D) Sows"], ans: 0 },
+      { id: 84, q: "Which livestock species commonly exhibit very subtle or “silent heat” symptoms making detection difficult?", options: ["A) Sheep and goats (and buffaloes)", "B) Cattle", "C) Pigs", "D) Horses"], ans: 0 },
+      { id: 85, q: "Which domestic animal species is frequently used as a vasectomized “teaser” animal to detect estrus in sows?", options: ["A) Boar (teaser boar)", "B) Ram", "C) Bull", "D) Stallion"], ans: 0 },
+      { id: 86, q: "How long does the proestrum phase last in standard bovine reproductive cycles?", options: ["A) 2 days", "B) 1 day", "C) 4 days", "D) 14 days"], ans: 0 },
+      { id: 87, q: "How long does the active estrum phase last?", options: ["A) 1 day (12–24 hours)", "B) 2 days", "C) 4 days", "D) 14 days"], ans: 0 },
+      { id: 88, q: "How long does the metestrum phase last following heat?", options: ["A) 4 days", "B) 1 day", "C) 2 days", "D) 14 days"], ans: 0 },
+      { id: 89, q: "How long does the diestrum (luteal) phase last in a 21-day cow cycle?", options: ["A) 14 days", "B) 4 days", "C) 2 days", "D) 1 day"], ans: 0 },
+      { id: 90, q: "What is a castrated adult male bovine (cattle) used for work called?", options: ["A) Bullock", "B) Bull", "C) Steer", "D) Calf"], ans: 0 },
+      { id: 91, q: "What is a castrated adult male goat called?", options: ["A) Wether", "B) Buck", "C) Ram", "D) Barrow"], ans: 0 },
+      { id: 92, q: "What is the biological act of parturition in sheep called?", options: ["A) Lambing", "B) Kidding", "C) Calving", "D) Farrowing"], ans: 0 },
+      { id: 93, q: "What is a young growing female goat called?", options: ["A) Kid (or doe kid / yearling)", "B) Lamb", "C) Calf", "D) Gilt"], ans: 0 },
+      { id: 94, q: "What is a heavily pregnant dairy cow close to calving termed in management terminology?", options: ["A) Down calver / springing cow", "B) Dry cow", "C) Heifer", "D) Calf"], ans: 0 },
+      { id: 95, q: "What physiological sign in late pregnancy indicates that parturition is imminent within hours/days?", options: ["A) Relaxation and sinking of pelvic and tail-head ligaments", "B) Milk drying", "C) Horn loss", "D) Weight gain"], ans: 0 },
+      { id: 96, q: "How much extra concentrate ration is recommended for a pregnant cow during late gestation?", options: ["A) Approx 0.5–1.0 kg to 1.75 kg extra daily", "B) 10 kg", "C) Zero", "D) 50 kg"], ans: 0 },
+      { id: 97, q: "How much extra concentrate is recommended for pregnant buffaloes?", options: ["A) Extra allowance as per production/steaming up (source mentions matching scale)", "B) Zero", "C) 20 kg", "D) 100 kg"], ans: 0 },
+      { id: 98, q: "What is the recommended green fodder feeding proportion relative to body weight for dairy cows?", options: ["A) Approx 1/10th of body weight (10% of BW as green fodder)", "B) 1%", "C) 50%", "D) Zero"], ans: 0 },
+      { id: 99, q: "What is the standard concentrate feeding recommendation relative to milk yield in dairy cows?", options: ["A) 1 kg concentrate for every 2.5 kg of milk produced", "B) 1 kg for every 10 kg milk", "C) 10 kg for every 1 kg milk", "D) Zero concentrate"], ans: 0 },
+      { id: 100, q: "What is veterinary “eutocia” defined as?", options: ["A) Normal, unassisted natural calving", "B) Difficult abnormal calving", "C) Abortion", "D) Infertility"], ans: 0 },
+      { id: 101, q: "What is veterinary “dystocia” defined as?", options: ["A) Difficult, obstructed, or abnormal calving requiring assistance", "B) Normal birth", "C) Conception", "D) Oestrus"], ans: 0 },
+      { id: 102, q: "Medical management during early lactation in dairy cows is heavily associated with preventing and treating:", options: ["A) Calcium metabolic imbalances (milk fever / calcium administration)", "B) Bloat", "C) Parasites", "D) Foot rot"], ans: 0 },
+      { id: 103, q: "Management adjustments during late lactation in dairy cows involve:", options: ["A) Increased concentrate feeding adjustments / tapering off prior to dry period", "B) Starvation", "C) Water restriction", "D) Zero feed"], ans: 0 },
+      { id: 104, q: "What pathological udder condition is caused by the abrupt, improper cessation of milking?", options: ["A) Severe udder pressure, congestion and mastitis risk", "B) Increased milk", "C) Weight gain", "D) Easy calving"], ans: 0 },
+      { id: 105, q: "Equine and working bullock “shoeing” is a farriery practice directly associated with preventing:", options: ["A) Excessive hoof wear and tear", "B) Lameness from milk fever", "C) Bloat", "D) Parasites"], ans: 0 },
+      { id: 106, q: "What is the crude protein (CP) percentage threshold separating concentrate feeds from roughages?", options: ["A) Concentrates contain <18% crude fibre / roughages contain >18% crude fibre", "B) CP 50%", "C) CP zero", "D) CP 90%"], ans: 0 },
+      { id: 107, q: "Fresh green succulent fodder crops are naturally exceptionally rich in which vitamin?", options: ["A) Vitamin A (via carotene precursor)", "B) Vitamin D", "C) Vitamin B12", "D) Vitamin K"], ans: 0 },
+      { id: 108, q: "What is the average Digestible Crude Protein (DCP) percentage content in leguminous green fodder?", options: ["A) Approx 8–12% (or higher in rich legumes)", "B) 1%", "C) 50%", "D) 0%"], ans: 0 },
+      { id: 109, q: "During modern machine milking, what mechanical phase is associated with fluid milk extraction?", options: ["A) The active pulsation / vacuum phase in the teat cup liner canal", "B) Restive phase", "C) Manual squeezing", "D) Heating"], ans: 0 },
+      { id: 110, q: "What mechanical phase in machine milking relieves teat congestion between pulsations?", options: ["A) The restive (atmospheric pressure massage) phase", "B) Active vacuum", "C) Boiling", "D) Sealing"], ans: 0 },
+      { id: 111, q: "What is the approximate vacuum pressure measured right at the teat end during dry hand milking?", options: ["A) Approx 20 mm Hg", "B) 500 mm Hg", "C) 1000 mm Hg", "D) 1 mm Hg"], ans: 0 },
+      { id: 112, q: "Which milking technique is universally recommended as the best and most hygienic for dairy farms?", options: ["A) Machine milking", "B) Knuckling", "C) Thumb milking", "D) Strip milking alone"], ans: 0 },
+      { id: 113, q: "A gradual or sudden natural milk fat percentage decrease of 0.02 is often associated with:", options: ["A) Aging of the cow / advanced lactation stage", "B) Fresh calving", "C) High concentrate", "D) Good health"], ans: 0 },
+      { id: 114, q: "Leaving residual milk inside the udder due to incomplete milking is a primary predisposing factor for:", options: ["A) Mastitis", "B) Milk fever", "C) Ketosis", "D) Bloat"], ans: 0 },
+      { id: 115, q: "What standard pasteurization temperature and holding time is listed in standard dairy matching keys?", options: ["A) 63–65°C for 30 minutes (or HTST 72°C for 15 seconds)", "B) 100°C for 1 hour", "C) Zero", "D) Freezing"], ans: 0 },
+      { id: 116, q: "What is the industrial dairy purpose of sub-pasteurization “thermization”?", options: ["A) Short-term improvement of raw milk keeping quality prior to processing", "B) Complete sterilization", "C) Freezing", "D) Thickening"], ans: 0 },
+      { id: 117, q: "Ascoli's precipitation test is a specialized laboratory serological test used to diagnose:", options: ["A) Anthrax", "B) Tuberculosis", "C) Brucellosis", "D) FMD"], ans: 0 },
+      { id: 118, q: "The Johnin intradermal diagnostic test is utilized specifically to detect:", options: ["A) Johne's disease (Paratuberculosis)", "B) Tuberculosis", "C) Anthrax", "D) Brucellosis"], ans: 0 },
+      { id: 119, q: "Bovine Tuberculosis (TB) diagnostic testing relies fundamentally on evaluating:", options: ["A) Delayed-type skin hypersensitivity reaction (tuberculin test)", "B) Blood sugar", "C) Milk fat", "D) Weight"], ans: 0 },
+      { id: 120, q: "Which viral pathogen family causes Foot and Mouth Disease (FMD)?", options: ["A) Aphthovirus (Family Picornaviridae)", "B) Poxvirus", "C) Paramyxovirus", "D) Coronavirus"], ans: 0 },
+      { id: 121, q: "Which livestock rearing system is universally ideal and recommended for commercial poultry production?", options: ["A) Intensive system", "B) Extensive system", "C) Nomadic", "D) Zero-input"], ans: 0 },
+      { id: 122, q: "What is the traditional low-input livestock rearing system operating without artificial feeding called?", options: ["A) Extensive system (“zero-input” system)", "B) Intensive system", "C) Battery", "D) Factory"], ans: 0 },
+      { id: 123, q: "Is intensive lifetime confinement rearing recommended as standard practice for domestic sheep and goats?", options: ["A) No, semi-intensive or extensive grazing is much better suited for small ruminants", "B) Yes", "C) Mandatory", "D) Always"], ans: 0 },
+      { id: 124, q: "What alternative term is frequently used to describe the intensive zero-grazing livestock housing system?", options: ["A) Zero grazing / Soiling system", "B) Free range", "C) Nomadic", "D) Wild"], ans: 0 },
+      { id: 125, q: "What is the average age at sexual maturity for a well-fed crossbred dairy heifer?", options: ["A) 8–12 months (or 15–18 months depending on breed)", "B) 36 months", "C) 5 years", "D) 2 months"], ans: 0 },
+      { id: 126, q: "Is age at first calving and sexual maturity considered an economically vital quantitative trait in dairy farming?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 127, q: "Is the age at sexual maturity for exotic dairy cattle breeds biologically higher than indigenous Zebu cattle?", options: ["A) No, exotics generally mature earlier than indigenous cattle", "B) Yes", "C) Equal", "D) Unrelated"], ans: 0 },
+      { id: 128, q: "Which vital protective immunoglobulin is present in extremely high concentrations in fresh colostrum?", options: ["A) Immunoglobulin A (IgA) and IgG", "B) IgE", "C) IgM only", "D) None"], ans: 0 },
+      { id: 129, q: "Is fresh colostrum naturally rich in bio-available iron (ferrum) and vitamins?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 130, q: "Which essential fat-soluble vitamin is colostrum exceptionally rich in to protect newborn calves?", options: ["A) Vitamin A", "B) Vitamin C", "C) Vitamin K", "D) Vitamin D"], ans: 0 },
+      { id: 131, q: "Which agricultural production model allows optimal biological recycling and utilization of farm byproducts?", options: ["A) Integrated Farming System (IFS)", "B) Monoculture", "C) Fallow", "D) Mining"], ans: 0 },
+      { id: 132, q: "Does an Integrated Farming System (IFS) emphasize internal organic waste recycling?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 133, q: "What is a specialized agricultural farm that derives its entire financial income from raising a single species called?", options: ["A) Specialized farm", "B) Mixed farm", "C) Integrated farm", "D) Diversified farm"], ans: 0 },
+      { id: 134, q: "Is Animal Husbandry an integral, profit-maximizing component of an Integrated Farming System (IFS)?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 135, q: "Is Foot and Mouth Disease (FMD) classified as a bacterial infection?", options: ["A) No, FMD is a viral disease", "B) Yes", "C) Fungal", "D) Protozoan"], ans: 0 },
+      { id: 136, q: "Where are characteristic vesicular blisters and erosions prominently visible during clinical FMD infection?", options: ["A) On the dorsum of the tongue, gums, palate and interdigital spaces of hooves", "B) On tail tip", "C) On horns", "D) In eyes"], ans: 0 },
+      { id: 137, q: "Is Foot and Mouth Disease (FMD) classified as a dangerous direct zoonotic disease to humans?", options: ["A) No (very rare zoonosis)", "B) Yes, highly zoonotic", "C) Lethal to humans", "D) Airborne to man"], ans: 0 },
+      { id: 138, q: "How frequently must susceptible cattle and buffalo herds be vaccinated against FMD for effective immunity?", options: ["A) Once every 6 months (twice a year)", "B) Once in 5 years", "C) Once in a lifetime", "D) Never"], ans: 0 },
+      { id: 139, q: "What animal breeding system involves mating individuals with a wider degree of relationship than close breeding?", options: ["A) Line breeding", "B) Close breeding", "C) Outcrossing", "D) Species cross"], ans: 0 },
+      { id: 140, q: "What is the mating of completely unrelated animals belonging to different breeds or populations called?", options: ["A) Outbreeding", "B) Inbreeding", "C) Line breeding", "D) Close breeding"], ans: 0 },
+      { id: 141, q: "What is the mating of related family individuals called?", options: ["A) Inbreeding", "B) Outbreeding", "C) Outcrossing", "D) Grading up"], ans: 0 },
+      { id: 142, q: "Does genetic inbreeding increase population heterozygosity?", options: ["A) No; inbreeding increases genetic homozygosity", "B) Yes", "C) Doubles it", "D) Randomizes it"], ans: 0 },
+      { id: 143, q: "What is the total mass of milk produced by a dairy cow from calving to drying off called?", options: ["A) Lactation yield", "B) Daily yield", "C) Colostrum yield", "D) Dry yield"], ans: 0 },
+      { id: 144, q: "What is the average age of a dairy heifer at her first successful calving called?", options: ["A) Age at first calving", "B) Maturity age", "C) Weaning age", "D) Gestation age"], ans: 0 },
+      { id: 145, q: "What is the time interval between parturition and the conception-producing service called?", options: ["A) Service period (days open)", "B) Dry period", "C) Lactation", "D) Gestation"], ans: 0 },
+      { id: 146, q: "What is the non-lactating resting time interval from drying off to the next expected calving called?", options: ["A) Dry period", "B) Lactation period", "C) Service period", "D) Heat period"], ans: 0 },
+      { id: 147, q: "What is the ultra-low temperature maintained inside liquid nitrogen (LN₂) semen storage containers?", options: ["A) −196°C (Note: source key mentions −186°C)", "B) 0°C", "C) −10°C", "D) −50°C"], ans: 0 },
+      { id: 148, q: "When is the optimum window for performing artificial insemination in cows relative to heat signs?", options: ["A) Mid-estrus (approx 12–18 hours after heat onset)", "B) One week later", "C) Before heat starts", "D) 5 days later"], ans: 0 },
+      { id: 149, q: "Is performing artificial insemination exactly 24 hours after estrus cessation recommended as ideal?", options: ["A) No, that is generally too late for fertilization", "B) Yes", "C) Best time", "D) Mandatory"], ans: 0 },
+      { id: 150, q: "What is the standard width dimension of a single-row cattle housing barn?", options: ["A) 3.80–4.25 metres", "B) 10 metres", "C) 1 metre", "D) 20 metres"], ans: 0 },
+      { id: 151, q: "What is the standard width dimension of a double-row cattle housing barn?", options: ["A) 7.90–8.70 metres", "B) 3 metres", "C) 2 metres", "D) 15 metres"], ans: 0 },
+      { id: 152, q: "What type of surface texture must the flooring of an animal dairy barn possess?", options: ["A) Non-slippery, rough-finished concrete", "B) Highly polished glass", "C) Mud", "D) Deep sand"], ans: 0 },
+      { id: 153, q: "What should be the ideal directional orientation of the long axis of a modern animal shed?", options: ["A) East–West axis orientation", "B) North–South", "C) Diagonal", "D) Vertical"], ans: 0 },
+      { id: 154, q: "What is livestock “weaning” defined as?", options: ["A) The permanent separation of a young dependent animal from its mother", "B) Milking", "C) Feeding", "D) Breeding"], ans: 0 },
+      { id: 155, q: "What is the dark sticky first faecal matter passed by a newborn calf called?", options: ["A) Meconium", "B) Colostrum", "C) Mucus", "D) Dung"], ans: 0 },
+      { id: 156, q: "How much colostrum should newborn calves receive relative to body weight according to management standards?", options: ["A) Approx 1/10th to 1/15th of birth weight", "B) Half weight", "C) 100 kg", "D) Zero"], ans: 0 },
+      { id: 157, q: "When should fresh warm colostrum be fed to newborn calves?", options: ["A) As soon as possible after birth (within 1–2 hours, not delayed past 24 hours)", "B) After 1 week", "C) After 1 month", "D) Never"], ans: 0 },
+      { id: 158, q: "Within how many maximum hours should a healthy cow normally expel the foetal placenta postpartum?", options: ["A) Within 12 hours (retention if >24 hours)", "B) 1 hour", "C) 3 days", "D) 1 week"], ans: 0 },
+      { id: 159, q: "What is cited as the ideal target dry period duration for dairy cows to ensure high next lactation yield?", options: ["A) Approx 60–90 days (2 to 3 months)", "B) Zero days", "C) 1 year", "D) 5 days"], ans: 0 },
+      { id: 160, q: "Does a normal pregnant cow complete parturition within 38 hours of starting first-stage labor?", options: ["A) No, normal stage 2 calving occurs within hours", "B) Yes", "C) Takes 38 hours", "D) Takes 1 week"], ans: 0 },
+      { id: 161, q: "Is providing an adequate dry rest period essential for pregnant dairy cows?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 162, q: "Which bacterial microorganism causes Haemorrhagic Septicemia in cattle?", options: ["A) Pasteurella multocida", "B) Bacillus anthracis", "C) Clostridium", "D) Brucella"], ans: 0 },
+      { id: 163, q: "Is Haemorrhagic Septicemia classified as a non-infectious metabolic nutritional disorder?", options: ["A) No, it is a severe acute infectious bacterial disease", "B) Yes", "C) Fungal", "D) Genetic"], ans: 0 },
+      { id: 164, q: "Can Haemorrhagic Septicemia outbreaks be successfully prevented via timely vaccination?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 165, q: "Is Haemorrhagic Septicemia caused by an Aphthous virus?", options: ["A) No (caused by Pasteurella bacterium)", "B) Yes"], ans: 0 },
+      { id: 166, q: "Is Brucellosis classified as a contagious viral livestock disease?", options: ["A) No, Brucellosis is a bacterial infection caused by Brucella", "B) Yes"], ans: 0 },
+      { id: 167, q: "What specific bacterial pathogen causes bovine brucellosis?", options: ["A) Brucella abortus", "B) Bacillus anthracis", "C) Pasteurella", "D) Mycobacterium"], ans: 0 },
+      { id: 168, q: "What is the primary devastating reproductive pathology caused by Brucellosis in herds?", options: ["A) Contagious abortion storms in late gestation", "B) Milk fever", "C) Bloat", "D) Blindness"], ans: 0 },
+      { id: 169, q: "Does dietary calcium deficiency cause acute frothy bloat in ruminants?", options: ["A) No, bloat is caused by gas accumulation from lush legume ingestion", "B) Yes"], ans: 0 },
+      { id: 170, q: "Is therapeutic Vitamin D supplementation completely unnecessary for treating milk fever?", options: ["A) No, calcium and Vitamin D therapy are critical", "B) Yes"], ans: 0 },
+      { id: 171, q: "Is milk fever caused by infection with Pasteurella multocida?", options: ["A) No, it is a metabolic hypocalcemia disorder", "B) Yes"], ans: 0 },
+      { id: 172, q: "What is bovine milk fever clinically and pathologically referred to as?", options: ["A) Hypocalcemia / Parturient paresis", "B) Ketosis", "C) Bloat", "D) Acidosis"], ans: 0 },
+      { id: 173, q: "What is animal tympanites / ruminal tympany commonly called?", options: ["A) Bloat", "B) Milk fever", "C) Ketosis", "D) Rabies"], ans: 0 },
+      { id: 174, q: "What is ruminal “bloat” defined as?", options: ["A) The excessive abnormal accumulation of fermentation gases inside the rumen", "B) Water retention", "C) Fat accumulation", "D) Blood loss"], ans: 0 },
+      { id: 175, q: "Does the heavy feeding of lush, wet succulent leguminous forages dramatically increase the incidence of frothy bloat?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 176, q: "Does simple “free-gas” ruminal bloat occur primarily due to feeding fresh succulent legumes?", options: ["A) No, free-gas bloat usually results from physical oesophageal obstruction", "B) Yes"], ans: 0 },
+      { id: 177, q: "What is commercial milk “pasteurization” defined as?", options: ["A) Heating raw milk to a specific controlled temperature for a set time followed by rapid chilling", "B) Boiling", "C) Freezing solid", "D) Salting"], ans: 0 },
+      { id: 178, q: "What precise temperature and time parameters define High-Temperature Short-Time (HTST) pasteurization?", options: ["A) 72°C for 15 seconds", "B) 63°C for 30 minutes", "C) 100°C for 1 hour", "D) Zero"], ans: 0 },
+      { id: 179, q: "What precise temperature and time parameters define Low-Temperature Long-Time (LTLT) pasteurization?", options: ["A) 63°C for 30 minutes", "B) 72°C for 15 seconds", "C) 150°C for 5 seconds", "D) Zero"], ans: 0 },
+      { id: 180, q: "Can the Q-fever pathogen Coxiella burnetii survive standard industrial milk pasteurization temperatures?", options: ["A) No, pasteurization successfully destroys it", "B) Yes"], ans: 0 },
+      { id: 181, q: "What is the medical and veterinary term for inflammatory pathology of the mammary gland/udder?", options: ["A) Mastitis", "B) Metritis", "C) Ketosis", "D) Arthritis"], ans: 0 },
+      { id: 182, q: "Does practicing rigorous Clean Milk Production (CMP) help prevent clinical and subclinical mastitis?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 183, q: "Does clinical mastitis visibly alter milk colour, consistency, and chemical composition?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 184, q: "Which simple dairy utensil test is utilized for quick farm-level screening of clinical mastitis?", options: ["A) Strip-cup test (foremilk inspection)", "B) Babcock test", "C) MBRT test", "D) Lactometer test"], ans: 0 },
+      { id: 185, q: "Is manual hand milking universally preferred over machine milking for large commercial dairy farms?", options: ["A) No, machine milking is essential for large-scale efficient dairy farms", "B) Yes"], ans: 0 },
+      { id: 186, q: "Is “knuckling” (bending the thumb inward against the teat) recommended as a safe milking method?", options: ["A) No, knuckling injures delicate teat tissues and is discouraged", "B) Yes"], ans: 0 },
+      { id: 187, q: "Is machine milking considered a primary cause of incomplete milking?", options: ["A) No, when operated correctly, machine milking is highly complete", "B) Yes"], ans: 0 },
+      { id: 188, q: "Within what maximum time limit should individual cow milking be completed to leverage oxytocin milk let-down?", options: ["A) Within 3 to 5 minutes", "B) 1 hour", "C) 2 hours", "D) 10 minutes"], ans: 0 },
+      { id: 189, q: "Fresh green succulent fodder crops are naturally exceptionally rich in which vitamin?", options: ["A) Vitamin A", "B) Vitamin C", "C) Vitamin D", "D) Vitamin K"], ans: 0 },
+      { id: 190, q: "What are the primary physiological functions governed by Vitamin A in farm animals?", options: ["A) Maintenance of vision, epithelial tissues, and reproductive health", "B) Bone hardening only", "C) Blood clotting", "D) Energy storage"], ans: 0 },
+      { id: 191, q: "Are fresh green forage fodders naturally juicy, succulent, and highly palatable?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 192, q: "Is Agathi (Sesbania grandiflora) classified botanically and nutritionally as a valuable tree fodder?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 193, q: "What is the claimed Digestible Crude Protein (DCP) percentage of high-quality leguminous green fodder?", options: ["A) Approx 20–25% on dry matter basis (or 8-12% fresh)", "B) Zero", "C) 50%", "D) 90%"], ans: 0 },
+      { id: 194, q: "What is the claimed Total Digestible Nutrients (TDN) percentage of high-quality leguminous green fodder?", options: ["A) Approx 60–70% (or up to 80–90% in rich leaf fractions)", "B) 5%", "C) 100%", "D) Zero"], ans: 0 },
+      { id: 195, q: "What is beta-carotene biochemically recognized as in animal nutrition?", options: ["A) The primary biological precursor of Vitamin A", "B) Vitamin B", "C) Mineral salt", "D) Protein"], ans: 0 },
+      { id: 196, q: "Is regular feeding of fresh green succulent fodder essential for maintaining optimum animal health and fertility?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 197, q: "What was the recorded goat population of India according to the 19th Livestock Census?", options: ["A) 135.17 million", "B) 50 million", "C) 300 million", "D) 10 million"], ans: 0 },
+      { id: 198, q: "What is Tamil Nadu's relative ranking among Indian states in terms of total poultry population?", options: ["A) First (or among top leading poultry states)", "B) Last", "C) Tenth", "D) Twentieth"], ans: 0 },
+      { id: 199, q: "What is India's overall global ranking in total milk production output?", options: ["A) First (1st rank globally)", "B) Second", "C) Tenth", "D) Twentieth"], ans: 0 },
+      { id: 200, q: "What estimated percentage of total national Gross Value Added (GVA) is contributed by the livestock sector?", options: ["A) Approx 5.9% to 30% (depending on macro vs sectoral agricultural GVA scope)", "B) 80%", "C) 0.1%", "D) 99%"], ans: 0 },
+      { id: 201, q: "In which specialized livestock rearing system is continuous nomadic movement across pastures found?", options: ["A) Nomadic pastoral system", "B) Intensive factory", "C) Battery cage", "D) Zero grazing"], ans: 0 },
+      { id: 202, q: "Which livestock management system is operated as a zero-input traditional extensive method?", options: ["A) Extensive grazing system", "B) Intensive dairy", "C) Broiler house", "D) Piggery"], ans: 0 },
+      { id: 203, q: "Which livestock system represents a high-input, high-output commercial enterprise?", options: ["A) Intensive commercial system", "B) Extensive", "C) Nomadic", "D) Subsistence"], ans: 0 },
+      { id: 204, q: "What specialized animal management practice called “tethering” is commonly performed for managing:", options: ["A) Goats (tying with a rope to graze specific spots)", "B) Bulls", "C) Horses", "D) Broilers"], ans: 0 },
+      { id: 205, q: "What is the duration of the “late heat” post-estrus period measured in hours?", options: ["A) 12–24 hours", "B) 1 hour", "C) 1 week", "D) 1 month"], ans: 0 },
+      { id: 206, q: "In which farm animal species is “silent heat” notoriously common and problematic?", options: ["A) Buffalo", "B) Cow", "C) Ewe", "D) Doe"], ans: 0 },
+      { id: 207, q: "How many days long is the proestrum preparatory phase in the bovine cycle?", options: ["A) 2 days", "B) 1 day", "C) 5 days", "D) 14 days"], ans: 0 },
+      { id: 208, q: "Which specific reproductive stage falls under the active “follicular phase” of the estrous cycle?", options: ["A) Estrus (heat)", "B) Diestrum", "C) Metestrum", "D) Anestrus"], ans: 0 },
+      { id: 209, q: "What is the biological term for parturition (giving birth) in swine?", options: ["A) Farrowing", "B) Calving", "C) Lambing", "D) Kidding"], ans: 0 },
+      { id: 210, q: "What is an adult male breeding goat properly called?", options: ["A) Buck (Billy)", "B) Ram", "C) Boar", "D) Bull"], ans: 0 },
+      { id: 211, q: "What is the scientific species name of the domestic pig according to specific source taxonomy?", options: ["A) Sus domesticus (or Sus scrofa)", "B) Bos taurus", "C) Ovis aries", "D) Capra hircus"], ans: 0 },
+      { id: 212, q: "What is a castrated male pig commonly called in agricultural meat terminology?", options: ["A) Hog / Barrow", "B) Steer", "C) Wether", "D) Capon"], ans: 0 },
+      { id: 213, q: "What specialized cryogenic chemical substance is universally used for storing frozen animal semen straws?", options: ["A) Liquid Nitrogen (LN₂)", "B) Liquid Oxygen", "C) Dry ice", "D) Acetone"], ans: 0 },
+      { id: 214, q: "According to field extension passages, what is cited as the ideal time window for AI?", options: ["A) Early morning (or prompt detection window)", "B) Midnight", "C) Noon", "D) Sunset"], ans: 0 },
+      { id: 215, q: "During artificial insemination in cattle, where is thawed semen precisely deposited inside the reproductive tract?", options: ["A) Body of the uterus", "B) Vagina only", "C) Cervix tip", "D) Ovary"], ans: 0 },
+      { id: 216, q: "What is the standard water-bath thawing temperature required for frozen semen straws prior to AI?", options: ["A) Exactly 37°C", "B) 100°C", "C) 0°C", "D) Room temp"], ans: 0 },
+      { id: 217, q: "What should be the maximum moisture percentage allowed in livestock concentrate feed mixtures?", options: ["A) Approx 10% (or max 11%)", "B) 50%", "C) 90%", "D) Zero"], ans: 0 },
+      { id: 218, q: "How is the keeping quality of dry concentrate feed mixtures rated?", options: ["A) High keeping quality when stored dry", "B) Low", "C) Zero", "D) Perishable in 1 hour"], ans: 0 },
+      { id: 219, q: "Agricultural molasses is exceptionally rich in which nutrient component?", options: ["A) Carbohydrates (sugars)", "B) Protein", "C) Pure fat", "D) Minerals"], ans: 0 },
+      { id: 220, q: "Groundnut oil cake is classified as what type of livestock feed source?", options: ["A) Vegetable protein source (concentrate cake)", "B) Roughage", "C) Mineral", "D) Synthetic vitamin"], ans: 0 },
+      { id: 221, q: "Against which major viral disease is prophylactic vaccination recommended to be performed thrice a year in endemic areas?", options: ["A) Foot and Mouth Disease (FMD)", "B) Rabies", "C) Anthrax", "D) Brucellosis"], ans: 0 },
+      { id: 222, q: "At what exact age range is calfhood Brucellosis vaccination recommended?", options: ["A) 4 to 6 months of age", "B) Birth day", "C) 2 years", "D) 10 years"], ans: 0 },
+      { id: 223, q: "At what age range is primary Rinderpest vaccination administered in cattle?", options: ["A) 1 to 3 years of age", "B) Birth day", "C) 10 years", "D) Never"], ans: 0 },
+      { id: 224, q: "Which bacterial disease of livestock requires annual once-yearly vaccination as per regional prophylaxis?", options: ["A) Anthrax (and Black Quarter)", "B) FMD", "C) Rabies", "D) Brucellosis"], ans: 0 },
+      { id: 225, q: "What is defined as a group of animals or birds sharing uniform common characters that reliably transmit to offspring?", options: ["A) Breed", "B) Species", "C) Phylum", "D) Genus"], ans: 0 },
+      { id: 226, q: "In which animal species is the specialized breeding system of line breeding more commonly practiced?", options: ["A) Poultry", "B) Cattle", "C) Elephants", "D) Camels"], ans: 0 },
+      { id: 227, q: "What is the biological definition of “inbreeding”?", options: ["A) Mating of closely related individuals", "B) Mating of unrelated breeds", "C) Species hybridization", "D) Outcrossing"], ans: 0 },
+      { id: 228, q: "What breeding system involves mating purebred sires with nondescript local females over generations?", options: ["A) Upgrading (grading-up)", "B) Inbreeding", "C) Close breeding", "D) Species cross"], ans: 0 },
+      { id: 229, q: "Which fatal livestock disease exhibits clinical signs of dark uncoagulated blood bleeding from natural body orifices?", options: ["A) Anthrax", "B) Tuberculosis", "C) FMD", "D) Rinderpest"], ans: 0 },
+      { id: 230, q: "The formation of characteristic tubercles/nodules in internal lymph nodes and organs is diagnostic of:", options: ["A) Tuberculosis", "B) Anthrax", "C) FMD", "D) Rabies"], ans: 0 },
+      { id: 231, q: "Stillbirths and abortion storms in cattle herds are pathologically caused by:", options: ["A) Brucellosis infection", "B) Bloat", "C) Milk fever", "D) Ketosis"], ans: 0 },
+      { id: 232, q: "What clinical fever pattern (biphasic or triphasic fever spikes) is characteristic of bovine ephemeral fever?", options: ["A) Biphasic / triphasic transient fever (Three-day sickness)", "B) Continuous high fever", "C) Sub-normal temp", "D) Zero fever"], ans: 0 },
+      { id: 233, q: "What is the average age of a heifer / cow at first calving called?", options: ["A) Age at first calving", "B) Maturity age", "C) Weaning age", "D) Gestation age"], ans: 0 },
+      { id: 234, q: "What is the time period from parturition to drying off called?", options: ["A) Lactation period", "B) Dry period", "C) Service period", "D) Gestation"], ans: 0 },
+      { id: 235, q: "What is the time interval between calving and the next conception service called?", options: ["A) Service period (days open)", "B) Dry period", "C) Lactation", "D) Gestation"], ans: 0 },
+      { id: 236, q: "What is the non-milking rest period from drying off to subsequent calving called?", options: ["A) Dry period", "B) Lactation period", "C) Service period", "D) Heat period"], ans: 0 },
+      { id: 237, q: "Which key reproductive hormone is secreted by the ovarian Graafian follicle?", options: ["A) Estrogen (Oestrogen)", "B) Progesterone", "C) Oxytocin", "D) Prolactin"], ans: 0 },
+      { id: 238, q: "Which reproductive hormone is produced and secreted by the active corpus luteum?", options: ["A) Progesterone", "B) Estrogen", "C) FSH", "D) LH"], ans: 0 },
+      { id: 239, q: "At which specific stage of the bovine estrous cycle does physiological proestrus / metestrus bleeding occur?", options: ["A) Metestrum (post-estrus bleeding in cows)", "B) Proestrum", "C) Diestrum", "D) Anestrus"], ans: 0 },
+      { id: 240, q: "Which livestock species are classified as seasonal short-day breeders?", options: ["A) Sheep and goats", "B) Cattle and buffalo", "C) Pigs", "D) Horses"], ans: 0 },
+      { id: 241, q: "Who is historically credited with first performing and recording successful mammalian embryo transfer?", options: ["A) Walter Heape (1890)", "B) Jim Rowson", "C) Darwin", "D) Mendel"], ans: 0 },
+      { id: 242, q: "Who pioneered successful modern surgical and non-surgical embryo transfer in cattle and pigs?", options: ["A) Jim Rowson (and colleagues)", "B) Walter Heape", "C) Pasteur", "D) Koch"], ans: 0 },
+      { id: 243, q: "Which reproductive hormone is administered to donor females to induce superovulation?", options: ["A) Follicle Stimulating Hormone (FSH) / PMSG", "B) Oxytocin", "C) Progesterone", "D) Estrogen"], ans: 0 },
+      { id: 244, q: "What expected pregnancy success rate is typically achieved when transferring fresh bovine embryos?", options: ["A) Approx 70–80%", "B) 10%", "C) 5%", "D) Zero"], ans: 0 },
+      { id: 245, q: "In dairy farm design, which directional orientation should the open paddock side face?", options: ["A) North–South shelter orientation (protected from hot sun)", "B) East–West directly", "C) Diagonal", "D) Random"], ans: 0 },
+      { id: 246, q: "What is the standard width dimension of a single-row cattle housing barn?", options: ["A) 3.80–4.25 metres", "B) 10 metres", "C) 1 metre", "D) 20 metres"], ans: 0 },
+      { id: 247, q: "What is the standard width dimension of a double-row cattle housing barn?", options: ["A) 7.90–8.70 metres", "B) 3 metres", "C) 2 metres", "D) 15 metres"], ans: 0 },
+      { id: 248, q: "How many days should newly purchased animals be kept isolated in quarantine before mixing with the herd?", options: ["A) 30–40 days", "B) 1 day", "C) 1 year", "D) 3 days"], ans: 0 },
+      { id: 249, q: "On approximately which day of life should young dairy calves receive their first routine deworming?", options: ["A) 10th day of life", "B) Birth day", "C) 1 year", "D) 5 years"], ans: 0 },
+      { id: 250, q: "What is the average age at sexual maturity for crossbred dairy heifer calves?", options: ["A) 9–12 months", "B) 36 months", "C) 5 years", "D) 2 months"], ans: 0 },
+      { id: 251, q: "Which protective immune globulin protein is abundantly present in colostrum?", options: ["A) Immunoglobulin G (IgG) and IgA", "B) IgE", "C) IgM only", "D) None"], ans: 0 },
+      { id: 252, q: "What is recommended as the ideal chronological age for performing safe surgical castration in male calves?", options: ["A) 7 days of age", "B) 2 years", "C) 5 years", "D) Birth day"], ans: 0 },
+      { id: 253, q: "What is the normal physiological pH range of fresh whole cow milk?", options: ["A) 6.2–6.4 (slightly acidic)", "B) 2.0–3.0", "C) 8.5–9.5", "D) 7.0 neutral"], ans: 0 },
+      { id: 254, q: "What is the average butterfat percentage content of whole milk produced by crossbred dairy cows?", options: ["A) Approx 4.5% fat", "B) 1%", "C) 10%", "D) 50%"], ans: 0 },
+      { id: 255, q: "What is the average Digestible Crude Protein (DCP) percentage content of leguminous green fodder?", options: ["A) 8–12%", "B) 1%", "C) 50%", "D) Zero"], ans: 0 },
+      { id: 256, q: "What is the average Total Digestible Nutrients (TDN) percentage content of non-leguminous roughage fodder?", options: ["A) 45–60%", "B) 10%", "C) 90%", "D) 0%"], ans: 0 },
+      { id: 257, q: "What is the scientific binomial name of sheep?", options: ["A) Ovis aries", "B) Capra hircus", "C) Sus scrofa", "D) Bos taurus"], ans: 0 },
+      { id: 258, q: "What is the scientific binomial name of goat?", options: ["A) Capra hircus", "B) Ovis aries", "C) Sus scrofa", "D) Bos indicus"], ans: 0 },
+      { id: 259, q: "What is the scientific binomial name of pig?", options: ["A) Sus scrofa", "B) Ovis aries", "C) Capra hircus", "D) Equus caballus"], ans: 0 },
+      { id: 260, q: "What is the scientific binomial name of cattle?", options: ["A) Bos indicus / Bos taurus", "B) Bubalus bubalis", "C) Capra hircus", "D) Ovis aries"], ans: 0 },
+      { id: 261, q: "What is the scientific binomial name of the domestic water buffalo?", options: ["A) Bubalus bubalis", "B) Bos taurus", "C) Capra hircus", "D) Sus scrofa"], ans: 0 }
+    ];
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(261, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 261) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over IBPS AFO Livestock & Poultry Management.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific livestock management practices, animal health, and dairy science.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Animal Husbandry recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+
+</html>

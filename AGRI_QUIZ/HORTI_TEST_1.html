@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Horticulture Test 1 — Olericulture, Crops, Propagation & Physiology (212 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next,
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select,
+    .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Horticulture Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Horticulture Test 1:
+        Olericulture, Propagation & Crop Physiology (212 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–212)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="212">All Questions (212 Questions)</option>
+            <option value="25">25 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 212)</label>
+          <input type="number" id="custom-count-input" min="1" max="212" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">212 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#127815;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Horticulture</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#127807;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Olericulture & Crops</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 212</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">03:32:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "Which is a seedless triploid watermelon variety?", options: ["A) Pusa Bedana and Arka Madhura", "B) Sugar Baby", "C) Asahi Yamato", "D) Arka Manik"], ans: 0 },
+      { id: 2, q: "Which statement about onion production and NRCOG is incorrect?", options: ["A) Statement 3 only", "B) Statement 1 only", "C) Statement 2 only", "D) None of these"], ans: 0 },
+      { id: 3, q: "Which statements regarding NHRDF and onion are correct?", options: ["A) 1, 2 and 3", "B) 1 and 2 only", "C) 2 and 3 only", "D) 3 only"], ans: 0 },
+      { id: 4, q: "Which are triploid hybrids of cassava?", options: ["A) Sree Harsha, Sree Apoorva and Sree Athulya", "B) H-226 and M-4", "C) Sree Viswam", "D) Vellayani Hraswa"], ans: 0 },
+      { id: 5, q: "Staggered harvesting is practised in:", options: ["A) Cassava", "B) Tomato", "C) Onion", "D) Chilli"], ans: 0 },
+      { id: 6, q: "Which growth regulator is recommended to increase female flowers in ash gourd?", options: ["A) Ethrel 250 ppm", "B) GA₃ 50 ppm", "C) NAA 10 ppm", "D) Cycocel"], ans: 0 },
+      { id: 7, q: "Which are perennial vegetables?", options: ["A) Chow-chow, Coccinia and Drumstick", "B) Tomato and Brinjal", "C) Cabbage and Cauliflower", "D) Carrot and Radish"], ans: 0 },
+      { id: 8, q: "In cucurbits, low temperature promotes ______ flowers.", options: ["A) Female flowers", "B) Male flowers", "C) Neutral flowers", "D) Sterile flowers"], ans: 0 },
+      { id: 9, q: "Which is a short-day plant?", options: ["A) Cluster bean", "B) Tomato", "C) Cabbage", "D) Radish"], ans: 0 },
+      { id: 10, q: "Gynoecious lines are commercially used for hybrid seed production in:", options: ["A) Cucumber", "B) Tomato", "C) Brinjal", "D) Chilli"], ans: 0 },
+      { id: 11, q: "Which statements about cassava are correct?", options: ["A) All are correct", "B) 1 and 2 only", "C) 2 and 3 only", "D) None are correct"], ans: 0 },
+      { id: 12, q: "In cucurbits, long-day conditions favour the production of ______ flowers.", options: ["A) Male flowers", "B) Female flowers", "C) Hermaphrodite", "D) None"], ans: 0 },
+      { id: 13, q: "Which crop is a source of iodine and useful in controlling goitre?", options: ["A) Bhendi", "B) Tomato", "C) Cabbage", "D) Potato"], ans: 0 },
+      { id: 14, q: "Which is a rich source of calcium?", options: ["A) Agathi leaves", "B) Potato", "C) Rice", "D) Wheat"], ans: 0 },
+      { id: 15, q: "Cross-pollination in onion is due to:", options: ["A) Protandry", "B) Protogyny", "C) Cleistogamy", "D) Apomixis"], ans: 0 },
+      { id: 16, q: "Among fresh vegetables, the top exported vegetable is:", options: ["A) Onion", "B) Tomato", "C) Potato", "D) Cabbage"], ans: 0 },
+      { id: 17, q: "Which chemical is used to prevent sprouting in potato during storage?", options: ["A) Maleic hydrazide (MH)", "B) Ethrel", "C) GA₃", "D) NAA"], ans: 0 },
+      { id: 18, q: "What is the shelling percentage of pea?", options: ["A) 35–50%", "B) 10–20%", "C) 70–80%", "D) 90%"], ans: 0 },
+      { id: 19, q: "The common physiological problem found in garlic is:", options: ["A) Sprouting of bulbs in the field", "B) Hollow heart", "C) Black heart", "D) Splitting"], ans: 0 },
+      { id: 20, q: "What is the maturity index for marketable green pea pods?", options: ["A) Change of pod colour from dark green to light green", "B) Pod turning brown", "C) Pod shrivelling", "D) Yellowing"], ans: 0 },
+      { id: 21, q: "Chow-chow requires which climatic condition for better growth?", options: ["A) Subtropical / humid cool climate", "B) Desert arid", "C) Waterlogged tropical", "D) Extremely hot"], ans: 0 },
+      { id: 22, q: "Vivipary, germination of a seed while still attached to the mother plant, is seen in:", options: ["A) Chow-chow", "B) Tomato", "C) Brinjal", "D) Chilli"], ans: 0 },
+      { id: 23, q: "Ben oil is extracted from:", options: ["A) Moringa", "B) Castor", "C) Mustard", "D) Groundnut"], ans: 0 },
+      { id: 24, q: "Which insecticide causes resurgence of red spider mite in bhendi?", options: ["A) Ethion", "B) Neem oil", "C) Carbaryl", "D) Malathion"], ans: 0 },
+      { id: 25, q: "Legume plants decompose faster than cereals because they are rich in:", options: ["A) Protein / nitrogen", "B) Starch", "C) Lignin", "D) Cellulose"], ans: 0 },
+      { id: 26, q: "Which cross is used to produce hybrid seed in a male-sterile system?", options: ["A) A-line × R-line", "B) A-line × B-line", "C) B-line × R-line", "D) A-line × A-line"], ans: 0 },
+      { id: 27, q: "In tomato hybrid seed production, the seed parent and pollen parent are grown in the ratio:", options: ["A) 12:1", "B) 3:1", "C) 1:1", "D) 5:1"], ans: 0 },
+      { id: 28, q: "F₁ generation obtained by crossing genetically dissimilar lines for commercial cultivation is called:", options: ["A) Hybrid variety", "B) Open pollinated variety", "C) Pure line", "D) Clone"], ans: 0 },
+      { id: 29, q: "Arka Rajhans is a variety of:", options: ["A) Musk melon", "B) Watermelon", "C) Cucumber", "D) Bitter gourd"], ans: 0 },
+      { id: 30, q: "Pusa Do Mausami is a variety of:", options: ["A) Bitter gourd", "B) Bottle gourd", "C) Ridge gourd", "D) Sponge gourd"], ans: 0 },
+      { id: 31, q: "Arka Abhay is a variety of:", options: ["A) Bhendi", "B) Tomato", "C) Brinjal", "D) Chilli"], ans: 0 },
+      { id: 32, q: "Yellow network of veins in bhendi leaves indicates:", options: ["A) Vein clearing disease (YVMV)", "B) Iron deficiency", "C) Nitrogen deficiency", "D) Water stress"], ans: 0 },
+      { id: 33, q: "CO 3 amaranthus was developed from:", options: ["A) Amaranthus tristis", "B) A. hypochondriacus", "C) A. gangeticus", "D) A. viridis"], ans: 0 },
+      { id: 34, q: "Onion originated from:", options: ["A) Central Asia", "B) India", "C) China", "D) America"], ans: 0 },
+      { id: 35, q: "Recommended seed rate for peas per hectare is:", options: ["A) 80–100 kg/ha", "B) 10 kg/ha", "C) 200 kg/ha", "D) 5 kg/ha"], ans: 0 },
+      { id: 36, q: "The antinutritional factors in amaranthus are:", options: ["A) Oxalates and nitrates", "B) Tannins", "C) Glucosinolates", "D) Alkaloids"], ans: 0 },
+      { id: 37, q: "Cluster bean originated from:", options: ["A) India", "B) Africa", "C) South America", "D) China"], ans: 0 },
+      { id: 38, q: "Which cluster bean variety is a hybrid?", options: ["A) Pusa Navbahar", "B) Pusa Sadabahar", "C) Pusa Komal", "D) Sharad"], ans: 0 },
+      { id: 39, q: "In which crop was cytoplasmic male sterility first exploited for F₁ hybrid seed production?", options: ["A) Onion", "B) Rice", "C) Maize", "D) Sorghum"], ans: 0 },
+      { id: 40, q: "Arka Anamika bhendi was developed through:", options: ["A) Interspecific hybridization", "B) Pure line selection", "C) Mutation", "D) Introduction"], ans: 0 },
+      { id: 41, q: "What is the botanical name of rhubarb?", options: ["A) Rheum rhaponticum", "B) Beta vulgaris", "C) Apium graveolens", "D) Brassica oleracea"], ans: 0 },
+      { id: 42, q: "Arka Anamika is a cross between:", options: ["A) Abelmoschus esculentus (IHR 20-31) × A. tetraphyllus", "B) A. esculentus × A. moschatus", "C) Local bhendi × wild bhendi", "D) None"], ans: 0 },
+      { id: 43, q: "Rubberization in garlic is due to:", options: ["A) Excess use of nitrogenous fertilizer / improper curing", "B) Drought", "C) Frost", "D) Boron deficiency"], ans: 0 },
+      { id: 44, q: "Which pre-harvest metabolic inhibitor is commonly used to reduce sprouting of onion and potato during storage?", options: ["A) Maleic hydrazide (MH)", "B) Ethrel", "C) NAA", "D) GA₃"], ans: 0 },
+      { id: 45, q: "Early Grano and Brown Spanish are ______ coloured onion varieties.", options: ["A) Yellow", "B) Red", "C) White", "D) Purple"], ans: 0 },
+      { id: 46, q: "Bangalore Rose is a variety of:", options: ["A) Onion", "B) Rose", "C) Tomato", "D) Chilli"], ans: 0 },
+      { id: 47, q: "What is the vector of YVMV disease in bhendi?", options: ["A) Whitefly (Bemisia tabaci)", "B) Aphid", "C) Thrips", "D) Jassid"], ans: 0 },
+      { id: 48, q: "True garlic odour is due to:", options: ["A) Diallyl disulphide", "B) Allyl sulphide", "C) Quercetin", "D) Capsaicin"], ans: 0 },
+      { id: 49, q: "Which state is the largest tapioca-producing state in India?", options: ["A) Kerala (or Tamil Nadu in commercial sago)", "B) Punjab", "C) Haryana", "D) Assam"], ans: 0 },
+      { id: 50, q: "What is the seed rate for watermelon?", options: ["A) 3–5 kg/ha", "B) 25 kg/ha", "C) 50 kg/ha", "D) 1 kg/ha"], ans: 0 },
+      { id: 51, q: "Cluster bean seeds contain gum-like mucilaginous substances called:", options: ["A) Galactomannan", "B) Pectin", "C) Starch", "D) Cellulose"], ans: 0 },
+      { id: 52, q: "Seed germination in pea is enhanced by ______ treatment.", options: ["A) GA₃ (Gibberellic acid)", "B) Ethrel", "C) NAA", "D) ABA"], ans: 0 },
+      { id: 53, q: "Bitter principle in tapioca is due to:", options: ["A) Cyanogenic glucoside (linamarin)", "B) Solanin", "C) Tomatine", "D) Capsaicin"], ans: 0 },
+      { id: 54, q: "Which is the richest source of iron among leafy greens?", options: ["A) Spinach (Palak)", "B) Cabbage", "C) Lettuce", "D) Cauliflower"], ans: 0 },
+      { id: 55, q: "What is the average grain yield of CO₄ amaranthus per hectare?", options: ["A) 2–2.5 t/ha", "B) 10 t/ha", "C) 50 t/ha", "D) 100 t/ha"], ans: 0 },
+      { id: 56, q: "Sweet potato is commonly propagated through:", options: ["A) Vine cuttings", "B) Tubers", "C) Seeds", "D) Corms"], ans: 0 },
+      { id: 57, q: "The edible part of Coccinia is:", options: ["A) Tender and immature fruit", "B) Root", "C) Leaf", "D) Stem"], ans: 0 },
+      { id: 58, q: "Arkel, Bonneville, Alaska, Early Superb, Little Marvel and Meteor are varieties of:", options: ["A) Pea", "B) French bean", "C) Cowpea", "D) Cluster bean"], ans: 0 },
+      { id: 59, q: "Cultivated musk melons are mostly:", options: ["A) Andromonoecious", "B) Monoecious", "C) Dioecious", "D) Hermaphrodite"], ans: 0 },
+      { id: 60, q: "Which is the garden pea?", options: ["A) Pisum sativum", "B) Cajanus cajan", "C) Vigna radiata", "D) Cicer arietinum"], ans: 0 },
+      { id: 61, q: "Which is the most suitable vegetable crop for growing under protected polyhouses?", options: ["A) Cucumber", "B) Potato", "C) Onion", "D) Garlic"], ans: 0 },
+      { id: 62, q: "Which pair is correctly matched regarding bitter principles/compounds?", options: ["A) Bitter gourd – Momordicin", "B) Cucumber – Solanine", "C) Tomato – Capsaicin", "D) Potato – Curcumin"], ans: 0 },
+      { id: 63, q: "Arka Suryamukhi belongs to which botanical species?", options: ["A) Cucurbita maxima", "B) C. pepo", "C) C. moschata", "D) Lagenaria siceraria"], ans: 0 },
+      { id: 64, q: "Which type of apomixis occurs naturally in garlic?", options: ["A) Vegetative apomixis (bulbils)", "B) Diplospory", "C) Apospory", "D) None"], ans: 0 },
+      { id: 65, q: "Cucumis melo var. utilissimus is botanically known as:", options: ["A) Long melon", "B) Snap melon", "C) Musk melon", "D) Cucumber"], ans: 0 },
+      { id: 66, q: "The assertion that lifting sweet-potato vines on the 50th and 75th day increases tuber size is:", options: ["A) Both assertion and reason are true, and the reason correctly explains the assertion", "B) A is true, R is false", "C) Both false", "D) R is true, A is false"], ans: 0 },
+      { id: 67, q: "What is the relationship between gherkin processing demand and contract farming?", options: ["A) Both statements are true", "B) Both false", "C) Only 1 true", "D) Only 2 true"], ans: 0 },
+      { id: 68, q: "Guar gum, an important industrial raw material, is obtained from:", options: ["A) Cluster bean", "B) French bean", "C) Cowpea", "D) Soybean"], ans: 0 },
+      { id: 69, q: "Which is NOT a recommended IPM practice for diamondback moth of cole crops?", options: ["A) Fish meal trap", "B) Neem oil", "C) Bt spray", "D) Parasitoid release"], ans: 0 },
+      { id: 70, q: "Which amaranthus varietal character is correctly matched?", options: ["A) CO₄ – Grain type", "B) CO₁ – Leafy type", "C) Both", "D) None"], ans: 0 },
+      { id: 71, q: "Parbhani Kranti, Arka Abhay, Kasi Lalima, Clemson Spineless, Perkins Long Green and Harbhajan are varieties of:", options: ["A) Bhendi", "B) Tomato", "C) Brinjal", "D) Chilli"], ans: 0 },
+      { id: 72, q: "Which Amaranthus species is classified as a grain type?", options: ["A) Amaranthus hypochondriacus", "B) A. tricolor", "C) A. viridis", "D) A. blitum"], ans: 0 },
+      { id: 73, q: "The economic harvestable part of globe artichoke is technically called:", options: ["A) Unopened flower bud", "B) Tuber", "C) Root", "D) Leaf"], ans: 0 },
+      { id: 74, q: "A serious insect pest of sweet potato causing severe damage both in field and storage is:", options: ["A) Cylas formicarius (Sweet potato weevil)", "B) Stem borer", "C) Aphid", "D) Whitefly"], ans: 0 },
+      { id: 75, q: "Pusa Parvati is a popular variety of:", options: ["A) French bean", "B) Cowpea", "C) Cluster bean", "D) Lab lab"], ans: 0 },
+      { id: 76, q: "Summer squash belongs botanically to:", options: ["A) Cucurbita pepo", "B) C. maxima", "C) C. moschata", "D) Lagenaria siceraria"], ans: 0 },
+      { id: 77, q: "Which vegetable variety pair is correctly matched?", options: ["A) Amaranthus – Pusa Kirti", "B) Tomato – Pusa Ruby", "C) Both", "D) None"], ans: 2 },
+      { id: 78, q: "Which statements about kitchen garden planning are correct?", options: ["A) All are correct", "B) 1 and 2 only", "C) 2 and 3 only", "D) None"], ans: 0 },
+      { id: 79, q: "Which vegetable is popularly referred to as the “multivitamin green”?", options: ["A) Chekurmanis (Sauropus androgynus)", "B) Spinach", "C) Amaranthus", "D) Cabbage"], ans: 0 },
+      { id: 80, q: "Which botanical family pairing is incorrect?", options: ["A) Leek – Lactuca sativa (Leek is Allium porrum)", "B) Tomato – Solanaceae", "C) Cabbage – Brassicaceae", "D) Cucumber – Cucurbitaceae"], ans: 0 },
+      { id: 81, q: "Ratooning is successfully practised in:", options: ["A) Annual moringa", "B) Tomato", "C) Potato", "D) Carrot"], ans: 0 },
+      { id: 82, q: "Gajendra is a popular high-yielding variety of:", options: ["A) Elephant foot yam (Suran)", "B) Tapioca", "C) Sweet potato", "D) Yam"], ans: 0 },
+      { id: 83, q: "Best canning grades of gherkins are produced when harvested at:", options: ["A) 4th and 5th day after anthesis", "B) 20th day", "C) 30th day", "D) 50th day"], ans: 0 },
+      { id: 84, q: "The only seed-setting variety of aggregate (multiplier) onion is:", options: ["A) CO-5", "B) CO-1", "C) Agrifound", "D) Pusa Red"], ans: 0 },
+      { id: 85, q: "Long photoperiod day lengths in big onion mainly:", options: ["A) Hasten and promote bulb formation", "B) Inhibit bulb formation", "C) Cause bolting only", "D) Kill the plant"], ans: 0 },
+      { id: 86, q: "Seedless triploid watermelons are commercially produced by crossing:", options: ["A) Tetraploid (4x) female × Diploid (2x) male", "B) Diploid × Diploid", "C) Triploid × Triploid", "D) Haploid × Diploid"], ans: 0 },
+      { id: 87, q: "Which vegetable crop occupied the maximum cultivated area in India during recent years (2022–23)?", options: ["A) Potato", "B) Onion", "C) Tomato", "D) Cabbage"], ans: 0 },
+      { id: 88, q: "Which of the following crop-family pairs is mismatched?", options: ["A) Asparagus – Asteraceae (Asparagus is Asparagaceae)", "B) Tomato – Solanaceae", "C) Cabbage – Brassicaceae", "D) Onion – Amaryllidaceae"], ans: 0 },
+      { id: 89, q: "Where does India rank globally in total vegetable production?", options: ["A) Second (Next to China)", "B) First", "C) Third", "D) Fifth"], ans: 0 },
+      { id: 90, q: "Apart from underground cloves, garlic can also be propagated commercially through:", options: ["A) Aerial bulbils", "B) True seeds", "C) Leaves", "D) Roots"], ans: 0 },
+      { id: 91, q: "Chow-chow is vegetatively propagated by planting:", options: ["A) Entire fruit", "B) Vine cutting", "C) Seed", "D) Tuber root"], ans: 0 },
+      { id: 92, q: "Which crop–agrotechnique pair is correctly matched?", options: ["A) Annual moringa – Pinching is essential for lateral branching", "B) Tomato – No training", "C) Onion – No irrigation", "D) Potato – Transplanting"], ans: 0 },
+      { id: 93, q: "Premature sprouting and vegetative growth of stored big onion bulbs can be prevented by spraying:", options: ["A) 2500 ppm Maleic hydrazide (MH)", "B) GA₃", "C) Urea", "D) Water"], ans: 0 },
+      { id: 94, q: "What is the prescribed isolation distance for breeder seed production of annual moringa?", options: ["A) 1000 m", "B) 100 m", "C) 10 m", "D) 3 m"], ans: 0 },
+      { id: 95, q: "Arka Chandan, Pusa Vikas and Pusa Vishwas are improved varieties of:", options: ["A) Pumpkin", "B) Ash gourd", "C) Bottle gourd", "D) Bitter gourd"], ans: 0 },
+      { id: 96, q: "Which crop–botanical name pair is correctly matched?", options: ["A) Snake gourd – Trichosanthes anguina", "B) Bitter gourd – Lagenaria siceraria", "C) Pumpkin – Cucumis sativus", "D) Watermelon – Cucumis melo"], ans: 0 },
+      { id: 97, q: "Dharwad-1 (DWD-1) is a high-yielding variety of:", options: ["A) Curry leaf", "B) Coriander", "C) Fenugreek", "D) Mint"], ans: 0 },
+      { id: 98, q: "Which statements about chow-chow (Sechium edule) are correct?", options: ["A) Statements 1, 2 and 3", "B) 1 only", "C) 2 only", "D) None"], ans: 0 },
+      { id: 99, q: "How much total pea seed quantity is required for planting 5 hectares at standard rates?", options: ["A) 400–500 kg (approx 500 kg)", "B) 50 kg", "C) 5000 kg", "D) 10 kg"], ans: 0 },
+      { id: 100, q: "Which crop–variety pair is correctly matched?", options: ["A) French bean – Arka Anoop", "B) Tomato – Arka Saurabh", "C) Both", "D) None"], ans: 2 },
+      { id: 101, q: "The specific cassava variety widely grown in Salem for starch and sago industries is:", options: ["A) H-226", "B) Sree Viswam", "C) Mulluvadi", "D) M-4"], ans: 0 },
+      { id: 102, q: "Arka Kalyan is a popular onion variety released with:", options: ["A) Bellary onion (red bulb type)", "B) Multiplier onion", "C) White onion", "D) Spring onion"], ans: 0 },
+      { id: 103, q: "What is the standard seed rate of annual moringa per hectare?", options: ["A) 500 g/ha", "B) 5 kg/ha", "C) 25 kg/ha", "D) 50 kg/ha"], ans: 0 },
+      { id: 104, q: "Which is the correct matching of root/tuber crop varieties (Tapioca, Yam, Potato, Sweet potato)?", options: ["A) Tapioca–Sree Sahya; Yam–Sree Roopa; Potato–Sree Nandini; Sweet potato–Kurfi Chandhan", "B) Random pairing", "C) None", "D) All wrong"], ans: 0 },
+      { id: 105, q: "To stimulate female flower production, Ethrel 250 ppm is sprayed starting 15 days after sowing as:", options: ["A) 4 sprays at 7-day intervals", "B) 1 spray only", "C) Daily spray", "D) Root drench"], ans: 0 },
+      { id: 106, q: "Which statements regarding seed maturity indices are correct?", options: ["A) All are correct", "B) 1 only", "C) 2 only", "D) None"], ans: 0 },
+      { id: 107, q: "Is isolation distance requirement generally greater in seed certification for cross-pollinated crops?", options: ["A) Yes, to prevent genetic contamination from foreign pollen", "B) No", "C) Equal", "D) Smaller"], ans: 0 },
+      { id: 108, q: "Plant emasculation specifically involves the surgical removal of:", options: ["A) Stamens / anthers before pollen shedding", "B) Pistil", "C) Petals", "D) Roots"], ans: 0 },
+      { id: 109, q: "What is the correct hierarchical sequence of the seed multiplication chain?", options: ["A) Nucleus → Breeder → Foundation → Certified", "B) Certified → Foundation → Breeder", "C) Foundation → Nucleus → Certified", "D) Random"], ans: 0 },
+      { id: 110, q: "Which statement regarding sponge gourd is correct?", options: ["A) Pusa Chikni is an early, smooth-fruited popular variety of sponge gourd", "B) It is a root crop", "C) Grown in winter only", "D) Seedless"], ans: 0 },
+      { id: 111, q: "For a standard five-member family, does a 1-cent kitchen garden supply all required vegetables?", options: ["A) Assertion is false; Reason is true (it supplements but doesn't supply 100% year-round)", "B) Both true", "C) Both false", "D) A true, R false"], ans: 0 },
+      { id: 112, q: "What is the recommended seed rate for hybrid bhendi cultivation per hectare?", options: ["A) 2.5 kg/ha", "B) 10 kg/ha", "C) 25 kg/ha", "D) 1 kg/ha"], ans: 0 },
+      { id: 113, q: "Leaf senescence, yellowing and shedding, accompanied by surface soil cracking, are major maturity indices for:", options: ["A) Tapioca (Cassava)", "B) Tomato", "C) Onion", "D) Cabbage"], ans: 0 },
+      { id: 114, q: "What is the estimated approximate percentage of post-harvest losses in perishable vegetables in India?", options: ["A) 25–50%", "B) 1%", "C) 5%", "D) 90%"], ans: 0 },
+      { id: 115, q: "Based on floral morphology and style length, cultivated brinjal varieties are grouped into how many types?", options: ["A) Four types (long styled, medium, pseudo-short, true short)", "B) Two", "C) Six", "D) Ten"], ans: 0 },
+      { id: 116, q: "In which historical year was the first commercial F₁ hybrid tomato available in India?", options: ["A) 1973", "B) 1950", "C) 1990", "D) 2005"], ans: 0 },
+      { id: 117, q: "When was the Central Potato Research Institute (CPRI) established at Simla?", options: ["A) 1949", "B) 1935", "C) 1965", "D) 1980"], ans: 0 },
+      { id: 118, q: "Reliable maturity indices for harvesting ripe watermelon include:", options: ["A) Red internal flesh, ≥10% TSS, and a dull muffled sound when tapped", "B) Hollow sound", "C) Yellow skin", "D) Leaf drop"], ans: 0 },
+      { id: 119, q: "Low storage temperatures in potatoes promote the excessive enzymatic conversion of starch into:", options: ["A) Reducing sugars (sweetening)", "B) Protein", "C) Oil", "D) Cellulose"], ans: 0 },
+      { id: 120, q: "Perennial drumstick (moringa) types are commercially propagated through:", options: ["A) Hardwood stem cuttings", "B) True seeds", "C) Air layering", "D) Tissue culture"], ans: 0 },
+      { id: 121, q: "Indian Cassava Mosaic Virus (ICMV) is transmitted by the insect vector:", options: ["A) Whitefly (Bemisia tabaci)", "B) Aphid", "C) Thrips", "D) Jassid"], ans: 0 },
+      { id: 122, q: "Black rot disease of cruciferous crops (cabbage/cauliflower) is caused by a:", options: ["A) Bacterium (Xanthomonas campestris pv. campestris)", "B) Fungus", "C) Virus", "D) Nematode"], ans: 0 },
+      { id: 123, q: "Physiological forking in carrot roots is primarily caused by:", options: ["A) Hard compacted soil layers or obstacles", "B) Excess nitrogen", "C) High water", "D) Frost"], ans: 0 },
+      { id: 124, q: "What is the prescribed isolation distance for foundation seed production of cauliflower?", options: ["A) 1600 m", "B) 100 m", "C) 10 m", "D) 1 m"], ans: 0 },
+      { id: 125, q: "Spraying ______ at the 60th and 90th day after planting benefits fruit set and retention in chillies.", options: ["A) NAA @ 10 ppm", "B) GA₃ @ 500 ppm", "C) Urea 5%", "D) 2,4-D 100 ppm"], ans: 0 },
+      { id: 126, q: "Which chemical plant growth regulator is commonly used to induce parthenocarpy and seedless fruit development in brinjal?", options: ["A) 2,4-D (at low concentrations)", "B) Ethrel", "C) ABA", "D) Cytokinin"], ans: 0 },
+      { id: 127, q: "In often cross-pollinated crop species, the natural outcrossing frequency typically ranges between:", options: ["A) 5–30%", "B) 0–1%", "C) 50–80%", "D) 100%"], ans: 0 },
+      { id: 128, q: "Cytoplasmic Male Sterility (CMS) is particularly advantageous and utilized for hybrid seed production when:", options: ["A) The vegetative part or flower/fruit part without seeds is of economic value", "B) Seeds are the main economic part", "C) Roots are harvested", "D) Never"], ans: 0 },
+      { id: 129, q: "Which of the following are classified as perennial vegetable crops?", options: ["A) Chow-chow, Coccinia and Drumstick", "B) Tomato and Potato", "C) Cabbage and Lettuce", "D) Carrot and Radish"], ans: 0 },
+      { id: 130, q: "The commercial cultivation and production of out-of-season vegetables under greenhouse/protected structures is called:", options: ["A) Vegetable forcing", "B) Truck gardening", "C) Market gardening", "D) Fallowing"], ans: 0 },
+      { id: 131, q: "Which plant nutrient deficiency is most prevalent in acidic soils where cole crops (cabbage/cauliflower) are cultivated?", options: ["A) Molybdenum (Mo)", "B) Nitrogen", "C) Potassium", "D) Calcium"], ans: 0 },
+      { id: 132, q: "Internal “black heart” physiological disorder in stored potatoes is caused by:", options: ["A) Oxygen starvation / lack of adequate ventilation", "B) Frost", "C) Excess light", "D) High humidity"], ans: 0 },
+      { id: 133, q: "The famous “Seed Plot Technique” for producing virus-free seed potatoes was developed by:", options: ["A) Dr. Pushkarnath", "B) Borlaug", "C) Swaminathan", "D) Raman"], ans: 0 },
+      { id: 134, q: "Cultivated bhendi (Abelmoschus esculentus) has a somatic chromosome number of 2n = 130 and is genetically an:", options: ["A) Amphidiploid (allopolyploid)", "B) Haploid", "C) Autotriploid", "D) Monoploid"], ans: 0 },
+      { id: 135, q: "Sweet potato (Ipomoea batatas) exhibits what photoperiodic response flowering habit?", options: ["A) Short-day plant", "B) Long-day plant", "C) Day-neutral", "D) Obligate alpine"], ans: 0 },
+      { id: 136, q: "Which vegetable is generally not recommended or suitable for commercial production inside simple polyhouses?", options: ["A) Brinjal (due to heavy insect/mite build-up)", "B) Cucumber", "C) Tomato", "D) Capsicum"], ans: 0 },
+      { id: 137, q: "True Potato Seed (TPS) technology was primarily developed and promoted to overcome:", options: ["A) Heavy seed tuber costs and viral disease transmission", "B) Soil erosion", "C) Late blight", "D) Low starch"], ans: 0 },
+      { id: 138, q: "What is the primary mode of pollination in amaranthus greens?", options: ["A) Anemophilous (wind-pollinated)", "B) Entomophilous (insect)", "C) Hydrophilous", "D) Cleistogamous"], ans: 0 },
+      { id: 139, q: "Which pair is correctly matched regarding root/tuber storage organs?", options: ["A) Sweet potato – Tuberous root", "B) Potato – Tuberous root", "C) Tapioca – True stem", "D) Yam – Leaf"], ans: 0 },
+      { id: 140, q: "Gynoecious sex lines (all-female flowers) are commercially exploited for hybrid seed production in:", options: ["A) Cucumber", "B) Tomato", "C) Brinjal", "D) Chilli"], ans: 0 },
+      { id: 141, q: "Intensive commercial vegetable production near urban centres for daily local markets is called:", options: ["A) Market gardening / Truck gardening", "B) Subsistence farming", "C) Shifting cultivation", "D) Forestry"], ans: 0 },
+      { id: 142, q: "Premature bolting (flowering stalk elongation before head formation) in cabbage is triggered by:", options: ["A) Prolonged exposure to low cold temperatures (vernalization)", "B) High heat", "C) Drought", "D) Nitrogen excess"], ans: 0 },
+      { id: 143, q: "Blossom-end rot (BER) in tomatoes can be effectively prevented and corrected by foliar sprays of:", options: ["A) 0.5% Calcium chloride", "B) Urea", "C) Potassium nitrate", "D) Copper sulphate"], ans: 0 },
+      { id: 144, q: "Pinking discoloration disorder in cauliflower curd is caused by the synthesis of:", options: ["A) Anthocyanin pigments", "B) Chlorophyll", "C) Carotene", "D) Melanin"], ans: 0 },
+      { id: 145, q: "Cultivated brinjal (Solanum melongena) exhibits what photoperiodic flowering habit?", options: ["A) Day-neutral plant", "B) Obligate short-day", "C) Obligate long-day", "D) Strict biennial"], ans: 0 },
+      { id: 146, q: "Which radish variety is noted for field resistance against white rust caused by Albugo candida?", options: ["A) Pusa Reshmi / Arka Nishant", "B) Japanese White", "C) Red Forty", "D) Scarlet Globe"], ans: 0 },
+      { id: 147, q: "Internal pithiness, spongy core, and brown heart disorders are common in over-mature roots of:", options: ["A) Radish", "B) Carrot", "C) Beetroot", "D) Turnip"], ans: 0 },
+      { id: 148, q: "Short-day environmental conditions induce a higher proportion of female flowers in:", options: ["A) Bitter gourd (and many cucurbits)", "B) Tomato", "C) Cabbage", "D) Radish"], ans: 0 },
+      { id: 149, q: "What is the botanical vegetable name and variety classification of broccoli?", options: ["A) Brassica oleracea var. italica", "B) B. oleracea var. botrytis", "C) B. oleracea var. capitata", "D) B. rapa"], ans: 0 },
+      { id: 150, q: "Which vegetable crop is an exceptional natural source of dietary iodine, useful in preventing goitre?", options: ["A) Bhendi (Okra)", "B) Tomato", "C) Cabbage", "D) Potato"], ans: 0 },
+      { id: 151, q: "Which Indian state holds the leading position in total onion acreage and production?", options: ["A) Maharashtra", "B) Karnataka", "C) Madhya Pradesh", "D) Gujarat"], ans: 0 },
+      { id: 152, q: "Lassalgaon in Maharashtra is famous for housing Asia's biggest ______ market.", options: ["A) Onion market", "B) Potato market", "C) Tomato market", "D) Apple market"], ans: 0 },
+      { id: 153, q: "Where is the National Research Centre for Onion and Garlic (NRCOG) located?", options: ["A) Nashik, Maharashtra", "B) Karnal, Haryana", "C) Junagadh, Gujarat", "D) Solan, HP"], ans: 0 },
+      { id: 154, q: "In what historical year was the National Research Centre for Onion and Garlic (NRCOG) established?", options: ["A) 1994", "B) 1975", "C) 2005", "D) 1980"], ans: 0 },
+      { id: 155, q: "What does the developmental agricultural acronym NHRDF stand for?", options: ["A) National Horticultural Research and Development Foundation", "B) National Horticulture Rural Development Fund", "C) New Horticulture Research and Distribution Federation", "D) National Hybrid Rice Development Facility"], ans: 0 },
+      { id: 156, q: "What chemical compound is responsible for the characteristic yellow colour of outer dry onion bulb scales?", options: ["A) Quercetin (flavonoid pigment)", "B) Anthocyanin", "C) Carotene", "D) Capsanthin"], ans: 0 },
+      { id: 157, q: "Which phenolic compound acts as a natural antifungal and disease-resistance factor in colored onions?", options: ["A) Catechol (and protocatechuic acid)", "B) Phenol", "C) Tannin", "D) Caffeine"], ans: 0 },
+      { id: 158, q: "Is chow-chow (Sechium edule) classified as a perennial vegetable crop?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 159, q: "Is Coccinia grandis (little gourd) classified as a perennial vegetable crop?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 160, q: "Is drumstick (Moringa oleifera) classified as a perennial vegetable tree crop?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 161, q: "Is annual spinach (Spinacia oleracea) classified as a long-lived perennial vegetable?", options: ["A) No, it is an annual leafy green", "B) Yes", "C) Semi-perennial", "D) Tree"], ans: 0 },
+      { id: 162, q: "What is the specialized “Mukibat” technique used in cassava cultivation?", options: ["A) Grafting tree cassava (Manihot glaziovii) onto common cassava rootstock (M. esculenta) to boost yields", "B) Root pruning", "C) Bud chipping", "D) Tissue culture"], ans: 0 },
+      { id: 163, q: "Which insect vector transmits Cassava Mosaic Disease (CMD)?", options: ["A) Whitefly (Bemisia tabaci)", "B) Aphid", "C) Thrips", "D) Mealybug"], ans: 0 },
+      { id: 164, q: "Which cassava hybrid variety is famously cultivated around Salem for industrial sago and starch production?", options: ["A) H-226", "B) Sree Jaya", "C) Vellayani", "D) M-4"], ans: 0 },
+      { id: 165, q: "What are the primary visible field maturity indices of cassava (tapioca)?", options: ["A) Senescence and yellowing/dropping of leaves followed by surface soil cracking around tubers", "B) Flowering", "C) Stem drying", "D) Tuber sprouting"], ans: 0 },
+      { id: 166, q: "Why are sweet-potato vines sometimes physically lifted or turned on the 50th and 75th days after planting?", options: ["A) To prevent secondary rooting at nodes and direct all energy into primary tuber enlargement", "B) To kill the crop", "C) To promote weeds", "D) To dry soil"], ans: 0 },
+      { id: 167, q: "What is the agronomic effect of lifting sweet-potato vines on nodal rooting?", options: ["A) It prevents root formation at upper vine nodes", "B) It encourages more tubers", "C) It stops growth", "D) It rots stems"], ans: 0 },
+      { id: 168, q: "Does gherkin (Cucumis anguria) enjoy strong export and industrial processing demand?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 169, q: "Has contract farming proven highly successful for commercial gherkin production in India?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 170, q: "Can perennial vegetable crops be permanently established in dedicated plots of a home kitchen garden?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 171, q: "Can trailing gourds and climbing vegetables be successfully cultivated along kitchen garden fences?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 172, q: "Can climbing gourds be trained over overhead bowers constructed above compost pits?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 173, q: "Can the side borders of kitchen garden pathways be efficiently utilised for shallow-rooted crops like onion and coriander?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 174, q: "What is the standard botanical family of true spinach (Spinacia oleracea)?", options: ["A) Chenopodiaceae (Amaranthaceae)", "B) Asteraceae", "C) Solanaceae", "D) Brassicaceae"], ans: 0 },
+      { id: 175, q: "To which botanical family does the multivitamin green (Chekurmanis) belong?", options: ["A) Phyllanthaceae / Euphorbiaceae", "B) Asteraceae", "C) Poaceae", "D) Fabaceae"], ans: 0 },
+      { id: 176, q: "What is the correct botanical family of asparagus according to standard systematic keys?", options: ["A) Asparagaceae (distinguished from Asteraceae)", "B) Asteraceae", "C) Solanaceae", "D) Cucurbitaceae"], ans: 0 },
+      { id: 177, q: "To which botanical family does the winged bean (Psophocarpus tetragonolobus) belong?", options: ["A) Fabaceae (Leguminosae)", "B) Solanaceae", "C) Brassicaceae", "D) Liliaceae"], ans: 0 },
+      { id: 178, q: "What critical pruning / training agrotechnique is mandatory for annual moringa production?", options: ["A) Pinching / tip removal to encourage lateral bushiness and heavy pod bearing", "B) Complete stumping", "C) Zero pruning", "D) Root pruning"], ans: 0 },
+      { id: 179, q: "Is heavy annual pruning or stumping done in the first establishment year of chow-chow?", options: ["A) No, chow-chow is a perennial vine trained on permanent pandals", "B) Yes", "C) Weekly", "D) Monthly"], ans: 0 },
+      { id: 180, q: "Is a permanent overhead pandal structure essential for cultivating Lab Lab bean variety CO-6?", options: ["A) No, CO-6 is a bushy erect field lab-lab type", "B) Yes", "C) Mandatory", "D) Only in winter"], ans: 0 },
+      { id: 181, q: "What is the botanical species name of snake gourd?", options: ["A) Trichosanthes cucumerina / T. anguina", "B) Luffa acutangula", "C) Lagenaria siceraria", "D) Momordica charantia"], ans: 0 },
+      { id: 182, q: "What is the botanical species name of ridge gourd?", options: ["A) Luffa acutangula", "B) L. cylindrica", "C) Cucumis sativus", "D) Benincasa hispida"], ans: 0 },
+      { id: 183, q: "What is the botanical species name of bottle gourd?", options: ["A) Lagenaria siceraria", "B) Cucurbita pepo", "C) Luffa acutangula", "D) Momordica charantia"], ans: 0 },
+      { id: 184, q: "What is the botanical species name of bitter gourd cited in regional source keys?", options: ["A) Momordica charantia (or Cucumis sativus in specific typo entries)", "B) Lagenaria siceraria", "C) Benincasa hispida", "D) Luffa cylindrica"], ans: 0 },
+      { id: 185, q: "Is chow-chow vegetatively propagated using a perennial sprouted whole fruit?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 186, q: "Is chow-chow exceptionally rich in nutritive value and culinary utility among cucurbits?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 187, q: "Do the fleshy underground root systems of mature chow-chow vines develop into starchy tuberous roots?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 188, q: "Is chow-chow commercially propagated primarily through dry true seeds?", options: ["A) No, it is propagated using the whole sprouted viviparous fruit", "B) Yes", "C) By leaves", "D) By stems"], ans: 0 },
+      { id: 189, q: "Which improved variety is prominently associated with cluster bean (guar) cultivation?", options: ["A) Rajini (or Pusa Navbahar)", "B) Arka Anoop", "C) Pusa Sadabahar", "D) CO 1"], ans: 0 },
+      { id: 190, q: "Which improved variety is prominently associated with French bean cultivation?", options: ["A) Arka Anoop (or Pusa Parvati)", "B) Rajini", "C) CO 2", "D) Kashi Nandini"], ans: 0 },
+      { id: 191, q: "Which improved variety is prominently associated with Dolichos bean (Avarai)?", options: ["A) Pusa Mausam (or CO 1 / CO 2)", "B) Arka Anoop", "C) Rajini", "D) Arka Vijay"], ans: 0 },
+      { id: 192, q: "Which improved variety is prominently associated with garden pea cultivation?", options: ["A) Arka Priya / Arka Vijay (or Arkel / Bonneville)", "B) Rajini", "C) Pusa Navbahar", "D) CO 6"], ans: 0 },
+      { id: 193, q: "Which root/tuber variety pairing is correctly matched (Tapioca–Sree Sahya, Yam–Sree Roopa, Potato–Sree Nandini, Sweet potato–Kurfi Chandhan)?", options: ["A) Yes, all matched correctly in source option sets", "B) All incorrect", "C) None", "D) Random"], ans: 0 },
+      { id: 194, q: "How many days after successful anthesis/flowering do tomato fruits and seeds reach full maturity?", options: ["A) 30–35 days", "B) 10 days", "C) 90 days", "D) 120 days"], ans: 0 },
+      { id: 195, q: "How many days after flowering do brinjal fruits and true seeds mature?", options: ["A) 40–45 days", "B) 10 days", "C) 15 days", "D) 100 days"], ans: 0 },
+      { id: 196, q: "How many days after flowering do chilli pods and seeds mature?", options: ["A) 40–45 days", "B) 10 days", "C) 20 days", "D) 120 days"], ans: 0 },
+      { id: 197, q: "How many weeks after flowering do pumpkin fruits and seeds reach physiological maturity?", options: ["A) Approx 20 weeks", "B) 2 weeks", "C) 4 weeks", "D) 50 weeks"], ans: 0 },
+      { id: 198, q: "What is designated as the very first foundational stage in the certified seed multiplication chain?", options: ["A) Nucleus seed", "B) Breeder seed", "C) Foundation seed", "D) Certified seed"], ans: 0 },
+      { id: 199, q: "Which elite seed class is produced directly from and maintained under the direct supervision of the originating plant breeder?", options: ["A) Breeder seed", "B) Foundation seed", "C) Certified seed", "D) Truthfully labelled seed"], ans: 0 },
+      { id: 200, q: "What seed class is generated as the direct progeny of breeder seed, carrying a golden yellow certification tag?", options: ["A) Foundation seed", "B) Certified seed", "C) Nucleus seed", "D) Truthfully labelled seed"], ans: 0 },
+      { id: 201, q: "What is the final commercial seed class distributed to farmers for raising general crop production, carrying an azure blue tag?", options: ["A) Certified seed", "B) Breeder seed", "C) Foundation seed", "D) Nucleus seed"], ans: 0 },
+      { id: 202, q: "Is Pusa Chikni recognized as an early, prolific, smooth-cylindrical fruited variety of sponge gourd (Luffa cylindrica)?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 203, q: "Does a 1-cent kitchen garden provide 100% of the annual vegetable nutritional needs for a 5-member family?", options: ["A) No, it serves as a valuable supplementary fresh source, but assertion is false while reason is true", "B) Yes, 100%", "C) Both true", "D) Both false"], ans: 0 },
+      { id: 204, q: "Should tall perennial vegetable crops and trees be established along the northern or rear boundary of a kitchen garden?", options: ["A) Yes, to prevent shading smaller vegetable beds", "B) No, in the middle", "C) On pathways", "D) Inside houses"], ans: 0 },
+      { id: 205, q: "What is the primary edible storage organ of the common potato (Solanum tuberosum)?", options: ["A) Modified underground stem tuber", "B) Tuberous root", "C) Corm", "D) Rhizome"], ans: 0 },
+      { id: 206, q: "What is the primary edible storage organ of sweet potato (Ipomoea batatas)?", options: ["A) Modified adventitious tuberous root", "B) Stem tuber", "C) Bulb", "D) Corm"], ans: 0 },
+      { id: 207, q: "What is the primary edible storage organ of cassava / tapioca (Manihot esculenta)?", options: ["A) True root tuber (tuberous root)", "B) Stem tuber", "C) Bulb", "D) Rhizome"], ans: 0 },
+      { id: 208, q: "What is the primary edible storage organ of colocasia (taro)?", options: ["A) Corm (underground swollen stem base)", "B) True root", "C) True stem", "D) Tuber"], ans: 0 },
+      { id: 209, q: "Which vegetable crop is propagated commercially using true true botanical seeds?", options: ["A) Tomato / Chilli / Bhendi (as opposed to vegetative root crops)", "B) Potato tubers", "C) Tapioca setts", "D) Sweet potato vines"], ans: 0 },
+      { id: 210, q: "What is the primary commercial propagation material for ginger and turmeric?", options: ["A) Rhizomes", "B) True seeds", "C) Tubers", "D) Bulbs"], ans: 0 },
+      { id: 211, q: "What is the primary commercial propagation material for gladiolus and crocus?", options: ["A) Corms", "B) Bulbs", "C) Rhizomes", "D) Tubers"], ans: 0 },
+      { id: 212, q: "What is the primary commercial propagation material for onion and garlic?", options: ["A) Bulbs / cloves", "B) Rhizomes", "C) Tubers", "D) Corms"], ans: 0 }
+    ];
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(212, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 212) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Olericulture, Propagation, and Crop Physiology.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific vegetable varieties, propagation methods, and physiological disorders.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Horticulture recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+
+</html>

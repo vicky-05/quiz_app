@@ -1,0 +1,1308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overall Questions Test 9 — Horticulture, Post-Harvest, Extension & Economics Master Exam (200 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next,
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select,
+    .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Overall Questions Test 9 Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Overall Questions Test 9:
+        Horticulture, Post-Harvest, Extension & Economics (200 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–200)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="200">All Questions (200 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 200)</label>
+          <input type="number" id="custom-count-input" min="1" max="200" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">200 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#128221;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Overall Part 9</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#128184;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Extension & Economics</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 200</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">03:20:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1601, q: "For how many consecutive years can a rose plantation economically produce commercial cut flowers?", options: ["A) Up to 5 years", "B) 20 years", "C) 50 years", "D) 1 year"], ans: 0 },
+      { id: 1602, q: "What is the standard commercial method of vegetative propagation practiced for roses?", options: ["A) Air layering", "B) True seeds", "C) “T” budding", "D) Hardwood cuttings"], ans: 2 },
+      { id: 1603, q: "Floribunda roses are an improved hybrid cross derived from:", options: ["A) Rambler × Climber", "B) Wild species", "C) Hybrid tea × Dwarf polyantha", "D) R. foetida × Mini"], ans: 2 },
+      { id: 1604, q: "Which wild rose species is famously recognized for its natural yellow flower coloration?", options: ["A) R. indica", "B) Rosa foetida", "C) R. damascena", "D) R. centifolia"], ans: 1 },
+      { id: 1605, q: "Which improved rose variety is well known for being naturally thornless?", options: ["A) Super Star", "B) Chitra", "C) Crimson Glory", "D) Queen Elizabeth"], ans: 1 },
+      { id: 1606, q: "What is the typical inflorescence bearing habit characteristic of Hybrid Tea roses?", options: ["A) Massive clusters", "B) Single-borne", "C) Ground crawling", "D) Root clusters"], ans: 1 },
+      { id: 1607, q: "Crimson Glory and Super Star are classic commercial varieties belonging to which rose group?", options: ["A) Floribundas", "B) Ramblers", "C) Miniatures", "D) Hybrid tea"], ans: 3 },
+      { id: 1608, q: "Which rose group is characterized by bearing large, attractive flowers clustered together?", options: ["A) Floribundas", "B) Miniature", "C) Hybrid tea", "D) Climber"], ans: 0 },
+      { id: 1609, q: "What is the natural botanical life growth habit of chrysanthemum plants?", options: ["A) Annual weeds", "B) Perennial", "C) Woody trees", "D) Aquatic ferns"], ans: 1 },
+      { id: 1610, q: "What are the standard commercial methods of vegetative propagation for chrysanthemums?", options: ["A) True seeds", "B) Bulbs", "C) Root suckers and terminal cuttings", "D) Tubers"], ans: 2 },
+      { id: 1611, q: "What is a “standard” chrysanthemum training style designed to produce?", options: ["A) Spray flowers", "B) A single bloom on a branch", "C) Ground cover", "D) Zero flowers"], ans: 1 },
+      { id: 1612, q: "Which are recognized off-season flowering varieties of chrysanthemum?", options: ["A) Super Star", "B) Haldi Ghati, Himansu, Jaya and Jwala", "C) Queen Elizabeth", "D) Chitra"], ans: 1 },
+      { id: 1613, q: "What is the standard recommended nursery seed rate for sowing marigold per hectare?", options: ["A) 20 kg/ha", "B) 100 kg/ha", "C) 100 g/ha", "D) 1.2–1.5 kg/ha"], ans: 3 },
+      { id: 1614, q: "What is the standard commercial method of vegetative propagation for gladiolus?", options: ["A) True seeds", "B) Corms", "C) Stem cuttings", "D) Air layering"], ans: 1 },
+      { id: 1615, q: "How are annual carnation (Dianthus) plants commercially propagated?", options: ["A) Corms", "B) Seeds", "C) Tubers", "D) Bulbs"], ans: 1 },
+      { id: 1616, q: "What flower species is traditionally and botanically known as “Calendula” (true marigold)?", options: ["A) Tagetes erecta", "B) Chrysanthemum", "C) Tagetes patula", "D) Calendulas"], ans: 3 },
+      { id: 1617, q: "Golden Age and Crown of Gold are improved commercial varieties of which marigold species?", options: ["A) French marigold", "B) African marigold", "C) Zinnia", "D) Calendula"], ans: 1 },
+      { id: 1618, q: "How are tuberose plants commercially propagated by growers?", options: ["A) Tubers", "B) True seeds", "C) Air layering", "D) Hardwood cuttings"], ans: 0 },
+      { id: 1619, q: "Queen Elizabeth is a world-famous award-winning variety belonging to which rose class?", options: ["A) Hybrid tea", "B) Climber", "C) Miniature", "D) Floribundas rose"], ans: 3 },
+      { id: 1620, q: "What is the botanical binomial name of the hollyhock ornamental plant?", options: ["A) Rosa indica", "B) Althaea rosea", "C) Dahlia pinnata", "D) Tagetes patula"], ans: 1 },
+      { id: 1621, q: "What are the common flower color varieties found in traditional garden chrysanthemums?", options: ["A) Yellow and white", "B) Blue only", "C) Transparent", "D) Jet black"], ans: 0 },
+      { id: 1622, q: "Who is universally honored and celebrated as the historical “Father of Food Preservation”?", options: ["A) Louis Pasteur", "B) Liebig", "C) Nicolas Apart", "D) Nicholas Nicolas"], ans: 2 },
+      { id: 1623, q: "What thermal food pasteurization treatment parameters involve heating milk to 72°C for 15 seconds or 63°C for 30 minutes?", options: ["A) Sterilization", "B) Pasteurization", "C) Freezing", "D) Drying"], ans: 1 },
+      { id: 1624, q: "How are delicate fruit juices predominantly preserved for long-term commercial storage?", options: ["A) Freezing", "B) Open sun baking", "C) Dehydration", "D) Salting"], ans: 0 },
+      { id: 1625, q: "Which chemical preservative is standardly added to retain original color and prevent spoilage in acidic beverages?", options: ["A) Sulphur dioxide", "B) Urea", "C) Common salt", "D) Benzoic acid"], ans: 3 },
+      { id: 1626, q: "What post-harvest preservation process involves the complete removal of moisture from food materials?", options: ["A) Freezing", "B) Dehydration", "C) Pickling", "D) Canning"], ans: 1 },
+      { id: 1627, q: "What is the primary industrial objective of thermal food processing (heat processing)?", options: ["A) Heat processing for killing microorganisms", "B) Adding sugar", "C) Freezing", "D) Coloring"], ans: 0 },
+      { id: 1628, q: "What minimum sugar concentration percentage is legally required for preserving high-sugar fruit preserves and jams?", options: ["A) 10%", "B) Zero", "C) 50%", "D) 66%"], ans: 3 },
+      { id: 1629, q: "What salt concentration percentage is sufficient to preserve most raw vegetable and food products in brine pickles?", options: ["A) 1%", "B) 15–25%", "C) Zero", "D) 50%"], ans: 1 },
+      { id: 1630, q: "What preliminary thermal scalding process is executed before freezing, drying, or canning raw vegetables?", options: ["A) Blanching", "B) Boiling", "C) Freezing", "D) Frying"], ans: 0 },
+      { id: 1631, q: "What is the industrial peeling of fruit and vegetable skins utilizing chemical solutions called?", options: ["A) Steam peeling", "B) Mechanical peeling", "C) Hand peeling", "D) Lye peeling"], ans: 3 },
+      { id: 1632, q: "What is an aqueous solution prepared by dissolving salt in water called?", options: ["A) Syrup", "B) Brine solution", "C) Acid wash", "D) Buffer"], ans: 1 },
+      { id: 1633, q: "What is a commercial fruit beverage containing at least 10% fruit juice and 10% soluble solids called?", options: ["A) Ready-To-Serve (RTS)", "B) Squash", "C) Cordial", "D) Nectar"], ans: 0 },
+      { id: 1634, q: "What fruit beverage category is commonly prepared and formulated from pulpy fruits like mango, papaya, bel, and aonla?", options: ["A) RTS", "B) Squash", "C) Syrup", "D) Nectar"], ans: 3 },
+      { id: 1635, q: "What are the standard compositional standards for a commercial fruit “Squash”?", options: ["A) 10% juice, 10% TSS", "B) Pure water", "C) Squash (25% juice, 40% TSS)", "D) 5% juice"], ans: 2 },
+      { id: 1636, q: "How is harvested raw mango pulp traditionally preserved for industrial processing?", options: ["A) Sugar", "B) Freezing dry", "C) Sun baking", "D) Salting"], ans: 0 },
+      { id: 1637, q: "What is a concentrated fruit beverage that must be heavily diluted with water before serving called?", options: ["A) RTS", "B) Water", "C) Nectar", "D) Syrup"], ans: 3 },
+      { id: 1638, q: "What is the minimum legal Total Soluble Solids (TSS) percentage required for commercial fruit jam?", options: ["A) 10%", "B) Not <70%", "C) 100%", "D) 40%"], ans: 1 },
+      { id: 1639, q: "How is the Total Soluble Solids (TSS) percentage of boiling jam measured on the processing floor?", options: ["A) Hand refractometer", "B) pH meter", "C) Thermometer", "D) Lactometer"], ans: 0 },
+      { id: 1640, q: "What is a semi-solid transparent fruit confection prepared from pectin-containing fruit called?", options: ["A) Jam", "B) Preserve", "C) Marmalade", "D) Jelly"], ans: 3 },
+      { id: 1641, q: "At what optimum maturity stage should fruits be harvested specifically for making clear fruit jelly?", options: ["A) Overripe soft", "B) Firm ripe stage", "C) Rotten", "D) Green unripe"], ans: 1 },
+      { id: 1642, q: "What must be the ideal final acidic pH range of a properly set fruit jelly?", options: ["A) 3.2", "B) pH 7.0 neutral", "C) pH 1.0", "D) pH 10.0 alkaline"], ans: 0 },
+      { id: 1643, q: "What laboratory instrument is utilized to determine the pectin content/strength of fruit extract?", options: ["A) Refractometer", "B) Lactometer", "C) pH meter", "D) Jellimeter"], ans: 3 },
+      { id: 1644, q: "What are whole or sliced fruits / vegetables impregnated with cane sugar or glucose syrup called?", options: ["A) Jam", "B) Candied fruit or vegetable", "C) Sauce", "D) Pickle"], ans: 1 },
+      { id: 1645, q: "What is a thick smooth condiment prepared from strained pulp of fully ripe tomatoes after cooking called?", options: ["A) Tomato sauce/ketchup", "B) Soup", "C) Paste", "D) Puree"], ans: 0 },
+      { id: 1646, q: "What is the minimum legal Total Soluble Solids (TSS) percentage required in commercial tomato sauce/ketchup?", options: ["A) 5%", "B) Zero", "C) 80%", "D) 30%"], ans: 3 },
+      { id: 1647, q: "What salt concentration percentage is maintained inside vegetable pickles?", options: ["A) 1%", "B) 8–10%", "C) Zero", "D) 50%"], ans: 1 },
+      { id: 1648, q: "What does the food research acronym CFTRI stand for?", options: ["A) Central Food Technological Research Institute, Mysore", "B) Central Fruit Technology Research Institute", "C) Central Farm Training Institute", "D) Council of Food Trade Research"], ans: 0 },
+      { id: 1649, q: "What is agricultural extension education defined as?", options: ["A) School teaching", "B) Marketing", "C) Research", "D) Educational process to bring desirable changes"], ans: 3 },
+      { id: 1650, q: "From which classical language root words is the word “Extension” derived?", options: ["A) Greek", "B) Latin word", "C) French", "D) Sanskrit"], ans: 1 },
+      { id: 1651, q: "In which country were organized modern agricultural extension activities first initiated?", options: ["A) USA", "B) India", "C) Russia", "D) China"], ans: 0 },
+      { id: 1652, q: "In what historical year and country did the formal term “Extension education” originate?", options: ["A) USA, 1914", "B) France, 1800", "C) India, 1952", "D) England (1866)"], ans: 3 },
+      { id: 1653, q: "Where and when was the term “Extension education” first used by a university?", options: ["A) Oxford", "B) TNAU", "C) Cambridge University, England (1873)", "D) Harvard, USA"], ans: 2 },
+      { id: 1654, q: "Who is universally recognized and celebrated as the Father of Extension Education in India?", options: ["A) J.P. Leagans", "B) Dr. Seeman A. Knapp", "C) Brayne", "D) Albert Mayer"], ans: 0 },
+      { id: 1655, q: "How is extension education scientifically and professionally classified?", options: ["A) Pure science only", "B) Business", "C) Pure art", "D) Both Science and Art"], ans: 3 },
+      { id: 1656, q: "What is recognized as the foundational core working principle of extension education?", options: ["A) Give free aid", "B) Help those who help themselves", "C) Do it for them", "D) Force adoption"], ans: 1 },
+      { id: 1657, q: "What is the right modern democratic approach of agricultural extension?", options: ["A) Bottom-up approach", "B) Top-down diktat", "C) Arbitrary", "D) Bureaucratic"], ans: 0 },
+      { id: 1658, q: "What is the classical etymological meaning of the Latin root word “EDUCARE”?", options: ["A) To teach", "B) To test", "C) To read", "D) To bring up physically or mentally"], ans: 3 },
+      { id: 1659, q: "What is a formal written statement of situation, objectives, problems, and solutions called?", options: ["A) Syllabus", "B) Programme", "C) Census", "D) Tax form"], ans: 1 },
+      { id: 1660, q: "What is defined as the process by which human behaviour is modified?", options: ["A) Education", "B) Extension", "C) Propaganda", "D) Training"], ans: 0 },
+      { id: 1661, q: "How is agricultural extension education classified regarding schooling structures?", options: ["A) Formal primary school", "B) Technical lab", "C) University degree", "D) Informal education"], ans: 3 },
+      { id: 1662, q: "How is traditional school and college education classified?", options: ["A) Informal", "B) Formal education", "C) Adult literacy", "D) Extension"], ans: 1 },
+      { id: 1663, q: "Situation, objectives, teaching, evaluation, and reconsideration are steps of:", options: ["A) Extension education", "B) Plowing", "C) Threshing", "D) Harvesting"], ans: 0 },
+      { id: 1664, q: "Attention, interest, desire, conviction, action, and satisfaction are steps of:", options: ["A) Spraying", "B) Harvesting", "C) Plowing", "D) Extension teaching"], ans: 3 },
+      { id: 1665, q: "What is defined as understood information possessed by a person?", options: ["A) Attitude", "B) Knowledge", "C) Habit", "D) Skill"], ans: 1 },
+      { id: 1666, q: "What is the process of working with rural people to recognize problems and determine solutions called?", options: ["A) Audit", "B) Programme planning", "C) Policing", "D) Tax collection"], ans: 1 },
+      { id: 1667, q: "Who is historically celebrated as the Father of Rural Sociology?", options: ["A) Leagans", "B) August Comte", "C) Mayer", "D) Knapp"], ans: 1 },
+      { id: 1668, q: "What science is defined as the science of human behaviour?", options: ["A) Plant breeding", "B) Psychology", "C) Economics", "D) Soil science"], ans: 1 },
+      { id: 1669, q: "What is agricultural interchange of ideas between persons to achieve useful results called?", options: ["A) Communication", "B) One-way lecture", "C) Radio broadcast", "D) Printing books"], ans: 0 },
+      { id: 1670, q: "What medium establishes commonness between sender and receiver?", options: ["A) Distance", "B) Communication", "C) Silence", "D) Conflict"], ans: 1 },
+      { id: 1671, q: "How is communication structurally and functionally classified in extension models?", options: ["A) One-way broadcast", "B) Closed", "C) Two-way/double-way process", "D) Static"], ans: 2 },
+      { id: 1672, q: "What are the core components comprising Shannon and Weaver's (1949) communication model?", options: ["A) Source, Transmitter, Signal, Receiver, Destination", "B) Speaker, Speech, Audience", "C) Buyer, Seller", "D) Sender, Letter"], ans: 0 },
+      { id: 1673, q: "What are the core components comprising Berlo’s (1960) communication model?", options: ["A) Sender, Receiver", "B) Source, Encoder, Message, Signal, Decoder, Receiver", "C) Input, Output", "D) Speaker, Audience"], ans: 1 },
+      { id: 1674, q: "What are the core elements comprising Leagans Model (1963)?", options: ["A) Sender, Receiver", "B) Input, Output", "C) Communicator, Message, Channel, Treatment, Audience, Audience response", "D) Speaker, Speech"], ans: 2 },
+      { id: 1675, q: "Who originally proposed the classical ancient “Speaker–Speech–Audience” model?", options: ["A) Plato", "B) Aristotle", "C) Berlo", "D) Socrates"], ans: 1 },
+      { id: 1676, q: "What does “treatment of the message” refer to in communication strategy?", options: ["A) Medical treatment", "B) Specific way adopted to communicate a message effectively", "C) Seed dressing", "D) Pest spray"], ans: 1 },
+      { id: 1677, q: "What is the process by which an innovation is communicated through channels over time among members of a social system called?", options: ["A) Diffusion", "B) Adoption", "C) Marketing", "D) Propaganda"], ans: 0 },
+      { id: 1678, q: "What is a decision to continue full use of an innovation called?", options: ["A) Rejection", "B) Adoption", "C) Awareness", "D) Discontinuance"], ans: 1 },
+      { id: 1679, q: "What is the mental process from first hearing about an innovation to final adoption called?", options: ["A) Diffusion", "B) Teaching", "C) Marketing", "D) Adoption process"], ans: 3 },
+      { id: 1680, q: "What are the classic sequential stages comprising the individual adoption process?", options: ["A) Trial only", "B) Awareness, Interest, Evaluation, Trial, Adoption", "C) Rejection", "D) Action"], ans: 1 },
+      { id: 1681, q: "Which adoption stage involves attention with a sense of concern focused on an object?", options: ["A) Interest", "B) Awareness", "C) Adoption", "D) Trial"], ans: 0 },
+      { id: 1682, q: "Which adoption stage helps establish a “benchmark”?", options: ["A) Awareness", "B) Evaluation", "C) Adoption", "D) Interest"], ans: 1 },
+      { id: 1683, q: "Who are adventurous people who adopt immediately after getting knowledge and constitute 2.5% called?", options: ["A) Early adopters", "B) Innovators", "C) Laggards", "D) Majority"], ans: 1 },
+      { id: 1684, q: "What are people who adopt through local leaders and constitute 13.5% called?", options: ["A) Innovators", "B) Early adopters", "C) Majority", "D) Laggards"], ans: 1 },
+      { id: 1685, q: "What percentage of a social system do the “Early majority” category represent?", options: ["A) 13.5%", "B) 34%", "C) 2.5%", "D) 16%"], ans: 1 },
+      { id: 1686, q: "What are farmers who accept new practices very last called?", options: ["A) Early adopters", "B) Laggard (16%)", "C) Early majority", "D) Innovators"], ans: 1 },
+      { id: 1687, q: "What is the process by which an idea or innovation spreads called?", options: ["A) Adoption", "B) Diffusion", "C) Marketing", "D) Teaching"], ans: 1 },
+      { id: 1688, q: "What is process arranging situations to stimulate and guide learning activities defined as?", options: ["A) Lecturing", "B) Teaching", "C) Testing", "D) Reading"], ans: 1 },
+      { id: 1689, q: "What traditional teaching method uses dramatic theatrical plays?", options: ["A) Radio", "B) Drama", "C) Internet", "D) TV"], ans: 1 },
+      { id: 1690, q: "Who is recognized as the central element in a learning situation?", options: ["A) The teacher", "B) The learner", "C) The office", "D) The textbook"], ans: 1 },
+      { id: 1691, q: "What is a mental and/or physical reaction produced through seeing defined as?", options: ["A) Reading a book", "B) Learning experience", "C) Exam failure", "D) Sleeping"], ans: 1 },
+      { id: 1692, q: "How are extension teaching methods categorized based on contact scale?", options: ["A) Formal and informal", "B) Individual contact, Group contact, Mass contact", "C) Direct only", "D) Verbal and written"], ans: 1 },
+      { id: 1693, q: "Which teaching methods involve face-to-face contact between rural people and extension workers?", options: ["A) Mass media", "B) Individual contact", "C) Newspapers", "D) Radio"], ans: 1 },
+      { id: 1694, q: "Farm/home visits, office calls, telephone calls, personal letters and result demonstrations belong to:", options: ["A) Group contact", "B) Individual contact", "C) Public broadcast", "D) Mass media"], ans: 1 },
+      { id: 1695, q: "Which extension contact category contacts 20–30 rural people/farmers as a group?", options: ["A) Individual contact", "B) Group contact", "C) Private chat", "D) Mass contact"], ans: 1 },
+      { id: 1696, q: "Conferences, panel, symposium, discussion, meetings, workshops, field trips and tours belong to:", options: ["A) Individual contact", "B) Group contact", "C) Private letters", "D) Mass media"], ans: 1 },
+      { id: 1697, q: "Which communication media are utilized for mass contact?", options: ["A) Farm visit", "B) Radio, television, exhibitions, bulletins, leaflets, newsletters, circular letters, posters and pamphlets", "C) Personal letter", "D) Office call"], ans: 1 },
+      { id: 1698, q: "What is a sheet of paper with pictorial slogan used to attract mass attention to a single idea called?", options: ["A) Leaflet", "B) Poster", "C) Circular letter", "D) Bulletin"], ans: 1 },
+      { id: 1699, q: "What is recognized as the standard most common poster size?", options: ["A) 10 cm × 10 cm", "B) 50 cm × 75 cm", "C) 5 m × 10 m", "D) 2 m × 2 m"], ans: 1 },
+      { id: 1700, q: "What is a round-table group discussion called?", options: ["A) Symposium", "B) Panel", "C) Lecture", "D) Workshop"], ans: 1 },
+      { id: 1701, q: "What is the standard widely used pamphlet size?", options: ["A) 500 pages", "B) 12–24 pages", "C) 2000 pages", "D) 1 page"], ans: 1 },
+      { id: 1702, q: "What is published material on small paper containing brief information called?", options: ["A) Bulletin", "B) Leaflet", "C) Newspaper", "D) Textbook"], ans: 1 },
+      { id: 1703, q: "What is a paper folded once or twice containing detailed information on specific aspects called?", options: ["A) Leaflet", "B) Folder", "C) Banner", "D) Poster"], ans: 1 },
+      { id: 1704, q: "What is a small published book consisting of 24–48 pages called?", options: ["A) Leaflet", "B) Bulletin", "C) Poster", "D) Folder"], ans: 1 },
+      { id: 1705, q: "What are illustrated cards flashed sequentially to tell a complete story called?", options: ["A) Posters", "B) Flash cards", "C) Bulletins", "D) Charts"], ans: 1 },
+      { id: 1706, q: "What is the standard flash-card size for a group of 10–25 people?", options: ["A) 1 m × 1 m", "B) 10″ × 12″ (25 × 30 cm)", "C) 10 feet", "D) 2 inches"], ans: 1 },
+      { id: 1707, q: "What is a letter used to send the same information to many people simultaneously called?", options: ["A) Personal letter", "B) Circular letter", "C) Telegram", "D) Memo"], ans: 1 },
+      { id: 1708, q: "What are two or more brief talks presenting phases of a general topic called?", options: ["A) Panel", "B) Symposium", "C) Debate", "D) Workshop"], ans: 1 },
+      { id: 1709, q: "What is a systematic display of models, specimens, charts, real objects and informative materials called?", options: ["A) Museum", "B) Exhibition", "C) Laboratory", "D) Library"], ans: 1 },
+      { id: 1710, q: "What is the basic principle of demonstration?", options: ["A) Learning by reading alone", "B) Learning by seeing and doing", "C) Rote memorization", "D) Learning by hearing"], ans: 1 },
+      { id: 1711, q: "Who gave the concept of demonstration?", options: ["A) J.P. Leagans", "B) Dr. Seeman A. Knapp", "C) Brayne", "D) Albert Mayer"], ans: 1 },
+      { id: 1712, q: "How is a method demonstration classified regarding its duration and scope?", options: ["A) Multi-year trial", "B) Short-type demonstration", "C) Census", "D) Lab test"], ans: 1 },
+      { id: 1713, q: "What is historically acknowledged as the oldest form of teaching?", options: ["A) Radio", "B) Method demonstration", "C) Internet", "D) Television"], ans: 1 },
+      { id: 1714, q: "What is the main purpose of method demonstration?", options: ["A) To sell seed", "B) To provide skill", "C) To lecture", "D) To collect taxes"], ans: 1 },
+      { id: 1715, q: "What is the basic principle of method demonstration?", options: ["A) Learning by listening", "B) Learning by doing", "C) Sleeping", "D) Reading"], ans: 1 },
+      { id: 1716, q: "Who is celebrated as the Father of method demonstration?", options: ["A) J.P. Leagans", "B) Dr. Seeman A. Knapp", "C) Brayne", "D) Albert Mayer"], ans: 1 },
+      { id: 1717, q: "Which demonstration is used to show the method of sowing?", options: ["A) Result demonstration", "B) Method demonstration", "C) Radio", "D) Circular letter"], ans: 1 },
+      { id: 1718, q: "Which demonstration is used to compare old and new technologies?", options: ["A) Method demonstration", "B) Result demonstration", "C) Poster", "D) Lecture"], ans: 1 },
+      { id: 1719, q: "Which demonstration is used to improve skill, knowledge and attitude?", options: ["A) Result demonstration", "B) Method demonstration", "C) Lecture", "D) Entertainment"], ans: 0 },
+      { id: 1720, q: "Result demonstration is based on:", options: ["A) Hearing only", "B) Seeing by doing", "C) Memorizing", "D) Reading"], ans: 1 },
+      { id: 1721, q: "What are front-line demonstrations conducted by researchers on farmers' fields called?", options: ["A) Lab trials", "B) National demonstrations", "C) Book reviews", "D) Class lectures"], ans: 1 },
+      { id: 1722, q: "Which communication aids rely entirely on audio/sound?", options: ["A) Posters", "B) Audio aids (Tape recorder, radio, telephone)", "C) Slides", "D) Charts"], ans: 1 },
+      { id: 1723, q: "Which visual extension aids are classified as non-projected visuals?", options: ["A) Motion pictures", "B) Posters, charts, flashcards, bulletin board and photographs", "C) TV", "D) Slide projections"], ans: 1 },
+      { id: 1724, q: "How is television classified in audio-visual communication media?", options: ["A) Audio only", "B) Projected audio-visual aid", "C) Folk media", "D) Non-projected print"], ans: 1 },
+      { id: 1725, q: "What is recognized as the best medium for communicating with farmers and village people?", options: ["A) Radio", "B) Puppets", "C) Email", "D) Internet"], ans: 1 },
+      { id: 1726, q: "What are transparent pictures/photographs projected through a slide projector called?", options: ["A) Posters", "B) Slides", "C) Bulletins", "D) Leaflets"], ans: 1 },
+      { id: 1727, q: "What is universally recognized as the basic unit of civilization?", options: ["A) The Village", "B) Family", "C) The School", "D) The State"], ans: 1 },
+      { id: 1728, q: "What is recognized as the basic unit of rural society?", options: ["A) The District", "B) Village", "C) The Market", "D) The Nation"], ans: 1 },
+      { id: 1729, q: "What is a family consisting of husband, wife and children called?", options: ["A) Joint family", "B) Nuclear family", "C) Clan", "D) Extended family"], ans: 1 },
+      { id: 1730, q: "What are uniformly accepted ways of acting about social aspects of life called?", options: ["A) Laws", "B) Custom", "C) Fashions", "D) Fads"], ans: 1 },
+      { id: 1731, q: "What are uniformly accepted ways of thinking called?", options: ["A) Customs", "B) Tradition", "C) Rules", "D) Laws"], ans: 1 },
+      { id: 1732, q: "Who initiated the Cooperative Movement (1904)?", options: ["A) F.L. Brayne", "B) F. Nicholson", "C) Gandhi", "D) Albert Mayer"], ans: 1 },
+      { id: 1733, q: "With which project was the Village Level Worker concept related?", options: ["A) Gurgaon project", "B) Sri Niketan", "C) Nilokheri", "D) Etawah pilot"], ans: 1 },
+      { id: 1734, q: "Who started the Gurgaon Project (1920)?", options: ["A) F. Nicholson", "B) F.L. Brayne", "C) Spencer Hatch", "D) Albert Mayer"], ans: 1 },
+      { id: 1735, q: "Which project was associated with the Young Men Christian Association (1928)?", options: ["A) Gurgaon Project", "B) Marthandom Project", "C) Etawah", "D) Sri Niketan"], ans: 1 },
+      { id: 1736, q: "In what year was the Rural Development Programme started?", options: ["A) 1947", "B) 1935", "C) 1960", "D) 1952"], ans: 1 },
+      { id: 1737, q: "What was the district-level extension programme launched in independent India?", options: ["A) Nilokheri", "B) Etawah", "C) IADP", "D) Community Development"], ans: 1 },
+      { id: 1738, q: "Who initiated the Etawah Pilot Project (1948)?", options: ["A) F.L. Brayne", "B) Albert Mayer", "C) Dr. Knapp", "D) Spencer Hatch"], ans: 1 },
+      { id: 1739, q: "In what year did Five-Year Plans start?", options: ["A) 1947", "B) 1951", "C) 1970", "D) 1965"], ans: 1 },
+      { id: 1740, q: "When did the Community Development Project start?", options: ["A) 15 August 1947", "B) 2 October 1952", "C) 1951", "D) 26 January 1950"], ans: 1 },
+      { id: 1741, q: "What was the programme called the Package Programme (1960)?", options: ["A) Intensive Agriculture District Programme", "B) Green Revolution", "C) Operational Flood", "D) White Revolution"], ans: 0 },
+      { id: 1742, q: "When was HYVP started?", options: ["A) 1950", "B) 1966–67", "C) 1985", "D) 1975"], ans: 1 },
+      { id: 1743, q: "Which programme was initiated on the occasion of ICAR Golden Jubilee (1979)?", options: ["A) TRYSEM", "B) Lab to Land Programme", "C) NAIP", "D) IRDP"], ans: 1 },
+      { id: 1744, q: "What is the Training and Visit Programme (1974) also known as?", options: ["A) Knapp Scheme", "B) Baster and Benor Scheme", "C) Etawah Plan", "D) Brayne Project"], ans: 1 },
+      { id: 1745, q: "Which committee recommended the Panchayati Raj System?", options: ["A) Ashok Mehta Committee", "B) Balwant Rai Mehta Committee", "C) Sarkaria Commission", "D) Gadgil Committee"], ans: 1 },
+      { id: 1746, q: "What was the basic principle/slogan of TRYSEM?", options: ["A) Earn while you learn", "B) Learning by doing", "C) Save and grow", "D) Work for food"], ans: 1 },
+      { id: 1747, q: "What was the primary aim of IRDP?", options: ["A) Road building only", "B) All-round development of family", "C) Policing", "D) Tax collection"], ans: 1 },
+      { id: 1748, q: "When was NABARD started?", options: ["A) 1 April 1935", "B) 12 July 1982", "C) 15 August 1947", "D) 19 July 1969"], ans: 1 },
+      { id: 1749, q: "Which programme provides at least 100 days’ wage employment in rural areas (2006)?", options: ["A) IRDP", "B) National Rural Employment Guarantee Act", "C) NFSM", "D) PM-KISAN"], ans: 1 },
+      { id: 1750, q: "Which guarantee programme was launched for people below poverty line (2007)?", options: ["A) NHM", "B) National Food Security Mission", "C) ATMA", "D) RKVY"], ans: 1 },
+      { id: 1751, q: "How is economics defined?", options: ["A) Science of soil", "B) Science of wealth", "C) Science of weather", "D) Science of animals"], ans: 1 },
+      { id: 1752, q: "What branch of economics is concerned with an individual unit, single industry, firm or consumer?", options: ["A) Macroeconomics", "B) Microeconomics", "C) International trade", "D) Welfare economics"], ans: 1 },
+      { id: 1753, q: "What branch of economics deals with total production, expenditure and income?", options: ["A) Microeconomics", "B) Macroeconomics", "C) Household finance", "D) Farm management"], ans: 1 },
+      { id: 1754, q: "Who is the Father of Agricultural Economics?", options: ["A) Malthus", "B) Adam Smith", "C) Marshall", "D) Keynes"], ans: 1 },
+      { id: 1755, q: "What are potential exchangeable means of satisfying human wants defined as?", options: ["A) Capital", "B) Wealth", "C) Debt", "D) Income"], ans: 1 },
+      { id: 1756, q: "What part of wealth is used for further regeneration of wealth?", options: ["A) Consumption", "B) Capital", "C) Savings", "D) Luxury"], ans: 1 },
+      { id: 1757, q: "What is the reward of labour?", options: ["A) Interest", "B) Wages", "C) Profit", "D) Rent"], ans: 1 },
+      { id: 1758, q: "What is the reward of capital?", options: ["A) Wages", "B) Interest", "C) Subsidy", "D) Rent"], ans: 1 },
+      { id: 1759, q: "Who proposed the population theory?", options: ["A) Adam Smith", "B) Malthus", "C) Keynes", "D) David Ricardo"], ans: 1 },
+      { id: 1760, q: "What market is used for food grains?", options: ["A) International only", "B) Regional or State market", "C) Global exchange", "D) Village hat only"], ans: 1 },
+      { id: 1761, q: "What market is used for durable goods?", options: ["A) Local village market", "B) National market", "C) Weekly shandy", "D) Short-period market"], ans: 1 },
+      { id: 1762, q: "What time-based market is associated with perishable goods?", options: ["A) Secular market", "B) Short-period market", "C) Futures market", "D) Permanent market"], ans: 1 },
+      { id: 1763, q: "Food grain, vegetable and wool markets are examples of:", options: ["A) Perfect competition", "B) Special market", "C) Stock exchange", "D) Monopoly"], ans: 1 },
+      { id: 1764, q: "What market ensures fair price?", options: ["A) Unregulated market", "B) Regulated market", "C) Illegal ring", "D) Black market"], ans: 1 },
+      { id: 1765, q: "What is a competitive market called?", options: ["A) Monopoly", "B) Perfect market", "C) Monopsony", "D) Oligopoly"], ans: 1 },
+      { id: 1766, q: "What market is permanent in nature?", options: ["A) Short-period market", "B) Secular market", "C) Temporary market", "D) Seasonal market"], ans: 1 },
+      { id: 1767, q: "What is the first function performed in marketing agricultural commodities?", options: ["A) Selling", "B) Packing", "C) Consumption", "D) Transport"], ans: 1 },
+      { id: 1768, q: "Which of the following is NOT a function of marketing?", options: ["A) Grading", "B) Harvesting", "C) Storage", "D) Packing"], ans: 1 },
+      { id: 1769, q: "When was FCI established?", options: ["A) 1950", "B) 1965", "C) 1991", "D) 1980"], ans: 1 },
+      { id: 1770, q: "When did the Warehousing Corporations Act come into operation?", options: ["A) 1950", "B) 18 March 1962", "C) 1990", "D) 1975"], ans: 1 },
+      { id: 1771, q: "When was NAFED established?", options: ["A) January 1947", "B) October 1958", "C) December 1995", "D) July 1982"], ans: 1 },
+      { id: 1772, q: "What market has a single seller of a product?", options: ["A) Monopsony", "B) Monopoly market", "C) Perfect competition", "D) Oligopoly"], ans: 1 },
+      { id: 1773, q: "What market has a single buyer of a product?", options: ["A) Monopoly", "B) Monopsony market", "C) Oligopsony", "D) Oligopoly"], ans: 1 },
+      { id: 1774, q: "What market has few sellers of a commodity?", options: ["A) Monopoly", "B) Oligopoly market", "C) Pure competition", "D) Monopsony"], ans: 1 },
+      { id: 1775, q: "What market has few buyers of a commodity?", options: ["A) Oligopoly", "B) Oligopsony market", "C) Monopsony", "D) Monopoly"], ans: 1 },
+      { id: 1776, q: "What market has homogeneous products and many buyers and sellers?", options: ["A) Monopoly", "B) Pure market", "C) Black market", "D) Oligopoly"], ans: 1 },
+      { id: 1777, q: "What is the Central Government contribution to Regional Rural Bank capital?", options: ["A) 15%", "B) 50%", "C) 100%", "D) 35%"], ans: 1 },
+      { id: 1778, q: "When did WTO come into effect?", options: ["A) 1947", "B) 1995", "C) 2005", "D) 1980"], ans: 1 },
+      { id: 1779, q: "What is the portion of total produce in stock that farmer is willing to sell called?", options: ["A) Total yield", "B) Marketable surplus", "C) Seed reserved", "D) Waste"], ans: 1 },
+      { id: 1780, q: "What is the portion brought to market at a particular time for sale called?", options: ["A) Marketed surplus", "B) Total harvest", "C) Consumption", "D) Storage"], ans: 0 },
+      { id: 1781, q: "What is the relationship between marketable and marketed surplus for perishable products?", options: ["A) Unequal", "B) Equal", "C) Inverse", "D) Zero"], ans: 1 },
+      { id: 1782, q: "What is the marketable surplus formula?", options: ["A) P + C", "B) MS = P – C", "C) C / P", "D) P × C"], ans: 1 },
+      { id: 1783, q: "What is the minimum price at which government is prepared to buy agricultural commodities called?", options: ["A) Maximum market price", "B) Minimum Support Price (MSP)", "C) Export tax", "D) Retail price"], ans: 1 },
+      { id: 1784, q: "By whom is MSP fixed?", options: ["A) RBI", "B) Commission of Agricultural Costs and Prices (CACP)", "C) Planning Commission", "D) NABARD"], ans: 1 },
+      { id: 1785, q: "Where is the National Institute of Agricultural Marketing situated?", options: ["A) New Delhi", "B) Jaipur", "C) Pune", "D) Hyderabad"], ans: 1 },
+      { id: 1786, q: "What measures the difference between value in use and value in exchange?", options: ["A) Producer surplus", "B) Consumer surplus", "C) Deficit", "D) Inflation"], ans: 1 },
+      { id: 1787, q: "What is the excess amount we are prepared to pay over what we actually pay called?", options: ["A) Profit", "B) Consumer surplus", "C) Cost", "D) Tax"], ans: 1 },
+      { id: 1788, q: "For how long is a short-term loan given?", options: ["A) 5 years", "B) 1 to 1½ years", "C) 1 day", "D) 20 years"], ans: 1 },
+      { id: 1789, q: "For how long is a long-term loan given?", options: ["A) 1 year", "B) 5 to 30 years", "C) 2 days", "D) 6 months"], ans: 1 },
+      { id: 1790, q: "What are the Three Rs of credit?", options: ["A) Rate, Risk, Return", "B) Returns, Repayment capacity and Risk-bearing ability", "C) Rice, Ragi, Rinderpest", "D) Rupee, Rupee, Rupee"], ans: 1 },
+      { id: 1791, q: "On what is a farmer’s loan-repaying capacity judged?", options: ["A) Land size alone", "B) Net income of farmer", "C) Age", "D) House color"], ans: 1 },
+      { id: 1792, q: "What causes an increase in money supply and fall in production?", options: ["A) Deflation", "B) Inflation", "C) Depression", "D) Recession"], ans: 1 },
+      { id: 1793, q: "What risk arises from changes in government policies?", options: ["A) Price risk", "B) Institutional risk", "C) Personal risk", "D) Production risk"], ans: 1 },
+      { id: 1794, q: "When was the AGMARK Act passed?", options: ["A) 1955", "B) 1937", "C) 1986", "D) 1966"], ans: 1 },
+      { id: 1795, q: "Where is the Central AGMARK Laboratory located?", options: ["A) Nagpur", "B) New Delhi", "C) Kolkata", "D) Mumbai"], ans: 0 },
+      { id: 1796, q: "When was the first bank in India established?", options: ["A) 1935", "B) 1806", "C) 1969", "D) 1947"], ans: 1 },
+      { id: 1797, q: "Which institution regulates money supply in the Indian national economy?", options: ["A) SBI", "B) RBI", "C) World Bank", "D) NABARD"], ans: 1 },
+      { id: 1798, q: "When was RBI established and nationalized?", options: ["A) 1950 and 1960", "B) 1 April 1935 and 1 January 1949", "C) 1982 and 1991", "D) 1947 and 1950"], ans: 1 },
+      { id: 1799, q: "Which bank provides credit to marginal/small farmers and agricultural labourers (1975)?", options: ["A) Commercial banks", "B) RRB", "C) World Bank", "D) Co-operatives"], ans: 1 },
+      { id: 1800, q: "What is the full form of NABARD?", options: ["A) National Board of Agriculture and Rural Distribution", "B) National Bank for Agricultural and Rural Development", "C) National Bureau of Agricultural Reorganization", "D) National Bank for Agro Research and Development"], ans: 1 }
+    ];
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
+
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(200, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60;
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 200) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60;
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Overall Questions Test 9 Master Revision.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific extension education, communication models, and agricultural economics concepts.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Agricultural Extension & Economics recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+
+</html>
+```eof

@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Floriculture & Landscaping Test 2 — Advanced Landscape, Cacti, Lawns & Garden Styles (310 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next,
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select,
+    .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Floriculture & Landscaping Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Floriculture &
+        Landscaping Test 2: Advanced Landscaping, Cacti & Lawns (310 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–310)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="310">All Questions (310 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 310)</label>
+          <input type="number" id="custom-count-input" min="1" max="310" value="100" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">310 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#127801;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Floriculture</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#127795;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Advanced Landscaping</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 310</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">05:10:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 126, q: "What is the optimum temperature range required for indoor plants?", options: ["A) 21–32°C", "B) 5–10°C", "C) 10–14°C", "D) 35–45°C"], ans: 0 },
+      { id: 127, q: "Which ornamental plant is suitable for boundary or tall hedge?", options: ["A) Tecoma stans", "B) Barleria sp", "C) Lantana camara", "D) Alternanthera"], ans: 0 },
+      { id: 128, q: "Which is an orange-flower-producing tree?", options: ["A) Spathodea campanulata", "B) Cassia grandis", "C) Jacaranda", "D) Acacia"], ans: 0 },
+      { id: 129, q: "In landscape design, the appearance of objects and their surface is referred to as:", options: ["A) Texture", "B) Scale", "C) Surface", "D) Space"], ans: 0 },
+      { id: 130, q: "Lal Bagh garden is located at:", options: ["A) Bangalore", "B) Kashmir", "C) Delhi", "D) Pune"], ans: 0 },
+      { id: 131, q: "What is the botanical name of copper shield tree?", options: ["A) Peltophorum ferrugineum", "B) Spathodea", "C) Jacaranda", "D) Michelia"], ans: 0 },
+      { id: 132, q: "Which lawn grass is not suitable for an open sunny situation?", options: ["A) Stenotaphrum secundatum", "B) Cynodon dactylon", "C) Zoysia japonica", "D) Sporobolus"], ans: 0 },
+      { id: 133, q: "Parkia biglandulosa is commonly known as:", options: ["A) Badminton ball tree", "B) Indian tulip tree", "C) Bottle brush", "D) Gulmohar"], ans: 0 },
+      { id: 134, q: "What is the botanical name of umbrella plant grown in water gardens?", options: ["A) Cyperus alternifolius", "B) Sagittaria", "C) Acorus", "D) Calla"], ans: 0 },
+      { id: 135, q: "Which is a non-plant component of a garden?", options: ["A) Fountain", "B) Topiary", "C) Rockery", "D) Shrubbery"], ans: 0 },
+      { id: 136, q: "Which statement is incorrect?", options: ["A) Pothos prefers open sun", "B) Ficus repens is foliage", "C) Trachelospermum has scented flowers", "D) Hedera helix prefers partial shade"], ans: 0 },
+      { id: 137, q: "“Fairy ring” problem in lawns is caused by:", options: ["A) Fungus", "B) Bacteria", "C) Insects", "D) Reptiles"], ans: 0 },
+      { id: 138, q: "Match Ficus repens, Clematis, Thunbergia and Wisteria sinensis with their characteristics.", options: ["A) 4, 1, 2, 3", "B) 1, 2, 3, 4", "C) 2, 3, 4, 1", "D) 3, 4, 1, 2"], ans: 0 },
+      { id: 139, q: "Which statement about British Garden is incorrect?", options: ["A) Element of surprise was missing", "B) Informal style", "C) Smooth curvaceous lines", "D) Asymmetric plan"], ans: 0 },
+      { id: 140, q: "Serially connected arches are called:", options: ["A) Pergolas", "B) Trellis", "C) Arbour", "D) Pillars"], ans: 0 },
+      { id: 141, q: "Which lawn grass is suitable for saline soil conditions?", options: ["A) Sporobolus tremulus", "B) Cynodon intermedius", "C) Stenotaphrum", "D) Poa annua"], ans: 0 },
+      { id: 142, q: "Gazania splendens belongs to which group?", options: ["A) Herbaceous perennials", "B) Biennials", "C) Annuals", "D) Climbers"], ans: 0 },
+      { id: 143, q: "Arrangement of potted plants around a tree or central object such as a statue is called:", options: ["A) Trophy", "B) Topiary", "C) Rockery", "D) Border"], ans: 0 },
+      { id: 144, q: "“Running water is the life and soul of a garden” refers to:", options: ["A) Mughal garden", "B) Japanese", "C) English", "D) Italian"], ans: 0 },
+      { id: 145, q: "Which plant is suitable for boundary planting?", options: ["A) Agave americana", "B) Eranthemum", "C) Pisonia", "D) Allamanda"], ans: 0 },
+      { id: 146, q: "A mixture of dry flower parts with fragrance used for keeping in a room is called:", options: ["A) Pot-pourri", "B) Wreath", "C) Bouquet", "D) Wall Hanger"], ans: 0 },
+      { id: 147, q: "Plants that complete their life cycle within one year are called:", options: ["A) Annuals", "B) Biennials", "C) Shrubs", "D) Herbaceous"], ans: 0 },
+      { id: 148, q: "Which is an ornamental climber?", options: ["A) Allamanda", "B) Bougainvillea", "C) Tecoma", "D) Nerium"], ans: 3 },
+      { id: 149, q: "What are the primary colours used in gardening?", options: ["A) Blue, Yellow and Red", "B) Yellow, Orange, Violet", "C) Red, Yellow, Violet", "D) Blue, Yellow, Violet"], ans: 0 },
+      { id: 150, q: "Who is the architect of Chandigarh?", options: ["A) Le Corbusier", "B) M.S. Randhawa", "C) Le Notre", "D) Lancelot Hogben"], ans: 0 },
+      { id: 151, q: "After pruning roses, the cut ends should be protected with:", options: ["A) Bordeaux paste", "B) Carbendazim", "C) Neem oil", "D) Dimethoate"], ans: 0 },
+      { id: 152, q: "Lawn is propagated by:", options: ["A) Seeds", "B) Layering", "C) Grafting", "D) Budding"], ans: 0 },
+      { id: 153, q: "Which is a succulent?", options: ["A) Aloe abyssinica", "B) Helianthus", "C) Dianthus", "D) Celosia"], ans: 0 },
+      { id: 154, q: "Which garden component helps divide the garden into a number of parts?", options: ["A) Hedges", "B) Edges", "C) Topiary", "D) Shrubbery"], ans: 0 },
+      { id: 155, q: "Veni is a:", options: ["A) Flower arrangement", "B) Dry flower", "C) Floral beverage", "D) Flower by-product"], ans: 0 },
+      { id: 156, q: "Which species is suitable for making a tall hedge?", options: ["A) Pithecellobium dulce", "B) Saraca indica", "C) Terminalia catappa", "D) Samanea saman"], ans: 0 },
+      { id: 157, q: "Confetti is a long-stem variety of:", options: ["A) Rose", "B) Carnation", "C) Gerbera", "D) Chrysanthemum"], ans: 0 },
+      { id: 158, q: "In which crop can root production of stem cuttings be promoted by wounding?", options: ["A) Magnolia", "B) Rose", "C) Crotons", "D) Chrysanthemum"], ans: 0 },
+      { id: 159, q: "Which statement regarding edges is incorrect?", options: ["A) Edge plants are tall growing", "B) Dividing borders", "C) Handsome foliage", "D) Amenable for trimming"], ans: 0 },
+      { id: 160, q: "Which is the “Queen of flowering trees”?", options: ["A) Amherstia nobilis", "B) Cassia fistula", "C) Bauhinia purpurea", "D) Delonix regia"], ans: 0 },
+      { id: 161, q: "Which cactus is popularly known as nipple cactus?", options: ["A) Mammillaria", "B) Echinocereus", "C) Echinocactus", "D) Cephalocereus"], ans: 0 },
+      { id: 162, q: "Which is incorrect regarding the qualities of indoor plants?", options: ["A) No need to withstand shade", "B) Compact in growth habit", "C) Evergreen in nature", "D) Attractive shape or colour"], ans: 0 },
+      { id: 163, q: "Which pair is incorrect?", options: ["A) Bryant Park – Ooty", "B) Sims Park – Coonoor", "C) Lalbagh – Bangalore", "D) Buddha Jayanthi Park – New Delhi"], ans: 0 },
+      { id: 164, q: "Which statement is incorrect regarding lawns?", options: ["A) Lawn is not established through seed", "B) Dibbling", "C) Turfing", "D) Turf plastering"], ans: 0 },
+      { id: 165, q: "What is the ideal pH for establishing a good lawn?", options: ["A) 5.5–7.0", "B) 6.5–8.0", "C) 8.0–8.5", "D) 8.25–8.5"], ans: 0 },
+      { id: 166, q: "Which climber is suitable for screening?", options: ["A) Vernonia elaeagnifolia", "B) Monstera deliciosa", "C) Aristolochia", "D) Allamanda"], ans: 0 },
+      { id: 167, q: "What is the botanical name of Rangoon creeper?", options: ["A) Quisqualis indica", "B) Ficus repens", "C) Adenocalymma alliaceum", "D) Allamanda cathartica"], ans: 0 },
+      { id: 168, q: "Which landscape principle is incorrectly matched?", options: ["A) Rhythm – Divisional lines", "B) Balance – Visual equilibrium", "C) Harmony – Pleasing effect", "D) Proportion – Relative composition"], ans: 0 },
+      { id: 169, q: "Which statement regarding Mughal gardens is incorrect?", options: ["A) They did not follow symmetry", "B) Charbagh design is basic feature", "C) Running water essential", "D) Pleasure gardens"], ans: 0 },
+      { id: 170, q: "Growing house plants in large bottles with narrow mouths is known as:", options: ["A) Terrarium", "B) Water garden", "C) Indoor garden", "D) Sunken garden"], ans: 0 },
+      { id: 171, q: "Peak flowering season of Golden shower tree is:", options: ["A) April–May", "B) December–January", "C) September–October", "D) June–July"], ans: 0 },
+      { id: 172, q: "Which is NOT an ornamental foliage plant?", options: ["A) Mammillaria", "B) Asparagus", "C) Dracaena", "D) Croton"], ans: 0 },
+      { id: 173, q: "Which statement regarding cacti and succulents is incorrect?", options: ["A) The family Cactaceae is divided into 6 tribes", "B) Leaves are fleshy", "C) Succulents originate from arid regions", "D) Cacti have globular structure"], ans: 0 },
+      { id: 174, q: "Which is incorrectly paired?", options: ["A) Miniature Garden – Bonsai", "B) Vertical gardening – Green wall", "C) Terrarium – Glass container", "D) Gardening in dishes – Cacti"], ans: 0 },
+      { id: 175, q: "Which pairing is incorrect?", options: ["A) Flowering tree – Acalypha hispida", "B) Flowering annual – Petunia", "C) Cut foliage – Asparagus", "D) Cut flower – Gerbera"], ans: 0 },
+      { id: 176, q: "Which tree has a distinct growth habit?", options: ["A) Bottle brush", "B) Gulmohar", "C) Rain tree", "D) Pride of India"], ans: 0 },
+      { id: 177, q: "Match Sikandar Bagh, Ram Bagh, Shalimar and Mandor Garden with their locations.", options: ["A) 2, 4, 1, 3", "B) 2, 3, 1, 4", "C) 2, 1, 4, 3", "D) 2, 4, 3, 1"], ans: 0 },
+      { id: 178, q: "Which is called a natural depression garden?", options: ["A) Sunken garden", "B) Green house", "C) Trophy", "D) Topiary"], ans: 0 },
+      { id: 179, q: "Which garden component is called a garden adornment?", options: ["A) Statues", "B) Shrubbery", "C) Creepers", "D) Topiary"], ans: 0 },
+      { id: 180, q: "Trimming plants into shapes of animals, birds, seats, etc. is called:", options: ["A) Topiary", "B) Shrubbery", "C) Trophy", "D) Statues"], ans: 0 },
+      { id: 181, q: "Which grass is used for lawns in shady situations and requires frequent watering?", options: ["A) Buffalo grass / Blue grass", "B) Chain grass", "C) Bermuda grass", "D) None"], ans: 0 },
+      { id: 182, q: "Match hanging basket, rockery, dry flower and edging with suitable plants.", options: ["A) 4, 3, 2, 1", "B) 1, 2, 3, 4", "C) 3, 2, 1, 4", "D) 2, 1, 4, 3"], ans: 0 },
+      { id: 183, q: "Which plant is planted as a specimen shrub in a lawn?", options: ["A) Thuja orientalis", "B) Jasmine", "C) Marigold", "D) Crossandra"], ans: 0 },
+      { id: 184, q: "Assertion: Concrete is costlier than absolute. Reason: Concrete is the purest form.", options: ["A) Both Assertion and Reason are false", "B) A is true, R is false", "C) Both true, R explains A", "D) Both true, R does not explain A"], ans: 0 },
+      { id: 185, q: "Assertion: Pergolas and arches are erected for separation and privacy. Reason: Casuarina and Vernonia are suitable for arches/pergolas.", options: ["A) Both are true, but Reason is not the correct explanation of Assertion", "B) Both false", "C) A true, R false", "D) R true, A false"], ans: 0 },
+      { id: 186, q: "Which fern is suitable for indoor gardening?", options: ["A) Nephrolepis exaltata", "B) Pilea muscosa", "C) Iresine sp", "D) Coleus sp"], ans: 0 },
+      { id: 187, q: "Antigonon leptopus is a:", options: ["A) Climber", "B) Rambler", "C) Trailer", "D) Creeper"], ans: 0 },
+      { id: 188, q: "Which is correctly matched?", options: ["A) Lagerstroemia – Pride of India", "B) Dieffenbachia – Shrub", "C) Bryophyllum – Tree", "D) Tabernaemontana – Indoor"], ans: 0 },
+      { id: 189, q: "Which lawn grass is correctly matched?", options: ["A) Poa annua – Blue grass", "B) Sporobolus – Japan", "C) Zoysia – Hariyali", "D) Cynodon – Chain"], ans: 0 },
+      { id: 190, q: "Which is correctly matched?", options: ["A) Shrub – Duranta", "B) Climber – Tecoma", "C) Tree – Rosa", "D) Herb – Ficus"], ans: 0 },
+      { id: 191, q: "Which tree–common name pair is correctly matched?", options: ["A) Cedrela toona – Indian mahogany", "B) Ficus benghalensis – Pipal", "C) Ficus religiosa – Banyan", "D) Delonix regia – Neem"], ans: 0 },
+      { id: 192, q: "Which is the quickest method of lawn making?", options: ["A) Turfing", "B) Seeding", "C) Dibbling", "D) Turf plastering"], ans: 0 },
+      { id: 193, q: "What was the memorable contribution of the British to Indian gardens?", options: ["A) Herbaceous border and lawn", "B) Tree and shrubs", "C) Non plant components", "D) Roads and paths"], ans: 0 },
+      { id: 194, q: "Japanese art of growing miniature trees and shrubs is called:", options: ["A) Bonsai", "B) Terrarium", "C) Arboretum", "D) Pot Pourri"], ans: 0 },
+      { id: 195, q: "Which is an example of a foliage tree?", options: ["A) Polyalthia longifolia", "B) Cassia fistula", "C) Delonix regia", "D) Bauhinia purpurea"], ans: 0 },
+      { id: 196, q: "Which is an example of a herbaceous perennial?", options: ["A) Golden rod", "B) Zinnia", "C) Cosmos", "D) Marigold"], ans: 0 },
+      { id: 197, q: "Which is a non-flowering climber with attractive foliage?", options: ["A) Hedera helix", "B) Quisqualis indica", "C) Allamanda grandiflora", "D) Petrea volubilis"], ans: 3 },
+      { id: 198, q: "Which irrigation system is suitable for lawns?", options: ["A) Sprinkler irrigation", "B) Drip irrigation", "C) Pitcher irrigation", "D) Flood irrigation"], ans: 3 },
+      { id: 199, q: "What is the botanical name of Bermuda grass?", options: ["A) Cynodon dactylon", "B) Cyprus rotundus", "C) Cyprus deformis", "D) Lolium multiflorum"], ans: 2 },
+      { id: 200, q: "Which plant is suitable for boundary/tall hedge?", options: ["A) Bougainvillea", "B) Gerbera", "C) Coleus", "D) Iresine"], ans: 0 },
+      { id: 201, q: "Which is a yellow-coloured flowering annual?", options: ["A) Marigold", "B) Rose", "C) Bougainvillea", "D) Aster"], ans: 2 },
+      { id: 202, q: "Hill garden, tea garden and flat garden are components of:", options: ["A) Japanese garden", "B) Moghul", "C) English garden", "D) Italian garden"], ans: 0 },
+      { id: 203, q: "Which tree is most suitable for avenue planting?", options: ["A) Delonix regia", "B) Saraca indica", "C) Polyalthia", "D) None"], ans: 0 },
+      { id: 204, q: "Ikebana is a type of:", options: ["A) Flower arrangement", "B) Bonsai", "C) Cut green", "D) Topiary"], ans: 0 },
+      { id: 205, q: "Which statements regarding the colour and flowering season of Peltophorum, Delonix and Lagerstroemia are correct?", options: ["A) Statements 1 and 2", "B) 1 and 3", "C) All", "D) None"], ans: 0 },
+      { id: 206, q: "Which statements regarding Ficus repens, Bigonia venusta, Allamanda and Bougainvillea are correct?", options: ["A) All four are correct", "B) 1 and 2", "C) 1, 2 and 3", "D) None"], ans: 3 },
+      { id: 207, q: "Match Mammillaria, Agave, Iris and Star jasmine with their groups.", options: ["A) 2, 1, 4, 3", "B) 4, 1, 2, 3", "C) 4, 3, 1, 2", "D) 1, 4, 3, 2"], ans: 0 },
+      { id: 208, q: "Which succulent is correctly matched with its family?", options: ["A) Aloe – Lilliaceae", "B) Agave – Aizoaceae", "C) Cotyledon – Amaryllidaceae", "D) Lithops – Crassulaceae"], ans: 0 },
+      { id: 209, q: "Leaf cutting is used as propagation material in:", options: ["A) Rex Begonia", "B) Chrysanthemum", "C) Jasmine", "D) Coleus"], ans: 2 },
+      { id: 210, q: "Replacement of unhealthy patches of lawn is referred to as:", options: ["A) Bricking / plugging", "B) Racking", "C) Mowing", "D) Both A and B"], ans: 3 },
+      { id: 211, q: "Match Sporobolus tremulus, Zoysia japonica, Poa annua and Cynodon intermedius with their characteristics.", options: ["A) 2, 3, 4, 1", "B) 4, 2, 3, 1", "C) 4, 3, 2, 1", "D) 4, 1, 2, 3"], ans: 0 },
+      { id: 212, q: "What is the origin of lawn?", options: ["A) England", "B) Tropical America", "C) South East Asia", "D) Egypt"], ans: 3 },
+      { id: 213, q: "Baradari is an important feature of:", options: ["A) Mughal garden", "B) French garden", "C) English garden", "D) Japanese garden"], ans: 0 },
+      { id: 214, q: "Stone lanterns are an important feature of:", options: ["A) Japanese garden", "B) English garden", "C) Persian garden", "D) Mughal garden"], ans: 2 },
+      { id: 215, q: "Which of the following is a principle of landscaping?", options: ["A) Scale", "B) Shape", "C) Texture", "D) Pattern"], ans: 1 },
+      { id: 216, q: "Low growing shrubs having same qualities as hedge and planted for the purpose of controlling traffic is known as:", options: ["A) Edge", "B) Topiary", "C) Shrubbery", "D) None of above"], ans: 0 },
+      { id: 217, q: "Which is planted as tall ornamental hedge?", options: ["A) Thevetia peruviana", "B) Acalypha", "C) Lantana camara", "D) Karonda"], ans: 0 },
+      { id: 218, q: "Height of an edge should be about:", options: ["A) 15–20 cm", "B) 20–25 cm", "C) 10–15 cm", "D) 30–45 cm"], ans: 0 },
+      { id: 219, q: "Foliage plant which is suitable for edging:", options: ["A) Iresine sp.", "B) Gazania splendens", "C) Lobelia", "D) Alyssum"], ans: 3 },
+      { id: 220, q: "Queen of climber:", options: ["A) Clematis paniculata", "B) Petrea volubilis", "C) Pyrostegia venusta", "D) Wisteria sinensis"], ans: 0 },
+      { id: 221, q: "Annual used for screening purpose:", options: ["A) Sweet pea", "B) Verbena", "C) Iceplant", "D) Phlox"], ans: 1 },
+      { id: 222, q: "Which of the following is the foliage annual?", options: ["A) Kochia", "B) Pisonia alba", "C) Hamelia petans", "D) Aralia"], ans: 0 },
+      { id: 223, q: "Choose the incorrect statement on Pricking:", options: ["A) It is the practice of transplanting young seedlings into main field", "B) Normally done when seedling having 2-4 leaves", "C) Helps to increase fibrous root system", "D) Helps to develop vigorous plants"], ans: 0 },
+      { id: 224, q: "Annuals used for dry flower:", options: ["A) Statice, Helichrysum and Nigella", "B) Statice", "C) Helichrysum", "D) Nigella"], ans: 3 },
+      { id: 225, q: "Choose the incorrect statement regarding cacti and succulents:", options: ["A) Cacti bear leaves but succulents do not have leaves", "B) Cacti are perennials, bearing spine cushions called 'Areoles'", "C) All cacti are succulents", "D) Cacti bloom annually"], ans: 2 },
+      { id: 226, q: "Match Cephalocereus, Mammillaria, Echinocactus and Aporocactus flagelliformis with their common names.", options: ["A) 4, 3, 2, 1", "B) 4, 2, 3, 1", "C) 3, 2, 4, 1", "D) 4, 3, 2, 1"], ans: 0 },
+      { id: 227, q: "Scientific name of Century plant is:", options: ["A) Agave americana", "B) Lithops bela", "C) Portulaca afra", "D) Euphorbia splendens"], ans: 0 },
+      { id: 228, q: "Which of the following belongs to Clumping palm group?", options: ["A) Areca lutescens", "B) Elaeis", "C) Nipa fruticans", "D) Phoenix"], ans: 3 },
+      { id: 229, q: "Scientific name of Fiji fan palm:", options: ["A) Pritchardia filifera", "B) Cycas revoluta", "C) Dypsis leptocheilos", "D) Caryota urens"], ans: 3 },
+      { id: 230, q: "Xeriscaping refers to:", options: ["A) Landscaping in arid areas", "B) Use of xerophytic plants for indoor decoration", "C) Soil conservation measures", "D) All of these"], ans: 0 },
+      { id: 231, q: "Which of the following is shade loving pot plant?", options: ["A) Anthurium (and Dieffenbachia)", "B) Croton", "C) Viola", "D) None"], ans: 0 },
+      { id: 232, q: "Which of the following is not suitable grass for cooler regions?", options: ["A) Korean grass", "B) Red top grass", "C) Rye grass", "D) Kentucky blue grass"], ans: 3 },
+      { id: 233, q: "The layout of formal garden is:", options: ["A) Bilaterally symmetrical", "B) Vertically symmetrical", "C) Longitudinally symmetrical", "D) Horizontally symmetrical"], ans: 0 },
+      { id: 234, q: "Terrarium is an art of growing plants in:", options: ["A) Glass container", "B) Terraces", "C) Rocks", "D) Water"], ans: 3 },
+      { id: 235, q: "Cascade is a style of:", options: ["A) Bonsai", "B) Topiary", "C) Ikebana", "D) Pergolas"], ans: 1 },
+      { id: 236, q: "An International Flower Auction Center has been set up near ______ on behalf of the Tamil Nadu State Agricultural Marketing Board.", options: ["A) Hosur", "B) Thovalai", "C) Madurai", "D) Chennai"], ans: 1 },
+      { id: 237, q: "Garden which involves growing of plants on acid water is:", options: ["A) Bog garden", "B) Sunken garden", "C) Floating garden", "D) Rain garden"], ans: 0 },
+      { id: 238, q: "______ is a garden of plants growing in a shallow dish or bowl for a container.", options: ["A) Dish garden", "B) Terrarium", "C) Vertical gardening", "D) Fog garden"], ans: 1 },
+      { id: 239, q: "Growing of aquatic, marsh and water loving plants in the garden is known as:", options: ["A) Water garden", "B) Terrarium", "C) Vertical gardening", "D) Sunken garden"], ans: 1 },
+      { id: 240, q: "______ is a special kind of urban gardening suitable to small spaces particularly for decorating walls and roofs in various styles.", options: ["A) Vertical gardening", "B) Terrarium", "C) Water garden", "D) Sunken garden"], ans: 2 },
+      { id: 241, q: "______ is the technique of transplanting plants or trees from one place to another.", options: ["A) Burlapping", "B) Terrarium", "C) Vertical gardening", "D) Topiary"], ans: 1 },
+      { id: 242, q: "Which of the following is called as “Prince of Plants”?", options: ["A) Palms", "B) Ferns", "C) Trees", "D) Annuals"], ans: 3 },
+      { id: 243, q: "Father of French garden:", options: ["A) Le Notre", "B) William robinson", "C) Nek chand", "D) G.S. Randhawa"], ans: 0 },
+      { id: 244, q: "In Japanese garden, which type of garden is devoid of plants?", options: ["A) Sand garden", "B) Hill garden", "C) Flat garden", "D) Passage garden"], ans: 3 },
+      { id: 245, q: "Ground cover of perennial grass which persists under continuous mowing is called:", options: ["A) Lawn", "B) Turf", "C) Paving", "D) All of above"], ans: 2 },
+      { id: 246, q: "Seed rate required for lawn making:", options: ["A) 25 kg/ha", "B) 30 g/ha", "C) 30 kg/acre", "D) 12 kg/ha"], ans: 3 },
+      { id: 247, q: "In ______, close growing plants like Verbena or Alternanthera are used to form certain designs or letters of Alphabets.", options: ["A) Carpet beds", "B) Borders", "C) Hedges", "D) Shrubberies"], ans: 0 },
+      { id: 248, q: "A garden is incomplete without the presence of:", options: ["A) Lawn", "B) Shrubberies", "C) Trees", "D) Flower beds"], ans: 0 },
+      { id: 249, q: "Which king was called as the “Father of road side avenue planting”?", options: ["A) Ashoka", "B) Babar", "C) Jahangir", "D) Humayun"], ans: 0 },
+      { id: 250, q: "The first style developed by the British was ______ style of gardening.", options: ["A) Wild", "B) Formal", "C) Informal", "D) None"], ans: 2 },
+      { id: 251, q: "What is Ficus repens grown for in landscaping?", options: ["A) Covering the surface on which it climbs", "B) Producing fragrant flowers", "C) Fruit production", "D) Shade"], ans: 0 },
+      { id: 252, q: "Which climber is associated with pure white scented flowers?", options: ["A) Clematis", "B) Thunbergia", "C) Wisteria", "D) Ficus"], ans: 0 },
+      { id: 253, q: "Which climber is associated with cool, dry places according to the source?", options: ["A) Thunbergia", "B) Clematis", "C) Wisteria", "D) Ficus"], ans: 0 },
+      { id: 254, q: "Which is a heavy climber?", options: ["A) Wisteria sinensis", "B) Clematis", "C) Thunbergia", "D) Ficus"], ans: 0 },
+      { id: 255, q: "Where is Sikandar Bagh located?", options: ["A) Lucknow", "B) Jaipur", "C) Kashmir", "D) Jodhpur"], ans: 0 },
+      { id: 256, q: "Where is Ram Bagh located?", options: ["A) Jaipur", "B) Lucknow", "C) Kashmir", "D) Jodhpur"], ans: 0 },
+      { id: 257, q: "Where is Shalimar Garden located?", options: ["A) Kashmir", "B) Lucknow", "C) Jaipur", "D) Jodhpur"], ans: 0 },
+      { id: 258, q: "Where is Mandor Garden located?", options: ["A) Jodhpur", "B) Lucknow", "C) Jaipur", "D) Kashmir"], ans: 0 },
+      { id: 259, q: "Which plant is associated with hanging baskets?", options: ["A) Portulaca", "B) Alyssum", "C) Statice", "D) Iresine"], ans: 0 },
+      { id: 260, q: "Which plant is associated with rockery?", options: ["A) Alyssum", "B) Portulaca", "C) Statice", "D) Iresine"], ans: 0 },
+      { id: 261, q: "Which plant is associated with dry flowers?", options: ["A) Statice", "B) Alyssum", "C) Portulaca", "D) Iresine"], ans: 0 },
+      { id: 262, q: "Which plant is suitable for edging?", options: ["A) Iresine", "B) Alyssum", "C) Statice", "D) Portulaca"], ans: 0 },
+      { id: 263, q: "What is the purpose of pergolas and arches according to the statement?", options: ["A) Separation and privacy", "B) Sun protection", "C) Drainage", "D) Seating"], ans: 0 },
+      { id: 264, q: "Which plants are mentioned as suitable for arches/pergolas?", options: ["A) Casuarina and Vernonia", "B) Roses only", "C) Palms only", "D) Grasses"], ans: 0 },
+      { id: 265, q: "Is the suitability of Casuarina and Vernonia the correct explanation for using pergolas and arches for privacy?", options: ["A) No (A is true and R is true, but R is not the correct explanation of A)", "B) Yes", "C) Both false", "D) R true, A false"], ans: 0 },
+      { id: 266, q: "What is the flower colour of Peltophorum?", options: ["A) Yellow", "B) Red", "C) Orange", "D) Blue"], ans: 0 },
+      { id: 267, q: "What is the flowering season of Peltophorum?", options: ["A) February–May", "B) May–June", "C) June–July", "D) August–September"], ans: 0 },
+      { id: 268, q: "What is the flower colour of Delonix?", options: ["A) Red", "B) Yellow", "C) White", "D) Pink"], ans: 0 },
+      { id: 269, q: "What is the flowering season of Delonix?", options: ["A) May–June", "B) February–May", "C) June–July", "D) October–November"], ans: 0 },
+      { id: 270, q: "What is the flower colour of Lagerstroemia according to the source?", options: ["A) Yellow / Pink / Purple", "B) Red", "C) Pure white", "D) Blue"], ans: 0 },
+      { id: 271, q: "What is the flowering season of Lagerstroemia according to the source?", options: ["A) June–July", "B) February–May", "C) May–June", "D) December–January"], ans: 0 },
+      { id: 272, q: "Which two statements regarding Peltophorum, Delonix, and Lagerstroemia are considered correct by the source?", options: ["A) Statements 1 and 2", "B) 1 and 3", "C) All", "D) None"], ans: 0 },
+      { id: 273, q: "Is Ficus repens grown for attractive foliage?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 274, q: "Is Bignonia venusta trained as a screen in gardens?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 275, q: "Is Allamanda a climber on trees?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 276, q: "Is Bougainvillea a climber on trees?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 277, q: "Is Mammillaria a cactus?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 278, q: "Is Agave a succulent?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 279, q: "Is Iris classified as a bulbous plant in the source?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 280, q: "Is Star jasmine a climber?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 281, q: "Which lawn grass is suited for saline soil?", options: ["A) Sporobolus tremulus", "B) Zoysia japonica", "C) Poa annua", "D) Cynodon intermedius"], ans: 0 },
+      { id: 282, q: "Which lawn grass is associated with poor sandy soil?", options: ["A) Zoysia japonica", "B) Sporobolus", "C) Poa", "D) Cynodon"], ans: 0 },
+      { id: 283, q: "Which lawn grass prefers acid soil?", options: ["A) Poa annua", "B) Zoysia", "C) Sporobolus", "D) Cynodon"], ans: 0 },
+      { id: 284, q: "Which lawn grass is drought resistant?", options: ["A) Cynodon intermedius", "B) Poa", "C) Zoysia", "D) Sporobolus"], ans: 0 },
+      { id: 285, q: "Which cactus is called the Old Man Cactus?", options: ["A) Cephalocereus", "B) Mammillaria", "C) Echinocactus", "D) Aporocactus"], ans: 0 },
+      { id: 286, q: "Which cactus is called Elephant Tooth Cactus / Nipple cactus?", options: ["A) Mammillaria", "B) Cephalocereus", "C) Echinocactus", "D) Aporocactus"], ans: 0 },
+      { id: 287, q: "Which cactus is called Barrel Cactus?", options: ["A) Echinocactus", "B) Mammillaria", "C) Cephalocereus", "D) Aporocactus"], ans: 0 },
+      { id: 288, q: "Which cactus is called Rat Tail Cactus?", options: ["A) Aporocactus flagelliformis", "B) Echinocactus", "C) Mammillaria", "D) Cephalocereus"], ans: 0 },
+      { id: 289, q: "Is Mammillaria a cactus?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 290, q: "Is Agave a succulent?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 291, q: "Is Star jasmine a climber?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 292, q: "Is Iris classified as a bulbous plant in the source?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 293, q: "What is the ideal pH of lawn soil?", options: ["A) 5.5–7.0", "B) 7.5–8.5", "C) 4.0–5.0", "D) 9.0"], ans: 0 },
+      { id: 294, q: "Which is the quickest method of lawn establishment?", options: ["A) Turfing (sodding)", "B) Seeding", "C) Dibbling", "D) Plastering"], ans: 0 },
+      { id: 295, q: "Which irrigation system is best suited for lawns?", options: ["A) Sprinkler irrigation", "B) Drip", "C) Flood", "D) Pitcher"], ans: 0 },
+      { id: 296, q: "What is the botanical name of Bermuda grass?", options: ["A) Cynodon dactylon", "B) Cyprus rotundus", "C) Poa annua", "D) Lolium"], ans: 0 },
+      { id: 297, q: "What is a synthetic lawn called?", options: ["A) Astro Turf", "B) Mulch", "C) Blue Turf", "D) Arches"], ans: 0 },
+      { id: 298, q: "What is the art of miniature tree growing called?", options: ["A) Bonsai", "B) Terrarium", "C) Topiary", "D) Ikebana"], ans: 0 },
+      { id: 299, q: "What is the art of growing plants in glass containers called?", options: ["A) Terrarium", "B) Bonsai", "C) Dish garden", "D) Xeriscaping"], ans: 0 },
+      { id: 300, q: "What is landscaping in arid areas called?", options: ["A) Xeriscaping", "B) Terrarium", "C) Bonsai", "D) Water gardening"], ans: 0 },
+      { id: 301, q: "What is a garden of aquatic plants called?", options: ["A) Water garden", "B) Bog garden", "C) Sunken garden", "D) Rain garden"], ans: 0 },
+      { id: 302, q: "What is a garden in a shallow dish called?", options: ["A) Dish garden", "B) Terrarium", "C) Vertical garden", "D) Bog garden"], ans: 0 },
+      { id: 303, q: "What is gardening on walls and roofs called?", options: ["A) Vertical gardening", "B) Water gardening", "C) Terrarium", "D) Dish garden"], ans: 0 },
+      { id: 304, q: "Who is the Father of French garden?", options: ["A) Le Notre", "B) William Robinson", "C) Nek Chand", "D) Ashoka"], ans: 0 },
+      { id: 305, q: "Which king is called the Father of roadside avenue planting?", options: ["A) Ashoka", "B) Babar", "C) Akbar", "D) Jahangir"], ans: 0 },
+      { id: 306, q: "What is the characteristic symmetry of a formal garden?", options: ["A) Bilateral symmetry", "B) Asymmetrical", "C) Natural winding", "D) Random"], ans: 0 },
+      { id: 307, q: "Which Japanese garden has no plants?", options: ["A) Sand garden (Zen rock garden)", "B) Hill garden", "C) Flat garden", "D) Tea garden"], ans: 0 },
+      { id: 308, q: "What is the “Queen of climbers”?", options: ["A) Clematis paniculata", "B) Wisteria sinensis", "C) Antigonon", "D) Allamanda"], ans: 0 },
+      { id: 309, q: "What is the “Queen of flowering trees”?", options: ["A) Amherstia nobilis", "B) Cassia fistula", "C) Delonix regia", "D) Bauhinia"], ans: 0 },
+      { id: 310, q: "What is the “Prince of Plants”?", options: ["A) Palms", "B) Ferns", "C) Annuals", "D) Trees"], ans: 0 }
+    ];
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(310, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 310) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Floriculture, Landscaping, and Garden Design.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific lawn grasses, garden features, and landscape principles.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Floriculture recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+
+</html>

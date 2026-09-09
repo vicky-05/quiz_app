@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AMP One-Liners Test — Livestock & Dairy Exam-Oriented Revision</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next,
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select,
+    .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — AMP One-Liners & Livestock Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">AMP One-Liners: Livestock
+        & Dairy Exam-Oriented Revision (150 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–150)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="150">All Questions (150 Questions)</option>
+            <option value="25">25 Questions</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 150)</label>
+          <input type="number" id="custom-count-input" min="1" max="150" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">150 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#128004;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Animal Husbandry</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#129383;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">AMP One-Liners</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 150</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">02:30:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "What is the symptom when an embryo is expelled in advanced pregnancy in cattle?", options: ["A) Lapsing of uterus and vagina", "B) Bloat", "C) Milk fever", "D) Ketosis"], ans: 0 },
+      { id: 2, q: "How much additional concentrate should be given to a crossbred cow/buffalo during the 5th month of pregnancy?", options: ["A) 1.5–1.75 kg", "B) 0.5 kg", "C) 5 kg", "D) Zero"], ans: 0 },
+      { id: 3, q: "Which cattle breed is a drought breed, with cows being poor milkers but bulls useful for cart and field work?", options: ["A) Krishna Valley", "B) Sahiwal", "C) Gir", "D) Sindhi"], ans: 0 },
+      { id: 4, q: "Which institute developed the embryo transfer technique in India?", options: ["A) NDDB (National Dairy Development Board)", "B) IVRI", "C) NDRI", "D) ICAR"], ans: 0 },
+      { id: 5, q: "What is mating a crossbred animal with one of its pure parents called?", options: ["A) Back crossing", "B) Inbreeding", "C) Outcrossing", "D) Criss crossing"], ans: 0 },
+      { id: 6, q: "Haryana cattle breed is mainly used for what purpose?", options: ["A) Dual purpose (milk and draught)", "B) Draught only", "C) Milch only", "D) Meat"], ans: 0 },
+      { id: 7, q: "What is the process of buffaloes rolling in water or mud to regulate body temperature and remove insects called?", options: ["A) Wallowing", "B) Grazing", "C) Ruminating", "D) Browsing"], ans: 0 },
+      { id: 8, q: "Which cattle breed is mainly used for draught purposes?", options: ["A) Hallikar", "B) Sahiwal", "C) Gir", "D) Red Sindhi"], ans: 0 },
+      { id: 9, q: "Sussex is a famous breed of which animal?", options: ["A) Poultry", "B) Cattle", "C) Sheep", "D) Swine"], ans: 0 },
+      { id: 10, q: "Which indigenous cow breed has the highest milk yield per lactation?", options: ["A) Sahiwal", "B) Hallikar", "C) Amritmahal", "D) Khillari"], ans: 0 },
+      { id: 11, q: "Which cattle breed is known for elongated ears, striking appearance and good disease resistance?", options: ["A) Gir", "B) Hallikar", "C) Khillari", "D) Sindhi"], ans: 0 },
+      { id: 12, q: "What is the average gestation period of a cow?", options: ["A) 282 days", "B) 310 days", "C) 150 days", "D) 390 days"], ans: 0 },
+      { id: 13, q: "At what age should the horns of a dairy calf be disbudded/removed?", options: ["A) 7–10 days", "B) 1 year", "C) 6 months", "D) 3 years"], ans: 0 },
+      { id: 14, q: "How much blood passes through the udder to produce 1 mL of milk in dairy cows?", options: ["A) Approx 400 mL", "B) 10 mL", "C) 1000 mL", "D) 1 mL"], ans: 0 },
+      { id: 15, q: "What is the livestock contribution percentage to Agriculture GDP according to the source key?", options: ["A) 28.4%", "B) 5%", "C) 50%", "D) 80%"], ans: 0 },
+      { id: 16, q: "What is the first milk produced by a dam immediately after parturition called?", options: ["A) Colostrum", "B) Skim milk", "C) Cream", "D) Whey"], ans: 0 },
+      { id: 17, q: "Which of the following is NOT a component under the National Livestock Mission?", options: ["A) Sub-Mission on Meat Processing", "B) Feed and fodder", "C) Breed improvement", "D) Extension"], ans: 0 },
+      { id: 18, q: "What is the alternate crossing of two distinct breeds/species called?", options: ["A) Criss crossing", "B) Inbreeding", "C) Line breeding", "D) Top crossing"], ans: 0 },
+      { id: 19, q: "What is the physiological secretion and collection of milk from mammary glands called?", options: ["A) Lactation", "B) Gestation", "C) Parturition", "D) Oestrus"], ans: 0 },
+      { id: 20, q: "Milk fever in high-yielding dairy cows is caused by acute deficiency of:", options: ["A) Calcium", "B) Phosphorus", "C) Iron", "D) Nitrogen"], ans: 0 },
+      { id: 21, q: "Which buffalo breed native to Gujarat is characterized by distinctive sickle-shaped horns?", options: ["A) Surti", "B) Murrah", "C) Nili-Ravi", "D) Jaffarabadi"], ans: 0 },
+      { id: 22, q: "Which poultry housing system restricts bird movement entirely?", options: ["A) Battery cage system", "B) Deep litter", "C) Free range", "D) Semi-intensive"], ans: 0 },
+      { id: 23, q: "What is the standard Solids-Not-Fat (SNF) percentage content of normal cow milk?", options: ["A) 8.5%", "B) 9.0%", "C) 6.0%", "D) 10%"], ans: 0 },
+      { id: 24, q: "What is the industrial process of breaking milk fat globules into small uniform-sized globules called?", options: ["A) Homogenization", "B) Pasteurization", "C) Sterilization", "D) Filtration"], ans: 0 },
+      { id: 25, q: "What is the medical term for parturition in swine (pigs)?", options: ["A) Farrowing", "B) Calving", "C) Kidding", "D) Lambing"], ans: 0 },
+      { id: 26, q: "During which active phase of the oestrous cycle can a cow in heat be successfully bred?", options: ["A) Oestrum phase", "B) Metoestrum", "C) Diestrum", "D) Proestrum"], ans: 0 },
+      { id: 27, q: "What is the SNF percentage content of recombined toned milk?", options: ["A) 8.5%", "B) 9.0%", "C) 5.0%", "D) 10%"], ans: 0 },
+      { id: 28, q: "Which animal breeding method maintains genetic uniformity while allowing a wider range of relationship?", options: ["A) Line breeding", "B) Close breeding", "C) Crossbreeding", "D) Species hybridization"], ans: 0 },
+      { id: 29, q: "What is the protected enclosure area provided to feed young lambs, calves, and piglets away from adults called?", options: ["A) Creep area / Creep feed", "B) Maternity pen", "C) Stanchion", "D) Loose pen"], ans: 0 },
+      { id: 30, q: "What is the average gestation period of a buffalo?", options: ["A) 310 ± 5 days", "B) 282 days", "C) 150 days", "D) 390 days"], ans: 0 },
+      { id: 31, q: "Which indigenous Indian draught cattle breed has useful bullocks but females with very poor milk yield?", options: ["A) Khillari", "B) Sahiwal", "C) Gir", "D) Red Sindhi"], ans: 0 },
+      { id: 32, q: "Friesian (Holstein-Friesian) is a famous dairy breed originating from:", options: ["A) Netherlands (Europe)", "B) India", "C) Pakistan", "D) USA"], ans: 0 },
+      { id: 33, q: "What is the mating of animals of the same breed with no common ancestors for 4–6 generations called?", options: ["A) Outcrossing", "B) Inbreeding", "C) Line breeding", "D) Back crossing"], ans: 0 },
+      { id: 34, q: "What is the recommended standard floor space recommendation per broiler bird in deep litter?", options: ["A) 0.8–1.0 sq. ft", "B) 5 sq. ft", "C) 10 sq. ft", "D) 0.1 sq. ft"], ans: 0 },
+      { id: 35, q: "How many permanent cheek teeth (premolars/molars) does an adult cow have?", options: ["A) 24 cheek teeth (total 32 permanent teeth)", "B) 12", "C) 8", "D) 32"], ans: 0 },
+      { id: 36, q: "What is back mating of a crossbred animal with one of its pure parents called?", options: ["A) Back crossing", "B) Outcrossing", "C) Inbreeding", "D) Grading up"], ans: 0 },
+      { id: 37, q: "Which dairy milch breed produces top-quality milk while its bull is a poor draught animal?", options: ["A) Gir (or Sahiwal)", "B) Hallikar", "C) Amritmahal", "D) Khillari"], ans: 0 },
+      { id: 38, q: "What is the standard SNF percentage content of double-toned milk?", options: ["A) 9.0%", "B) 8.5%", "C) 6.0%", "D) 10%"], ans: 0 },
+      { id: 39, q: "A hinny is an equine hybrid produced by crossing:", options: ["A) Stallion (male horse) × Jennet (female donkey)", "B) Jack × Mare", "C) Donkey × Horse", "D) Horse × Zebra"], ans: 0 },
+      { id: 40, q: "What is the industrial centrifugal process of removing bacteria and spores from milk called?", options: ["A) Bactofugation", "B) Pasteurization", "C) Homogenization", "D) Sterilization"], ans: 0 },
+      { id: 41, q: "Which is classified strictly as a draught-purpose cattle breed?", options: ["A) Hallikar (and Amritmahal)", "B) Sahiwal", "C) Gir", "D) Red Sindhi"], ans: 0 },
+      { id: 42, q: "Which cattle breed is best known across southern India as a premier draught breed?", options: ["A) Amritmahal", "B) Sahiwal", "C) Tharparkar", "D) Kankrej"], ans: 0 },
+      { id: 43, q: "What is the scientific definition of a livestock “breed”?", options: ["A) A group of animals related by common descent and possessing similar uniform characteristics", "B) A single animal", "C) A wild species", "D) A hybrid"], ans: 0 },
+      { id: 44, q: "What is a biological “species”?", options: ["A) A group of individuals having common characteristics distinguishing them from other groups", "B) A single herd", "C) A breed", "D) A family"], ans: 0 },
+      { id: 45, q: "In livestock breeding terminology, what is a “sire”?", options: ["A) Male parent of the offspring", "B) Female parent", "C) Young calf", "D) Grandparent"], ans: 0 },
+      { id: 46, q: "What is a “dam”?", options: ["A) Female parent of the offspring", "B) Male parent", "C) Sire", "D) Offspring"], ans: 0 },
+      { id: 47, q: "What is a “calf”?", options: ["A) Young cattle or buffalo below six months of age", "B) Adult cow", "C) Bull", "D) Heifer"], ans: 0 },
+      { id: 48, q: "What is a “heifer”?", options: ["A) Young female cattle above six months of age and up to its first calving", "B) Adult cow", "C) Bull", "D) Calf"], ans: 0 },
+      { id: 49, q: "What is a “cow”?", options: ["A) Adult female cattle from the date of its first calving", "B) Heifer", "C) Calf", "D) Bull"], ans: 0 },
+      { id: 50, q: "What is a “bull”?", options: ["A) An uncastrated male cattle kept for breeding", "B) Bullock", "C) Steer", "D) Heifer"], ans: 0 },
+      { id: 51, q: "What is a “bullock”?", options: ["A) Castor male cattle used for agricultural work / draught", "B) Breeding bull", "C) Cow", "D) Calf"], ans: 0 },
+      { id: 52, q: "What is “service” in livestock breeding?", options: ["A) The process of a mature male covering a female to deposit spermatozoa", "B) Milking", "C) Shearing", "D) Weaning"], ans: 0 },
+      { id: 53, q: "What is “conception”?", options: ["A) Successful union of male and female gametes and zygote implantation", "B) Parturition", "C) Oestrus", "D) Lactation"], ans: 0 },
+      { id: 54, q: "What is “gestation”?", options: ["A) The physiological condition of a female carrying a developing foetus in the uterus", "B) Lactation", "C) Heat", "D) Weaning"], ans: 0 },
+      { id: 55, q: "What is the average gestation period of a cow according to terminology standards?", options: ["A) 285 days", "B) 310 days", "C) 150 days", "D) 390 days"], ans: 0 },
+      { id: 56, q: "What is the average gestation period of a buffalo?", options: ["A) 310 days", "B) 285 days", "C) 150 days", "D) 365 days"], ans: 0 },
+      { id: 57, q: "What is the average gestation period of sheep?", options: ["A) 148–152 days", "B) 285 days", "C) 310 days", "D) 114 days"], ans: 0 },
+      { id: 58, q: "What is the average gestation period of goats?", options: ["A) 150–152 days", "B) 285 days", "C) 148 days", "D) 310 days"], ans: 0 },
+      { id: 59, q: "What is “parturition”?", options: ["A) The physiological act of giving birth to young ones", "B) Conception", "C) Oestrus", "D) Weaning"], ans: 0 },
+      { id: 60, q: "What is the “lactation period”?", options: ["A) The period following parturition during which milk is produced", "B) Dry period", "C) Gestation", "D) Calving interval"], ans: 0 },
+      { id: 61, q: "What is the “abomasum” in ruminants?", options: ["A) The true glandular stomach where enzymatic digestion occurs", "B) Rumen", "C) Reticulum", "D) Omasum"], ans: 0 },
+      { id: 62, q: "What is “drying off” in dairy cattle management?", options: ["A) The practice of drying a lactating pregnant cow before next calving", "B) Milking", "C) Weaning", "D) Culling"], ans: 0 },
+      { id: 63, q: "What is the “dry period”?", options: ["A) The period between lactation end and next calving when the animal produces no milk", "B) Lactation", "C) Gestation", "D) Heat"], ans: 0 },
+      { id: 64, q: "What is the “calving interval”?", options: ["A) The time period between two successive calvings", "B) Gestation", "C) Dry period", "D) Oestrus"], ans: 0 },
+      { id: 65, q: "What is animal “prepotency”?", options: ["A) The ability of an individual to transmit its characteristics to offspring to a marked degree", "B) Sterility", "C) Low fertility", "D) Disease resistance"], ans: 0 },
+      { id: 66, q: "What is animal “fertility”?", options: ["A) The physiological ability to produce live young ones successfully", "B) Sterility", "C) Fecundity", "D) Dryness"], ans: 0 },
+      { id: 67, q: "What is animal “fecundity”?", options: ["A) The potential capacity of a female to produce functional ova", "B) Sterility", "C) Gestation", "D) Parturition"], ans: 0 },
+      { id: 68, q: "What is animal “sterility”?", options: ["A) The physiological inability to produce offspring", "B) Fertility", "C) Fecundity", "D) Gestation"], ans: 0 },
+      { id: 69, q: "What is a “buller” cow?", options: ["A) A cow that exhibits continuous or abnormal constant oestrus behaviour", "B) Pregnant cow", "C) Dry cow", "D) Heifer"], ans: 0 },
+      { id: 70, q: "What is a “teaser” bull?", options: ["A) A vasectomized bull used to detect heat in females without fertilization", "B) Breeding bull", "C) Bullock", "D) Steer"], ans: 0 },
+      { id: 71, q: "What is a cattle “herd”?", options: ["A) A group of cattle or buffaloes", "B) Flock", "C) Pack", "D) Swarm"], ans: 0 },
+      { id: 72, q: "What is a sheep or goat “flock”?", options: ["A) A group of sheep, goats or poultry birds", "B) Herd", "C) Litter", "D) Drove"], ans: 0 },
+      { id: 73, q: "What is a “steer”?", options: ["A) A male cattle castrated while still a calf before sexual maturity", "B) Bull", "C) Bullock", "D) Heifer"], ans: 0 },
+      { id: 74, q: "What is “veal” meat?", options: ["A) Meat derived from a young calf below three months of age", "B) Beef", "C) Mutton", "D) Pork"], ans: 0 },
+      { id: 75, q: "What is “beef” meat?", options: ["A) Meat derived from cattle past the calf stage", "B) Veal", "C) Mutton", "D) Chevon"], ans: 0 },
+      { id: 76, q: "What is “pork” meat?", options: ["A) Meat derived from swine (pigs)", "B) Beef", "C) Mutton", "D) Chevon"], ans: 0 },
+      { id: 77, q: "What is “mutton” meat?", options: ["A) Meat derived from sheep", "B) Goat meat", "C) Beef", "D) Pork"], ans: 0 },
+      { id: 78, q: "What is “chevon” meat?", options: ["A) Meat derived from goats", "B) Sheep meat", "C) Beef", "D) Pork"], ans: 0 },
+      { id: 79, q: "What is a “wedder”?", options: ["A) A castrated male sheep", "B) Ram", "C) Ewe", "D) Buck"], ans: 0 },
+      { id: 80, q: "What is animal “prolificacy”?", options: ["A) The ability to produce a large number of offspring", "B) Sterility", "C) Low birth rate", "D) Dryness"], ans: 0 },
+      { id: 81, q: "What is animal “docking”?", options: ["A) The removal of the whole or part of an animal's tail", "B) Dehorning", "C) Castration", "D) Weaning"], ans: 0 },
+      { id: 82, q: "What is “dehorning”?", options: ["A) The removal of horns from growing or grown animals", "B) Docking", "C) Shearing", "D) Dipping"], ans: 0 },
+      { id: 83, q: "What is livestock “dipping”?", options: ["A) Bathing animals with mild parasiticidal chemical solutions in a dip tank", "B) Swimming", "C) Washing face", "D) Milking"], ans: 0 },
+      { id: 84, q: "What is “flushing” in animal nutrition?", options: ["A) Feeding extra nutritional rations to pre-pregnant females to stimulate reproduction", "B) Starvation", "C) Water restriction", "D) Culling"], ans: 0 },
+      { id: 85, q: "What is “steaming up” in dairy management?", options: ["A) Feeding extra concentrate rations during the last quarter of pregnancy", "B) Milking", "C) Shearing", "D) Weaning"], ans: 0 },
+      { id: 86, q: "What is colostrum?", options: ["A) The first nutrient-rich milk secreted by a dam immediately after parturition", "B) Skim milk", "C) Whey", "D) Cream"], ans: 0 },
+      { id: 87, q: "What is animal “culling”?", options: ["A) The systematic removal of unwanted or unproductive animals from a population", "B) Breeding", "C) Feeding", "D) Weaning"], ans: 0 },
+      { id: 88, q: "What is animal “castration”?", options: ["A) The removal or inactivation of testicles to prevent breeding", "B) Dehorning", "C) Docking", "D) Weaning"], ans: 0 },
+      { id: 89, q: "What is a “free martin”?", options: ["A) A sterile female twin calf born co-twin to a male calf", "B) Normal fertile cow", "C) Bull", "D) Heifer"], ans: 0 },
+      { id: 90, q: "What is livestock “clipping”?", options: ["A) Cutting overgrown body hair using electric clippers", "B) Shearing wool", "C) Milking", "D) Dehorning"], ans: 0 },
+      { id: 91, q: "What is animal “grooming”?", options: ["A) Careful brushing and combing of the body hair coat", "B) Washing", "C) Shearing", "D) Dipping"], ans: 0 },
+      { id: 92, q: "What is a “gimmer”?", options: ["A) A female sheep from six months of age up to first lambing", "B) Ewe", "C) Lamb", "D) Ram"], ans: 0 },
+      { id: 93, q: "What is “mohair”?", options: ["A) Luxurious wool fiber obtained from Angora goats", "B) Sheep wool", "C) Cashmere", "D) Silk"], ans: 0 },
+      { id: 94, q: "What is “pashmina” fibre?", options: ["A) The soft fine undercoat hair of Kashmiri goats", "B) Mohair", "C) Sheep wool", "D) Cotton"], ans: 0 },
+      { id: 95, q: "What is a animal “pelt”?", options: ["A) The skin removed from a day-old lamb after slaughter", "B) Horn", "C) Hoof", "D) Tail"], ans: 0 },
+      { id: 96, q: "What is “shearing”?", options: ["A) Clipping fleece wool and mohair from sheep and goats", "B) Clipping hair", "C) Milking", "D) Dehorning"], ans: 0 },
+      { id: 97, q: "What is animal “weaning”?", options: ["A) The physical separation of a young calf/lamb from its mother shortly after birth", "B) Feeding", "C) Milking", "D) Breeding"], ans: 0 },
+      { id: 98, q: "What is “oestrus / heat”?", options: ["A) The physiological period of intense sexual desire and receptivity in a female", "B) Gestation", "C) Lactation", "D) Parturition"], ans: 0 },
+      { id: 99, q: "What is “ovulation”?", options: ["A) The discharge of a mature egg from the Graafian follicle", "B) Conception", "C) Parturition", "D) Weaning"], ans: 0 },
+      { id: 100, q: "What is “anoestrous”?", options: ["A) The physiological absence or suspension of oestrus cycles", "B) Heat", "C) Pregnancy", "D) Lactation"], ans: 0 },
+      { id: 101, q: "What is livestock “branding”?", options: ["A) Imprinting a permanent identification number/mark on animal skin", "B) Tagging", "C) Tattooing", "D) Notching"], ans: 0 },
+      { id: 102, q: "What is animal “tattooing”?", options: ["A) Making permanent ID marks by puncturing inner ear skin and rubbing tattoo ink", "B) Branding", "C) Tagging", "D) Notching"], ans: 0 },
+      { id: 103, q: "What is animal “tagging”?", options: ["A) Fixing an ear-tag or neck-tag bearing an ID number", "B) Branding", "C) Tattooing", "D) Notching"], ans: 0 },
+      { id: 104, q: "What is livestock “ear notching”?", options: ["A) Making specific U-shaped cuts or notches at precise ear positions for numbering", "B) Tagging", "C) Branding", "D) Tattooing"], ans: 0 },
+      { id: 105, q: "What is biological “atavism”?", options: ["A) The sudden reappearance of an ancestral trait after skipping several generations", "B) Mutation", "C) Inbreeding", "D) Heterosis"], ans: 0 },
+      { id: 106, q: "What is a poultry “pullet”?", options: ["A) A young female chicken aged between 9 to 20 weeks", "B) Hen", "C) Chick", "D) Cockerel"], ans: 0 },
+      { id: 107, q: "What is a poultry “cockerel”?", options: ["A) A young male chicken aged between 5 to 8 months", "B) Cock", "C) Pullet", "D) Capon"], ans: 0 },
+      { id: 108, q: "What is a “day-old chick”?", options: ["A) A newly hatched young chick", "B) Pullet", "C) Grower", "D) Hen"], ans: 0 },
+      { id: 109, q: "What is a poultry “grower”?", options: ["A) A young chick aged 9 to 20 weeks of either sex", "B) Chick", "C) Layer", "D) Broiler"], ans: 0 },
+      { id: 110, q: "What is a poultry “brood”?", options: ["A) A batch of chicks of the same age raised together", "B) Flock", "C) Herd", "D) Stud"], ans: 0 },
+      { id: 111, q: "What is chick “brooding”?", options: ["A) Providing artificial heat and rearing young chicks from day-old up to 4–6 weeks", "B) Hatching", "C) Feeding", "D) Laying"], ans: 0 },
+      { id: 112, q: "What is a “brooder” appliance?", options: ["A) A specialized device used to provide artificial heat to young chicks", "B) Incubator", "C) Cage", "D) Nest"], ans: 0 },
+      { id: 113, q: "What is a poultry “broiler”?", options: ["A) A hybrid meat chicken bred for rapid growth, reaching ~1.5 kg in 6 weeks", "B) Layer", "C) Cock", "D) Breeder"], ans: 0 },
+      { id: 114, q: "At what standard market age are most commercial broilers harvested?", options: ["A) 7–8 weeks", "B) 1 year", "C) 2 years", "D) 6 months"], ans: 0 },
+      { id: 115, q: "What is a “capon”?", options: ["A) A young male chicken whose testicles have been surgically removed", "B) Cockerel", "C) Cock", "D) Pullet"], ans: 0 },
+      { id: 116, q: "What is a poultry “layer”?", options: ["A) An egg-laying female hen kept up to one year after starting production", "B) Broiler", "C) Pullet", "D) Cockerel"], ans: 0 },
+      { id: 117, q: "What is a “broody hen”?", options: ["A) A hen that has temporarily suspended egg laying to sit on and incubate eggs", "B) Layer", "C) Pullet", "D) Broiler"], ans: 0 },
+      { id: 118, q: "What is an egg “clutch”?", options: ["A) The number of eggs laid by a bird on consecutive days without interruption", "B) Clutch of chicks", "C) Nest", "D) Brood"], ans: 0 },
+      { id: 119, q: "What is the preferred clutch size in commercial laying hens?", options: ["A) 3–4 eggs per clutch", "B) 10 eggs", "C) 1 egg", "D) 30 eggs"], ans: 0 },
+      { id: 120, q: "What is commercial “toned milk”?", options: ["A) Buffalo milk blended with skim milk/powdered skim milk and water", "B) Pure cow milk", "C) Cream", "D) Condensed milk"], ans: 0 },
+      { id: 121, q: "How is milk fat percentage affected during toning?", options: ["A) Reduced to approx 3%", "B) Increased to 10%", "C) Unchanged", "D) Zero"], ans: 0 },
+      { id: 122, q: "How is total available milk volume affected by toning?", options: ["A) Available volume is nearly tripled", "B) Halved", "C) Unchanged", "D) Zero"], ans: 0 },
+      { id: 123, q: "What is the fat content percentage in double-toned milk?", options: ["A) 1.5%", "B) 3.0%", "C) 6.0%", "D) 10%"], ans: 0 },
+      { id: 124, q: "What is the non-fat solid (SNF) content percentage in double-toned milk?", options: ["A) 10.0%", "B) 8.5%", "C) 5.0%", "D) 2.0%"], ans: 0 },
+      { id: 125, q: "What is animal “dysgenesis”?", options: ["A) A breeding defect where interspecific hybrids cannot inter se mate but may cross with parent species", "B) Sterility", "C) High fertility", "D) Normal breeding"], ans: 0 },
+      { id: 126, q: "What is “creep feeding” in young stock management?", options: ["A) Providing supplementary rich feed accessible only to young calves, lambs or piglets", "B) Adult grazing", "C) Starvation", "D) Weaning"], ans: 0 },
+      { id: 127, q: "Avian encephalomalacia (“crazy chick disease”) in poultry is caused by deficiency of:", options: ["A) Vitamin E", "B) Vitamin A", "C) Vitamin B", "D) Vitamin D"], ans: 0 },
+      { id: 128, q: "What is livestock “flushing”?", options: ["A) Feeding extra nutritional rations to stimulate reproductive organs to peak activity", "B) Starvation", "C) Watering", "D) Culling"], ans: 0 },
+      { id: 129, q: "What is biological “heterosis” (hybrid vigour)?", options: ["A) The enhanced growth, vigour, and performance shown by crossbred offspring over parents", "B) Inbreeding depression", "C) Stunting", "D) Sterility"], ans: 0 },
+      { id: 130, q: "What nutritional disorder causes animal “pica” (perverted appetite like eating dirt/bones)?", options: ["A) Phosphorus (P) deficiency", "B) Calcium", "C) Iron", "D) Protein"], ans: 0 },
+      { id: 131, q: "What is agricultural crop “stover”?", options: ["A) The mature dried stalks of cereal grain crops after grain removal", "B) Green forage", "C) Silage", "D) Concentrate"], ans: 0 },
+      { id: 132, q: "What is livestock “slop feeding”?", options: ["A) Feeding dry meal feed mixed together with fluid or slurry", "B) Dry feeding", "C) Grazing", "D) Starvation"], ans: 0 },
+      { id: 133, q: "What is an animal “stud”?", options: ["A) A herd or group of selected elite breeding animals kept specifically for breeding", "B) Feedlot", "C) Barn", "D) Pasture"], ans: 0 },
+      { id: 134, q: "What is livestock “zero grazing” (soiling)?", options: ["A) Keeping farm animals confined indoors/yards and cutting and carrying fresh fodder to them", "B) Open pasture grazing", "C) Free range", "D) Starvation"], ans: 0 },
+      { id: 135, q: "What is animal “selective breeding”?", options: ["A) Outcrossing and improving within a herd using carefully chosen elite sires", "B) Random mating", "C) Inbreeding", "D) Crossbreeding"], ans: 0 },
+      { id: 136, q: "What is recognized as the best breeding method for genetic improvement of Indian buffalo breeds?", options: ["A) Selective breeding (within breed)", "B) Random mating", "C) Inbreeding", "D) Species hybridization"], ans: 0 },
+      { id: 137, q: "What is the principal carbohydrate found in milk?", options: ["A) Lactose", "B) Sucrose", "C) Fructose", "D) Maltose"], ans: 0 },
+      { id: 138, q: "What are the constituent monosaccharides of milk lactose?", options: ["A) Glucose + Galactose", "B) Glucose + Fructose", "C) Glucose + Glucose", "D) Galactose + Fructose"], ans: 0 },
+      { id: 139, q: "What is animal “nutrition”?", options: ["A) The scientific study of quality and quantity of nutrients required for physiological functions", "B) Feeding", "C) Grazing", "D) Digestion"], ans: 0 },
+      { id: 140, q: "What are the six major biochemical classes of animal nutrients?", options: ["A) Water, carbohydrates, proteins, fats, minerals and vitamins", "B) Proteins only", "C) Water and ash", "D) Fibre only"], ans: 0 },
+      { id: 141, q: "What are animal “forages”?", options: ["A) The vegetative portions of plants fed fresh, dried or ensiled to herbivores", "B) Concentrates", "C) Grains", "D) Minerals"], ans: 0 },
+      { id: 142, q: "What are animal “roughages”?", options: ["A) Bulky feedstuffs containing more than 18% crude fibre", "B) Concentrates", "C) Grains", "D) Oils"], ans: 0 },
+      { id: 143, q: "What is the typical energy density range of roughage feeds?", options: ["A) Approx 1.0–1.4 Mcal/kg Dry Matter", "B) 5.0 Mcal", "C) Zero", "D) 10 Mcal"], ans: 0 },
+      { id: 144, q: "Which of the following are classic examples of roughage feeds?", options: ["A) Straw, green fodder, hay and silage", "B) Maize grain", "C) Oil cake", "D) Bone meal"], ans: 0 },
+      { id: 145, q: "What are animal “concentrates”?", options: ["A) Rich feedstuffs containing less than 18% crude fibre and high nutrient density", "B) Roughages", "C) Straw", "D) Grass"], ans: 0 },
+      { id: 146, q: "What is the typical energy density range of concentrate feeds?", options: ["A) Approx 1.5–2.2 Mcal/kg Dry Matter", "B) 0.5 Mcal", "C) 5.0 Mcal", "D) 10 Mcal"], ans: 0 },
+      { id: 147, q: "Which of the following are classic examples of concentrate feeds?", options: ["A) Cereal grains and oilseed cakes", "B) Wheat straw", "C) Paddy straw", "D) Green grass"], ans: 0 },
+      { id: 148, q: "What is the scientific binomial name of domestic cattle?", options: ["A) Bos indicus / Bos taurus", "B) Bubalus bubalis", "C) Capra hircus", "D) Ovis aries"], ans: 0 },
+      { id: 149, q: "What is the scientific binomial name of domestic water buffalo?", options: ["A) Bubalus bubalis", "B) Bos indicus", "C) Capra hircus", "D) Sus scrofa"], ans: 0 },
+      { id: 150, q: "What is the scientific binomial name of domestic goat?", options: ["A) Capra hircus", "B) Ovis aries", "C) Sus scrofa", "D) Bos taurus"], ans: 0 }
+    ];
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(150, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 150) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over AMP One-Liners & Livestock Revision.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific dairy terminology, gestation periods, and livestock management.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Animal Management recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+
+</html>

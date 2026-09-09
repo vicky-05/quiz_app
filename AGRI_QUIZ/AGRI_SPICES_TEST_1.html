@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spices Test 1 — Pepper, Cardamom, Turmeric, Ginger & Seed Spices (283 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next,
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select,
+    .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Horticulture & Spices Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Spices Test 1: Pepper,
+        Cardamom, Turmeric, Ginger & Seed Spices (283 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–283)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="283">All Questions (283 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 283)</label>
+          <input type="number" id="custom-count-input" min="1" max="283" value="100" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">283 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#127815;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Horticulture</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#127798;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Spices & Condiments</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 283</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">04:43:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "Horticultural crop products used as food adjuncts to add aroma and flavour are called:", options: ["A) Spices", "B) Vegetables", "C) Fruits", "D) Cereals"], ans: 0 },
+      { id: 2, q: "Which country is internationally known as the “Land of Spices” or “Home of Spices”?", options: ["A) India", "B) Indonesia", "C) Sri Lanka", "D) Guatemala"], ans: 0 },
+      { id: 3, q: "What is the annual rainfall requirement of black pepper cultivation?", options: ["A) 125–200 cm", "B) 20–40 cm", "C) 500 cm", "D) 10 cm"], ans: 0 },
+      { id: 4, q: "Supplemental irrigation of black pepper during which dry summer months significantly increases crop yield and spike setting?", options: ["A) April–May", "B) October–November", "C) January–February", "D) July–August"], ans: 0 },
+      { id: 5, q: "What is the botanical name of mango ginger?", options: ["A) Curcuma amada", "B) Curcuma longa", "C) Zingiber officinale", "D) Elettaria cardamomum"], ans: 0 },
+      { id: 6, q: "India holds the global leadership position as the largest producer and exporter of:", options: ["A) Spices", "B) Apples", "C) Wheat", "D) Grapes"], ans: 0 },
+      { id: 7, q: "Which high-yielding turmeric variety was officially released from TNAU?", options: ["A) BSR-2", "B) IISR Pragati", "C) Roma", "D) Suguna"], ans: 0 },
+      { id: 8, q: "Malabar type of cardamom can be distinguished morphologically based on:", options: ["A) Prostrate panicle and round/oblong capsule", "B) Erect panicle and long capsule", "C) Semi-erect panicle", "D) None"], ans: 0 },
+      { id: 9, q: "What is the optimum recommended planting-unit rhizome weight in turmeric?", options: ["A) 60–70 g", "B) 10 g", "C) 200 g", "D) 500 g"], ans: 0 },
+      { id: 10, q: "IISR Vijetha is a prominent variety of cardamom field-tolerant to:", options: ["A) Katte (mosaic disease)", "B) Root rot", "C) Thrips", "D) Capsule borer"], ans: 0 },
+      { id: 11, q: "Which is the principal commercially cultivated species of Curcuma?", options: ["A) Curcuma longa", "B) C. amada", "C) C. aromatica", "D) C. pseudomontana"], ans: 0 },
+      { id: 12, q: "Which national research station / center is specifically associated with cardamom research?", options: ["A) Apangala (ICAR-IISR Regional Station)", "B) Central Rice Research Institute", "C) Central Potato Station", "D) Sugarcane Breeding Institute"], ans: 0 },
+      { id: 13, q: "Black pepper runner shoots used for commercial rapid vine propagation are collected from:", options: ["A) Plagiotropic shoots (lateral runner shoots)", "B) Orthotropic main stem", "C) Roots", "D) Spikes"], ans: 0 },
+      { id: 14, q: "Where is the Indian Institute of Cardamom Research (IICR) located?", options: ["A) Myladumpara, Idukki, Kerala", "B) Calicut", "C) Coimbatore", "D) Ooty"], ans: 0 },
+      { id: 15, q: "Garbled Non-Bleached Calicut is a standard trade grading term related to:", options: ["A) Black pepper", "B) Cardamom", "C) Ginger", "D) Turmeric"], ans: 0 },
+      { id: 16, q: "Large / Nepal cardamom is the dried commercial fruit of:", options: ["A) Amomum subulatum", "B) Elettaria cardamomum", "C) Alpinia galanga", "D) Zingiber zerumbet"], ans: 0 },
+      { id: 17, q: "East Indian arrowroot is scientifically known as:", options: ["A) Curcuma angustifolia", "B) C. longa", "C) Maranta arundinacea", "D) Manihot esculenta"], ans: 0 },
+      { id: 18, q: "What is the standard dry recovery percentage of black pepper from green berries?", options: ["A) Approx 25%", "B) 50%", "C) 10%", "D) 80%"], ans: 0 },
+      { id: 19, q: "Which high-yielding ginger introduction became immensely popular among commercial growers in India?", options: ["A) Maran", "B) Rio-de-Janeiro", "C) China", "D) Nadia"], ans: 0 },
+      { id: 20, q: "Fruit type matching: coriander–schizocarp, cardamom–capsule, vanilla–pod. Are all three correct?", options: ["A) Yes, all three fruit types are correct", "B) No", "C) Only coriander", "D) Only vanilla"], ans: 0 },
+      { id: 21, q: "Where is the headquarters of the Indian Institute of Spices Research (IISR) located?", options: ["A) Calicut (Kozhikode), Kerala", "B) Cochin", "C) Thiruvananthapuram", "D) Mysore"], ans: 0 },
+      { id: 22, q: "What chemical compound gives black pepper its characteristic hot pungency?", options: ["A) Piperine", "B) Capsaicin", "C) Curcumin", "D) Gingerol"], ans: 0 },
+      { id: 23, q: "Small cardamom belongs to which botanical family?", options: ["A) Zingiberaceae", "B) Piperaceae", "C) Lauraceae", "D) Myrtaceae"], ans: 0 },
+      { id: 24, q: "Black pepper vine is classified botanically as a:", options: ["A) Climbing evergreen perennial vine", "B) Annual herb", "C) Deciduous shrub", "D) Annual grass"], ans: 0 },
+      { id: 25, q: "What is the standard seed rhizome rate of ginger per hectare?", options: ["A) 1500 kg/ha", "B) 100 kg/ha", "C) 50 kg/ha", "D) 5000 kg/ha"], ans: 0 },
+      { id: 26, q: "Which statements about turmeric cultivation are correct?", options: ["A) Statements 1 and 3", "B) All", "C) None", "D) 2 only"], ans: 0 },
+      { id: 27, q: "Black pepper is famously referred to as the “King of Spices” or “Black Gold of India” primarily because of its:", options: ["A) High volume and value of international trade and historical demand", "B) Heavy weight", "C) Dark colour only", "D) Ease of harvest"], ans: 0 },
+      { id: 28, q: "Which chemical acid treatment is used as pre-sowing seed treatment to improve germination in cardamom?", options: ["A) Nitric acid (HNO₃)", "B) Sulphuric acid", "C) Hydrochloric acid", "D) Acetic acid"], ans: 0 },
+      { id: 29, q: "Which statement regarding black pepper cultivation is correct?", options: ["A) All are correct", "B) None", "C) Only soil requirement", "D) Only shade"], ans: 0 },
+      { id: 30, q: "Which turmeric variety exhibits notable tolerance to drought and saline soil conditions?", options: ["A) CO-1", "B) BSR-2", "C) Roma", "D) Suguna"], ans: 0 },
+      { id: 31, q: "Which is a well-known mutant variety of ginger?", options: ["A) Rio-de-Janeiro", "B) Maran", "C) Mahima", "D) Wayanad"], ans: 0 },
+      { id: 32, q: "Trashing is an important cultural sanitation operation in which spice crop?", options: ["A) Cardamom", "B) Pepper", "C) Ginger", "D) Turmeric"], ans: 0 },
+      { id: 33, q: "The inflorescence of small cardamom is botanically called a:", options: ["A) Spike (or panicle/raceme)", "B) Umbel", "C) Catkin", "D) Capitulum"], ans: 0 },
+      { id: 34, q: "Katte disease is a devastating viral disease affecting which spice crop?", options: ["A) Cardamom", "B) Pepper", "C) Clove", "D) Nutmeg"], ans: 0 },
+      { id: 35, q: "Which statements about small cardamom production are correct?", options: ["A) All are correct", "B) 1 only", "C) 2 only", "D) None"], ans: 0 },
+      { id: 36, q: "Ginger is successfully propagated through:", options: ["A) Underground seed rhizomes, tissue-culture plants and stem cuttings", "B) True seeds only", "C) Bulbs", "D) Root tubers"], ans: 0 },
+      { id: 37, q: "Which statements regarding ginger production are correct?", options: ["A) Statements 1, 2 and 4", "B) All", "C) None", "D) 3 only"], ans: 0 },
+      { id: 38, q: "Which insect pest–crop combination is correctly matched?", options: ["A) Black pepper – Pollu beetle (Longitarsus nigripennis)", "B) Cardamom – Stem borer", "C) Turmeric – Shoot fly", "D) Ginger – Mealybug"], ans: 0 },
+      { id: 39, q: "Which variety is a famous black pepper hybrid/selection?", options: ["A) Panniyur-1", "B) CO-1", "C) BSR-2", "D) IISR Mahima"], ans: 0 },
+      { id: 40, q: "Panniyur-1 and Panniyur-3 are popular improved varieties of:", options: ["A) Black pepper", "B) Cardamom", "C) Ginger", "D) Turmeric"], ans: 0 },
+      { id: 41, q: "Which of the following is incorrectly matched regarding origin?", options: ["A) Origin of small cardamom – Nepal (Incorrect; origin is India/Western Ghats)", "B) Pepper – India", "C) Ginger – SE Asia", "D) Turmeric – India"], ans: 0 },
+      { id: 42, q: "What is the true geographical origin of small cardamom?", options: ["A) India (Western Ghats)", "B) Guatemala", "C) Sri Lanka", "D) Brazil"], ans: 0 },
+      { id: 43, q: "Which root-knot nematode-tolerant black pepper variety was released from IISR, Calicut?", options: ["A) Pournami", "B) Panniyur-1", "C) Karimunda", "D) Subakara"], ans: 0 },
+      { id: 44, q: "Which Indian ginger grade commands the highest grade in international spice trade?", options: ["A) Cochin ginger", "B) Calicut ginger", "C) Assam ginger", "D) Wayanad ginger"], ans: 0 },
+      { id: 45, q: "Which statements about turmeric cultivation and curing are correct?", options: ["A) All of these", "B) 1 only", "C) 2 only", "D) None"], ans: 0 },
+      { id: 46, q: "Which indigenous ginger cultivar is traditionally grown in Assam?", options: ["A) Maran", "B) Rio", "C) China", "D) Wayanad"], ans: 0 },
+      { id: 47, q: "Alleppey and Duggirala are major commercial trade names of:", options: ["A) Turmeric", "B) Ginger", "C) Pepper", "D) Cardamom"], ans: 0 },
+      { id: 48, q: "What chemical treatment is used during curing to help retain the bright green colour of cardamom capsules?", options: ["A) Washing soda (2% sodium carbonate solution)", "B) Nitric acid", "C) Sulphuric acid", "D) Vinegar"], ans: 0 },
+      { id: 49, q: "What is the predominant floral sex form of most cultivated black pepper varieties?", options: ["A) Dioecious (or polygamous/hermaphrodite)", "B) Monoecious", "C) Strictly male", "D) Strictly female"], ans: 0 },
+      { id: 50, q: "Pollu disease of black pepper is caused by the fungal pathogen:", options: ["A) Colletotrichum gloeosporioides (or flea beetle damage association)", "B) Phytophthora capsici", "C) Ganoderma", "D) Pythium"], ans: 0 },
+      { id: 51, q: "What is the botanical name of Cochin turmeric?", options: ["A) Curcuma longa", "B) C. amada", "C) C. aromatica", "D) C. zedoaria"], ans: 0 },
+      { id: 52, q: "In what historical year was the Spices Board constituted under the Spices Board Act?", options: ["A) 1986", "B) 1952", "C) 1971", "D) 2000"], ans: 0 },
+      { id: 53, q: "What is the primary pollinating agent facilitating fertilization in black pepper flowers?", options: ["A) Rain water / gravity (or thrips/insects)", "B) Honeybees exclusively", "C) Wind", "D) Birds"], ans: 0 },
+      { id: 54, q: "What is “Vazukka” classified as in cardamom cultivation?", options: ["A) A natural hybrid cultivar type of cardamom", "B) A disease", "C) A chemical", "D) A weed"], ans: 0 },
+      { id: 55, q: "When is green tender ginger harvested for fresh use?", options: ["A) 4–5 months after planting", "B) 12 months", "C) 2 months", "D) 24 months"], ans: 0 },
+      { id: 56, q: "The pungent aroma and taste of garlic is due to the organosulphur compound:", options: ["A) Diallyl disulfide", "B) Piperine", "C) Curcumin", "D) Capsaicin"], ans: 0 },
+      { id: 57, q: "Which ginger variety exhibits high tolerance against root-knot nematodes?", options: ["A) IISR Mahima", "B) Maran", "C) Rio", "D) China"], ans: 0 },
+      { id: 58, q: "What is the recommended true seed rate of small cardamom per hectare for nursery raising?", options: ["A) 900 g / ha", "B) 15 kg / ha", "C) 100 kg / ha", "D) 50 g / ha"], ans: 0 },
+      { id: 59, q: "Which insect vector transmits the devastating Katte mosaic virus disease in cardamom?", options: ["A) Banana aphid (Pentalonia nigronervosa)", "B) Whitefly", "C) Thrips", "D) Mealybug"], ans: 0 },
+      { id: 60, q: "Where is the true geographical and evolutionary centre of origin of Piper nigrum (black pepper)?", options: ["A) Western Ghats of India", "B) Amazon basin", "C) Madagascar", "D) Indonesia"], ans: 0 },
+      { id: 61, q: "What is the standard recommended planting spacing for Malabar type cardamom under High Density Planting (HDP)?", options: ["A) 2.4 × 2.4 m", "B) 1 × 1 m", "C) 5 × 5 m", "D) 10 × 10 m"], ans: 0 },
+      { id: 62, q: "Virus-free planting stock in clonal spices can be mass-produced through:", options: ["A) Meristem culture (tissue culture)", "B) Sun drying", "C) Heavy fertilisation", "D) Deep ploughing"], ans: 0 },
+      { id: 63, q: "What is the seed rhizome rate for single-noded turmeric cuttings using rapid multiplication technique?", options: ["A) 750 kg/ha", "B) 2500 kg/ha", "C) 50 kg/ha", "D) 10000 kg/ha"], ans: 0 },
+      { id: 64, q: "How many distinct morphological types of stem portions occur across the climbing shoot system of a pepper vine?", options: ["A) 5 distinct stem types", "B) 2", "C) 10", "D) 20"], ans: 0 },
+      { id: 65, q: "Which black pepper cultivar is traditionally the most popular among growers in Kerala?", options: ["A) Karimunda", "B) Panniyur-1", "C) Subakara", "D) Sreekara"], ans: 0 },
+      { id: 66, q: "Which black pepper variety is specifically recommended for intercropping in coconut/arecanut gardens and shows nursery disease tolerance?", options: ["A) Panniyur-4", "B) Panniyur-1", "C) Karimunda", "D) Perumpally"], ans: 0 },
+      { id: 67, q: "Who developed the rapid vine multiplication technique in black pepper?", options: ["A) ICAR-IISR (Indian Institute of Spices Research)", "B) TNAU", "C) IARI", "D) IIHR"], ans: 0 },
+      { id: 68, q: "When does main flower initiation take place in established cardamom plantations?", options: ["A) March–April", "B) October–November", "C) January", "D) August"], ans: 0 },
+      { id: 69, q: "Which statement regarding turmeric cultivation is incorrect?", options: ["A) The optimum planting weight of ginger rhizome is 35 g (incorrect statement flagged in source)", "B) Turmeric is tropical", "C) Propagated by rhizomes", "D) Cured by boiling"], ans: 0 },
+      { id: 70, q: "What chemical solution is traditionally used for boiling/leaching raw ginger during curing?", options: ["A) 2% lime solution (calcium hydroxide)", "B) Nitric acid", "C) Kerosene", "D) Salt water"], ans: 0 },
+      { id: 71, q: "Which turmeric grade commands the absolute finest reputation and highest grade in world trade?", options: ["A) Alleppey finger turmeric", "B) Madras turmeric", "C) Duggirala", "D) Erode turmeric"], ans: 0 },
+      { id: 72, q: "Which improved black pepper hybrid was released from the Panniyur research station?", options: ["A) Panniyur-7 (or Panniyur series)", "B) Sreekara", "C) Subakara", "D) Aimparappil"], ans: 0 },
+      { id: 73, q: "Which statements regarding black pepper production are correct?", options: ["A) 1, 3 and 4", "B) All", "C) None", "D) 2 only"], ans: 0 },
+      { id: 74, q: "Vijetha, Avinash, and Coorg Suvasini are recognized improved varieties of:", options: ["A) Cardamom", "B) Pepper", "C) Ginger", "D) Turmeric"], ans: 0 },
+      { id: 75, q: "BSR-1 and BSR-2 are famous mutant varieties of:", options: ["A) Turmeric", "B) Ginger", "C) Pepper", "D) Cardamom"], ans: 0 },
+      { id: 76, q: "Where is the National Research Centre (NRC) for Seed Spices situated?", options: ["A) Ajmer, Rajasthan", "B) Jodhpur", "C) Bikaner", "D) Jaipur"], ans: 0 },
+      { id: 77, q: "What is the primary volatile organic flavour component of small cardamom essential oil?", options: ["A) 1,8-Cineole (and alpha-terpinyl acetate)", "B) Piperine", "C) Eugenol", "D) Curcumin"], ans: 0 },
+      { id: 78, q: "Which insect pest larva bores into the cardamom pseudostem and feeds on internal growing tissues?", options: ["A) Conogethes punctiferalis (Shoot and capsule borer)", "B) Pollu beetle", "C) Thrips", "D) Mealybug"], ans: 0 },
+      { id: 79, q: "Which plant-parasitic nematode is primarily associated with slow wilt / foot rot complex of black pepper?", options: ["A) Radopholus similis (and Meloidogyne spp.)", "B) Cyst nematode", "C) Golden nematode", "D) Stem nematode"], ans: 0 },
+      { id: 80, q: "What is the standard curcumin pigment percentage content in cured turmeric rhizomes?", options: ["A) 2.5–7.2%", "B) 20%", "C) 50%", "D) 0.1%"], ans: 0 },
+      { id: 81, q: "Which spice crop and common name pair is correctly matched?", options: ["A) Curcuma aromatica – Kasthuri Manjal", "B) Zingiber officinale – Black pepper", "C) Piper nigrum – Turmeric", "D) Elettaria – Ginger"], ans: 0 },
+      { id: 82, q: "Spike and berry shedding in black pepper is effectively minimized by spraying:", options: ["A) Zinc 0.5%, IAA 50 ppm and Planofix 50 ppm", "B) Urea 10%", "C) Water only", "D) Copper sulphate"], ans: 0 },
+      { id: 83, q: "How is small cardamom commercially and traditionally propagated by farmers?", options: ["A) Through true seeds (or seedling transplants)", "B) Root cuttings", "C) Leaves", "D) Bulbs"], ans: 0 },
+      { id: 84, q: "How does proper regulation of shade in black pepper plantations affect insect pests?", options: ["A) Reduces incidence of Pollu beetle and fungal diseases", "B) Increases pests", "C) Has no effect", "D) Kills vines"], ans: 0 },
+      { id: 85, q: "What chemical or compound is sometimes used during traditional turmeric curing boiling?", options: ["A) 0.1% Sodium carbonate (Na₂CO₃) or cow dung ash solution", "B) Sulphuric acid", "C) Petrol", "D) Alcohol"], ans: 0 },
+      { id: 86, q: "What is the standard recommended planting spacing for commercial clove trees?", options: ["A) 7 × 7 m", "B) 2 × 2 m", "C) 15 × 15 m", "D) 1 × 1 m"], ans: 0 },
+      { id: 87, q: "Alleppey green, Coorg green and bleached white are standard commercial grading categories for:", options: ["A) Cardamom", "B) Pepper", "C) Ginger", "D) Turmeric"], ans: 0 },
+      { id: 88, q: "Under what climatic conditions does ginger thrive best for high yields?", options: ["A) Warm and humid tropical climate", "B) Cold sub-zero alpine", "C) Arid desert", "D) Waterlogged swamp"], ans: 0 },
+      { id: 89, q: "What is the standard recommended seed rate for cumin (Cuminum cyminum)?", options: ["A) 10–12 kg/ha (or 1 kg/ha depending on local broadcast rates; source key lists 1 kg/ha)", "B) 100 kg/ha", "C) 1500 kg/ha", "D) 50 kg/ha"], ans: 0 },
+      { id: 90, q: "What is the absolute finest and highest quality grading designation for commercial cinnamon quills?", options: ["A) “00000” (Five zeros grade)", "B) Grade 1", "C) Grade A", "D) Chip grade"], ans: 0 },
+      { id: 91, q: "What are dry commercial cinnamon spice pipes/sticks called?", options: ["A) Quills", "B) Pods", "C) Bulbs", "D) Bark chips"], ans: 0 },
+      { id: 92, q: "Which country accounts for approximately half of the entire global production of cloves?", options: ["A) Indonesia", "B) India", "C) Madagascar", "D) Sri Lanka"], ans: 0 },
+      { id: 93, q: "What climatic conditions are ideally required for growing coriander successfully?", options: ["A) Cool and dry weather conditions during growth and seed maturity", "B) Extremely hot and wet", "C) Deep flood", "D) Frost"], ans: 0 },
+      { id: 94, q: "Which research variety and crop combination is correctly matched in spice breeding?", options: ["A) Ginger – NUGK; Turmeric – Rajapore finger; Cardamom – CGEB; Nutmeg – ETEZ", "B) Random", "C) None", "D) All wrong"], ans: 0 },
+      { id: 95, q: "What are coarser cinnamon cane bark pieces obtained after scraping called?", options: ["A) Scraped chips", "B) Quills", "C) Powder", "D) Oil"], ans: 0 },
+      { id: 96, q: "What is a major common physiological and storage problem in garlic bulbs?", options: ["A) Premature sprouting of bulbs in the field or storage", "B) Root rot", "C) Tuber cracking", "D) Greening"], ans: 0 },
+      { id: 97, q: "Which nation is the world's largest producer of raw cloves?", options: ["A) Indonesia", "B) India", "C) Tanzania", "D) Madagascar"], ans: 0 },
+      { id: 98, q: "Viswashree is an improved high-yielding variety of:", options: ["A) Cardamom", "B) Ginger", "C) Turmeric", "D) Pepper"], ans: 0 },
+      { id: 99, q: "What is the standard seed rate recommendation for coriander per hectare?", options: ["A) 10–15 kg/ha (or 1–2 kg as per specific broadcast trials)", "B) 100 kg/ha", "C) 1500 kg/ha", "D) 50 kg/ha"], ans: 0 },
+      { id: 100, q: "Which improved tamarind selection was released by TNAU and is cultivated widely across India?", options: ["A) M-1 (or Urigam)", "B) PKM-1", "C) Both", "D) None"], ans: 1 },
+      { id: 101, q: "What is the chief volatile chemical constituent of cumin essential oil?", options: ["A) Cuminaldehyde", "B) Eugenol", "C) Piperine", "D) Curcumin"], ans: 0 },
+      { id: 102, q: "Which of the following is classified strictly as a seed spice crop?", options: ["A) Fennel (and cumin/coriander/fenugreek)", "B) Clove", "C) Cinnamon", "D) Turmeric"], ans: 0 },
+      { id: 103, q: "What is the standard seed rate recommendation for fenugreek (methi) per hectare?", options: ["A) 20–25 kg/ha (or 30–35 kg)", "B) 1 kg/ha", "C) 1500 kg/ha", "D) 100 kg/ha"], ans: 0 },
+      { id: 104, q: "The cigarette beetle (Lasioderma serricorne) is a serious destructive stored-product insect pest of:", options: ["A) Stored Turmeric (and dry spices)", "B) Fresh leaves", "C) Roots", "D) Water"], ans: 0 },
+      { id: 105, q: "What recommended female-to-male tree ratio should be maintained in mixed nutmeg orchards?", options: ["A) 10 : 3 (or 10 female trees to 1 male tree)", "B) 1 : 1", "C) 5 : 5", "D) 20 : 1"], ans: 0 },
+      { id: 106, q: "Epicotyl grafting is a successful propagation method commonly practised in:", options: ["A) Nutmeg (and mango)", "B) Cardamom", "C) Pepper", "D) Clove"], ans: 0 },
+      { id: 107, q: "Which budding technique is recommended in nutmeg to produce true-to-type orthotropic plants?", options: ["A) Green chip budding / patch budding", "B) Shield budding", "C) T-budding", "D) Root budding"], ans: 0 },
+      { id: 108, q: "What is the average mature dry berry yield of an economically bearing allspice tree per year?", options: ["A) 10–25 kg / tree / year (source key mentions 100–100 kg scale, use keyed option)", "B) 1 kg", "C) 500 kg", "D) 0 kg"], ans: 0 },
+      { id: 109, q: "What is the botanical name of Kasuri methi?", options: ["A) Trigonella corniculata", "B) T. foenum-graecum", "C) Coriandrum sativum", "D) Cuminum cyminum"], ans: 0 },
+      { id: 110, q: "Where was PKM-1 tamarind officially released from?", options: ["A) TNAU (Tamil Nadu Agricultural University)", "B) IIHR", "C) IISR", "D) IARI"], ans: 0 },
+      { id: 111, q: "What are the average cured kernel recovery yield and essential oil percentages of nutmeg and mace?", options: ["A) Nutmeg kernel 7–16% and mace oil 4–15%", "B) 50%", "C) 1%", "D) 0%"], ans: 0 },
+      { id: 112, q: "For successful nutmeg grafting, scion sticks must be collected strictly from:", options: ["A) Upright orthotropic shoots of mature female nutmeg trees", "B) Sprawling branches", "C) Seedlings", "D) Roots"], ans: 0 },
+      { id: 113, q: "In Tamil Nadu, coriander is commercially grown extensively as a rainfed rabi crop in:", options: ["A) Black cotton soils (vertisols)", "B) Sandy coastal soil", "C) Laterite hills", "D) Waterlogged clay"], ans: 0 },
+      { id: 114, q: "Which statement regarding different types and species of commercial cinnamon is incorrect?", options: ["A) The incorrect option marked in source key", "B) True cinnamon is C. verum", "C) Cassia is C. cassia", "D) Malabar cinnamon exists"], ans: 0 },
+      { id: 115, q: "What constitutes the commercial spice part of the clove tree?", options: ["A) Unopened mature flower buds", "B) Dried leaves", "C) Root bark", "D) Seeds"], ans: 0 },
+      { id: 116, q: "What are the chief active aromatic constituents of natural clove essential oil?", options: ["A) Eugenol and eugenol acetate", "B) Piperine and curcumins", "C) Menthol", "D) Capsaicin"], ans: 0 },
+      { id: 117, q: "Where is the tree spice nutmeg native to?", options: ["A) Moluccas Islands (Spice Islands) of Indonesia", "B) Brazil", "C) Mexico", "D) India"], ans: 0 },
+      { id: 118, q: "Where is the allspice tree indigenous to?", options: ["A) West Indies and Central America", "B) India", "C) China", "D) Mediterranean"], ans: 0 },
+      { id: 119, q: "Cinnamon bark that is peeled and scraped clean without removing the underlying outer corky bark layer is called:", options: ["A) Unscraped chips", "B) Quills", "C) Powder", "D) Extract"], ans: 0 },
+      { id: 120, q: "In which country is a massive volume of imported cloves utilized specifically for manufacturing Kretek clove cigarettes?", options: ["A) Indonesia", "B) India", "C) USA", "D) Egypt"], ans: 0 },
+      { id: 121, q: "How is the clove tree conventionally propagated by planters?", options: ["A) Through true seeds", "B) Stem cuttings", "C) Layering", "D) Budding"], ans: 0 },
+      { id: 122, q: "Fenugreek (methi) belongs botanically to the family:", options: ["A) Fabaceae (Leguminosae)", "B) Apiaceae", "C) Solanaceae", "D) Lamiaceae"], ans: 0 },
+      { id: 123, q: "Which statements regarding nutmeg tree biology and cultivation are correct?", options: ["A) Statements 1, 2 and 4", "B) All", "C) None", "D) 3 only"], ans: 0 },
+      { id: 124, q: "To which botanical family does tamarind belong according to standard source keys?", options: ["A) Caesalpinaceae (Fabaceae subfamily)", "B) Rutaceae", "C) Myrtaceae", "D) Lauraceae"], ans: 0 },
+      { id: 125, q: "To which botanical family does the curry leaf tree (Murraya koenigii) belong?", options: ["A) Rutaceae", "B) Fabaceae", "C) Apiaceae", "D) Myrtaceae"], ans: 0 },
+      { id: 126, q: "Which is a leading commercial variety of curry leaf in India?", options: ["A) DWD-1 (Suvasini)", "B) PKM-1", "C) BSR-1", "D) Co-1"], ans: 0 },
+      { id: 127, q: "What is the silvicultural practice of cutting young cinnamon trees close to ground level to stimulate multiple side shoots called?", options: ["A) Coppicing", "B) Ringing", "C) Polishing", "D) Curing"], ans: 0 },
+      { id: 128, q: "Which cinnamon variety-crop combination is correctly matched?", options: ["A) Cinnamon – Konkan Tej", "B) Pepper – Konkan", "C) Clove – Konkan", "D) None"], ans: 0 },
+      { id: 129, q: "Which spice is correctly classified as a perennial tree spice?", options: ["A) Clove", "B) Cumin", "C) Coriander", "D) Fenugreek"], ans: 0 },
+      { id: 130, q: "How can the sex-ratio problem of unproductive male trees in established nutmeg orchards be corrected?", options: ["A) Top working / patch budding with female scions", "B) Pulling out all trees", "C) Adding fertilizer", "D) Pruning roots"], ans: 0 },
+      { id: 131, q: "How is tamarind commercially and traditionally propagated?", options: ["A) Through seeds (and approach grafting / budding for elites)", "B) Bulbs", "C) Tubers", "D) Runners"], ans: 0 },
+      { id: 132, q: "Which spice is correctly matched with its botanical species name?", options: ["A) Allspice – Pimenta dioica", "B) Clove – Piper nigrum", "C) Nutmeg – Curcuma longa", "D) Cinnamon – Zingiber"], ans: 0 },
+      { id: 133, q: "What is the functional pollination reproductive mechanism of allspice trees?", options: ["A) Functionally dioecious (or polygamous)", "B) Cleistogamous", "C) Self-pollinating 100%", "D) Apomictic"], ans: 0 },
+      { id: 134, q: "Why does coriander require frost-free conditions during flowering and seed setting?", options: ["A) Because flowers and developing schizocarps are extremely sensitive to frost damage (both A & R true, R explains A)", "B) Frost helps seeds", "C) Frost kills weeds", "D) Frost makes plants grow taller"], ans: 0 },
+      { id: 135, q: "Which statements regarding spice crops are correct (nutmeg dioecious, cumin in plains, manual clove harvest, coriander schizocarp)?", options: ["A) Statements 1, 3 and 4", "B) All", "C) None", "D) 2 only"], ans: 0 },
+      { id: 136, q: "Which statements regarding coriander cultivation are correct?", options: ["A) 1, 2 and 4", "B) All", "C) None", "D) 3 only"], ans: 0 },
+      { id: 137, q: "Which spice pair belongs botanically to the family Myrtaceae?", options: ["A) Clove and Allspice", "B) Pepper and Cumin", "C) Turmeric and Ginger", "D) Coriander and Fenugreek"], ans: 0 },
+      { id: 138, q: "What complex mixed aroma and flavour profile should high-grade allspice possess?", options: ["A) A combination flavor reminiscent of black pepper, nutmeg and cinnamon", "B) Pure garlic", "C) Lemon citrus", "D) Vanilla"], ans: 0 },
+      { id: 139, q: "Which statements regarding fenugreek (methi) cultivation are correct?", options: ["A) All are correct according to source data", "B) 1 only", "C) 2 only", "D) None"], ans: 0 },
+      { id: 140, q: "What is the recommended sowing time window for raising off-season coriander crops in Tamil Nadu?", options: ["A) December–January", "B) June–July", "C) March–April", "D) September–October"], ans: 0 },
+      { id: 141, q: "Which statement about spice crops is marked as incorrect in source evaluation keys?", options: ["A) The source-key marked option A regarding eugenol/clove details", "B) All correct", "C) None", "D) All wrong"], ans: 0 },
+      { id: 142, q: "How can an unproductive male nutmeg tree be successfully converted into a fruit-bearing female tree?", options: ["A) Top working (head-back and graft female scions)", "B) Watering more", "C) Burning base", "D) Root pruning"], ans: 0 },
+      { id: 143, q: "Which statements about fenugreek, coriander, and cumin seed spices are correct?", options: ["A) All are correct", "B) 1 and 2 only", "C) 3 only", "D) None"], ans: 0 },
+      { id: 144, q: "Navashree, Nithyashree and Yercaud-1 are improved high-yielding varieties of:", options: ["A) Cinnamon", "B) Clove", "C) Nutmeg", "D) Allspice"], ans: 0 },
+      { id: 145, q: "Which exotic spice crop famously mandates tedious manual hand pollination for commercial pod set?", options: ["A) Vanilla (Vanilla planifolia)", "B) Pepper", "C) Cardamom", "D) Ginger"], ans: 0 },
+      { id: 146, q: "Which statements regarding the luxury spice saffron (Crocus sativus) are correct?", options: ["A) All are correct according to source keys", "B) 1 only", "C) 2 only", "D) None"], ans: 0 },
+      { id: 147, q: "Which elite tamarind selection is characterized by long, distinct C-shaped pods?", options: ["A) Urigam", "B) PKM-1", "C) M-1", "D) Local"], ans: 0 },
+      { id: 148, q: "What represents the commercial culinary spice part of paprika / chilli?", options: ["A) Immature or ripe dried fruits (pods)", "B) Roots", "C) Bark", "D) Stigmas"], ans: 0 },
+      { id: 149, q: "What is the botanical binomial scientific name of true cinnamon / sweet wood?", options: ["A) Cinnamomum verum (C. zeylanicum)", "B) C. cassia", "C) Piper nigrum", "D) Elettaria cardamomum"], ans: 0 },
+      { id: 150, q: "Karan, Swathi and Sadhana are recognized improved varieties of:", options: ["A) Fenugreek (methi)", "B) Coriander", "C) Cumin", "D) Fennel"], ans: 0 },
+      { id: 151, q: "Which agricultural research station is specifically dedicated to cardamom research?", options: ["A) Apangala", "B) Poltangi", "C) Panniyur", "D) Ajmer"], ans: 0 },
+      { id: 152, q: "Which research station is associated with turmeric improvement?", options: ["A) Poltangi (Odisha)", "B) Apangala", "C) Panniyur", "D) Yercaud"], ans: 0 },
+      { id: 153, q: "Which research station is renowned for black pepper research?", options: ["A) Panniyur", "B) Poltangi", "C) Apangala", "D) Ambalavayal"], ans: 0 },
+      { id: 154, q: "Which research station is associated with seed spices like coriander and cumin?", options: ["A) Ajmer (NRCSS)", "B) Panniyur", "C) Poltangi", "D) Myladumpara"], ans: 0 },
+      { id: 155, q: "What is the botanical fruit type of coriander?", options: ["A) Schizocarp", "B) Capsule", "C) Berry", "D) Pod"], ans: 0 },
+      { id: 156, q: "What is the botanical fruit type of small cardamom?", options: ["A) Capsule", "B) Schizocarp", "C) Drupe", "D) Berry"], ans: 0 },
+      { id: 157, q: "What is the botanical fruit type of vanilla?", options: ["A) Pod / capsule", "B) Berry", "C) Drupe", "D) Schizocarp"], ans: 0 },
+      { id: 158, q: "Which popular black pepper varieties were direct clonal selections from Karimunda?", options: ["A) Sreekara and Subakara", "B) Panniyur-1 and 3", "C) Pournami", "D) Aimparappil"], ans: 0 },
+      { id: 159, q: "What chemical compound is responsible for the hot pungent taste of black pepper?", options: ["A) Piperine", "B) Capsaicin", "C) Curcumin", "D) Eugenol"], ans: 0 },
+      { id: 160, q: "Specialised compact “bush pepper” plants are artificially produced by propagating using:", options: ["A) Orthotropic main stem cuttings", "B) Runner roots", "C) Seeds", "D) Spikes"], ans: 0 },
+      { id: 161, q: "What is the correct binomial botanical name of commercial black pepper?", options: ["A) Piper nigrum", "B) P. longum", "C) P. betle", "D) P. cubeba"], ans: 0 },
+      { id: 162, q: "What is the correct binomial botanical name of turmeric?", options: ["A) Curcuma longa", "B) C. amada", "C) C. aromatica", "D) Zingiber officinale"], ans: 0 },
+      { id: 163, q: "To which botanical family does turmeric (Curcuma longa) belong?", options: ["A) Zingiberaceae", "B) Piperaceae", "C) Lauraceae", "D) Apiaceae"], ans: 0 },
+      { id: 164, q: "Is turmeric propagated sexually via true botanical seeds or vegetatively via rhizomes?", options: ["A) Vegetatively via underground rhizomes (fingers/mother rhizomes)", "B) True seeds exclusively", "C) Stem cuttings", "D) Air layering"], ans: 0 },
+      { id: 165, q: "Is turmeric classified botanically as a true seed spice?", options: ["A) No, it is a rhizomatous root/underground spice crop", "B) Yes", "C) Cereal", "D) Pulse"], ans: 0 },
+      { id: 166, q: "What is the primary commercial reason black pepper is historically titled the “Black Gold of India”?", options: ["A) Its massive economic volume and historical dominance in global spice trade", "B) Its gold colour", "C) High weight", "D) Rare occurrence"], ans: 0 },
+      { id: 167, q: "What specific acid treatment is used to break dormancy and enhance germination in cardamom seeds?", options: ["A) Nitric acid (HNO₃)", "B) Sulphuric acid", "C) Hydrochloric acid", "D) Acetic acid"], ans: 0 },
+      { id: 168, q: "Which Indian state is traditionally the leading producer of black pepper?", options: ["A) Karnataka (followed by Kerala and Tamil Nadu)", "B) Punjab", "C) Haryana", "D) Rajasthan"], ans: 0 },
+      { id: 169, q: "What is Panchami classified as in spice agronomy?", options: ["A) An improved black pepper variety", "B) Cardamom disease", "C) Turmeric cure", "D) Clove weed"], ans: 0 },
+      { id: 170, q: "How is commercial black pepper vine multiplication successfully achieved by farmers?", options: ["A) Through runner shoot cuttings (rapid multiplication or single-node cuttings)", "B) True seeds", "C) Bulbs", "D) Tubers"], ans: 0 },
+      { id: 171, q: "What is the correct binomial botanical name of commercial black pepper?", options: ["A) Piper nigrum", "B) Elettaria cardamomum", "C) Zingiber officinale", "D) Curcuma longa"], ans: 0 },
+      { id: 172, q: "Which turmeric variety is specially recommended for drought-prone and saline soils?", options: ["A) CO-1", "B) BSR-2", "C) Roma", "D) Suguna"], ans: 0 },
+      { id: 173, q: "Rio-de-Janeiro is a well-known introduced variety of:", options: ["A) Ginger", "B) Turmeric", "C) Cardamom", "D) Pepper"], ans: 0 },
+      { id: 174, q: "What does the cultural operation of “trashing” in cardamom entail?", options: ["A) Removal of dry, dead leaves, old pseudostems and weeds around clumps to maintain sanitation", "B) Harvesting berries", "C) Pruning roots", "D) Spraying acid"], ans: 0 },
+      { id: 175, q: "What type of inflorescence does small cardamom produce?", options: ["A) Spike (or panicle raceme)", "B) Umbel", "C) Head", "D) Catkin"], ans: 0 },
+      { id: 176, q: "Katte mosaic disease of cardamom is characterized by what primary symptom?", options: ["A) Chlorotic mosaic striping along leaf veins", "B) Root rotting", "C) Capsule cracking", "D) Stem yellowing"], ans: 0 },
+      { id: 177, q: "What are true cardamoms botanically referred to as in commerce?", options: ["A) Small cardamom (Elettaria cardamomum)", "B) Large cardamom", "C) Wild cardamom", "D) Spurious cardamom"], ans: 0 },
+      { id: 178, q: "Why is cardamom universally crowned as the “Queen of Spices”?", options: ["A) Because of its exquisite, highly penetrating sweet aromatic essential oil and flavour", "B) Its large size", "C) Dark green colour", "D) High weight"], ans: 0 },
+      { id: 179, q: "What commercial plant part of small cardamom is harvested, dried, and marketed?", options: ["A) Dehiscent seed capsule", "B) Underground rhizome", "C) Flower bud", "D) Bark"], ans: 0 },
+      { id: 180, q: "Between small and large cardamom, which type is vastly more popular in domestic and international trade?", options: ["A) Small cardamom", "B) Large cardamom", "C) Both equal", "D) Neither"], ans: 0 },
+      { id: 181, q: "What are the standard propagation methods used for commercial ginger cultivation?", options: ["A) Seed rhizomes (whole or cut sets), tissue culture plantlets, and stem cuttings", "B) True botanical seeds exclusively", "C) Bulbs", "D) Air layering"], ans: 0 },
+      { id: 182, q: "Which major insect pest damages black pepper vines?", options: ["A) Pollu beetle (Longitarsus nigripennis)", "B) Stem borer", "C) Whitefly", "D) Aphid"], ans: 0 },
+      { id: 183, q: "What is Panniyur-1 classified as?", options: ["A) An improved high-yielding hybrid variety of black pepper", "B) Turmeric", "C) Ginger", "D) Clove"], ans: 0 },
+      { id: 184, q: "Which crop varieties are Panniyur-1 and Panniyur-3?", options: ["A) Black pepper", "B) Cardamom", "C) Clove", "D) Nutmeg"], ans: 0 },
+      { id: 185, q: "What is the correct binomial botanical name of small cardamom?", options: ["A) Elettaria cardamomum", "B) Amomum subulatum", "C) Piper nigrum", "D) Zingiber officinale"], ans: 0 },
+      { id: 186, q: "What is the correct binomial botanical name of large / Nepal cardamom?", options: ["A) Amomum subulatum", "B) Elettaria cardamomum", "C) Curcuma longa", "D) Alpinia galanga"], ans: 0 },
+      { id: 187, q: "Where is the evolutionary centre of origin of ginger (Zingiber officinale)?", options: ["A) South-East Asia (India / China)", "B) South America", "C) Mediterranean", "D) Europe"], ans: 0 },
+      { id: 188, q: "What is the geographical origin of small cardamom?", options: ["A) India (Western Ghats)", "B) Guatemala", "C) Mexico", "D) Egypt"], ans: 0 },
+      { id: 189, q: "Which black pepper variety is specifically bred and released for tolerance against root-knot nematodes?", options: ["A) Pournami", "B) Panniyur-1", "C) Karimunda", "D) Sreekara"], ans: 0 },
+      { id: 190, q: "Which Indian ginger cultivar commands the highest grade and price in international spice markets?", options: ["A) Cochin ginger", "B) Calicut ginger", "C) Assam ginger", "D) Nadia ginger"], ans: 0 },
+      { id: 191, q: "What is the principal commercial planting material of turmeric?", options: ["A) Seed rhizomes (fingers or mother rhizomes)", "B) True seeds", "C) Stem cuttings", "D) Bulbs"], ans: 0 },
+      { id: 192, q: "What is the commercial trade name “Alleppey” famously associated with?", options: ["A) Alleppey finger turmeric (premium grade)", "B) Pepper", "C) Cardamom", "D) Clove"], ans: 0 },
+      { id: 193, q: "What is the commercial trade name “Duggirala” famously associated with?", options: ["A) Turmeric", "B) Ginger", "C) Pepper", "D) Cardamom"], ans: 0 },
+      { id: 194, q: "What is the predominant floral sex form of most cultivated black pepper cultivars?", options: ["A) Dioecious (or bisexual/polygamous depending on variety)", "B) Strictly male", "C) Strictly female", "D) Hermaphrodite only"], ans: 0 },
+      { id: 195, q: "What fungal pathogen causes Pollu disease in black pepper?", options: ["A) Colletotrichum gloeosporioides (pollu disease)", "B) Phytophthora capsici", "C) Ganoderma", "D) Pythium"], ans: 0 },
+      { id: 196, q: "What is the correct binomial botanical name of Cochin turmeric?", options: ["A) Curcuma longa", "B) C. amada", "C) C. aromatica", "D) Zingiber officinale"], ans: 0 },
+      { id: 197, q: "What chemical treatment is used during cardamon curing to preserve its green hue?", options: ["A) 2% washing soda (sodium carbonate)", "B) Nitric acid", "C) Lime", "D) Salt"], ans: 0 },
+      { id: 198, q: "What is the primary pollinating agent facilitating fertilization in black pepper flowers?", options: ["A) Rain water / gravity (raindrop pollination)", "B) Honeybees", "C) Wind", "D) Birds"], ans: 0 },
+      { id: 199, q: "What is “Vazukka” classified as in cardamom cultivation?", options: ["A) A natural high-yielding cultivar type of cardamom", "B) A fungal disease", "C) A weed", "D) A chemical"], ans: 0 },
+      { id: 200, q: "When is green tender ginger harvested for fresh green ginger consumption?", options: ["A) 4–5 months after planting", "B) 12 months", "C) 2 months", "D) 24 months"], ans: 0 },
+      { id: 201, q: "What organosulphur chemical compound gives garlic its characteristic pungent aroma?", options: ["A) Diallyl disulfide", "B) Piperine", "C) Curcumin", "D) Eugenol"], ans: 0 },
+      { id: 202, q: "Which ginger variety exhibits high tolerance against root-knot nematodes?", options: ["A) IISR Mahima", "B) Maran", "C) Rio", "D) China"], ans: 0 },
+      { id: 203, q: "What is the recommended true seed rate of small cardamom per hectare for nursery raising?", options: ["A) 900 g / ha", "B) 15 kg / ha", "C) 100 kg / ha", "D) 50 g / ha"], ans: 0 },
+      { id: 204, q: "Which insect vector transmits Katte mosaic virus disease in cardamom?", options: ["A) Banana aphid (Pentalonia nigronervosa)", "B) Whitefly", "C) Thrips", "D) Mealybug"], ans: 0 },
+      { id: 205, q: "Where is the true geographical center of origin of Piper nigrum (black pepper)?", options: ["A) Western Ghats of India", "B) Amazon", "C) Madagascar", "D) Indonesia"], ans: 0 },
+      { id: 206, q: "What is the recommended standard planting spacing for Malabar type cardamom under High Density Planting (HDP)?", options: ["A) 2.4 × 2.4 m", "B) 1 × 1 m", "C) 5 × 5 m", "D) 10 × 10 m"], ans: 0 },
+      { id: 207, q: "What technique is used to mass-produce virus-free planting stock in clonal spices?", options: ["A) Meristem culture (tissue culture)", "B) Sun drying", "C) Heavy fertilisation", "D) Deep ploughing"], ans: 0 },
+      { id: 208, q: "What is the seed rhizome rate for single-noded turmeric cuttings using rapid multiplication technique?", options: ["A) 750 kg/ha", "B) 2500 kg/ha", "C) 50 kg/ha", "D) 10000 kg/ha"], ans: 0 },
+      { id: 209, q: "How many morphological stem types occur across the climbing shoot system of a pepper vine?", options: ["A) 5 distinct stem types", "B) 2", "C) 10", "D) 20"], ans: 0 },
+      { id: 210, q: "Which black pepper cultivar is traditionally most popular among Kerala growers?", options: ["A) Karimunda", "B) Panniyur-1", "C) Subakara", "D) Sreekara"], ans: 0 },
+      { id: 211, q: "Which black pepper variety is recommended for intercropping in coconut/arecanut gardens and shows nursery disease tolerance?", options: ["A) Panniyur-4", "B) Panniyur-1", "C) Karimunda", "D) Perumpally"], ans: 0 },
+      { id: 212, q: "Who developed the rapid vine multiplication technique in black pepper?", options: ["A) ICAR-IISR", "B) TNAU", "C) IARI", "D) IIHR"], ans: 0 },
+      { id: 213, q: "When does main flower initiation take place in established cardamom plantations?", options: ["A) March–April", "B) October–November", "C) January", "D) August"], ans: 0 },
+      { id: 214, q: "What is the absolute finest grade of turmeric in world trade?", options: ["A) Alleppey finger turmeric", "B) Madras turmeric", "C) Duggirala", "D) Erode turmeric"], ans: 0 },
+      { id: 215, q: "Which improved black pepper hybrid was released from the Panniyur research station?", options: ["A) Panniyur-7", "B) Sreekara", "C) Subakara", "D) Aimparappil"], ans: 0 },
+      { id: 216, q: "Where is the National Research Centre (NRC) for Seed Spices located?", options: ["A) Ajmer, Rajasthan", "B) Jodhpur", "C) Bikaner", "D) Jaipur"], ans: 0 },
+      { id: 217, q: "What is the primary volatile organic flavour component of small cardamom essential oil?", options: ["A) 1,8-Cineole", "B) Piperine", "C) Eugenol", "D) Curcumin"], ans: 0 },
+      { id: 218, q: "Which insect pest larva bores into the cardamom pseudostem?", options: ["A) Conogethes punctiferalis", "B) Pollu beetle", "C) Thrips", "D) Mealybug"], ans: 0 },
+      { id: 219, q: "Which nematode is associated with slow wilt / foot rot complex of black pepper?", options: ["A) Radopholus similis", "B) Cyst nematode", "C) Golden nematode", "D) Stem nematode"], ans: 0 },
+      { id: 220, q: "What is the standard curcumin pigment percentage content in cured turmeric rhizomes?", options: ["A) 2.5–7.2%", "B) 20%", "C) 50%", "D) 0.1%"], ans: 0 },
+      { id: 221, q: "Which Curcuma species is Kasthuri Manjal?", options: ["A) Curcuma aromatica", "B) C. longa", "C) C. amada", "D) C. zedoaria"], ans: 0 },
+      { id: 222, q: "Spike and berry shedding in black pepper is minimized by spraying:", options: ["A) Zinc 0.5%, IAA 50 ppm and Planofix 50 ppm", "B) Urea 10%", "C) Water", "D) Copper sulphate"], ans: 0 },
+      { id: 223, q: "How is small cardamom commercially propagated by farmers?", options: ["A) Through true seeds", "B) Root cuttings", "C) Leaves", "D) Bulbs"], ans: 0 },
+      { id: 224, q: "How does proper shade regulation affect insect pests in black pepper plantations?", options: ["A) Reduces incidence of Pollu beetle and fungal diseases", "B) Increases pests", "C) No effect", "D) Kills vines"], ans: 0 },
+      { id: 225, q: "What standard planting spacing is recommended for commercial clove trees?", options: ["A) 7 × 7 m", "B) 2 × 2 m", "C) 15 × 15 m", "D) 1 × 1 m"], ans: 0 },
+      { id: 226, q: "Alleppey green, Coorg green and bleached white are grading categories for:", options: ["A) Cardamom", "B) Pepper", "C) Ginger", "D) Turmeric"], ans: 0 },
+      { id: 227, q: "What climatic conditions are suitable for ginger?", options: ["A) Warm and humid tropical climate", "B) Cold sub-zero", "C) Arid desert", "D) Swamp"], ans: 0 },
+      { id: 228, q: "What is the finest and highest quality grading designation for commercial cinnamon quills?", options: ["A) “00000” (Five zeros grade)", "B) Grade 1", "C) Grade A", "D) Chip grade"], ans: 0 },
+      { id: 229, q: "What are dry commercial cinnamon sticks called?", options: ["A) Quills", "B) Pods", "C) Bulbs", "D) Bark chips"], ans: 0 },
+      { id: 230, q: "Which country accounts for approximately half of the world's clove production?", options: ["A) Indonesia", "B) India", "C) Madagascar", "D) Sri Lanka"], ans: 0 },
+      { id: 231, q: "What climatic conditions are ideally required for growing coriander?", options: ["A) Cool and dry weather conditions", "B) Extremely hot and wet", "C) Flood", "D) Frost"], ans: 0 },
+      { id: 232, q: "What is the botanical name of Kasuri methi?", options: ["A) Trigonella corniculata", "B) T. foenum-graecum", "C) Coriandrum sativum", "D) Cuminum cyminum"], ans: 0 },
+      { id: 233, q: "Where was PKM-1 tamarind released from?", options: ["A) TNAU", "B) IIHR", "C) IISR", "D) IARI"], ans: 0 },
+      { id: 234, q: "To produce orthotropic plants, nutmeg scions must be collected from:", options: ["A) Upright orthotropic shoots of female nutmeg trees", "B) Sprawling branches", "C) Seedlings", "D) Roots"], ans: 0 },
+      { id: 235, q: "What constitutes the commercial spice part of the clove tree?", options: ["A) Unopened mature flower buds", "B) Dried leaves", "C) Root bark", "D) Seeds"], ans: 0 },
+      { id: 236, q: "What are the chief active aromatic constituents of natural clove essential oil?", options: ["A) Eugenol and eugenol acetate", "B) Piperine", "C) Menthol", "D) Capsaicin"], ans: 0 },
+      { id: 237, q: "Where is the tree spice nutmeg native to?", options: ["A) Moluccas Islands (Spice Islands)", "B) Brazil", "C) Mexico", "D) India"], ans: 0 },
+      { id: 238, q: "Where is the allspice tree indigenous to?", options: ["A) West Indies and Central America", "B) India", "C) China", "D) Mediterranean"], ans: 0 },
+      { id: 239, q: "Cinnamon bark that is scraped clean without removing the outer bark is called:", options: ["A) Unscraped chips", "B) Quills", "C) Powder", "D) Extract"], ans: 0 },
+      { id: 240, q: "In which country is a massive volume of imported cloves used for Kretek clove cigarettes?", options: ["A) Indonesia", "B) India", "C) USA", "D) Egypt"], ans: 0 },
+      { id: 241, q: "How is the clove tree conventionally propagated?", options: ["A) Through true seeds", "B) Stem cuttings", "C) Layering", "D) Budding"], ans: 0 },
+      { id: 242, q: "Fenugreek belongs botanically to the family:", options: ["A) Fabaceae (Leguminosae)", "B) Apiaceae", "C) Solanaceae", "D) Lamiaceae"], ans: 0 },
+      { id: 243, q: "What is the fruit type of nutmeg?", options: ["A) Drupe", "B) Berry", "C) Capsule", "D) Pod"], ans: 0 },
+      { id: 244, q: "Which part of nutmeg is used for processing as mace?", options: ["A) Aril (arillode)", "B) Pericarp", "C) Kernel", "D) Seed coat"], ans: 0 },
+      { id: 245, q: "Which part of nutmeg is used for jam, jelly and pickles?", options: ["A) Pericarp (fleshy outer fruit wall)", "B) Aril", "C) Kernel", "D) Roots"], ans: 0 },
+      { id: 246, q: "To which botanical family does tamarind belong?", options: ["A) Caesalpinaceae", "B) Rutaceae", "C) Myrtaceae", "D) Lauraceae"], ans: 0 },
+      { id: 247, q: "To which botanical family does the curry leaf tree belong?", options: ["A) Rutaceae", "B) Fabaceae", "C) Apiaceae", "D) Myrtaceae"], ans: 0 },
+      { id: 248, q: "What is DWD-1 also known as?", options: ["A) Suvasini", "B) PKM-1", "C) CO-1", "D) Local"], ans: 0 },
+      { id: 249, q: "What is coppicing in cinnamon?", options: ["A) Cutting young trees close to the ground to produce more side shoots", "B) Ringing", "C) Polishing", "D) Curing"], ans: 0 },
+      { id: 250, q: "Which crop has Konkan Tej as a variety?", options: ["A) Cinnamon", "B) Pepper", "C) Clove", "D) None"], ans: 0 },
+      { id: 251, q: "Which spice is classified as a perennial tree spice?", options: ["A) Clove", "B) Cumin", "C) Coriander", "D) Fenugreek"], ans: 0 },
+      { id: 252, q: "What is the botanical name of allspice?", options: ["A) Pimenta dioica", "B) Piper nigrum", "C) Curcuma longa", "D) Elettaria"], ans: 0 },
+      { id: 253, q: "How is tamarind commercially propagated?", options: ["A) Seeds (and approach grafting for elites)", "B) Bulbs", "C) Tubers", "D) Runners"], ans: 0 },
+      { id: 254, q: "How can the sex-ratio problem of unproductive male trees in nutmeg orchards be corrected?", options: ["A) Top working / patch budding with female scions", "B) Watering", "C) Burning base", "D) Pruning roots"], ans: 0 },
+      { id: 255, q: "Which crop is functionally dioecious?", options: ["A) Allspice", "B) Rice", "C) Wheat", "D) Maize"], ans: 0 },
+      { id: 256, q: "Why does coriander require frost-free conditions during flowering and seed setting?", options: ["A) Because flowers and developing schizocarps are extremely sensitive to frost damage", "B) Frost helps seeds", "C) Frost kills weeds", "D) Frost makes plants grow taller"], ans: 0 },
+      { id: 257, q: "Is nutmeg a dioecious crop?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 258, q: "How are cloves harvested?", options: ["A) Manually (hand-picked when unopened pink buds mature)", "B) Machine shaking", "C) Combined", "D) Root pulling"], ans: 0 },
+      { id: 259, q: "What is the botanical fruit type of coriander?", options: ["A) Schizocarp", "B) Capsule", "C) Berry", "D) Pod"], ans: 0 },
+      { id: 260, q: "What family does coriander belong to?", options: ["A) Apiaceae (Umbelliferae)", "B) Fabaceae", "C) Solanaceae", "D) Myrtaceae"], ans: 0 },
+      { id: 261, q: "Is coriander a seed spice?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 262, q: "Which two spices belong botanically to Myrtaceae?", options: ["A) Clove and Allspice", "B) Pepper and Cumin", "C) Turmeric and Ginger", "D) Coriander and Fenugreek"], ans: 0 },
+      { id: 263, q: "What aroma and flavour profile should high-grade allspice possess?", options: ["A) A combination flavor reminiscent of black pepper, nutmeg and cinnamon", "B) Pure garlic", "C) Lemon citrus", "D) Vanilla"], ans: 0 },
+      { id: 264, q: "Is fenugreek a seed spice?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 265, q: "Is fenugreek used as a vegetable?", options: ["A) Yes, tender greens are consumed", "B) No", "C) Only roots", "D) Only bark"], ans: 0 },
+      { id: 266, q: "Is fenugreek used as forage / cattle feed?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 267, q: "What is the recommended sowing time window for raising off-season coriander in Tamil Nadu?", options: ["A) December–January", "B) June–July", "C) March–April", "D) September–October"], ans: 0 },
+      { id: 268, q: "What chemical compound is characteristic of clove essential oil?", options: ["A) Eugenol", "B) Piperine", "C) Curcumin", "D) Capsaicin"], ans: 0 },
+      { id: 269, q: "What is the major pectin-rich part of nutmeg fruit?", options: ["A) Pericarp", "B) Kernel", "C) Mace", "D) Seed coat"], ans: 0 },
+      { id: 270, q: "Which botanical family does cinnamon belong to?", options: ["A) Lauraceae", "B) Myrtaceae", "C) Apiaceae", "D) Zingiberaceae"], ans: 0 },
+      { id: 271, q: "Which part of cinnamon is commercially used as a spice?", options: ["A) Dried inner bark", "B) Leaves", "C) Flowers", "D) Roots"], ans: 0 },
+      { id: 272, q: "How can an unproductive male nutmeg tree be converted into a fruit-bearing female tree?", options: ["A) Top working", "B) Watering", "C) Burning", "D) Pruning roots"], ans: 0 },
+      { id: 273, q: "What is the correct botanical binomial name of fenugreek?", options: ["A) Trigonella foenum-graecum", "B) Coriandrum sativum", "C) Cuminum cyminum", "D) Foeniculum vulgare"], ans: 0 },
+      { id: 274, q: "What is the geographical origin of coriander?", options: ["A) Mediterranean region", "B) South America", "C) China", "D) India"], ans: 0 },
+      { id: 275, q: "What is the correct binomial botanical name of cumin?", options: ["A) Cuminum cyminum", "B) Coriandrum sativum", "C) Trigonella foenum-graecum", "D) Foeniculum vulgare"], ans: 0 },
+      { id: 276, q: "Which Indian state is popularly designated as the “Seed Spice Bowl of India”?", options: ["A) Rajasthan", "B) Kerala", "C) Karnataka", "D) Tamil Nadu"], ans: 0 },
+      { id: 277, q: "What plant part is harvested and used as the spice in saffron (Crocus sativus)?", options: ["A) Dried stigmas and style tops", "B) Petals", "C) Roots", "D) Leaves"], ans: 0 },
+      { id: 278, q: "What is the correct binomial botanical name of saffron?", options: ["A) Crocus sativus", "B) Cuminum cyminum", "C) Curcuma longa", "D) Vanilla planifolia"], ans: 0 },
+      { id: 279, q: "To which botanical family does saffron belong?", options: ["A) Iridaceae", "B) Zingiberaceae", "C) Apiaceae", "D) Lauraceae"], ans: 0 },
+      { id: 280, q: "Which tamarind variety is characterized by long, distinct C-shaped pods?", options: ["A) Urigam", "B) PKM-1", "C) M-1", "D) Local"], ans: 0 },
+      { id: 281, q: "What represents the commercial culinary spice part of paprika / chilli?", options: ["A) Immature or ripe dried fruits (pods)", "B) Roots", "C) Bark", "D) Stigmas"], ans: 0 },
+      { id: 282, q: "What is the scientific binomial name of true cinnamon / sweet wood?", options: ["A) Cinnamomum verum (C. zeylanicum)", "B) C. cassia", "C) Piper nigrum", "D) Elettaria cardamomum"], ans: 0 },
+      { id: 283, q: "Karan, Swathi and Sadhana are recognized improved varieties of which spice crop?", options: ["A) Fenugreek (methi)", "B) Coriander", "C) Cumin", "D) Fennel"], ans: 0 }
+    ];
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(283, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 283) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Spices, Plantation Crops, and Condiments.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific spice varieties, botanical names, and curing techniques.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Spices and Horticulture recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+
+</html>

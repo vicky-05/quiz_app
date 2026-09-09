@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overall Questions Test 4 — Fertilizers, Soil Fertility & Biochemistry (200 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next,
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select,
+    .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Overall Questions Test 4 Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Overall Questions Test 4:
+        Fertilizers, Soil Fertility & Biochemistry (200 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–200)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="200">All Questions (200 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 200)</label>
+          <input type="number" id="custom-count-input" min="1" max="200" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">200 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#127806;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Overall Part 4</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#129482;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Fertilizers & Biochemistry</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 200</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">03:20:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 601, q: "What is the average N:P:K nutrient percentage content of urban town compost?", options: ["A) 1.4 : 1.0 : 1.4%", "B) 5 : 5 : 5", "C) 10 : 20 : 10", "D) Zero"], ans: 0 },
+      { id: 602, q: "What is the nutrient-rich organic compost produced using earthworms called?", options: ["A) Vermicompost", "B) Town compost", "C) FYM", "D) Sludge"], ans: 0 },
+      { id: 603, q: "What is the agronomic practice of turning undecomposed fresh green plant tissue into soil called?", options: ["A) Green manuring", "B) Composting", "C) Mulching", "D) Burning"], ans: 0 },
+      { id: 604, q: "At what optimum crop growth stage are green manure crops incorporated into the soil?", options: ["A) Flowering stage", "B) Seed maturity", "C) Germination", "D) Harvesting"], ans: 0 },
+      { id: 605, q: "How much nitrogen is typically added to the soil by a good green manure crop?", options: ["A) 50–175 kg N/ha", "B) 5 kg N/ha", "C) 1000 kg N/ha", "D) Zero"], ans: 0 },
+      { id: 606, q: "What is recognized as the most widely used and popular green manure crop in India?", options: ["A) Sunhemp (Crotalaria juncea)", "B) Dhaincha", "C) Cowpea", "D) Soybean"], ans: 0 },
+      { id: 607, q: "Which green manure legume crop is unique for possessing both stem and root nodulation?", options: ["A) Sesbania rostrata", "B) Crotalaria juncea", "C) Vigna unguiculata", "D) Trifolium"], ans: 0 },
+      { id: 608, q: "Which plant species are commonly utilized as green leaf manuring sources in southern India?", options: ["A) Karanj (Pongamia pinnata) and Ipomoea / Glycosmis", "B) Rice straw", "C) Wheat chaff", "D) Sawdust"], ans: 0 },
+      { id: 609, q: "What is the average N:P:K percentage nutrient content of fresh poultry manure?", options: ["A) Approx 3.02 : 2.63 : 1.4%", "B) 1 : 1 : 1", "C) 10 : 10 : 10", "D) Zero"], ans: 0 },
+      { id: 610, q: "Which organic crop oilcake exhibits the highest and fastest nitrification release rate?", options: ["A) Groundnut cake", "B) Castor cake", "C) Neem cake", "D) Mustard cake"], ans: 0 },
+      { id: 611, q: "What is the average N:P:K percentage nutrient content of groundnut oilcake?", options: ["A) 7.0 : 1.5 : 1.3%", "B) 1 : 1 : 1", "C) 20 : 10 : 10", "D) Zero"], ans: 0 },
+      { id: 612, q: "What are chemical fertilizers containing only a single primary plant nutrient called?", options: ["A) Straight fertilizers", "B) Complete fertilizers", "C) Complex fertilizers", "D) Mixed fertilizers"], ans: 0 },
+      { id: 613, q: "What are fertilizers containing all three major primary nutrients (N, P, K) called?", options: ["A) Complete / compound fertilizers", "B) Straight fertilizers", "C) Micronutrients", "D) Soil amendments"], ans: 0 },
+      { id: 614, q: "What are fertilizers containing more than 25% total primary nutrients classified as?", options: ["A) High-analysis fertilizers", "B) Low-analysis", "C) Organic", "D) Amendments"], ans: 0 },
+      { id: 615, q: "What does the “fertilizer ratio” numerically express?", options: ["A) The relative percentage proportion of N : P₂O₅ : K₂O", "B) Total weight", "C) Water solubility", "D) pH level"], ans: 0 },
+      { id: 616, q: "Which chemical fertilizer tends to ruin soil aggregate stability due to sodium accumulation?", options: ["A) Sodium nitrate", "B) Ammonium sulphate", "C) Urea", "D) DAP"], ans: 0 },
+      { id: 617, q: "Which is the oldest nitrogen fertilizer and is traditionally best suited for top-dressing in lowland rice?", options: ["A) Ammonium sulphate", "B) Urea", "C) Ammonium nitrate", "D) Anhydrous ammonia"], ans: 0 },
+      { id: 618, q: "What is the most concentrated solid/liquid nitrogenous fertilizer manufactured?", options: ["A) Anhydrous ammonia (approx 81% N)", "B) Urea (46%)", "C) Ammonium sulphate (20.6%)", "D) CAN (26%)"], ans: 0 },
+      { id: 619, q: "Which chemical nitrogen fertilizer is famously known as an explosive compound?", options: ["A) Ammonium nitrate (33% N)", "B) Urea", "C) Ammonium sulphate", "D) CAN"], ans: 0 },
+      { id: 620, q: "Which chemically neutral nitrogen fertilizer is popularly known in India as “Kishan Khad”?", options: ["A) Calcium Ammonium Nitrate (CAN - 26% N)", "B) Urea", "C) Ammonium sulphate", "D) DAP"], ans: 0 },
+      { id: 621, q: "What is the cheapest and most popular solid nitrogen fertilizer suitable for foliar spraying?", options: ["A) Urea (46% N)", "B) Ammonium nitrate", "C) Sodium nitrate", "D) Anhydrous ammonia"], ans: 0 },
+      { id: 622, q: "Under which chemical classification does urea fertilizer fall?", options: ["A) Amide form of nitrogen fertilizer", "B) Nitrate", "C) Ammoniacal", "D) Organic manure"], ans: 0 },
+      { id: 623, q: "Which chemical fertilizer is classified as an organic-origin synthetic compound?", options: ["A) Urea (carbamide synthesized from inorganic gases)", "B) Superphosphate", "C) MOP", "D) Rock phosphate"], ans: 0 },
+      { id: 624, q: "Which of the following are classified as water-soluble phosphatic fertilizers?", options: ["A) SSP, DSP, TSP and DAP", "B) Rock phosphate", "C) Bone meal", "D) Basic slag"], ans: 0 },
+      { id: 625, q: "Which phosphatic fertilizers are soluble in weak citric acid?", options: ["A) Dicalcium phosphate (DCP), basic slag and bone meal", "B) SSP", "C) DAP", "D) TSP"], ans: 0 },
+      { id: 626, q: "What is recognized as the oldest commercially manufactured chemical fertilizer in agriculture?", options: ["A) Single Superphosphate (SSP - 16–18% P₂O₅)", "B) DAP", "C) Urea", "D) MOP"], ans: 0 },
+      { id: 627, q: "Which phosphatic fertilizer uniquely supplies three essential plant nutrients (P, Ca, and S)?", options: ["A) Single Superphosphate (SSP)", "B) DAP", "C) Urea", "D) MOP"], ans: 0 },
+      { id: 628, q: "Which chemical fertilizer exhibits the least hygroscopic caking tendency among dry carriers?", options: ["A) Diammonium Phosphate (DAP)", "B) Urea", "C) Ammonium nitrate", "D) Calcium nitrate"], ans: 0 },
+      { id: 629, q: "Which phosphatic fertilizer is best suited and most effective for strongly acidic soils?", options: ["A) Raw bone meal / rock phosphate / basic slag", "B) SSP", "C) DAP", "D) TSP"], ans: 0 },
+      { id: 630, q: "Which potassic fertilizer contains the highest percentage of potassium oxide (K₂O)?", options: ["A) Muriate of Potash / Potassium chloride (KCl - 60% K₂O)", "B) Potassium sulphate (50%)", "C) Potassium nitrate", "D) Wood ash"], ans: 0 },
+      { id: 631, q: "Which potassic fertilizer is completely chlorine-free and ideally suited for drip fertigation?", options: ["A) Potassium nitrate (KNO₃ - 44% K₂O, 13% N)", "B) MOP", "C) Kainite", "D) Carnallite"], ans: 0 },
+      { id: 632, q: "What is the medium soil test rating range for available soil nitrogen (kg/ha)?", options: ["A) 280 to 560 kg/ha", "B) < 280 kg/ha", "C) > 560 kg/ha", "D) Zero"], ans: 0 },
+      { id: 633, q: "In which major food crop is the maximum total chemical fertilizer tonnage applied nationally?", options: ["A) Potato (and intensive rice-wheat)", "B) Pulses", "C) Millets", "D) Forestry"], ans: 0 },
+      { id: 634, q: "In which soil profile zone must fertilizer be applied for lowland paddy to maximize recovery?", options: ["A) Anaerobic reduced zone", "B) Oxidised surface crust", "C) Irrigation water surface", "D) Air"], ans: 0 },
+      { id: 635, q: "What standard laboratory chemical analytical method is used to determine total soil nitrogen?", options: ["A) Kjeldahl method", "B) Olsen's method", "C) Walkley-Black method", "D) Flame photometry"], ans: 0 },
+      { id: 636, q: "At what narrow soil pH range is chemical phosphorus availability maximum in mineral soils?", options: ["A) pH 6.0 to 6.5 (slightly acidic to neutral)", "B) pH 2.0 to 3.0", "C) pH 9.0 to 10.0", "D) pH 14.0"], ans: 0 },
+      { id: 637, q: "Which standard analytical method is used to determine available soil phosphorus?", options: ["A) Olsen's method (for neutral/alkaline soils) / Bray's method (for acidic soils)", "B) Kjeldahl", "C) Walkley-Black", "D) Hydrometer"], ans: 0 },
+      { id: 638, q: "What is the maximum safe concentration percentage of urea recommended for foliar spraying on crops?", options: ["A) Maximum 1 to 2% (source notes up to 6% in specific drought rescues)", "B) 50%", "C) 100%", "D) 0.01%"], ans: 0 },
+      { id: 639, q: "What is a weak fertilizer solution applied around seeds during planting to boost early seedling growth called?", options: ["A) Starter solution", "B) Folia feed", "C) Herbicide", "D) Fungicide"], ans: 0 },
+      { id: 640, q: "What is the agricultural practice of applying soluble chemical fertilizers dissolved in irrigation water called?", options: ["A) Fertigation", "B) Flood", "C) Weeding", "D) Drenching"], ans: 0 },
+      { id: 641, q: "Which primary nutrient elements are most commonly and effectively applied through commercial drip fertigation?", options: ["A) Nitrogen and potassium (and sulphur)", "B) Iron alone", "C) Heavy metals", "D) Silicon"], ans: 0 },
+      { id: 642, q: "Who originally proposed the foundational agricultural “Law of Diminishing Returns” (Mitscherlich equation)?", options: ["A) E.A. Mitscherlich (and Spillman)", "B) Liebig", "C) Darcy", "D) Stokes"], ans: 0 },
+      { id: 643, q: "Which slow-release nitrification inhibitors are applied to fertilizers in lowland flooded soils?", options: ["A) Oxamide and thiourea (or neem cake)", "B) Common salt", "C) Sugar", "D) Vinegar"], ans: 0 },
+      { id: 644, q: "Which materials are classified as slow-release or controlled-release nitrogen fertilizers?", options: ["A) Sulphur-coated urea, neem-coated urea and urea supergranules (USG)", "B) Raw urea", "C) Ammonium nitrate", "D) Sodium nitrate"], ans: 0 },
+      { id: 645, q: "Which specialized bacteria fix atmospheric nitrogen symbiotically inside the root nodules of legumes?", options: ["A) Rhizobium species", "B) Azotobacter", "C) Azospirillum", "D) Nitrosomonas"], ans: 0 },
+      { id: 646, q: "Which soil bacteria function as free-living asymbiotic nitrogen fixers?", options: ["A) Azotobacter and Azospirillum", "B) Rhizobium", "C) Nitrobacter", "D) E. coli"], ans: 0 },
+      { id: 647, q: "Approximately how much atmospheric nitrogen is symbiotically fixed per hectare by active Rhizobium?", options: ["A) 50–100 kg N/ha", "B) 1 kg", "C) 5000 kg", "D) Zero"], ans: 0 },
+      { id: 648, q: "Approximately how much atmospheric nitrogen is fixed per hectare by free-living Azotobacter?", options: ["A) 20–30 kg N/ha", "B) 500 kg", "C) Zero", "D) 10,000 kg"], ans: 0 },
+      { id: 649, q: "Which essential trace micronutrient element is an obligatory co-factor required by nitrogen-fixing bacteria?", options: ["A) Molybdenum (Mo)", "B) Iron", "C) Zinc", "D) Boron"], ans: 0 },
+      { id: 650, q: "Which soil bacterium catalyzes the biochemical oxidation of ammonium (NH₄⁺) into nitrite (NO₂⁻)?", options: ["A) Nitrosomonas", "B) Nitrobacter", "C) Azotobacter", "D) Pseudomonas"], ans: 0 },
+      { id: 651, q: "What is the biological soil conversion of nitrate (NO₃⁻) into gaseous nitrogen (N₂/N₂O) called?", options: ["A) Denitrification", "B) Nitrification", "C) Mineralization", "D) Fixation"], ans: 0 },
+      { id: 652, q: "VAM (Vesicular-Arbuscular Mycorrhiza) belongs biologically to which major group of organisms?", options: ["A) Fungi (Glomeromycota)", "B) Bacteria", "C) Algae", "D) Viruses"], ans: 0 },
+      { id: 653, q: "For inoculating soybean and groundnut crops, which specific Rhizobium inoculant strain is used?", options: ["A) Rhizobium japonicum (Bradyrhizobium)", "B) R. meliloti", "C) R. leguminosarum", "D) R. trifolii"], ans: 0 },
+      { id: 654, q: "For inoculating field pea, lathyrus, and lentil crops, which Rhizobium strain is applied?", options: ["A) Rhizobium leguminosarum", "B) R. japonicum", "C) R. meliloti", "D) R. trifolii"], ans: 0 },
+      { id: 655, q: "For inoculating berseem clover crops, which Rhizobium strain is required?", options: ["A) Rhizobium trifolii", "B) R. leguminosarum", "C) R. japonicum", "D) R. phaseoli"], ans: 0 },
+      { id: 656, q: "In flooded wetland rice paddies, which floating aquatic fern-cyanobacterial association fixes nitrogen?", options: ["A) Azolla pinnata (with Anabaena azollae)", "B) Rhizobium", "C) Lichen", "D) Mushroom"], ans: 0 },
+      { id: 657, q: "Which soil bacterial genus functions as a prominent mineral phosphate solubilizer (PSB)?", options: ["A) Pseudomonas (and Bacillus / Aspergillus)", "B) Nitrosomonas", "C) Rhizobium", "D) E. coli"], ans: 0 },
+      { id: 658, q: "Endomycorrhizal VAM fungi dramatically increase plant root absorption and availability of:", options: ["A) Phosphorus (P)", "B) Sodium", "C) Chlorine", "D) Silicon"], ans: 0 },
+      { id: 659, q: "What is commercial “Bio-super” fertilizer made up of?", options: ["A) Rock phosphate + elemental sulphur + sulphur-oxidizing bacteria", "B) Urea + water", "C) Salt + sand", "D) Manure"], ans: 0 },
+      { id: 660, q: "Which specialized microbial inoculant functions as a zinc-solubilizing bacterial biofertilizer?", options: ["A) Azozink (Zinc-solubilizing bacteria)", "B) Rhizobium", "C) Azotobacter", "D) PSB"], ans: 0 },
+      { id: 661, q: "What is the total number of universally recognized essential plant nutrient elements required for completing life cycle?", options: ["A) 17 essential elements", "B) 10", "C) 50", "D) 5"], ans: 0 },
+      { id: 662, q: "How many total functional plant nutrient elements are recognized in modern plant nutrition?", options: ["A) 21 functional elements", "B) 17", "C) 5", "D) 100"], ans: 0 },
+      { id: 663, q: "Which chemical elements are classified as beneficial elements for plants in source texts?", options: ["A) Rubidium (Ru), Strontium (Sr), Nickel (Ni), Chromium (Cr) and Arsenic (As)", "B) N, P, K", "C) C, H, O", "D) None"], ans: 0 },
+      { id: 664, q: "Which plant nutrients are grouped together as macronutrients?", options: ["A) C, H, O, N, P, K, Ca, Mg and S", "B) Fe, Mn, B, Zn, Cu, Mo, Cl, Ni", "C) Trace minerals only", "D) Heavy metals"], ans: 0 },
+      { id: 665, q: "Which nutrients are specifically classified as primary plant macronutrients?", options: ["A) Nitrogen (N), Phosphorus (P) and Potassium (K)", "B) Ca, Mg, S", "C) Fe, Zn, Cu", "D) C, H, O"], ans: 0 },
+      { id: 666, q: "Which nutrients are specifically classified as secondary plant macronutrients?", options: ["A) Calcium (Ca), Magnesium (Mg) and Sulphur (S)", "B) N, P, K", "C) Trace elements", "D) Water"], ans: 0 },
+      { id: 667, q: "Who first scientifically established the essentiality of nitrogen for plant growth?", options: ["A) Nicolas Théodore de Saussure", "B) Liebig", "C) Arnon", "D) Darwin"], ans: 0 },
+      { id: 668, q: "Who famously proposed the modern criteria for plant nutrient essentiality in 1939?", options: ["A) D.I. Arnon and P.L. Stout", "B) Liebig", "C) De Saussure", "D) Mitscherlich"], ans: 0 },
+      { id: 669, q: "Whose essentiality as a vital plant micronutrient was specifically discovered by Arnon and Stout in 1939?", options: ["A) Molybdenum (Mo)", "B) Boron", "C) Iron", "D) Zinc"], ans: 0 },
+      { id: 670, q: "In what chemical ionic forms is nitrogen predominantly taken up by higher plants?", options: ["A) Ammonium (NH₄⁺) and Nitrate (NO₃⁻) ions", "B) Pure N₂ gas", "C) Urea molecule", "D) Organic protein"], ans: 0 },
+      { id: 671, q: "What is the principal chemical ionic form in which phosphorus is absorbed by plant roots?", options: ["A) Dihydrogen phosphate (H₂PO₄⁻) and Hydrogen phosphate (HPO₄²⁻)", "B) Pure rock phosphate", "C) Organic P", "D) Phosphine gas"], ans: 0 },
+      { id: 672, q: "Which primary macronutrient element is notoriously highly immobile in soil?", options: ["A) Phosphorus (P)", "B) Nitrogen", "C) Potassium", "D) Boron"], ans: 0 },
+      { id: 673, q: "Which secondary nutrient element is highly immobile within plant tissue (deficiency in new leaves)?", options: ["A) Calcium (Ca)", "B) Nitrogen", "C) Phosphorus", "D) Potassium"], ans: 0 },
+      { id: 674, q: "In what physical state must all mineral plant nutrients be dissolved to be absorbed by roots?", options: ["A) As ionic solutes dissolved in soil solution water", "B) Solid rock", "C) Crystalline", "D) Gas"], ans: 0 },
+      { id: 675, q: "Which mineral nutrient is essential for maintaining starch quality and specific gravity in potato tubers?", options: ["A) Potassium (K)", "B) Nitrogen", "C) Iron", "D) Sodium"], ans: 0 },
+      { id: 676, q: "Which macronutrient is taken up in the absolute largest quantitative mass by most crop plants?", options: ["A) Potassium (K⁺)", "B) Nitrogen", "C) Phosphorus", "D) Calcium"], ans: 0 },
+      { id: 677, q: "Which essential nutrient element is exceptionally critical for high oil content in oilseed crops?", options: ["A) Sulphur (S)", "B) Phosphorus", "C) Potassium", "D) Boron"], ans: 0 },
+      { id: 678, q: "Which micronutrient element is listed in source notes as a structural component of vitamin B₁₂?", options: ["A) Cobalt / Copper (Cu / Co context in source tables)", "B) Iron", "C) Zinc", "D) Boron"], ans: 0 },
+      { id: 679, q: "In mobile nutrient deficiencies (N, P, K, Mg, Mo), where do chlorosis and deficiency symptoms appear first?", options: ["A) On older / lower leaves (translocated to new growth)", "B) On new terminal buds", "C) Roots", "D) Flowers"], ans: 0 },
+      { id: 680, q: "Where do deficiency symptoms of immobile nutrients (Fe, Mn, Cu, S) manifest first on plants?", options: ["A) On younger / upper new leaves", "B) Bottom leaves", "C) Stems", "D) Roots"], ans: 0 },
+      { id: 681, q: "Where do deficiency symptoms of elements with intermediate mobility (like Zinc) appear first?", options: ["A) Both older and younger leaves (intermediate symptoms)", "B) Roots only", "C) Flowers", "D) Bark"], ans: 0 },
+      { id: 682, q: "Where do deficiency symptoms of strictly immobile elements like Calcium and Boron appear first?", options: ["A) Terminal buds / growing shoot tips and root tips", "B) Old leaves", "C) Base of stem", "D) Seeds"], ans: 0 },
+      { id: 683, q: "What characteristic V-shaped yellowing and necrosis starting at the tip of lower cereal leaves indicates deficiency of:", options: ["A) Nitrogen (N)", "B) Phosphorus", "C) Potassium", "D) Calcium"], ans: 0 },
+      { id: 684, q: "What abnormal vegetative growth habit characterized by extremely short internodes indicates deficiency of:", options: ["A) Nitrogen / Zinc (stunting and short internodes)", "B) Iron", "C) Boron", "D) Sulphur"], ans: 0 },
+      { id: 685, q: "What abnormal dark green-to-purplish coloration on leaves and stems indicates deficiency of:", options: ["A) Phosphorus (P)", "B) Nitrogen", "C) Potassium", "D) Iron"], ans: 0 },
+      { id: 686, q: "Marginal scorching, leaf burn, and firing of bottom leaves accompanied by weak stalks indicate deficiency of:", options: ["A) Potassium (K)", "B) Nitrogen", "C) Calcium", "D) Boron"], ans: 0 },
+      { id: 687, q: "The death and failure of terminal growing buds and root tips is the cardinal deficiency symptom of:", options: ["A) Calcium (Ca)", "B) Nitrogen", "C) Potassium", "D) Iron"], ans: 0 },
+      { id: 688, q: "Interveinal chlorosis (yellowing between green veins) is classically caused by deficiency of:", options: ["A) Magnesium (Mg) and Iron (Fe)", "B) Nitrogen", "C) Phosphorus", "D) Boron"], ans: 0 },
+      { id: 689, q: "Downward cupping and curling of young leaves in tobacco and tea is characteristic of deficiency of:", options: ["A) Sulphur (S)", "B) Boron", "C) Calcium", "D) Potassium"], ans: 0 },
+      { id: 690, q: "A deformed “whip-like” twisted terminal bud structure in crops is caused by deficiency of:", options: ["A) Boron (B)", "B) Copper", "C) Zinc", "D) Iron"], ans: 0 },
+      { id: 691, q: "A reduced burning quality and dark ash in cured tobacco leaves is associated with deficiency of:", options: ["A) Chloride (Cl)", "B) Nitrogen", "C) Potassium", "D) Boron"], ans: 0 },
+      { id: 692, q: "Die-back of twigs and “little-leaf” rosetting in citrus fruit trees indicate deficiency of:", options: ["A) Copper (Cu) and Zinc (Zn)", "B) Iron", "C) Boron", "D) Nitrogen"], ans: 0 },
+      { id: 693, q: "What characteristic symptom is produced by Manganese (Mn) deficiency in crops?", options: ["A) Interveinal chlorosis and grey fleck / spot symptoms on younger leaves", "B) Purple leaves", "C) Root death", "D) Terminal bud rot"], ans: 0 },
+      { id: 694, q: "Translucent irregular spots or necrotic holes developing between leaf veins indicate deficiency of:", options: ["A) Molybdenum (Mo)", "B) Boron", "C) Iron", "D) Zinc"], ans: 0 },
+      { id: 695, q: "Chlorosis of the midrib with green veins and white/grey speckling on upper leaves indicates deficiency of:", options: ["A) Zinc (Zn)", "B) Copper", "C) Boron", "D) Nitrogen"], ans: 0 },
+      { id: 696, q: "What chemical soil amendment reduces or eliminates zinc toxicity in plants?", options: ["A) Addition of superphosphate / lime", "B) Adding salt", "C) Acid wash", "D) Flooding"], ans: 0 },
+      { id: 697, q: "What is the agronomic term for a physiological situation where a crop requires more nutrients for growth but displays zero visible deficiency symptoms?", options: ["A) “Hidden hunger”", "B) Starvation", "C) Toxicity", "D) Normalcy"], ans: 0 },
+      { id: 698, q: "Which major nutrient is notorious for undergoing “luxury consumption” uptake by crops like maize and sugarcane?", options: ["A) Potassium (K)", "B) Nitrogen", "C) Phosphorus", "D) Calcium"], ans: 0 },
+      { id: 699, q: "Excessive high levels of N, P, and K fertilizers frequently induce secondary deficiency symptoms of:", options: ["A) Copper (Cu) and Zinc (Zn)", "B) Nitrogen", "C) Potassium", "D) Carbon"], ans: 0 },
+      { id: 700, q: "Excessive soil calcium (Ca) carbonate levels can antagonize and induce deficiency of:", options: ["A) Phosphorus (P) and Iron", "B) Nitrogen", "C) Potassium", "D) Sodium"], ans: 0 },
+      { id: 701, q: "Which indicator plant species is traditionally used to signal soil nitrogen deficiency?", options: ["A) Cauliflower (or mustard / cabbage)", "B) Potato", "C) Rice", "D) Wheat"], ans: 0 },
+      { id: 702, q: "Which indicator plant species is utilized to signal boron deficiency in soil tests?", options: ["A) Sugarbeet (or sunflower)", "B) Rice", "C) Wheat", "D) Cotton"], ans: 0 },
+      { id: 703, q: "What type of extreme acid soil has an ultra-low pH below 4.0 containing active sulphides?", options: ["A) Cat clay soil (acid sulphate soil)", "B) Sodic", "C) Saline", "D) Normal"], ans: 0 },
+      { id: 704, q: "What is the long-term residual chemical effect of continuous urea fertilizer application on soil reaction?", options: ["A) Strongly acidic residual effect", "B) Alkaline", "C) Neutral", "D) Saline"], ans: 0 },
+      { id: 705, q: "An agricultural soil having a high alkaline pH above 8.5, high ESP, and high pH is classified as:", options: ["A) Sodic / Alkaline soil", "B) Acid soil", "C) Cat clay", "D) Normal"], ans: 0 },
+      { id: 706, q: "What is natural saline soil chemically and commonly called in literature?", options: ["A) Solonchak / White alkali soil", "B) Solanetz", "C) Usar", "D) Cat clay"], ans: 0 },
+      { id: 707, q: "What is sodic / alkali soil commonly called in literature?", options: ["A) Solonetz / Black alkali soil", "B) Solonchak", "C) White alkali", "D) Acid soil"], ans: 0 },
+      { id: 708, q: "What is saline-sodic mixed soil commonly referred to in regional Indian terminology?", options: ["A) Usar soils", "B) Laterite", "C) Regur", "D) Khadar"], ans: 0 },
+      { id: 709, q: "Why is agricultural agricultural lime (CaCO₃) applied to soils?", options: ["A) To neutralize soil acidity and raise soil pH", "B) To make soil saline", "C) To add sodium", "D) To kill roots"], ans: 0 },
+      { id: 710, q: "What chemical amendment is standardly used for reclaiming sodic / alkaline soils?", options: ["A) Gypsum (Calcium sulphate - CaSO₄·2H₂O)", "B) Lime", "C) Common salt", "D) Urea"], ans: 0 },
+      { id: 711, q: "What is iron pyrite (FeS₂) utilized to reclaim according to specific regional source keys?", options: ["A) Saline / alkali soils (generating sulphuric acid to lower pH)", "B) Acid soils", "C) Pure sand", "D) Water"], ans: 0 },
+      { id: 712, q: "Where is raw rock phosphate fertilizer ideally applied to maximize P availability?", options: ["A) Strongly acidic soils (where acid solubilizes the rock)", "B) Alkaline soils", "C) Saline soils", "D) Neutral soils"], ans: 0 },
+      { id: 713, q: "What are the exact guaranteed calcium (Ca) and sulphur (S) percentage contents of pure agricultural gypsum?", options: ["A) 29.2% Calcium and 18.6% Sulphur", "B) 10% Ca, 5% S", "C) 50% Ca", "D) Zero"], ans: 0 },
+      { id: 714, q: "Which standard laboratory method determines the lime requirement of an acid soil?", options: ["A) Shoemaker’s buffer method (or Woodruff method)", "B) Kjeldahl", "C) Olsen", "D) Flame photometry"], ans: 0 },
+      { id: 15, q: "Which agricultural crops naturally prefer and tolerate acidic soil conditions?", options: ["A) Rice, tea and potato", "B) Lucerne and alfalfa", "C) Cotton and barley", "D) Sugarbeet"], ans: 0 },
+      { id: 716, q: "Which field crops are classified as highly salt-tolerant?", options: ["A) Barley and sugarbeet", "B) Rice and potato", "C) Tea", "D) Beans"], ans: 0 },
+      { id: 717, q: "Which nitrogenous fertilizer is most beneficial and safe when applied on alkali / sodic soils?", options: ["A) Ammonium sulphate (acidifying residual effect)", "B) Sodium nitrate", "C) Urea", "D) CAN"], ans: 0 },
+      { id: 718, q: "Which woody halophytic plant species can be successfully grown and suggested for highly saline soils?", options: ["A) Haloxylon salicornium (or Atriplex / Salvadora)", "B) Apple", "C) Teak", "D) Mango"], ans: 0 },
+      { id: 719, q: "Who is historically acclaimed as the founding Father of Agricultural Biochemistry?", options: ["A) Justus von Liebig", "B) Louis Pasteur", "C) Darwin", "D) Mendel"], ans: 0 },
+      { id: 720, q: "Who first coined and introduced the scientific term “Biochemistry” in 1903?", options: ["A) Carl Neuberg (1903)", "B) Liebig", "C) Pasteur", "D) Watson"], ans: 0 },
+      { id: 721, q: "From which classical language root words is the word “Biochemistry” derived?", options: ["A) Greek (bios = life + chemistry)", "B) Latin", "C) Sanskrit", "D) French"], ans: 0 },
+      { id: 722, q: "What are universally recognized as the most abundant organic biomolecules on Earth?", options: ["A) Carbohydrates (sugars and polysaccharides)", "B) Lipids", "C) Nucleic acids", "D) Vitamins"], ans: 0 },
+      { id: 723, q: "What is the general empirical chemical formula characterizing simple monosaccharide carbohydrates?", options: ["A) CₙH₂ₙOₙ (or C₆H₁₂O₆)", "B) CH₄", "C) CO₂", "D) H₂O"], ans: 0 },
+      { id: 724, q: "Which of the following are classified as simple monosaccharide sugars?", options: ["A) Glucose, fructose, galactose and mannose", "B) Sucrose and lactose", "C) Starch and cellulose", "D) Glycogen"], ans: 0 },
+      { id: 725, q: "Which of the following are classified as oligosaccharide sugars?", options: ["A) Sucrose, maltose, cellobiose, lactose and stachyose", "B) Glucose and fructose", "C) Starch", "D) Cellulose"], ans: 0 },
+      { id: 726, q: "Why do monosaccharide sugars exhibit strong chemical “reducing” properties?", options: ["A) Due to the presence of a free reactive aldehyde (-CHO) or ketone (>C=O) group", "B) Lack of carbon", "C) Presence of nitrogen", "D) Water solubility"], ans: 0 },
+      { id: 727, q: "What is glucose commonly known as in commercial food chemistry?", options: ["A) Dextrose (or blood sugar)", "B) Fruit sugar", "C) Milk sugar", "D) Cane sugar"], ans: 0 },
+      { id: 728, q: "What is another common name for glucose referenced in source biochemistry notes?", options: ["A) Corn sugar", "B) Cane sugar", "C) Milk sugar", "D) Beet sugar"], ans: 0 },
+      { id: 729, q: "Which optical isomer form of glucose is biologically active in living organisms?", options: ["A) D-form (D-glucose)", "B) L-form", "C) DL-racemic", "D) Meso"], ans: 0 },
+      { id: 730, q: "What is fructose commonly known as in food chemistry?", options: ["A) Fruit sugar (levulose)", "B) Dextrose", "C) Lactose", "D) Maltose"], ans: 0 },
+      { id: 731, q: "Which naturally occurring sugar is recognized as the sweetest among all carbohydrates?", options: ["A) Fructose", "B) Sucrose", "C) Glucose", "D) Lactose"], ans: 0 },
+      { id: 732, q: "Which monosaccharide sugars serve as the primary immediate cellular energy sources?", options: ["A) Glucose and fructose", "B) Cellulose", "C) Starch", "D) Pectin"], ans: 0 },
+      { id: 733, q: "Which of the following are classified as disaccharide sugars?", options: ["A) Sucrose, maltose, lactose and cellobiose", "B) Glucose and fructose", "C) Starch and glycogen", "D) Cellulose"], ans: 0 },
+      { id: 734, q: "Which common oligosaccharide sugar is widely used in commercial food preservation and table sweetening?", options: ["A) Sucrose (cane/beet sugar)", "B) Cellulose", "C) Glycogen", "D) Starch"], ans: 0 },
+      { id: 735, q: "Which carbohydrate is classified as a trisaccharide (composed of three monosaccharide units)?", options: ["A) Raffinose", "B) Sucrose", "C) Stachyose", "D) Maltose"], ans: 0 },
+      { id: 736, q: "Which carbohydrate is classified as a tetrasaccharide?", options: ["A) Stachyose", "B) Raffinose", "C) Sucrose", "D) Maltose"], ans: 0 },
+      { id: 737, q: "Which of the common disaccharide sugars is classified as a “non-reducing” sugar?", options: ["A) Sucrose (due to linked reducing ends)", "B) Maltose", "C) Lactose", "D) Cellobiose"], ans: 0 },
+      { id: 738, q: "Which disaccharide sugars are classified as strong “reducing” sugars?", options: ["A) Maltose and cellobiose (and lactose)", "B) Sucrose", "C) Starch", "D) Cellulose"], ans: 0 },
+      { id: 739, q: "The chemical condensation of Glucose + Galactose yields which disaccharide sugar?", options: ["A) Lactose", "B) Sucrose", "C) Maltose", "D) Cellobiose"], ans: 0 },
+      { id: 740, q: "Which primary sugar is naturally present in mammalian milk?", options: ["A) Lactose", "B) Sucrose", "C) Fructose", "D) Maltose"], ans: 0 },
+      { id: 741, q: "Where is animal starch (glycogen) primarily stored in vertebrate bodies?", options: ["A) Liver and skeletal muscle cells", "B) Blood", "C) Bones", "D) Hair"], ans: 0 },
+      { id: 742, q: "What is plant starch and cellulose chemically a polymer of?", options: ["A) Glucose (repeating D-glucose units)", "B) Fructose", "C) Galactose", "D) Ribose"], ans: 0 },
+      { id: 743, q: "What is the primary reason why human beings cannot digest dietary cellulose fibre?", options: ["A) Absence of the cellulase enzyme (beta-1,4-glycosidic bond inability)", "B) Lack of teeth", "C) Acid stomach", "D) Small intestine size"], ans: 0 },
+      { id: 744, q: "How many total standard amino acids are essential for human/animal protein synthesis?", options: ["A) 10 essential amino acids (out of 20 total standard)", "B) 2", "C) 100", "D) 5"], ans: 0 },
+      { id: 745, q: "Who coined and introduced the scientific term “Protein” in 1840?", options: ["A) Gerardus Mulder (1840)", "B) Berzelius", "C) Watson", "D) Liebig"], ans: 0 },
+      { id: 746, q: "What are complex macromolecules formed by polymerizing alpha-amino acids called?", options: ["A) Proteins and enzymes", "B) Carbohydrates", "C) Lipids", "D) Nucleic acids"], ans: 0 },
+      { id: 747, q: "Who discovered proteins and proposed their foundational nitrogenous structure?", options: ["A) Jöns Jacob Berzelius (discovered protein)", "B) Mulder", "C) Mendel", "D) Darwin"], ans: 0 },
+      { id: 748, q: "What type of protein structure is composed exclusively of amino acid building blocks without non-protein groups?", options: ["A) Simple proteins", "B) Conjugated proteins", "C) Derived", "D) Lipoproteins"], ans: 0 },
+      { id: 749, q: "Which protein acts as a vital hormonal regulatory protein controlling blood glucose?", options: ["A) Insulin", "B) Haemoglobin", "C) Collagen", "D) Keratin"], ans: 0 },
+      { id: 750, q: "Which of the following are classified as physiological transport proteins in blood?", options: ["A) Haemoglobin and myoglobin", "B) Insulin", "C) Collagen", "D) Keratin"], ans: 0 },
+      { id: 751, q: "Which of the following are classified as structural body proteins?", options: ["A) Collagen and elastin (and keratin)", "B) Insulin", "C) Haemoglobin", "D) Rubisco"], ans: 0 },
+      { id: 752, q: "What is recognized as the single most abundant protein molecule on planet Earth?", options: ["A) Rubisco (Ribulose-1,5-bisphosphate carboxylase-oxygenase)", "B) Insulin", "C) Collagen", "D) Haemoglobin"], ans: 0 },
+      { id: 753, q: "What is identified as the primary structural animal muscle protein according to source notes?", options: ["A) Collagen (and myosin/actin)", "B) Fibroin", "C) Zein", "D) Gluten"], ans: 0 },
+      { id: 754, q: "What is natural silk protein chemically known as?", options: ["A) Fibroin (and sericin gum)", "B) Gluten", "C) Zein", "D) Glycinin"], ans: 0 },
+      { id: 755, q: "What is the primary storage protein found in soybean seeds?", options: ["A) Glycinin", "B) Gluten", "C) Zein", "D) Oryzein"], ans: 0 },
+      { id: 756, q: "What is the primary storage protein found in wheat flour dough?", options: ["A) Gluten", "B) Zein", "C) Oryzein", "D) Glycinin"], ans: 0 },
+      { id: 757, q: "What is the primary storage protein found in rice grain endosperm?", options: ["A) Oryzein", "B) Zein", "C) Gluten", "D) Glycinin"], ans: 0 },
+      { id: 758, q: "What is the primary storage protein found in maize grain endosperm?", options: ["A) Zein", "B) Gluten", "C) Oryzein", "D) Glycinin"], ans: 0 },
+      { id: 759, q: "Who first discovered and extracted nucleic acids from cell nuclei in 1868?", options: ["A) Friedrich Miescher (1868)", "B) Watson and Crick", "C) Chargaff", "D) Franklin"], ans: 0 },
+      { id: 760, q: "What does the biochemical acronym DNA stand for?", options: ["A) Deoxyribonucleic acid", "B) Ribonucleic acid", "C) Dextrose nucleic acid", "D) Dinucleotide amide"], ans: 0 },
+      { id: 761, q: "Who discovered the precise nitrogenous base pairing equivalence rules of DNA (Chargaff's rules)?", options: ["A) Erwin Chargaff (1953)", "B) Watson and Crick", "C) Meischer", "D) Mendel"], ans: 0 },
+      { id: 762, q: "What chemical molecule is formed by combining a pentose sugar with a nitrogenous base?", options: ["A) Nucleoside", "B) Nucleotide", "C) Amino acid", "D) Peptide"], ans: 0 },
+      { id: 763, q: "What chemical molecule is formed by combining a pentose sugar, a nitrogenous base, and a phosphate group?", options: ["A) Nucleotide", "B) Nucleoside", "C) Polypeptide", "D) Lipid"], ans: 0 },
+      { id: 764, q: "Where is single-stranded DNA (ssDNA) uniquely found in nature according to source notes?", options: ["A) Certain bacteriophages (e.g., phage phi X 174)", "B) Human cells", "C) Plant chloroplasts", "D) Animal muscle"], ans: 0 },
+      { id: 765, q: "Which structural form of double-helix DNA is the biologically active conformation in living cells?", options: ["A) B-form DNA", "B) A-form", "C) Z-form", "D) C-form"], ans: 0 },
+      { id: 766, q: "Which RNA type carries genetic code amino acid sequences from nucleus to ribosomes?", options: ["A) Messenger RNA (mRNA) (Note: source text attributes specific roles flexibly)", "B) Transfer RNA", "C) Ribosomal RNA", "D) Nuclear RNA"], ans: 0 },
+      { id: 767, q: "Which RNA type constitutes approximately 80% of total cellular RNA mass?", options: ["A) Ribosomal RNA (rRNA) / tRNA context in source notes", "B) mRNA", "C) tRNA", "D) Plasmid"], ans: 0 },
+      { id: 768, q: "Which master nucleic acid molecule stores and controls all hereditary and cellular metabolic activities?", options: ["A) DNA (Deoxyribonucleic acid)", "B) RNA", "C) ATP", "D) Protein"], ans: 0 },
+      { id: 769, q: "Which nucleic acid is directly and vitally necessary for cellular protein biosynthesis?", options: ["A) RNA (Ribonucleic acid)", "B) DNA", "C) Glycogen", "D) Cellulose"], ans: 0 },
+      { id: 770, q: "Who proposed the famous iconic 3D double-helix structural model of DNA in 1953?", options: ["A) James Watson and Francis Crick (1953)", "B) Chargaff", "C) Meischer", "D) Darwin"], ans: 0 },
+      { id: 771, q: "Who coined and introduced the scientific term “Enzyme” in 1867?", options: ["A) Wilhelm Kühne (1867)", "B) Buchner", "C) Pasteur", "D) Sumner"], ans: 0 },
+      { id: 772, q: "Who first discovered cell-free alcoholic fermentation and extracted active enzymes from yeast?", options: ["A) Eduard Buchner (1897)", "B) Kühne", "C) Sumner", "D) Pasteur"], ans: 0 },
+      { id: 773, q: "What was the very first individual enzyme crystallized and discovered from yeast extracts?", options: ["A) Zymase (and Urease)", "B) Amylase", "C) Pepsin", "D) Lipase"], ans: 0 },
+      { id: 774, q: "Which specialized biological enzyme complex catalyzes biological nitrogen fixation in root nodules?", options: ["A) Nitrogenase enzyme complex", "B) Amylase", "C) Lipase", "D) Cellulase"], ans: 0 },
+      { id: 775, q: "What complete functional enzyme complex is formed by combining an Apoenzyme with a Cofactor/Prosthetic group?", options: ["A) Holoenzyme", "B) Zymogen", "C) Isoenzyme", "D) Coenzyme"], ans: 0 },
+      { id: 776, q: "What is the protein portion of an enzyme minus its required non-protein co-factor called?", options: ["A) Apoenzyme", "B) Holoenzyme", "C) Prosthetic group", "D) Substrate"], ans: 0 },
+      { id: 777, q: "What are multiple distinct molecular forms of a single enzyme catalyzing the same reaction within a species called?", options: ["A) Isoenzymes (isozymes)", "B) Holoenzymes", "C) Zymogens", "D) Apoenzymes"], ans: 0 },
+      { id: 778, q: "What are non-protein organic co-factors loosely bound to enzyme molecules called?", options: ["A) Coenzymes", "B) Prosthetic groups", "C) Holoenzymes", "D) Apoenzymes"], ans: 0 },
+      { id: 779, q: "Who discovered vitamins and coined the term “vitamine” in 1911?", options: ["A) Kazimierz Funk (1911)", "B) McCollum", "C) Eijkman", "D) Pasteur"], ans: 0 },
+      { id: 780, q: "How many well-defined essential vitamins are required in human/animal nutrition?", options: ["A) 13 essential vitamins", "B) 4", "C) 50", "D) 2"], ans: 0 },
+      { id: 781, q: "Which group of essential vitamins are classified as water-soluble?", options: ["A) B-complex vitamins and Vitamin C", "B) Vitamins A, D, E and K", "C) Lipids", "D) Minerals"], ans: 0 },
+      { id: 782, q: "Which group of essential vitamins are classified as fat-soluble?", options: ["A) Vitamins A, D, E and K", "B) B-complex and C", "C) Amino acids", "D) Sugars"], ans: 0 },
+      { id: 783, q: "What is Vitamin A chemically and medically known as?", options: ["A) Retinol / Retinal", "B) Thiamin", "C) Niacin", "D) Ascorbic acid"], ans: 0 },
+      { id: 784, q: "What clinical deficiency disease is caused by prolonged lack of Vitamin A?", options: ["A) Night blindness (nyctalopia) and xerophthalmia", "B) Beriberi", "C) Scurvy", "D) Rickets"], ans: 0 },
+      { id: 785, q: "What is Vitamin B₁ chemically known as?", options: ["A) Thiamin", "B) Riboflavin", "C) Niacin", "D) Cobalamin"], ans: 0 },
+      { id: 786, q: "What clinical deficiency disease is caused by lack of Vitamin B₁?", options: ["A) Beriberi", "B) Pellagra", "C) Scurvy", "D) Rickets"], ans: 0 },
+      { id: 787, q: "What is Vitamin B₂ chemically known as?", options: ["A) Riboflavin", "B) Thiamin", "C) Biotin", "D) Folic acid"], ans: 0 },
+      { id: 788, q: "What clinical deficiency sign is associated with Vitamin B₂ deficiency?", options: ["A) Cheilosis / skin cracking and sore tongue", "B) Night blindness", "C) Scurvy", "D) Rickets"], ans: 0 },
+      { id: 789, q: "What is Vitamin B₃ chemically known as according to specific source nutrition notes?", options: ["A) Pantothenic acid", "B) Niacin", "C) Biotin", "D) Folic acid"], ans: 0 },
+      { id: 790, q: "What deficiency symptom is linked to Vitamin B₃ deficiency according to source notes?", options: ["A) Premature whiteness of hairs / dermatitis", "B) Scurvy", "C) Beriberi", "D) Rickets"], ans: 0 },
+      { id: 791, q: "What is Vitamin B₅ chemically known as according to source notes?", options: ["A) Niacin (Nicotinic acid)", "B) Pantothenic acid", "C) Thiamin", "D) Biotin"], ans: 0 },
+      { id: 792, q: "What classic deficiency disease is caused by lack of Vitamin B₅ (Niacin)?", options: ["A) Pellagra (the 4 D's: dermatitis, diarrhea, dementia, death)", "B) Beriberi", "C) Scurvy", "D) Rickets"], ans: 0 },
+      { id: 793, q: "What is Vitamin B₇ chemically known as?", options: ["A) Biotin", "B) Thiamin", "C) Niacin", "D) Folic acid"], ans: 0 },
+      { id: 794, q: "What deficiency symptom is linked to Vitamin B₇ deficiency in source text?", options: ["A) Muscle pain / dermatitis / neurological fatigue (paralysis context in key)", "B) Night blindness", "C) Scurvy", "D) Rickets"], ans: 0 },
+      { id: 795, q: "What is Vitamin B₁₂ chemically known as?", options: ["A) Cyanocobalamin", "B) Thiamin", "C) Ascorbic acid", "D) Retinol"], ans: 0 },
+      { id: 796, q: "What severe blood disorder is caused by Vitamin B₁₂ deficiency?", options: ["A) Pernicious anaemia", "B) Iron-deficiency anaemia", "C) Scurvy", "D) Beriberi"], ans: 0 },
+      { id: 797, q: "What is Vitamin C chemically known as?", options: ["A) Ascorbic acid", "B) Citric acid", "C) Acetic acid", "D) Folic acid"], ans: 0 },
+      { id: 798, q: "What classic deficiency disease is caused by lack of Vitamin C?", options: ["A) Scurvy (bleeding gums and joint pain)", "B) Beriberi", "C) Rickets", "D) Pellagra"], ans: 0 },
+      { id: 799, q: "What is Vitamin D chemically known as?", options: ["A) Calciferol (Cholecalciferol / Ergocalciferol)", "B) Retinol", "C) Tocopherol", "D) Phylloquinone"], ans: 0 },
+      { id: 800, q: "What bone softening deficiency disease is caused by lack of Vitamin D in children?", options: ["A) Rickets (osteomalacia in adults)", "B) Scurvy", "C) Beriberi", "D) Pellagra"], ans: 0 }
+    ];
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(200, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 200) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Fertilizers, Soil Fertility & Biochemistry Master Revision.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific fertilizer grades, nutrient deficiency symptoms, and biochemistry principles.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Soil Science & Biochemistry recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+
+</html>

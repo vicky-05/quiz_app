@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Overall Questions Test 5 — Nutrition, Biotechnology, Genetics & Plant Breeding (200 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next,
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select,
+    .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Overall Questions Test 5 Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Overall Questions Test 5:
+        Nutrition, Biotechnology, Genetics & Plant Breeding (200 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–200)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="200">All Questions (200 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 200)</label>
+          <input type="number" id="custom-count-input" min="1" max="200" value="50" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">200 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#128300;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Overall Part 5</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#129482;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Genetics & Breeding</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 200</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">03:20:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 801, q: "Which essential vitamin is popularly referred to as the “Sunshine vitamin”?", options: ["A) Vitamin A", "B) Vitamin C", "C) Vitamin D", "D) Vitamin K"], ans: 2 },
+      { id: 802, q: "What is Vitamin E chemically and medically known as?", options: ["A) Retinol", "B) Tocopherol", "C) Phylloquinone", "D) Calciferol"], ans: 1 },
+      { id: 803, q: "What is Vitamin K chemically known as?", options: ["A) Phylloquinone (Menadione)", "B) Thiamin", "C) Ascorbic acid", "D) Tocopherol"], ans: 0 },
+      { id: 804, q: "What specific deficiency disorder or pathology is caused by lack of Vitamin E?", options: ["A) Sterility / reproductive failure and muscular dystrophy", "B) Night blindness", "C) Scurvy", "D) Beriberi"], ans: 0 },
+      { id: 805, q: "What pathology is caused by deficiency of Vitamin K?", options: ["A) Rickets", "B) Non-coagulation of blood / prolonged bleeding time", "C) Scurvy", "D) Pellagra"], ans: 1 },
+      { id: 806, q: "Which essential amino acid is notoriously deficient in cereal grains?", options: ["A) Methionine", "B) Tryptophan", "C) Leucine", "D) Lysine"], ans: 3 },
+      { id: 807, q: "Which essential amino acid is notoriously deficient in grain pulses (legumes)?", options: ["A) Lysine", "B) Valine", "C) Methionine (and cysteine)", "D) Arginine"], ans: 2 },
+      { id: 808, q: "Which essential vitamin uniquely contains an incorporated metal ion (Cobalt)?", options: ["A) Vitamin C", "B) Vitamin B₁₂ (Cyanocobalamin)", "C) Vitamin A", "D) Vitamin D"], ans: 1 },
+      { id: 809, q: "What is the classic chemical saponification reaction defined as?", options: ["A) The chemical reaction of fats/oils with an alkali (NaOH or KOH) to form soap and glycerol", "B) Acid hydrolysis", "C) Hydrogenation", "D) Fermentation"], ans: 0 },
+      { id: 810, q: "What does the analytical “iodine value / number” of a fat or oil measure?", options: ["A) Saturated acid count", "B) Acidity", "C) The number of grams of iodine absorbed by 100 g of fat/oil (measuring unsaturation)", "D) Melting point"], ans: 2 },
+      { id: 811, q: "Which chemical value assesses the degree of rancidity and free fatty acid content in fats and oils?", options: ["A) Iodine value", "B) Acid number / acid value", "C) Saponification value", "D) Ester value"], ans: 2 },
+      { id: 812, q: "What plant-derived renewable fuel is utilized as a partial substitute for petroleum diesel?", options: ["A) Petrol", "B) Kerosene", "C) Coal gas", "D) Biodiesel (fatty acid methyl esters from vegetable oils)"], ans: 3 },
+      { id: 813, q: "Bio-fortified Golden rice grain endosperm is exceptionally rich in:", options: ["A) Iron", "B) Beta-carotene (provitamin A)", "C) Zinc", "D) Calcium"], ans: 1 },
+      { id: 814, q: "What is the foundational biological science of heredity and the transmission of genes called?", options: ["A) Genetics", "B) Ecology", "C) Anatomy", "D) Taxonomy"], ans: 0 },
+      { id: 815, q: "Who coined and introduced the scientific term “Genetics” in 1905?", options: ["A) Gregor Mendel", "B) Charles Darwin", "C) Watson", "D) William Bateson (1905)"], ans: 3 },
+      { id: 816, q: "Who is universally celebrated as the Founding Father of Modern Genetics?", options: ["A) Gregor Johann Mendel", "B) Bateson", "C) Morgan", "D) De Vries"], ans: 0 },
+      { id: 817, q: "What is universally recognized as the fundamental structural and functional unit of life?", options: ["A) Organ", "B) Tissue", "C) Gene", "D) Cell"], ans: 3 },
+      { id: 818, q: "Who first discovered and named the “cell” observing cork under a microscope in 1665?", options: ["A) Antonie van Leeuwenhoek", "B) Robert Hooke (1665)", "C) Robert Brown", "D) Schleiden"], ans: 1 },
+      { id: 819, q: "Who formulated the foundational biological “Cell Theory”?", options: ["A) Watson and Crick", "B) Hooke and Brown", "C) M.J. Schleiden and T. Schwann", "D) Darwin and Wallace"], ans: 2 },
+      { id: 820, q: "What is universally known as the living physical basis of life?", options: ["A) Protoplasm", "B) Cell wall", "C) Vacuole", "D) Plasmid"], ans: 0 },
+      { id: 821, q: "How many major structural kinds of cells are found in the living world?", options: ["A) One", "B) Three", "C) Two types: Eukaryotic and Prokaryotic", "D) Five"], ans: 2 },
+      { id: 822, q: "What type of cellular organization do all higher plant cells possess?", options: ["A) Prokaryotic", "B) Eukaryotic cells", "C) Viral", "D) Archaean"], ans: 1 },
+      { id: 823, q: "Which cellular organelle occurs universally in both prokaryotic and eukaryotic cells?", options: ["A) Mitochondria", "B) Nucleus", "C) Chloroplast", "D) Ribosome"], ans: 3 },
+      { id: 824, q: "What are living plant cells stripped of their rigid outer cell wall called?", options: ["A) Protoplasts", "B) Syncytium", "C) Spores", "D) Gametes"], ans: 0 },
+      { id: 825, q: "What is recognized as the central control organelle of a eukaryotic cell?", options: ["A) Mitochondria", "B) Ribosome", "C) Nucleus", "D) Lysosome"], ans: 2 },
+      { id: 826, q: "Who discovered the cell nucleus in 1831?", options: ["A) Robert Hooke", "B) Schleiden", "C) Robert Brown (1831)", "D) Schwann"], ans: 2 },
+      { id: 827, q: "Which cellular organelle is famously termed the “powerhouse of the cell”?", options: ["A) Mitochondria", "B) Ribosome", "C) Golgi body", "D) Vacuole"], ans: 0 },
+      { id: 828, q: "Who first observed mitochondria in muscle cells?", options: ["A) Benda", "B) Porter", "C) Hooke", "D) Albert von Kölliker (Hollicker)"], ans: 3 },
+      { id: 829, q: "Who coined the descriptive term “mitochondria” in 1897?", options: ["A) Carl Benda (1897)", "B) Kolliker", "C) Altmann", "D) Porter"], ans: 0 },
+      { id: 830, q: "Who coined the term “Endoplasmic Reticulum” (ER) in 1948?", options: ["A) Palade", "B) Golgi", "C) Keith R. Porter (1948)", "D) De Duve"], ans: 2 },
+      { id: 831, q: "Which cellular organelle is known as the molecular “engine of the cell”?", options: ["A) Mitochondria", "B) Nucleus", "C) Ribosome", "D) Lysosome"], ans: 2 },
+      { id: 832, q: "Rough Endoplasmic Reticulum (RER) is structurally studded and associated with:", options: ["A) Lipids", "B) DNA", "C) Starch", "D) Ribosomes"], ans: 3 },
+      { id: 833, q: "What is the primary cellular site for biological protein synthesis?", options: ["A) Ribosome", "B) Mitochondria", "C) Lysosome", "D) Vacuole"], ans: 0 },
+      { id: 834, q: "Where are 70S-type smaller ribosomes characteristically found inside eukaryotic cells?", options: ["A) Cytoplasm", "B) Nucleolus", "C) Inside mitochondria and chloroplasts", "D) Cell wall"], ans: 2 },
+      { id: 835, q: "Which prokaryotic organisms lack mitochondria entirely?", options: ["A) Fungi", "B) Protozoa", "C) Algae", "D) Bacteria (and blue-green algae)"], ans: 3 },
+      { id: 836, q: "Who first used and introduced the term “Lysosome” in 1955?", options: ["A) Christian de Duve (1955)", "B) Porter", "C) Benda", "D) Golgi"], ans: 0 },
+      { id: 837, q: "Which organelle is popularly termed the “suicidal bag of the cell”?", options: ["A) Ribosome", "B) Mitochondria", "C) Lysosome", "D) Plastid"], ans: 2 },
+      { id: 838, q: "What is the primary biological function of the Golgi apparatus?", options: ["A) Respiration", "B) Photosynthesis", "C) Digestion", "D) Packaging, sorting, and transport of proteins and cellular macromolecules"], ans: 3 },
+      { id: 839, q: "Which cellular organelle is frequently referred to as the “dustbin of the cell”?", options: ["A) Nucleus", "B) Ribosome", "C) Lysosome", "D) Vacuole"], ans: 3 },
+      { id: 840, q: "Which fundamental cell component is non-living in nature?", options: ["A) Cell wall", "B) Nucleus", "C) Mitochondria", "D) Ribosome"], ans: 0 },
+      { id: 841, q: "What fluid material is contained inside central plant cell vacuoles?", options: ["A) Protoplasm", "B) Blood", "C) Cytosol", "D) Cell sap"], ans: 3 },
+      { id: 842, q: "What are self-replicating extra-nuclear cytoplasmic genetic bodies found in plant cells called?", options: ["A) Ribosomes", "B) Lysosomes", "C) Plastids", "D) Centrioles"], ans: 2 },
+      { id: 843, q: "Who introduced the term “Plastids” in cell biology?", options: ["A) Hooke", "B) Brown", "C) Porter", "D) Joshua Lederberg (or Schimper historical context)"], ans: 3 },
+      { id: 844, q: "Which cellular organelles are found exclusively in plant cells (and algae)?", options: ["A) Mitochondria", "B) Ribosomes", "C) Nuclei", "D) Plastids and spherosomes"], ans: 3 },
+      { id: 845, q: "Which specialized green plastid is responsible for carrying out photosynthesis?", options: ["A) Chloroplast", "B) Chromoplast", "C) Leucoplast", "D) Amyloplast"], ans: 0 },
+      { id: 846, q: "Which pigmented plastid is responsible for imparting bright non-green colours to flowers and fruits?", options: ["A) Chloroplast", "B) Leucoplast", "C) Proplastid", "D) Chromoplast"], ans: 3 },
+      { id: 847, q: "Which colourless non-pigmented plastid stores reserve starches, proteins, and fats?", options: ["A) Chloroplast", "B) Chromoplast", "C) Leucoplast", "D) Thylakoid"], ans: 2 },
+      { id: 848, q: "Which specific type of leucoplast plastid specializes in storing plant oils?", options: ["A) Amyloplast", "B) Proteinoplast", "C) Chloroplast", "D) Elaioplast / lipoplast"], ans: 3 },
+      { id: 849, q: "What are the highly condensed thread-like nuclear bodies that carry hereditary genes?", options: ["A) Ribosomes", "B) Plasmids", "C) Chromosomes", "D) Centromeres"], ans: 2 },
+      { id: 850, q: "Who first discovered and observed chromosomes during cell division in 1875?", options: ["A) Eduard Strasburger (1875)", "B) Wilhelm Waldeyer", "C) Robert Brown", "D) Flemming"], ans: 0 },
+      { id: 851, q: "Who coined the descriptive term “chromosome” in 1888?", options: ["A) Strasburger", "B) Flemming", "C) Wilhelm Waldeyer (1888)", "D) Sutton"], ans: 2 },
+      { id: 852, q: "Who formulated the foundational “Chromosomal Theory of Inheritance”?", options: ["A) Watson and Crick", "B) Mendel and Darwin", "C) Schleiden and Schwann", "D) Walter Sutton and Theodor Boveri"], ans: 3 },
+      { id: 853, q: "What is recognized as the fundamental structural and chemical unit of a chromosome?", options: ["A) RNA", "B) Lipid", "C) Starch", "D) Chromatin (DNA + histone protein)"], ans: 3 },
+      { id: 854, q: "What is the specialized constricted region of a chromosome where sister chromatids join called?", options: ["A) Centromere (primary constriction)", "B) Telomere", "C) Satellites", "D) Nucleolus"], ans: 0 },
+      { id: 855, q: "What is the major genetic macromolecular constituent of eukaryotic chromosomes?", options: ["A) RNA", "B) Lipid", "C) Polysaccharide", "D) DNA"], ans: 3 },
+      { id: 856, q: "How many identical daughter cells are formed after completing one cycle of mitosis?", options: ["A) Four", "B) One", "C) Eight", "D) Two daughter cells (2n)"], ans: 3 },
+      { id: 857, q: "Who coined the term “Mitosis” and described mitotic division in 1882?", options: ["A) Strasburger", "B) Sutton", "C) Boveri", "D) Walther Flemming (1882)"], ans: 3 },
+      { id: 858, q: "In what type of biological tissues does somatic mitosis occur?", options: ["A) Somatic (body) cells", "B) Germ cells", "C) Spores", "D) Gametes"], ans: 0 },
+      { id: 859, q: "What is universally recognized as the longest phase of mitosis?", options: ["A) Metaphase", "B) Anaphase", "C) Telophase", "D) Prophase"], ans: 3 },
+      { id: 860, q: "What is universally recognized as the shortest phase of mitosis?", options: ["A) Prophase", "B) Metaphase", "C) Anaphase", "D) Telophase"], ans: 2 },
+      { id: 861, q: "During which mitotic stage are replicated chromosomes aligned along the equatorial plate?", options: ["A) Prophase", "B) Anaphase", "C) Telophase", "D) Metaphase"], ans: 3 },
+      { id: 862, q: "During which interphase cell cycle stage does active nuclear DNA replication synthesis occur?", options: ["A) G1-phase", "B) G2-phase", "C) M-phase", "D) S-phase (Synthesis phase)"], ans: 3 },
+      { id: 863, q: "How many diverse daughter cells are formed after completing one meiotic cycle?", options: ["A) Two", "B) One", "C) Eight", "D) Four daughter cells (n haploid)"], ans: 3 },
+      { id: 864, q: "Who introduced and coined the term “Meiosis” in 1905?", options: ["A) Flemming", "B) Strasburger", "C) Sutton", "D) J.B. Farmer and J.E. Moore (1905)"], ans: 3 },
+      { id: 865, q: "In what specialized biological cells does meiosis occur?", options: ["A) Somatic cells", "B) Epithelial cells", "C) Muscle cells", "D) Reproductive / germline cells"], ans: 3 },
+      { id: 866, q: "During which specific type of cell division do genetic crossing over and recombination occur?", options: ["A) Mitosis", "B) Binary fission", "C) Budding", "D) Meiosis (Meiosis I)"], ans: 3 },
+      { id: 867, q: "During which specific substage of Prophase I does chromosomal crossing over take place?", options: ["A) Leptotene", "B) Zygotene", "C) Diplotene", "D) Pachytene"], ans: 3 },
+      { id: 868, q: "At which meiotic substage are visible X-shaped “chiasmata” formed?", options: ["A) Pachytene", "B) Diakinesis", "C) Leptotene", "D) Diplotene"], ans: 3 },
+      { id: 869, q: "During which meiotic stage does meiotic spindle apparatus formation take place?", options: ["A) Telophase", "B) Interphase", "C) Anaphase II", "D) Metaphase I (prometaphase)"], ans: 3 },
+      { id: 870, q: "The physical process of separation of homologous chromosomes or chromatids is called:", options: ["A) Synapsis", "B) Crossing over", "C) Translocation", "D) Disjunction"], ans: 3 },
+      { id: 871, q: "On what exact calendar date was Gregor Johann Mendel born?", options: ["A) January 1, 1900", "B) March 15, 1850", "C) December 25, 1800", "D) July 22, 1822"], ans: 3 },
+      { id: 872, q: "How many distinct contrasting morphological characters of garden pea did Mendel study?", options: ["A) Three", "B) Ten", "C) Seven contrasting characters (7 pairs)", "D) Twenty"], ans: 2 },
+      { id: 873, q: "Who famously rediscovered Gregor Mendel's lost hereditary laws in the year 1900?", options: ["A) Watson and Crick", "B) Sutton and Boveri", "C) Bateson and Punnett", "D) Hugo de Vries, Carl Correns and Erich von Tschermak"], ans: 3 },
+      { id: 874, q: "What was recognized as the most universally accepted core biological law formulated by Mendel?", options: ["A) Law of Segregation (First Law)", "B) Independent assortment only", "C) Linkage", "D) Mutation"], ans: 0 },
+      { id: 875, q: "A large interbreeding Mendelian population is scientifically also known as a:", options: ["A) Pure line", "B) Clone", "C) Isogenic line", "D) Random mating population (panmictic population)"], ans: 3 },
+      { id: 876, q: "What do a homozygous tall pea plant (DD) and a heterozygous tall pea plant (Dd) share in common?", options: ["A) Identical visible phenotype (tall plant)", "B) Identical genotype", "C) Identical gametes", "D) Same alleles"], ans: 0 },
+      { id: 877, q: "Who proposed the iconic double-helix structural model of DNA in 1953?", options: ["A) Mendel", "B) Morgan", "C) Meischer", "D) James Watson and Francis Crick (1953)"], ans: 3 },
+      { id: 878, q: "The biochemical process of synthesizing mRNA using DNA genetic template information is:", options: ["A) Transcription", "B) Translation", "C) Replication", "D) Reverse transcription"], ans: 0 },
+      { id: 879, q: "The biological process of synthesizing polypeptide proteins using mRNA genetic code is:", options: ["A) Transcription", "B) Replication", "C) Transduction", "D) Translation"], ans: 3 },
+      { id: 880, q: "The genetic phenomenon where the expression of one gene is masked or modified by another non-allelic gene is:", options: ["A) Dominance", "B) Segregation", "C) Linkage", "D) Epistasis / Gene interaction"], ans: 3 },
+      { id: 881, q: "What is the classical phenotypic ratio obtained in a monohybrid cross in F2 generation?", options: ["A) 9 : 3 : 3 : 1", "B) 3 : 1", "C) 1 : 2 : 1", "D) 9 : 7"], ans: 1 },
+      { id: 882, q: "What is the classical phenotypic ratio obtained in a dihybrid cross in F2 generation?", options: ["A) 3 : 1", "B) 1 : 1 : 1 : 1", "C) 15 : 1", "D) 9 : 3 : 3 : 1"], ans: 3 },
+      { id: 883, q: "What is the specific sequence of three adjacent mRNA nucleotides coding for an amino acid called?", options: ["A) Anticodon", "B) Promoters", "C) Intron", "D) Codon"], ans: 3 },
+      { id: 884, q: "What is the complementary triplet sequence of three nucleotides found on tRNA called?", options: ["A) Codon", "B) Triplet", "C) Exon", "D) Anticodon"], ans: 3 },
+      { id: 885, q: "How many total distinct single crosses can be generated from five distinct inbred parental lines?", options: ["A) 5", "B) 25", "C) 20", "D) 10 single crosses [n(n-1)/2 = 5×4/2 = 10]"], ans: 3 },
+      { id: 886, q: "Who coined and introduced the scientific term “Genomics” in 1986?", options: ["A) Bateson", "B) Watson", "C) Mendel", "D) Thomas H. Roderick (1986)"], ans: 3 },
+      { id: 887, q: "Who originally developed the early speculative theory of “pangenesis”?", options: ["A) Lamarck", "B) Weismann", "C) Mendel", "D) Charles Darwin"], ans: 3 },
+      { id: 888, q: "Who formulated the revolutionary biological theory of evolution by natural selection (1858)?", options: ["A) Lamarck", "B) Mendel", "C) Cuvier", "D) Charles Darwin and Alfred Russel Wallace (1858)"], ans: 3 },
+      { id: 889, q: "Who originally developed the evolutionary theory of inheritance of acquired characters?", options: ["A) Darwin", "B) Wallace", "C) Weismann", "D) Jean-Baptiste Lamarck"], ans: 3 },
+      { id: 890, q: "Who proposed the chromosomal theory of heredity in 1902?", options: ["A) Morgan", "B) Bateson", "C) Boveri", "D) Walter Sutton (1902)"], ans: 3 },
+      { id: 891, q: "According to specific early source notes cited in some keys, genes for sex-linked traits are located on:", options: ["A) X chromosome", "B) Autosomes", "C) Cytoplasm", "D) Y chromosome (Note: typical biology states X, but source text says Y chromosome)"], ans: 3 },
+      { id: 892, q: "How many total pairs of homologous chromosomes do normal human beings possess?", options: ["A) 20 pairs", "B) 10 pairs", "C) 46 pairs", "D) 23 pairs (46 total)"], ans: 3 },
+      { id: 893, q: "What is plant breeding scientifically defined as?", options: ["A) Watering", "B) Weeding", "C) Plowing", "D) The applied science of changing the genetic makeup of plants for maximum economic utility"], ans: 3 },
+      { id: 894, q: "How is the basic foundational chromosome / genomic set number denoted?", options: ["A) n", "B) 2n", "C) c", "D) X (basic number)"], ans: 3 },
+      { id: 895, q: "How is the somatic gametic / sporophytic chromosome number denoted?", options: ["A) X", "B) DNA", "C) RNA", "D) n (haploid) and 2n (diploid)"], ans: 3 },
+      { id: 896, q: "What is the somatic haploid basic chromosome number (n) of hexaploid bread wheat (Triticum aestivum)?", options: ["A) n = 7", "B) n = 14", "C) n = 12", "D) n = 21 (2n = 6x = 42)"], ans: 3 },
+      { id: 897, q: "What is heteroploidy involving the loss or addition of one or a few individual chromosomes called?", options: ["A) Euploidy", "B) Polyploidy", "C) Haploidy", "D) Aneuploidy"], ans: 3 },
+      { id: 898, q: "What is the somatic chromosome formula for a monosomic hypoploid plant?", options: ["A) 2n − 2", "B) 2n + 1", "C) 2n + 2", "D) 2n − 1"], ans: 3 },
+      { id: 899, q: "What is the somatic formula for a double monosomic plant?", options: ["A) 2n − 2", "B) 2n + 1 + 1", "C) 2n", "D) 2n − 1 − 1"], ans: 3 },
+      { id: 900, q: "What is the somatic formula for a nullisomic plant (missing a whole homologous pair)?", options: ["A) 2n − 1", "B) 2n + 2", "C) 2n", "D) 2n − 2"], ans: 3 },
+      { id: 901, q: "What type of hyperploidy plant possessing one single extra chromosome is called a:", options: ["A) Tetrasomic", "B) Monosomic", "C) Nullisomic", "D) Trisomic (2n + 1)"], ans: 3 },
+      { id: 902, q: "What is the somatic formula for a double trisomic plant?", options: ["A) 2n + 2", "B) 2n − 1", "C) 2n", "D) 2n + 1 + 1"], ans: 3 },
+      { id: 903, q: "What is the somatic formula for a tetrasomic plant (extra pair of chromosomes)?", options: ["A) 2n + 1", "B) 2n − 2", "C) 2n", "D) 2n + 2"], ans: 3 },
+      { id: 904, q: "What is the somatic formula for double tetrasomic plants according to source notes?", options: ["A) 2n − 2", "B) 2n + 1", "C) 2n", "D) 2n + 2 (notated as double addition in source)"], ans: 3 },
+      { id: 905, q: "What is the ploidy level of the plant embryo (2n) vs the triploid endosperm (3n) in seeds?", options: ["A) Both 2n", "B) Both 3n", "C) Both haploid", "D) Embryo is 2n (diploid) and endosperm is 3n (triploid)"], ans: 3 },
+      { id: 906, q: "What is the ploidy level of the maternal seed coat (testa) and pollen mother cells (PMC)?", options: ["A) 3n", "B) n", "C) 4n", "D) 2n (diploid)"], ans: 3 },
+      { id: 907, q: "What is the absolute somatic chromosome ploidy level of the endosperm of hexaploid wheat (Triticum aestivum)?", options: ["A) 42", "B) 21", "C) 84", "D) 63 (3n = 3 × 21 = 63)"], ans: 3 },
+      { id: 908, q: "In horticultural crop breeding, triploid plants are especially useful for producing:", options: ["A) Heavy seeds", "B) Tall trees", "C) Deep roots", "D) Seedless fruits (e.g., triploid seedless watermelon)"], ans: 3 },
+      { id: 909, q: "Which of the following major crops are classified as natural allopolyploids?", options: ["A) Banana", "B) Potato", "C) Rice", "D) Wheat, upland cotton, tobacco and oat"], ans: 3 },
+      { id: 910, q: "Who proposed the famous concept of “primary centres of origin” for crop plants?", options: ["A) De Candolle", "B) Darwin", "C) Linnaeus", "D) Nikolai I. Vavilov"], ans: 3 },
+      { id: 911, q: "What is the asexual development of an embryo from maternal tissues without fertilization called?", options: ["A) Parthenocarpy", "B) Syngamy", "C) Cleistogamy", "D) Apomixis"], ans: 3 },
+      { id: 912, q: "What is the development of a fleshy fruit without fertilization and seed formation called?", options: ["A) Apomixis", "B) Parthenogenesis", "C) Cleistogamy", "D) Parthenocarpy"], ans: 3 },
+      { id: 913, q: "What is the development of an embryo directly from an unfertilized egg cell called?", options: ["A) Apomixis", "B) Parthenocarpy", "C) Syngamy", "D) Parthenogenesis"], ans: 3 },
+      { id: 914, q: "What is the progeny resulting from a single selfed cross-fertilized heterozygous individual called?", options: ["A) Clone", "B) Synthetic", "C) Composite", "D) Inbred line"], ans: 3 },
+      { id: 915, q: "In hybrid maize breeding terminology, what is the male sterile line designated as?", options: ["A) B-line", "B) R-line", "C) S-line", "D) A-line"], ans: 3 },
+      { id: 916, q: "What is a uniform population of identical plants derived from a single plant via asexual propagation called?", options: ["A) Pure line", "B) Inbred", "C) Hybrid", "D) Clone"], ans: 3 },
+      { id: 917, q: "What is a single genetic gene controlling multiple distinct phenotypic characters called?", options: ["A) Epistasis", "B) Linkage", "C) Codominance", "D) Pleiotropy"], ans: 3 },
+      { id: 918, q: "What is the plant breeding procedure involving repeated crossing of hybrid progeny back to one parent?", options: ["A) Test cross", "B) Mass selection", "C) Recurrent selection", "D) Backcross breeding"], ans: 3 },
+      { id: 919, q: "What is crossing an F1 hybrid with its homozygous recessive parental line called?", options: ["A) Back cross", "B) Reciprocal cross", "C) Top cross", "D) Test cross"], ans: 3 },
+      { id: 920, q: "What is intra-specific hybridization defined as?", options: ["A) Intergeneric cross", "B) Selfing", "C) Mutation", "D) A cross between two different plants/varieties within the same species"], ans: 3 },
+      { id: 921, q: "What is the biological process of pollen grains falling on the receptive stigma of the same flower?", options: ["A) Cross-pollination", "B) Apomixis", "C) Parthenocarpy", "D) Self-pollination (autogamy)"], ans: 3 },
+      { id: 922, q: "Plant species that reproduce predominantly via self-pollination are known as:", options: ["A) Allogamous species", "B) Dioecious", "C) Monoecious", "D) Autogamous species"], ans: 3 },
+      { id: 923, q: "What is the transfer of pollen grains from one flower to another plant called?", options: ["A) Self-pollination", "B) Autogamy", "C) Cleistogamy", "D) Cross-pollination (allogamy)"], ans: 3 },
+      { id: 924, q: "Which of the following field crops are classified as classic self-pollinated (autogamous) crops?", options: ["A) Maize and pearl millet", "B) Sunflower", "C) Papaya", "D) Rice, wheat, buckwheat and oat"], ans: 3 },
+      { id: 925, q: "Which of the following field crops are classified as classic cross-pollinated (allogamous) crops?", options: ["A) Rice and wheat", "B) Barley", "C) Pea", "D) Maize, pearl millet, black mustard and sunflower"], ans: 3 },
+      { id: 926, q: "Which of the following field crops are classified as often cross-pollinated crops?", options: ["A) Rice and wheat", "B) Maize", "C) Pea", "D) Safflower, pigeonpea (arhar), cotton and sorghum"], ans: 3 },
+      { id: 927, q: "What is the genetic consequence of continuous forced inbreeding and selfing in crops?", options: ["A) Heterozygosity", "B) Sterility", "C) Hybrid vigour", "D) Rapid increase in genetic homozygosity"], ans: 3 },
+      { id: 928, q: "What is “Single Seed Descent” (SSD) utilized as a rapid breeding method for?", options: ["A) Cross-pollinated synthetics", "B) Clonal selection", "C) Polyploid induction", "D) Handling segregating populations in self-pollinated crops"], ans: 3 },
+      { id: 929, q: "What selection basis underlies traditional agricultural mass selection?", options: ["A) Genotypic progeny testing only", "B) Molecular marker assay", "C) Random choice", "D) Phenotypic performance evaluation"], ans: 3 },
+      { id: 930, q: "What is historically recognized as the oldest crop improvement selection method?", options: ["A) Pedigree selection", "B) Backcross", "C) Recombinant DNA", "D) Mass selection"], ans: 3 },
+      { id: 931, q: "Who originated and proposed the fundamental biological concept of the “pure line” in 1903?", options: ["A) Mendel", "B) Nilsson-Ehle", "C) Sutton", "D) Wilhelm Johannsen (1903)"], ans: 3 },
+      { id: 932, q: "What is the progeny derived from a single homozygous self-pollinated plant called?", options: ["A) Synthetic", "B) Composite", "C) Clone", "D) Pure line"], ans: 3 },
+      { id: 933, q: "Which standard selection method is universally utilized for breeding improved wheat cultivars?", options: ["A) Mass selection", "B) Synthetic", "C) Backcross", "D) Pure-line selection method / Pedigree method"], ans: 3 },
+      { id: 934, q: "What is the breeding method of growing segregating hybrid populations in bulk without individual plant selection called?", options: ["A) Pedigree method", "B) Single seed descent", "C) Backcross", "D) Bulk population method"], ans: 3 },
+      { id: 935, q: "What is recognized as the most commonly used and meticulous method for handling segregating generations in self-pollinated crops?", options: ["A) Bulk method", "B) Single seed descent", "C) Pure line", "D) Pedigree method"], ans: 3 },
+      { id: 936, q: "Which breeding method is generally not utilized for handling early segregating generations?", options: ["A) Pedigree", "B) Backcross", "C) SSD", "D) Bulk method (historically delayed selection)"], ans: 3 },
+      { id: 937, q: "Which breeding method is ideal for targeting the improvement of specific quantitative traits like disease resistance?", options: ["A) Mass selection", "B) Bulk", "C) Pure line", "D) Pedigree method (and backcross)"], ans: 3 },
+      { id: 938, q: "In which cereal crop is multiline breeding widely and successfully exploited to manage rust epidemics?", options: ["A) Rice", "B) Maize", "C) Bajra", "D) Wheat"], ans: 3 },
+      { id: 939, q: "Which breeding method provides zero opportunity for practicing visual phenotypic plant selection until the F₅ generation?", options: ["A) Pedigree method", "B) Mass selection", "C) Backcross", "D) Single Seed Descent (SSD) method"], ans: 3 },
+      { id: 940, q: "Which breeding procedure is specifically designed to transfer a single major gene (like disease resistance) into an otherwise elite variety?", options: ["A) Pedigree method", "B) Bulk method", "C) Mass selection", "D) Backcross method"], ans: 3 },
+      { id: 941, q: "In horticultural crop breeding, clonal selection is predominantly utilized for propagating crops like:", options: ["A) Wheat", "B) Rice", "C) Maize", "D) Ginger (and sugarcane, potato, fruit trees)"], ans: 3 },
+      { id: 942, q: "In backcross breeding terminology, what is the parent plant utilized only once to donate a specific trait called?", options: ["A) Recurrent parent", "B) Tester", "C) Inbred", "D) Donor parent"], ans: 3 },
+      { id: 943, q: "Who first introduced and utilized the bulk population method in plant breeding (1908)?", options: ["A) Johannsen", "B) Shull", "C) Jones", "D) H. Nilsson-Ehle (1908)"], ans: 3 },
+      { id: 944, q: "What is progeny selection based on individual plant rows also widely known as?", options: ["A) Mass selection", "B) Bulk", "C) Pure line", "D) Ear-to-row method"], ans: 3 },
+      { id: 945, q: "What are the standard established methods utilized for handling segregating genetic populations in plant breeding?", options: ["A) Mass selection only", "B) Clonal selection", "C) Mutation", "D) Pedigree, Bulk and Single Seed Descent (SSD) methods"], ans: 3 },
+      { id: 946, q: "Which breeding method is appropriate for upgrading and refining an already successful elite crop variety?", options: ["A) Pure line selection from scratch", "B) Mass selection", "C) Polyploid induction", "D) Backcross method"], ans: 3 },
+      { id: 947, q: "The recurrent selection method is designed for accumulating desirable scattered favorable genes across generations in:", options: ["A) Pure line selfed crops", "B) Clones", "C) Fungi", "D) Cross-pollinated populations"], ans: 3 },
+      { id: 948, q: "Which breeding method is fundamentally inappropriate for improving cross-pollinated crop populations?", options: ["A) Recurrent selection", "B) Synthetic breeding", "C) Composite breeding", "D) Pure-line selection"], ans: 3 },
+      { id: 949, q: "What is the immediate F1 progeny resulting from a cross between two genetically distinct homozygous plants called?", options: ["A) Inbred line", "B) Synthetic variety", "C) Composite variety", "D) F1 Hybrid"], ans: 3 },
+      { id: 950, q: "What is a single-cross hybrid designated as in breeding notation (Cross A × B)?", options: ["A) Double cross", "B) Top cross", "C) Synthetic", "D) A × B = F1 Single-cross hybrid"], ans: 3 },
+      { id: 951, q: "What is a double-cross hybrid designated as in breeding notation?", options: ["A) A × B", "B) Top cross", "C) Synthetic", "D) (A × B) × (C × D) Double-cross hybrid"], ans: 3 },
+      { id: 952, q: "What is a top cross defined as in hybrid breeding?", options: ["A) Single cross", "B) Double cross", "C) Selfing", "D) Selected variety / line / clone crossed with an open-pollinated variety tester"], ans: 3 },
+      { id: 953, q: "What is a double top cross defined as in breeding notation?", options: ["A) A × B", "B) Inbred line", "C) Pure line", "D) A single cross (A × B) crossed with an open-pollinated variety"], ans: 3 },
+      { id: 954, q: "What is an advanced synthetic variety produced by crossing several tested combining inbred lines called?", options: ["A) Composite variety", "B) Single cross", "C) Pure line", "D) Synthetic variety"], ans: 3 },
+      { id: 955, q: "How is a synthetic variety maintained across successive farmer generations?", options: ["A) By remaking single crosses annually", "B) Tissue culture", "C) Clones", "D) Through open pollination / self-pollination seed saving"], ans: 3 },
+      { id: 956, q: "What is a composite variety produced by mechanically mixing seeds of several outstanding lines called?", options: ["A) Synthetic variety", "B) Single cross", "C) Inbred", "D) Composite variety"], ans: 3 },
+      { id: 957, q: "How is a composite variety originally developed?", options: ["A) Inbreeding", "B) Doubling chromosomes", "C) Mutation", "D) Through open cross-pollination mixing"], ans: 3 },
+      { id: 958, q: "In which major cereal crop was hybrid variety technology first commercially exploited?", options: ["A) Rice", "B) Wheat", "C) Barley", "D) Maize"], ans: 3 },
+      { id: 959, q: "What is self-pollination in flowers that open only after pollination has taken place called?", options: ["A) Cleistogamy", "B) Apomixis", "C) Parthenocarpy", "D) Chasmogamy"], ans: 3 },
+      { id: 960, q: "In which crops is chasmogamy standardly found?", options: ["A) Tomato", "B) Potato", "C) Wheat and barley", "D) Rice, mungbean and oat"], ans: 3 },
+      { id: 961, q: "What is pollination and fertilization occurring inside closed flowers before opening called?", options: ["A) Chasmogamy", "B) Geitonogamy", "C) Allogamy", "D) Cleistogamy"], ans: 3 },
+      { id: 962, q: "In which cereal crops is cleistogamy characteristically found?", options: ["A) Rice", "B) Maize", "C) Cotton", "D) Wheat and barley"], ans: 3 },
+      { id: 963, q: "What is the genetic phenomenon of male and female floral organs maturing at different times called?", options: ["A) Cleistogamy", "B) Monoecy", "C) Dioecy", "D) Dichogamy"], ans: 3 },
+      { id: 964, q: "When female flower organs mature before male anthers in a flower, it is termed:", options: ["A) Protandry", "B) Cleistogamy", "C) Homogamy", "D) Protogyny"], ans: 3 },
+      { id: 965, q: "What is geitonogamy defined as?", options: ["A) Self-pollination within same flower", "B) Cross-pollination between plants", "C) Apomixis", "D) Pollen falling from one flower onto another flower on the exact same plant"], ans: 3 },
+      { id: 966, q: "What are plant species bearing separate male and female flowers on the same plant called?", options: ["A) Dioecious", "B) Hermaphrodite", "C) Polygamous", "D) Monoecious plants"], ans: 3 },
+      { id: 967, q: "What are plant species bearing male and female flowers on entirely separate individual plants called?", options: ["A) Monoecious", "B) Hermaphrodite", "C) Polyploid", "D) Dioecious plants"], ans: 3 },
+      { id: 968, q: "What floral sexual system does a maize plant possess?", options: ["A) Dioecious", "B) Perfect", "C) Cleistogamous", "D) Monoecious plant"], ans: 3 },
+      { id: 969, q: "What floral sexual system does a papaya plant possess?", options: ["A) Monoecious", "B) Hermaphrodite", "C) Cleistogamous", "D) Dioecious plant"], ans: 3 },
+      { id: 970, q: "What was the very first successful intergeneric hybrid plant ever created?", options: ["A) Wheat", "B) Maize", "C) Cotton", "D) Triticale (or Raphanobrassica - Radish × Cabbage)"], ans: 3 },
+      { id: 971, q: "Commercial hybrid rice varieties are developed utilizing genetic systems like:", options: ["A) Pure lines", "B) Clones", "C) Synthetic mixes", "D) GMS and CGMS (Cytoplasmic-Genetic Male Sterility) systems"], ans: 3 },
+      { id: 972, q: "How are double-cross hybrid maize varieties commercially developed?", options: ["A) Pure line selection", "B) Clonal propagation", "C) Mutation", "D) Utilizing CGMS (Cytoplasmic-Genetic Male Sterility) line systems"], ans: 3 },
+      { id: 973, q: "Who pioneered early plant hybridization experiments in tobacco?", options: ["A) Mendel", "B) Darwin", "C) Watson", "D) Joseph Gottlieb Koelreuter (18th century)"], ans: 3 },
+      { id: 974, q: "What is the biological phenomenon of superior hybrid performance over parental lines called?", options: ["A) Inbreeding depression", "B) Mutation", "C) Pleiotropy", "D) Heterosis (hybrid vigour)"], ans: 3 },
+      { id: 975, q: "Who coined and introduced the scientific term “Heterosis” in 1914?", options: ["A) Mendel", "B) Bateson", "C) East", "D) George H. Shull (1914)"], ans: 3 },
+      { id: 976, q: "What does mid-parent / average heterosis measure?", options: ["A) Check variety", "B) Inbred value", "C) Mutation", "D) The superior performance of an F1 hybrid over the average value of its two parents"], ans: 3 },
+      { id: 977, q: "What does heterobeltiosis measure?", options: ["A) Mid-parent", "B) Standard check", "C) Inbred", "D) Hybrid superiority estimated over the better / superior parent"], ans: 3 },
+      { id: 978, q: "What does economic heterosis measure in crop breeding?", options: ["A) Mid-parent", "B) Better parent", "C) Inbred", "D) Superiority of an F1 hybrid over the best standard commercial check variety"], ans: 3 },
+      { id: 979, q: "What is the physical exchange of chromosome segments between non-sister chromatids called?", options: ["A) Disjunction", "B) Translocation", "C) Deletion", "D) Crossing over (recombination)"], ans: 3 },
+      { id: 980, q: "What is the genetic phenomenon of loss of vigour and fertility due to inbreeding called?", options: ["A) Heterosis", "B) Mutation", "C) Pleiotropy", "D) Inbreeding depression"], ans: 3 },
+      { id: 981, q: "Which crops exhibit exceptionally high levels of inbreeding depression upon selfing?", options: ["A) Wheat and rice", "B) Barley", "C) Peas", "D) Alfalfa (lucerne) and carrot"], ans: 3 },
+      { id: 982, q: "What is a sudden, random, heritable change in an organism's DNA sequence called?", options: ["A) Recombination", "B) Segregation", "C) Crossing over", "D) Mutation"], ans: 3 },
+      { id: 983, q: "Who first successfully utilized X-rays to induce artificial mutations in biological organisms (1927)?", options: ["A) Watson", "B) Darwin", "C) Mendel", "D) Hermann J. Muller (1927)"], ans: 3 },
+      { id: 984, q: "What is the basic functional unit within a gene where mutation can occur called?", options: ["A) Cistron", "B) Recon", "C) Codon", "D) Muton"], ans: 3 },
+      { id: 985, q: "What is any physical or chemical agent that artificially increases mutation frequency called?", options: ["A) Gametocide", "B) Herbicide", "C) Fungicide", "D) Mutagen"], ans: 3 },
+      { id: 986, q: "Which man-made cereal was created by crossing Wheat × Rye?", options: ["A) Triticum", "B) Raphanobrassica", "C) Cattalo", "D) Triticale"], ans: 3 },
+      { id: 987, q: "What ploidy level does standardly exhibited by cultivated edible bananas?", options: ["A) Diploid", "B) Tetraploid", "C) Haploid", "D) Autotriploid (3n)"], ans: 3 },
+      { id: 988, q: "What is the agronomic practice of removing the entire male tassel of maize before pollen shedding?", options: ["A) Emasculation", "B) Topping", "C) Pruning", "D) Detasseling"], ans: 3 },
+      { id: 989, q: "What is the biological condition in flowers where pollen is absent or non-functional called?", options: ["A) Self-incompatibility", "B) Cleistogamy", "C) Dioecy", "D) Male sterility"], ans: 3 },
+      { id: 990, q: "What is male sterility controlled and inherited strictly through maternal cytoplasmic genes called?", options: ["A) GMS", "B) CGMS", "C) Chemical", "D) Cytoplasmic Male Sterility (CMS)"], ans: 3 },
+      { id: 991, q: "Which famous historic cytoplasmic male sterility source was discovered and used in sorghum?", options: ["A) Purdue", "B) IARI", "C) Texas male-sterile cytoplasm", "D) Tift 60 cytoplasmic source"], ans: 3 },
+      { id: 992, q: "Which chemical compound is utilized as an artificial chemical gametocide in wheat and rice breeding?", options: ["A) Urea", "B) Glyphosate", "C) 2,4-D", "D) Ethrel (Ethephon)"], ans: 3 },
+      { id: 993, q: "What ploidy level does common hexaploid bread wheat possess?", options: ["A) Autotriploid", "B) Diploid", "C) Autotetraploid", "D) Allohexaploid (6x = 42)"], ans: 3 },
+      { id: 994, q: "Which commercial crops are classified as natural autopolyploids?", options: ["A) Wheat", "B) Rice", "C) Barley", "D) Sugarcane, cotton and Brassica species"], ans: 3 },
+      { id: 995, q: "What ploidy level does the cultivated potato (Solanum tuberosum) possess?", options: ["A) Diploid", "B) Triploid", "C) Hexaploid", "D) Autotetraploid (4x = 48)"], ans: 3 },
+      { id: 996, q: "Black mustard (Brassica nigra) evolutionarily originated from the genomic combination of:", options: ["A) Pure line", "B) Hybrid", "C) Mutation", "D) B. campestris × B. oleracea (or separate genomic species synthesis)"], ans: 3 },
+      { id: 997, q: "Indian mustard (Brassica juncea) evolutionarily evolved as an amphidiploid cross between:", options: ["A) B. oleracea × B. nigra", "B) B. rapa × B. oleracea", "C) Pure species", "D) B. campestris × B. nigra"], ans: 3 },
+      { id: 998, q: "What are quantitative agronomic characters controlled by numerous genes with small individual effects called?", options: ["A) Qualitative traits", "B) Monogenic", "C) Mendelian", "D) Polygenic traits (quantitative traits)"], ans: 3 },
+      { id: 999, q: "Which soil bacterium is widely acclaimed and nicknamed nature's “genetic engineer”?", options: ["A) Rhizobium", "B) E. coli", "C) Pseudomonas", "D) Agrobacterium tumefaciens"], ans: 3 },
+      { id: 1000, q: "What is a botanical “seed” defined as?", options: ["A) A fruit pod", "B) A root tuber", "C) A stem cutting", "D) A fertilized mature ovule containing an embryonic plant, stored food reserves, and a protective seed coat, capable of germination"], ans: 3 }
+    ];
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(200, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 200) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Overall Questions Test 5 Master Revision.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific genetics, cell biology, and plant breeding methodologies.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Genetics & Plant Breeding recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+
+</html>

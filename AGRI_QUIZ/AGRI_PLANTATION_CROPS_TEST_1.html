@@ -1,0 +1,1348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Plantation Crops Test 1 — Coconut, Cashew, Coffee, Tea, Rubber & Oil Palm (242 MCQs)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    :root {
+      --bg-header: #022c22;
+      --bg-body: #f1f5f9;
+      --card-bg: #ffffff;
+      --primary: #044e3e;
+      --primary-hover: #033c30;
+      --accent-badge: #022c22;
+      --option-bg: #e6f3ef;
+      --option-border: #bcdcd3;
+      --option-hover-bg: #d7ede6;
+      --option-selected-bg: #c5e6dc;
+      --option-selected-border: #044e3e;
+      --text-dark: #0f172a;
+      --text-muted: #475569;
+      --timer-bg: #ffe4e6;
+      --timer-text: #e11d48;
+      --timer-border: #fecdd3;
+      --success: #15803d;
+      --success-light: #dcfce7;
+      --danger: #b91c1c;
+      --danger-light: #fee2e2;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+      --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-body);
+      color: var(--text-dark);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .banner {
+      background: linear-gradient(135deg, #02231c 0%, #064e3b 50%, #02231c 100%);
+      color: #ffffff;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .banner::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(52, 211, 153, 0.12) 0%, transparent 60%),
+        radial-gradient(circle at 85% 70%, rgba(251, 191, 36, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+    }
+
+    .banner h1 {
+      font-size: 1.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #facc15;
+      text-transform: uppercase;
+      margin-bottom: 0.25rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .banner .sub-title {
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: #ffffff;
+      text-transform: uppercase;
+      margin-bottom: 0.4rem;
+    }
+
+    .banner .tagline {
+      font-family: 'Caveat', cursive;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      letter-spacing: 0.02em;
+    }
+
+    .container {
+      max-width: 880px;
+      width: 100%;
+      margin: 1.5rem auto;
+      padding: 0 1rem;
+      flex: 1;
+    }
+
+    .status-ribbon {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .status-tile {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 0.7rem 0.85rem;
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid #e2e8f0;
+    }
+
+    .status-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .tile-green .status-icon {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tile-blue .status-icon {
+      background: #e0f2fe;
+      color: #0284c7;
+    }
+
+    .tile-amber .status-icon {
+      background: #fef3c7;
+      color: #d97706;
+    }
+
+    .tile-rose .status-icon {
+      background: var(--timer-bg);
+      color: var(--timer-text);
+      border: 1px solid var(--timer-border);
+    }
+
+    .status-label {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    .status-val {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-top: 0.15rem;
+    }
+
+    .tile-rose .status-val {
+      color: var(--timer-text);
+      font-family: 'Plus Jakarta Sans', monospace;
+      font-size: 1.15rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.75rem 2rem;
+      box-shadow: var(--shadow-md);
+      border: 1px solid #e2e8f0;
+      margin-bottom: 1.25rem;
+      position: relative;
+    }
+
+    .card-topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.25rem;
+    }
+
+    .q-badge {
+      background: var(--accent-badge);
+      color: #ffffff;
+      padding: 0.45rem 1rem;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .mark-badge {
+      background: #ffe4e6;
+      color: #be123c;
+      padding: 0.35rem 0.85rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border: 1px solid #fecdd3;
+    }
+
+    .q-text {
+      font-size: 1.2rem;
+      font-weight: 700;
+      line-height: 1.55;
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+      white-space: pre-line;
+    }
+
+    .options-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 0.85rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .option-item {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 0.85rem 1.1rem;
+      background: var(--option-bg);
+      border: 1.5px solid var(--option-border);
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-align: left;
+      width: 100%;
+    }
+
+    .option-item:hover {
+      background: var(--option-hover-bg);
+      border-color: #79baaa;
+    }
+
+    .option-item.selected {
+      background: var(--option-selected-bg);
+      border-color: var(--option-selected-border);
+      box-shadow: 0 0 0 1px var(--option-selected-border);
+    }
+
+    .option-letter {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: #022c22;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      transition: background 0.15s ease;
+    }
+
+    .option-item.selected .option-letter {
+      background: #044e3e;
+    }
+
+    .option-content {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.4;
+    }
+
+    .actions-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding-top: 1rem;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      padding: 0.7rem 1.4rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+
+    .btn-prev {
+      background: #ffffff;
+      color: #0f172a;
+      border: 1.5px solid #cbd5e1;
+    }
+
+    .btn-prev:hover:not(:disabled) {
+      background: #f8fafc;
+      border-color: #94a3b8;
+    }
+
+    .btn-review {
+      background: #ffffff;
+      color: #044e3e;
+      border: 1.5px solid #044e3e;
+    }
+
+    .btn-review.marked {
+      background: #fef3c7;
+      color: #92400e;
+      border-color: #f59e0b;
+    }
+
+    .btn-next,
+    .btn-submit {
+      background: var(--primary);
+      color: #ffffff;
+    }
+
+    .btn-next:hover,
+    .btn-submit:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-submit {
+      background: #059669;
+    }
+
+    .btn-submit:hover {
+      background: #047857;
+    }
+
+    .btn:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    .footer-motivate {
+      background: linear-gradient(180deg, #022c22 0%, #011d17 100%);
+      color: #ffffff;
+      padding: 1.75rem 1rem;
+      text-align: center;
+      margin-top: auto;
+      border-top: 3px solid #059669;
+    }
+
+    .footer-motivate .quote {
+      font-family: 'Caveat', cursive;
+      font-size: 1.45rem;
+      color: #f8fafc;
+      margin-bottom: 0.4rem;
+    }
+
+    .footer-motivate .author-sub {
+      font-size: 0.8rem;
+      letter-spacing: 0.12em;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .setup-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.2rem;
+      margin-top: 1.25rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+    }
+
+    .form-group label {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    .form-group select,
+    .form-group input {
+      padding: 0.75rem 0.9rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid #cbd5e1;
+      font-size: 1rem;
+      background: #ffffff;
+      outline: none;
+    }
+
+    .form-group select:focus,
+    .form-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .time-preview-badge {
+      display: inline-block;
+      background: #dcfce7;
+      color: #166534;
+      padding: 0.35rem 0.75rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-top: 0.25rem;
+    }
+
+    .results-center {
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .score-circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #e6f3ef;
+      color: #044e3e;
+      border: 4px solid #044e3e;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 1rem auto 1.5rem auto;
+    }
+
+    .score-circle .pct {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1;
+    }
+
+    .score-circle .lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-top: 0.25rem;
+    }
+
+    .stats-matrix {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 0.85rem;
+      margin: 1.5rem 0;
+    }
+
+    .matrix-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: var(--radius-md);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .matrix-card .val {
+      font-size: 1.6rem;
+      font-weight: 800;
+    }
+
+    .matrix-card.c-green .val {
+      color: var(--success);
+    }
+
+    .matrix-card.c-red .val {
+      color: var(--danger);
+    }
+
+    .matrix-card.c-slate .val {
+      color: var(--text-muted);
+    }
+
+    .matrix-card .desc {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-top: 0.25rem;
+    }
+
+    .review-item {
+      padding: 1.25rem;
+      border-radius: var(--radius-md);
+      margin-bottom: 1rem;
+      border: 1.5px solid #e2e8f0;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .review-item.is-correct {
+      border-left: 6px solid var(--success);
+      background: #fcfdfc;
+    }
+
+    .review-item.is-wrong {
+      border-left: 6px solid var(--danger);
+      background: #fffcfc;
+    }
+
+    .review-item.is-unanswered {
+      border-left: 6px solid var(--neutral);
+      background: #f8fafc;
+    }
+
+    .rev-badge {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      margin-bottom: 0.6rem;
+    }
+
+    .rev-badge.correct {
+      background: var(--success-light);
+      color: var(--success);
+    }
+
+    .rev-badge.wrong {
+      background: var(--danger-light);
+      color: var(--danger);
+    }
+
+    .rev-badge.unanswered {
+      background: #e2e8f0;
+      color: var(--neutral);
+    }
+
+    .rev-q-text {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 0.75rem;
+      white-space: pre-line;
+    }
+
+    .rev-detail-line {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin: 0.35rem 0;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    @media (max-width: 680px) {
+      .status-ribbon {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .card {
+        padding: 1.25rem;
+      }
+
+      .actions-bar {
+        flex-wrap: wrap;
+      }
+
+      .actions-bar .btn {
+        flex: 1 1 calc(50% - 0.5rem);
+      }
+
+      .actions-bar .btn-review {
+        order: 3;
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="banner">
+    <h1>Competitive Exam</h1>
+    <div class="sub-title">Practice Quiz — Plantation Crops Series</div>
+    <div class="tagline">Practice Today &nbsp;|&nbsp; Perform Tomorrow &nbsp;&bull;&nbsp; Small Steps Big Success!</div>
+  </header>
+
+  <div class="container">
+
+    <div id="setup-screen" class="card">
+      <h2 style="font-size: 1.3rem; font-weight: 800; color: #022c22; margin-bottom: 0.35rem;">Plantation Crops Test 1:
+        Coconut, Cashew, Coffee, Tea, Rubber & Oil Palm (242 MCQs)</h2>
+      <p style="color: var(--text-muted); font-size: 0.9rem;">Standard exam pacing of <strong>1 minute per
+          question</strong> applies automatically to your chosen question count.</p>
+
+      <div class="setup-grid">
+        <div class="form-group">
+          <label for="mode-select">Exam Mode</label>
+          <select id="mode-select">
+            <option value="exam">Standard Exam Mode (Sequential 1–242)</option>
+            <option value="practice">Practice Mode (Randomized Subset)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="count-select">Number of Questions</label>
+          <select id="count-select">
+            <option value="242">All Questions (242 Questions)</option>
+            <option value="50">50 Questions</option>
+            <option value="100">100 Questions</option>
+            <option value="150">150 Questions</option>
+            <option value="custom">Custom Count</option>
+          </select>
+        </div>
+
+        <div class="form-group hidden" id="custom-count-wrapper">
+          <label for="custom-count-input">Enter count (1 to 242)</label>
+          <input type="number" id="custom-count-input" min="1" max="242" value="100" />
+        </div>
+
+        <div class="form-group">
+          <label>Total Time Allotted</label>
+          <div>
+            <span class="time-preview-badge" id="time-preview-pill">242 min 0 sec (1 min / question)</span>
+          </div>
+        </div>
+
+        <button class="btn btn-next" id="start-btn" style="margin-top: 0.5rem; padding: 0.85rem;">Start Quiz
+          Now</button>
+      </div>
+    </div>
+
+    <div id="quiz-screen" class="hidden">
+      <div class="status-ribbon">
+        <div class="status-tile tile-green">
+          <div class="status-icon">&#127815;</div>
+          <div>
+            <div class="status-label">Subject</div>
+            <div class="status-val">Plantation Crops</div>
+          </div>
+        </div>
+        <div class="status-tile tile-blue">
+          <div class="status-icon">&#127796;</div>
+          <div>
+            <div class="status-label">Topic</div>
+            <div class="status-val">Coconut & Cashew</div>
+          </div>
+        </div>
+        <div class="status-tile tile-amber">
+          <div class="status-icon">&#128202;</div>
+          <div>
+            <div class="status-label">Question</div>
+            <div class="status-val" id="q-counter-val">1 / 242</div>
+          </div>
+        </div>
+        <div class="status-tile tile-rose">
+          <div class="status-icon">&#9201;</div>
+          <div>
+            <div class="status-label">Time Left</div>
+            <div class="status-val" id="timer-val">04:02:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-topbar">
+          <div class="q-badge" id="q-badge-val">Q.1</div>
+          <div class="mark-badge">1 Mark</div>
+        </div>
+
+        <div class="q-text" id="q-text-val"></div>
+
+        <div class="options-grid" id="options-container"></div>
+
+        <div class="actions-bar">
+          <button class="btn btn-prev" id="prev-btn">&larr; Previous</button>
+          <button class="btn btn-review" id="mark-btn">&#128278; Mark for Review</button>
+          <div style="display: flex; gap: 0.6rem;">
+            <button class="btn btn-next" id="next-btn">Next &rarr;</button>
+            <button class="btn btn-submit hidden" id="submit-btn">Submit Exam</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="result-screen" class="card hidden">
+      <div class="results-center">
+        <h2 style="font-size: 1.45rem; font-weight: 800; color: #022c22;">Exam Result Summary</h2>
+        <div class="score-circle">
+          <div class="pct" id="res-score-pct">0%</div>
+          <div class="lbl">Total Score</div>
+        </div>
+        <p id="res-performance-msg"
+          style="font-size: 1.05rem; font-weight: 700; color: #044e3e; margin-bottom: 1.25rem;"></p>
+      </div>
+
+      <div class="stats-matrix">
+        <div class="matrix-card">
+          <div class="val" id="res-total">0</div>
+          <div class="desc">Questions</div>
+        </div>
+        <div class="matrix-card c-green">
+          <div class="val" id="res-correct">0</div>
+          <div class="desc">Correct</div>
+        </div>
+        <div class="matrix-card c-red">
+          <div class="val" id="res-wrong">0</div>
+          <div class="desc">Wrong</div>
+        </div>
+        <div class="matrix-card c-slate">
+          <div class="val" id="res-unanswered">0</div>
+          <div class="desc">Unanswered</div>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.85rem; justify-content: center; margin-top: 1.5rem;">
+        <button class="btn btn-next" id="review-answers-btn">Review Detailed Answers</button>
+        <button class="btn btn-prev" id="restart-btn">Restart Test</button>
+      </div>
+    </div>
+
+    <div id="review-screen" class="hidden">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; color: #022c22;">Performance & Answer Verification</h2>
+        <button class="btn btn-prev" id="back-to-summary-btn">&larr; Back to Summary</button>
+      </div>
+      <div id="review-list-container"></div>
+    </div>
+
+  </div>
+
+  <footer class="footer-motivate">
+    <div class="quote">&ldquo;Discipline in Practice Leads to Confidence in Exams.&rdquo;</div>
+    <div class="author-sub">Practice &bull; Persistence &bull; Success</div>
+  </footer>
+
+  <script>
+    const questionBank = [
+      { id: 1, q: "Which disease is common in coconut and arecanut?", options: ["A) Bud rot", "B) Root wilt", "C) Yellow leaf disease", "D) Foot rot"], ans: 0 },
+      { id: 2, q: "Tea is commercially propagated through —", options: ["A) Single-node cuttings", "B) Seeds", "C) Air layering", "D) Budding"], ans: 0 },
+      { id: 3, q: "In rubber, triangular planting at 4.9 × 4.9 m accommodates —", options: ["A) 445 plants/ha", "B) 277 plants/ha", "C) 500 plants/ha", "D) 100 plants/ha"], ans: 0 },
+      { id: 4, q: "Ceara rubber is scientifically known as —", options: ["A) Manihot glaziovii", "B) Hevea brasiliensis", "C) Ficus elastica", "D) Parthenium"], ans: 0 },
+      { id: 5, q: "Which climatic condition prevents pollination in coconut?", options: ["A) Heavy rainfall", "B) Bright sunshine", "C) Moderate wind", "D) Mild temperature"], ans: 0 },
+      { id: 6, q: "Coffea arabica is grown at an elevation of —", options: ["A) 1000–1500 m MSL", "B) 500–1000 m MSL", "C) 0–500 m MSL", "D) Above 2000 m MSL"], ans: 0 },
+      { id: 7, q: "Fermentation of cocoa beans results in —", options: ["A) Development of chocolate flavour", "B) Increase in bitterness", "C) Loss of seed coat", "D) Sprouting"], ans: 0 },
+      { id: 8, q: "Which is a polyembryonic variety of coconut?", options: ["A) Arasikere Tall", "B) Gangabondam", "C) Chowghat Orange Dwarf", "D) Malayan Dwarf"], ans: 0 },
+      { id: 9, q: "Which coconut-growing state ranks first in productivity?", options: ["A) Tamil Nadu", "B) Kerala", "C) Karnataka", "D) Andhra Pradesh"], ans: 0 },
+      { id: 10, q: "The popular grade of cashew kernel is —", options: ["A) 320", "B) 210", "C) 450", "D) 180"], ans: 0 },
+      { id: 11, q: "In square-system planting of arecanut, the north–south line should be deflected —", options: ["A) 35° towards west", "B) 45° towards east", "C) 20° towards north", "D) No deflection"], ans: 0 },
+      { id: 12, q: "Young fruits of cocoa are called —", options: ["A) Cherelles", "B) Berries", "C) Drupes", "D) Pods"], ans: 0 },
+      { id: 13, q: "The term “nib” is related to —", options: ["A) Cocoa", "B) Coffee", "C) Tea", "D) Rubber"], ans: 0 },
+      { id: 14, q: "Which statement about CNSL (Cashew Nut Shell Liquid) is incorrect?", options: ["A) CNSL is a white viscous fluid", "B) CNSL is a dark reddish-brown viscous liquid", "C) It is used in resin manufacturing", "D) It has vesiccant properties"], ans: 0 },
+      { id: 15, q: "National Research Centre for Cashew is located at —", options: ["A) Puttur", "B) Vittal", "C) Calicut", "D) Thrissur"], ans: 0 },
+      { id: 16, q: "Coconut hybrid VHC-2 is a cross between —", options: ["A) ECT × Malaysian Dwarf Yellow", "B) WCT × COD", "C) MOD × ECT", "D) COD × WCT"], ans: 0 },
+      { id: 17, q: "Which statements regarding Criollo cocoa are correct?", options: ["A) I and II are correct", "B) All are correct", "C) None", "D) II only"], ans: 0 },
+      { id: 18, q: "The bearing habit of cocoa is —", options: ["A) Cauliflorous / adventitious on the trunk", "B) Terminal", "C) Axillary", "D) Solitary"], ans: 0 },
+      { id: 19, q: "Coconut inflorescence primordia begin to form about how long before spathe opening?", options: ["A) 32 months", "B) 12 months", "C) 6 months", "D) 24 months"], ans: 0 },
+      { id: 20, q: "Commercial propagation of cashew is by —", options: ["A) Epicotyl grafting", "B) Air layering", "C) Seeds", "D) Hardwood cuttings"], ans: 0 },
+      { id: 21, q: "The world's largest producer of coconut is —", options: ["A) Indonesia", "B) India", "C) Philippines", "D) Sri Lanka"], ans: 0 },
+      { id: 22, q: "Gummosis from stem and crown toppling in coconut is due to attack of —", options: ["A) Black-headed caterpillar", "B) Rhinoceros beetle", "C) Red palm weevil", "D) Eriophyid mite"], ans: 2 },
+      { id: 23, q: "Cashew belongs to the family —", options: ["A) Anacardiaceae", "B) Rubiaceae", "C) Palmae", "D) Euphorbiaceae"], ans: 0 },
+      { id: 24, q: "Recommended square-system spacing in arecanut is —", options: ["A) 2.7 × 2.7 m", "B) 7 × 7 m", "C) 9 × 9 m", "D) 4.9 × 4.9 m"], ans: 0 },
+      { id: 25, q: "Best quality/export grade of cashew kernel should be —", options: ["A) 320 count", "B) 450 count", "C) 500 count", "D) 180 count"], ans: 0 },
+      { id: 26, q: "Longevity of cocoa seeds is —", options: ["A) 1 year", "B) Few weeks / short-lived", "C) 5 years", "D) 10 years"], ans: 1 },
+      { id: 27, q: "Time from spadix initiation to ripening of nuts in coconut is —", options: ["A) 32 months", "B) 12 months", "C) 18 months", "D) 6 months"], ans: 0 },
+      { id: 28, q: "High-density planting spacing for cashew under Tamil Nadu conditions is —", options: ["A) 5 × 4 m", "B) 7.5 × 7.5 m", "C) 10 × 10 m", "D) 2 × 2 m"], ans: 0 },
+      { id: 29, q: "Cashew is native to —", options: ["A) Brazil", "B) India", "C) China", "D) Ethiopia"], ans: 0 },
+      { id: 30, q: "Scuffling is practised in —", options: ["A) Coffee", "B) Tea", "C) Rubber", "D) Coconut"], ans: 0 },
+      { id: 31, q: "Veppankulam hybrid coconut VHC-3 is a cross between —", options: ["A) ECT × Malaysian Orange Dwarf (MOD)", "B) WCT × COD", "C) MOD × WCT", "D) ECT × WCT"], ans: 0 },
+      { id: 32, q: "Match the plantation crop with its research station (Coconut–CRS Veppankulam; Arecanut–NRC Padavagi; Cashew–NRC Vittal; Oil palm–RRS Virudhachalam):", options: ["A) Correct matching", "B) Incorrect matching", "C) None", "D) All wrong"], ans: 0 },
+      { id: 33, q: "Common micronutrient deficiency in cocoa in South India is due to —", options: ["A) Zinc", "B) Boron", "C) Iron", "D) Manganese"], ans: 0 },
+      { id: 34, q: "Recommended spacing for coconut is —", options: ["A) 7 × 7 m", "B) 2.7 × 2.7 m", "C) 9 × 9 m", "D) 4.9 × 4.9 m"], ans: 0 },
+      { id: 35, q: "Recommended spacing for arecanut is —", options: ["A) 2.7 × 2.7 m", "B) 7 × 7 m", "C) 9 × 9 m", "D) 5 × 4 m"], ans: 0 },
+      { id: 36, q: "Recommended spacing for cashew is —", options: ["A) 7.5 × 7.5 m", "B) 2.7 × 2.7 m", "C) 7 × 7 m", "D) 9 × 9 m"], ans: 0 },
+      { id: 37, q: "Recommended spacing for oil palm is —", options: ["A) 9 × 9 m triangular system", "B) 2 × 2 m", "C) 7 × 7 m", "D) 1 m"], ans: 0 },
+      { id: 38, q: "Sanitary pruning is done in —", options: ["A) Cocoa", "B) Coconut", "C) Arecanut", "D) Rubber"], ans: 0 },
+      { id: 39, q: "Red palm weevil in coconut can be effectively managed by —", options: ["A) Hooking / pheromone traps", "B) Spraying water", "C) Weeding", "D) Pruning"], ans: 0 },
+      { id: 40, q: "Termites in coconut can be effectively controlled by —", options: ["A) Chlorpyriphos", "B) Urea", "C) Lime", "D) Salt"], ans: 0 },
+      { id: 41, q: "Cocoa is used as a —", options: ["A) Beverage", "B) Cereal", "C) Pulse", "D) Fibre"], ans: 0 },
+      { id: 42, q: "Tanjore wilt is a disease of —", options: ["A) Coconut", "B) Arecanut", "C) Rubber", "D) Tea"], ans: 0 },
+      { id: 43, q: "Koleroga/Mehali is a disease of —", options: ["A) Arecanut", "B) Coconut", "C) Cocoa", "D) Coffee"], ans: 0 },
+      { id: 44, q: "Cherelle wilt is a disease/disorder of —", options: ["A) Cocoa", "B) Cashew", "C) Coffee", "D) Tea"], ans: 0 },
+      { id: 45, q: "Tea mosquito bug is associated with —", options: ["A) Cashew", "B) Tea", "C) Coffee", "D) Rubber"], ans: 0 },
+      { id: 46, q: "CPCRI Regional Station, Vittal works mainly on —", options: ["A) Arecanut", "B) Coconut", "C) Cashew", "D) Rubber"], ans: 0 },
+      { id: 47, q: "Mohitnagar is a popular variety of —", options: ["A) Arecanut", "B) Coconut", "C) Cashew", "D) Rubber"], ans: 0 },
+      { id: 48, q: "Why are cashew and rubber top-worked?", options: ["A) To rejuvenate old and senile plants", "B) To increase height", "C) To stop bearing", "D) To kill weeds"], ans: 0 },
+      { id: 49, q: "Which crop belongs to Rubiaceae?", options: ["A) Coffee", "B) Rubber", "C) Tea", "D) Arecanut"], ans: 0 },
+      { id: 50, q: "Which crop belongs to Euphorbiaceae?", options: ["A) Rubber", "B) Coffee", "C) Tea", "D) Arecanut"], ans: 0 },
+      { id: 51, q: "Which crop belongs to Camelliaceae?", options: ["A) Tea", "B) Coffee", "C) Rubber", "D) Cashew"], ans: 0 },
+      { id: 52, q: "Which crop belongs to Palmae/Arecaceae?", options: ["A) Arecanut (and coconut)", "B) Coffee", "C) Tea", "D) Rubber"], ans: 0 },
+      { id: 53, q: "Which coconut hybrid is correctly matched with its parents?", options: ["A) Chandra Sankara – COD × WCT", "B) VHC-2 – MOD × ECT", "C) VHC-3 – WCT × COD", "D) None"], ans: 0 },
+      { id: 54, q: "Which country is the origin of coffee?", options: ["A) Ethiopia", "B) China", "C) Brazil", "D) Malaysia"], ans: 0 },
+      { id: 55, q: "Which country is associated with the origin of rubber?", options: ["A) Brazil / Malaysia", "B) China", "C) Ethiopia", "D) Philippines"], ans: 0 },
+      { id: 56, q: "Which country is associated with the origin of tea?", options: ["A) China", "B) India", "C) Brazil", "D) Ethiopia"], ans: 0 },
+      { id: 57, q: "Which country is associated with the origin of arecanut?", options: ["A) Philippines / Malaysia", "B) China", "C) Brazil", "D) Ethiopia"], ans: 0 },
+      { id: 58, q: "Criollo cocoa has which pod colour?", options: ["A) Dark red", "B) Yellow", "C) Green", "D) Purple"], ans: 0 },
+      { id: 59, q: "The coconut hybrid released from TNAU is —", options: ["A) VHC-1", "B) Chandra Sankara", "C) Kera Sankara", "D) Lakshadweep"], ans: 0 },
+      { id: 60, q: "The correct sequence in cashew kernel processing is —", options: ["A) Roasting → Shelling → Peeling → Grading", "B) Peeling → Roasting → Grading", "C) Grading → Shelling → Roasting", "D) Shelling → Grading → Roasting"], ans: 0 },
+      { id: 61, q: "Top working in cashew is done on —", options: ["A) 20–25-year-old senile trees", "B) 1-year seedlings", "C) 50-year trees", "D) Nursery plants"], ans: 0 },
+      { id: 62, q: "Feni is prepared from —", options: ["A) Cashew apple", "B) Coconut sap", "C) Coffee cherry", "D) Cocoa pod"], ans: 0 },
+      { id: 63, q: "Coconut research station in Tamil Nadu is situated at —", options: ["A) Veppankulam", "B) Vittal", "C) Padavagi", "D) Virudhachalam"], ans: 0 },
+      { id: 64, q: "In India, coconut is largely cultivated in —", options: ["A) Kerala / Karnataka", "B) Punjab", "C) Haryana", "D) Rajasthan"], ans: 0 },
+      { id: 65, q: "Plantation crops constitute approximately — of cropped area in India.", options: ["A) 5%", "B) 25%", "C) 50%", "D) 80%"], ans: 0 },
+      { id: 66, q: "Theaflavins and thearubigins are responsible for the — of made tea.", options: ["A) Colour and brightness", "B) Bitterness", "C) Aroma", "D) Size"], ans: 0 },
+      { id: 67, q: "The process of reducing moisture content of tea leaves by spreading them in troughs is called —", options: ["A) Withering", "B) Rolling", "C) Fermentation", "D) Drying"], ans: 0 },
+      { id: 68, q: "Ideal month and spacing for rubber planting in hilly areas are —", options: ["A) June–July, 4.9 × 4.9 m", "B) January, 1 × 1 m", "C) December, 10 × 10 m", "D) August, 2 × 2 m"], ans: 0 },
+      { id: 69, q: "Central Coffee Research Institute is located at —", options: ["A) Chikmagaluru, Karnataka", "B) Wayanad, Kerala", "C) Nilgiris, TN", "D) Valparai, TN"], ans: 0 },
+      { id: 70, q: "Hardy tea clone resistant to drought and wind and suitable for high elevation is —", options: ["A) Jeyaram", "B) UPASI-3", "C) Chin. B", "D) Sundaram"], ans: 0 },
+      { id: 71, q: "In rubber, 200% tapping intensity is achieved by —", options: ["A) S/2 D/2", "B) S/2 D/3", "C) S/2 D/4", "D) S/1 D/1"], ans: 0 },
+      { id: 72, q: "Rubber seedlings are tapped at an angle of — to the horizontal.", options: ["A) 30°", "B) 45°", "C) 60°", "D) 90°"], ans: 0 },
+      { id: 73, q: "Tapping system recommended for clonal seedlings with 67% intensity is —", options: ["A) S/2 D/3", "B) S/2 D/2", "C) S/2 D/4", "D) S/1 D/1"], ans: 0 },
+      { id: 74, q: "Collection of dropped coffee fruits during harvest is called —", options: ["A) Gleaning", "B) Stripping", "C) Picking", "D) Pruning"], ans: 0 },
+      { id: 75, q: "Tea can be grown successfully in — soil.", options: ["A) Red sandy loam / acidic forest loam", "B) Sodic clay", "C) Saline clay", "D) Pure sand"], ans: 0 },
+      { id: 76, q: "Intensive tapping of old rubber trees right before felling is called —", options: ["A) Slaughter tapping", "B) Normal tapping", "C) Green budding", "D) Crown budding"], ans: 0 },
+      { id: 77, q: "Under close planting systems, coffee is planted at —", options: ["A) 1–1.5 × 1–1.5 m", "B) 3 × 3 m", "C) 5 × 5 m", "D) 10 × 10 m"], ans: 0 },
+      { id: 78, q: "Major tea-producing state in India is —", options: ["A) Assam", "B) Kerala", "C) Karnataka", "D) Maharashtra"], ans: 0 },
+      { id: 79, q: "Major coffee-producing state in India is —", options: ["A) Karnataka", "B) Assam", "C) West Bengal", "D) Bihar"], ans: 0 },
+      { id: 80, q: "Orthodox method of processing is followed primarily in —", options: ["A) Tea", "B) Coffee", "C) Rubber", "D) Cocoa"], ans: 0 },
+      { id: 81, q: "Dura, Tenera and Pisifera are botanical types of —", options: ["A) Oil palm", "B) Coconut", "C) Arecanut", "D) Rubber"], ans: 0 },
+      { id: 82, q: "Tea grows well at an optimum soil pH range of —", options: ["A) 4.0–6.0", "B) 7.5–8.5", "C) 8.5–9.5", "D) 10.0"], ans: 0 },
+      { id: 83, q: "RMA-1 is a standard quality grade of —", options: ["A) Rubber (Ribbed Smoked Sheet)", "B) Cashew", "C) Coffee", "D) Tea"], ans: 0 },
+      { id: 84, q: "Defective broken bits of coffee beans are graded commercially as —", options: ["A) Triage", "B) Peaberry", "C) Elephant", "D) Flat bean"], ans: 0 },
+      { id: 85, q: "Chemical used to remove mucilage from coffee pulp during parchment coffee preparation is —", options: ["A) Sodium hydroxide (or NaOH/HCl washing)", "B) Nitric acid", "C) Sulphuric acid", "D) Vinegar"], ans: 0 },
+      { id: 86, q: "Selective manual picking of fully ripe red coffee berries is called —", options: ["A) Main picking / selective picking", "B) Stripping", "C) Gleaning", "D) Sweeping"], ans: 0 },
+      { id: 87, q: "Commercial triploid tea clone producing acceptable quality made tea is —", options: ["A) UPASI-3", "B) Jeyaram", "C) BSS-1", "D) CRF-1"], ans: 0 },
+      { id: 88, q: "Congusta is a spontaneous natural hybrid between:", options: ["A) Coffea robusta × Coffea arabica", "B) C. arabica × C. liberica", "C) C. canephora × C. liberica", "D) None"], ans: 0 },
+      { id: 89, q: "Propagation method in rubber where both stock and scion budwood are young is —", options: ["A) Green budding", "B) Brown budding", "C) Air layering", "D) Hardwood cuttings"], ans: 0 },
+      { id: 90, q: "Application of ______ at the tapping panel increases latex flow duration in rubber.", options: ["A) Ethrel (Ethephon)", "B) Urea", "C) GA₃", "D) NAA"], ans: 0 },
+      { id: 91, q: "Hevea brasiliensis belongs botanically to the family —", options: ["A) Euphorbiaceae", "B) Rubiaceae", "C) Camelliaceae", "D) Anacardiaceae"], ans: 0 },
+      { id: 92, q: "Tappable girth maturity stage of rubber trees raised through budded plants is —", options: ["A) 50 cm girth at 125–150 cm height from bud union", "B) 10 cm girth", "C) 100 cm girth", "D) 5 cm girth"], ans: 0 },
+      { id: 93, q: "Cambod type tea is botanically classified as —", options: ["A) Camellia assamica subsp. lasiocalyx", "B) C. sinensis var. sinensis", "C) C. assamica var. assamica", "D) None"], ans: 0 },
+      { id: 94, q: "Brown blast is a major physiological / fungal disorder affecting —", options: ["A) Tea", "B) Rubber", "C) Coffee", "D) Cashew"], ans: 0 },
+      { id: 95, q: "What is the suitable elevation range for cultivating Robusta coffee?", options: ["A) 500–1000 m MSL", "B) 1000–1500 m MSL", "C) 0–300 m MSL", "D) Above 2000 m MSL"], ans: 0 },
+      { id: 96, q: "Indian rubber tree is scientifically known as —", options: ["A) Ficus elastica", "B) Hevea brasiliensis", "C) Manihot glaziovii", "D) Castilloa elastica"], ans: 0 },
+      { id: 97, q: "The term “Jat” in tea agronomy is associated with —", options: ["A) Tea race / geographical origin and type", "B) Soil type", "C) Fertilizer grade", "D) Pruning height"], ans: 0 },
+      { id: 98, q: "Coffea arabica has a somatic chromosome number of 2n = 44 and is genetically a —", options: ["A) Tetraploid", "B) Diploid", "C) Triploid", "D) Hexaploid"], ans: 0 },
+      { id: 99, q: "Pollination and fertilization behavior in Coffea arabica is predominantly —", options: ["A) Self-pollinated and self-fertile", "B) Cross-pollinated by insects", "C) Wind pollinated", "D) Apomictic"], ans: 0 },
+      { id: 100, q: "What is the correct crop associated with skiffing?", options: ["A) Tea", "B) Coffee", "C) Rubber", "D) Cocoa"], ans: 0 },
+      { id: 101, q: "Peaberry and black-jolo are commercial quality terms associated with —", options: ["A) Coffee", "B) Tea", "C) Rubber", "D) Cocoa"], ans: 0 },
+      { id: 102, q: "Tapping Panel Dryness (TPD) is a physiological disorder of —", options: ["A) Rubber", "B) Tea", "C) Coffee", "D) Coconut"], ans: 0 },
+      { id: 103, q: "Pencil-point nutritional disorder is associated with —", options: ["A) Coconut", "B) Rubber", "C) Tea", "D) Coffee"], ans: 0 },
+      { id: 104, q: "Which cultural operation is specifically associated with tea management?", options: ["A) Skiffing (light pruning)", "B) Tapping", "C) Retting", "D) Turgor testing"], ans: 0 },
+      { id: 105, q: "Which coffee market grades are known as peaberry and black-jolo?", options: ["A) Coffee", "B) Tea", "C) Cashew", "D) Rubber"], ans: 0 },
+      { id: 106, q: "What does the abbreviation TPD stand for in rubber plantation management?", options: ["A) Tapping Panel Dryness", "B) Total Plant Disease", "C) Terminal Pod Death", "D) Tectonic Plate Drift"], ans: 0 },
+      { id: 107, q: "What disorder in coconut plantations is characterized by tapering stems ending in thin fronds?", options: ["A) Pencil-point disorder", "B) Bud rot", "C) Root wilt", "D) Thanjavur wilt"], ans: 0 },
+      { id: 108, q: "Where was the Tea Board of India originally established in 1954?", options: ["A) Calcutta (Kolkata)", "B) Cochin", "C) Bangalore", "D) Mumbai"], ans: 0 },
+      { id: 109, q: "Where was the Coffee Board of India established in 1942?", options: ["A) Bangalore", "B) Calcutta", "C) Kottayam", "D) Kochi"], ans: 0 },
+      { id: 110, q: "Where was the Coconut Development Board established in 1981?", options: ["A) Kochi, Kerala", "B) Calicut", "C) Chennai", "D) Bangalore"], ans: 0 },
+      { id: 111, q: "Where was the Rubber Board of India established in 1947?", options: ["A) Kottayam, Kerala", "B) Cochin", "C) Trivandrum", "D) Quilon"], ans: 0 },
+      { id: 112, q: "Natural cross-pollination and fertilization in cocoa flowers is carried out mainly by tiny insects called:", options: ["A) Midges (Forcipomyia spp.)", "B) Honeybees", "C) Butterflies", "D) Beetles"], ans: 0 },
+      { id: 113, q: "What is a modern rapid micro-propagation method in cocoa?", options: ["A) Microbudding / clonal bud grafting", "B) Air layering", "C) Hardwood cuttings", "D) True seeds"], ans: 0 },
+      { id: 114, q: "Abnormal leaf fall disease in rubber plantations is caused by:", options: ["A) Phytophthora meadii (or Oidium heveae)", "B) Ganoderma", "C) Fusarium", "D) Bacteria"], ans: 0 },
+      { id: 115, q: "The removal of dead, diseased, crossing, and unwanted water shoots in plantation trees is called:", options: ["A) Sanitary pruning", "B) Tapping", "C) Weeding", "D) Thinning"], ans: 0 },
+      { id: 116, q: "Chocolate-brown to black pods accompanied by internally discoloured beans in cocoa indicate:", options: ["A) Black pod disease (Phytophthora palmivora)", "B) Cherelle wilt", "C) Sun scorch", "D) Powdery mildew"], ans: 0 },
+      { id: 117, q: "What is the recommended standard spacing for cashew under Kerala high-rainfall conditions?", options: ["A) 8 × 8 m or 4 × 4 m (HDP)", "B) 2 × 2 m", "C) 15 × 15 m", "D) 1 × 1 m"], ans: 0 },
+      { id: 118, q: "Defective, broken, or substandard bits of processed cashew kernels are graded as:", options: ["A) Triage", "B) Whites", "C) Scorched", "D) Splits"], ans: 0 },
+      { id: 119, q: "Unfermented, sweet alcoholic sap extracted from unopened coconut inflorescence spathes is called:", options: ["A) Neorea / Neera", "B) Toddy", "C) Feni", "D) Wine"], ans: 0 },
+      { id: 120, q: "Characteristic V-shaped cut notches on newly opened coconut fronds indicate attack by:", options: ["A) Rhinoceros beetle (Oryctes rhinoceros)", "B) Red palm weevil", "C) Eriophyid mite", "D) Coreid bug"], ans: 0 },
+      { id: 121, q: "What is the true geographical origin of the cocoa tree (Theobroma cacao)?", options: ["A) South America (Amazon basin)", "B) India", "C) China", "D) Ethiopia"], ans: 0 },
+      { id: 122, q: "Which type of cocoa dominates commercial plantations in India due to high yield and adaptability?", options: ["A) Forastero", "B) Criollo", "C) Trinitario", "D) Nacional"], ans: 0 },
+      { id: 123, q: "Bud rot disease of coconut palms is caused by the fungal pathogen:", options: ["A) Phytophthora palmivora", "B) Ganoderma lucidum", "C) Fusarium oxysporum", "D) Pythium"], ans: 0 },
+      { id: 124, q: "Thanjavur wilt (basal stem rot) of coconut palms is incited by:", options: ["A) Ganoderma lucidum", "B) Phytophthora palmivora", "C) Ceratocystis", "D) Rhizoctonia"], ans: 0 },
+      { id: 125, q: "Fresh organic manure pits near coconut gardens serve as major breeding sites for:", options: ["A) Rhinoceros beetle", "B) Red palm weevil", "C) Termites", "D) Aphids"], ans: 0 },
+      { id: 126, q: "A healthy, high-yielding coconut mother palm should consistently produce how many functional bunches?", options: ["A) 12–15 functional bunches", "B) 1 bunch", "C) 50 bunches", "D) Zero"], ans: 0 },
+      { id: 127, q: "Yellow Leaf Disease (YLD) of arecanut palms is caused by:", options: ["A) Phytoplasma / MLO (Mycoplasma-like organism)", "B) Fungus", "C) Virus", "D) Nematode"], ans: 0 },
+      { id: 128, q: "Among all major plantation crops, which crop contributes the largest share to total national production and area?", options: ["A) Coconut", "B) Rubber", "C) Tea", "D) Coffee"], ans: 0 },
+      { id: 129, q: "Which Indian state ranks first in total coconut production and area?", options: ["A) Karnataka (or Kerala depending on annual survey)", "B) Tamil Nadu", "C) Assam", "D) Bihar"], ans: 0 },
+      { id: 130, q: "What is the botanical fruit type of cocoa?", options: ["A) Berry (locally called a pod)", "B) Drupe", "C) Capsule", "D) Pome"], ans: 0 },
+      { id: 131, q: "The commercial trade term “Chali” is directly related to the processing of:", options: ["A) Arecanut (fully ripe boiled/sun-dried nuts)", "B) Coconut", "C) Cashew", "D) Rubber"], ans: 0 },
+      { id: 132, q: "VPM-1, VPM-2 and VPM-3 are improved varieties released in:", options: ["A) Arecanut", "B) Coconut", "C) Cashew", "D) Rubber"], ans: 0 },
+      { id: 133, q: "Root wilt disease is a severe, debilitating malady affecting coconut palms in parts of:", options: ["A) Kerala", "B) Punjab", "C) Haryana", "D) Rajasthan"], ans: 0 },
+      { id: 134, q: "Barren nuts (button shedding / empty nuts) in coconut are primarily caused by deficiency of:", options: ["A) Boron (B)", "B) Nitrogen", "C) Potassium", "D) Iron"], ans: 0 },
+      { id: 135, q: "The specialized dimorphic branching habit in cocoa where the main trunk terminates in a whorl of branches is called:", options: ["A) Jorquette", "B) Sucker", "C) Tiller", "D) Runner"], ans: 0 },
+      { id: 136, q: "Which plantation crop is popularly acclaimed as the “gold mine of wasteland” and “dollar-earning crop”?", options: ["A) Cashew", "B) Rubber", "C) Tea", "D) Coffee"], ans: 0 },
+      { id: 137, q: "Intensive and extensive lateral and vertical branching is a prominent vegetative feature of:", options: ["A) Cocoa", "B) Coconut", "C) Arecanut", "D) Oil palm"], ans: 0 },
+      { id: 138, q: "Crown choking disorder in coconut palms is induced by deficiency of:", options: ["A) Boron (B)", "B) Zinc", "C) Copper", "D) Calcium"], ans: 0 },
+      { id: 139, q: "What food product is historically and romantically titled the “Food of Gods”?", options: ["A) Cocoa (Theobroma cacao)", "B) Coffee", "C) Tea", "D) Honey"], ans: 0 },
+      { id: 140, q: "ALR-1, ALR-2 and ALR-3 are improved varieties released in:", options: ["A) Arecanut", "B) Coconut", "C) Cashew", "D) Rubber"], ans: 0 },
+      { id: 141, q: "For preparing high-quality “Kalipak” processed arecanut, nuts are harvested at what tender maturity stage?", options: ["A) 6–7 months maturity (tender stage)", "B) 12 months fully ripe", "C) 2 months", "D) 24 months"], ans: 0 },
+      { id: 142, q: "Which anatomical parts constitute the edible portion of a cashew fruit (nut + apple)?", options: ["A) Peduncle (cashew apple) and true seed cotyledons (nut kernel)", "B) Exocarp", "C) Roots", "D) Leaves"], ans: 0 },
+      { id: 143, q: "Cashew apple extracted juice is exceptionally rich in which vitamin?", options: ["A) Ascorbic acid (Vitamin C)", "B) Vitamin A", "C) Vitamin D", "D) Vitamin B12"], ans: 0 },
+      { id: 144, q: "Biological control of the coconut rhinoceros beetle is efficiently achieved using the entomopathogenic fungus:", options: ["A) Metarhizium anisopliae", "B) Trichoderma viride", "C) Beauveria bassiana", "D) Verticillium"], ans: 0 },
+      { id: 145, q: "Commercial top-working rejuvenation is most widely practised in mature plantations of:", options: ["A) Cashew", "B) Coconut", "C) Oil palm", "D) Arecanut"], ans: 0 },
+      { id: 146, q: "To prevent severe sun scorching on trunks, arecanut palm rows should ideally be oriented along:", options: ["A) North–South direction", "B) East–West direction", "C) Randomly", "D) Vertical"], ans: 0 },
+      { id: 147, q: "What is the standard recommended planting spacing for intercropping cocoa inside mature arecanut gardens?", options: ["A) 5.4 × 2.7 m", "B) 1 × 1 m", "C) 10 × 10 m", "D) 20 × 20 m"], ans: 0 },
+      { id: 148, q: "Which statement regarding coconut diseases is incorrect?", options: ["A) Cadang-cadang is a virus disease in coconut (incorrect; Cadang-cadang is caused by a viroid)", "B) Bud rot is fungal", "C) Root wilt is debilitating", "D) Thanjavur wilt is basal stem rot"], ans: 0 },
+      { id: 149, q: "What is the true geographical centre of origin of the coconut palm (Cocos nucifera)?", options: ["A) South-East Asia / Indo-Malayan region", "B) Amazon", "C) Central Africa", "D) Mediterranean"], ans: 0 },
+      { id: 150, q: "Yellowing and chlorosis of young expanding tea leaves is diagnostic of deficiency of:", options: ["A) Sulphur (S)", "B) Nitrogen", "C) Potassium", "D) Phosphorus"], ans: 0 },
+      { id: 151, q: "What is the formal scientific study of tea botany and agronomy termed?", options: ["A) Tsiology", "B) Pomology", "C) Olericulture", "D) Viticulture"], ans: 0 },
+      { id: 152, q: "Tea rust is classified botanically as what type of plant disease?", options: ["A) Algal disease (caused by Cephaleuros parasiticus)", "B) True fungal rust", "C) Bacterial blight", "D) Viral mosaic"], ans: 0 },
+      { id: 153, q: "What chemical/biochemical process in tea manufacturing determines the liquor color, strength, and briskness?", options: ["A) Enzymatic fermentation", "B) Sun drying", "C) Roasting", "D) Boiling"], ans: 0 },
+      { id: 154, q: "Which pruning form in tea is the heaviest, most drastic, and not performed regularly?", options: ["A) Rejuvenation pruning (stumping)", "B) Light skiffing", "C) Medium skiffing", "D) Formative tipping"], ans: 0 },
+      { id: 155, q: "What is the lightest form of maintenance pruning practised in tea called?", options: ["A) Skiffing", "B) Hard pruning", "C) Collar pruning", "D) Rejuvenation"], ans: 0 },
+      { id: 156, q: "What does the pruning operation of “centering” in young tea plants involve?", options: ["A) Removal of the main central growing point while retaining 8–10 mature side leaves to form a spreading bush frame", "B) Cutting to ground level", "C) Pulling roots", "D) Thinning shade trees"], ans: 0 },
+      { id: 157, q: "Yellow leaf disease is a destructive pathology affecting which plantation crop?", options: ["A) Tea (and arecanut)", "B) Rubber", "C) Cashew", "D) Coffee"], ans: 0 },
+      { id: 158, q: "Which entomopathogenic fungus is utilized as a biocontrol agent against coffee green scale?", options: ["A) Verticillium lecanii (Lecanicillium lecanii)", "B) Trichoderma", "C) Metarhizium", "D) Beauveria"], ans: 0 },
+      { id: 159, q: "From which country was coffee leaf rust (Hemileia vastatrix) accidentally introduced into India/Sri Lanka?", options: ["A) Sri Lanka (Ceylon)", "B) Brazil", "C) Ethiopia", "D) Kenya"], ans: 0 },
+      { id: 160, q: "Interveinal yellowing and chlorosis of mature rubber leaves is a classic deficiency symptom of:", options: ["A) Magnesium (Mg)", "B) Nitrogen", "C) Potassium", "D) Boron"], ans: 0 },
+      { id: 161, q: "What pod shell colour characterizes Criollo cocoa pods?", options: ["A) Dark red (or light green/yellow with deep red furrows)", "B) Pure black", "C) Bright orange", "D) Solid blue"], ans: 0 },
+      { id: 162, q: "What is the characteristic flavour profile of Criollo cocoa beans?", options: ["A) Bland / mild nutty aroma", "B) Extremely bitter", "C) Sour acidic", "D) Salty"], ans: 0 },
+      { id: 163, q: "What is the physical pod surface texture of Criollo cocoa?", options: ["A) Smooth with deep furrows", "B) Rough and warty", "C) Spiny", "D) Hairy"], ans: 0 },
+      { id: 164, q: "What is the standard fermentation duration required for Criollo cocoa beans?", options: ["A) Approx 6 days", "B) 1 day", "C) 30 days", "D) 1 year"], ans: 0 },
+      { id: 165, q: "Where is the Coconut Research Station (CRS) located in Tamil Nadu?", options: ["A) Veppankulam, Thanjavur district", "B) Vittal", "C) Coimbatore", "D) Madurai"], ans: 0 },
+      { id: 166, q: "Which research center is associated with arecanut at Padavagi?", options: ["A) ICAR-CPCRI Research Centre, Padavagi", "B) CRS Veppankulam", "C) NRC Cashew", "D) RRS Virudhachalam"], ans: 0 },
+      { id: 167, q: "Which research center is associated with cashew at Vittal?", options: ["A) ICAR-Directorate of Cashew Research (DCR) / NRC Vittal", "B) CRS Veppankulam", "C) NRC Spices", "D) UPASI"], ans: 0 },
+      { id: 168, q: "Which research station is associated with oil palm in Tamil Nadu?", options: ["A) Regional Research Station (RRS), Virudhachalam", "B) Veppankulam", "C) Vittal", "D) Paiyur"], ans: 0 },
+      { id: 169, q: "What is the standard planting spacing recommended for coconut palms?", options: ["A) 7 × 7 m", "B) 2.7 × 2.7 m", "C) 9 × 9 m", "D) 4 × 4 m"], ans: 0 },
+      { id: 170, q: "What is the standard recommended planting spacing for arecanut palms?", options: ["A) 2.7 × 2.7 m", "B) 7 × 7 m", "C) 9 × 9 m", "D) 5 × 5 m"], ans: 0 },
+      { id: 171, q: "What is the standard recommended planting spacing for commercial cashew orchards?", options: ["A) 7.5 × 7.5 m (or 8 × 8 m)", "B) 2.7 × 2.7 m", "C) 1 × 1 m", "D) 20 × 20 m"], ans: 0 },
+      { id: 172, q: "What is the standard recommended planting spacing for oil palm plantations?", options: ["A) 9 × 9 m triangular system", "B) 2 × 2 m", "C) 7 × 7 m", "D) 1 m"], ans: 0 },
+      { id: 173, q: "Which high-yielding cashew variety was developed and released from Vengurla?", options: ["A) Vengurla varieties (e.g. V-4, V-7)", "B) BPP-3", "C) VRI-3", "D) Ullal-1"], ans: 0 },
+      { id: 174, q: "Which popular arecanut variety was released from CPCRI?", options: ["A) Mangala (and Sumangala / Sreemangala)", "B) VRI-3", "C) BPP-4", "D) H-226"], ans: 0 },
+      { id: 175, q: "Which rubber clone is widely planted for commercial latex production?", options: ["A) RRIM 600 (Rubber Research Institute of Malaysia clone)", "B) PB 260", "C) GT 1", "D) All of these"], ans: 3 },
+      { id: 176, q: "Which cashew variety / selection is associated with Ankola?", options: ["A) Ankola selections", "B) Vengurla", "C) VRI-1", "D) BPP-8"], ans: 0 },
+      { id: 177, q: "What is Tanjore wilt characterized as in coconut pathology?", options: ["A) A fatal basal stem rot wilt disease caused by Ganoderma lucidum", "B) Leaf spot", "C) Bud rot", "D) Root wilt"], ans: 0 },
+      { id: 178, q: "What is Koleroga (Mahali) characterized as in arecanut pathology?", options: ["A) Fruit rot / nut fall disease caused by Phytophthora arecae", "B) Root rot", "C) Stem bleeding", "D) Yellow leaf"], ans: 0 },
+      { id: 179, q: "What is Cherelle wilt characterized as in cocoa production?", options: ["A) A physiological premature withering and drying of young cocoa pods", "B) Root fungal infection", "C) Leaf rust", "D) Bark splitting"], ans: 0 },
+      { id: 180, q: "Which insect pest causes severe damage by feeding on tender cashew foliage and inflorescences (tea mosquito bug)?", options: ["A) Helopeltis antonii (Tea mosquito bug)", "B) Stem borer", "C) Rhinoceros beetle", "D) Mealybug"], ans: 0 },
+      { id: 181, q: "Is top-working successfully practised in old, unproductive cashew orchards?", options: ["A) Yes, to replace poor canopy with high-yielding scions", "B) No", "C) Only in rubber", "D) Forbidden"], ans: 0 },
+      { id: 182, q: "Is top-working successfully practised in senile rubber trees?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 183, q: "What is the primary agronomic objective of executing top-working in orchards?", options: ["A) Rejuvenation of old, unthrifty, low-yielding plants with superior clonal scions", "B) Increasing tree height", "C) Stopping fruit bearing", "D) Clearing land"], ans: 0 },
+      { id: 184, q: "Does the practice of orchard rejuvenation correctly explain the primary purpose of top-working?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 185, q: "To which botanical family does the tea plant (Camellia sinensis) belong?", options: ["A) Camelliaceae", "B) Rubiaceae", "C) Euphorbiaceae", "D) Arecaceae"], ans: 0 },
+      { id: 186, q: "To which botanical family does the coffee plant (Coffea spp.) belong?", options: ["A) Rubiaceae", "B) Camelliaceae", "C) Lauraceae", "D) Myrtaceae"], ans: 0 },
+      { id: 187, q: "To which botanical family does the rubber tree (Hevea brasiliensis) belong?", options: ["A) Euphorbiaceae", "B) Rubiaceae", "C) Anacardiaceae", "D) Malvaceae"], ans: 0 },
+      { id: 188, q: "To which botanical family does the arecanut palm (Areca catechu) belong?", options: ["A) Arecaceae (Palmae)", "B) Poaceae", "C) Fabaceae", "D) Solanaceae"], ans: 0 },
+      { id: 189, q: "What is the geographical centre of origin of Coffea arabica?", options: ["A) Ethiopia (Abyssinian highlands)", "B) Brazil", "C) India", "D) China"], ans: 0 },
+      { id: 190, q: "What is the geographical origin of Hevea brasiliensis (rubber)?", options: ["A) Amazon Basin, South America (Brazil) / introduced widely via Malaysia", "B) China", "C) Ethiopia", "D) Philippines"], ans: 0 },
+      { id: 191, q: "What is the geographical origin of the tea plant (Camellia sinensis)?", options: ["A) China (and South-East Asia)", "B) Brazil", "C) Africa", "D) Mexico"], ans: 0 },
+      { id: 192, q: "What is the geographical origin of arecanut (Areca catechu)?", options: ["A) Philippines / Malaysia (South-East Asia)", "B) Brazil", "C) Ethiopia", "D) Peru"], ans: 0 },
+      { id: 193, q: "Which agronomic field operation is specifically associated with cashew tree management?", options: ["A) Top working (rejuvenation)", "B) Tapping", "C) Skiffing", "D) Retting"], ans: 0 },
+      { id: 194, q: "Which agronomic field operation is specifically associated with tea bush management?", options: ["A) Pruning and plucking", "B) Tapping", "C) Shelling", "D) Ginning"], ans: 0 },
+      { id: 195, q: "Which industrial operation is specifically associated with oil palm fruit processing?", options: ["A) Palm oil extraction from mesocarp", "B) Tapping latex", "C) Fermenting beans", "D) Curing quills"], ans: 0 },
+      { id: 196, q: "Which climatic/weather phenomenon is critical for triggering blossom showers in coffee?", options: ["A) Pre-monsoon summer showers (blossom showers)", "B) Heavy winter snow", "C) Continuous heavy monsoon flood", "D) Zero rain"], ans: 0 },
+      { id: 197, q: "Rejuvenation pruning is classified as what form of pruning in tea plantations?", options: ["A) The hardest, most drastic pruning form to revive exhausted old tea bushes", "B) Light skiffing", "C) Formative tipping", "D) Weekly plucking"], ans: 0 },
+      { id: 198, q: "Traditional coffee establishment via direct seed sowing is referred to as:", options: ["A) Seed propagation (stump/seedling planting)", "B) Budding", "C) Layering", "D) Tissue culture"], ans: 0 },
+      { id: 199, q: "Latex harvesting via bark incision is the commercial extraction method known as:", options: ["A) Tapping", "B) Pruning", "C) Tipping", "D) Coppicing"], ans: 0 },
+      { id: 200, q: "Which pest / mite is a major biological problem affecting coconut fronds and developing nuts?", options: ["A) Coconut eriophyid mite (Aceria guerreronis)", "B) Stem borer", "C) Mealybug", "D) Aphid"], ans: 0 },
+      { id: 201, q: "What is the standard vegetative propagation method used in commercial tea nurseries?", options: ["A) Single-node leaf-bud cuttings", "B) Air layering", "C) True seeds", "D) Grafting"], ans: 0 },
+      { id: 202, q: "What is the standard commercial propagation method for cashew orchards?", options: ["A) Epicotyl grafting (softwood grafting)", "B) Air layering", "C) Seeds", "D) Hardwood cuttings"], ans: 0 },
+      { id: 203, q: "What is the standard clonal propagation method used in modern rubber nurseries?", options: ["A) Forket budding (green budding / brown budding)", "B) Air layering", "C) Seeds", "D) Cuttings"], ans: 0 },
+      { id: 204, q: "What is the primary method of propagation used for commercial coffee plantations?", options: ["A) Seed propagation (raised in specialized nurseries)", "B) Budding", "C) Layering", "D) Cutting"], ans: 0 },
+      { id: 205, q: "What is the correct binomial botanical name of the cashew tree?", options: ["A) Anacardium occidentale", "B) Cocos nucifera", "C) Areca catechu", "D) Theobroma cacao"], ans: 0 },
+      { id: 206, q: "What is the correct binomial botanical name of the arecanut palm?", options: ["A) Areca catechu", "B) Cocos nucifera", "C) Anacardium occidentale", "D) Hevea brasiliensis"], ans: 0 },
+      { id: 207, q: "What is the correct binomial botanical name of the tea plant?", options: ["A) Camellia sinensis", "B) Coffea arabica", "C) Hevea brasiliensis", "D) Theobroma cacao"], ans: 0 },
+      { id: 208, q: "What is the correct binomial botanical name of the palmyrah palm?", options: ["A) Borassus flabellifer", "B) Cocos nucifera", "C) Areca catechu", "D) Elaeis guineensis"], ans: 0 },
+      { id: 209, q: "What is the agronomic practice of “skiffing” in tea production?", options: ["A) A light form of maintenance pruning done to level the bush top and remove light upper growth", "B) Deep collar pruning", "C) Root cutting", "D) Stumping"], ans: 0 },
+      { id: 10, q: "What are peaberry and black-jolo in coffee grading?", options: ["A) Special market grades of coffee beans (peaberry is single round bean per cherry)", "B) Diseases", "C) Fertilizers", "D) Insect pests"], ans: 0 },
+      { id: 211, q: "What does the abbreviation TPD stand for in rubber tree physiology?", options: ["A) Tapping Panel Dryness", "B) Total Plant Disease", "C) Terminal Pod Death", "D) Tectonic Plate Drift"], ans: 0 },
+      { id: 212, q: "Which physiological disorder in coconut is characterized by thin, tapered fronds resembling a pencil?", options: ["A) Pencil-point disorder", "B) Bud rot", "C) Root wilt", "D) Thanjavur wilt"], ans: 0 },
+      { id: 213, q: "When was the Tea Board of India formally constituted?", options: ["A) 1954", "B) 1942", "C) 1947", "D) 1981"], ans: 0 },
+      { id: 214, q: "Where is the headquarters of the Tea Board located?", options: ["A) Calcutta (Kolkata)", "B) Cochin", "C) Bangalore", "D) Kottayam"], ans: 0 },
+      { id: 215, q: "When was the Coffee Board of India established?", options: ["A) 1942", "B) 1954", "C) 1947", "D) 1981"], ans: 0 },
+      { id: 216, q: "Where is the headquarters of the Coffee Board located?", options: ["A) Bangalore", "B) Calcutta", "C) Kottayam", "D) Kochi"], ans: 0 },
+      { id: 217, q: "When was the Coconut Development Board established?", options: ["A) 1981", "B) 1954", "C) 1942", "D) 1947"], ans: 0 },
+      { id: 218, q: "Where is the headquarters of the Coconut Development Board located?", options: ["A) Kochi, Kerala", "B) Calcutta", "C) Bangalore", "D) Kottayam"], ans: 0 },
+      { id: 219, q: "When was the Rubber Board of India established?", options: ["A) 1947", "B) 1954", "C) 1942", "D) 1981"], ans: 0 },
+      { id: 220, q: "Where is the headquarters of the Rubber Board located?", options: ["A) Kottayam, Kerala", "B) Cochin", "C) Calcutta", "D) Bangalore"], ans: 0 },
+      { id: 221, q: "Which Indian state is documented as the leading producer of cocoa beans?", options: ["A) Andhra Pradesh (followed by Kerala and Karnataka)", "B) Punjab", "C) Haryana", "D) Rajasthan"], ans: 0 },
+      { id: 222, q: "Which Indian state is the leading producer of raw cashew nuts?", options: ["A) Maharashtra", "B) Kerala", "C) Assam", "D) Bihar"], ans: 0 },
+      { id: 223, q: "Which Indian state ranks first in total coconut production and acreage?", options: ["A) Kerala (or Karnataka)", "B) Punjab", "C) Haryana", "D) Delhi"], ans: 0 },
+      { id: 224, q: "Which Indian state is the leading producer of arecanut?", options: ["A) Karnataka", "B) Kerala", "C) Assam", "D) West Bengal"], ans: 0 },
+      { id: 225, q: "Is yellowing of young tea leaves correctly associated with sulphur deficiency?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 226, q: "What is the scientific study and botany of tea called?", options: ["A) Tsiology", "B) Pomology", "C) Olericulture", "D) Agronomy"], ans: 0 },
+      { id: 227, q: "Is tea rust an algal disease caused by parasitic algae?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 228, q: "Does enzymatic fermentation determine the liquor quality, strength, colour, and briskness of black tea?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 229, q: "What is rejuvenation pruning in tea management?", options: ["A) The heaviest, most drastic form of pruning used to renew very old, exhausted tea bushes", "B) Light skiffing", "C) Tipping", "D) Plucking"], ans: 0 },
+      { id: 230, q: "What is skiffing in tea management?", options: ["A) The lightest form of maintenance pruning to clean the top canopy", "B) Collar pruning", "C) Root cutting", "D) Stumping"], ans: 0 },
+      { id: 231, q: "What is the primary agronomic purpose of skiffing in tea?", options: ["A) To postpone heavy pruning and encourage better frame development and leaf flush", "B) To kill bushes", "C) To stop growth", "D) To dry wood"], ans: 0 },
+      { id: 232, q: "What does centering in young tea plants involve?", options: ["A) Removal of the main growing tip while retaining 8–10 mature leaves", "B) Cutting to ground level", "C) Pulling roots", "D) Thinning shade"], ans: 0 },
+      { id: 233, q: "Which disease is listed as a serious pathology affecting tea bushes?", options: ["A) Yellow leaf disease", "B) Bud rot", "C) Thanjavur wilt", "D) Panama wilt"], ans: 0 },
+      { id: 234, q: "Is tea considered a calcifuge crop?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 235, q: "Does tea require comparatively high amounts of calcium according to source notes?", options: ["A) Yes (as cited in specific source assertions)", "B) No", "C) Never", "D) Zero"], ans: 0 },
+      { id: 236, q: "Does the reason correctly explain the assertion regarding tea calcium nutrition in the source key?", options: ["A) Yes", "B) No"], ans: 0 },
+      { id: 237, q: "What does commercial harvesting / plucking in tea plantations involve?", options: ["A) Removal of two tender leaves and a terminal bud (2 leaves and a bud)", "B) Whole branch cutting", "C) Root pulling", "D) Flower gathering"], ans: 0 },
+      { id: 238, q: "What is the correct sequential order of steps in CTC tea manufacturing?", options: ["A) Withering → Crushing/Tear/Curl (CTC) → Fermentation → Drying", "B) Drying → Rolling → Withering", "C) Fermentation only", "D) Boiling"], ans: 0 },
+      { id: 239, q: "Pekoe, Dust and Broken Orange Pekoe are standard commercial market grades of:", options: ["A) Tea", "B) Coffee", "C) Rubber", "D) Cocoa"], ans: 0 },
+      { id: 240, q: "How is the coffee plant classified according to its photoperiodic flowering response?", options: ["A) Long-day plant (as per source key)", "B) Short-day plant", "C) Day-neutral", "D) Obligate aquatic"], ans: 0 },
+      { id: 241, q: "When does the critical “blossom shower” period occur for coffee in South India?", options: ["A) March–April", "B) October–November", "C) January–February", "D) July–August"], ans: 0 },
+      { id: 242, q: "Which chemical compounds are commonly used as safe latex coagulants in rubber processing?", options: ["A) Acetic acid or formic acid", "B) Sulphuric acid", "C) Nitric acid", "D) Hydrochloric acid"], ans: 0 }
+    ];
+
+    // Distribute correct answers equally among A, B, C and D
+    questionBank.forEach((question, index) => {
+      const correctAnswer = question.options[question.ans];
+
+      const targetIndex = index % 4;
+
+      const wrongAnswers = question.options.filter(
+        (_, i) => i !== question.ans
+      );
+
+      // Shuffle wrong answers
+      for (let i = wrongAnswers.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [wrongAnswers[i], wrongAnswers[j]] =
+          [wrongAnswers[j], wrongAnswers[i]];
+      }
+
+      // Build new option order
+      const newOptions = [];
+      let wrongIndex = 0;
+
+      for (let i = 0; i < 4; i++) {
+        if (i === targetIndex) {
+          newOptions.push(correctAnswer);
+        } else {
+          newOptions.push(wrongAnswers[wrongIndex++]);
+        }
+      }
+
+      // Re-label options
+      question.options = newOptions.map((option, i) => {
+        return option.replace(
+          /^[A-D]\)\s*/,
+          `${String.fromCharCode(65 + i)}) `
+        );
+      });
+
+      // Update correct answer
+      question.ans = targetIndex;
+    });
+
+    let activeQuiz = [];
+    let currentIndex = 0;
+    let userAnswers = {};
+    let markedForReview = {};
+    let timerInterval = null;
+    let totalTimeSeconds = 0;
+    let timeRemaining = 0;
+
+    const setupScreen = document.getElementById("setup-screen");
+    const quizScreen = document.getElementById("quiz-screen");
+    const resultScreen = document.getElementById("result-screen");
+    const reviewScreen = document.getElementById("review-screen");
+
+    const modeSelect = document.getElementById("mode-select");
+    const countSelect = document.getElementById("count-select");
+    const customCountWrapper = document.getElementById("custom-count-wrapper");
+    const customCountInput = document.getElementById("custom-count-input");
+    const timePreviewPill = document.getElementById("time-preview-pill");
+    const startBtn = document.getElementById("start-btn");
+
+    const qCounterVal = document.getElementById("q-counter-val");
+    const timerVal = document.getElementById("timer-val");
+    const qBadgeVal = document.getElementById("q-badge-val");
+    const qTextVal = document.getElementById("q-text-val");
+    const optionsContainer = document.getElementById("options-container");
+
+    const prevBtn = document.getElementById("prev-btn");
+    const markBtn = document.getElementById("mark-btn");
+    const nextBtn = document.getElementById("next-btn");
+    const submitBtn = document.getElementById("submit-btn");
+
+    const resScorePct = document.getElementById("res-score-pct");
+    const resPerformanceMsg = document.getElementById("res-performance-msg");
+    const resTotal = document.getElementById("res-total");
+    const resCorrect = document.getElementById("res-correct");
+    const resWrong = document.getElementById("res-wrong");
+    const resUnanswered = document.getElementById("res-unanswered");
+
+    const reviewAnswersBtn = document.getElementById("review-answers-btn");
+    const restartBtn = document.getElementById("restart-btn");
+    const backToSummaryBtn = document.getElementById("back-to-summary-btn");
+    const reviewListContainer = document.getElementById("review-list-container");
+
+    function computeSelectedCount() {
+      if (countSelect.value === "custom") {
+        return Math.max(1, Math.min(242, parseInt(customCountInput.value) || 50));
+      }
+      return parseInt(countSelect.value);
+    }
+
+    function updatePillTime() {
+      const qCount = computeSelectedCount();
+      const totalSec = qCount * 60; // 1 minute per question
+      const mins = Math.floor(totalSec / 60);
+      const secs = totalSec % 60;
+      timePreviewPill.textContent = `${mins} min ${secs > 0 ? secs + " sec" : "0 sec"} (1 min / question)`;
+    }
+
+    countSelect.addEventListener("change", () => {
+      if (countSelect.value === "custom") {
+        customCountWrapper.classList.remove("hidden");
+      } else {
+        customCountWrapper.classList.add("hidden");
+      }
+      updatePillTime();
+    });
+
+    customCountInput.addEventListener("input", updatePillTime);
+
+    startBtn.addEventListener("click", () => {
+      const mode = modeSelect.value;
+      const count = computeSelectedCount();
+
+      if (mode === "practice" || count < 242) {
+        let pool = [...questionBank];
+        for (let i = pool.length - 1; i > 0; i--) {
+          const j = Math.floor(Math.random() * (i + 1));
+          [pool[i], pool[j]] = [pool[j], pool[i]];
+        }
+        activeQuiz = pool.slice(0, count);
+      } else {
+        activeQuiz = [...questionBank];
+      }
+
+      totalTimeSeconds = count * 60; // 1 minute per question
+      timeRemaining = totalTimeSeconds;
+
+      userAnswers = {};
+      markedForReview = {};
+      currentIndex = 0;
+
+      setupScreen.classList.add("hidden");
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.add("hidden");
+      quizScreen.classList.remove("hidden");
+
+      renderQuestion();
+      startTimer();
+    });
+
+    function formatTime(secs) {
+      const h = Math.floor(secs / 3600);
+      const m = Math.floor((secs % 3600) / 60);
+      const s = secs % 60;
+      if (h > 0) {
+        return `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+      }
+      return `${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+    }
+
+    function startTimer() {
+      if (timerInterval) clearInterval(timerInterval);
+      timerVal.textContent = formatTime(timeRemaining);
+
+      timerInterval = setInterval(() => {
+        timeRemaining--;
+        timerVal.textContent = formatTime(Math.max(0, timeRemaining));
+
+        if (timeRemaining <= 0) {
+          clearInterval(timerInterval);
+          alert("Time's up! Submitting your examination automatically.");
+          evaluateAndShowResults();
+        }
+      }, 1000);
+    }
+
+    function renderQuestion() {
+      const qData = activeQuiz[currentIndex];
+      const total = activeQuiz.length;
+
+      qCounterVal.textContent = `${currentIndex + 1} / ${total}`;
+      qBadgeVal.textContent = `Q.${currentIndex + 1}`;
+      qTextVal.textContent = qData.q;
+
+      if (markedForReview[currentIndex]) {
+        markBtn.classList.add("marked");
+        markBtn.innerHTML = `&#10004; Marked for Review`;
+      } else {
+        markBtn.classList.remove("marked");
+        markBtn.innerHTML = `&#128278; Mark for Review`;
+      }
+
+      optionsContainer.innerHTML = "";
+      qData.options.forEach((optStr, optIdx) => {
+        const itemBtn = document.createElement("button");
+        itemBtn.className = "option-item";
+        if (userAnswers[currentIndex] === optIdx) {
+          itemBtn.classList.add("selected");
+        }
+
+        const letterMatch = optStr.match(/^([A-D])\)\s*(.*)$/);
+        const letter = letterMatch ? letterMatch[1] : String.fromCharCode(65 + optIdx);
+        const content = letterMatch ? letterMatch[2] : optStr;
+
+        itemBtn.innerHTML = `
+          <div class="option-letter">${letter}</div>
+          <div class="option-content">${content}</div>
+        `;
+
+        itemBtn.addEventListener("click", () => {
+          userAnswers[currentIndex] = optIdx;
+          renderQuestion();
+        });
+
+        optionsContainer.appendChild(itemBtn);
+      });
+
+      prevBtn.disabled = currentIndex === 0;
+
+      if (currentIndex === total - 1) {
+        nextBtn.classList.add("hidden");
+        submitBtn.classList.remove("hidden");
+      } else {
+        nextBtn.classList.remove("hidden");
+        submitBtn.classList.add("hidden");
+      }
+    }
+
+    prevBtn.addEventListener("click", () => {
+      if (currentIndex > 0) {
+        currentIndex--;
+        renderQuestion();
+      }
+    });
+
+    nextBtn.addEventListener("click", () => {
+      if (currentIndex < activeQuiz.length - 1) {
+        currentIndex++;
+        renderQuestion();
+      }
+    });
+
+    markBtn.addEventListener("click", () => {
+      markedForReview[currentIndex] = !markedForReview[currentIndex];
+      renderQuestion();
+    });
+
+    submitBtn.addEventListener("click", () => {
+      if (confirm("Are you sure you want to submit your examination?")) {
+        clearInterval(timerInterval);
+        evaluateAndShowResults();
+      }
+    });
+
+    function evaluateAndShowResults() {
+      let correct = 0;
+      let wrong = 0;
+      let unanswered = 0;
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        if (selected === undefined) {
+          unanswered++;
+        } else if (selected === q.ans) {
+          correct++;
+        } else {
+          wrong++;
+        }
+      });
+
+      const total = activeQuiz.length;
+      const percentage = Math.round((correct / total) * 100);
+
+      resScorePct.textContent = `${percentage}%`;
+      resTotal.textContent = total;
+      resCorrect.textContent = correct;
+      resWrong.textContent = wrong;
+      resUnanswered.textContent = unanswered;
+
+      if (percentage >= 80) {
+        resPerformanceMsg.textContent = "Outstanding Performance! Masterful command over Plantation Crops management and processing.";
+        resPerformanceMsg.style.color = "var(--success)";
+      } else if (percentage >= 60) {
+        resPerformanceMsg.textContent = "Good Result! Review specific spacing norms, processing stages, and research stations.";
+        resPerformanceMsg.style.color = "var(--primary)";
+      } else {
+        resPerformanceMsg.textContent = "Needs Revision. Comprehensive review of Plantation Crops recommended.";
+        resPerformanceMsg.style.color = "var(--danger)";
+      }
+
+      quizScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    }
+
+    reviewAnswersBtn.addEventListener("click", () => {
+      buildReviewList();
+      resultScreen.classList.add("hidden");
+      reviewScreen.classList.remove("hidden");
+    });
+
+    backToSummaryBtn.addEventListener("click", () => {
+      reviewScreen.classList.add("hidden");
+      resultScreen.classList.remove("hidden");
+    });
+
+    restartBtn.addEventListener("click", () => {
+      resultScreen.classList.add("hidden");
+      setupScreen.classList.remove("hidden");
+    });
+
+    function buildReviewList() {
+      reviewListContainer.innerHTML = "";
+
+      activeQuiz.forEach((q, idx) => {
+        const selected = userAnswers[idx];
+        const isAnswered = selected !== undefined;
+        const isCorrect = selected === q.ans;
+
+        const item = document.createElement("div");
+        item.className = "review-item";
+
+        let badgeClass = "unanswered";
+        let statusText = "Unanswered";
+
+        if (isAnswered) {
+          if (isCorrect) {
+            badgeClass = "correct";
+            statusText = "Correct";
+            item.classList.add("is-correct");
+          } else {
+            badgeClass = "wrong";
+            statusText = "Wrong";
+            item.classList.add("is-wrong");
+          }
+        } else {
+          item.classList.add("is-unanswered");
+        }
+
+        const selectedText = isAnswered ? q.options[selected] : "Not Attempted";
+        const correctText = q.options[q.ans];
+
+        item.innerHTML = `
+          <span class="rev-badge ${badgeClass}">${statusText}</span>
+          <div class="rev-q-text">Q.${idx + 1} (Question #${q.id}). ${q.q}</div>
+          <div class="rev-detail-line" style="color: ${isAnswered ? (isCorrect ? 'var(--success)' : 'var(--danger)') : 'var(--neutral)'}">
+            <strong>Your Selection:</strong> ${selectedText}
+          </div>
+          <div class="rev-detail-line" style="color: var(--success)">
+            <strong>Correct Answer:</strong> ${correctText}
+          </div>
+        `;
+
+        reviewListContainer.appendChild(item);
+      });
+    }
+
+    updatePillTime();
+  </script>
+</body>
+
+</html>
